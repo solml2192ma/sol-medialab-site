@@ -438,6 +438,18 @@ section { position: relative; }
   border-radius: 12px;
 }
 
+/* ===== About page ===== */
+.about-page {
+  background: #fff;
+  padding: 110px 0 0;
+}
+.about-page img {
+  display: block;
+  width: 100%;
+  max-width: 1254px;
+  margin: 0 auto;
+}
+
 /* ===== Contact CTA (home) ===== */
 .contact-cta {
   display: inline-block;
