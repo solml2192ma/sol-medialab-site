@@ -183,6 +183,9 @@ section { position: relative; }
 }
 
 /* ===== iw-menu-solution (space solutions) ===== */
+.iw-menu-solution.solution-page {
+  padding-top: 150px;
+}
 .iw-menu-solution {
   --color-surface: #F4F7FC;
   --color-card: #FFFFFF;

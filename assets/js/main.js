@@ -23,19 +23,34 @@ menuToggle.addEventListener('click', () => {
 const tabs = document.querySelectorAll('[data-tab-trigger]');
 const panels = document.querySelectorAll('[data-tab-panel]');
 
+const activateTabByIndex = (index) => {
+  tabs.forEach((t) => {
+    const active = t.getAttribute('data-tab-index') === index;
+    t.setAttribute('data-state', active ? 'active' : 'inactive');
+    t.setAttribute('aria-selected', String(active));
+    t.tabIndex = active ? 0 : -1;
+  });
+  panels.forEach((panel) => {
+    panel.toggleAttribute('hidden', panel.getAttribute('data-tab-index') !== index);
+  });
+};
+
 tabs.forEach((tab) => {
   tab.addEventListener('click', () => {
-    const index = tab.getAttribute('data-tab-index');
-
-    tabs.forEach((t) => {
-      const active = t === tab;
-      t.setAttribute('data-state', active ? 'active' : 'inactive');
-      t.setAttribute('aria-selected', String(active));
-      t.tabIndex = active ? 0 : -1;
-    });
-
-    panels.forEach((panel) => {
-      panel.toggleAttribute('hidden', panel.getAttribute('data-tab-index') !== index);
-    });
+    activateTabByIndex(tab.getAttribute('data-tab-index'));
   });
 });
+
+// Deep-link a specific tab via URL hash, e.g. solution.html#showcase-outdoor
+if (tabs.length) {
+  const anchor = window.location.hash.replace('#', '');
+  if (anchor) {
+    const matchedTab = Array.from(tabs).find((t) => t.getAttribute('data-tab-anchor') === anchor);
+    if (matchedTab) {
+      activateTabByIndex(matchedTab.getAttribute('data-tab-index'));
+      window.requestAnimationFrame(() => {
+        matchedTab.scrollIntoView({ block: 'center', behavior: 'instant' });
+      });
+    }
+  }
+}
