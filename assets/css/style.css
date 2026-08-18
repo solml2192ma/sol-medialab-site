@@ -659,6 +659,10 @@ section { position: relative; }
   font-weight: 800;
   letter-spacing: -0.02em;
 }
+.floating-kakao {
+  background-color: #fee500;
+  color: #191919 !important;
+}
 .floating-instagram {
   color: #fff !important;
   background: radial-gradient(circle at 30% 105%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
