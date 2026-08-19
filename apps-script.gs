@@ -16,7 +16,7 @@ const NOTIFY_EMAIL = 'solml2192@gmail.com';
 
 function doPost(e) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const data = e.parameter;
+  const data = (e && e.parameter) || {};
   const now = new Date();
   const timestamp = Utilities.formatDate(now, 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss');
 
