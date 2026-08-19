@@ -77,7 +77,6 @@
     {% if page.overview_category %}<p class="portfolio-detail-category">{{ page.overview_category | join: " · " }}</p>{% endif %}
     <h1>{{ page.title }}</h1>
     <div class="portfolio-detail-meta">
-      {% if page.date %}<span>{{ page.date | date: "%Y.%m.%d" }}</span>{% endif %}
       {% if page.client %}<span>{{ page.client }}</span>{% endif %}
       {% if page.location %}<span>{{ page.location }}</span>{% endif %}
     </div>

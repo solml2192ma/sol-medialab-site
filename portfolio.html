@@ -90,7 +90,6 @@ layout: null
       <div class="portfolio-card-body">
         {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
         <h2 class="portfolio-card-title">{{ post.title }}</h2>
-        {% if post.date %}<span class="portfolio-card-date">{{ post.date | date: "%Y.%m.%d" }}</span>{% endif %}
       </div>
     </a>
     {% else %}
