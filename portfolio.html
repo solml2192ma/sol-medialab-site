@@ -87,7 +87,7 @@ layout: null
     {% for post in site.portfolio %}
     <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
       {% if post.cover_image %}
-      <img class="portfolio-card-image" src="{{ post.cover_image }}" alt="{{ post.title }}">
+      <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
       {% endif %}
       <div class="portfolio-card-body">
         {% if post.category %}<span class="portfolio-card-category">{{ post.category }}</span>{% endif %}

@@ -87,7 +87,7 @@
 
   {% if page.cover_image %}
   <div class="portfolio-detail-cover">
-    <img src="{{ page.cover_image }}" alt="{{ page.title }}">
+    <img src="{{ site.baseurl }}{{ page.cover_image }}" alt="{{ page.title }}">
   </div>
   {% endif %}
 
@@ -98,7 +98,7 @@
   {% if page.gallery %}
   <div class="portfolio-detail-gallery">
     {% for img in page.gallery %}
-    <img src="{{ img }}" alt="{{ page.title }}">
+    <img src="{{ site.baseurl }}{{ img }}" alt="{{ page.title }}">
     {% endfor %}
   </div>
   {% endif %}
