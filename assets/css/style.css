@@ -1184,6 +1184,11 @@ section { position: relative; }
   color: #fff !important;
   background: radial-gradient(circle at 30% 105%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
+.floating-phone {
+  display: none;
+  background-color: #2156E8;
+  color: #fff !important;
+}
 .floating-inquiry {
   min-width: 150px;
   height: 54px;
@@ -1209,6 +1214,7 @@ section { position: relative; }
   .floating-circle svg { width: 23px; height: 23px; }
   .floating-naver { font-size: 15px; }
   .floating-inquiry { min-width: 124px; height: 48px; padding: 0 18px; font-size: 14px; }
+  .floating-phone { display: flex; }
 }
 
 /* ===== Footer ===== */
