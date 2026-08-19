@@ -74,7 +74,7 @@
 
 <section class="portfolio-detail">
   <div class="portfolio-detail-head">
-    {% if page.category %}<p class="portfolio-detail-category">{{ page.category }}</p>{% endif %}
+    {% if page.overview_category %}<p class="portfolio-detail-category">{{ page.overview_category | join: " · " }}</p>{% endif %}
     <h1>{{ page.title }}</h1>
     <div class="portfolio-detail-meta">
       {% if page.date %}<span>{{ page.date | date: "%Y.%m.%d" }}</span>{% endif %}
