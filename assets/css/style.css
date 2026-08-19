@@ -128,9 +128,9 @@ section { position: relative; }
   display: inline-block;
   padding: 0;
   font-family: 'Oswald', sans-serif;
-  font-size: 12px;
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   color: #2156E8;
 }
 .main-nav .dropdown li.dropdown-heading a:hover { color: #17429c; transform: none; }
