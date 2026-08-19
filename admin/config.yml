@@ -19,7 +19,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "제목", name: "title", widget: "string" }
-      - { label: "날짜", name: "date", widget: "datetime" }
       - label: "카테고리 (해당하는 항목 모두 선택)"
         name: "overview_category"
         widget: "select"

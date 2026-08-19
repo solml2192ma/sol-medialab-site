@@ -1,6 +1,5 @@
 ---
 title: "샘플 프로젝트"
-date: 2025-08-19
 overview_category: ["시공", "행사 이벤트"]
 client: "예시 클라이언트"
 location: "서울"
