@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>견적 문의 | SOL MEDIA LAB INC.</title>
-<meta name="description" content="SOL MEDIA LAB INC. 견적 문의 — 시공, A/S, 렌탈, 부품/장비 구매 문의를 남겨주시면 빠르게 답변드립니다.">
+<title>사업영역 | SOL MEDIA LAB INC.</title>
+<meta name="description" content="SOL MEDIA LAB INC. 사업영역 — STAGE, CONVENTION, POP-UP, COMPANY EVENT">
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="assets/css/style.css?v=8">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="assets/css/style.css?v=9">
 </head>
 <body>
 
@@ -34,7 +33,7 @@
         <li class="has-dropdown">
           <a href="index.html#services">SERVICES</a>
           <ul class="dropdown">
-            <li><a href="services.html">사업영역</a></li>
+            <li><a href="services.html" aria-current="page">사업영역</a></li>
             <li><a href="solution.html">SOLUTION</a></li>
           </ul>
         </li>
@@ -60,7 +59,7 @@
             </ul>
           </div>
         </li>
-        <li><a href="contact.html" aria-current="page">CONTACT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
       </ul>
     </nav>
 
@@ -70,88 +69,56 @@
   </div>
 </header>
 
-<section class="page-banner">
-  <h1>견적 문의</h1>
-  <p>시공 · A/S · 렌탈 · 부품/장비 구매 등 무엇이든 남겨주시면 빠르게 답변드립니다.</p>
+<section class="iw-display-grid services-page" aria-label="사업영역">
+  <article class="iw-display-card">
+    <img class="iw-display-image" src="assets/img/display-stage.webp" alt="STAGE">
+    <div class="iw-display-shade" aria-hidden="true"></div>
+    <div class="iw-display-copy">
+      <div class="iw-display-title"><p>STAGE</p></div>
+      <div class="iw-display-subtitle"><p>Concert, Performance, Live event</p></div>
+    </div>
+    <div class="iw-display-hover">
+      <p class="iw-display-hover-text"><!-- TODO: STAGE 설명 문구 --></p>
+      <span class="iw-display-hover-link">자세히 보기 →</span>
+    </div>
+  </article>
+  <article class="iw-display-card">
+    <img class="iw-display-image" src="assets/img/display-convention.webp" alt="CONVENTION">
+    <div class="iw-display-shade" aria-hidden="true"></div>
+    <div class="iw-display-copy">
+      <div class="iw-display-title"><p>CONVENTION</p></div>
+      <div class="iw-display-subtitle"><p>Conference, Fair, Show</p></div>
+    </div>
+    <div class="iw-display-hover">
+      <p class="iw-display-hover-text"><!-- TODO: CONVENTION 설명 문구 --></p>
+      <span class="iw-display-hover-link">자세히 보기 →</span>
+    </div>
+  </article>
+  <article class="iw-display-card">
+    <img class="iw-display-image" src="assets/img/display-popup.webp" alt="POP - UP">
+    <div class="iw-display-shade" aria-hidden="true"></div>
+    <div class="iw-display-copy">
+      <div class="iw-display-title"><p>POP - UP</p></div>
+      <div class="iw-display-subtitle"><p>Brand</p></div>
+    </div>
+    <div class="iw-display-hover">
+      <p class="iw-display-hover-text"><!-- TODO: POP-UP 설명 문구 --></p>
+      <span class="iw-display-hover-link">자세히 보기 →</span>
+    </div>
+  </article>
+  <article class="iw-display-card">
+    <img class="iw-display-image" src="assets/img/display-company.webp" alt="COMPANY EVENT">
+    <div class="iw-display-shade" aria-hidden="true"></div>
+    <div class="iw-display-copy">
+      <div class="iw-display-title"><p>COMPANY EVENT</p></div>
+      <div class="iw-display-subtitle"><p>Business</p></div>
+    </div>
+    <div class="iw-display-hover">
+      <p class="iw-display-hover-text"><!-- TODO: COMPANY EVENT 설명 문구 --></p>
+      <span class="iw-display-hover-link">자세히 보기 →</span>
+    </div>
+  </article>
 </section>
-
-<section class="quote-section">
-  <div class="quote-wrap">
-    <form class="quote-form" id="quoteForm" novalidate>
-      <div class="form-group">
-        <label for="inquiryType">문의 유형<i class="required">*</i></label>
-        <select id="inquiryType" name="inquiryType" required>
-          <option value="" selected>(선택)</option>
-          <option value="시공">시공</option>
-          <option value="A/S">A/S</option>
-          <option value="렌탈">렌탈</option>
-          <option value="부품/장비 구매">부품/장비 구매</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="customerName">이름(회사명)<i class="required">*</i></label>
-        <input type="text" id="customerName" name="customerName" placeholder="이름 또는 회사명을 입력해 주세요." required>
-      </div>
-
-      <div class="form-group">
-        <label for="customerEmail">이메일<i class="required">*</i></label>
-        <input type="email" id="customerEmail" name="customerEmail" placeholder="답변받으실 이메일 주소를 입력해 주세요." required>
-      </div>
-
-      <div class="form-group">
-        <label for="phone1">연락처</label>
-        <div class="phone-wrap">
-          <input type="tel" id="phone1" maxlength="4" inputmode="numeric" pattern="[0-9]*">
-          <span>-</span>
-          <input type="tel" id="phone2" maxlength="4" inputmode="numeric" pattern="[0-9]*">
-          <span>-</span>
-          <input type="tel" id="phone3" maxlength="4" inputmode="numeric" pattern="[0-9]*">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="message">문의 내용</label>
-        <textarea id="message" name="message" rows="6" placeholder="프로젝트 내용, 일정 등 문의사항을 남겨주세요."></textarea>
-      </div>
-
-      <button type="submit" class="btn-submit" id="submitBtn">작성</button>
-      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-    </form>
-
-    <aside class="quote-side">
-      <h2>긴급한 문의사항이<br>있으신가요?</h2>
-      <ul>
-        <li>
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-          </span>
-          <span class="text">
-            <span class="label">전화 상담</span>
-            <a href="tel:02-2043-2192">02-2043-2192</a>
-          </span>
-        </li>
-        <li>
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <span class="text">
-            <span class="label">이메일 상담</span>
-            <a href="mailto:solml2192@gmail.com">solml2192@gmail.com</a>
-          </span>
-        </li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
-<!-- 접수 완료 모달 -->
-<div class="modal-overlay" id="successModal" hidden>
-  <div class="modal-box">
-    <p>정상적으로 접수되었습니다</p>
-    <button type="button" id="modalConfirm">확인</button>
-  </div>
-</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -185,8 +152,6 @@
   <a class="floating-inquiry" href="contact.html" aria-label="견적 문의 페이지로 이동">견적 문의</a>
 </div>
 
-
-<script src="assets/js/main.js?v=4"></script>
-<script src="assets/js/contact.js?v=4"></script>
+<script src="assets/js/main.js?v=6"></script>
 </body>
 </html>
