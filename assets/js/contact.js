@@ -23,6 +23,22 @@ const submitBtn = document.getElementById('submitBtn');
 const statusEl = document.getElementById('formStatus');
 const modal = document.getElementById('successModal');
 const modalConfirm = document.getElementById('modalConfirm');
+const emailInput = document.getElementById('customerEmail');
+
+function hasContactMethod() {
+  const emailFilled = emailInput.value.trim().length > 0;
+  const phoneFilled = phoneInputs.every((input) => input.value.trim().length > 0);
+  return emailFilled || phoneFilled;
+}
+
+function updateContactMethodValidity() {
+  emailInput.setCustomValidity(hasContactMethod() ? '' : '이메일 또는 연락처 중 하나는 반드시 입력해 주세요.');
+}
+
+[emailInput, ...phoneInputs].forEach((input) => {
+  input.addEventListener('input', updateContactMethodValidity);
+});
+updateContactMethodValidity();
 
 function setStatus(text, cls) {
   statusEl.textContent = text;
