@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=15">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=17">
 </head>
 <body>
 
@@ -88,10 +88,6 @@
   </div>
   {% endif %}
 
-  <div class="portfolio-detail-body">
-    {{ content }}
-  </div>
-
   {% if page.gallery %}
   <div class="portfolio-detail-gallery">
     {% for img in page.gallery %}
@@ -99,6 +95,10 @@
     {% endfor %}
   </div>
   {% endif %}
+
+  <div class="portfolio-detail-body">
+    {{ content }}
+  </div>
 
   <a class="portfolio-detail-back" href="{{ site.baseurl }}/portfolio.html">← 목록으로</a>
 </section>

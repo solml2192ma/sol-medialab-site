@@ -871,7 +871,6 @@ section { position: relative; }
 .portfolio-card {
   display: block;
   background: #fff;
-  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(17, 24, 39, 0.06);
   transition: transform .25s ease, box-shadow .25s ease;
@@ -935,8 +934,6 @@ section { position: relative; }
 .portfolio-detail-cover {
   max-width: 1080px;
   margin: 48px auto 0;
-  border-radius: 24px;
-  overflow: hidden;
 }
 .portfolio-detail-cover img { width: 100%; display: block; }
 .portfolio-detail-body {
@@ -955,7 +952,7 @@ section { position: relative; }
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
-.portfolio-detail-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px; }
+.portfolio-detail-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
 .portfolio-detail-back {
   display: block;
   max-width: 760px;
