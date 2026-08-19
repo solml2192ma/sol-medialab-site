@@ -42,4 +42,7 @@ collections:
         widget: "list"
         field: { label: "이미지", name: "image", widget: "image" }
         required: false
-      - { label: "상세 설명", name: "body", widget: "markdown" }
+      - label: "상세 설명"
+        name: "body"
+        widget: "markdown"
+        modes: ["raw"]
