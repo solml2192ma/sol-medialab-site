@@ -4,13 +4,106 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>오시는 길 | SOL MEDIA LAB INC.</title>
-<meta name="description" content="SOL MEDIA LAB INC. 오시는 길 — 서울특별시 송파구 충민로10, 3D44(가든파이브툴)">
+<meta name="description" content="SOL MEDIA LAB INC. 오시는 길. 서울특별시 송파구 충민로 10, 3D44 (가든파이브 툴). TEL 02-2043-2192">
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preload" as="image" href="assets/img/location-photo.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="assets/css/style.css?v=22">
+<link rel="stylesheet" href="assets/css/style.css?v=23">
+<style>
+/* =====================================================================
+   Location page
+   Shape rule for this page: photo = 16px radius, buttons = full pill.
+   Accent lock: #E2140A (brand red) is the only accent on this page.
+   ===================================================================== */
+.location-page{background:#fff;padding:128px 24px 120px}
+.location-page .loc-inner{max-width:1240px;margin:0 auto}
+
+.location-page h1{
+  font-family:'Pretendard',sans-serif;font-weight:700;
+  font-size:46px;line-height:1.15;letter-spacing:-.02em;color:#101828;margin:0;
+}
+.location-page .loc-rule{width:44px;height:3px;background:#E2140A;margin:22px 0 0;border:0}
+
+.location-page .loc-body{
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:72px;align-items:start;margin-top:56px;
+}
+
+.location-page .loc-photo{margin:0}
+.location-page .loc-photo img{
+  display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center 46%;
+  border-radius:16px;max-width:none;background:#F2F2F4;
+}
+
+.location-page .loc-list{margin:0;border-top:1px solid #ECECEF}
+.location-page .loc-row{
+  display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:baseline;
+  padding:24px 2px;border-bottom:1px solid #ECECEF;
+}
+.location-page .loc-row dt{
+  font-family:'Pretendard',sans-serif;font-weight:500;
+  font-size:12px;letter-spacing:.14em;color:#9A9AA0;line-height:1.6;
+}
+.location-page .loc-row dd{
+  margin:0;font-size:17px;font-weight:500;line-height:1.65;color:#1A1A1C;
+  word-break:keep-all;
+}
+.location-page .loc-row dd a{color:inherit;transition:color .2s ease}
+.location-page .loc-row dd a:hover{color:#E2140A}
+.location-page .loc-row dd .loc-sub{display:block;margin-top:4px;font-size:14px;font-weight:400;color:#8A8A90}
+
+.location-page .loc-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.location-page .loc-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:48px;padding:0 24px;border-radius:999px;
+  font-size:14px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;
+  border:1px solid #D6D6DB;background:#fff;color:#1A1A1C;cursor:pointer;
+  transition:border-color .2s ease,background-color .2s ease,color .2s ease,transform .12s ease;
+  font-family:inherit;
+}
+.location-page .loc-btn:hover{border-color:#101828}
+.location-page .loc-btn:active{transform:translateY(1px)}
+.location-page .loc-btn--solid{background:#101828;border-color:#101828;color:#fff}
+.location-page .loc-btn--solid:hover{background:#000;border-color:#000}
+.location-page .loc-btn svg{width:15px;height:15px;margin-left:8px;flex:none}
+
+/* Visible keyboard focus, matched to the page accent */
+.location-page a:focus-visible,
+.location-page .loc-btn:focus-visible{
+  outline:2px solid #E2140A;outline-offset:3px;border-radius:6px;
+}
+.location-page .loc-btn:focus-visible{border-radius:999px}
+
+/* Motion: one entry cascade so photo reads before the data block.
+   Nothing loops, nothing hijacks scroll. Off entirely under reduced motion. */
+@media (prefers-reduced-motion:no-preference){
+  .location-page .loc-anim{opacity:0;transform:translateY(14px);
+    animation:locRise .7s cubic-bezier(.16,1,.3,1) forwards;
+    animation-delay:calc(var(--i,0) * 90ms);
+  }
+  @keyframes locRise{to{opacity:1;transform:none}}
+}
+
+@media (max-width:960px){
+  .location-page .loc-body{grid-template-columns:1fr;gap:40px;margin-top:40px}
+}
+@media (max-width:768px){
+  .location-page{padding:104px 20px 80px}
+  .location-page h1{font-size:32px}
+  .location-page .loc-rule{margin-top:18px}
+  .location-page .loc-photo img{border-radius:14px;aspect-ratio:4/3;object-position:center 48%}
+  .location-page .loc-row{grid-template-columns:1fr;gap:6px;padding:20px 0}
+  .location-page .loc-row dd{font-size:16px}
+  /* Stacked, left-aligned labels so the site's fixed floating menu
+     (bottom-right) can never sit on top of a button label. */
+  .location-page .loc-actions{margin-top:28px;flex-direction:column;align-items:stretch;gap:8px}
+  .location-page .loc-btn{height:50px;padding:0 22px;justify-content:flex-start}
+  .location-page .loc-btn svg{margin-left:auto}
+}
+</style>
 </head>
 <body>
 
@@ -72,23 +165,54 @@
 </header>
 
 <section class="location-page">
-  <picture>
-    <source media="(max-width: 768px)" srcset="assets/img/location-mobile.png">
-    <img src="assets/img/location-desktop.png" alt="오시는 길 — 서울특별시 송파구 충민로10, 3D44(가든파이브툴), TEL 02-2043-2192, E-mail solml2192@gmail.com">
-  </picture>
-</section>
+  <div class="loc-inner">
 
-<section class="location-map">
-  <iframe
-    src="https://www.google.com/maps?q=서울특별시+송파구+충민로10+가든파이브+툴&output=embed"
-    width="100%"
-    height="450"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    title="SOL MEDIA LAB INC. 위치 지도"></iframe>
-  <a class="location-map-link" href="https://www.google.com/maps?q=서울특별시+송파구+충민로10+가든파이브+툴" target="_blank" rel="noopener noreferrer">Google 지도에서 크게 보기 →</a>
+    <h1 class="loc-anim" style="--i:0">오시는 길</h1>
+    <hr class="loc-rule loc-anim" style="--i:1">
+
+    <div class="loc-body">
+
+      <figure class="loc-photo loc-anim" style="--i:2">
+        <picture>
+          <source srcset="assets/img/location-photo.webp" type="image/webp">
+          <img src="assets/img/location-photo.jpg" alt="가든파이브 툴동 전경"
+               width="1257" height="888" fetchpriority="high" decoding="async">
+        </picture>
+      </figure>
+
+      <div class="loc-info loc-anim" style="--i:3">
+        <dl class="loc-list">
+          <div class="loc-row">
+            <dt>ADDRESS</dt>
+            <dd>
+              서울특별시 송파구 충민로 10, 3D44
+              <span class="loc-sub">가든파이브 툴(TOOL)동</span>
+            </dd>
+          </div>
+          <div class="loc-row">
+            <dt>TEL</dt>
+            <dd><a href="tel:0220432192">02-2043-2192</a></dd>
+          </div>
+          <div class="loc-row">
+            <dt>E-MAIL</dt>
+            <dd><a href="mailto:solml2192@gmail.com">solml2192@gmail.com</a></dd>
+          </div>
+        </dl>
+
+        <div class="loc-actions">
+          <button type="button" class="loc-btn" id="locCopy" data-address="서울특별시 송파구 충민로 10, 3D44 (가든파이브 툴)">주소 복사</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="loc-map loc-anim" style="--i:4">
+      <iframe
+        src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%B6%A9%EB%AF%BC%EB%A1%9C%2010%20%EA%B0%80%EB%93%A0%ED%8C%8C%EC%9D%B4%EB%B8%8C%20%ED%88%B4&output=embed"
+        width="100%" height="360" style="border:0" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" title="SOL MEDIA LAB INC. 위치 지도"></iframe>
+    </div>
+  </div>
 </section>
 
 <footer class="site-footer">
@@ -128,7 +252,29 @@
   <a class="floating-inquiry" href="contact.html" aria-label="견적 문의 페이지로 이동">견적 문의</a>
 </div>
 
-
 <script src="assets/js/main.js?v=4"></script>
+<script>
+(function(){
+  var btn = document.getElementById('locCopy');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var text = btn.getAttribute('data-address');
+    var done = function(){
+      var old = btn.textContent;
+      btn.textContent = '복사되었습니다';
+      setTimeout(function(){ btn.textContent = old; }, 1600);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(e){}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
 </body>
 </html>

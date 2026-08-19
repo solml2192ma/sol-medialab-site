@@ -534,31 +534,6 @@ section { position: relative; }
   border-radius: 12px;
 }
 
-.location-map {
-  background: #fff;
-  padding: 0 24px 100px;
-  text-align: center;
-}
-.location-map iframe {
-  display: block;
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  border-radius: 12px;
-}
-.location-map-link {
-  display: inline-block;
-  margin-top: 16px;
-  color: #2156E8;
-  font-size: 14px;
-  font-weight: 600;
-}
-.location-map-link:hover { text-decoration: underline; }
-
-@media (max-width: 768px) {
-  .location-map iframe { height: 320px; }
-}
-
 /* ===== About page ===== */
 .about-page {
   background: #fff;
