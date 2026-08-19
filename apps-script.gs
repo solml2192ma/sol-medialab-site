@@ -17,7 +17,8 @@ const NOTIFY_EMAIL = 'solml2192@gmail.com';
 function doPost(e) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const data = e.parameter;
-  const timestamp = new Date();
+  const now = new Date();
+  const timestamp = Utilities.formatDate(now, 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss');
 
   sheet.appendRow([
     timestamp,
@@ -35,7 +36,7 @@ function doPost(e) {
     '이메일: ' + (data.customer_email || '') + '\n' +
     '연락처: ' + (data.customer_phone || '') + '\n\n' +
     '문의 내용:\n' + (data.message || '') + '\n\n' +
-    '접수 시각: ' + timestamp;
+    '접수 시각: ' + timestamp + ' (KST)';
 
   MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
 
