@@ -184,6 +184,7 @@ section { position: relative; }
   color: #fff;
 }
 .hero-content h1 {
+  font-family: 'Pretendard', sans-serif;
   font-size: clamp(36px, 6vw, 68px);
   letter-spacing: -0.02em;
   line-height: 1.18;
