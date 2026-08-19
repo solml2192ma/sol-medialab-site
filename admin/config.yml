@@ -16,7 +16,7 @@ collections:
     label_singular: "포트폴리오 글"
     folder: "_portfolio"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "제목", name: "title", widget: "string" }
       - label: "카테고리 (해당하는 항목 모두 선택)"
