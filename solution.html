@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="assets/css/style.css?v=6">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 <body>
 
@@ -69,57 +69,91 @@
   </div>
 </header>
 
-<section class="iw-menu-solution solution-page" aria-label="메뉴별 솔루션 소개">
-  <div class="iw-shell">
-    <header class="iw-header">
-      <div class="iw-main-title"><p>공간 특성에 맞는 맞춤형 솔루션</p></div>
-      <div class="iw-main-desc"><p>솔미디어랩은 매장, 로비, 강당, 스튜디오 등 공간별 목적이 최적화된 디스플레이 솔루션을 제공 합니다</p></div>
-    </header>
-
-    <div class="iw-tablist-wrap">
-      <div class="iw-tablist" role="tablist" aria-label="메뉴 목록">
-        <button class="iw-tab" type="button" role="tab" id="iw-menu-tab-0" aria-controls="iw-menu-panel-0" aria-selected="true" data-tab-trigger data-tab-index="0" data-tab-anchor="showcase-retail" data-state="active">매장 / 리테일</button>
-        <button class="iw-tab" type="button" role="tab" id="iw-menu-tab-1" aria-controls="iw-menu-panel-1" aria-selected="false" tabindex="-1" data-tab-trigger data-tab-index="1" data-tab-anchor="showcase-meeting" data-state="inactive">회의실/강당/로비</button>
-        <button class="iw-tab" type="button" role="tab" id="iw-menu-tab-2" aria-controls="iw-menu-panel-2" aria-selected="false" tabindex="-1" data-tab-trigger data-tab-index="2" data-tab-anchor="showcase-outdoor" data-state="inactive">옥외</button>
-        <button class="iw-tab" type="button" role="tab" id="iw-menu-tab-3" aria-controls="iw-menu-panel-3" aria-selected="false" tabindex="-1" data-tab-trigger data-tab-index="3" data-tab-anchor="showcase-control" data-state="inactive">촬영</button>
+<section class="showcase" data-showcase aria-label="공간별 디지털 사이니지 소개">
+  <div class="showcase-wrap">
+    <div class="showcase-menu-rail">
+      <div class="showcase-menu" role="tablist" aria-label="공간 메뉴">
+        <button type="button" class="showcase-tab" role="tab" id="showcase-tab-0" aria-controls="showcase-panel-0" aria-selected="true" data-showcase-tab data-index="0" data-key="retail" data-state="active">매장/리테일</button>
+        <button type="button" class="showcase-tab" role="tab" id="showcase-tab-1" aria-controls="showcase-panel-1" aria-selected="false" tabindex="-1" data-showcase-tab data-index="1" data-key="meeting" data-state="inactive">회의실/강당/로비</button>
+        <button type="button" class="showcase-tab" role="tab" id="showcase-tab-2" aria-controls="showcase-panel-2" aria-selected="false" tabindex="-1" data-showcase-tab data-index="2" data-key="outdoor" data-state="inactive">옥외</button>
+        <button type="button" class="showcase-tab" role="tab" id="showcase-tab-3" aria-controls="showcase-panel-3" aria-selected="false" tabindex="-1" data-showcase-tab data-index="3" data-key="control" data-state="inactive">촬영</button>
       </div>
     </div>
 
-    <div class="iw-panel-stage">
-      <article class="iw-panel" role="tabpanel" id="iw-menu-panel-0" aria-labelledby="iw-menu-tab-0" data-tab-panel data-tab-index="0">
-        <div class="iw-panel-media"><div class="iw-photo-ring"><img class="iw-photo" src="assets/img/solution-01.webp" alt="매장 / 리테일 디스플레이"></div></div>
-        <div class="iw-panel-copy">
-          <p class="iw-panel-kicker">Solution. 01</p>
-          <div class="iw-panel-title"><p>매장 / 리테일용 디스플레이</p></div>
-          <div class="iw-panel-desc"><p>고객의 시선을 사로잡는 생생한 비주얼로 마케팅 효과를 높이는 DISPLAY SOLUTION 입니다.</p></div>
-          <a class="iw-panel-link" href="contact.html"><span>매장 솔루션 문의하기</span><span class="iw-panel-link-arrow" aria-hidden="true">→</span></a>
+    <div class="showcase-panels">
+      <article class="showcase-panel" id="showcase-panel-0" role="tabpanel" aria-labelledby="showcase-tab-0" data-showcase-panel data-index="0" data-key="retail" data-state="active">
+        <div class="showcase-hero-copy">
+          <h2 class="showcase-hero-title">매장/리테일</h2>
+          <p class="showcase-hero-desc">고객 시선을 사로잡고 브랜드 가치를 높이는 디지털 사이니지 솔루션</p>
+        </div>
+        <div class="showcase-media">
+          <img class="showcase-image" src="assets/img/showcase-retail.webp" alt="매장 및 리테일 공간 대표 이미지">
+        </div>
+        <div class="showcase-detail">
+          <div class="showcase-detail-head">
+            <h3 class="showcase-detail-title">시선을 사로잡는 연출, 구매로 이어지는 경험</h3>
+          </div>
+          <div class="showcase-detail-body">
+            <div class="showcase-body"><p>매장 및 리테일 공간의 LED 디스플레이는 고객의 시선을 사로잡고 브랜드 가치를 높이는 것이 목적입니다. 명품 부티크, 패션 매장, 자동차 쇼룸, 쇼윈도우 등 공간 특성에 따라 투과형, Flexible, 미디어월 등 다양한 형태의 LED를 적용합니다.</p></div>
+            <div class="showcase-body"><p>솔미디어랩은 공간 인테리어와 조화를 이루면서 브랜드 아이덴티티를 효과적으로 전달하는 솔루션을 제공합니다.</p></div>
+          </div>
         </div>
       </article>
-      <article class="iw-panel" role="tabpanel" id="iw-menu-panel-1" aria-labelledby="iw-menu-tab-1" data-tab-panel data-tab-index="1" hidden>
-        <div class="iw-panel-media"><div class="iw-photo-ring"><img class="iw-photo" src="assets/img/solution-02.webp" alt="회의실·강당·로비 디스플레이"></div></div>
-        <div class="iw-panel-copy">
-          <p class="iw-panel-kicker">Solution. 02</p>
-          <div class="iw-panel-title"><p>회의실 • 강당 • 로비용 디스플레이</p></div>
-          <div class="iw-panel-desc"><p>프레젠테이션을 위한 선명한 화질과 뛰어난 가독성을 제공하는 고화질 대형 스크린 솔루션 입니다.</p></div>
-          <a class="iw-panel-link" href="contact.html"><span>회의실 솔루션 문의하기</span><span class="iw-panel-link-arrow" aria-hidden="true">→</span></a>
+
+      <article class="showcase-panel" id="showcase-panel-1" role="tabpanel" aria-labelledby="showcase-tab-1" data-showcase-panel data-index="1" data-key="meeting" data-state="inactive">
+        <div class="showcase-hero-copy">
+          <h2 class="showcase-hero-title">회의실/강당/로비</h2>
+          <p class="showcase-hero-desc">전달력과 몰입도를 높이는 기업·행사 공간 디스플레이 솔루션</p>
+        </div>
+        <div class="showcase-media">
+          <img class="showcase-image" src="assets/img/showcase-meeting.webp" alt="회의실과 로비 공간 대표 이미지">
+        </div>
+        <div class="showcase-detail">
+          <div class="showcase-detail-head">
+            <h3 class="showcase-detail-title">발표와 안내가 동시에 살아나는 공간 연출</h3>
+          </div>
+          <div class="showcase-detail-body">
+            <div class="showcase-body"><p>회의실, 강당, 로비는 정보 전달과 첫인상이 동시에 중요한 공간입니다. 발표용 메인 스크린, 환영 메시지 월, 일정 안내 디스플레이 등 용도에 맞춰 최적의 화면 구성을 설계할 수 있습니다.</p></div>
+            <div class="showcase-body"><p>행사 규모와 동선, 시청 거리까지 고려한 디지털 사이니지 구성으로 브랜드 이미지와 실사용 편의성을 함께 높일 수 있습니다.</p></div>
+          </div>
         </div>
       </article>
-      <article class="iw-panel" role="tabpanel" id="iw-menu-panel-2" aria-labelledby="iw-menu-tab-2" data-tab-panel data-tab-index="2" hidden>
-        <div class="iw-panel-media"><div class="iw-photo-ring"><img class="iw-photo" src="assets/img/solution-03.webp" alt="옥외 디스플레이"></div></div>
-        <div class="iw-panel-copy">
-          <p class="iw-panel-kicker">Solution. 03</p>
-          <div class="iw-panel-title"><p>옥외용 디스플레이</p></div>
-          <div class="iw-panel-desc"><p>강력한 방수•방진 성능과 높은 밝기로 야외 환경에서도 선명한 화질을 유지하는 고휘도 옥외 전광판 LED DISPLAY SOLUTION 입니다.</p></div>
-          <a class="iw-panel-link" href="contact.html"><span>옥외 솔루션 문의하기</span><span class="iw-panel-link-arrow" aria-hidden="true">→</span></a>
+
+      <article class="showcase-panel" id="showcase-panel-2" role="tabpanel" aria-labelledby="showcase-tab-2" data-showcase-panel data-index="2" data-key="outdoor" data-state="inactive">
+        <div class="showcase-hero-copy">
+          <h2 class="showcase-hero-title">옥외</h2>
+          <p class="showcase-hero-desc">강한 주목도와 안정적인 운영을 위한 실외형 디스플레이 솔루션</p>
+        </div>
+        <div class="showcase-media">
+          <img class="showcase-image" src="assets/img/showcase-outdoor.webp" alt="옥외 광고 및 안내 대표 이미지">
+        </div>
+        <div class="showcase-detail">
+          <div class="showcase-detail-head">
+            <h3 class="showcase-detail-title">멀리서도 눈에 띄는 옥외 미디어 연출</h3>
+          </div>
+          <div class="showcase-detail-body">
+            <div class="showcase-body"><p>옥외 공간은 밝기, 내구성, 가시성이 핵심입니다. 건물 외벽, 광장, 진입부, 랜드마크 포인트에 맞춰 고휘도 디스플레이와 구조 설계를 함께 고려해야 안정적인 운영이 가능합니다.</p></div>
+            <div class="showcase-body"><p>브랜드 캠페인, 안내 콘텐츠, 공공 메시지 등 다양한 목적에 맞춰 강력한 시인성과 공간 임팩트를 구현할 수 있습니다.</p></div>
+          </div>
         </div>
       </article>
-      <article class="iw-panel" role="tabpanel" id="iw-menu-panel-3" aria-labelledby="iw-menu-tab-3" data-tab-panel data-tab-index="3" hidden>
-        <div class="iw-panel-media"><div class="iw-photo-ring"><img class="iw-photo" src="assets/img/solution-04.webp" alt="촬영용 디스플레이"></div></div>
-        <div class="iw-panel-copy">
-          <p class="iw-panel-kicker">Solution. 04</p>
-          <div class="iw-panel-title"><p>촬영용 디스플레이</p></div>
-          <div class="iw-panel-desc"><p>촬영 현장에 최적화된 색표현력과 낮은 반사율을 자랑하는 LED 스크린 솔루션 입니다.</p></div>
-          <a class="iw-panel-link" href="contact.html"><span>촬영 솔루션 문의하기</span><span class="iw-panel-link-arrow" aria-hidden="true">→</span></a>
+
+      <article class="showcase-panel" id="showcase-panel-3" role="tabpanel" aria-labelledby="showcase-tab-3" data-showcase-panel data-index="3" data-key="control" data-state="inactive">
+        <div class="showcase-hero-copy">
+          <h2 class="showcase-hero-title">촬영 스튜디오</h2>
+          <p class="showcase-hero-desc">촬영 현장에 최적화된 고재생률, 고계조 LED 솔루션</p>
+        </div>
+        <div class="showcase-media">
+          <img class="showcase-image" src="assets/img/showcase-control.webp" alt="촬영 스튜디오 대표 이미지">
+        </div>
+        <div class="showcase-detail">
+          <div class="showcase-detail-head">
+            <h3 class="showcase-detail-title">정밀한 LED, 안정적인 촬영</h3>
+          </div>
+          <div class="showcase-detail-body">
+            <div class="showcase-body"><p>촬영 현장에 사용되는 LED는 일반 LED와 달리 카메라 촬영에 최적화 되어 있어야 합니다. 플리커, 모아레 현상을 방지하기 위해 3,840Hz 이상의 고재생률과 14bit 이상의 고계조 사양이 필수 입니다.</p></div>
+            <div class="showcase-body"><p>솔미디어랩은 영화, 드라마, CF, M/V 등 촬영 현장에 맞는 LED 영상 솔루션과 색보정 서비스를 제공 합니다.</p></div>
+          </div>
         </div>
       </article>
     </div>
@@ -158,7 +192,7 @@
   <a class="floating-inquiry" href="contact.html" aria-label="견적 문의 페이지로 이동">견적 문의</a>
 </div>
 
-
-<script src="assets/js/main.js?v=4"></script>
+<script src="assets/js/main.js?v=6"></script>
+<script src="assets/js/showcase.js"></script>
 </body>
 </html>
