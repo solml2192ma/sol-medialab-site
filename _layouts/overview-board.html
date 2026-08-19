@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ page.title }} | SOL MEDIA LAB INC.</title>
-<meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 140 }}">
+<meta name="description" content="SOL MEDIA LAB INC. {{ page.title }} 프로젝트 사례">
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +63,7 @@
             </ul>
           </div>
         </li>
-        <li><a href="{{ site.baseurl }}/portfolio.html" aria-current="page">PORTFOLIO</a></li>
+        <li><a href="{{ site.baseurl }}/portfolio.html">PORTFOLIO</a></li>
         <li><a href="{{ site.baseurl }}/contact.html">CONTACT</a></li>
       </ul>
     </nav>
@@ -74,36 +74,33 @@
   </div>
 </header>
 
-<section class="portfolio-detail">
-  <div class="portfolio-detail-head">
-    {% if page.category %}<p class="portfolio-detail-category">{{ page.category }}</p>{% endif %}
+<section class="portfolio-list">
+  <header class="portfolio-list-head">
     <h1>{{ page.title }}</h1>
-    <div class="portfolio-detail-meta">
-      {% if page.date %}<span>{{ page.date | date: "%Y.%m.%d" }}</span>{% endif %}
-      {% if page.client %}<span>{{ page.client }}</span>{% endif %}
-      {% if page.location %}<span>{{ page.location }}</span>{% endif %}
-    </div>
-  </div>
+    <p>{{ page.title }} 관련 프로젝트를 소개합니다</p>
+  </header>
 
-  {% if page.cover_image %}
-  <div class="portfolio-detail-cover">
-    <img src="{{ site.baseurl }}{{ page.cover_image }}" alt="{{ page.title }}">
-  </div>
-  {% endif %}
-
-  <div class="portfolio-detail-body">
-    {{ content }}
-  </div>
-
-  {% if page.gallery %}
-  <div class="portfolio-detail-gallery">
-    {% for img in page.gallery %}
-    <img src="{{ site.baseurl }}{{ img }}" alt="{{ page.title }}">
+  <div class="portfolio-grid">
+    {% assign match_count = 0 %}
+    {% for post in site.portfolio %}
+      {% if post.overview_category contains page.overview_filter %}
+        {% assign match_count = match_count | plus: 1 %}
+        <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
+          {% if post.cover_image %}
+          <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
+          {% endif %}
+          <div class="portfolio-card-body">
+            {% if post.category %}<span class="portfolio-card-category">{{ post.category }}</span>{% endif %}
+            <h2 class="portfolio-card-title">{{ post.title }}</h2>
+            {% if post.date %}<span class="portfolio-card-date">{{ post.date | date: "%Y.%m.%d" }}</span>{% endif %}
+          </div>
+        </a>
+      {% endif %}
     {% endfor %}
+    {% if match_count == 0 %}
+    <p class="portfolio-empty">아직 등록된 프로젝트가 없습니다.</p>
+    {% endif %}
   </div>
-  {% endif %}
-
-  <a class="portfolio-detail-back" href="{{ site.baseurl }}/portfolio.html">← 포트폴리오 목록으로</a>
 </section>
 
 <footer class="site-footer">
@@ -138,6 +135,6 @@
   <a class="floating-inquiry" href="{{ site.baseurl }}/contact.html" aria-label="견적 문의 페이지로 이동">견적 문의</a>
 </div>
 
-<script src="{{ site.baseurl }}/assets/js/main.js?v=12"></script>
+<script src="{{ site.baseurl }}/assets/js/main.js?v=13"></script>
 </body>
 </html>
