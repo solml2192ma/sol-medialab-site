@@ -1,0 +1,21 @@
+title: SOL MEDIA LAB INC.
+url: "https://hongbj123-create.github.io"
+baseurl: "/sol-medialab-site"
+
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: portfolio
+
+exclude:
+  - README.md
+
+sass:
+  quiet_deps: true

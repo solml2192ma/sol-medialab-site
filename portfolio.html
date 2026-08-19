@@ -1,70 +1,73 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>회사소개 | SOL MEDIA LAB INC.</title>
-<meta name="description" content="SOL MEDIA LAB INC. 회사소개 — 언제나 고객의 입장에서 먼저 생각하는 믿음직한 기업, 주식회사 솔미디어랩입니다.">
+<title>PORTFOLIO | SOL MEDIA LAB INC.</title>
+<meta name="description" content="SOL MEDIA LAB INC. 포트폴리오 — 시공, 렌탈, 유지보수, 제품유통 프로젝트 사례">
 <meta name="theme-color" content="#000000">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="assets/css/style.css?v=11">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=12">
 </head>
 <body>
 
 <header class="site-header header-solid" id="siteHeader">
   <div class="header-inner">
-    <a href="index.html" class="logo">
-      <img src="assets/img/logo.png" alt="SOL MEDIA LAB INC.">
+    <a href="{{ site.baseurl }}/index.html" class="logo">
+      <img src="{{ site.baseurl }}/assets/img/logo.png" alt="SOL MEDIA LAB INC.">
     </a>
 
     <nav class="main-nav" aria-label="주요 메뉴">
       <ul>
         <li class="has-dropdown">
-          <a href="about.html" aria-current="page">ABOUT</a>
+          <a href="{{ site.baseurl }}/about.html">ABOUT</a>
           <ul class="dropdown">
-            <li><a href="about.html" aria-current="page">회사소개</a></li>
-            <li><a href="location.html">오시는 길</a></li>
+            <li><a href="{{ site.baseurl }}/about.html">회사소개</a></li>
+            <li><a href="{{ site.baseurl }}/location.html">오시는 길</a></li>
           </ul>
         </li>
         <li class="has-dropdown">
-          <a href="index.html#services">SERVICES</a>
+          <a href="{{ site.baseurl }}/index.html#services">SERVICES</a>
           <ul class="dropdown">
-            <li><a href="services.html">사업영역</a></li>
-            <li><a href="solution.html">SOLUTION</a></li>
+            <li><a href="{{ site.baseurl }}/services.html">사업영역</a></li>
+            <li><a href="{{ site.baseurl }}/solution.html">SOLUTION</a></li>
           </ul>
         </li>
         <li class="has-dropdown">
-          <a href="index.html#services">OVERVIEW</a>
+          <a href="{{ site.baseurl }}/index.html#services">OVERVIEW</a>
           <div class="dropdown dropdown--grid">
             <ul>
-              <li class="dropdown-heading"><a href="index.html#services">Installation</a></li>
+              <li class="dropdown-heading"><a href="{{ site.baseurl }}/index.html#services">Installation</a></li>
               <li class="sub">시공</li>
               <li class="sub">백화점 쇼핑몰</li>
               <li class="sub">팝업(POP-UP)</li>
             </ul>
             <ul>
-              <li class="dropdown-heading"><a href="index.html#services">Rental</a></li>
+              <li class="dropdown-heading"><a href="{{ site.baseurl }}/index.html#services">Rental</a></li>
               <li class="sub">전시 컨벤션</li>
               <li class="sub">방송 촬영</li>
               <li class="sub">행사 이벤트</li>
               <li class="sub">콘서트</li>
             </ul>
             <ul>
-              <li class="dropdown-heading"><a href="index.html#services">Service &amp; Maintenance</a></li>
+              <li class="dropdown-heading"><a href="{{ site.baseurl }}/index.html#services">Service &amp; Maintenance</a></li>
               <li class="sub">유지보수</li>
             </ul>
             <ul>
-              <li class="dropdown-heading"><a href="index.html#services">Products</a></li>
+              <li class="dropdown-heading"><a href="{{ site.baseurl }}/index.html#services">Products</a></li>
               <li class="sub">제품 유통</li>
             </ul>
           </div>
         </li>
-        <li><a href="portfolio.html">PORTFOLIO</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="{{ site.baseurl }}/portfolio.html" aria-current="page">PORTFOLIO</a></li>
+        <li><a href="{{ site.baseurl }}/contact.html">CONTACT</a></li>
       </ul>
     </nav>
 
@@ -74,8 +77,28 @@
   </div>
 </header>
 
-<section class="about-page">
-  <img src="assets/img/about.png" alt="SOL MEDIA LAB INC. 회사소개 — 언제나 고객의 입장에서 먼저 생각하는 믿음직한 기업, 한발 앞서 움직이는 주식회사 솔미디어랩입니다. 사업영역: Installation(시공·설치), Rental(렌탈), Maintenance(유지보수), Products(제품유통). All For Your Media Solution — 공간과 콘텐츠가 닿는 모든 곳에 함께합니다.">
+<section class="portfolio-list">
+  <header class="portfolio-list-head">
+    <h1>PORTFOLIO</h1>
+    <p>솔미디어랩이 진행한 프로젝트를 소개합니다</p>
+  </header>
+
+  <div class="portfolio-grid">
+    {% for post in site.portfolio %}
+    <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
+      {% if post.cover_image %}
+      <img class="portfolio-card-image" src="{{ post.cover_image }}" alt="{{ post.title }}">
+      {% endif %}
+      <div class="portfolio-card-body">
+        {% if post.category %}<span class="portfolio-card-category">{{ post.category }}</span>{% endif %}
+        <h2 class="portfolio-card-title">{{ post.title }}</h2>
+        {% if post.date %}<span class="portfolio-card-date">{{ post.date | date: "%Y.%m.%d" }}</span>{% endif %}
+      </div>
+    </a>
+    {% else %}
+    <p class="portfolio-empty">아직 등록된 포트폴리오가 없습니다.</p>
+    {% endfor %}
+  </div>
 </section>
 
 <footer class="site-footer">
@@ -107,10 +130,9 @@
       <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
     </svg>
   </a>
-  <a class="floating-inquiry" href="contact.html" aria-label="견적 문의 페이지로 이동">견적 문의</a>
+  <a class="floating-inquiry" href="{{ site.baseurl }}/contact.html" aria-label="견적 문의 페이지로 이동">견적 문의</a>
 </div>
 
-
-<script src="assets/js/main.js?v=4"></script>
+<script src="{{ site.baseurl }}/assets/js/main.js?v=12"></script>
 </body>
 </html>

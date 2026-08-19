@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: hongbj123-create/sol-medialab-site
+  branch: main
+  base_url: https://decap-oauth-proxy-one.vercel.app
+  auth_endpoint: api/auth
+
+media_folder: "assets/img/portfolio"
+public_folder: "/assets/img/portfolio"
+
+publish_mode: simple
+
+collections:
+  - name: "portfolio"
+    label: "포트폴리오"
+    label_singular: "포트폴리오 글"
+    folder: "_portfolio"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "제목", name: "title", widget: "string" }
+      - { label: "날짜", name: "date", widget: "datetime" }
+      - label: "카테고리"
+        name: "category"
+        widget: "select"
+        options: ["STAGE", "CONVENTION", "POP-UP", "COMPANY EVENT", "기타"]
+      - { label: "클라이언트 (선택)", name: "client", widget: "string", required: false }
+      - { label: "장소 (선택)", name: "location", widget: "string", required: false }
+      - { label: "대표 이미지", name: "cover_image", widget: "image" }
+      - label: "추가 사진 (선택)"
+        name: "gallery"
+        widget: "list"
+        field: { label: "이미지", name: "image", widget: "image" }
+        required: false
+      - { label: "상세 설명", name: "body", widget: "markdown" }
