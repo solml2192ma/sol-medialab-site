@@ -743,6 +743,23 @@ section { position: relative; }
   .main-nav.open .dropdown li a:hover { color: #fff; }
   .main-nav.open .dropdown li.sub { color: rgba(255,255,255,0.4); }
   .menu-toggle { display: flex; }
+  .iw-menu-solution .iw-tablist-wrap { display: block; margin-top: 28px; }
+  .iw-menu-solution .iw-tablist {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+  }
+  .iw-menu-solution .iw-tab {
+    width: 100%;
+    padding: 13px 8px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 14px;
+    word-break: keep-all;
+  }
   .iw-menu-solution .iw-panel { flex-direction: column; align-items: stretch; gap: 24px; padding: 24px; border-radius: 24px; }
   .iw-menu-solution .iw-photo-ring { width: min(100%, 320px); margin: 0 auto; }
   .iw-menu-solution .iw-main-title p { font-size: 28px; }
