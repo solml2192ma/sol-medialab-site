@@ -5,7 +5,7 @@
  * 3) 배포 > 새 배포 > 유형: 웹 앱 / 실행: 나 / 액세스 권한: 모든 사용자로 설정 후 배포
  * 4) 발급된 웹 앱 URL을 아래 GOOGLE_SCRIPT_URL에 붙여넣기
  */
-const GOOGLE_SCRIPT_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbykbtmr9z-dl1mB6KOOede5zrRiC5L1ee-MZnKRTQMK2nfli8Zz_d-5XmehOJZ86-lN/exec';
 
 // 연락처 입력 시 다음 칸으로 자동 이동
 const phoneInputs = ['phone1', 'phone2', 'phone3'].map((id) => document.getElementById(id));
