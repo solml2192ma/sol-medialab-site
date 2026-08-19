@@ -21,10 +21,19 @@ section { position: relative; }
   background: transparent;
   transition: background-color .3s ease, box-shadow .3s ease;
 }
-.site-header.scrolled,
-.site-header.header-solid {
+.site-header.scrolled {
   background-color: rgba(0, 0, 0, 0.92);
   box-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+.site-header.header-solid {
+  background-color: #ffffff;
+  box-shadow: 0 2px 20px rgba(0,0,0,.08);
+}
+.site-header.header-solid .main-nav > ul > li > a {
+  color: #101828;
+}
+.site-header.header-solid .menu-toggle span {
+  background: #101828;
 }
 .header-inner {
   max-width: 1280px;
