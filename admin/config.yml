@@ -12,8 +12,8 @@ publish_mode: simple
 
 collections:
   - name: "portfolio"
-    label: "포트폴리오"
-    label_singular: "포트폴리오 글"
+    label: "게시글"
+    label_singular: "게시글"
     folder: "_portfolio"
     create: true
     slug: "{{slug}}"
