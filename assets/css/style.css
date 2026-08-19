@@ -950,9 +950,10 @@ section { position: relative; }
   margin: 24px auto 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: start;
   gap: 16px;
 }
-.portfolio-detail-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.portfolio-detail-gallery img { width: 100%; height: auto; display: block; }
 .portfolio-detail-back {
   display: block;
   max-width: 760px;
