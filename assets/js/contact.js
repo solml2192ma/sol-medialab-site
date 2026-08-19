@@ -1,22 +1,11 @@
 /*
- * EmailJS 연동 설정
- * 1) https://www.emailjs.com 에서 무료 가입
- * 2) Email Services 메뉴에서 사용할 이메일(Gmail 등) 연결 -> Service ID 발급
- * 3) Email Templates 메뉴에서 템플릿 생성 -> Template ID 발급
- *    템플릿 본문에는 아래에서 보내는 변수명을 그대로 사용하면 됩니다:
- *    {{inquiry_type}}, {{customer_name}}, {{customer_email}}, {{customer_phone}}, {{message}}
- *    수신 이메일(To Email)은 템플릿 설정에서 solml2192@gmail.com 으로 고정하거나 {{to_email}} 변수를 사용하세요.
- * 4) Account > General 메뉴에서 Public Key 발급
- * 5) 아래 세 값을 발급받은 값으로 교체
+ * Google Sheets 연동 설정
+ * 1) sheets.google.com 에서 새 시트 생성
+ * 2) 확장 프로그램 > Apps Script 메뉴 열고, 이 프로젝트의 apps-script.js 내용을 붙여넣기
+ * 3) 배포 > 새 배포 > 유형: 웹 앱 / 실행: 나 / 액세스 권한: 모든 사용자로 설정 후 배포
+ * 4) 발급된 웹 앱 URL을 아래 GOOGLE_SCRIPT_URL에 붙여넣기
  */
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
-const TO_EMAIL = 'solml2192@gmail.com';
-
-if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-}
+const GOOGLE_SCRIPT_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL';
 
 // 연락처 입력 시 다음 칸으로 자동 이동
 const phoneInputs = ['phone1', 'phone2', 'phone3'].map((id) => document.getElementById(id));
@@ -59,27 +48,31 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
-  if (!window.emailjs || EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID') {
-    setStatus('이메일 전송 설정이 아직 완료되지 않았습니다. assets/js/contact.js의 EmailJS 값을 채워주세요.', 'error');
+  if (GOOGLE_SCRIPT_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL') {
+    setStatus('전송 설정이 아직 완료되지 않았습니다. assets/js/contact.js의 GOOGLE_SCRIPT_URL을 채워주세요.', 'error');
     return;
   }
 
   const phone = phoneInputs.map((f) => f.value).filter(Boolean).join('-');
 
-  const params = {
+  const params = new URLSearchParams({
     inquiry_type: document.getElementById('inquiryType').value,
     customer_name: document.getElementById('customerName').value,
     customer_email: document.getElementById('customerEmail').value,
     customer_phone: phone,
     message: document.getElementById('message').value,
-    to_email: TO_EMAIL,
-  };
+  });
 
   submitBtn.disabled = true;
   setStatus('전송 중입니다...', 'sending');
 
   try {
-    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString(),
+    });
     setStatus('', '');
     form.reset();
     openModal();
