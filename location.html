@@ -34,7 +34,7 @@
 
 .location-page .loc-photo{margin:0}
 .location-page .loc-photo img{
-  display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center 46%;
+  display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center 46%;
   border-radius:16px;max-width:none;background:#F2F2F4;
 }
 
@@ -53,7 +53,7 @@
    so the E-MAIL row's bottom border lines up with the photo's bottom
    edge, without touching the rows' own (even) internal spacing. */
 .location-page .loc-lang-tabs{
-  display:flex;gap:4px;width:fit-content;margin:auto 0 14px;
+  display:flex;gap:4px;width:fit-content;align-self:flex-end;margin:auto 0 14px;
   padding:4px;background:#F4F4F6;border-radius:999px;
 }
 .location-page .loc-lang-tab{
@@ -68,11 +68,13 @@
   display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:baseline;
   padding:24px 2px;border-bottom:1px solid #ECECEF;
 }
-/* ADDRESS carries a second (sub) line that TEL/E-MAIL don't, so its
-   padding is trimmed and theirs padded out to match row heights —
-   the three paddings still sum to the same total as before. */
-.location-page .loc-row:first-child{padding-top:14px;padding-bottom:14px}
-.location-page .loc-row:not(:first-child){padding-top:29px;padding-bottom:29px}
+/* ADDRESS carries 3 lines now (street + building + postal code), too
+   much to match TEL/E-MAIL's single line row-for-row. Instead, TEL and
+   E-MAIL share a taller, equal padding of their own so the info column's
+   total height keeps tracking the photo's height on the auto margin
+   above (see .loc-lang-tabs). */
+.location-page .loc-row:first-child{padding-top:16px;padding-bottom:16px}
+.location-page .loc-row:not(:first-child){padding-top:22px;padding-bottom:22px}
 .location-page .loc-row dt{
   font-family:'Pretendard',sans-serif;font-weight:500;
   font-size:13px;letter-spacing:.14em;color:#9A9AA0;line-height:1.6;
@@ -83,6 +85,12 @@
   word-break:keep-all;
 }
 .location-page .loc-row dd .loc-value{flex:1;min-width:0}
+/* Both language versions are stacked in the same grid cell (instead of
+   one being display:none) so the cell's height is always the taller of
+   the two — switching tabs never changes the ADDRESS/TEL row height. */
+.location-page .loc-row dd .loc-value-stack{display:grid;flex:1;min-width:0}
+.location-page .loc-row dd .loc-value-stack .loc-value{grid-area:1/1;flex:none}
+.location-page .loc-row dd .loc-value-stack .loc-value[data-lang-value="en"]{visibility:hidden}
 .location-page .loc-row dd a{color:inherit;transition:color .2s ease}
 .location-page .loc-row dd a:hover{color:#E2140A}
 .location-page .loc-row dd .loc-sub{display:block;margin-top:4px;font-size:16px;font-weight:400;color:#8A8A90}
@@ -245,27 +253,33 @@
           <div class="loc-row">
             <dt data-lang-ko="주소" data-lang-en="ADDRESS">ADDRESS</dt>
             <dd>
-              <span class="loc-value" data-lang-value="ko">
-                서울특별시 송파구 충민로 10, 3D44 (05840)
-                <span class="loc-sub">가든파이브 툴(TOOL)</span>
-              </span>
-              <span class="loc-value" data-lang-value="en" hidden>
-                3D44, 10 Chungmin-ro, Songpa-gu, Seoul 05840
-                <span class="loc-sub">Republic of Korea</span>
+              <span class="loc-value-stack">
+                <span class="loc-value" data-lang-value="ko">
+                  서울특별시 송파구 충민로 10, 3D44
+                  <span class="loc-sub">가든파이브 툴(TOOL)</span>
+                  <span class="loc-sub">우편번호 05840</span>
+                </span>
+                <span class="loc-value" data-lang-value="en">
+                  10, Chungmin-ro, Songpa-gu, Seoul, Republic of Korea
+                  <span class="loc-sub">Garden5 TOOL</span>
+                  <span class="loc-sub">Postal code 05840</span>
+                </span>
               </span>
               <button type="button" class="loc-copy"
-                data-copy-ko="서울특별시 송파구 충민로 10, 3D44 (가든파이브 툴), 05840"
-                data-copy-en="3D44, 10 Chungmin-ro, Songpa-gu, Seoul 05840, Republic of Korea"
-                data-copy="서울특별시 송파구 충민로 10, 3D44 (가든파이브 툴), 05840" aria-label="주소 복사">
+                data-copy-ko="서울특별시 송파구 충민로 10, 3D44"
+                data-copy-en="10, Chungmin-ro, Songpa-gu, Seoul, Republic of Korea"
+                data-copy="서울특별시 송파구 충민로 10, 3D44" aria-label="주소 복사">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
               </button>
             </dd>
           </div>
           <div class="loc-row">
-            <dt data-lang-ko="연락처" data-lang-en="TEL">TEL</dt>
+            <dt data-lang-ko="전화번호" data-lang-en="TEL">TEL</dt>
             <dd>
-              <span class="loc-value" data-lang-value="ko"><a href="tel:0220432192">02-2043-2192</a></span>
-              <span class="loc-value" data-lang-value="en" hidden><a href="tel:+82220432192">+82 2-2043-2192</a></span>
+              <span class="loc-value-stack">
+                <span class="loc-value" data-lang-value="ko"><a href="tel:0220432192">02-2043-2192</a></span>
+                <span class="loc-value" data-lang-value="en"><a href="tel:+82220432192">+82 2-2043-2192</a></span>
+              </span>
               <button type="button" class="loc-copy"
                 data-copy-ko="02-2043-2192" data-copy-en="+82 2-2043-2192"
                 data-copy="02-2043-2192" aria-label="전화번호 복사">
@@ -384,7 +398,7 @@
         t.setAttribute('aria-selected', active ? 'true' : 'false');
       });
       values.forEach(function(v){
-        v.hidden = v.getAttribute('data-lang-value') !== lang;
+        v.style.visibility = v.getAttribute('data-lang-value') === lang ? 'visible' : 'hidden';
       });
       copyBtns.forEach(function(btn){
         btn.setAttribute('data-copy', btn.getAttribute('data-copy-' + lang));
