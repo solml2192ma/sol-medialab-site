@@ -91,21 +91,19 @@
       <h2>{{ page.title }} 관련 사례</h2>
     </div>
     <div class="portfolio-grid">
-      {% assign match_count = 0 %}
-      {% assign sorted_posts = site.portfolio | sort: 'date' | reverse %}
-      {% for post in sorted_posts %}
-        {% if post.overview_category contains page.overview_filter %}
-          {% assign match_count = match_count | plus: 1 %}
-          <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
-            {% if post.cover_image %}
-            <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
-            {% endif %}
-            <div class="portfolio-card-body">
-              {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
-              <h2 class="portfolio-card-title">{{ post.title }}</h2>
-            </div>
-          </a>
-        {% endif %}
+      {% assign matched_posts = site.portfolio | where_exp: "post", "post.overview_category contains page.overview_filter" | sort: 'date' | reverse %}
+      {% assign match_count = matched_posts.size %}
+      {% assign display_posts = matched_posts | slice: 0, 3 %}
+      {% for post in display_posts %}
+        <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
+          {% if post.cover_image %}
+          <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
+          {% endif %}
+          <div class="portfolio-card-body">
+            {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
+            <h2 class="portfolio-card-title">{{ post.title }}</h2>
+          </div>
+        </a>
       {% endfor %}
       {% if match_count == 0 %}
       <p class="portfolio-empty">아직 등록된 프로젝트가 없습니다.</p>
