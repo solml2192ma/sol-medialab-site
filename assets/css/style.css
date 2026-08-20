@@ -1005,7 +1005,8 @@ section { position: relative; }
 }
 .service-hero-subtitle { margin-top: 12px; font-size: 15px; color: rgba(255,255,255,.78); }
 
-.service-body { max-width: 720px; margin: 72px auto 0; padding: 0 24px; color: #344054; font-size: 17px; line-height: 1.85; }
+.service-page-body { background: #fff; }
+.service-body { max-width: 720px; margin: 0 auto; padding: 72px 24px 0; color: #344054; font-size: 17px; line-height: 1.85; }
 .service-body p { margin-bottom: 22px; }
 .service-body p:last-child { margin-bottom: 0; }
 

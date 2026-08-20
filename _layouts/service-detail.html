@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=24">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=25">
 </head>
 <body>
 
@@ -80,45 +80,47 @@
   </div>
 </section>
 
-<div class="service-body">
-  {{ content }}
-</div>
-
-<section class="service-gallery">
-  <div class="service-gallery-head">
-    <span class="eyebrow">RELATED WORK</span>
-    <h2>{{ page.title }} 관련 사례</h2>
+<div class="service-page-body">
+  <div class="service-body">
+    {{ content }}
   </div>
-  <div class="portfolio-grid">
-    {% assign match_count = 0 %}
-    {% assign sorted_posts = site.portfolio | sort: 'date' | reverse %}
-    {% for post in sorted_posts %}
-      {% if post.overview_category contains page.overview_filter %}
-        {% assign match_count = match_count | plus: 1 %}
-        <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
-          {% if post.cover_image %}
-          <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
-          {% endif %}
-          <div class="portfolio-card-body">
-            {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
-            <h2 class="portfolio-card-title">{{ post.title }}</h2>
-          </div>
-        </a>
+
+  <section class="service-gallery">
+    <div class="service-gallery-head">
+      <span class="eyebrow">RELATED WORK</span>
+      <h2>{{ page.title }} 관련 사례</h2>
+    </div>
+    <div class="portfolio-grid">
+      {% assign match_count = 0 %}
+      {% assign sorted_posts = site.portfolio | sort: 'date' | reverse %}
+      {% for post in sorted_posts %}
+        {% if post.overview_category contains page.overview_filter %}
+          {% assign match_count = match_count | plus: 1 %}
+          <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
+            {% if post.cover_image %}
+            <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
+            {% endif %}
+            <div class="portfolio-card-body">
+              {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
+              <h2 class="portfolio-card-title">{{ post.title }}</h2>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+      {% if match_count == 0 %}
+      <p class="portfolio-empty">아직 등록된 프로젝트가 없습니다.</p>
       {% endif %}
-    {% endfor %}
-    {% if match_count == 0 %}
-    <p class="portfolio-empty">아직 등록된 프로젝트가 없습니다.</p>
+    </div>
+    {% if match_count > 0 %}
+    <a class="service-gallery-more" href="{{ site.baseurl }}{{ page.overview_url }}">{{ page.title }} 사례 전체 보기 →</a>
     {% endif %}
-  </div>
-  {% if match_count > 0 %}
-  <a class="service-gallery-more" href="{{ site.baseurl }}{{ page.overview_url }}">{{ page.title }} 사례 전체 보기 →</a>
-  {% endif %}
-</section>
+  </section>
 
-<section class="service-cta">
-  <a class="service-cta-btn" href="{{ site.baseurl }}/contact.html">{{ page.title }} 견적 문의하기</a>
-  <a class="service-cta-back" href="{{ site.baseurl }}/services.html">← 사업영역으로</a>
-</section>
+  <section class="service-cta">
+    <a class="service-cta-btn" href="{{ site.baseurl }}/contact.html">{{ page.title }} 견적 문의하기</a>
+    <a class="service-cta-back" href="{{ site.baseurl }}/services.html">← 사업영역으로</a>
+  </section>
+</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
