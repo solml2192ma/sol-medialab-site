@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} | 사업영역 | SOL MEDIA LAB INC.</title>
+<meta name="description" content="SOL MEDIA LAB INC. 사업영역 — {{ page.title }}. {{ page.subtitle }}">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=24">
+</head>
+<body>
+
+<header class="site-header header-solid" id="siteHeader">
+  <div class="header-inner">
+    <a href="{{ site.baseurl }}/index.html" class="logo">
+      <img src="{{ site.baseurl }}/assets/img/logo.png" alt="SOL MEDIA LAB INC.">
+    </a>
+
+    <nav class="main-nav" aria-label="주요 메뉴">
+      <ul>
+        <li class="has-dropdown">
+          <a href="{{ site.baseurl }}/about.html">ABOUT</a>
+          <ul class="dropdown">
+            <li><a href="{{ site.baseurl }}/about.html">회사소개</a></li>
+            <li><a href="{{ site.baseurl }}/location.html">오시는 길</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="{{ site.baseurl }}/solution.html">SERVICES</a>
+          <ul class="dropdown">
+            <li><a href="{{ site.baseurl }}/services.html" aria-current="page">사업영역</a></li>
+            <li><a href="{{ site.baseurl }}/solution.html">SOLUTION</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="{{ site.baseurl }}/overview/event/">OVERVIEW</a>
+          <div class="dropdown dropdown--grid">
+            <ul>
+              <li class="dropdown-heading"><a href="{{ site.baseurl }}/index.html#services">Installation</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/installation/">시공</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/department-store/">백화점 쇼핑몰</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/popup/">팝업(POP-UP)</a></li>
+            </ul>
+            <ul>
+              <li class="dropdown-heading"><a href="{{ site.baseurl }}/index.html#services">Rental</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/exhibition/">전시 컨벤션</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/broadcast/">방송 촬영</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/event/">행사 이벤트</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/concert/">콘서트</a></li>
+            </ul>
+            <ul>
+              <li class="dropdown-heading"><a href="{{ site.baseurl }}/index.html#services">Service &amp; Maintenance</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/maintenance/">유지보수</a></li>
+            </ul>
+            <ul>
+              <li class="dropdown-heading"><a href="{{ site.baseurl }}/index.html#services">Products</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/products/">제품 유통</a></li>
+            </ul>
+          </div>
+        </li>        <li><a href="{{ site.baseurl }}/contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="service-hero">
+  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="{{ page.title }} — {{ page.subtitle }}">
+  <div class="service-hero-inner">
+    <p class="service-hero-eyebrow">BUSINESS AREA</p>
+    <h1 class="service-hero-title">{{ page.title }}</h1>
+    <p class="service-hero-subtitle">{{ page.subtitle }}</p>
+  </div>
+</section>
+
+<div class="service-body">
+  {{ content }}
+</div>
+
+<section class="service-gallery">
+  <div class="service-gallery-head">
+    <span class="eyebrow">RELATED WORK</span>
+    <h2>{{ page.title }} 관련 사례</h2>
+  </div>
+  <div class="portfolio-grid">
+    {% assign match_count = 0 %}
+    {% assign sorted_posts = site.portfolio | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
+      {% if post.overview_category contains page.overview_filter %}
+        {% assign match_count = match_count | plus: 1 %}
+        <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
+          {% if post.cover_image %}
+          <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
+          {% endif %}
+          <div class="portfolio-card-body">
+            {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
+            <h2 class="portfolio-card-title">{{ post.title }}</h2>
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+    {% if match_count == 0 %}
+    <p class="portfolio-empty">아직 등록된 프로젝트가 없습니다.</p>
+    {% endif %}
+  </div>
+  {% if match_count > 0 %}
+  <a class="service-gallery-more" href="{{ site.baseurl }}{{ page.overview_url }}">{{ page.title }} 사례 전체 보기 →</a>
+  {% endif %}
+</section>
+
+<section class="service-cta">
+  <a class="service-cta-btn" href="{{ site.baseurl }}/contact.html">{{ page.title }} 견적 문의하기</a>
+  <a class="service-cta-back" href="{{ site.baseurl }}/services.html">← 사업영역으로</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-info">
+      <strong>SOL MEDIA LAB INC.(주식회사 솔미디어랩)</strong>
+      <p>서울특별시 송파구 충민로10, 3D44</p>
+      <p>대표이사 : 임종민 &nbsp;|&nbsp; 사업자등록번호 : 542-87-01256</p>
+      <p>Tel : 02-2043-2192 &nbsp;|&nbsp; E-Mail : solml2192@gmail.com</p>
+      <p class="copyright">&copy; 2026 SOL MEDIA LAB INC. All Rights Reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#top">TOP ↑</a>
+    </div>
+  </div>
+</footer>
+
+<div class="floating-menu">
+  <a class="floating-circle floating-naver" href="https://blog.naver.com/solml2192/" target="_blank" rel="noopener noreferrer" aria-label="네이버 블로그 바로가기" title="네이버 블로그">blog</a>
+  <a class="floating-circle floating-kakao" href="https://pf.kakao.com/_EajxiK" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 채널 바로가기" title="카카오톡 상담">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M12 3C6.48 3 2 6.58 2 11c0 2.88 1.9 5.41 4.75 6.82L5.8 21l3.67-2.38c.82.2 1.67.3 2.53.3 5.52 0 10-3.58 10-7.92S17.52 3 12 3z" />
+    </svg>
+  </a>
+  <a class="floating-circle floating-instagram" href="https://www.instagram.com/solmedialab/" target="_blank" rel="noopener noreferrer" aria-label="인스타그램 바로가기" title="인스타그램">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+    </svg>
+  </a>
+  <a class="floating-circle floating-phone" href="tel:02-2043-2192" aria-label="전화 문의 02-2043-2192" title="전화 문의">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+    </svg>
+  </a>
+  <a class="floating-inquiry" href="{{ site.baseurl }}/contact.html" aria-label="견적 문의 페이지로 이동">견적 문의</a>
+</div>
+
+<script src="{{ site.baseurl }}/assets/js/main.js?v=13"></script>
+</body>
+</html>
