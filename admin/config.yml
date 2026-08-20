@@ -45,4 +45,4 @@ collections:
       - label: "상세 설명"
         name: "body"
         widget: "markdown"
-        modes: ["raw"]
+        modes: ["rich_text", "raw"]
