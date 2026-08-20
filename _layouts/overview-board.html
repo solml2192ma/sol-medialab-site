@@ -79,7 +79,8 @@
 
   <div class="portfolio-grid">
     {% assign match_count = 0 %}
-    {% for post in site.portfolio %}
+    {% assign sorted_posts = site.portfolio | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
       {% if post.overview_category contains page.overview_filter %}
         {% assign match_count = match_count | plus: 1 %}
         <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">

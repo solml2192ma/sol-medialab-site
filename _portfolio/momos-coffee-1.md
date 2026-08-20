@@ -1,4 +1,5 @@
 ---
+date: 2026-08-20T12:54:30+09:00
 title: MOMOS COFFEE
 overview_category:
   - 팝업(POP-UP)

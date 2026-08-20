@@ -81,7 +81,8 @@ layout: null
   </header>
 
   <div class="portfolio-grid">
-    {% for post in site.portfolio %}
+    {% assign sorted_posts = site.portfolio | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
     <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
       {% if post.cover_image %}
       <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">

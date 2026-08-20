@@ -19,6 +19,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "제목", name: "title", widget: "string" }
+      - { name: "date", widget: "hidden", default: "{{now}}" }
       - label: "카테고리 (해당하는 항목 모두 선택)"
         name: "overview_category"
         widget: "select"

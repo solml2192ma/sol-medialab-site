@@ -1,4 +1,5 @@
 ---
+date: 2026-08-20T12:58:13+09:00
 title: Estée Lauder(에스티로더)
 overview_category:
   - 팝업(POP-UP)
