@@ -84,15 +84,16 @@
 }
 .location-page .loc-map-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:20px}
 .location-page .loc-map-link{
-  display:inline-flex;align-items:center;justify-content:center;
-  height:50px;padding:0 24px;border-radius:999px;
-  font-size:15px;font-weight:700;letter-spacing:-.01em;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  box-sizing:border-box;width:176px;height:50px;border-radius:999px;
+  font-size:15px;font-weight:700;
   transition:filter .15s ease,transform .12s ease;
 }
+.location-page .loc-map-icon{width:19px;height:19px;flex:none}
 .location-page .loc-map-link:hover{filter:brightness(.96)}
 .location-page .loc-map-link:active{transform:translateY(1px)}
-.location-page .loc-map-link--naver{background:#03C75A;color:#fff}
-.location-page .loc-map-link--kakao{background:#FEE500;color:#191919}
+.location-page .loc-map-link--naver{background:#03C75A;color:#fff;letter-spacing:-.01em}
+.location-page .loc-map-link--kakao{background:#FEE500;color:#191919;letter-spacing:0}
 
 /* Visible keyboard focus, matched to the page accent */
 .location-page a:focus-visible,
@@ -245,8 +246,14 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade" title="SOL MEDIA LAB INC. 위치 지도"></iframe>
       <div class="loc-map-links">
-        <a class="loc-map-link loc-map-link--naver" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%B6%A9%EB%AF%BC%EB%A1%9C%2010%20%EC%86%94%EB%AF%B8%EB%94%94%EC%96%B4%EB%9E%A9" target="_blank" rel="noopener noreferrer">네이버 지도에서 크게 보기 →</a>
-        <a class="loc-map-link loc-map-link--kakao" href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%B6%A9%EB%AF%BC%EB%A1%9C%2010%20%EC%86%94%EB%AF%B8%EB%94%94%EC%96%B4%EB%9E%A9" target="_blank" rel="noopener noreferrer">카카오맵에서 크게 보기 →</a>
+        <a class="loc-map-link loc-map-link--naver" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%B6%A9%EB%AF%BC%EB%A1%9C%2010%20%EC%86%94%EB%AF%B8%EB%94%94%EC%96%B4%EB%9E%A9" target="_blank" rel="noopener noreferrer">
+          <svg class="loc-map-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M7.4 6.4h3.1l5 7.4V6.4h3.1v11.2h-3.1l-5-7.4v7.4H7.4z"/></svg>
+          네이버지도
+        </a>
+        <a class="loc-map-link loc-map-link--kakao" href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%B6%A9%EB%AF%BC%EB%A1%9C%2010%20%EC%86%94%EB%AF%B8%EB%94%94%EC%96%B4%EB%9E%A9" target="_blank" rel="noopener noreferrer">
+          <svg class="loc-map-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#2C6BF2" d="M12 2C7.86 2 4.5 5.36 4.5 9.5c0 5.5 7.5 12.5 7.5 12.5s7.5-7 7.5-12.5C19.5 5.36 16.14 2 12 2zm0 10.2a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4z"/></svg>
+          카카오맵
+        </a>
       </div>
     </div>
   </div>
