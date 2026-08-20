@@ -99,7 +99,16 @@
     {{ content }}
   </div>
 
-  <a class="portfolio-detail-back" href="{{ site.baseurl }}/portfolio.html">← 목록으로</a>
+  {% assign back_url = site.baseurl | append: "/portfolio.html" %}
+  {% if page.overview_category and page.overview_category.size > 0 %}
+    {% assign back_category = page.overview_category.first %}
+    {% for ov in site.pages %}
+      {% if ov.layout == "overview-board" and ov.overview_filter == back_category %}
+        {% assign back_url = site.baseurl | append: ov.url %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  <a class="portfolio-detail-back" href="{{ back_url }}">← 목록으로</a>
 </section>
 
 <footer class="site-footer">
