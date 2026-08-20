@@ -29,7 +29,7 @@
 
 .location-page .loc-body{
   display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
-  gap:72px;align-items:start;margin-top:56px;
+  gap:72px;align-items:stretch;margin-top:56px;
 }
 
 .location-page .loc-photo{margin:0}
@@ -38,7 +38,11 @@
   border-radius:16px;max-width:none;background:#F2F2F4;
 }
 
-.location-page .loc-list{margin:0;border-top:1px solid #ECECEF}
+.location-page .loc-info{display:flex;flex-direction:column}
+.location-page .loc-list{
+  margin:0;border-top:1px solid #ECECEF;
+  display:flex;flex-direction:column;justify-content:space-between;flex:1;
+}
 .location-page .loc-row{
   display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:baseline;
   padding:24px 2px;border-bottom:1px solid #ECECEF;
