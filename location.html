@@ -38,6 +38,14 @@
   border-radius:16px;max-width:none;background:#F2F2F4;
 }
 
+.location-page .loc-map{
+  max-width:820px;margin:96px auto 0;
+}
+.location-page .loc-map iframe{
+  display:block;width:100%;aspect-ratio:16/9;height:auto;
+  border-radius:16px;background:#F2F2F4;
+}
+
 .location-page .loc-list{margin:0;border-top:1px solid #ECECEF}
 .location-page .loc-row{
   display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:baseline;
@@ -102,6 +110,7 @@
   .location-page .loc-actions{margin-top:28px;flex-direction:column;align-items:stretch;gap:8px}
   .location-page .loc-btn{height:50px;padding:0 22px;justify-content:flex-start}
   .location-page .loc-btn svg{margin-left:auto}
+  .location-page .loc-map{margin-top:64px}
 }
 </style>
 </head>
@@ -209,7 +218,7 @@
     <div class="loc-map loc-anim" style="--i:4">
       <iframe
         src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%B6%A9%EB%AF%BC%EB%A1%9C%2010%20%EA%B0%80%EB%93%A0%ED%8C%8C%EC%9D%B4%EB%B8%8C%20%ED%88%B4&output=embed"
-        width="100%" height="360" style="border:0" loading="lazy"
+        style="border:0" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade" title="SOL MEDIA LAB INC. 위치 지도"></iframe>
     </div>
   </div>
