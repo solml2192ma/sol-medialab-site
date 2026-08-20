@@ -39,20 +39,46 @@
 }
 
 .location-page .loc-info{display:flex;flex-direction:column}
-.location-page .loc-list{
-  margin:0;border-top:1px solid #ECECEF;
-  display:flex;flex-direction:column;justify-content:space-between;flex:1;
+.location-page .loc-company{
+  display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:center;
+  margin:0 0 20px;
 }
+.location-page .loc-company-logo{height:40px;width:auto;max-width:none;margin:0;border-radius:0;flex:none}
+.location-page .loc-company-ko{margin:0;font-size:22px;font-weight:800;letter-spacing:-.02em;color:#101828}
+.location-page .loc-company-en{
+  margin:5px 0 0;font-family:'Pretendard',sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:.12em;color:#9A9AA0;
+}
+/* Pushes the tabs+list block to the bottom of the stretched info column
+   so the E-MAIL row's bottom border lines up with the photo's bottom
+   edge, without touching the rows' own (even) internal spacing. */
+.location-page .loc-lang-tabs{
+  display:flex;gap:4px;width:fit-content;margin:auto 0 14px;
+  padding:4px;background:#F4F4F6;border-radius:999px;
+}
+.location-page .loc-lang-tab{
+  padding:6px 16px;border:0;border-radius:999px;background:transparent;
+  font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;color:#8A8A90;
+  cursor:pointer;transition:background-color .2s ease,color .2s ease;
+}
+.location-page .loc-lang-tab:hover{color:#1A1A1C}
+.location-page .loc-lang-tab.is-active{background:#fff;color:#1A1A1C;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.location-page .loc-list{margin:0;border-top:1px solid #ECECEF}
 .location-page .loc-row{
   display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:baseline;
   padding:24px 2px;border-bottom:1px solid #ECECEF;
 }
+/* ADDRESS carries a second (sub) line that TEL/E-MAIL don't, so its
+   padding is trimmed and theirs padded out to match row heights —
+   the three paddings still sum to the same total as before. */
+.location-page .loc-row:first-child{padding-top:14px;padding-bottom:14px}
+.location-page .loc-row:not(:first-child){padding-top:29px;padding-bottom:29px}
 .location-page .loc-row dt{
   font-family:'Pretendard',sans-serif;font-weight:500;
   font-size:13px;letter-spacing:.14em;color:#9A9AA0;line-height:1.6;
 }
 .location-page .loc-row dd{
-  margin:0;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+  margin:0;display:flex;align-items:center;justify-content:space-between;gap:14px;
   font-size:19px;font-weight:500;line-height:1.65;color:#1A1A1C;
   word-break:keep-all;
 }
@@ -63,7 +89,7 @@
 
 .location-page .loc-copy{
   flex:none;position:relative;display:inline-flex;align-items:center;justify-content:center;
-  width:32px;height:32px;margin-top:2px;border-radius:50%;
+  width:32px;height:32px;border-radius:50%;
   border:1px solid #D6D6DB;background:#fff;color:#8A8A90;cursor:pointer;
   transition:border-color .2s ease,color .2s ease,background-color .2s ease;
 }
@@ -204,30 +230,51 @@
       </figure>
 
       <div class="loc-info loc-anim" style="--i:3">
+        <div class="loc-company">
+          <img class="loc-company-logo" src="assets/img/logo.png" alt="SOL MEDIA LAB INC. 로고">
+          <div>
+            <p class="loc-company-ko">주식회사 솔미디어랩</p>
+            <p class="loc-company-en">SOL MEDIA LAB INC.</p>
+          </div>
+        </div>
+        <div class="loc-lang-tabs" role="tablist" aria-label="주소 언어 선택">
+          <button type="button" class="loc-lang-tab is-active" role="tab" aria-selected="true" data-lang="ko">국문(KOREAN)</button>
+          <button type="button" class="loc-lang-tab" role="tab" aria-selected="false" data-lang="en">영문(ENGLISH)</button>
+        </div>
         <dl class="loc-list">
           <div class="loc-row">
-            <dt>ADDRESS</dt>
+            <dt data-lang-ko="주소" data-lang-en="ADDRESS">ADDRESS</dt>
             <dd>
-              <span class="loc-value">
-                서울특별시 송파구 충민로 10, 3D44
+              <span class="loc-value" data-lang-value="ko">
+                서울특별시 송파구 충민로 10, 3D44 (05840)
                 <span class="loc-sub">가든파이브 툴(TOOL)</span>
               </span>
-              <button type="button" class="loc-copy" data-copy="서울특별시 송파구 충민로 10, 3D44 (가든파이브 툴)" aria-label="주소 복사">
+              <span class="loc-value" data-lang-value="en" hidden>
+                3D44, 10 Chungmin-ro, Songpa-gu, Seoul 05840
+                <span class="loc-sub">Republic of Korea</span>
+              </span>
+              <button type="button" class="loc-copy"
+                data-copy-ko="서울특별시 송파구 충민로 10, 3D44 (가든파이브 툴), 05840"
+                data-copy-en="3D44, 10 Chungmin-ro, Songpa-gu, Seoul 05840, Republic of Korea"
+                data-copy="서울특별시 송파구 충민로 10, 3D44 (가든파이브 툴), 05840" aria-label="주소 복사">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
               </button>
             </dd>
           </div>
           <div class="loc-row">
-            <dt>TEL</dt>
+            <dt data-lang-ko="연락처" data-lang-en="TEL">TEL</dt>
             <dd>
-              <span class="loc-value"><a href="tel:0220432192">02-2043-2192</a></span>
-              <button type="button" class="loc-copy" data-copy="02-2043-2192" aria-label="전화번호 복사">
+              <span class="loc-value" data-lang-value="ko"><a href="tel:0220432192">02-2043-2192</a></span>
+              <span class="loc-value" data-lang-value="en" hidden><a href="tel:+82220432192">+82 2-2043-2192</a></span>
+              <button type="button" class="loc-copy"
+                data-copy-ko="02-2043-2192" data-copy-en="+82 2-2043-2192"
+                data-copy="02-2043-2192" aria-label="전화번호 복사">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
               </button>
             </dd>
           </div>
           <div class="loc-row">
-            <dt>E-MAIL</dt>
+            <dt data-lang-ko="이메일" data-lang-en="E-MAIL">E-MAIL</dt>
             <dd>
               <span class="loc-value"><a href="mailto:solml2192@gmail.com">solml2192@gmail.com</a></span>
               <button type="button" class="loc-copy" data-copy="solml2192@gmail.com" aria-label="이메일 복사">
@@ -316,6 +363,35 @@
         try { document.execCommand('copy'); done(); } catch(e){}
         document.body.removeChild(ta);
       }
+    });
+  });
+})();
+
+(function(){
+  var tabs = document.querySelectorAll('.loc-lang-tab');
+  if (!tabs.length) return;
+  var values = document.querySelectorAll('[data-lang-value]');
+  var copyBtns = document.querySelectorAll('.loc-copy[data-copy-ko]');
+  var labels = document.querySelectorAll('[data-lang-ko]');
+
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var lang = tab.getAttribute('data-lang');
+
+      tabs.forEach(function(t){
+        var active = t === tab;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      values.forEach(function(v){
+        v.hidden = v.getAttribute('data-lang-value') !== lang;
+      });
+      copyBtns.forEach(function(btn){
+        btn.setAttribute('data-copy', btn.getAttribute('data-copy-' + lang));
+      });
+      labels.forEach(function(el){
+        el.textContent = el.getAttribute('data-lang-' + lang);
+      });
     });
   });
 })();
