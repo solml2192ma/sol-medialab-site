@@ -1266,19 +1266,22 @@ section { position: relative; }
   color: #fff !important;
 }
 .floating-inquiry {
-  min-width: 150px;
+  min-width: 0;
   height: 54px;
-  padding: 0 24px;
+  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  border: 0;
   border-radius: 999px;
   background: linear-gradient(135deg, #d8231f, #ef8b24);
   color: #fff !important;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 18px;
   font-weight: 700;
   text-decoration: none !important;
+  cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 .floating-circle, .floating-inquiry { transition: transform 0.2s ease; }
@@ -1289,8 +1292,23 @@ section { position: relative; }
   .floating-circle { width: 48px; height: 48px; }
   .floating-circle svg { width: 23px; height: 23px; }
   .floating-naver { font-size: 15px; }
-  .floating-inquiry { min-width: 124px; height: 48px; padding: 0 18px; font-size: 14px; }
-  .floating-phone { display: flex; }
+  .floating-inquiry { min-width: 0; height: 48px; padding: 0 22px; font-size: 16px; }
+  .floating-phone { display: flex; order: -1; }
+
+  /* Mobile-only collapse: "문의하기" stays put as the always-visible anchor;
+     the rest of the icon row hides until it's tapped, so the cluster
+     doesn't sit on top of page content uninvited. */
+  .floating-menu .floating-circle {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .floating-menu.is-open .floating-circle {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
 }
 
 /* ===== Footer ===== */
