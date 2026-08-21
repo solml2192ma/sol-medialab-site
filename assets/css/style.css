@@ -1417,6 +1417,10 @@ section { position: relative; }
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .main-nav.open > ul > li > a { padding: 16px 0; font-size: 16px; }
+  .site-header.header-solid .main-nav.open > ul > li > a,
+  .main-nav.open > ul > li > a {
+    color: #fff;
+  }
   .main-nav.open .dropdown {
     position: static;
     transform: none;
