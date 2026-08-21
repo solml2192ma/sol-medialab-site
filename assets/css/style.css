@@ -480,10 +480,11 @@ section { position: relative; }
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.6fr 1fr;
   gap: 20px;
+  height: clamp(440px, 46vw, 620px);
 }
-.case-grid figure { position: relative; overflow: hidden; border-radius: 4px; aspect-ratio: 4 / 3; }
+.case-grid figure { position: relative; overflow: hidden; border-radius: 4px; margin: 0; height: 100%; }
 .case-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .case-grid figure:hover img { transform: scale(1.06); }
 .case-grid figcaption {
@@ -494,6 +495,15 @@ section { position: relative; }
   font-size: 14px;
   font-weight: 600;
   text-align: left;
+}
+.case-grid .case-feature figcaption { padding: 28px 26px; font-size: 17px; }
+.case-secondary-col { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; height: 100%; }
+
+@media (max-width: 860px) {
+  .case-grid { grid-template-columns: 1fr; height: auto; }
+  .case-grid .case-feature { aspect-ratio: 4 / 3; height: auto; }
+  .case-secondary-col { grid-template-rows: none; gap: 20px; height: auto; }
+  .case-grid .case-secondary { aspect-ratio: 4 / 3; height: auto; }
 }
 
 /* ===== Contact ===== */
