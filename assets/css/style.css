@@ -185,7 +185,7 @@ section { position: relative; }
 }
 .hero-content h1 {
   font-family: 'Pretendard', sans-serif;
-  font-size: clamp(36px, 6vw, 68px);
+  font-size: clamp(37px, 6vw, 69px);
   letter-spacing: -0.02em;
   line-height: 1.18;
 }
