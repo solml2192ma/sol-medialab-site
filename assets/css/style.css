@@ -240,6 +240,7 @@ section { position: relative; }
     opacity: 1;
     transform: none;
   }
+  .floating-inquiry { animation: none; }
 }
 
 /* ===== iw-menu-solution (space solutions) ===== */
@@ -1286,45 +1287,94 @@ section { position: relative; }
   color: #fff !important;
 }
 .floating-inquiry {
+  width: 56px;
+  height: 56px;
   min-width: 0;
-  height: 54px;
-  padding: 0 30px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  position: relative;
   border: 0;
-  border-radius: 999px;
+  border-radius: 50%;
   background: linear-gradient(135deg, #d8231f, #ef8b24);
   color: #fff !important;
   font-family: inherit;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   text-decoration: none !important;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
+.floating-inquiry::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  bottom: -7px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 9px solid #ef8b24;
+}
 .floating-circle, .floating-inquiry { transition: transform 0.2s ease; }
 .floating-circle:hover, .floating-inquiry:hover { transform: translateY(-3px); }
+
+/* Draw the eye: a gentle bob + glow pulse so 문의 stands out from the
+   other, static icons. Pauses on hover so the lift transition above
+   still reads cleanly, and is switched off for reduced-motion users. */
+@keyframes inquiryFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes inquiryGlow {
+  0%, 100% { box-shadow: 0 8px 24px rgba(216, 35, 31, 0.35); }
+  50% { box-shadow: 0 10px 30px rgba(216, 35, 31, 0.7); }
+}
+.floating-inquiry {
+  animation: inquiryFloat 2.6s ease-in-out infinite, inquiryGlow 2.6s ease-in-out infinite;
+}
+.floating-inquiry:hover { animation-play-state: paused; }
+
+/* Mobile-only collapse: a single black toggle FAB stands in for the whole
+   group so the icon cluster doesn't sit on top of page content until
+   the visitor asks for it. Desktop keeps everything always visible. */
+.floating-toggle {
+  display: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  background: #101828;
+  color: #fff;
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.25);
+}
+.floating-toggle svg { width: 24px; height: 24px; transition: transform 0.25s ease; }
+.floating-menu.is-open .floating-toggle svg { transform: rotate(45deg); }
 
 @media (max-width: 640px) {
   .floating-menu { right: 15px; bottom: 15px; gap: 10px; }
   .floating-circle { width: 48px; height: 48px; }
   .floating-circle svg { width: 23px; height: 23px; }
   .floating-naver { font-size: 15px; }
-  .floating-inquiry { min-width: 0; height: 48px; padding: 0 22px; font-size: 16px; }
+  .floating-inquiry { width: 48px; height: 48px; font-size: 15px; }
+  .floating-inquiry::after { right: 12px; }
   .floating-phone { display: flex; order: -1; }
 
-  /* Mobile-only collapse: "문의하기" stays put as the always-visible anchor;
-     the rest of the icon row hides until it's tapped, so the cluster
-     doesn't sit on top of page content uninvited. */
-  .floating-menu .floating-circle {
+  .floating-toggle { display: flex; }
+  .floating-menu .floating-circle,
+  .floating-menu .floating-inquiry {
     opacity: 0;
     transform: translateY(10px) scale(0.9);
     pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
   }
-  .floating-menu.is-open .floating-circle {
+  .floating-menu.is-open .floating-circle,
+  .floating-menu.is-open .floating-inquiry {
     opacity: 1;
     transform: none;
     pointer-events: auto;

@@ -41,20 +41,13 @@ tabs.forEach((tab) => {
   });
 });
 
-// Floating menu: collapses into a single "문의하기" FAB on mobile.
-// First tap reveals the quick-contact icons; since it's already open,
-// a second tap (or any tap on desktop, where nothing is collapsed)
-// follows the link through to the quote-inquiry page as normal.
+// Floating menu: collapses into a single black FAB on mobile
 const floatingMenu = document.querySelector('.floating-menu');
 const floatingToggle = document.getElementById('floatingToggle');
 if (floatingMenu && floatingToggle) {
-  const isMobileFloatingMenu = () => window.matchMedia('(max-width: 640px)').matches;
-  floatingToggle.addEventListener('click', (e) => {
-    if (isMobileFloatingMenu() && !floatingMenu.classList.contains('is-open')) {
-      e.preventDefault();
-      floatingMenu.classList.add('is-open');
-      floatingToggle.setAttribute('aria-expanded', 'true');
-    }
+  floatingToggle.addEventListener('click', () => {
+    const isOpen = floatingMenu.classList.toggle('is-open');
+    floatingToggle.setAttribute('aria-expanded', String(isOpen));
   });
 }
 
