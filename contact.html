@@ -117,6 +117,21 @@
         <textarea id="message" name="message" rows="6" placeholder="프로젝트 내용, 일정 등 문의사항을 남겨주세요."></textarea>
       </div>
 
+      <div class="form-group">
+        <label>개인정보 제3자 제공 동의<i class="required">*</i></label>
+        <div class="consent-box">
+          <p><strong>제공받는 자</strong> : 주식회사 솔미디어랩(SOL MEDIA LAB INC.)</p>
+          <p><strong>제공 목적</strong> : 문의 접수 확인 및 상담·답변, 견적 안내</p>
+          <p><strong>제공 항목</strong> : 이름(회사명), 이메일, 연락처, 문의 내용</p>
+          <p><strong>보유 및 이용 기간</strong> : 문의 처리 완료 후 1년간 보관 후 파기 (관계 법령에 따라 보존이 필요한 경우 해당 기간까지 보관)</p>
+          <p>귀하는 개인정보 제공에 대한 동의를 거부할 권리가 있으며, 동의하지 않으실 경우 문의 접수 및 답변이 제한될 수 있습니다.</p>
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" id="consentAgree" name="consentAgree" required>
+          <span>위 개인정보 제3자 제공에 동의합니다. (필수)</span>
+        </label>
+      </div>
+
       <button type="submit" class="btn-submit" id="submitBtn">작성</button>
       <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
     </form>
