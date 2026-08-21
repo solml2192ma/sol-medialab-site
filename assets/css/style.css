@@ -484,9 +484,19 @@ section { position: relative; }
   gap: 20px;
   height: clamp(440px, 46vw, 620px);
 }
-.case-grid figure { position: relative; overflow: hidden; border-radius: 4px; margin: 0; height: 100%; }
+.case-grid .case-feature,
+.case-grid .case-secondary {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  height: 100%;
+  color: inherit;
+}
+.case-grid figure { margin: 0; height: 100%; }
 .case-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-.case-grid figure:hover img { transform: scale(1.06); }
+.case-grid .case-feature:hover img,
+.case-grid .case-secondary:hover img { transform: scale(1.06); }
 .case-grid figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
   padding: 18px 16px;
