@@ -5,7 +5,8 @@ overview_category:
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/올리브1.png
-gallery: []
+gallery:
+  - /assets/img/portfolio/올리브2.png
 ---
 
 ##### **MEDIHEAL × PLAVE 성수 올리브영N — 실내에 설치하고, 거리를 향해 틀었습니다.**
