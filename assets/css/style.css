@@ -116,6 +116,14 @@ section { position: relative; }
   transform: translateY(0);
   transition: opacity .28s ease, transform .28s ease, visibility 0s;
 }
+/* Simple dropdowns keep the full-width white panel, but the link group
+   itself shifts to sit under its own trigger instead of the page center. */
+.main-nav .dropdown .dropdown-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  transform: translateX(var(--dropdown-x, 0px));
+}
 .main-nav .dropdown li a {
   display: block;
   padding: 9px 0;
@@ -143,7 +151,7 @@ section { position: relative; }
   color: #ef8b24;
 }
 .main-nav .dropdown li.dropdown-heading a:hover { color: #c96d10; transform: none; }
-.main-nav .dropdown.dropdown--grid > ul {
+.main-nav .dropdown.dropdown--grid .dropdown-inner > ul {
   display: flex;
   flex-direction: column;
   gap: 0;

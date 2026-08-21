@@ -11,6 +11,23 @@ const setHeaderHeightVar = () => {
 window.addEventListener('resize', setHeaderHeightVar);
 setHeaderHeightVar();
 
+// Simple dropdowns (ABOUT/SERVICES/CONTACT) sit inside a full-width,
+// page-centered white panel, but the actual link group should line up
+// under whichever trigger opened it. Nudge just the link group over via
+// a CSS custom property, leaving the panel's own position untouched.
+document.querySelectorAll('.main-nav > ul > li.has-dropdown').forEach((li) => {
+  const inner = li.querySelector(':scope > .dropdown .dropdown-inner');
+  if (!inner) return;
+  const alignDropdown = () => {
+    const liRect = li.getBoundingClientRect();
+    const triggerCenter = liRect.left + liRect.width / 2;
+    const viewportCenter = window.innerWidth / 2;
+    li.style.setProperty('--dropdown-x', `${triggerCenter - viewportCenter}px`);
+  };
+  li.addEventListener('mouseenter', alignDropdown);
+  li.addEventListener('focusin', alignDropdown);
+});
+
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.querySelector('.main-nav');
