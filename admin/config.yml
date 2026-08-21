@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: hongbj123-create/sol-medialab-site
+  repo: solml2192ma/sol-medialab-site
   branch: main
   base_url: https://decap-oauth-proxy-one.vercel.app
   auth_endpoint: api/auth
