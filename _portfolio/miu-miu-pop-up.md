@@ -1,4 +1,5 @@
 ---
+post_date: 2026-08-20T16:27:02+09:00
 title: Miu Miu POP - UP
 overview_category:
   - 팝업(POP-UP)

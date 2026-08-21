@@ -1,4 +1,5 @@
 ---
+post_date: 2026-08-20T17:20:58+09:00
 title: roughtype
 overview_category:
   - 팝업(POP-UP)

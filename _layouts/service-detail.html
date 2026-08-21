@@ -91,7 +91,7 @@
       <h2>{{ page.title }} 관련 사례</h2>
     </div>
     <div class="portfolio-grid">
-      {% assign matched_posts = site.portfolio | where_exp: "post", "post.overview_category contains page.overview_filter" | sort: 'date' | reverse %}
+      {% assign matched_posts = site.portfolio | where_exp: "post", "post.overview_category contains page.overview_filter" | sort: 'post_date' | reverse %}
       {% assign match_count = matched_posts.size %}
       {% assign display_posts = matched_posts | slice: 0, 3 %}
       {% for post in display_posts %}

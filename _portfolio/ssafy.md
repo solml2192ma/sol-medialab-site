@@ -1,4 +1,5 @@
 ---
+post_date: 2026-08-20T16:18:31+09:00
 title: SSAFY
 overview_category:
   - 행사 이벤트

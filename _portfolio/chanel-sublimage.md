@@ -1,4 +1,5 @@
 ---
+post_date: 2026-08-20T16:51:51+09:00
 title: CHANEL SUBLIMAGE
 overview_category:
   - 팝업(POP-UP)

@@ -1,5 +1,5 @@
 ---
-date: 2026-08-20T13:41:44+09:00
+post_date: 2026-08-20T13:41:44+09:00
 title: SSAFY Meet UP
 overview_category:
   - 행사 이벤트

@@ -1,4 +1,5 @@
 ---
+post_date: 2026-08-20T17:34:26+09:00
 title: NAMHU X
 overview_category:
   - 팝업(POP-UP)

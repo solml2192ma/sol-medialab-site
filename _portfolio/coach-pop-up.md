@@ -1,4 +1,5 @@
 ---
+post_date: 2026-08-20T16:36:48+09:00
 title: COACH POP - UP
 overview_category:
   - 팝업(POP-UP)
