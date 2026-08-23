@@ -1,0 +1,302 @@
+:root {
+    --bg: #0a0c10;
+    --bg-elevated: #12151b;
+    --surface: #171b22;
+    --surface-2: #1f2530;
+    --border: #262c37;
+    --text: #edf1f5;
+    --text-dim: #93a0b0;
+    --text-faint: #5c6675;
+    --accent: #4fd3ff;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "IBM Plex Sans KR", "Pretendard", -apple-system, sans-serif;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .mono {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.4rem clamp(1rem, 3vw, 2.4rem) 1.1rem;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    transition: color 0.4s ease;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .lede {
+    margin: 0;
+    max-width: 34ch;
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 272px minmax(0, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  @media (max-width: 860px) {
+    main { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  aside {
+    min-width: 0;
+    background: var(--bg-elevated);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .rail-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 0.2rem 0.1rem;
+  }
+
+  .type-card {
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem 0.95rem;
+    cursor: pointer;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+  }
+
+  .type-card:hover {
+    border-color: var(--text-faint);
+    transform: translateY(-1px);
+  }
+
+  .type-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .type-card .row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .swatch {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--dot, #666);
+    box-shadow: 0 0 0 3px transparent;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .type-card .kr {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .type-card .en {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    color: var(--text-faint);
+  }
+
+  .type-card p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .type-card.is-active {
+    background: var(--surface-2);
+    border-color: var(--dot, var(--accent));
+  }
+
+  .type-card.is-active .swatch {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--dot, var(--accent)) 22%, transparent);
+  }
+
+  .rail-note {
+    margin-top: auto;
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    line-height: 1.6;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stage-col {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+  }
+
+  #stage {
+    position: relative;
+    flex: 1;
+    min-height: 360px;
+  }
+
+  #stage-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: none;
+    cursor: grab;
+  }
+
+  #stage-canvas:active { cursor: grabbing; }
+
+  .stage-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 45%, rgba(10,12,16,0.75) 100%);
+  }
+
+  .stage-controls {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+  }
+
+  .ctrl-btn {
+    background: rgba(23,27,34,0.82);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    padding: 0.5rem 0.75rem;
+    border-radius: 7px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+  }
+
+  .ctrl-btn:hover { color: var(--text); border-color: var(--text-faint); }
+
+  .ctrl-btn.is-on {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .stage-hint {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--text-faint);
+    background: rgba(23,27,34,0.7);
+    padding: 0.4rem 0.65rem;
+    border-radius: 6px;
+    z-index: 2;
+  }
+
+  .spec-strip {
+    min-width: 0;
+    border-top: 1px solid var(--border);
+    background: var(--bg-elevated);
+    padding: 1rem clamp(1rem, 3vw, 2.4rem);
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.6rem);
+    overflow-x: auto;
+  }
+
+  #spec-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    column-gap: clamp(1.2rem, 3vw, 2.6rem);
+    row-gap: 0.25rem;
+    flex: 1;
+  }
+
+  .spec-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    white-space: nowrap;
+  }
+
+  .spec-value {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--accent);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.4s ease;
+  }
+
+  footer {
+    padding: 0.8rem clamp(1rem, 3vw, 2.4rem) 1.1rem;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    background: var(--bg-elevated);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .type-card, .ctrl-btn { transition: none; }
+  }

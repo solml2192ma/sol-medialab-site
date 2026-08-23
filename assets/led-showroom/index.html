@@ -1,0 +1,61 @@
+<title>LED 스크린 쇼룸</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+
+<header>
+  <div class="brand">
+    <span class="eyebrow mono">LED SCREEN SHOWCASE</span>
+    <h1>LED 스크린 쇼룸</h1>
+  </div>
+  <p class="lede">유형별 LED 스크린을 3D로 살펴보세요. 드래그로 회전하고 스크롤로 확대해 구조와 설치 방식을 확인할 수 있습니다.</p>
+</header>
+
+<main>
+  <aside aria-label="스크린 유형 선택">
+    <p class="rail-label mono">유형 선택</p>
+
+    <button class="type-card" data-type="indoor" style="--dot:#4fd3ff">
+      <span class="row"><span class="swatch"></span><span class="kr">실내형</span></span>
+      <span class="en">INDOOR</span>
+      <p>정밀한 픽셀 간격과 색상 베젤로 매장, 로비, 회의실 등 실내 공간에 최적화된 스크린입니다.</p>
+    </button>
+
+    <button class="type-card" data-type="outdoor" style="--dot:#ffa94d">
+      <span class="row"><span class="swatch"></span><span class="kr">실외형</span></span>
+      <span class="en">OUTDOOR</span>
+      <p>강한 햇빛과 비바람에도 선명하게 보이도록 방수 방진과 고휘도 설계를 적용한 스크린입니다.</p>
+    </button>
+
+    <button class="type-card" data-type="curved" style="--dot:#c792ff">
+      <span class="row"><span class="swatch"></span><span class="kr">곡면·특수형</span></span>
+      <span class="en">CURVED / CUSTOM</span>
+      <p>무대 배경이나 곡선 공간에 맞춰 자유롭게 휘어지는 몰입형 스크린입니다.</p>
+    </button>
+
+    <p class="rail-note">모델을 클릭하면 하단 사양과 3D 뷰가 함께 전환됩니다.</p>
+  </aside>
+
+  <div class="stage-col">
+    <div id="stage">
+      <canvas id="stage-canvas"></canvas>
+      <div class="stage-vignette"></div>
+      <div class="stage-controls">
+        <button id="btn-autorotate" class="ctrl-btn is-on">자동 회전</button>
+        <button id="btn-reset" class="ctrl-btn">시점 초기화</button>
+      </div>
+      <div class="stage-hint mono">드래그 → 회전 · 스크롤 → 확대/축소</div>
+    </div>
+
+    <div class="spec-strip">
+      <div id="spec-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer>* 실제 판매 사양과 실제 모델·설치 환경은 달라질 수 있으며, 위 수치는 데모용 참고 사항입니다. 이 3D 모델 역시 구조를 보여주기 위한 예시 데이터입니다.</footer>
+
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script src="app.js"></script>

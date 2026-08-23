@@ -846,7 +846,28 @@ section { position: relative; }
 .sx-spec.best h5 { color: #1e40af; }
 .sx-spec p { margin: 0 0 8px; font-size: 15px; color: var(--color-body); }
 
+.solution-3d {
+  width: 100%;
+  background: var(--color-bg);
+}
+.solution-3d-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 100px;
+}
+.solution-3d-inner iframe {
+  display: block;
+  width: 100%;
+  height: 640px;
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+}
+
 @media (max-width: 768px) {
+  .solution-3d-inner { padding: 0 16px 60px; }
+  .solution-3d-inner iframe { height: 520px; border-radius: 16px; }
+
   .showcase-wrap { padding: 110px 16px 28px; }
   .showcase-menu-rail { display: block; margin-bottom: 36px; }
   .showcase-menu {
