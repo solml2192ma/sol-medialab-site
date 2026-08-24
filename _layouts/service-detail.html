@@ -117,7 +117,7 @@
           <div class="portfolio-card-body">
             <div class="portfolio-card-tags">
               {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
-              {% if post.location %}<span class="portfolio-card-category portfolio-card-location">{{ post.location }}</span>{% endif %}
+              {% if post.location and post.location != empty %}<span class="portfolio-card-category portfolio-card-location">{{ post.location }}</span>{% endif %}
             </div>
             <h2 class="portfolio-card-title">{{ post.title }}</h2>
           </div>

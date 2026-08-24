@@ -89,11 +89,11 @@
   <div class="portfolio-detail-head">
     <div class="portfolio-detail-tags">
       {% if page.overview_category %}<span class="portfolio-detail-category">{{ page.overview_category | join: " · " }}</span>{% endif %}
-      {% if page.location %}<span class="portfolio-detail-category portfolio-detail-location">{{ page.location }}</span>{% endif %}
+      {% if page.location and page.location != empty %}<span class="portfolio-detail-category portfolio-detail-location">{{ page.location }}</span>{% endif %}
     </div>
     <h1>{{ page.title }}</h1>
     <div class="portfolio-detail-meta">
-      {% if page.client %}<span>{{ page.client }}</span>{% endif %}
+      {% if page.client and page.client != empty %}<span>{{ page.client }}</span>{% endif %}
     </div>
   </div>
 
