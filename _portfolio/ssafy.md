@@ -1,10 +1,10 @@
 ---
-post_date: 2026-08-20T16:18:31+09:00
 title: SSAFY
+post_date: 2026-08-20T16:18:31+09:00
 overview_category:
   - 공연·행사
 client: ''
-location: ''
+location: 역삼동 멀티캠퍼스
 cover_image: /assets/img/portfolio/싸피1.png
 gallery:
   - /assets/img/portfolio/싸피2.png
