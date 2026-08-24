@@ -1,8 +1,8 @@
 ---
-post_date: 2026-08-20T16:36:48+09:00
 title: COACH POP - UP
+post_date: 2026-08-20T16:36:48+09:00
 overview_category:
-  - 팝업(POP-UP)
+  - 백화점 쇼핑몰
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/코치2.png
