@@ -13,7 +13,7 @@ layout: null
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=51">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=52">
 </head>
 <body>
 
@@ -104,8 +104,8 @@ layout: null
       {% endif %}
       <div class="portfolio-card-body">
         <div class="portfolio-card-tags">
+          {% if post.location and post.location != empty %}<span class="portfolio-card-location">{{ post.location }}</span>{% endif %}
           {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
-          {% if post.location and post.location != empty %}<span class="portfolio-card-category portfolio-card-location">{{ post.location }}</span>{% endif %}
         </div>
         <h2 class="portfolio-card-title">{{ post.title }}</h2>
       </div>
