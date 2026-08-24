@@ -975,6 +975,12 @@ section { position: relative; }
 /* ===== Portfolio detail ===== */
 .portfolio-detail { background: #fff; padding: 150px 24px 100px; }
 .portfolio-detail-head { max-width: 900px; margin: 0 auto; text-align: center; }
+.portfolio-detail-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 .portfolio-detail-category {
   display: inline-block;
   padding: 6px 14px;

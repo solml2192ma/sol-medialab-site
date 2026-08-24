@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=48">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=49">
 </head>
 <body>
 
@@ -87,11 +87,13 @@
 
 <section class="portfolio-detail">
   <div class="portfolio-detail-head">
-    {% if page.overview_category %}<p class="portfolio-detail-category">{{ page.overview_category | join: " · " }}</p>{% endif %}
+    <div class="portfolio-detail-tags">
+      {% if page.overview_category %}<span class="portfolio-detail-category">{{ page.overview_category | join: " · " }}</span>{% endif %}
+      {% if page.location %}<span class="portfolio-detail-category portfolio-detail-location">{{ page.location }}</span>{% endif %}
+    </div>
     <h1>{{ page.title }}</h1>
     <div class="portfolio-detail-meta">
       {% if page.client %}<span>{{ page.client }}</span>{% endif %}
-      {% if page.location %}<span>{{ page.location }}</span>{% endif %}
     </div>
   </div>
 
