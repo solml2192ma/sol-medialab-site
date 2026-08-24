@@ -947,6 +947,7 @@ section { position: relative; }
 .portfolio-card:hover .portfolio-card-image--hover { opacity: 1; }
 .portfolio-card-image { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
 .portfolio-card-body { padding: 20px 22px 24px; }
+.portfolio-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .portfolio-card-category {
   display: inline-block;
   padding: 5px 12px;
