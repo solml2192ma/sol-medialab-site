@@ -67,6 +67,7 @@ section { position: relative; }
   letter-spacing: 0.08em;
   padding: 10px 0;
   display: inline-block;
+  cursor: default;
 }
 .main-nav > ul > li > a::after {
   content: '';
