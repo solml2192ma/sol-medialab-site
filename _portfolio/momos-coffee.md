@@ -2,7 +2,7 @@
 post_date: 2026-08-19T16:01:43+09:00
 title: MOMOS COFFEE
 overview_category:
-  - 팝업(POP-UP)
+  - 백화점·쇼핑몰
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/모모스1.png

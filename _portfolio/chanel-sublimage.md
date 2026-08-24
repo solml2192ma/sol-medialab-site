@@ -2,7 +2,7 @@
 post_date: 2026-08-20T16:51:51+09:00
 title: CHANEL SUBLIMAGE
 overview_category:
-  - 팝업(POP-UP)
+  - 백화점·쇼핑몰
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/샤넬1.png

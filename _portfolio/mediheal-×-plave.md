@@ -2,7 +2,7 @@
 post_date: 2026-08-21T12:36:37+09:00
 title: MEDIHEAL × PLAVE
 overview_category:
-  - 팝업(POP-UP)
+  - 백화점·쇼핑몰
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/올리브1.png

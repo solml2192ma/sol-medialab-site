@@ -3,8 +3,8 @@ layout: service-detail
 title: "POP-UP"
 subtitle: "Brand"
 hero_image: /assets/img/display-popup.webp
-overview_filter: "팝업(POP-UP)"
-overview_url: /overview/popup/
+overview_filter: "백화점·쇼핑몰"
+overview_url: /overview/department-store/
 permalink: /services/popup/
 ---
 팝업스토어는 짧은 기간 안에 브랜드의 인상을 각인시켜야 하는 공간입니다. LED는 여기서 정보를 띄우는 화면이 아니라, 방문객이 사진을 찍고 SNS에 공유하고 싶어지는 '공간의 일부'가 되어야 합니다.
