@@ -1,8 +1,8 @@
 ---
-post_date: 2026-08-20T16:27:02+09:00
 title: Miu Miu POP - UP
+post_date: 2026-08-20T16:27:02+09:00
 overview_category:
-  - 팝업(POP-UP)
+  - 백화점 쇼핑몰
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/미우미우1.png
