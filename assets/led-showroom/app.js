@@ -298,6 +298,41 @@
   scene.add(stageGroup);
   var currentContent = null;
   var current = null;
+  var currentKey = null;
+
+  // ---- real indoor LED panel 3D sample ----
+  var indoorSampleModel = null;
+  if (typeof THREE.GLTFLoader === "function") {
+    new THREE.GLTFLoader().load("models/led-panel-showroom.glb", function (gltf) {
+      var model = gltf.scene;
+      model.traverse(function (node) {
+        if (node.isMesh) {
+          node.castShadow = true;
+          node.receiveShadow = true;
+        }
+      });
+
+      var box = new THREE.Box3().setFromObject(model);
+      var size = box.getSize(new THREE.Vector3());
+      var scale = size.x > 0 ? (5 / size.x) : 1;
+      model.scale.setScalar(scale);
+
+      box.setFromObject(model);
+      model.position.x -= box.min.x + (box.max.x - box.min.x) / 2;
+      model.position.z -= box.min.z + (box.max.z - box.min.z) / 2;
+      model.position.y -= box.min.y;
+      model.position.y += floor.position.y + 0.02;
+
+      var indoorCfg = TYPES.indoor;
+      var indoorHalfW = (indoorCfg.panelW * indoorCfg.cols) / 2;
+      model.position.x += indoorHalfW * 0.55;
+      model.position.z += indoorHalfW * 0.22;
+
+      indoorSampleModel = model;
+      indoorSampleModel.visible = currentKey === "indoor";
+      scene.add(indoorSampleModel);
+    });
+  }
 
   function buildType(cfg) {
     var group = new THREE.Group();
@@ -344,6 +379,10 @@
     current = buildType(cfg);
     stageGroup.add(current.group);
     currentContent = current.content;
+    currentKey = key;
+    if (indoorSampleModel) {
+      indoorSampleModel.visible = key === "indoor";
+    }
 
     current.group.updateMatrixWorld(true);
     var box = new THREE.Box3().setFromObject(current.group);

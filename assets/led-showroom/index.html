@@ -57,5 +57,15 @@
 
 <footer>* 실제 판매 사양과 실제 모델·설치 환경은 달라질 수 있으며, 위 수치는 데모용 참고 사항입니다. 이 3D 모델 역시 구조를 보여주기 위한 예시 데이터입니다.</footer>
 
-<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-<script src="app.js"></script>
+<script type="importmap">
+{"imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+  import * as THREE_NS from "three";
+  import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+  window.THREE = Object.assign({}, THREE_NS, { GLTFLoader: GLTFLoader });
+</script>
+<script type="module" src="app.js"></script>
