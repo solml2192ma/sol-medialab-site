@@ -106,7 +106,7 @@
     </div>
     <div class="portfolio-grid">
       {% assign category_posts = site.portfolio | where_exp: "post", "post.overview_category contains page.overview_filter" %}
-      {% assign matched_posts = category_posts | where_exp: "p", "p.post_date != nil and p.post_date != empty" | sort: 'post_date' | reverse %}
+      {% assign matched_posts = category_posts | where_exp: "p", "p.post_date != nil" | where_exp: "p", "p.post_date != empty" | sort: 'post_date' | reverse %}
       {% assign match_count = matched_posts.size %}
       {% assign display_posts = matched_posts | slice: 0, 3 %}
       {% for post in display_posts %}

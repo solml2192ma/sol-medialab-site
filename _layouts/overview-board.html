@@ -93,7 +93,7 @@
 
   <div class="portfolio-grid">
     {% assign match_count = 0 %}
-    {% assign dated_posts = site.portfolio | where_exp: "p", "p.post_date != nil and p.post_date != empty" %}
+    {% assign dated_posts = site.portfolio | where_exp: "p", "p.post_date != nil" | where_exp: "p", "p.post_date != empty" %}
     {% assign sorted_posts = dated_posts | sort: 'post_date' | reverse %}
     {% for post in sorted_posts %}
       {% if post.overview_category contains page.overview_filter %}
