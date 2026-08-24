@@ -1,8 +1,8 @@
 ---
-post_date: 2026-08-20T12:58:13+09:00
 title: Estée Lauder(에스티로더)
+post_date: 2026-08-20T12:58:13+09:00
 overview_category:
-  - 팝업(POP-UP)
+  - 백화점 쇼핑몰
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/에스티1.png
@@ -25,7 +25,6 @@ gallery:
 그 결과 푸른 빛의 궤적이 이음새 없이 기둥을 타고 흐르는, 하나의 조형물 같은 연출을 완성했습니다.
 
 **화면이 아니라 브랜드 경험이 되도록**
-
 
 에스티로더처럼 럭셔리 뷰티 브랜드의 팝업스토어는 스크린이 두드러지기보다, 공간 전체가 브랜드 무드로 읽혀야 합니다. 
 
