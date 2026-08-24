@@ -932,6 +932,19 @@ section { position: relative; }
   transition: transform .25s ease, box-shadow .25s ease;
 }
 .portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(17, 24, 39, 0.1); }
+.portfolio-card-media { position: relative; overflow: hidden; aspect-ratio: 4 / 3; }
+.portfolio-card-media .portfolio-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+.portfolio-card-image--hover {
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.portfolio-card:hover .portfolio-card-image--hover { opacity: 1; }
 .portfolio-card-image { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
 .portfolio-card-body { padding: 20px 22px 24px; }
 .portfolio-card-category {

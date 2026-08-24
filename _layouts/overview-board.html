@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=47">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=48">
 </head>
 <body>
 
@@ -99,9 +99,14 @@
       {% if post.overview_category contains page.overview_filter %}
         {% assign match_count = match_count | plus: 1 %}
         <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
-          {% if post.cover_image %}
-          <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
-          {% endif %}
+          <div class="portfolio-card-media">
+            {% if post.cover_image %}
+            <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
+            {% endif %}
+            {% if post.gallery and post.gallery.size > 0 %}
+            <img class="portfolio-card-image portfolio-card-image--hover" src="{{ site.baseurl }}{{ post.gallery.first }}" alt="{{ post.title }}">
+            {% endif %}
+          </div>
           <div class="portfolio-card-body">
             {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
             <h2 class="portfolio-card-title">{{ post.title }}</h2>
