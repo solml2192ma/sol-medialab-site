@@ -2,7 +2,7 @@
 post_date: 2026-08-20T14:03:51+09:00
 title: SIDEX 창립 100주년 기념식
 overview_category:
-  - 행사 이벤트
+  - 공연·행사
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/시1.png

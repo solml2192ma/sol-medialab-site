@@ -1,6 +1,6 @@
 ---
 layout: overview-board
-title: "행사 이벤트"
-overview_filter: "행사 이벤트"
+title: "공연·행사"
+overview_filter: "공연·행사"
 permalink: /overview/event/
 ---

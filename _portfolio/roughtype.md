@@ -2,7 +2,7 @@
 title: roughtype
 post_date: 2026-08-20T17:20:58+09:00
 overview_category:
-  - 백화점 쇼핑몰
+  - 백화점·쇼핑몰
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/로타입1.png

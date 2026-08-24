@@ -3,7 +3,7 @@ layout: service-detail
 title: "COMPANY EVENT"
 subtitle: "Business"
 hero_image: /assets/img/display-company.webp
-overview_filter: "행사 이벤트"
+overview_filter: "공연·행사"
 overview_url: /overview/event/
 permalink: /services/company-event/
 ---

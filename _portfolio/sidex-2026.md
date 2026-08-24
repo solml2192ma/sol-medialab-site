@@ -2,7 +2,7 @@
 post_date: 2026-08-20T13:15:56+09:00
 title: SIDEX 2026
 overview_category:
-  - 행사 이벤트
+  - 공연·행사
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/시덱1.png

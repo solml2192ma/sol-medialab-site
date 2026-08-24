@@ -3,7 +3,7 @@ layout: service-detail
 title: "STAGE"
 subtitle: "Concert, Performance, Live event"
 hero_image: /assets/img/display-stage.webp
-overview_filter: "콘서트"
+overview_filter: "컨퍼런스·세미나"
 overview_url: /overview/concert/
 permalink: /services/stage/
 ---

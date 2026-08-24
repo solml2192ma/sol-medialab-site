@@ -2,7 +2,7 @@
 post_date: 2026-08-20T14:10:39+09:00
 title: 명동 LED 스크린 유지 보수
 overview_category:
-  - 유지보수
+  - 유지·보수
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/명동1.png
