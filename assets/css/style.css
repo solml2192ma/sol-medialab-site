@@ -1499,6 +1499,12 @@ section { position: relative; }
     flex-direction: column;
     gap: 0;
   }
+  .main-nav.open .dropdown-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    transform: none;
+  }
   .main-nav.open .dropdown li a { color: rgba(255,255,255,0.75); }
   .main-nav.open .dropdown li a:hover { color: #fff; }
   .main-nav.open .dropdown li.sub { color: rgba(255,255,255,0.4); }
