@@ -2,7 +2,7 @@
 post_date: 2026-08-20T13:06:57+09:00
 title: TWS - 다시 만난 오늘 M/V 촬영 세트장
 overview_category:
-  - 방송 촬영
+  - 방송·촬영
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/투어스.png

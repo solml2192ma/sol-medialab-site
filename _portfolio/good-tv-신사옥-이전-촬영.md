@@ -2,7 +2,7 @@
 post_date: 2026-08-20T13:09:20+09:00
 title: GOOD TV 신사옥 이전 촬영
 overview_category:
-  - 방송 촬영
+  - 방송·촬영
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/굿티비1.png

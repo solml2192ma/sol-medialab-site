@@ -3,7 +3,7 @@ layout: service-detail
 title: "CONVENTION"
 subtitle: "Conference, Fair, Show"
 hero_image: /assets/img/display-convention.webp
-overview_filter: "전시 컨벤션"
+overview_filter: "전시·컨벤션"
 overview_url: /overview/exhibition/
 permalink: /services/convention/
 ---

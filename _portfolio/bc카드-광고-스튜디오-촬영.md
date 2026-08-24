@@ -2,7 +2,7 @@
 post_date: 2026-08-20T13:11:29+09:00
 title: BC카드 광고 스튜디오 촬영
 overview_category:
-  - 방송 촬영
+  - 방송·촬영
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/bc2.png

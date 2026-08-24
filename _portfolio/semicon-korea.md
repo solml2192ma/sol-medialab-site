@@ -2,7 +2,7 @@
 post_date: 2026-08-20T13:04:19+09:00
 title: Semicon Korea
 overview_category:
-  - 전시 컨벤션
+  - 전시·컨벤션
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/45.png
