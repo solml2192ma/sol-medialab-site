@@ -22,8 +22,17 @@
 const NOTIFY_EMAIL = 'solml2192@gmail.com';
 
 function doPost(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const data = (e && e.parameter) || {};
+
+  // Honeypot: real visitors never see or fill this field, so a filled
+  // value means the request came from a bot. Pretend success and do
+  // nothing else, so the bot has no signal that it was caught.
+  if (data.website) {
+    return ContentService.createTextOutput(JSON.stringify({ result: 'success' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const now = new Date();
   const timestamp = Utilities.formatDate(now, 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss');
 

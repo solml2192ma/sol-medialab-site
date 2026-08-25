@@ -19,6 +19,7 @@ phoneInputs.forEach((input, idx) => {
 });
 
 const form = document.getElementById('quoteForm');
+const honeypot = document.getElementById('hpWebsite');
 const submitBtn = document.getElementById('submitBtn');
 const statusEl = document.getElementById('formStatus');
 const modal = document.getElementById('successModal');
@@ -59,6 +60,13 @@ modal.addEventListener('click', (e) => {
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
+  if (honeypot.value.trim() !== '') {
+    // Spam bot filled the hidden field — pretend success without sending anything.
+    form.reset();
+    openModal();
+    return;
+  }
+
   if (!form.checkValidity()) {
     form.reportValidity();
     return;
@@ -72,6 +80,7 @@ form.addEventListener('submit', async (e) => {
   const phone = phoneInputs.map((f) => f.value).filter(Boolean).join('-');
 
   const params = new URLSearchParams({
+    website: honeypot.value,
     inquiry_type: document.getElementById('inquiryType').value,
     customer_name: document.getElementById('customerName').value,
     customer_email: document.getElementById('customerEmail').value,

@@ -1254,6 +1254,14 @@ section { position: relative; }
   box-shadow: 0 24px 60px rgba(17, 24, 39, 0.06);
 }
 .quote-form .form-group { margin-bottom: 22px; }
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
 .quote-form label {
   display: block;
   font-size: 14px;
