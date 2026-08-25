@@ -1,7 +1,8 @@
 ---
-post_date: 2026-08-20T13:22:01+09:00
 title: 제6회 페어플레이 은평 AI 시즌
-overview_category: []
+post_date: 2026-08-20T13:22:01+09:00
+overview_category:
+  - 공연·행사
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/은평1.png
