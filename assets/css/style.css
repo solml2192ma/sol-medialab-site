@@ -1014,6 +1014,33 @@ section { position: relative; }
 .portfolio-card-date { display: block; margin-top: 10px; color: #98A2B3; font-size: 13px; }
 .portfolio-empty { grid-column: 1 / -1; text-align: center; color: #98A2B3; padding: 60px 0; }
 
+.portfolio-pagination {
+  max-width: 1240px;
+  margin: 40px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.portfolio-page-btn {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 6px;
+  border-radius: 8px;
+  border: 1px solid #E3E7EE;
+  background: #fff;
+  color: #475467;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.portfolio-page-btn:hover { border-color: #2156E8; color: #2156E8; }
+.portfolio-page-btn.is-active {
+  background: #2156E8;
+  border-color: #2156E8;
+  color: #fff;
+}
+
 @media (max-width: 900px) {
   .portfolio-list { padding: 110px 20px 60px; }
   .portfolio-list--continued { padding-top: 50px; }

@@ -39,22 +39,71 @@ document.querySelectorAll('.main-nav > ul > li.has-dropdown').forEach((li) => {
   li.addEventListener('focusin', alignDropdown);
 });
 
-// OVERVIEW board search: filter the project grid by title/category/location
-document.querySelectorAll('.portfolio-search-input').forEach((input) => {
-  const grid = input.closest('section').querySelector('[data-portfolio-grid]');
-  if (!grid) return;
-  const cards = Array.from(grid.querySelectorAll('.portfolio-card'));
+// OVERVIEW board: paginate the project grid (6 per page) and support
+// search by title/category/location. While searching, pagination is
+// suspended and every match is shown at once; clearing the search
+// returns to page 1 of the full, paginated list.
+const PORTFOLIO_PAGE_SIZE = 6;
+
+document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
+  const section = grid.closest('section');
+  const input = section.querySelector('.portfolio-search-input');
   const emptyMsg = grid.querySelector('.portfolio-search-empty');
-  input.addEventListener('input', () => {
-    const query = input.value.trim().toLowerCase();
-    let visibleCount = 0;
-    cards.forEach((card) => {
-      const match = !query || card.textContent.toLowerCase().includes(query);
-      card.style.display = match ? '' : 'none';
-      if (match) visibleCount += 1;
+  const pagination = section.querySelector('[data-portfolio-pagination]');
+  const cards = Array.from(grid.querySelectorAll('.portfolio-card'));
+  const totalPages = Math.ceil(cards.length / PORTFOLIO_PAGE_SIZE);
+  let currentPage = 1;
+  let searching = false;
+
+  const renderPagination = () => {
+    if (!pagination) return;
+    if (searching || totalPages <= 1) {
+      pagination.innerHTML = '';
+      pagination.hidden = true;
+      return;
+    }
+    pagination.hidden = false;
+    pagination.innerHTML = '';
+    for (let p = 1; p <= totalPages; p += 1) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'portfolio-page-btn' + (p === currentPage ? ' is-active' : '');
+      btn.textContent = String(p);
+      btn.setAttribute('aria-current', p === currentPage ? 'page' : 'false');
+      btn.addEventListener('click', () => showPage(p));
+      pagination.appendChild(btn);
+    }
+  };
+
+  const showPage = (page) => {
+    currentPage = page;
+    cards.forEach((card, i) => {
+      const inPage = i >= (page - 1) * PORTFOLIO_PAGE_SIZE && i < page * PORTFOLIO_PAGE_SIZE;
+      card.style.display = inPage ? '' : 'none';
     });
-    if (emptyMsg) emptyMsg.hidden = visibleCount !== 0 || cards.length === 0;
-  });
+    renderPagination();
+  };
+
+  if (cards.length) showPage(1);
+
+  if (input) {
+    input.addEventListener('input', () => {
+      const query = input.value.trim().toLowerCase();
+      searching = query.length > 0;
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        const match = !searching || card.textContent.toLowerCase().includes(query);
+        card.style.display = match ? '' : 'none';
+        if (match) visibleCount += 1;
+      });
+      if (emptyMsg) emptyMsg.hidden = visibleCount !== 0 || cards.length === 0;
+      if (searching) {
+        renderPagination();
+      } else {
+        showPage(1);
+      }
+    });
+  }
 });
 
 // Mobile menu toggle
