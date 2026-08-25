@@ -1,10 +1,10 @@
 ---
-post_date: 2026-08-20T13:04:19+09:00
 title: Semicon Korea
+post_date: 2026-08-20T13:04:19+09:00
 overview_category:
   - 전시·컨벤션
 client: ''
-location: ''
+location: 코엑스
 cover_image: /assets/img/portfolio/45.png
 gallery:
   - /assets/img/portfolio/452.png
