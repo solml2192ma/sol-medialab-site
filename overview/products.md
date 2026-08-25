@@ -4,6 +4,7 @@ title: "제품 유통"
 overview_filter: "제품 유통"
 permalink: /overview/products/
 hero_image: /assets/img/products-hero.jpg
+hero_image_position: "50% 35%"
 hero_eyebrow: "PRODUCTS"
 hero_title: "PRODUCTS"
 hero_subtitle: "Equipment Supply"
