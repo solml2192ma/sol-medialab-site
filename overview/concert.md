@@ -4,9 +4,9 @@ title: "컨퍼런스·세미나"
 overview_filter: "컨퍼런스·세미나"
 permalink: /overview/concert/
 hero_image: /assets/img/display-company.webp
-hero_eyebrow: "BUSINESS AREA"
-hero_title: "COMPANY EVENT"
-hero_subtitle: "Business"
+hero_eyebrow: "RENTAL"
+hero_title: "Seminar · Conference · Meeting · Symposium"
+hero_subtitle: "Business · Academy · Company"
 ---
 기업 컨퍼런스, 세미나, 국제회의까지 — 성격은 저마다 다르지만 공통적으로 요구되는 것은 하루의 흐름에 맞춰 흔들림 없이 작동하는 화면입니다. 개회사부터 발표, 시상까지 여러 순서가 이어지는 동안 송출 장애나 화질 저하가 있어서는 안 됩니다.
 
