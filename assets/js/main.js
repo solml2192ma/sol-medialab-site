@@ -22,7 +22,18 @@ document.querySelectorAll('.main-nav > ul > li.has-dropdown').forEach((li) => {
     const liRect = li.getBoundingClientRect();
     const triggerCenter = liRect.left + liRect.width / 2;
     const viewportCenter = window.innerWidth / 2;
-    li.style.setProperty('--dropdown-x', `${triggerCenter - viewportCenter}px`);
+    const desiredShift = triggerCenter - viewportCenter;
+
+    // Clamp so the (possibly wide) link group never pushes past the
+    // viewport edges — narrower "windowed" browsers were shifting the
+    // OVERVIEW dropdown far enough right to clip its last column.
+    const safePadding = 24;
+    const halfInner = inner.getBoundingClientRect().width / 2;
+    const minShift = safePadding - (viewportCenter - halfInner);
+    const maxShift = (window.innerWidth - safePadding) - (viewportCenter + halfInner);
+    const shift = Math.min(maxShift, Math.max(minShift, desiredShift));
+
+    li.style.setProperty('--dropdown-x', `${shift}px`);
   };
   li.addEventListener('mouseenter', alignDropdown);
   li.addEventListener('focusin', alignDropdown);
