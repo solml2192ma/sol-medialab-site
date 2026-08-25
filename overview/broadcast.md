@@ -4,10 +4,10 @@ title: "방송·촬영"
 overview_filter: "방송·촬영"
 permalink: /overview/broadcast/
 hero_image: /assets/img/broadcast-hero.jpg
-hero_image_position: "50% 20%"
+hero_image_position: "50% 45%"
 hero_eyebrow: "RENTAL"
 hero_title: "Broadcast · Filming"
-hero_subtitle: "Filming, Studio, Live Production"
+hero_subtitle: "Studio, Live Production, Commercial AD, M/V"
 ---
 촬영 현장의 LED는 카메라 렌즈를 통과했을 때도 자연스러워야 합니다. 낮은 반사율과 정밀한 색 재현으로 실물과 화면 속 이미지의 색이 어긋나지 않아야 합니다. 특히 버추얼 스튜디오처럼 배경 전체가 스크린인 경우, 피사체와 배경의 원근감과 조명 톤이 자연스럽게 맞아떨어져야 합니다.
 

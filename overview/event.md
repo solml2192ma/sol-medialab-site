@@ -4,6 +4,7 @@ title: "공연·스테이지"
 overview_filter: "공연·스테이지"
 permalink: /overview/event/
 hero_image: /assets/img/event-hero.jpg
+hero_image_position: "50% 62%"
 hero_eyebrow: "RENTAL"
 hero_title: "Stage · Performance · Concert"
 hero_subtitle: "Event · Festival · Music · Occasion"
