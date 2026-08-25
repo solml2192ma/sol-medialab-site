@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=57">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=58">
 </head>
 <body>
 
@@ -107,14 +107,20 @@
 
 <section class="portfolio-list{% if page.hero_image %} portfolio-list--continued{% endif %}">
   <header class="portfolio-list-head">
-    {% if page.hero_image %}
-    <span class="eyebrow">RELATED WORK</span>
-    {% else %}
-    <h1>{{ page.title }}</h1>
-    {% endif %}
+    <div class="portfolio-list-head-row">
+      {% if page.hero_image %}
+      <span class="eyebrow">RELATED WORK</span>
+      {% else %}
+      <h1>{{ page.title }}</h1>
+      {% endif %}
+      <div class="portfolio-search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.8-3.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input type="text" class="portfolio-search-input" placeholder="게시물 검색" aria-label="게시물 검색">
+      </div>
+    </div>
   </header>
 
-  <div class="portfolio-grid">
+  <div class="portfolio-grid" data-portfolio-grid>
     {% assign match_count = 0 %}
     {% assign dated_posts = site.portfolio | where_exp: "p", "p.post_date != nil" | where_exp: "p", "p.post_date != empty" %}
     {% assign sorted_posts = dated_posts | sort: 'post_date' | reverse %}
@@ -143,6 +149,7 @@
     {% if match_count == 0 %}
     <p class="portfolio-empty">아직 등록된 프로젝트가 없습니다.</p>
     {% endif %}
+    <p class="portfolio-search-empty" hidden>검색 결과가 없습니다.</p>
   </div>
 </section>
 
@@ -198,6 +205,6 @@
   </button>
 </div>
 
-<script src="{{ site.baseurl }}/assets/js/main.js?v=17"></script>
+<script src="{{ site.baseurl }}/assets/js/main.js?v=18"></script>
 </body>
 </html>

@@ -39,6 +39,24 @@ document.querySelectorAll('.main-nav > ul > li.has-dropdown').forEach((li) => {
   li.addEventListener('focusin', alignDropdown);
 });
 
+// OVERVIEW board search: filter the project grid by title/category/location
+document.querySelectorAll('.portfolio-search-input').forEach((input) => {
+  const grid = input.closest('section').querySelector('[data-portfolio-grid]');
+  if (!grid) return;
+  const cards = Array.from(grid.querySelectorAll('.portfolio-card'));
+  const emptyMsg = grid.querySelector('.portfolio-search-empty');
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      const match = !query || card.textContent.toLowerCase().includes(query);
+      card.style.display = match ? '' : 'none';
+      if (match) visibleCount += 1;
+    });
+    if (emptyMsg) emptyMsg.hidden = visibleCount !== 0 || cards.length === 0;
+  });
+});
+
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.querySelector('.main-nav');
