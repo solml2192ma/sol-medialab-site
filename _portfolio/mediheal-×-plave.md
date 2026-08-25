@@ -1,10 +1,10 @@
 ---
-post_date: 2026-08-21T12:36:37+09:00
 title: MEDIHEAL × PLAVE
+post_date: 2026-08-21T12:36:37+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
-location: ''
+location: 성수 올리브영N
 cover_image: /assets/img/portfolio/올리브1.png
 gallery: []
 ---
