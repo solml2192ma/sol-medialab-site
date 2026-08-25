@@ -4,7 +4,7 @@ post_date: 2026-08-20T16:36:48+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
-location: 판교 현대 백화점
+location: 더현대 서울
 cover_image: /assets/img/portfolio/코치2.png
 gallery:
   - /assets/img/portfolio/코치1.png
