@@ -1005,7 +1005,6 @@ section { position: relative; }
   font-size: 13px;
   font-weight: 700;
 }
-.portfolio-detail-title-wrap { display: inline-block; max-width: 100%; }
 .portfolio-detail-head h1 {
   margin-top: 18px;
   font-family: 'Pretendard', sans-serif;
@@ -1016,8 +1015,8 @@ section { position: relative; }
 }
 .portfolio-detail-location {
   margin-top: 10px;
-  text-align: left;
-  font-size: 18px;
+  text-align: center;
+  font-size: 15px;
   font-weight: 600;
   color: #667085;
 }
