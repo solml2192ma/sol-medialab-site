@@ -4,7 +4,7 @@ title: "시공"
 overview_filter: "시공"
 permalink: /overview/installation/
 hero_image: /assets/img/about-installation.jpg
-hero_eyebrow: "BUSINESS AREA"
+hero_eyebrow: "INSTALLATION"
 hero_title: "INSTALLATION"
 hero_subtitle: "Fixed LED Screen"
 ---

@@ -4,7 +4,7 @@ title: "방송·촬영"
 overview_filter: "방송·촬영"
 permalink: /overview/broadcast/
 hero_image: /assets/img/showcase-control.webp
-hero_eyebrow: "BUSINESS AREA"
+hero_eyebrow: "RENTAL"
 hero_title: "BROADCAST"
 hero_subtitle: "Filming, Studio, Live Production"
 ---

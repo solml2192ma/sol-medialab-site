@@ -4,7 +4,7 @@ title: "전시·컨벤션"
 overview_filter: "전시·컨벤션"
 permalink: /overview/exhibition/
 hero_image: /assets/img/display-convention.webp
-hero_eyebrow: "INSTALLATION"
+hero_eyebrow: "RENTAL"
 hero_title: "Exhibition · Convention · Fair · Expo"
 hero_subtitle: "Hall · Venue"
 ---

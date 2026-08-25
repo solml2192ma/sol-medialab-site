@@ -4,7 +4,7 @@ title: "공연·스테이지"
 overview_filter: "공연·스테이지"
 permalink: /overview/event/
 hero_image: /assets/img/display-stage.webp
-hero_eyebrow: "BUSINESS AREA"
+hero_eyebrow: "RENTAL"
 hero_title: "STAGE"
 hero_subtitle: "Concert, Performance, Live event"
 ---

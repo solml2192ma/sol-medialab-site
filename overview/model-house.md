@@ -4,7 +4,7 @@ title: "분양홍보관·모델하우스"
 overview_filter: "분양홍보관·모델하우스"
 permalink: /overview/model-house/
 hero_image: /assets/img/portfolio/몬트레아1.png
-hero_eyebrow: "BUSINESS AREA"
+hero_eyebrow: "INSTALLATION"
 hero_title: "MODEL HOUSE"
 hero_subtitle: "Show Unit, Sales Gallery"
 ---
