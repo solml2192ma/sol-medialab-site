@@ -909,6 +909,7 @@ section { position: relative; }
 
 /* ===== Portfolio list ===== */
 .portfolio-list { background: #F4F7FC; padding: 150px 24px 100px; min-height: 60vh; }
+.portfolio-list--continued { padding-top: 64px; }
 .portfolio-list-head { max-width: 1240px; margin: 0 auto 48px; text-align: center; }
 .portfolio-list-head h1 {
   font-family: 'Pretendard', sans-serif;
@@ -977,6 +978,7 @@ section { position: relative; }
 
 @media (max-width: 900px) {
   .portfolio-list { padding: 110px 20px 60px; }
+  .portfolio-list--continued { padding-top: 50px; }
   .portfolio-grid { grid-template-columns: 1fr; gap: 20px; }
 }
 
@@ -1087,6 +1089,7 @@ section { position: relative; }
 .service-hero-subtitle { margin-top: 12px; font-size: 15px; color: rgba(255,255,255,.78); }
 
 .service-page-body { background: #fff; }
+.service-page-body.no-hero { padding-top: 150px; }
 .service-body { max-width: 720px; margin: 0 auto; padding: 72px 24px 0; color: #344054; font-size: 17px; line-height: 1.85; }
 .service-body p { margin-bottom: 22px; }
 .service-body p:last-child { margin-bottom: 0; }
@@ -1124,6 +1127,7 @@ section { position: relative; }
   .service-hero-inner { padding: 104px 20px 36px; }
   .service-body { margin-top: 52px; font-size: 15.5px; }
   .service-gallery { margin-top: 60px; padding: 0 20px 80px; }
+  .service-page-body.no-hero { padding-top: 110px; }
 }
 
 /* ===== Contact CTA (home) ===== */

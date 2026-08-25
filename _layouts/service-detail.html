@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=52">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=53">
 </head>
 <body>
 
@@ -86,6 +86,7 @@
   </div>
 </header>
 
+{% if page.hero_image %}
 <section class="service-hero">
   <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="{{ page.title }} — {{ page.subtitle }}">
   <div class="service-hero-inner">
@@ -94,11 +95,14 @@
     <p class="service-hero-subtitle">{{ page.subtitle }}</p>
   </div>
 </section>
+{% endif %}
 
-<div class="service-page-body">
+<div class="service-page-body{% unless page.hero_image %} no-hero{% endunless %}">
+  {% if content and content != empty %}
   <div class="service-body">
     {{ content }}
   </div>
+  {% endif %}
 
   <section class="service-gallery">
     <div class="service-gallery-head">

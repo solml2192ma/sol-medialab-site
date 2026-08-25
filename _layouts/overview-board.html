@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=52">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=53">
 </head>
 <body>
 
@@ -86,7 +86,24 @@
   </div>
 </header>
 
-<section class="portfolio-list">
+{% if page.hero_image %}
+<section class="service-hero">
+  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="{{ page.hero_title }} — {{ page.hero_subtitle }}">
+  <div class="service-hero-inner">
+    {% if page.hero_eyebrow %}<p class="service-hero-eyebrow">{{ page.hero_eyebrow }}</p>{% endif %}
+    <h1 class="service-hero-title">{{ page.hero_title }}</h1>
+    {% if page.hero_subtitle %}<p class="service-hero-subtitle">{{ page.hero_subtitle }}</p>{% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if content and content != empty %}
+<div class="service-body">
+  {{ content }}
+</div>
+{% endif %}
+
+<section class="portfolio-list{% if page.hero_image %} portfolio-list--continued{% endif %}">
   <header class="portfolio-list-head">
     <h1>{{ page.title }}</h1>
     <p>{{ page.title }} 관련 프로젝트를 소개합니다</p>
