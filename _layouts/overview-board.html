@@ -88,7 +88,7 @@
 
 {% if page.hero_image %}
 <section class="service-hero">
-  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="{{ page.hero_title }} — {{ page.hero_subtitle }}">
+  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="{{ page.hero_title }} — {{ page.hero_subtitle }}"{% if page.hero_image_position %} style="object-position: {{ page.hero_image_position }};"{% endif %}>
   <div class="service-hero-inner">
     {% if page.hero_eyebrow %}<p class="service-hero-eyebrow">{{ page.hero_eyebrow }}</p>{% endif %}
     <h1 class="service-hero-title">{{ page.hero_title }}</h1>
