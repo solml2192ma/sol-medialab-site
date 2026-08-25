@@ -5,8 +5,8 @@ overview_filter: "백화점·쇼핑몰"
 permalink: /overview/department-store/
 hero_image: /assets/img/display-popup.webp
 hero_eyebrow: "INSTALLATION"
-hero_title: "Departmentstore · Mall · Pop-up · Shop · Store"
-hero_subtitle: "Brand · Fashion · Cosmetic · Good"
+hero_title: "Retail · Mall · Pop-up"
+hero_subtitle: "Brand · Fashion · Cosmetic · Goods"
 ---
 백화점·쇼핑몰은 브랜드의 인상을 각인시켜야 하는 공간입니다. LED는 여기서 정보를 띄우는 화면이 아니라, 방문객이 사진을 찍고 SNS에 공유하고 싶어지는 '공간의 일부'가 되어야 합니다.
 
