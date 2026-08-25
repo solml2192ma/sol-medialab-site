@@ -2,7 +2,7 @@
 title: SIDEX 창립 100주년 기념식
 post_date: 2026-08-20T14:03:51+09:00
 overview_category:
-  - 공연·행사
+  - 컨퍼런스·세미나
 client: ''
 location: 코엑스 그랜드볼룸
 cover_image: /assets/img/portfolio/시1.png

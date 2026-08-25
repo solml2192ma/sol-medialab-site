@@ -2,7 +2,7 @@
 title: SSAFY Meet UP
 post_date: 2026-08-20T13:41:44+09:00
 overview_category:
-  - 공연·행사
+  - 컨퍼런스·세미나
 client: ''
 location: 역삼동 멀티캠퍼스
 cover_image: /assets/img/portfolio/밋업.png

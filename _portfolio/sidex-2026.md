@@ -2,7 +2,7 @@
 title: SIDEX 2026
 post_date: 2026-08-20T13:15:56+09:00
 overview_category:
-  - 공연·행사
+  - 컨퍼런스·세미나
 client: ''
 location: 그랜드 인터컨티넨탈 서울 파르나스 그랜드 볼룸
 cover_image: /assets/img/portfolio/시덱1.png
