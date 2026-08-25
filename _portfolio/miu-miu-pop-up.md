@@ -1,5 +1,5 @@
 ---
-title: Miu Miu POP - UP
+title: Miu Miu
 post_date: 2026-08-20T16:27:02+09:00
 overview_category:
   - 백화점·쇼핑몰
