@@ -2,7 +2,7 @@
 title: Estée Lauder(에스티로더)
 post_date: 2026-08-20T12:58:13+09:00
 overview_category:
-  - 백화점 쇼핑몰
+  - 백화점·쇼핑몰
 client: ''
 location: ''
 cover_image: /assets/img/portfolio/에스티1.png
