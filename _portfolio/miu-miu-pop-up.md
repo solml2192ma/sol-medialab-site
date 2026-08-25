@@ -4,7 +4,7 @@ post_date: 2026-08-20T16:27:02+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
-location: ''
+location: 더현대 서울
 cover_image: /assets/img/portfolio/미우미우1.png
 gallery:
   - /assets/img/portfolio/미우미우2.png
