@@ -4,9 +4,9 @@ title: "전시·컨벤션"
 overview_filter: "전시·컨벤션"
 permalink: /overview/exhibition/
 hero_image: /assets/img/display-convention.webp
-hero_eyebrow: "BUSINESS AREA"
-hero_title: "CONVENTION"
-hero_subtitle: "Conference, Fair, Show"
+hero_eyebrow: "INSTALLATION"
+hero_title: "Exhibition · Convention · Fair · Expo"
+hero_subtitle: "Hall · Venue"
 ---
 전시·컨벤션 현장은 하루 이틀이 아니라 며칠간 쉬지 않고 가동됩니다. 그 기간 내내 첫날과 마지막 날의 화질이 같아야 하고, 수많은 관람객이 오가는 통로 안에서도 부스의 존재감을 잃지 않아야 합니다.
 
