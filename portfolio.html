@@ -59,7 +59,7 @@ layout: null
               <li class="sub"><a href="{{ site.baseurl }}/overview/concert/">컨퍼런스·세미나</a></li>
               <li class="sub"><a href="{{ site.baseurl }}/overview/exhibition/">전시·컨벤션</a></li>
               <li class="sub"><a href="{{ site.baseurl }}/overview/broadcast/">방송·촬영</a></li>
-              <li class="sub"><a href="{{ site.baseurl }}/overview/event/">공연·스테이지</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/event/">공연·행사</a></li>
             </ul>
             <ul>
               <li class="dropdown-heading"><a href="{{ site.baseurl }}/overview/maintenance/">Service &amp; Maintenance</a></li>
@@ -101,7 +101,7 @@ layout: null
     </div>
   </header>
 
-  {% assign categories = "시공,백화점·쇼핑몰,분양홍보관·모델하우스,사이니지·비디오월,컨퍼런스·세미나,전시·컨벤션,방송·촬영,공연·스테이지,유지·보수,제품 유통" | split: "," %}
+  {% assign categories = "시공,백화점·쇼핑몰,분양홍보관·모델하우스,사이니지·비디오월,컨퍼런스·세미나,전시·컨벤션,방송·촬영,공연·행사,유지·보수,제품 유통" | split: "," %}
   {% assign dated_posts = site.portfolio | where_exp: "p", "p.post_date != nil" | where_exp: "p", "p.post_date != empty" %}
   {% assign sorted_posts = dated_posts | sort: 'post_date' | reverse %}
   {% assign total_count = 0 %}

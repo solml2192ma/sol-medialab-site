@@ -1,7 +1,7 @@
 ---
 layout: overview-board
-title: "공연·스테이지"
-overview_filter: "공연·스테이지"
+title: "공연·행사"
+overview_filter: "공연·행사"
 permalink: /overview/event/
 hero_image: /assets/img/event-hero.jpg
 hero_image_position: "50% 62%"
