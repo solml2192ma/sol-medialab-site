@@ -1,6 +1,6 @@
 ---
-title: Estée Lauder(에스티로더)
-post_date: 2026-08-20T12:58:13+09:00
+title: 에스티로더 (Estée Lauder)
+post_date: 2026-08-20T12:58:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
