@@ -8,6 +8,20 @@ backend:
 media_folder: "assets/img/portfolio"
 public_folder: "/assets/img/portfolio"
 
+# Automatically resize/compress photos in the browser before they're
+# uploaded, so phone-camera originals (often several MB) don't bloat
+# the repo or slow down the OVERVIEW board pages.
+media_libraries:
+  default:
+    config:
+      max_file_size: 10000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1920
+          height: 1920
+
 publish_mode: simple
 
 collections:
