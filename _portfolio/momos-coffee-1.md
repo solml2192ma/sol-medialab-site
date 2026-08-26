@@ -1,6 +1,6 @@
 ---
-post_date: 2026-08-20T12:54:30+09:00
-title: MOMOS COFFEE
+title: 모모스 커피 (MOMOS COFFEE)
+post_date: 2026-08-20T12:54:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
