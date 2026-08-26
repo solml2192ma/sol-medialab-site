@@ -87,7 +87,7 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
   if (cards.length) showPage(1);
 
   if (input) {
-    input.addEventListener('input', () => {
+    const runSearch = () => {
       const query = input.value.trim().toLowerCase();
       searching = query.length > 0;
       let visibleCount = 0;
@@ -102,7 +102,16 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
       } else {
         showPage(1);
       }
-    });
+    };
+    input.addEventListener('input', runSearch);
+
+    // Arriving from an OVERVIEW board's "전체 게시물에서 검색" box, e.g.
+    // portfolio.html?q=..., pre-fills and runs this page's own search.
+    const presetQuery = new URLSearchParams(window.location.search).get('q');
+    if (presetQuery) {
+      input.value = presetQuery;
+      runSearch();
+    }
   }
 });
 

@@ -13,7 +13,7 @@ layout: null
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=60">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=61">
 </head>
 <body>
 
@@ -91,11 +91,17 @@ layout: null
 
 <section class="portfolio-list">
   <header class="portfolio-list-head">
-    <h1>PORTFOLIO</h1>
+    <div class="portfolio-list-head-row">
+      <h1>PORTFOLIO</h1>
+      <div class="portfolio-search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.8-3.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input type="text" class="portfolio-search-input" placeholder="전체 게시물 검색" aria-label="전체 게시물 검색">
+      </div>
+    </div>
     <p>솔미디어랩이 진행한 프로젝트를 소개합니다</p>
   </header>
 
-  <div class="portfolio-grid">
+  <div class="portfolio-grid" data-portfolio-grid>
     {% assign dated_posts = site.portfolio | where_exp: "p", "p.post_date != nil" | where_exp: "p", "p.post_date != empty" %}
     {% assign sorted_posts = dated_posts | sort: 'post_date' | reverse %}
     {% for post in sorted_posts %}
@@ -114,7 +120,9 @@ layout: null
     {% else %}
     <p class="portfolio-empty">아직 등록된 포트폴리오가 없습니다.</p>
     {% endfor %}
+    <p class="portfolio-search-empty" hidden>검색 결과가 없습니다.</p>
   </div>
+  <nav class="portfolio-pagination" data-portfolio-pagination aria-label="페이지 이동" hidden></nav>
 </section>
 
 <footer class="site-footer">
@@ -169,6 +177,6 @@ layout: null
   </button>
 </div>
 
-<script src="{{ site.baseurl }}/assets/js/main.js?v=19"></script>
+<script src="{{ site.baseurl }}/assets/js/main.js?v=20"></script>
 </body>
 </html>
