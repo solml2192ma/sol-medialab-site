@@ -5,9 +5,9 @@ overview_category:
   - 분양홍보관·모델하우스
 client: ''
 location: 영등포
-cover_image: /assets/img/portfolio/yttz1.png
+cover_image: /assets/img/portfolio/yttz1.webp
 gallery:
-  - /assets/img/portfolio/yttz2.png
+  - /assets/img/portfolio/yttz2.webp
 ---
 
 # 래미안 YTTZ 홍보관 — 앉아서 한 시간을 보는 화면
