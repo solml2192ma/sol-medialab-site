@@ -5,9 +5,9 @@ overview_category:
   - 사이니지·비디오월
 client: ''
 location: LH 천안 도시재생뉴딜 체험관
-cover_image: /assets/img/portfolio/20210105_152704.webp
+cover_image: /assets/img/portfolio/phstc4lnhj.webp
 gallery:
-  - /assets/img/portfolio/20210105_152644.webp
+  - /assets/img/portfolio/jrztxu5t8q.webp
 ---
 
 # LH 천안 도시재생뉴딜 체험관 — 한 면이 아니라, 여러 화면이 이야기를 나눠 맡습니다
