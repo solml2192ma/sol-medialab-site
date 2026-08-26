@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ page.title }} | 사업영역 | SOL MEDIA LAB INC.</title>
-<meta name="description" content="SOL MEDIA LAB INC. 사업영역 — {{ page.title }}. {{ page.subtitle }}">
+<meta name="description" content="SOL MEDIA LAB INC. 사업영역 - {{ page.title }}">
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=78"></head><body>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=78"></head>
+<body>
 
 <header class="site-header header-solid" id="siteHeader">
   <div class="header-inner">
@@ -86,60 +87,44 @@
 
 {% if page.hero_image %}
 <section class="service-hero">
-  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="{{ page.title }} — {{ page.subtitle }}">
+  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="{{ page.hero_title }} — {{ page.hero_subtitle }}"{% if page.hero_image_position %} style="object-position: {{ page.hero_image_position }};"{% endif %}>
   <div class="service-hero-inner">
-    <p class="service-hero-eyebrow">BUSINESS AREA</p>
-    <h1 class="service-hero-title">{{ page.title }}</h1>
-    <p class="service-hero-subtitle">{{ page.subtitle }}</p>
+    {% if page.hero_eyebrow %}<p class="service-hero-eyebrow">{{ page.hero_eyebrow }}</p>{% endif %}
+    <h1 class="service-hero-title">{{ page.hero_title }}</h1>
+    {% if page.hero_subtitle %}<p class="service-hero-subtitle">{{ page.hero_subtitle }}</p>{% endif %}
   </div>
 </section>
 {% endif %}
 
-<div class="service-page-body{% unless page.hero_image %} no-hero{% endunless %}">
-  {% if content and content != empty %}
+{% if content and content != empty %}
+<div class="service-body-band">
   <div class="service-body">
     {{ content }}
   </div>
-  {% endif %}
-
-  <section class="service-gallery">
-    <div class="service-gallery-head">
-      <span class="eyebrow">RELATED WORK</span>
-      <h2>{{ page.title }} 관련 사례</h2>
-    </div>
-    <div class="portfolio-grid">
-      {% assign category_posts = site.portfolio | where_exp: "post", "post.overview_category contains page.overview_filter" %}
-      {% assign matched_posts = category_posts | where_exp: "p", "p.post_date != nil" | where_exp: "p", "p.post_date != empty" | sort: 'post_date' | reverse %}
-      {% assign match_count = matched_posts.size %}
-      {% assign display_posts = matched_posts | slice: 0, 3 %}
-      {% for post in display_posts %}
-        <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
-          {% if post.cover_image %}
-          <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
-          {% endif %}
-          <div class="portfolio-card-body">
-            <div class="portfolio-card-tags">
-              {% if post.location and post.location != empty %}<span class="portfolio-card-location">{{ post.location }}</span>{% endif %}
-              {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
-            </div>
-            <h2 class="portfolio-card-title">{{ post.title }}</h2>
-          </div>
-        </a>
-      {% endfor %}
-      {% if match_count == 0 %}
-      <p class="portfolio-empty">아직 등록된 프로젝트가 없습니다.</p>
-      {% endif %}
-    </div>
-    {% if match_count > 0 %}
-    <a class="service-gallery-more" href="{{ site.baseurl }}{{ page.overview_url }}">{{ page.title }} 사례 전체 보기 →</a>
-    {% endif %}
-  </section>
-
-  <section class="service-cta">
-    <a class="service-cta-btn" href="{{ site.baseurl }}/contact.html">{{ page.title }} 견적 문의하기</a>
-    <a class="service-cta-back" href="{{ site.baseurl }}/services.html">← 사업영역으로</a>
-  </section>
 </div>
+{% endif %}
+
+<section class="portfolio-list portfolio-list--continued">
+  <header class="portfolio-list-head">
+    <div class="portfolio-list-head-row">
+      <span class="eyebrow">CATEGORY</span>
+      <form class="portfolio-search" action="{{ site.baseurl }}/portfolio.html" method="get">
+        <button type="submit" aria-label="전체 게시물 검색"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.8-3.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <input type="text" name="q" placeholder="전체 게시물에서 검색" aria-label="전체 게시물에서 검색">
+      </form>
+    </div>
+  </header>
+
+  <div class="overview-group-links">
+    {% for item in page.sub_items %}
+    <a class="overview-group-card" href="{{ site.baseurl }}{{ item.url }}">
+      <img src="{{ site.baseurl }}{{ item.image }}" alt="{{ item.title }}">
+      <span class="overview-group-card-shade" aria-hidden="true"></span>
+      <span class="overview-group-card-title">{{ item.title }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="footer-inner">

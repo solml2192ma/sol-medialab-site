@@ -1014,6 +1014,43 @@ section { position: relative; }
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
+.overview-group-links {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.overview-group-card {
+  position: relative;
+  display: block;
+  height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.overview-group-card img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.overview-group-card:hover img { transform: scale(1.06); }
+.overview-group-card-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.7) 100%);
+}
+.overview-group-card-title {
+  position: absolute; left: 20px; bottom: 16px; z-index: 1;
+  color: #fff;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 640px) {
+  .overview-group-card { height: 160px; }
+  .overview-group-card-title { font-size: 16px; left: 16px; bottom: 12px; }
+}
 .portfolio-card {
   display: block;
   background: #fff;
