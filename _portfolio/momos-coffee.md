@@ -5,9 +5,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 벡스코
-cover_image: /assets/img/portfolio/모모스1.png
+cover_image: /assets/img/portfolio/모모스1.webp
 gallery:
-  - /assets/img/portfolio/모모스2.png
+  - /assets/img/portfolio/모모스2.webp
 ---
 
 ## MOMOS COFFEE 부스 — 벡스코에 수평선을 놓았습니다

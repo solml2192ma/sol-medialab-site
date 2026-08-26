@@ -5,9 +5,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 더현대 서울
-cover_image: /assets/img/portfolio/로타입1.png
+cover_image: /assets/img/portfolio/로타입1.webp
 gallery:
-  - /assets/img/portfolio/로타입2.png
+  - /assets/img/portfolio/로타입2.webp
 ---
 
 # roughtype 팝업 — 기둥을 감싼 화면, P2 플렉시블 LED

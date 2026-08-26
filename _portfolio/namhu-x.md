@@ -5,9 +5,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/나무1.png
+cover_image: /assets/img/portfolio/나무1.webp
 gallery:
-  - /assets/img/portfolio/나무2.png
+  - /assets/img/portfolio/나무2.webp
 ---
 
 # NAMUH X 브랜드 쇼케이스 —1년 동안 꺼지지 않는 화면

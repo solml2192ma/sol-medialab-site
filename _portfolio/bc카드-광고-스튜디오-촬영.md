@@ -5,10 +5,10 @@ overview_category:
   - 방송·촬영
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/bc2.png
+cover_image: /assets/img/portfolio/bc2.webp
 gallery:
-  - /assets/img/portfolio/bc1.png
-  - /assets/img/portfolio/bc3.png
+  - /assets/img/portfolio/bc1.webp
+  - /assets/img/portfolio/bc3.webp
 ---
 
 **카메라가 담는 배경, LED로 실시간 구현했습니다**

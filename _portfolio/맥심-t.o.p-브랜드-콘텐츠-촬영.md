@@ -5,9 +5,9 @@ overview_category:
   - 방송·촬영
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/탑2.png
+cover_image: /assets/img/portfolio/탑2.webp
 gallery:
-  - /assets/img/portfolio/탑1.png
+  - /assets/img/portfolio/탑1.webp
 ---
 
 **움직이는 카메라, 끊기지 않는 무대 배경**

@@ -5,10 +5,10 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/모모스스3.png
+cover_image: /assets/img/portfolio/모모스스3.webp
 gallery:
-  - /assets/img/portfolio/모모스스2.png
-  - /assets/img/portfolio/모모스스1.png
+  - /assets/img/portfolio/모모스스2.webp
+  - /assets/img/portfolio/모모스스1.webp
 ---
 
 # 부산국제영화제 MOMOS COFFEE 야외 부스 

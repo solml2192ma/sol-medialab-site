@@ -5,10 +5,10 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 역삼동 멀티캠퍼스
-cover_image: /assets/img/portfolio/싸피1.png
+cover_image: /assets/img/portfolio/싸피1.webp
 gallery:
-  - /assets/img/portfolio/싸피2.png
-  - /assets/img/portfolio/싸피3.png
+  - /assets/img/portfolio/싸피2.webp
+  - /assets/img/portfolio/싸피3.webp
 ---
 
 # 삼성 청년 SW·AI 아카데미

@@ -5,9 +5,9 @@ overview_category:
   - 전시·컨벤션
 client: ''
 location: 코엑스
-cover_image: /assets/img/portfolio/45.png
+cover_image: /assets/img/portfolio/45.webp
 gallery:
-  - /assets/img/portfolio/452.png
+  - /assets/img/portfolio/452.webp
 ---
 
 ### **안으로 꺾는 건 쉽지만, 밖으로 꺾는 건 다릅니다**
