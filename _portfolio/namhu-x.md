@@ -1,6 +1,6 @@
 ---
-post_date: 2026-08-20T17:34:26+09:00
-title: NAMHU X
+title: 나무x (NAMHU X)
+post_date: 2026-08-20T17:34:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
