@@ -14,6 +14,8 @@ published photos are never touched retroactively.
 """
 import glob
 import os
+import random
+import string
 import subprocess
 import sys
 
@@ -29,6 +31,17 @@ QUALITY = 82
 LOGO_WIDTH_RATIO = 0.19
 MARGIN_RATIO = 0.03
 INPUT_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
+RANDOM_NAME_LENGTH = 10
+
+
+def random_filename(taken):
+    """A random lowercase-alphanumeric basename (no extension), so the
+    downloaded file never reveals the original upload filename."""
+    while True:
+        name = "".join(random.choices(string.ascii_lowercase + string.digits, k=RANDOM_NAME_LENGTH))
+        if name not in taken:
+            taken.add(name)
+            return name
 
 
 def changed_portfolio_files(before_sha, after_sha):
@@ -69,7 +82,7 @@ def watermark_and_resize(im, logo):
     return im.convert("RGB")
 
 
-def process_file(rel_path, logo):
+def process_file(rel_path, logo, taken_names):
     abs_path = os.path.join(REPO_ROOT, rel_path)
     if not os.path.exists(abs_path):
         print(f"skip (deleted before processing): {rel_path}")
@@ -84,12 +97,8 @@ def process_file(rel_path, logo):
 
     out = watermark_and_resize(im, logo)
 
-    base = os.path.splitext(abs_path)[0]
-    new_abs_path = base + ".webp"
-
-    if os.path.exists(new_abs_path) and new_abs_path != abs_path:
-        print(f"skip (target already exists): {rel_path} -> {os.path.relpath(new_abs_path, REPO_ROOT)}")
-        return None
+    new_name = random_filename(taken_names) + ".webp"
+    new_abs_path = os.path.join(os.path.dirname(abs_path), new_name)
 
     out.save(new_abs_path, "WEBP", quality=QUALITY, method=6)
 
@@ -130,10 +139,11 @@ def main():
         return
 
     logo = Image.open(LOGO_PATH).convert("RGBA")
+    taken_names = {os.path.splitext(f)[0] for f in os.listdir(PORTFOLIO_DIR)}
 
     renames = []
     for rel_path in files:
-        result = process_file(rel_path, logo)
+        result = process_file(rel_path, logo, taken_names)
         if result:
             renames.append(result)
 
