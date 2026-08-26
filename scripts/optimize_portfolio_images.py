@@ -32,13 +32,18 @@ INPUT_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
 
 
 def changed_portfolio_files(before_sha, after_sha):
-    """Files added/modified under assets/img/portfolio/ in this push."""
+    """Files added/modified under assets/img/portfolio/ in this push.
+
+    Uses -z (NUL-separated, unquoted) output -- plain --name-only wraps any
+    path containing a space or non-ASCII byte in quotes with octal escapes,
+    which silently breaks lookup for filenames like "ChatGPT Image ....webp".
+    """
     result = subprocess.run(
-        ["git", "diff", "--name-only", "--diff-filter=ACMR", before_sha, after_sha,
+        ["git", "diff", "--name-only", "-z", "--diff-filter=ACMR", before_sha, after_sha,
          "--", "assets/img/portfolio/"],
-        cwd=REPO_ROOT, capture_output=True, text=True, check=True,
+        cwd=REPO_ROOT, capture_output=True, check=True,
     )
-    files = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+    files = [p.decode("utf-8") for p in result.stdout.split(b"\x00") if p]
     return [f for f in files if os.path.splitext(f)[1].lower() in INPUT_EXTS]
 
 
@@ -57,7 +62,7 @@ def watermark_and_resize(im, logo):
     logo_r = logo.resize((target_w, target_h), Image.LANCZOS)
 
     margin = round(w * MARGIN_RATIO)
-    x = margin
+    x = w - target_w - margin
     y = h - target_h - margin
 
     im.alpha_composite(logo_r, (x, y))
