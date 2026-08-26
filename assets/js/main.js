@@ -115,6 +115,44 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
   }
 });
 
+// PORTFOLIO all-search page: results are pre-grouped by category (one
+// [data-group] per category, each with its own [data-group-grid]).
+// Typing filters cards within every group and hides any group left
+// with zero matches, so only categories that actually match show up.
+const portfolioSearchAllInput = document.getElementById('portfolioSearchAll');
+const portfolioGroupsRoot = document.querySelector('[data-portfolio-groups-root]');
+if (portfolioSearchAllInput && portfolioGroupsRoot) {
+  const groups = Array.from(portfolioGroupsRoot.querySelectorAll('[data-group]')).map((group) => ({
+    el: group,
+    cards: Array.from(group.querySelectorAll('.portfolio-card')),
+  }));
+  const groupsEmptyMsg = portfolioGroupsRoot.querySelector('[data-groups-empty]');
+
+  const runGroupedSearch = () => {
+    const query = portfolioSearchAllInput.value.trim().toLowerCase();
+    let anyGroupVisible = false;
+    groups.forEach(({ el, cards }) => {
+      let visibleInGroup = 0;
+      cards.forEach((card) => {
+        const match = !query || card.textContent.toLowerCase().includes(query);
+        card.style.display = match ? '' : 'none';
+        if (match) visibleInGroup += 1;
+      });
+      el.hidden = visibleInGroup === 0;
+      if (visibleInGroup > 0) anyGroupVisible = true;
+    });
+    if (groupsEmptyMsg) groupsEmptyMsg.hidden = anyGroupVisible || groups.length === 0;
+  };
+
+  portfolioSearchAllInput.addEventListener('input', runGroupedSearch);
+
+  const presetGroupQuery = new URLSearchParams(window.location.search).get('q');
+  if (presetGroupQuery) {
+    portfolioSearchAllInput.value = presetGroupQuery;
+    runGroupedSearch();
+  }
+}
+
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.querySelector('.main-nav');

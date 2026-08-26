@@ -929,7 +929,19 @@ section { position: relative; }
   letter-spacing: -0.01em;
   color: #101828;
 }
-.portfolio-list-head p { margin-top: 12px; color: #475467; font-size: 15px; }
+.portfolio-list-head p { color: #475467; font-size: 15px; }
+.portfolio-list-head h1 + .portfolio-list-head-row { margin-top: 12px; }
+.portfolio-category-group { margin-bottom: 56px; }
+.portfolio-category-group:last-child { margin-bottom: 0; }
+.portfolio-category-heading {
+  max-width: 1240px;
+  margin: 0 auto 20px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #101828;
+  text-align: left;
+}
 .portfolio-search-group {
   display: flex;
   align-items: center;
