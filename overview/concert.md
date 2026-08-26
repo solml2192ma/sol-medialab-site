@@ -3,7 +3,7 @@ layout: overview-board
 title: "컨퍼런스·세미나"
 overview_filter: "컨퍼런스·세미나"
 permalink: /overview/concert/
-hero_image: /assets/img/display-company.webp
+hero_image: /assets/img/concert-hero.jpg
 hero_eyebrow: "RENTAL"
 hero_title: "Seminar · Conference · Meeting · Symposium"
 hero_subtitle: "Business · Academy · Company"

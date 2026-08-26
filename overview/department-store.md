@@ -3,7 +3,7 @@ layout: overview-board
 title: "백화점·쇼핑몰"
 overview_filter: "백화점·쇼핑몰"
 permalink: /overview/department-store/
-hero_image: /assets/img/display-popup.webp
+hero_image: /assets/img/department-store-hero.jpg
 hero_eyebrow: "INSTALLATION"
 hero_title: "Retail · Mall · Pop-up"
 hero_subtitle: "Brand · Fashion · Cosmetic · Goods"
