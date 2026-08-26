@@ -1062,6 +1062,10 @@ section { position: relative; }
   .portfolio-list { padding: 110px 20px 60px; }
   .portfolio-list--continued { padding-top: 50px; }
   .portfolio-grid { grid-template-columns: 1fr; gap: 20px; }
+  .portfolio-list-head-row { flex-wrap: nowrap; }
+  .portfolio-search { min-width: 0; flex: 1; max-width: 200px; padding: 8px 12px; }
+  .portfolio-search-input,
+  .portfolio-search input { min-width: 0; }
 }
 
 /* ===== Portfolio detail ===== */
