@@ -16,18 +16,12 @@
    Shape rule for this page: photo = 16px radius, buttons = full pill.
    Accent lock: #E2140A (brand red) is the only accent on this page.
    ===================================================================== */
-.location-page{background:#fff;padding:128px 24px 120px}
+.location-page{background:#fff;padding:80px 24px 120px}
 .location-page .loc-inner{max-width:1240px;margin:0 auto}
-
-.location-page h1{
-  font-family:'Pretendard',sans-serif;font-weight:700;
-  font-size:46px;line-height:1.15;letter-spacing:-.02em;color:#101828;margin:0;
-}
-.location-page .loc-rule{width:44px;height:3px;background:#E2140A;margin:22px 0 0;border:0}
 
 .location-page .loc-body{
   display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
-  gap:72px;align-items:stretch;margin-top:56px;
+  gap:72px;align-items:stretch;margin-top:0;
 }
 
 .location-page .loc-photo{margin:0}
@@ -149,9 +143,7 @@
   .location-page .loc-body{grid-template-columns:1fr;gap:40px;margin-top:40px}
 }
 @media (max-width:768px){
-  .location-page{padding:104px 20px 80px}
-  .location-page h1{font-size:32px}
-  .location-page .loc-rule{margin-top:18px}
+  .location-page{padding:60px 20px 80px}
   .location-page .loc-photo img{border-radius:14px;aspect-ratio:4/3;object-position:center 48%}
   .location-page .loc-row{grid-template-columns:1fr;gap:6px;padding:20px 0}
   .location-page .loc-row dd{font-size:18px}
@@ -234,15 +226,17 @@
   </div>
 </header>
 
+<section class="page-banner">
+  <h1>오시는 길</h1>
+  <p>서울특별시 송파구 충민로 10, 3D44 (가든파이브 툴)</p>
+</section>
+
 <section class="location-page">
   <div class="loc-inner">
 
-    <h1 class="loc-anim" style="--i:0">오시는 길</h1>
-    <hr class="loc-rule loc-anim" style="--i:1">
-
     <div class="loc-body">
 
-      <figure class="loc-photo loc-anim" style="--i:2">
+      <figure class="loc-photo loc-anim" style="--i:0">
         <picture>
           <source srcset="assets/img/location-photo.webp" type="image/webp">
           <img src="assets/img/location-photo.jpg" alt="가든파이브 툴동 전경"
@@ -250,7 +244,7 @@
         </picture>
       </figure>
 
-      <div class="loc-info loc-anim" style="--i:3">
+      <div class="loc-info loc-anim" style="--i:1">
         <div class="loc-company">
           <img class="loc-company-logo" src="assets/img/logo.png" alt="SOL MEDIA LAB INC. 로고">
           <div>
@@ -314,7 +308,7 @@
 
     </div>
 
-    <div class="loc-map loc-anim" style="--i:4">
+    <div class="loc-map loc-anim" style="--i:2">
       <iframe
         src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%B6%A9%EB%AF%BC%EB%A1%9C%2010%20%EC%86%94%EB%AF%B8%EB%94%94%EC%96%B4%EB%9E%A9&output=embed"
         loading="lazy"
