@@ -5,7 +5,7 @@ overview_filter: "유지·보수"
 permalink: /overview/maintenance/
 hero_image: /assets/img/maintenance-hero.jpg
 hero_image_position: "50% 35%"
-hero_eyebrow: "SERVICE & MAINTENANCE"
+hero_eyebrow: "MAINTENANCE"
 hero_title: "MAINTENANCE"
 hero_subtitle: "Inspection & Repair"
 ---

@@ -1,10 +1,10 @@
 ---
 layout: overview-group
-title: "SERVICE & MAINTENANCE"
+title: "MAINTENANCE"
 permalink: /services/maintenance/
 hero_image: /assets/img/maintenance-hero.jpg
 hero_image_position: "50% 35%"
-hero_eyebrow: "SERVICE & MAINTENANCE"
+hero_eyebrow: "MAINTENANCE"
 hero_title: "Maintenance · Support"
 hero_subtitle: "유지·보수"
 sub_items:
