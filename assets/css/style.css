@@ -931,6 +931,12 @@ section { position: relative; }
 }
 .portfolio-list-head p { color: #475467; font-size: 15px; }
 .portfolio-list-head h1 + .portfolio-list-head-row { margin-top: 12px; }
+.portfolio-list-head-row--search { position: relative; justify-content: flex-end; }
+.portfolio-list-head-row--search p {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0; text-align: center; white-space: nowrap;
+}
 .portfolio-category-group { margin-bottom: 56px; }
 .portfolio-category-group:last-child { margin-bottom: 0; }
 .portfolio-category-heading {
@@ -938,10 +944,11 @@ section { position: relative; }
   margin: 0 auto 20px;
   font-family: 'Pretendard', sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   color: #101828;
   text-align: left;
 }
+.portfolio-category-count { margin-left: 4px; font-weight: 700; }
 .portfolio-search-group {
   display: flex;
   align-items: center;
@@ -1078,6 +1085,15 @@ section { position: relative; }
   .portfolio-search { min-width: 0; flex: 1; max-width: 200px; padding: 8px 12px; }
   .portfolio-search-input,
   .portfolio-search input { min-width: 0; }
+}
+@media (max-width: 640px) {
+  /* Too narrow for the tagline to float centered without colliding
+     with the search box — stack it above instead. */
+  .portfolio-list-head-row--search { position: static; justify-content: space-between; flex-wrap: wrap; }
+  .portfolio-list-head-row--search p {
+    position: static; transform: none; text-align: left; white-space: normal;
+    flex: 1 1 100%; margin: 0 0 10px;
+  }
 }
 
 /* ===== Portfolio detail ===== */

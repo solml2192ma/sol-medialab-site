@@ -125,13 +125,14 @@ if (portfolioSearchAllInput && portfolioGroupsRoot) {
   const groups = Array.from(portfolioGroupsRoot.querySelectorAll('[data-group]')).map((group) => ({
     el: group,
     cards: Array.from(group.querySelectorAll('.portfolio-card')),
+    countEl: group.querySelector('[data-group-count]'),
   }));
   const groupsEmptyMsg = portfolioGroupsRoot.querySelector('[data-groups-empty]');
 
   const runGroupedSearch = () => {
     const query = portfolioSearchAllInput.value.trim().toLowerCase();
     let anyGroupVisible = false;
-    groups.forEach(({ el, cards }) => {
+    groups.forEach(({ el, cards, countEl }) => {
       let visibleInGroup = 0;
       cards.forEach((card) => {
         const match = !query || card.textContent.toLowerCase().includes(query);
@@ -140,6 +141,7 @@ if (portfolioSearchAllInput && portfolioGroupsRoot) {
       });
       el.hidden = visibleInGroup === 0;
       if (visibleInGroup > 0) anyGroupVisible = true;
+      if (countEl) countEl.textContent = `(${visibleInGroup})`;
     });
     if (groupsEmptyMsg) groupsEmptyMsg.hidden = anyGroupVisible || groups.length === 0;
   };
