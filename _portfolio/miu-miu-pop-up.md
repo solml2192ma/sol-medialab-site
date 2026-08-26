@@ -1,6 +1,6 @@
 ---
-title: Miu Miu
-post_date: 2026-08-20T16:27:02+09:00
+title: 미우미우 (Miu Miu)
+post_date: 2026-08-20T16:27:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
