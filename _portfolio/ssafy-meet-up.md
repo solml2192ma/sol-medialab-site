@@ -5,9 +5,9 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 역삼동 멀티캠퍼스
-cover_image: /assets/img/portfolio/밋업.webp
+cover_image: /assets/img/portfolio/zhdqp6uzi0.webp
 gallery:
-  - /assets/img/portfolio/밋업2.webp
+  - /assets/img/portfolio/dhhy0a48xr.webp
 ---
 
 **무대 양끝을 감싸는 커브드 LED, 빈틈 없이 공간을 채웠습니다.**

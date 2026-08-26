@@ -5,11 +5,11 @@ overview_category:
   - 유지·보수
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/명동1.webp
+cover_image: /assets/img/portfolio/gmwyxus3h2.webp
 gallery:
-  - /assets/img/portfolio/명동2.webp
-  - /assets/img/portfolio/명동3.webp
-  - /assets/img/portfolio/명동4.webp
+  - /assets/img/portfolio/itl43yokj4.webp
+  - /assets/img/portfolio/uwt156x0ff.webp
+  - /assets/img/portfolio/j154zc62uf.webp
 ---
 
 안녕하세요 솔미디어랩 입니다.

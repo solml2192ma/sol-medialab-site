@@ -5,9 +5,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 더현대 서울
-cover_image: /assets/img/portfolio/코치2.webp
+cover_image: /assets/img/portfolio/blhzce867u.webp
 gallery:
-  - /assets/img/portfolio/코치1.webp
+  - /assets/img/portfolio/o7mfi1pi8x.webp
 ---
 
 # 더현대 서울 COACH 팝업 — LED는 사각형이지만, 화면까지 사각형일 필요는 없습니다

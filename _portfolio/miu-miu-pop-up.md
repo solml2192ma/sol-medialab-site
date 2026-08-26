@@ -5,9 +5,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 더현대 서울
-cover_image: /assets/img/portfolio/미우미우1.webp
+cover_image: /assets/img/portfolio/s9w67akm8e.webp
 gallery:
-  - /assets/img/portfolio/미우미우2.webp
+  - /assets/img/portfolio/voxe3tdnxe.webp
 ---
 
 # 더현대 서울 MIU MIU 팝업 — 화면처럼 보이면 안 되는 화면

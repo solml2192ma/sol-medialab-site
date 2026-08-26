@@ -5,9 +5,9 @@ overview_category:
   - 방송·촬영
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/굿티비1.webp
+cover_image: /assets/img/portfolio/028ll35n1k.webp
 gallery:
-  - /assets/img/portfolio/굿티비2.webp
+  - /assets/img/portfolio/vy3x9uqiic.webp
 ---
 
 **로비에서 생방송이 가능한 화면인가?**

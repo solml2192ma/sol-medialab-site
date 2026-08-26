@@ -5,7 +5,7 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수 올리브영N
-cover_image: /assets/img/portfolio/올리브1.webp
+cover_image: /assets/img/portfolio/ebi70d5tiv.webp
 gallery: []
 ---
 

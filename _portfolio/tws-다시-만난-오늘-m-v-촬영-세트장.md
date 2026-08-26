@@ -5,7 +5,7 @@ overview_category:
   - 방송·촬영
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/투어스.webp
+cover_image: /assets/img/portfolio/60h2zptlbw.webp
 gallery: []
 ---
 

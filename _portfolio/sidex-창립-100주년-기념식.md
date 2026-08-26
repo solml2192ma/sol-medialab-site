@@ -5,10 +5,10 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 코엑스 그랜드볼룸
-cover_image: /assets/img/portfolio/시1.webp
+cover_image: /assets/img/portfolio/wcfc9ujtwt.webp
 gallery:
-  - /assets/img/portfolio/시2.webp
-  - /assets/img/portfolio/시3.webp
+  - /assets/img/portfolio/z3bv37zh49.webp
+  - /assets/img/portfolio/2hhjlxiboq.webp
 ---
 
 **100년에 한 번뿐인 자리였습니다**

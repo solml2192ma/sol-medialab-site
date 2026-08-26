@@ -5,9 +5,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/에스티1.webp
+cover_image: /assets/img/portfolio/nqbb66wg1k.webp
 gallery:
-  - /assets/img/portfolio/에스티2.webp
+  - /assets/img/portfolio/y17so7fose.webp
 ---
 
 **기둥 자체가 스크린이 되도록**

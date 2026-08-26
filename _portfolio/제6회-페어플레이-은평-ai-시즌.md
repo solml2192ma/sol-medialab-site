@@ -5,9 +5,9 @@ overview_category:
   - 공연·스테이지
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/은평1.webp
+cover_image: /assets/img/portfolio/bjn9f2dp0s.webp
 gallery:
-  - /assets/img/portfolio/은평2.webp
+  - /assets/img/portfolio/0384ysqyqf.webp
 ---
 
 **1. 경기 화면과 중계, 끊김 없이 넘길 수 있는 시스템인가?**

@@ -5,9 +5,9 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 그랜드 인터컨티넨탈 서울 파르나스 그랜드 볼룸
-cover_image: /assets/img/portfolio/시덱1.webp
+cover_image: /assets/img/portfolio/vkl4vlzqrd.webp
 gallery:
-  - /assets/img/portfolio/시덱2.webp
+  - /assets/img/portfolio/tj9l4knmbl.webp
 ---
 
 #### **SIDEX 2026 서울국제치과기자재전시회** 

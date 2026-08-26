@@ -5,9 +5,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/샤넬1.webp
+cover_image: /assets/img/portfolio/ns9sz7ce01.webp
 gallery:
-  - /assets/img/portfolio/샤넬2.webp
+  - /assets/img/portfolio/lsnohstyqv.webp
 ---
 
 #### CHANEL SUBLIMAGE 팝업 — LED에서 가장 어려운 색은 검정입니다.
