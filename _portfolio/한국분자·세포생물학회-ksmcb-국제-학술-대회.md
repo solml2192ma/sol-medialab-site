@@ -5,9 +5,9 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 제주 국제컨벤션센터(ICC Jeju)
-cover_image: /assets/img/portfolio/IMG_2267.webp
+cover_image: /assets/img/portfolio/ae080jh3wr.webp
 gallery:
-  - /assets/img/portfolio/IMG_2254.webp
+  - /assets/img/portfolio/848ftqnuaq.webp
 ---
 
 # KSMCB 국제학술대회 — 햇빛이 들어오는 곳에서도, 화면은 선명해야 합니다
