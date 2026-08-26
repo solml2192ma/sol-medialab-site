@@ -1,6 +1,6 @@
 ---
 title: 삼성물산 래미안 YTTZ 홍보관
-post_date: ''
+post_date: 2026-08-26T12:37:33+09:00
 overview_category:
   - 분양홍보관·모델하우스
 client: ''
