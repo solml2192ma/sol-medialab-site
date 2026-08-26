@@ -920,7 +920,7 @@ section { position: relative; }
 }
 .portfolio-list-head .eyebrow {
   display: inline-block; padding: 6px 14px; border-radius: 999px;
-  background: transparent; border: 1.5px solid #FBD8A8; color: #ef8b24; font-size: 13px; font-weight: 700;
+  background: transparent; border: 1.5px solid #FBD8A8; color: #E2140A; font-size: 13px; font-weight: 700;
 }
 .portfolio-list-head h1 {
   font-family: 'Pretendard', sans-serif;
