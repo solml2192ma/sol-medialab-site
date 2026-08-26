@@ -5,10 +5,10 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 판교 현대백화점
-cover_image: /assets/img/portfolio/ChatGPT Image 2026년 8월 26일 오후 04_32_26.webp
+cover_image: /assets/img/portfolio/madrjdfixo.webp
 gallery:
-  - /assets/img/portfolio/멀버리.webp
-  - /assets/img/portfolio/20260420_182219.webp
+  - /assets/img/portfolio/72ko10bzy5.webp
+  - /assets/img/portfolio/97b2bvg46s.webp
 ---
 
 # 멀버리 팝업스토어 — 가까이에서 보는 브랜드 공간일수록, 화면의 밀도가 중요합니다
