@@ -1,6 +1,6 @@
 ---
-title: roughtype
-post_date: 2026-08-20T17:20:58+09:00
+title: 로타입 (roughtype)
+post_date: 2026-08-20T17:20:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
