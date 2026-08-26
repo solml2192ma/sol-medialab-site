@@ -1,10 +1,10 @@
 ---
 title: 제6회 페어플레이 은평 AI 시즌
-post_date: 2026-08-20T13:22:01+09:00
+post_date: 2026-08-20T13:22:00+09:00
 overview_category:
-  - 공연·행사
+  - 공연·스테이지
 client: ''
-location: ''
+location: 은평 롯데백화점
 cover_image: /assets/img/portfolio/bjn9f2dp0s.webp
 gallery:
   - /assets/img/portfolio/0384ysqyqf.webp
