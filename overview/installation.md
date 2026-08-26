@@ -4,6 +4,7 @@ title: "시공"
 overview_filter: "시공"
 permalink: /overview/installation/
 hero_image: /assets/img/installation-hero.jpg
+hero_image_position: "50% 25%"
 hero_eyebrow: "INSTALLATION"
 hero_title: "Fixed Screen · Media Wall"
 hero_subtitle: "Building · Indoor · Outdoor"
