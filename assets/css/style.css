@@ -755,7 +755,6 @@ section { position: relative; }
   --color-subtext: #666666;
   --color-body: #5E5E5E;
   --color-line: #E7E7E3;
-  --color-accent: #FFE500;
   width: 100%;
   background: #fff;
   color: var(--color-title);
@@ -805,9 +804,11 @@ section { position: relative; }
 .showcase-tab[data-state='active'] .showcase-tab-num { color: #2156E8; }
 .showcase-panel { display: none; }
 .showcase-panel[data-state='active'] { display: block; }
-.showcase-hero-copy { display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; }
-.showcase-hero-title { width: 100%; font-size: 58px; font-weight: 800; line-height: 1.08; letter-spacing: -0.04em; color: var(--color-title); }
-.showcase-hero-desc { width: 100%; max-width: 820px; font-size: 20px; line-height: 1.7; letter-spacing: -0.02em; color: var(--color-subtext); }
+.showcase-hero-copy { display: flex; align-items: flex-end; gap: 20px; text-align: left; }
+.showcase-hero-index { flex: none; font-size: 84px; font-weight: 800; line-height: 0.8; letter-spacing: -0.02em; color: #EAF0FF; }
+.showcase-hero-text { display: flex; flex-direction: column; gap: 14px; }
+.showcase-hero-title { font-size: 40px; font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; color: var(--color-title); }
+.showcase-hero-desc { max-width: 480px; font-size: 17px; line-height: 1.7; letter-spacing: -0.02em; color: var(--color-subtext); }
 .showcase-media { position: relative; display: block; width: 100%; margin-top: 54px; overflow: hidden; border-radius: 40px; border: 1px solid var(--color-line); }
 .showcase-image { display: block; width: 100%; height: auto; aspect-ratio: 1120 / 536; object-fit: cover; }
 .showcase-detail { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr); gap: 48px; align-items: start; margin-top: 48px; }
@@ -898,9 +899,11 @@ section { position: relative; }
   }
   .showcase-tab-num { font-size: 11px; }
   .showcase-tab[data-state='active'] { background: #EAF0FF; border-color: #2156E8; }
-  .showcase-hero-copy { gap: 14px; }
-  .showcase-hero-title { font-size: 22px; }
-  .showcase-hero-desc { font-size: 14px; }
+  .showcase-hero-copy { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .showcase-hero-index { font-size: 26px; line-height: 1; }
+  .showcase-hero-text { gap: 6px; }
+  .showcase-hero-title { font-size: 20px; }
+  .showcase-hero-desc { max-width: none; font-size: 13px; }
   .showcase-media { margin-top: 28px; border-radius: 24px; }
   .showcase-image { aspect-ratio: 16 / 10; }
   .showcase-detail { grid-template-columns: 1fr; gap: 18px; margin-top: 28px; }
