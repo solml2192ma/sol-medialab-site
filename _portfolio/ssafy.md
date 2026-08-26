@@ -1,6 +1,6 @@
 ---
-title: SSAFY
-post_date: 2026-08-20T16:18:31+09:00
+title: 삼성 전자 SSAFY
+post_date: 2026-08-20T16:18:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
