@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=61">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=62">
 </head>
 <body>
 
@@ -113,16 +113,10 @@
       {% else %}
       <h1>{{ page.title }}</h1>
       {% endif %}
-      <div class="portfolio-search-group">
-        <div class="portfolio-search">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.8-3.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <input type="text" class="portfolio-search-input" placeholder="이 카테고리에서 검색" aria-label="이 카테고리에서 검색">
-        </div>
-        <form class="portfolio-search" action="{{ site.baseurl }}/portfolio.html" method="get">
-          <button type="submit" aria-label="전체 게시물 검색"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.8-3.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
-          <input type="text" name="q" placeholder="전체 게시물에서 검색" aria-label="전체 게시물에서 검색">
-        </form>
-      </div>
+      <form class="portfolio-search" action="{{ site.baseurl }}/portfolio.html" method="get">
+        <button type="submit" aria-label="전체 게시물 검색"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.8-3.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <input type="text" name="q" placeholder="전체 게시물에서 검색" aria-label="전체 게시물에서 검색">
+      </form>
     </div>
   </header>
 
