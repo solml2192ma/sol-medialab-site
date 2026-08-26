@@ -1214,6 +1214,7 @@ section { position: relative; }
 
 @media (max-width: 640px) {
   .service-hero { height: 40vh; min-height: 260px; }
+  .service-hero::after { background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.1) 35%, rgba(0,0,0,.55) 100%); }
   .service-hero-inner { padding: 104px 20px 36px; }
   .service-body { margin-top: 52px; font-size: 15.5px; }
   .service-gallery { margin-top: 60px; padding: 0 20px 80px; }
