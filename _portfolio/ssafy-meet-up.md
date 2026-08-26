@@ -1,6 +1,6 @@
 ---
-title: SSAFY Meet UP
-post_date: 2026-08-20T13:41:44+09:00
+title: 삼성 전자 SSAFY Meet UP
+post_date: 2026-08-20T13:41:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
