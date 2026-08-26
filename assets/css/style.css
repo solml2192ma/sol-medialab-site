@@ -1004,12 +1004,12 @@ section { position: relative; }
   .showcase-hero-title { font-size: 20px; }
   .showcase-hero-desc { max-width: none; font-size: 13px; }
   .showcase-media { margin-top: 28px; border-radius: 12px; }
-  .frame-corner { width: 16px; height: 16px; }
-  .frame-corner.tl, .frame-corner.tr { top: 10px; }
-  .frame-corner.bl, .frame-corner.br { bottom: 10px; }
-  .frame-corner.tl, .frame-corner.bl { left: 10px; }
-  .frame-corner.tr, .frame-corner.br { right: 10px; }
-  .frame-caption { font-size: 10px; margin-top: 10px; }
+  .frame-corner { width: 18px; height: 18px; }
+  .frame-corner.tl, .frame-corner.tr { top: 12px; }
+  .frame-corner.bl, .frame-corner.br { bottom: 12px; }
+  .frame-corner.tl, .frame-corner.bl { left: 12px; }
+  .frame-corner.tr, .frame-corner.br { right: 12px; }
+  .frame-caption { font-size: 10px; letter-spacing: 0.02em; margin-top: 10px; }
   .showcase-image { aspect-ratio: 16 / 10; }
   .showcase-detail { margin-top: 28px; padding-left: 18px; }
   .detail-lead { font-size: 19px; margin-bottom: 12px; }
