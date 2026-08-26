@@ -1,6 +1,6 @@
 ---
-title: COACH
-post_date: 2026-08-20T16:36:48+09:00
+title: 코치 (COACH)
+post_date: 2026-08-20T16:36:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
