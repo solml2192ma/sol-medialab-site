@@ -5,10 +5,10 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 중구 조선 호텔
-cover_image: /assets/img/portfolio/20240314_075922.webp
+cover_image: /assets/img/portfolio/gkemu8ddcj.webp
 gallery:
-  - /assets/img/portfolio/20240314_075854.webp
-  - /assets/img/portfolio/20240314_100756077_14 (15).webp
+  - /assets/img/portfolio/08p8nj6nbs.webp
+  - /assets/img/portfolio/7m54jjvprg.webp
 ---
 
 # KIWI LINK KOREA 
