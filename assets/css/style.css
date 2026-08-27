@@ -302,31 +302,34 @@ section { position: relative; }
   display: flex;
   justify-content: center;
   margin-top: 38px;
+  border-bottom: 1px solid var(--color-line);
 }
 .iw-menu-solution .iw-tablist {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  padding: 8px;
-  border: 1px solid var(--color-line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
+  gap: 4px;
 }
 .iw-menu-solution .iw-tab {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
   border: 0;
-  border-radius: 999px;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
   background: transparent;
   color: var(--color-muted);
-  padding: 12px 20px;
+  padding: 16px 24px 13px;
   font-family: 'Pretendard', sans-serif;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+  transition: color .2s ease, border-color .2s ease;
 }
-.iw-menu-solution .iw-tab:hover { color: var(--color-title); transform: translateY(-1px); }
-.iw-menu-solution .iw-tab[data-state='active'] { background: var(--color-accent); color: #fff; }
+.iw-menu-solution .iw-tab-num { font-size: 12px; font-weight: 700; color: var(--color-line); transition: color .2s ease; }
+.iw-menu-solution .iw-tab:hover { color: var(--color-title); }
+.iw-menu-solution .iw-tab[data-state='active'] { background: none; color: var(--color-title); border-bottom-color: var(--color-accent); }
+.iw-menu-solution .iw-tab[data-state='active'] .iw-tab-num { color: var(--color-accent); }
 .iw-menu-solution .iw-panel-stage { margin-top: 34px; }
 .iw-menu-solution .iw-panel {
   display: flex;
@@ -340,16 +343,18 @@ section { position: relative; }
   box-shadow: 0 24px 60px rgba(17, 24, 39, 0.08);
 }
 .iw-menu-solution .iw-panel[hidden] { display: none; }
-.iw-menu-solution .iw-panel-media { flex: 1 1 50%; min-width: 0; display: flex; justify-content: center; }
-.iw-menu-solution .iw-photo-ring {
-  width: min(100%, 460px);
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
+.iw-menu-solution .iw-panel-media { flex: 1 1 50%; min-width: 0; }
+.iw-menu-solution .iw-photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
   overflow: hidden;
   background: var(--color-photo-bg);
-  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.65), 0 24px 50px rgba(33, 86, 232, 0.12);
+  border: 1px solid var(--color-line);
 }
-.iw-menu-solution .iw-photo { width: 100%; height: 100%; object-fit: cover; }
+.iw-menu-solution .iw-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
+.iw-menu-solution .frame-caption { color: var(--color-muted); }
 .iw-menu-solution .iw-panel-copy {
   flex: 1 1 50%; min-width: 0;
   display: flex; flex-direction: column; align-items: flex-start; gap: 18px;
@@ -1840,25 +1845,29 @@ section { position: relative; }
   .main-nav.open .dropdown li.sub { color: rgba(255,255,255,0.4); }
   .main-nav.open .dropdown li.dropdown-heading a { color: #ef8b24; }
   .menu-toggle { display: flex; }
-  .iw-menu-solution .iw-tablist-wrap { display: block; margin-top: 28px; }
+  .iw-menu-solution .iw-tablist-wrap { display: block; margin-top: 28px; border-bottom: none; }
   .iw-menu-solution .iw-tablist {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px;
+    gap: 8px;
     width: 100%;
-    padding: 8px;
-    border-radius: 20px;
   }
   .iw-menu-solution .iw-tab {
+    justify-content: center;
     width: 100%;
+    margin-bottom: 0;
     padding: 13px 8px;
     font-size: 14px;
+    gap: 5px;
     text-align: center;
-    border-radius: 14px;
     word-break: keep-all;
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    background: var(--color-surface);
   }
+  .iw-menu-solution .iw-tab-num { font-size: 10px; }
+  .iw-menu-solution .iw-tab[data-state='active'] { background: var(--color-photo-bg); border-color: var(--color-accent); }
   .iw-menu-solution .iw-panel { flex-direction: column; align-items: stretch; gap: 24px; padding: 24px; border-radius: 24px; }
-  .iw-menu-solution .iw-photo-ring { width: min(100%, 320px); margin: 0 auto; }
   .iw-menu-solution .iw-main-title p { font-size: 28px; }
   .iw-menu-solution .iw-panel-title p { font-size: 26px; }
   .iw-display-grid .iw-display-card { flex-basis: 100%; aspect-ratio: 4 / 3; }
