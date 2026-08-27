@@ -208,3 +208,23 @@ if (tabs.length) {
     }
   }
 }
+
+// Turn a bare YouTube link pasted into a CMS post body into an embedded player
+const postBody = document.querySelector('.portfolio-detail-body');
+if (postBody) {
+  const YT_URL_RE = /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/;
+
+  const embedYouTube = (videoId, el) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'yt-embed';
+    wrapper.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    el.replaceWith(wrapper);
+  };
+
+  postBody.querySelectorAll('a').forEach((a) => {
+    const match = a.getAttribute('href').match(YT_URL_RE);
+    if (!match) return;
+    const container = a.parentElement.childNodes.length === 1 ? a.parentElement : a;
+    embedYouTube(match[1], container);
+  });
+}

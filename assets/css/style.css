@@ -1323,6 +1323,8 @@ section { position: relative; }
 }
 .portfolio-detail-body p { margin-bottom: 22px; }
 .portfolio-detail-body img { width: 100%; border-radius: 16px; margin: 24px 0; }
+.yt-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 24px 0; border-radius: 16px; overflow: hidden; background: #000; }
+.yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .portfolio-detail-gallery {
   max-width: 1080px;
   margin: 24px auto 0;
