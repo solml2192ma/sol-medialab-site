@@ -344,34 +344,16 @@ section { position: relative; }
 }
 .iw-menu-solution .iw-panel[hidden] { display: none; }
 .iw-menu-solution .iw-panel-media {
-  position: relative;
   flex: 0 0 auto;
-  width: min(100%, 400px);
-  aspect-ratio: 1 / 1;
-  border-radius: 28px;
+  width: min(100%, 360px);
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
   overflow: hidden;
   background: var(--color-photo-bg);
+  border: 1px solid var(--color-line);
 }
 .iw-menu-solution .iw-photo {
   display: block; width: 100%; height: 100%; object-fit: cover;
-  filter: grayscale(1) contrast(1.08) brightness(1.05);
-}
-.iw-menu-solution .iw-panel-media::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: var(--color-accent);
-  mix-blend-mode: color;
-  opacity: 0.9;
-}
-.iw-menu-solution .iw-photo-badge {
-  position: absolute; z-index: 1; top: 20px; left: 20px;
-  display: flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.92);
-  color: var(--color-accent);
-  font-size: 15px; font-weight: 800; letter-spacing: -0.02em;
-  box-shadow: 0 6px 16px rgba(17,24,39,0.16);
 }
 .iw-menu-solution .iw-panel-copy {
   flex: 1 1 50%; min-width: 0;
