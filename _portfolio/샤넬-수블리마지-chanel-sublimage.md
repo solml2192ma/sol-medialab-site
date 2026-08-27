@@ -5,10 +5,10 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수
-cover_image: /assets/img/portfolio/20250830_093345.webp
+cover_image: /assets/img/portfolio/4ikyauslu9.webp
 gallery:
-  - /assets/img/portfolio/20250830_093312.webp
-  - /assets/img/portfolio/20250830_093248.webp
+  - /assets/img/portfolio/u9lsy43qil.webp
+  - /assets/img/portfolio/ee8vg2pj20.webp
 ---
 
 # CHANEL SUBLIMAGE  — LED에서 가장 어려운 색은 검정입니다
