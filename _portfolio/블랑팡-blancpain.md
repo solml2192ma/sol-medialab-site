@@ -4,10 +4,10 @@ post_date: 2026-08-27T14:43:00+09:00
 overview_category: []
 client: ''
 location: 잠실 롯데월드몰
-cover_image: /assets/img/portfolio/블랑팡.webp
+cover_image: /assets/img/portfolio/sglz5gue1m.webp
 gallery:
-  - /assets/img/portfolio/블랑팡2.webp
-  - /assets/img/portfolio/20240726_013800.webp
+  - /assets/img/portfolio/izd0jmlms9.webp
+  - /assets/img/portfolio/8ajjjgyu3q.webp
 ---
 
 # BLANCPAIN 팝업 — 정면에서 보는 화면이 아니었습니다
