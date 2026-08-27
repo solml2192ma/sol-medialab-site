@@ -4,10 +4,10 @@ post_date: 2026-08-27T13:41:00+09:00
 overview_category: []
 client: ''
 location: 성수동 에스팩토리
-cover_image: /assets/img/portfolio/팯토리1.webp
+cover_image: /assets/img/portfolio/7jikh7r7xu.webp
 gallery:
-  - /assets/img/portfolio/팩토리1-2.webp
-  - /assets/img/portfolio/팯토리2.webp
+  - /assets/img/portfolio/gfrinf09uy.webp
+  - /assets/img/portfolio/kckko0z8l0.webp
 ---
 
 # CHANEL FACTORY 5 — 실물이 바로 옆에 있는 화면
