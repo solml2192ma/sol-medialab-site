@@ -5,9 +5,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수
-cover_image: /assets/img/portfolio/20240403_175915.webp
+cover_image: /assets/img/portfolio/9neoca9p87.webp
 gallery:
-  - /assets/img/portfolio/ChatGPT Image 2026년 8월 27일 오후 02_33_45.webp
+  - /assets/img/portfolio/94mb2kt5k7.webp
 ---
 
 # COACH 팝업 — 부드러운 색을 표현 합니다.
