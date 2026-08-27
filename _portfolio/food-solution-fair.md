@@ -5,9 +5,9 @@ overview_category:
   - 전시·컨벤션
 client: ''
 location: 양재 aT센터
-cover_image: /assets/img/portfolio/페어1.webp
+cover_image: /assets/img/portfolio/um89q9tfhe.webp
 gallery:
-  - /assets/img/portfolio/페어2.webp
+  - /assets/img/portfolio/k5lf5wqyd1.webp
 ---
 
 # CJ프레시웨이 FOOD SOLUTION FAIR — 한 행사, 두 무대, 동시에
