@@ -1,7 +1,8 @@
 ---
 title: 샤넬 팩토리 (CHANEL FACTORY 5)
 post_date: 2026-08-27T13:41:00+09:00
-overview_category: []
+overview_category:
+  - 백화점·쇼핑몰
 client: ''
 location: 성수동 에스팩토리
 cover_image: /assets/img/portfolio/7jikh7r7xu.webp
