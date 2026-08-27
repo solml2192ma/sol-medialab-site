@@ -5,10 +5,10 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 대구 신세계백화점
-cover_image: /assets/img/portfolio/20201008_023808.webp
+cover_image: /assets/img/portfolio/4spfj30bxd.webp
 gallery:
-  - /assets/img/portfolio/프라다.webp
-  - /assets/img/portfolio/프라다1.webp
+  - /assets/img/portfolio/y74y4ro69p.webp
+  - /assets/img/portfolio/xb9cz2o26q.webp
 ---
 
 # PRADA 팝업 — 매장의 전체가 화면이었습니다
