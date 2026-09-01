@@ -9,7 +9,7 @@ hero_title: "Exhibition · Broadcast · Stage"
 hero_subtitle: "컨퍼런스·세미나 · 전시·컨벤션 · 방송·촬영 · 공연·행사"
 sub_items:
   - title: "컨퍼런스·세미나"
-    url: /overview/concert/
+    url: /overview/conference/
     image: /assets/img/concert-hero.jpg
   - title: "전시·컨벤션"
     url: /overview/exhibition/

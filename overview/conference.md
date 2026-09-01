@@ -2,7 +2,7 @@
 layout: overview-board
 title: "컨퍼런스·세미나"
 overview_filter: "컨퍼런스·세미나"
-permalink: /overview/concert/
+permalink: /overview/conference/
 hero_image: /assets/img/concert-hero.jpg
 hero_eyebrow: "RENTAL"
 hero_title: "Seminar · Conference · Meeting · Symposium"
