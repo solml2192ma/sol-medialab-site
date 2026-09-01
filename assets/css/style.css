@@ -535,22 +535,6 @@ section { position: relative; }
 }
 
 /* ===== Home stats strip ===== */
-.home-stats { background: #101828; padding: 56px 24px; }
-.home-stats-inner {
-  max-width: 720px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: center; gap: 56px;
-}
-.home-stat { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.home-stat-num {
-  font-family: 'Pretendard', sans-serif; font-size: clamp(34px, 5vw, 48px);
-  font-weight: 800; letter-spacing: -0.02em; color: #fff;
-}
-.home-stat-label { font-size: 14px; color: rgba(255,255,255,0.6); letter-spacing: -0.01em; }
-.home-stats-divider { width: 1px; height: 44px; background: rgba(255,255,255,0.16); }
-@media (max-width: 560px) {
-  .home-stats { padding: 44px 20px; }
-  .home-stats-inner { gap: 32px; }
-}
 
 /* ===== Featured Case ===== */
 .featured-case {
