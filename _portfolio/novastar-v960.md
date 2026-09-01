@@ -5,7 +5,7 @@ overview_category:
   - 제품 유통
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/v960.webp
+cover_image: /assets/img/portfolio/taj3no620v.webp
 gallery: []
 ---
 
