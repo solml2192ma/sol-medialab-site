@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ page.title }} | SOL MEDIA LAB Inc.</title>
 <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 140 }}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SOL MEDIA LAB Inc.">
+<meta property="og:title" content="{{ page.title }} | SOL MEDIA LAB Inc.">
+<meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 140 }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}{% if page.cover_image %}{{ page.cover_image }}{% else %}/assets/img/og-image.jpg{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
