@@ -2,6 +2,9 @@ title: SOL MEDIA LAB Inc.
 url: "https://solmelab.com"
 baseurl: ""
 
+plugins:
+  - jekyll-sitemap
+
 collections:
   portfolio:
     output: true
