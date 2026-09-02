@@ -19,7 +19,7 @@
  * 이미 코드가 배포되어 있다면, 이 파일 내용을 다시 붙여넣은 뒤 배포 > 배포관리 > 수정(연필 아이콘) > 새 버전으로 재배포해야 반영됩니다.
  */
 
-const NOTIFY_EMAIL = 'info@solmelab.com';
+const NOTIFY_EMAIL = 'solml2192@gmail.com';
 
 function doPost(e) {
   const data = (e && e.parameter) || {};
