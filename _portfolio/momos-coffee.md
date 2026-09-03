@@ -2,7 +2,7 @@
 title: 모모스 커피 (MOMOS COFFEE)
 post_date: 2026-08-19T16:01:00+09:00
 overview_category:
-  - 백화점·쇼핑몰
+  - 전시·컨벤션
 client: ''
 location: 벡스코
 cover_image: /assets/img/portfolio/eqb9y25xza.webp
