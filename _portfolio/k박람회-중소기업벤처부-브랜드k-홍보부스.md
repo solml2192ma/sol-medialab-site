@@ -5,10 +5,10 @@ overview_category:
   - 전시·컨벤션
 client: ''
 location: 코엑스 그랜드볼룸
-cover_image: /assets/img/portfolio/브래늗.webp
+cover_image: /assets/img/portfolio/zt71evzj66.webp
 gallery:
-  - /assets/img/portfolio/20211108_144353.webp
-  - /assets/img/portfolio/20211108_135409.webp
+  - /assets/img/portfolio/94kmhhkyjq.webp
+  - /assets/img/portfolio/s6haobwdxp.webp
 ---
 
 # K박람회 브랜드K 홍보부스 LED 설치
