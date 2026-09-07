@@ -5,9 +5,9 @@ permalink: /services/installation/
 hero_image: /assets/img/department-store-hero.jpg
 hero_eyebrow: "INSTALLATION"
 hero_title: "Fixed Screen · Media Wall"
-hero_subtitle: "사옥·빌딩시설 · 백화점·쇼핑몰 · 분양홍보관·모델하우스 · 사이니지·비디오월"
+hero_subtitle: "빌딩 오피스 · 백화점·쇼핑몰 · 분양홍보관·모델하우스 · 사이니지·비디오월"
 sub_items:
-  - title: "사옥·빌딩시설"
+  - title: "빌딩 오피스"
     url: /overview/installation/
     image: /assets/img/installation-hero.jpg
   - title: "백화점·쇼핑몰"
