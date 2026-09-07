@@ -9,7 +9,6 @@ cover_image: /assets/img/portfolio/8i44qrea9p.webp
 gallery:
   - /assets/img/portfolio/4e7swpwafv.webp
   - /assets/img/portfolio/qwb55i1oyw.webp
-contact_card: true
 ---
 
 **카메라가 담는 배경, LED로 실시간 구현했습니다**
