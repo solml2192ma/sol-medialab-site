@@ -1,7 +1,7 @@
 ---
 layout: overview-board
-title: "빌딩 오피스"
-overview_filter: "빌딩 오피스"
+title: "빌딩·오피스"
+overview_filter: "빌딩·오피스"
 permalink: /overview/installation/
 hero_image: /assets/img/installation-hero.jpg
 hero_image_position: "50% 55%"

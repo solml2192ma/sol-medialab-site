@@ -54,7 +54,7 @@ layout: null
             <div class="dropdown-inner">
             <ul>
               <li class="dropdown-heading"><a href="{{ site.baseurl }}/services/installation/">Installation</a></li>
-              <li class="sub"><a href="{{ site.baseurl }}/overview/installation/">빌딩 오피스</a></li>
+              <li class="sub"><a href="{{ site.baseurl }}/overview/installation/">빌딩·오피스</a></li>
               <li class="sub"><a href="{{ site.baseurl }}/overview/department-store/">백화점·쇼핑몰</a></li>
               <li class="sub"><a href="{{ site.baseurl }}/overview/model-house/">분양홍보관·모델하우스</a></li>
               <li class="sub"><a href="{{ site.baseurl }}/overview/signage/">사이니지·비디오월</a></li>
@@ -106,7 +106,7 @@ layout: null
     </div>
   </header>
 
-  {% assign categories = "빌딩 오피스,백화점·쇼핑몰,분양홍보관·모델하우스,사이니지·비디오월,컨퍼런스·세미나,전시·컨벤션,방송·촬영,공연·행사,유지·보수,제품 유통" | split: "," %}
+  {% assign categories = "빌딩·오피스,백화점·쇼핑몰,분양홍보관·모델하우스,사이니지·비디오월,컨퍼런스·세미나,전시·컨벤션,방송·촬영,공연·행사,유지·보수,제품 유통" | split: "," %}
   {% assign dated_posts = site.portfolio | where_exp: "p", "p.post_date != nil" | where_exp: "p", "p.post_date != empty" %}
   {% assign sorted_posts = dated_posts | sort: 'post_date' | reverse %}
   {% assign total_count = 0 %}

@@ -45,7 +45,7 @@ collections:
         widget: "select"
         multiple: true
         options:
-          - "빌딩 오피스"
+          - "빌딩·오피스"
           - "백화점·쇼핑몰"
           - "분양홍보관·모델하우스"
           - "사이니지·비디오월"
