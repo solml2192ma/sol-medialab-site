@@ -1,7 +1,7 @@
 ---
 layout: overview-board
-title: "시공"
-overview_filter: "시공"
+title: "사옥·빌딩시설"
+overview_filter: "사옥·빌딩시설"
 permalink: /overview/installation/
 hero_image: /assets/img/installation-hero.jpg
 hero_image_position: "50% 55%"
