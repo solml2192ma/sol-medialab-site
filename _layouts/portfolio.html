@@ -121,6 +121,7 @@
     {{ content }}
   </div>
 
+  {% if page.contact_card %}
   <div class="portfolio-contact-card">
     <div class="pcc-head">
       <img class="pcc-logo" src="{{ site.baseurl }}/assets/img/logo.png" alt="SOL MEDIA LAB Inc.">
@@ -162,6 +163,7 @@
       </a>
     </div>
   </div>
+  {% endif %}
 
   {% assign back_url = site.baseurl | append: "/portfolio.html" %}
   {% if page.overview_category and page.overview_category.size > 0 %}
