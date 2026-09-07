@@ -1356,8 +1356,9 @@ section { position: relative; }
 .pcc-head-text { margin-right: auto; }
 .pcc-company { font-size: 20px; font-weight: 800; color: var(--color-title, #101828); letter-spacing: -0.02em; }
 .pcc-tagline { margin-top: 2px; font-size: 14.5px; font-weight: 600; color: var(--color-accent, #E2140A); }
-.pcc-contact { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; color: #475467; }
+.pcc-contact { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 15px; color: #475467; }
 .pcc-contact p { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.pcc-contact p:not(:first-child) { padding-left: 18px; border-left: 1px solid #D0D5DD; }
 .pcc-contact span {
   font-size: 12px;
   font-weight: 800;
@@ -1414,6 +1415,7 @@ section { position: relative; }
   .pcc-head { flex-direction: column; align-items: flex-start; }
   .pcc-head-text { margin-right: 0; }
   .pcc-contact { flex-direction: column; gap: 4px; }
+  .pcc-contact p:not(:first-child) { padding-left: 0; border-left: none; }
 }
 
 /* ===== Service detail (사업영역 카드 상세 페이지) ===== */
