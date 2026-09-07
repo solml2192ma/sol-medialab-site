@@ -1334,6 +1334,88 @@ section { position: relative; }
   .portfolio-detail-gallery { grid-template-columns: 1fr; }
 }
 
+/* ===== Portfolio contact card (게시글 하단 QR 문의 카드) ===== */
+.portfolio-contact-card {
+  max-width: 900px;
+  margin: 64px auto 0;
+  padding: 32px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid #EAECF0;
+  box-shadow: 0 12px 32px rgba(16, 24, 40, 0.06);
+}
+.pcc-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #EAECF0;
+}
+.pcc-logo { height: 34px; width: auto; flex-shrink: 0; }
+.pcc-head-text { margin-right: auto; }
+.pcc-company { font-size: 17px; font-weight: 800; color: var(--color-title, #101828); letter-spacing: -0.02em; }
+.pcc-tagline { margin-top: 2px; font-size: 12.5px; font-weight: 600; color: var(--color-accent, #E2140A); }
+.pcc-contact { display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 13px; color: #475467; }
+.pcc-contact p { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.pcc-contact span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #98A2B3;
+}
+.pcc-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.pcc-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 16px 24px;
+  border-radius: 18px;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.pcc-qr:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(16, 24, 40, 0.14); }
+.pcc-qr--kakao { background: linear-gradient(135deg, #FFD23D, #FF9A1F); }
+.pcc-qr--web   { background: linear-gradient(135deg, #FF9142, #D6401C); }
+.pcc-qr--insta { background: linear-gradient(135deg, #7B2FF7, #D6249F); }
+.pcc-qr-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+}
+.pcc-qr-title svg { width: 18px; height: 18px; flex-shrink: 0; }
+.pcc-qr-desc { font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.9); }
+.pcc-qr-code {
+  width: 108px;
+  height: 108px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pcc-qr-code svg { width: 100%; height: 100%; display: block; }
+
+@media (max-width: 640px) {
+  .portfolio-contact-card { padding: 24px 18px; border-radius: 20px; }
+  .pcc-grid { grid-template-columns: 1fr; }
+  .pcc-head { flex-direction: column; align-items: flex-start; }
+  .pcc-head-text { margin-right: 0; }
+  .pcc-contact { flex-direction: column; gap: 4px; }
+}
+
 /* ===== Service detail (사업영역 카드 상세 페이지) ===== */
 .service-hero {
   position: relative;
