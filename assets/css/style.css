@@ -1901,7 +1901,7 @@ section { position: relative; }
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  animation: taillightChase 4s linear infinite;
+  animation: taillightChase 7s linear infinite;
 }
 @keyframes taillightChase {
   to { transform: rotate(360deg); }
