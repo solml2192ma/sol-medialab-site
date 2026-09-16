@@ -1880,7 +1880,7 @@ section { position: relative; }
 }
 .floating-menu.is-open .floating-toggle-label { animation: none; opacity: 0; }
 
-/* Tail-lamp ring: a red point of light runs around the button's edge,
+/* Tail-lamp ring: a point of light runs around the button's edge,
    flush with the circle and drawn inward like a border, so the
    collapsed mobile FAB still reads as "tap me" without a static badge. */
 .floating-toggle::before {
@@ -1892,11 +1892,11 @@ section { position: relative; }
   padding: 3px;
   box-sizing: border-box;
   background: conic-gradient(from 0deg,
-    rgba(226, 20, 10, 0) 0deg,
-    rgba(226, 20, 10, 0) 268deg,
-    rgba(226, 20, 10, .55) 300deg,
-    #E2140A 338deg,
-    rgba(226, 20, 10, 0) 360deg);
+    rgba(255, 255, 255, 0) 0deg,
+    rgba(255, 255, 255, 0) 268deg,
+    rgba(255, 255, 255, .55) 300deg,
+    #fff 338deg,
+    rgba(255, 255, 255, 0) 360deg);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
