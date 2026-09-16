@@ -250,6 +250,7 @@ section { position: relative; }
     transform: none;
   }
   .floating-inquiry { animation: none; }
+  .floating-toggle::before { animation: none; }
 }
 
 /* ===== iw-menu-solution (space solutions) ===== */
@@ -1820,6 +1821,7 @@ section { position: relative; }
    the visitor asks for it. Desktop keeps everything always visible. */
 .floating-toggle {
   display: none;
+  position: relative;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -1831,8 +1833,35 @@ section { position: relative; }
   color: #fff;
   box-shadow: 0 7px 22px rgba(0, 0, 0, 0.25);
 }
-.floating-toggle svg { width: 24px; height: 24px; transition: transform 0.25s ease; }
+.floating-toggle svg { width: 24px; height: 24px; transition: transform 0.25s ease; position: relative; z-index: 1; }
 .floating-menu.is-open .floating-toggle svg { transform: rotate(45deg); }
+
+/* Tail-lamp ring: a red point of light chases around the button's
+   edge, like a running taillight, so the collapsed mobile FAB still
+   reads as "tap me" without a static badge. */
+.floating-toggle::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  z-index: 0;
+  border-radius: 50%;
+  padding: 3px;
+  box-sizing: border-box;
+  background: conic-gradient(from 0deg,
+    rgba(226, 20, 10, 0) 0deg,
+    rgba(226, 20, 10, 0) 268deg,
+    rgba(226, 20, 10, .55) 300deg,
+    #E2140A 338deg,
+    rgba(226, 20, 10, 0) 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: taillightChase 2.2s linear infinite;
+}
+@keyframes taillightChase {
+  to { transform: rotate(360deg); }
+}
 
 @media (max-width: 640px) {
   .floating-menu { right: 15px; bottom: 15px; gap: 10px; }
