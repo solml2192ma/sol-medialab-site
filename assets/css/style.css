@@ -251,6 +251,8 @@ section { position: relative; }
   }
   .floating-inquiry { animation: none; }
   .floating-toggle::before { animation: none; }
+  .floating-toggle svg { animation: none; opacity: 1; }
+  .floating-toggle-label { animation: none; opacity: 0; }
 }
 
 /* ===== iw-menu-solution (space solutions) ===== */
@@ -1833,16 +1835,58 @@ section { position: relative; }
   color: #fff;
   box-shadow: 0 7px 22px rgba(0, 0, 0, 0.25);
 }
-.floating-toggle svg { width: 24px; height: 24px; transition: transform 0.25s ease; position: relative; z-index: 1; }
-.floating-menu.is-open .floating-toggle svg { transform: rotate(45deg); }
+/* The + icon and the 문의 label share the button's centre and cross-fade,
+   so the collapsed FAB says what it opens without needing more space. */
+.floating-toggle svg,
+.floating-toggle-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.floating-toggle svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.25s ease;
+  animation: toggleFaceIcon 5s ease-in-out infinite;
+}
+.floating-toggle-label {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  white-space: nowrap;
+  opacity: 0;
+  animation: toggleFaceLabel 5s ease-in-out infinite;
+}
+@keyframes toggleFaceIcon {
+  0%, 40% { opacity: 1; }
+  48%, 90% { opacity: 0; }
+  98%, 100% { opacity: 1; }
+}
+@keyframes toggleFaceLabel {
+  0%, 40% { opacity: 0; }
+  48%, 90% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+}
+/* Once the menu is open the icon becomes the close (×) affordance, so the
+   alternation stops and the label gets out of the way. */
+.floating-menu.is-open .floating-toggle svg {
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: none;
+  opacity: 1;
+}
+.floating-menu.is-open .floating-toggle-label { animation: none; opacity: 0; }
 
-/* Tail-lamp ring: a red point of light chases around the button's
-   edge, like a running taillight, so the collapsed mobile FAB still
-   reads as "tap me" without a static badge. */
+/* Tail-lamp ring: a red point of light runs around just inside the
+   button's edge, like a running taillight, so the collapsed mobile FAB
+   still reads as "tap me" without a static badge. */
 .floating-toggle::before {
   content: '';
   position: absolute;
-  inset: -3px;
+  inset: 3px;
   z-index: 0;
   border-radius: 50%;
   padding: 3px;
@@ -1857,7 +1901,7 @@ section { position: relative; }
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  animation: taillightChase 2.2s linear infinite;
+  animation: taillightChase 4s linear infinite;
 }
 @keyframes taillightChase {
   to { transform: rotate(360deg); }
