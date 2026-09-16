@@ -1788,17 +1788,6 @@ section { position: relative; }
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
-.floating-inquiry::after {
-  content: '';
-  position: absolute;
-  right: 14px;
-  bottom: -7px;
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 9px solid #ef8b24;
-}
 .floating-circle, .floating-inquiry { transition: transform 0.2s ease; }
 .floating-circle:hover, .floating-inquiry:hover { transform: translateY(-3px); }
 
@@ -1913,7 +1902,6 @@ section { position: relative; }
   .floating-circle svg { width: 23px; height: 23px; }
   .floating-naver { font-size: 15px; }
   .floating-inquiry { width: 48px; height: 48px; font-size: 15px; }
-  .floating-inquiry::after { right: 12px; }
   .floating-phone { display: flex; order: -1; }
 
   .floating-toggle { display: flex; }
