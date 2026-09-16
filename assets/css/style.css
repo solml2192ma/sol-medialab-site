@@ -1777,6 +1777,7 @@ section { position: relative; }
   justify-content: center;
   box-sizing: border-box;
   position: relative;
+  z-index: 1;
   border: 0;
   border-radius: 50%;
   background: linear-gradient(135deg, #d8231f, #ef8b24);
@@ -1787,6 +1788,21 @@ section { position: relative; }
   text-decoration: none !important;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+/* Chat-bubble tail: a small rounded square, same gradient as the
+   circle, rotated 45° and tucked mostly behind the circle (negative
+   z-index) so only a soft rounded tip peeks out below it. */
+.floating-inquiry::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 13px;
+  bottom: -5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #d8231f, #ef8b24);
+  transform: rotate(45deg);
 }
 .floating-circle, .floating-inquiry { transition: transform 0.2s ease; }
 .floating-circle:hover, .floating-inquiry:hover { transform: translateY(-3px); }
@@ -1902,6 +1918,7 @@ section { position: relative; }
   .floating-circle svg { width: 23px; height: 23px; }
   .floating-naver { font-size: 15px; }
   .floating-inquiry { width: 48px; height: 48px; font-size: 15px; }
+  .floating-inquiry::after { right: 11px; bottom: -4px; width: 13px; height: 13px; border-radius: 4px; }
   .floating-phone { display: flex; order: -1; }
 
   .floating-toggle { display: flex; }
