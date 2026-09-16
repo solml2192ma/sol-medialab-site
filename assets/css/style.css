@@ -1880,13 +1880,13 @@ section { position: relative; }
 }
 .floating-menu.is-open .floating-toggle-label { animation: none; opacity: 0; }
 
-/* Tail-lamp ring: a red point of light runs around just inside the
-   button's edge, like a running taillight, so the collapsed mobile FAB
-   still reads as "tap me" without a static badge. */
+/* Tail-lamp ring: a red point of light runs around the button's edge,
+   flush with the circle and drawn inward like a border, so the
+   collapsed mobile FAB still reads as "tap me" without a static badge. */
 .floating-toggle::before {
   content: '';
   position: absolute;
-  inset: 3px;
+  inset: 0;
   z-index: 0;
   border-radius: 50%;
   padding: 3px;
