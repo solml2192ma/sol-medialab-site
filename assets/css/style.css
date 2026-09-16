@@ -1849,7 +1849,7 @@ section { position: relative; }
   width: 24px;
   height: 24px;
   transition: transform 0.25s ease;
-  animation: toggleFaceIcon 5s ease-in-out infinite;
+  animation: toggleFaceIcon 8s ease-in-out infinite;
 }
 .floating-toggle-label {
   font-family: 'Pretendard', sans-serif;
@@ -1859,7 +1859,7 @@ section { position: relative; }
   color: #fff;
   white-space: nowrap;
   opacity: 0;
-  animation: toggleFaceLabel 5s ease-in-out infinite;
+  animation: toggleFaceLabel 8s ease-in-out infinite;
 }
 @keyframes toggleFaceIcon {
   0%, 40% { opacity: 1; }
