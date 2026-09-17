@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} | SOL MEDIA LAB Inc.</title>
+<link rel="canonical" href="{{ site.url }}{{ page.redirect_to }}">
+<meta http-equiv="refresh" content="0; url={{ site.baseurl }}{{ page.redirect_to }}">
+<script>location.replace({{ page.redirect_to | jsonify }});</script>
+</head>
+<body>
+<p>페이지 주소가 <a href="{{ site.baseurl }}{{ page.redirect_to }}">{{ site.url }}{{ page.redirect_to }}</a>(으)로 변경되었습니다.</p>
+</body>
+</html>

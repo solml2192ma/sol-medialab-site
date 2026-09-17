@@ -26,7 +26,7 @@ document.querySelectorAll('.main-nav > ul > li.has-dropdown').forEach((li) => {
 
     // Clamp so the (possibly wide) link group never pushes past the
     // viewport edges — narrower "windowed" browsers were shifting the
-    // OVERVIEW dropdown far enough right to clip its last column.
+    // PROJECTS dropdown far enough right to clip its last column.
     const safePadding = 24;
     const halfInner = inner.getBoundingClientRect().width / 2;
     const minShift = safePadding - (viewportCenter - halfInner);
@@ -39,7 +39,7 @@ document.querySelectorAll('.main-nav > ul > li.has-dropdown').forEach((li) => {
   li.addEventListener('focusin', alignDropdown);
 });
 
-// OVERVIEW board: paginate the project grid (6 per page) and support
+// PROJECTS board: paginate the project grid (6 per page) and support
 // search by title/category/location. While searching, pagination is
 // suspended and every match is shown at once; clearing the search
 // returns to page 1 of the full, paginated list.
@@ -105,7 +105,7 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
     };
     input.addEventListener('input', runSearch);
 
-    // Arriving from an OVERVIEW board's "전체 게시물에서 검색" box, e.g.
+    // Arriving from a PROJECTS board's "전체 게시물에서 검색" box, e.g.
     // portfolio.html?q=..., pre-fills and runs this page's own search.
     const presetQuery = new URLSearchParams(window.location.search).get('q');
     if (presetQuery) {

@@ -9,16 +9,16 @@ hero_title: "Exhibition · Broadcast · Stage"
 hero_subtitle: "컨퍼런스·세미나 · 전시·컨벤션 · 방송·촬영 · 공연·행사"
 sub_items:
   - title: "컨퍼런스·세미나"
-    url: /overview/conference/
+    url: /projects/conference/
     image: /assets/img/concert-hero.jpg
   - title: "전시·컨벤션"
-    url: /overview/exhibition/
+    url: /projects/exhibition/
     image: /assets/img/exhibition-hero.jpg
   - title: "방송·촬영"
-    url: /overview/broadcast/
+    url: /projects/broadcast/
     image: /assets/img/broadcast-hero.jpg
   - title: "공연·행사"
-    url: /overview/event/
+    url: /projects/event/
     image: /assets/img/event-hero.jpg
 ---
 컨퍼런스와 세미나, 전시와 컨벤션, 방송 촬영 현장, 공연과 행사 등 짧게는 하루, 길게는 며칠씩 이어지는 현장에 맞춰 디스플레이를 렌탈하고 직접 운영합니다. 현장마다 요구되는 화면비와 밝기, 색 재현력이 다른 만큼 성격에 맞는 장비 구성이 무엇보다 중요합니다.

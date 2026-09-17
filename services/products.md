@@ -9,7 +9,7 @@ hero_title: "Panel · Controller · Equipment"
 hero_subtitle: "제품 유통"
 sub_items:
   - title: "제품 유통"
-    url: /overview/products/
+    url: /projects/products/
     image: /assets/img/products-hero.jpg
 ---
 디스플레이 패널과 컨트롤러, 송출 장비 등 프로젝트에 꼭 맞는 구성으로 안정적으로 공급합니다. 현장마다 필요한 사양과 예산이 다른 만큼, 과잉 스펙이나 부족한 구성 없이 실제 운영에 필요한 만큼의 장비를 제안합니다.

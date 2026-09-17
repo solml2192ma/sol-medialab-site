@@ -8,16 +8,16 @@ hero_title: "Fixed Screen · Media Wall"
 hero_subtitle: "빌딩·오피스 · 백화점·쇼핑몰 · 분양홍보관·모델하우스 · 사이니지·비디오월"
 sub_items:
   - title: "빌딩·오피스"
-    url: /overview/installation/
+    url: /projects/installation/
     image: /assets/img/installation-hero.jpg
   - title: "백화점·쇼핑몰"
-    url: /overview/department-store/
+    url: /projects/department-store/
     image: /assets/img/department-store-hero.jpg
   - title: "분양홍보관·모델하우스"
-    url: /overview/model-house/
+    url: /projects/model-house/
     image: /assets/img/model-house-hero.jpg
   - title: "사이니지·비디오월"
-    url: /overview/signage/
+    url: /projects/signage/
     image: /assets/img/signage-hero.jpg
 ---
 사옥 외벽과 로비, 백화점과 쇼핑몰의 파사드, 분양홍보관과 모델하우스, 사이니지와 비디오월 등 한번 설치되면 오랜 시간 그 자리를 지키는 고정형 디스플레이를 다룹니다. 유동인구가 많은 공간일수록 밤낮과 날씨에 관계없이 한결같은 밝기와 색감을 유지해야 브랜드 이미지를 해치지 않습니다.

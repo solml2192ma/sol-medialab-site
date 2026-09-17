@@ -10,7 +10,7 @@ public_folder: "/assets/img/portfolio"
 
 # Automatically resize/compress photos in the browser before they're
 # uploaded, so phone-camera originals (often several MB) don't bloat
-# the repo or slow down the OVERVIEW board pages.
+# the repo or slow down the PROJECTS board pages.
 media_libraries:
   default:
     config:

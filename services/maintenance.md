@@ -9,7 +9,7 @@ hero_title: "Maintenance · Support"
 hero_subtitle: "유지·보수"
 sub_items:
   - title: "유지·보수"
-    url: /overview/maintenance/
+    url: /projects/maintenance/
     image: /assets/img/maintenance-hero.jpg
 ---
 설치는 시작일 뿐입니다. 디스플레이는 켜져 있는 시간이 길수록, 그리고 외부 환경에 노출될수록 미세한 밝기 저하나 색 편차가 쌓이기 마련이라 설치 이후의 관리가 곧 화질의 완성도를 좌우합니다.
