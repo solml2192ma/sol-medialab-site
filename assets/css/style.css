@@ -128,6 +128,7 @@ section { position: relative; }
 .main-nav .dropdown li a {
   position: relative;
   display: block;
+  width: fit-content;
   padding: 9px 0;
   font-size: 15px;
   color: #344054;
