@@ -1905,10 +1905,11 @@ section { position: relative; }
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  animation: taillightChase 6s linear infinite;
+  animation: taillightChase 2.4s ease-in-out infinite alternate;
 }
 @keyframes taillightChase {
-  to { transform: rotate(360deg); }
+  0% { transform: rotate(-50deg); }
+  100% { transform: rotate(50deg); }
 }
 
 @media (max-width: 640px) {
