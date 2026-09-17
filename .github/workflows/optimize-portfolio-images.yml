@@ -25,7 +25,7 @@ jobs:
       - name: Install Pillow
         run: pip install Pillow
 
-      - name: Resize, watermark, and convert new/changed photos to WebP
+      - name: Resize and convert new/changed photos to WebP
         run: python3 scripts/optimize_portfolio_images.py "${{ github.event.before }}" "${{ github.sha }}"
 
       - name: Commit and push if anything changed
@@ -37,6 +37,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A -- assets/img/portfolio/ _portfolio/
-          git commit -m "Auto-optimize and watermark newly uploaded portfolio photos"
+          git commit -m "Auto-optimize newly uploaded portfolio photos"
           git pull --rebase origin main
           git push
