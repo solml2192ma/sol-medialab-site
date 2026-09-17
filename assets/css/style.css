@@ -78,7 +78,7 @@ section { position: relative; }
   background: #E2140A;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform .4s ease;
+  transition: transform .6s ease;
 }
 .main-nav > ul > li:hover > a::after,
 .main-nav > ul > li:focus-within > a::after {
@@ -145,7 +145,7 @@ section { position: relative; }
   background: #E2140A;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform .4s ease;
+  transition: transform .6s ease;
 }
 .main-nav .dropdown li:not(.dropdown-heading) > a:hover::after { transform: scaleX(1); }
 .main-nav .dropdown li.sub {
