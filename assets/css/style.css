@@ -1246,8 +1246,9 @@ section { position: relative; }
 .portfolio-page-btn:hover { border-color: #2156E8; color: #2156E8; }
 .portfolio-page-btn.is-active {
   background: #475467;
-  border-color: #E2140A;
+  border-color: #475467;
   color: #fff;
+  -webkit-text-stroke: 0.6px #E2140A;
 }
 
 @media (max-width: 900px) {
