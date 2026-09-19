@@ -55,6 +55,26 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
   let currentPage = 1;
   let searching = false;
 
+  // Builds an abbreviated page list like [1, '...', 5, 6, 7, '...', 100]
+  // so wide boards don't render a button for every single page.
+  const getPageList = (current, total) => {
+    const delta = 1;
+    const pages = [];
+    for (let i = 1; i <= total; i += 1) {
+      if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) {
+        pages.push(i);
+      }
+    }
+    const withDots = [];
+    let last;
+    pages.forEach((p) => {
+      if (last !== undefined && p - last > 1) withDots.push('...');
+      withDots.push(p);
+      last = p;
+    });
+    return withDots;
+  };
+
   const renderPagination = () => {
     if (!pagination) return;
     if (searching || totalPages <= 1) {
@@ -64,7 +84,14 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
     }
     pagination.hidden = false;
     pagination.innerHTML = '';
-    for (let p = 1; p <= totalPages; p += 1) {
+    getPageList(currentPage, totalPages).forEach((p) => {
+      if (p === '...') {
+        const span = document.createElement('span');
+        span.className = 'portfolio-page-ellipsis';
+        span.textContent = '...';
+        pagination.appendChild(span);
+        return;
+      }
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'portfolio-page-btn' + (p === currentPage ? ' is-active' : '');
@@ -72,7 +99,7 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
       btn.setAttribute('aria-current', p === currentPage ? 'page' : 'false');
       btn.addEventListener('click', () => showPage(p));
       pagination.appendChild(btn);
-    }
+    });
   };
 
   const showPage = (page) => {

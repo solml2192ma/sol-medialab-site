@@ -1248,7 +1248,17 @@ section { position: relative; }
   background: #475467;
   border-color: #475467;
   color: #fff;
-  -webkit-text-stroke: 0.6px #E2140A;
+}
+.portfolio-page-ellipsis {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 20px;
+  height: 36px;
+  padding-bottom: 6px;
+  color: #98A2B3;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
