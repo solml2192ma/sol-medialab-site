@@ -1245,8 +1245,8 @@ section { position: relative; }
 }
 .portfolio-page-btn:hover { border-color: #2156E8; color: #2156E8; }
 .portfolio-page-btn.is-active {
-  background: #2156E8;
-  border-color: #2156E8;
+  background: #475467;
+  border-color: #E2140A;
   color: #fff;
 }
 
