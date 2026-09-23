@@ -1085,6 +1085,22 @@ section { position: relative; }
   text-align: left;
 }
 .portfolio-category-count { margin-left: 4px; font-weight: 700; }
+.portfolio-group-more {
+  display: block;
+  margin: 20px auto 0;
+  min-width: 120px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: 1px solid #E3E7EE;
+  background: #fff;
+  color: #475467;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease;
+}
+.portfolio-group-more:hover { border-color: #2156E8; color: #2156E8; }
 .portfolio-search-group {
   display: flex;
   align-items: center;

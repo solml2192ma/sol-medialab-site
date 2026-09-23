@@ -20,7 +20,7 @@ layout: null
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=114"></head><body>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=115"></head><body>
 
 <header class="site-header header-solid" id="siteHeader">
   <div class="header-inner">
@@ -120,9 +120,14 @@ layout: null
         <div class="portfolio-grid" data-group-grid>
           {% for post in cat_posts %}
           <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
-            {% if post.cover_image %}
-            <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
-            {% endif %}
+            <div class="portfolio-card-media">
+              {% if post.cover_image %}
+              <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
+              {% endif %}
+              {% if post.gallery and post.gallery.size > 0 %}
+              <img class="portfolio-card-image portfolio-card-image--hover" src="{{ site.baseurl }}{{ post.gallery.first }}" alt="{{ post.title }}">
+              {% endif %}
+            </div>
             <div class="portfolio-card-body">
               <div class="portfolio-card-tags">
                 {% if post.location and post.location != empty %}<span class="portfolio-card-location">{{ post.location }}</span>{% endif %}
@@ -133,6 +138,7 @@ layout: null
           </a>
           {% endfor %}
         </div>
+        <button type="button" class="portfolio-group-more" data-group-more hidden></button>
       </div>
       {% endif %}
     {% endfor %}
@@ -196,6 +202,6 @@ layout: null
   </button>
 </div>
 
-<script src="{{ site.baseurl }}/assets/js/main.js?v=25"></script>
+<script src="{{ site.baseurl }}/assets/js/main.js?v=26"></script>
 </body>
 </html>

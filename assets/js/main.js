@@ -39,10 +39,10 @@ document.querySelectorAll('.main-nav > ul > li.has-dropdown').forEach((li) => {
   li.addEventListener('focusin', alignDropdown);
 });
 
-// PROJECTS board: paginate the project grid (6 per page) and support
-// search by title/category/location. While searching, pagination is
-// suspended and every match is shown at once; clearing the search
-// returns to page 1 of the full, paginated list.
+// PROJECTS board: paginate the project grid (9 per page) and support
+// search by title/category/location. Search results stay paginated
+// too (same page size, same control) instead of dumping every match
+// on screen at once.
 const PORTFOLIO_PAGE_SIZE = 9;
 
 document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
@@ -51,9 +51,9 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
   const emptyMsg = grid.querySelector('.portfolio-search-empty');
   const pagination = section.querySelector('[data-portfolio-pagination]');
   const cards = Array.from(grid.querySelectorAll('.portfolio-card'));
-  const totalPages = Math.ceil(cards.length / PORTFOLIO_PAGE_SIZE);
+  let matchedCards = cards;
+  let totalPages = Math.ceil(cards.length / PORTFOLIO_PAGE_SIZE);
   let currentPage = 1;
-  let searching = false;
 
   // Builds an abbreviated page list like [1, '...', 5, 6, 7, '...', 100]
   // so wide boards don't render a button for every single page.
@@ -77,7 +77,7 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
 
   const renderPagination = () => {
     if (!pagination) return;
-    if (searching || totalPages <= 1) {
+    if (totalPages <= 1) {
       pagination.innerHTML = '';
       pagination.hidden = true;
       return;
@@ -104,7 +104,8 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
 
   const showPage = (page) => {
     currentPage = page;
-    cards.forEach((card, i) => {
+    cards.forEach((card) => { card.style.display = 'none'; });
+    matchedCards.forEach((card, i) => {
       const inPage = i >= (page - 1) * PORTFOLIO_PAGE_SIZE && i < page * PORTFOLIO_PAGE_SIZE;
       card.style.display = inPage ? '' : 'none';
     });
@@ -116,19 +117,13 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
   if (input) {
     const runSearch = () => {
       const query = input.value.trim().toLowerCase();
-      searching = query.length > 0;
-      let visibleCount = 0;
-      cards.forEach((card) => {
-        const match = !searching || card.textContent.toLowerCase().includes(query);
-        card.style.display = match ? '' : 'none';
-        if (match) visibleCount += 1;
-      });
-      if (emptyMsg) emptyMsg.hidden = visibleCount !== 0 || cards.length === 0;
-      if (searching) {
-        renderPagination();
-      } else {
-        showPage(1);
-      }
+      const searching = query.length > 0;
+      matchedCards = searching
+        ? cards.filter((card) => card.textContent.toLowerCase().includes(query))
+        : cards;
+      totalPages = Math.ceil(matchedCards.length / PORTFOLIO_PAGE_SIZE);
+      if (emptyMsg) emptyMsg.hidden = matchedCards.length !== 0 || cards.length === 0;
+      showPage(1);
     };
     input.addEventListener('input', runSearch);
 
@@ -146,6 +141,10 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
 // [data-group] per category, each with its own [data-group-grid]).
 // Typing filters cards within every group and hides any group left
 // with zero matches, so only categories that actually match show up.
+// Each group only shows its first few matches by default, with a
+// "더보기" button to reveal the rest, so a category with many cases
+// doesn't dump them all on screen at once.
+const PORTFOLIO_GROUP_COLLAPSED_SIZE = 3;
 const portfolioSearchAllInput = document.getElementById('portfolioSearchAll');
 const portfolioGroupsRoot = document.querySelector('[data-portfolio-groups-root]');
 if (portfolioSearchAllInput && portfolioGroupsRoot) {
@@ -153,33 +152,57 @@ if (portfolioSearchAllInput && portfolioGroupsRoot) {
     el: group,
     cards: Array.from(group.querySelectorAll('.portfolio-card')),
     countEl: group.querySelector('[data-group-count]'),
+    moreBtn: group.querySelector('[data-group-more]'),
+    expanded: false,
   }));
   const groupsEmptyMsg = portfolioGroupsRoot.querySelector('[data-groups-empty]');
+
+  const renderGroup = (group, matches) => {
+    group.cards.forEach((card) => { card.style.display = 'none'; });
+    const visible = group.expanded ? matches : matches.slice(0, PORTFOLIO_GROUP_COLLAPSED_SIZE);
+    visible.forEach((card) => { card.style.display = ''; });
+    group.el.hidden = matches.length === 0;
+    if (group.countEl) group.countEl.textContent = `(${matches.length})`;
+    if (group.moreBtn) {
+      const hidden = matches.length <= PORTFOLIO_GROUP_COLLAPSED_SIZE;
+      group.moreBtn.hidden = hidden;
+      if (!hidden) {
+        group.moreBtn.textContent = group.expanded
+          ? '접기'
+          : `더보기 (${matches.length - PORTFOLIO_GROUP_COLLAPSED_SIZE})`;
+      }
+    }
+    return matches.length > 0;
+  };
+
+  const groupMatches = (group, query) => group.cards.filter(
+    (card) => !query || card.textContent.toLowerCase().includes(query),
+  );
 
   const runGroupedSearch = () => {
     const query = portfolioSearchAllInput.value.trim().toLowerCase();
     let anyGroupVisible = false;
-    groups.forEach(({ el, cards, countEl }) => {
-      let visibleInGroup = 0;
-      cards.forEach((card) => {
-        const match = !query || card.textContent.toLowerCase().includes(query);
-        card.style.display = match ? '' : 'none';
-        if (match) visibleInGroup += 1;
-      });
-      el.hidden = visibleInGroup === 0;
-      if (visibleInGroup > 0) anyGroupVisible = true;
-      if (countEl) countEl.textContent = `(${visibleInGroup})`;
+    groups.forEach((group) => {
+      group.expanded = false;
+      if (renderGroup(group, groupMatches(group, query))) anyGroupVisible = true;
     });
     if (groupsEmptyMsg) groupsEmptyMsg.hidden = anyGroupVisible || groups.length === 0;
   };
 
+  groups.forEach((group) => {
+    if (!group.moreBtn) return;
+    group.moreBtn.addEventListener('click', () => {
+      group.expanded = !group.expanded;
+      const query = portfolioSearchAllInput.value.trim().toLowerCase();
+      renderGroup(group, groupMatches(group, query));
+    });
+  });
+
   portfolioSearchAllInput.addEventListener('input', runGroupedSearch);
 
   const presetGroupQuery = new URLSearchParams(window.location.search).get('q');
-  if (presetGroupQuery) {
-    portfolioSearchAllInput.value = presetGroupQuery;
-    runGroupedSearch();
-  }
+  if (presetGroupQuery) portfolioSearchAllInput.value = presetGroupQuery;
+  runGroupedSearch();
 }
 
 // Mobile menu toggle
