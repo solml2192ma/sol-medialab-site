@@ -43,7 +43,7 @@ document.querySelectorAll('.main-nav > ul > li.has-dropdown').forEach((li) => {
 // search by title/category/location. While searching, pagination is
 // suspended and every match is shown at once; clearing the search
 // returns to page 1 of the full, paginated list.
-const PORTFOLIO_PAGE_SIZE = 6;
+const PORTFOLIO_PAGE_SIZE = 9;
 
 document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
   const section = grid.closest('section');
