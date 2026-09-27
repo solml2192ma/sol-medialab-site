@@ -5,10 +5,10 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 그랜드 인터컨티넨탈 서울 파르나스
-cover_image: /assets/img/portfolio/KakaoTalk_20260927_235601831_01.webp
+cover_image: /assets/img/portfolio/qkv89v0ezs.webp
 gallery:
-  - /assets/img/portfolio/KakaoTalk_20260927_235601831_04.webp
-  - /assets/img/portfolio/KakaoTalk_20260927_235601831_02.webp
+  - /assets/img/portfolio/zb48z823ax.webp
+  - /assets/img/portfolio/tvrhgrzct4.webp
 ---
 
 # GAMEX 2026 경기국제종합학술대회 및 치과기자재전시회 — 80주년의 무대를 하나의 화면으로 연결하다
