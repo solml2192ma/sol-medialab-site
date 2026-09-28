@@ -8,7 +8,7 @@ plugins:
 collections:
   portfolio:
     output: true
-    permalink: /portfolio/:slug/
+    permalink: /projects/:slug/
 
 defaults:
   - scope:
