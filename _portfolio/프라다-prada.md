@@ -1,4 +1,5 @@
 ---
+slug: 프라다prada
 title: 프라다 (PRADA)
 post_date: 2026-08-27T13:04:00+09:00
 overview_category:

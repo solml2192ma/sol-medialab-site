@@ -1,4 +1,5 @@
 ---
+slug: novastarv960
 title: NOVASTAR V960
 post_date: 2026-09-01T15:27:00+09:00
 overview_category:

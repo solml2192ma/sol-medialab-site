@@ -1,4 +1,5 @@
 ---
+slug: namhux
 title: 나무x (NAMHU X)
 post_date: 2026-08-20T17:34:00+09:00
 overview_category:

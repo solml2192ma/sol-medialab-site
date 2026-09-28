@@ -1,4 +1,5 @@
 ---
+slug: miumiupopup
 title: 미우미우 (Miu Miu)
 post_date: 2026-08-20T16:27:00+09:00
 overview_category:

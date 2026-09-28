@@ -1,4 +1,5 @@
 ---
+slug: lh천안도시재생뉴딜체험관
 title: LH 천안 도시재생뉴딜 체험관
 post_date: 2026-08-26T14:17:00+09:00
 overview_category:

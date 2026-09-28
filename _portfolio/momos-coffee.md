@@ -1,4 +1,5 @@
 ---
+slug: momoscoffee
 title: 모모스 커피 (MOMOS COFFEE)
 post_date: 2026-08-19T16:01:00+09:00
 overview_category:

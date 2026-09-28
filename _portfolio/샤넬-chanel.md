@@ -1,4 +1,5 @@
 ---
+slug: 샤넬chanel
 title: 샤넬 (Chanel)
 post_date: 2026-08-26T15:45:00+09:00
 overview_category:

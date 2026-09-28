@@ -1,4 +1,5 @@
 ---
+slug: 한국분자세포생물학회ksmcb국제학술대회
 title: 한국분자·세포생물학회(KSMCB) 국제 학술 대회
 post_date: 2026-08-26T15:08:00+09:00
 overview_category:

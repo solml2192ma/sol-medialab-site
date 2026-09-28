@@ -1,4 +1,5 @@
 ---
+slug: 멀버리mulberry
 title: 멀버리 (mulberry)
 post_date: 2026-08-26T16:30:00+09:00
 overview_category:

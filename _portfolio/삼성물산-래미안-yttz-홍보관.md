@@ -1,4 +1,5 @@
 ---
+slug: 삼성물산래미안yttz홍보관
 title: 삼성물산 래미안 YTTZ 홍보관
 post_date: 2026-08-26T12:37:33+09:00
 overview_category:

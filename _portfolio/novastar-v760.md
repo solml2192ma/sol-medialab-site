@@ -1,4 +1,5 @@
 ---
+slug: novastarv760
 title: NOVASTAR V760
 post_date: 2026-09-01T15:12:00+09:00
 overview_category:

@@ -1,4 +1,5 @@
 ---
+slug: k박람회중소기업벤처부브랜드k홍보부스
 title: K박람회 중소기업벤처부 브랜드k 홍보부스
 post_date: 2026-09-03T16:27:00+09:00
 overview_category:

@@ -1,4 +1,5 @@
 ---
+slug: 맥심top브랜드콘텐츠촬영
 post_date: 2026-08-20T13:12:45+09:00
 title: 맥심 T.O.P 브랜드 콘텐츠 촬영
 overview_category:

@@ -1,4 +1,5 @@
 ---
+slug: medihealplave
 title: MEDIHEAL × PLAVE
 post_date: 2026-08-21T12:36:37+09:00
 overview_category:

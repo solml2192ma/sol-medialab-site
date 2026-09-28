@@ -1,4 +1,5 @@
 ---
+slug: semiconkorea
 title: Semicon Korea
 post_date: 2026-08-20T13:04:19+09:00
 overview_category:

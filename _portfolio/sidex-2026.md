@@ -1,4 +1,5 @@
 ---
+slug: sidex2026
 title: SIDEX 2026
 post_date: 2026-08-20T13:15:56+09:00
 overview_category:

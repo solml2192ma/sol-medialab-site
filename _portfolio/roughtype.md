@@ -1,4 +1,5 @@
 ---
+slug: roughtype
 title: 로타입 (roughtype)
 post_date: 2026-08-20T17:20:00+09:00
 overview_category:

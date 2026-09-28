@@ -1,4 +1,5 @@
 ---
+slug: 코치coach
 title: 코치 (COACH)
 post_date: 2026-08-27T14:35:00+09:00
 overview_category:

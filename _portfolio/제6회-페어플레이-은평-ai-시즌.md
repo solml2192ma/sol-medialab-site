@@ -1,4 +1,5 @@
 ---
+slug: 제6회페어플레이은평ai시즌
 title: 제6회 페어플레이 은평 AI 시즌
 post_date: 2026-08-20T13:22:00+09:00
 overview_category:

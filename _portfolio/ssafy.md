@@ -1,4 +1,5 @@
 ---
+slug: ssafy
 title: 삼성 전자 SSAFY
 post_date: 2026-08-20T16:18:00+09:00
 overview_category:

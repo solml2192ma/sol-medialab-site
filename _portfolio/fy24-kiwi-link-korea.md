@@ -1,4 +1,5 @@
 ---
+slug: fy24kiwilinkkorea
 title: FY24 KIWI LINK KOREA
 post_date: 2026-08-27T14:55:00+09:00
 overview_category:

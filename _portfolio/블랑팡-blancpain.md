@@ -1,4 +1,5 @@
 ---
+slug: 블랑팡blancpain
 title: 블랑팡 (Blancpain)
 post_date: 2026-08-27T14:43:00+09:00
 overview_category: []

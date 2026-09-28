@@ -1,4 +1,5 @@
 ---
+slug: 샤넬팩토리chanelfactory5
 title: 샤넬 팩토리 (CHANEL FACTORY 5)
 post_date: 2026-08-27T13:41:00+09:00
 overview_category:

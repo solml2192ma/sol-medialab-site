@@ -1,4 +1,5 @@
 ---
+slug: gamex80주년기념식
 title: GAMEX 80주년 기념식
 post_date: 2026-09-27T23:58:00+09:00
 overview_category:

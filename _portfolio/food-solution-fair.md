@@ -1,4 +1,5 @@
 ---
+slug: foodsolutionfair
 title: FOOD SOLUTION FAIR
 post_date: 2026-08-27T15:09:00+09:00
 overview_category:

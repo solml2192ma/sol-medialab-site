@@ -1,4 +1,5 @@
 ---
+slug: estéelauder에스티로더
 title: 에스티로더 (Estée Lauder)
 post_date: 2026-08-20T12:58:00+09:00
 overview_category:

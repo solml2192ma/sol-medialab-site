@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "assets/img/portfolio/**"
+      - "_portfolio/**"
 
 permissions:
   contents: write

@@ -1,4 +1,5 @@
 ---
+slug: 샤넬수블리마지chanelsublimage
 title: 샤넬 수블리마지 (CHANEL SUBLIMAGE)
 post_date: 2026-08-27T14:11:00+09:00
 overview_category:

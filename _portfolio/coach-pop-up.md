@@ -1,4 +1,5 @@
 ---
+slug: coachpopup
 title: 코치 (COACH)
 post_date: 2026-08-20T16:36:00+09:00
 overview_category:

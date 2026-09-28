@@ -13,10 +13,18 @@ before upload now, so this only resizes/re-encodes.
 
 Only processes files that changed in THIS push, so previously
 published photos are never touched retroactively.
+
+Also backfills a `slug:` front-matter field (letters/digits only, no
+separators) on any _portfolio post that doesn't have one yet, so every
+new case post -- however it's added -- gets a URL like
+/projects/gamex80주년기념식/ instead of Jekyll's default hyphenated
+:slug output. This step runs on every invocation, independent of
+whether any photos changed.
 """
 import glob
 import os
 import random
+import re
 import string
 import subprocess
 import sys
@@ -99,6 +107,28 @@ def process_file(rel_path, taken_names):
     return (old_rel, new_rel)
 
 
+def no_sep_slugify(name):
+    """Strip every non-alphanumeric character (unicode-aware) instead of
+    collapsing runs to a hyphen -- 'gamex-80주년-기념식' -> 'gamex80주년기념식'."""
+    return re.sub(r"[\W_]+", "", name, flags=re.UNICODE).lower()
+
+
+def ensure_slugs():
+    """Add slug: to any portfolio post missing one. Idempotent."""
+    updated = []
+    for md_path in glob.glob(PORTFOLIO_MD_GLOB):
+        text = open(md_path, encoding="utf-8").read()
+        if re.search(r"(?m)^slug:\s*\S", text):
+            continue
+        raw_name = os.path.splitext(os.path.basename(md_path))[0]
+        slug = no_sep_slugify(raw_name)
+        new_text = text.replace("---\n", f"---\nslug: {slug}\n", 1)
+        open(md_path, "w", encoding="utf-8").write(new_text)
+        updated.append(md_path)
+        print(f"added slug: {slug} to {os.path.relpath(md_path, REPO_ROOT)}")
+    return updated
+
+
 def update_markdown_references(renames):
     if not renames:
         return
@@ -120,10 +150,13 @@ def main():
         sys.exit(1)
 
     before_sha, after_sha = sys.argv[1], sys.argv[2]
-    files = changed_portfolio_files(before_sha, after_sha)
 
+    slugged = ensure_slugs()
+
+    files = changed_portfolio_files(before_sha, after_sha)
     if not files:
         print("no new/modified portfolio images in this push")
+        print(f"done: 0 image(s) processed, {len(slugged)} slug(s) backfilled")
         return
 
     taken_names = {os.path.splitext(f)[0] for f in os.listdir(PORTFOLIO_DIR)}
@@ -136,7 +169,7 @@ def main():
 
     update_markdown_references(renames)
 
-    print(f"done: {len(renames)} image(s) processed")
+    print(f"done: {len(renames)} image(s) processed, {len(slugged)} slug(s) backfilled")
 
 
 if __name__ == "__main__":
