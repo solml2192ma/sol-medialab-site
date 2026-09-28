@@ -33,6 +33,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "제목", name: "title", widget: "string" }
+      - { label: "URL 슬러그 (자동 생성 — 직접 수정하지 마세요)", name: "slug", widget: "hidden", required: false }
       - label: "등록일시 (자동 입력 — CMS 확인용, 홈페이지에는 노출되지 않습니다)"
         name: "post_date"
         widget: "datetime"

@@ -113,19 +113,66 @@ def no_sep_slugify(name):
     return re.sub(r"[\W_]+", "", name, flags=re.UNICODE).lower()
 
 
+SLUG_LINE_RE = re.compile(r"^slug:[ \t]*(.*)$")
+
+
+def _front_matter_slug_value(front_matter_text):
+    """Returns (line_index, stripped_value) for the slug: line if present,
+    else None. Strips surrounding quotes so slug: '' / slug: "" / slug:
+    (nothing) are all correctly seen as empty, not as "already set"."""
+    lines = front_matter_text.splitlines()
+    for i, line in enumerate(lines):
+        m = SLUG_LINE_RE.match(line)
+        if not m:
+            continue
+        val = m.group(1).strip()
+        if len(val) >= 2 and val[0] == val[-1] and val[0] in ("'", '"'):
+            val = val[1:-1]
+        return i, val
+    return None
+
+
 def ensure_slugs():
-    """Add slug: to any portfolio post missing one. Idempotent."""
+    """Give every portfolio post a real (non-empty) slug: value. Handles
+    three cases: no slug: line at all (Jekyll CMS-created posts before this
+    field existed), a slug: line left blank by the CMS's hidden-field
+    widget on a brand-new post, or an already-populated slug: (skipped).
+    Idempotent."""
     updated = []
     for md_path in glob.glob(PORTFOLIO_MD_GLOB):
         text = open(md_path, encoding="utf-8").read()
-        if re.search(r"(?m)^slug:\s*\S", text):
+        parts = text.split("---", 2)
+        if len(parts) < 3:
             continue
+        front = parts[1]
+
+        found = _front_matter_slug_value(front)
+        if found is not None and found[1]:
+            continue  # already has a real value
+
         raw_name = os.path.splitext(os.path.basename(md_path))[0]
         slug = no_sep_slugify(raw_name)
-        new_text = text.replace("---\n", f"---\nslug: {slug}\n", 1)
+
+        front_lines = front.splitlines()
+        if found is not None:
+            front_lines[found[0]] = f"slug: {slug}"
+        elif front_lines and front_lines[0] == "":
+            # front[0] is the blank placeholder from splitting right after
+            # the opening '---\n' -- fill it in instead of inserting a new
+            # line before it (which would leave a stray blank line).
+            front_lines[0] = f"slug: {slug}"
+        else:
+            front_lines.insert(0, f"slug: {slug}")
+        new_front = "\n".join(front_lines)
+        if not new_front.startswith("\n"):
+            new_front = "\n" + new_front
+        if not new_front.endswith("\n"):
+            new_front += "\n"
+        new_text = "---" + new_front + "---" + parts[2]
+
         open(md_path, "w", encoding="utf-8").write(new_text)
         updated.append(md_path)
-        print(f"added slug: {slug} to {os.path.relpath(md_path, REPO_ROOT)}")
+        print(f"set slug: {slug} in {os.path.relpath(md_path, REPO_ROOT)}")
     return updated
 
 
