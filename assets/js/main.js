@@ -43,7 +43,7 @@ document.querySelectorAll('.main-nav > ul > li.has-dropdown').forEach((li) => {
 // search by title/category/location. Search results stay paginated
 // too (same page size, same control) instead of dumping every match
 // on screen at once.
-const PORTFOLIO_PAGE_SIZE = 9;
+const PORTFOLIO_PAGE_SIZE = 6;
 
 document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
   const section = grid.closest('section');
