@@ -132,26 +132,46 @@ def _front_matter_slug_value(front_matter_text):
     return None
 
 
+def _unique_slug(base_slug, taken):
+    """base_slug if free, else base_slug + '2', '3', ... -- since separators
+    are stripped entirely, two differently-named posts can coincidentally
+    collapse to the same slug (e.g. 'some-title' and 'sometitle')."""
+    if base_slug not in taken:
+        return base_slug
+    n = 2
+    while f"{base_slug}{n}" in taken:
+        n += 1
+    return f"{base_slug}{n}"
+
+
 def ensure_slugs():
     """Give every portfolio post a real (non-empty) slug: value. Handles
     three cases: no slug: line at all (Jekyll CMS-created posts before this
     field existed), a slug: line left blank by the CMS's hidden-field
     widget on a brand-new post, or an already-populated slug: (skipped).
-    Idempotent."""
-    updated = []
+    New slugs are deduplicated against every slug already in use (existing
+    posts plus any assigned earlier in this same run). Idempotent."""
+    entries = []
+    taken = set()
     for md_path in glob.glob(PORTFOLIO_MD_GLOB):
         text = open(md_path, encoding="utf-8").read()
         parts = text.split("---", 2)
         if len(parts) < 3:
             continue
-        front = parts[1]
+        found = _front_matter_slug_value(parts[1])
+        if found is not None and found[1]:
+            taken.add(found[1])
+        entries.append((md_path, parts, found))
 
-        found = _front_matter_slug_value(front)
+    updated = []
+    for md_path, parts, found in entries:
         if found is not None and found[1]:
             continue  # already has a real value
 
+        front = parts[1]
         raw_name = os.path.splitext(os.path.basename(md_path))[0]
-        slug = no_sep_slugify(raw_name)
+        slug = _unique_slug(no_sep_slugify(raw_name), taken)
+        taken.add(slug)
 
         front_lines = front.splitlines()
         if found is not None:
