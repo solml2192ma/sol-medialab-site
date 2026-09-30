@@ -1,14 +1,15 @@
 ---
+slug: eenk팝업종로
 title: EENK 팝업 (종로)
 post_date: 2026-09-30T14:19:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 서울 종로
-cover_image: /assets/img/portfolio/게시05_원본15.webp
+cover_image: /assets/img/portfolio/tz10ru1nqf.webp
 gallery:
-  - /assets/img/portfolio/게시07_원본21.webp
-  - /assets/img/portfolio/게시06_원본16.webp
+  - /assets/img/portfolio/o6gx5qsonu.webp
+  - /assets/img/portfolio/9aesf25leg.webp
 ---
 
 #### **종로 EENK FW26 프레젠테이션 — 공간의 결을 살린 세로형 LED**
