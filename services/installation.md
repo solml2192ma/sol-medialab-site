@@ -5,7 +5,7 @@ permalink: /services/installation/
 hero_image: /assets/img/department-store-hero.jpg
 hero_eyebrow: "INSTALLATION"
 hero_title: "Fixed Screen · Media Wall"
-hero_subtitle: "빌딩·오피스 · 백화점·쇼핑몰 · 분양홍보관·모델하우스 · 사이니지·비디오월"
+hero_subtitle: "빌딩·오피스 · 백화점·쇼핑몰 · 분양홍보관·모델하우스 · 사이니지·모니터(설치)"
 sub_items:
   - title: "빌딩·오피스"
     url: /projects/installation/
@@ -16,7 +16,7 @@ sub_items:
   - title: "분양홍보관·모델하우스"
     url: /projects/model-house/
     image: /assets/img/model-house-hero.jpg
-  - title: "사이니지·비디오월"
+  - title: "사이니지·모니터(설치)"
     url: /projects/signage/
     image: /assets/img/signage-hero.jpg
 ---

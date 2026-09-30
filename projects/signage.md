@@ -1,7 +1,7 @@
 ---
 layout: overview-board
-title: "사이니지·비디오월"
-overview_filter: "사이니지·비디오월"
+title: "사이니지·모니터(설치)"
+overview_filter: "사이니지·모니터(설치)"
 permalink: /projects/signage/
 hero_image: /assets/img/signage-hero.jpg
 hero_eyebrow: "INSTALLATION"
