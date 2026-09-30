@@ -22,7 +22,7 @@ sub_items:
     image: /assets/img/event-hero.jpg
   - title: "사이니지·모니터(렌탈)"
     url: /projects/signage-rental/
-    image: /assets/img/signage-hero.jpg
+    image: /assets/img/signage-rental-hero.jpg
 ---
 컨퍼런스와 세미나, 전시와 컨벤션, 방송 촬영 현장, 공연과 행사 등 짧게는 하루, 길게는 며칠씩 이어지는 현장에 맞춰 디스플레이를 렌탈하고 직접 운영합니다. 현장마다 요구되는 화면비와 밝기, 색 재현력이 다른 만큼 성격에 맞는 장비 구성이 무엇보다 중요합니다.
 

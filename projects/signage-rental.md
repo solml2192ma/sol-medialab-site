@@ -3,7 +3,7 @@ layout: overview-board
 title: "사이니지·모니터(렌탈)"
 overview_filter: "사이니지·모니터(렌탈)"
 permalink: /projects/signage-rental/
-hero_image: /assets/img/signage-hero.jpg
+hero_image: /assets/img/signage-rental-hero.jpg
 hero_eyebrow: "RENTAL"
 hero_title: "Signage · Monitor Rental"
 hero_subtitle: "Exhibition · Event · Short-term"
