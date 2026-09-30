@@ -1,13 +1,14 @@
 ---
+slug: gamex2026경기국제종합학술대회및치과기자재전시회
 title: GAMEX 2026 경기국제종합학술대회 및 치과기자재전시회
 post_date: 2026-09-30T13:31:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 웨스틴 서울 파르나스 아틀라스홀
-cover_image: /assets/img/portfolio/게시03_20260918_163507961_12 (11).webp
+cover_image: /assets/img/portfolio/fcqd0taix9.webp
 gallery:
-  - /assets/img/portfolio/게시05_20260918_163507961_12 (2).webp
+  - /assets/img/portfolio/mv3dt72eef.webp
 ---
 
 ###  **GAMEX 2026 경기국제종합학술대회 및 치과기자재전시회 — P1.25 메인 스크린과 좌우 LED, 3면 화면으로 완성한 무대**
