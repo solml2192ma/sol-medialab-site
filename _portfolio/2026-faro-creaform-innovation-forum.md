@@ -1,14 +1,15 @@
 ---
+slug: 2026farocreaforminnovationforum
 title: 2026 FARO CREAFORM INNOVATION FORUM
 post_date: 2026-10-01T16:46:00+09:00
 overview_category:
   - 사이니지·모니터(렌탈)
 client: ''
 location: 양재 엘타워 골드홀
-cover_image: /assets/img/portfolio/01_현장전경.webp
+cover_image: /assets/img/portfolio/hxnbnu10lf.webp
 gallery:
-  - /assets/img/portfolio/02_스탠드형TV배치.webp
-  - /assets/img/portfolio/03_행사안내물.webp
+  - /assets/img/portfolio/gdj3rkqnus.webp
+  - /assets/img/portfolio/jslvahm2e8.webp
 ---
 
 ## 벽 없이도 안내가 끊기지 않게, 이동식 스탠드형 디스플레이
