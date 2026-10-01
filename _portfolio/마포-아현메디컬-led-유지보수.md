@@ -1,13 +1,14 @@
 ---
+slug: 마포아현메디컬led유지보수
 title: 마포 아현메디컬 LED 유지보수
 post_date: 2026-10-01T15:43:00+09:00
 overview_category:
   - 유지·보수
 client: ''
 location: 마포 아현메디컬
-cover_image: /assets/img/portfolio/04_교체후_송출확인.webp
+cover_image: /assets/img/portfolio/rwarkt24zv.webp
 gallery:
-  - /assets/img/portfolio/06_엘리베이터홀_LED.webp
+  - /assets/img/portfolio/3x3fl0t900.webp
 ---
 
 ## 현장 개요
