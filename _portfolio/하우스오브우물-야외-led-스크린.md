@@ -1,13 +1,14 @@
 ---
+slug: 하우스오브우물야외led스크린
 title: 하우스오브우물, 야외 LED 스크린
 post_date: 2026-10-01T12:52:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 마포 하우스오브우물
-cover_image: /assets/img/portfolio/01_현장전경.webp
+cover_image: /assets/img/portfolio/cjnit3w1pq.webp
 gallery:
-  - /assets/img/portfolio/02_화면구성.webp
+  - /assets/img/portfolio/c8hw8497vq.webp
 ---
 
 **앉아서 보는 마당, 화면은 정면에서 한눈에**
