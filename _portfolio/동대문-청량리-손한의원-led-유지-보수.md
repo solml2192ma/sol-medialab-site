@@ -1,14 +1,15 @@
 ---
+slug: 동대문청량리손한의원led유지보수
 title: 동대문 청량리 손한의원 LED 유지 보수
 post_date: 2026-10-01T15:28:00+09:00
 overview_category:
   - 유지·보수
 client: ''
 location: 동대문 청량리 손한의원
-cover_image: /assets/img/portfolio/01_송출화면.webp
+cover_image: /assets/img/portfolio/fl1xw9hfyk.webp
 gallery:
-  - /assets/img/portfolio/02_송출화면.webp
-  - /assets/img/portfolio/03_송출화면.webp
+  - /assets/img/portfolio/mqu1571les.webp
+  - /assets/img/portfolio/k85izh9jdk.webp
 ---
 
 안녕하세요 솔미디어랩 입니다.
