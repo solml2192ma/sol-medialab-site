@@ -1,13 +1,14 @@
 ---
+slug: 2026kianz20thanniversarydealerexperience
 title: 2026 Kia NZ 20th Anniversary Dealer Experience
 post_date: 2026-10-01T16:04:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 서울 용산 그랜드 하얏트 남산홀
-cover_image: /assets/img/portfolio/04_완성전경.webp
+cover_image: /assets/img/portfolio/e7zr45608b.webp
 gallery:
-  - /assets/img/portfolio/01_세팅전경.webp
+  - /assets/img/portfolio/lu17up59rs.webp
 ---
 
 서울 용산 그랜드 하얏트 남산홀에서 열린 **2026 Kia NZ 20th Anniversary Dealer Experience** 행사에 **실내 P2 LED 전광판과 프롬프터용 모니터를 렌탈**로 운영했습니다.
