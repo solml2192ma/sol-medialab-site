@@ -1,14 +1,15 @@
 ---
+slug: 페니로이스aiworkx금융aiagent세미나
 title: 페니로이스 × AIWORKX 금융 AI Agent 세미나
 post_date: 2026-10-01T13:21:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 서머셋팰리스서울 (서울 종로)
-cover_image: /assets/img/portfolio/05_타이틀화면_정면.webp
+cover_image: /assets/img/portfolio/gdutrul8lj.webp
 gallery:
-  - /assets/img/portfolio/07_콘텐츠송출.webp
-  - /assets/img/portfolio/08_콘텐츠송출_2.webp
+  - /assets/img/portfolio/872dkfnizj.webp
+  - /assets/img/portfolio/k38kzy01pk.webp
 ---
 
 ## 세미나실 한 면을 채운 P1.5 실내 LED 렌탈
