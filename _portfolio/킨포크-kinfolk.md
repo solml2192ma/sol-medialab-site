@@ -1,14 +1,15 @@
 ---
+slug: 킨포크kinfolk
 title: 킨포크(KINFOLK)
 post_date: 2026-10-01T15:36:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 더현대 서울
-cover_image: /assets/img/portfolio/05_완성_측면컷.webp
+cover_image: /assets/img/portfolio/5dzcchanfx.webp
 gallery:
-  - /assets/img/portfolio/08_완성_전경.webp
-  - /assets/img/portfolio/06_완성_지면콘텐츠.webp
+  - /assets/img/portfolio/mvmc0v019u.webp
+  - /assets/img/portfolio/7ccw8m64p4.webp
 ---
 
 ## 진열 벽 안쪽에 들어간 P1 LED 화면
