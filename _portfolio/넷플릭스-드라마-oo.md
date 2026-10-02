@@ -1,13 +1,14 @@
 ---
+slug: 넷플릭스드라마oo
 title: 넷플릭스 드라마 - OO
 post_date: 2026-10-02T16:21:00+09:00
 overview_category:
   - 방송·촬영
 client: ''
 location: 인천 넥스트 스튜디오
-cover_image: /assets/img/portfolio/05_곡면LED링.webp
+cover_image: /assets/img/portfolio/aclxpm0k2p.webp
 gallery:
-  - /assets/img/portfolio/02_LED세팅.webp
+  - /assets/img/portfolio/dsb3jufkav.webp
 ---
 
 **포커 대회장 세트 안의 화면, 카메라가 가까이 와도 괜찮아야 했습니다**
