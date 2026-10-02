@@ -1,14 +1,15 @@
 ---
+slug: arcteryx플래그십스토어
 title: ARC'TERYX 플래그십 스토어
 post_date: 2026-10-02T14:58:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 강남 아크테릭스 플래그십 스토어
-cover_image: /assets/img/portfolio/05_현장점검.webp
+cover_image: /assets/img/portfolio/nj2uwsbwcw.webp
 gallery:
-  - /assets/img/portfolio/06_송출확인.webp
-  - /assets/img/portfolio/01_현장전경.webp
+  - /assets/img/portfolio/njl16z5jvr.webp
+  - /assets/img/portfolio/h7ceo8hsw1.webp
 ---
 
 ## 매장 벽 한 면을 스크린으로 만들었습니다
