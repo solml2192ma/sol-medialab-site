@@ -1,13 +1,14 @@
 ---
+slug: 해상풍력공동접속설비추진간담회및mou협약식
 title: 해상풍력 공동접속설비 추진 간담회 및 MOU 협약식
 post_date: 2026-10-02T13:35:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 한국전력공사 경인건설본부
-cover_image: /assets/img/portfolio/02_행사장전경.webp
+cover_image: /assets/img/portfolio/f8m51wztvt.webp
 gallery:
-  - /assets/img/portfolio/03_연단측면.webp
+  - /assets/img/portfolio/g5cg805jqw.webp
 ---
 
 ## 현장 개요
