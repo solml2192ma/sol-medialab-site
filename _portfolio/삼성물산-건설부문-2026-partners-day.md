@@ -1,13 +1,14 @@
 ---
+slug: 삼성물산건설부문2026partnersday
 title: 삼성물산 건설부문 2026 Partners' Day
 post_date: 2026-10-02T15:46:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 송파구 래미안갤러리 아트홀
-cover_image: /assets/img/portfolio/04_타이틀화면.webp
+cover_image: /assets/img/portfolio/gzq1lvyx04.webp
 gallery:
-  - /assets/img/portfolio/08_프로그램화면.webp
+  - /assets/img/portfolio/0ytd7rhc1c.webp
 ---
 
 ## 아트홀 무대 중앙에 세운 행사용 LED 스크린
