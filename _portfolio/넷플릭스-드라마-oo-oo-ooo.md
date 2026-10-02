@@ -1,13 +1,14 @@
 ---
+slug: 넷플릭스드라마ooooooo
 title: 넷플릭스 드라마 - OO OO OOO
 post_date: 2026-10-02T15:24:00+09:00
 overview_category:
   - 방송·촬영
 client: ''
 location: 일산 EBS 스튜디오
-cover_image: /assets/img/portfolio/01_세트전경.webp
+cover_image: /assets/img/portfolio/1xflegihza.webp
 gallery:
-  - /assets/img/portfolio/02_세트정면.webp
+  - /assets/img/portfolio/2sofyf7ybc.webp
 ---
 
 **드라마 세트의 배경 화면, 카메라 앞에서 버틸 수 있는가?**
