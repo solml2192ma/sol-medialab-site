@@ -1,14 +1,15 @@
 ---
+slug: 멀버리mulberry1
 title: 멀버리(mulberry)
 post_date: 2026-10-02T13:05:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 스타필드 하남
-cover_image: /assets/img/portfolio/03_042244.webp
+cover_image: /assets/img/portfolio/tfagtrl8ae.webp
 gallery:
-  - /assets/img/portfolio/04_042136.webp
-  - /assets/img/portfolio/06_042024.webp
+  - /assets/img/portfolio/phe75apg6l.webp
+  - /assets/img/portfolio/8prp7i871s.webp
 ---
 
 스타필드 하남 1층에 문을 연 멀버리 팝업스토어에 실내 LED 전광판을 설치한 사례입니다. 가죽 소재의 질감과 장인의 작업 장면을 담은 브랜드 영상이 세로로 긴 화면에서 송출되며, 방문객이 가장 먼저 마주하는 시선의 중심이 되도록 구성했습니다.
