@@ -1,14 +1,15 @@
 ---
+slug: 동아방송예술대학교miracledimagiftfesta
 title: 동아방송예술대학교 Miracle Dima Gift Festa
 post_date: 2026-10-14T16:53:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 동아방송예술대학교
-cover_image: /assets/img/portfolio/02_오프닝화면.webp
+cover_image: /assets/img/portfolio/re9jsl6aw5.webp
 gallery:
-  - /assets/img/portfolio/07_공연영상.webp
-  - /assets/img/portfolio/06_안내화면.webp
+  - /assets/img/portfolio/ab9e6q2g02.webp
+  - /assets/img/portfolio/rxwlb1qvnp.webp
 ---
 
 ## 현장 소개
