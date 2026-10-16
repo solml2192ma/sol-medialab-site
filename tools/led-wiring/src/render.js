@@ -44,19 +44,19 @@ export function renderSvg(lay, opt = {}) {
 
   // 상단 열 번호 / 좌측 행 번호: 각 실제 캐비닛의 중심에 맞춘다.
   const axisFont = Math.min(u * 3.2, ...lay.cells.map((c) => Math.min(c.w, c.h) * 0.24));
-  const axisBadge = (x, y, n) => {
+  const numberBadge = (x, y, n, color = '#000') => {
     const label = String(n);
     const size = axisFont * 0.8 * Math.min(1, 2 / label.length);
-    return `<circle cx="${f(x)}" cy="${f(y)}" r="${f(axisFont * 0.75)}" fill="#000"/>`
+    return `<circle cx="${f(x)}" cy="${f(y)}" r="${f(axisFont * 0.75)}" fill="${color}"/>`
       + text(x, y + size * 0.35, label, size, '#fff', 'middle', 'bold');
   };
   out.push('<g data-axis="columns" aria-label="열 번호">');
   for (const c of lay.cells.filter((c) => c.row === 0)) {
-    out.push(axisBadge(c.x + c.w / 2, -u * 5, c.col + 1));
+    out.push(numberBadge(c.x + c.w / 2, -u * 5, c.col + 1));
   }
   out.push('</g><g data-axis="rows" aria-label="행 번호">');
   for (const c of lay.cells.filter((c) => c.col === 0)) {
-    out.push(axisBadge(-u * 4, c.y + c.h / 2, c.row + 1));
+    out.push(numberBadge(-u * 4, c.y + c.h / 2, c.row + 1));
   }
   out.push('</g>');
 
@@ -73,7 +73,7 @@ export function renderSvg(lay, opt = {}) {
   // 캐비닛
   const uncovered = new Set(showLan ? lay.uncovered ?? [] : []);
   for (const c of lay.cells) {
-    const fill = uncovered.has(c.id) ? '#ffe0e0' : c.h === 500 && lay.cells.some((x) => x.h !== 500) ? '#e3f2fd' : '#f4f6f8';
+    const fill = uncovered.has(c.id) ? '#d1d5db' : c.h === 500 && lay.cells.some((x) => x.h !== 500) ? '#e3f2fd' : '#f4f6f8';
     out.push(`<rect x="${f(c.x)}" y="${f(c.y)}" width="${f(c.w)}" height="${f(c.h)}" fill="${fill}" stroke="#78909c" stroke-width="${f(u * 0.25)}"/>`);
     const fs = Math.min(c.w, c.h) * 0.2;
     out.push(text(c.x + c.w * 0.06, c.y + fs * 1.05, String(c.id), fs, '#37474f', 'start'));
@@ -129,8 +129,7 @@ export function renderSvg(lay, opt = {}) {
       const z = line.cells[line.cells.length - 1];
       const [ax, ay] = at(a);
       const [zx, zy] = at(z);
-      out.push(`<circle cx="${f(ax)}" cy="${f(ay)}" r="${f(u * 1.7)}" fill="${color}"/>`);
-      out.push(text(ax, ay + u * 0.8, String(line.id), u * 2.3, '#fff', 'middle', 'bold'));
+      out.push(numberBadge(ax, ay, line.id, color));
       out.push(`<rect x="${f(zx - u * 0.9)}" y="${f(zy - u * 0.9)}" width="${f(u * 1.8)}" height="${f(u * 1.8)}" fill="${color}"/>`);
     });
   }
