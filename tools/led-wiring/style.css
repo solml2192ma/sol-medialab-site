@@ -35,6 +35,8 @@ h2 { margin:0 0 10px; font-size:16px; } h3 { margin:14px 0 6px; font-size:14px; 
 label { display:block; font-size:13px; color:var(--mute); margin-bottom:10px; }
 input, select, button { font:inherit; color:var(--ink); }
 input[type=number], select { display:block; width:100%; margin-top:4px; padding:10px; min-height:44px; background:var(--bg); border:1px solid var(--line); border-radius:8px; }
+input[aria-invalid=true] { border-color:var(--err); background:rgba(185,28,28,.12); outline-color:var(--err); }
+.size-error { display:block; margin-top:4px; color:var(--err); font-size:12px; }
 .row2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; } .row3 { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
 .chk { display:flex; align-items:center; gap:8px; color:var(--ink); min-height:44px; margin:0; }
 .chk input { width:20px; height:20px; }

@@ -108,13 +108,29 @@ function render() {
   form.querySelector('.custom').hidden = s.cab !== 'custom';
   saveState(s);
   syncWiringUi(s);
-  if (['w', 'h', 'pitch', 'cab'].some((key) => s[key] === '')) {
+  let invalidSize = false;
+  const sizeErrors = [];
+  for (const [key, label] of [['w', '가로'], ['h', '세로']]) {
+    const field = form.elements[key];
+    const value = num(s[key]);
+    const invalid = field.validity.badInput || (s[key] !== '' && (!Number.isFinite(value) || value < config.baseCabinetMm || value % config.baseCabinetMm !== 0));
+    invalidSize ||= invalid;
+    const showError = invalid && document.activeElement !== field;
+    const message = `${label} 크기는 ${config.baseCabinetMm}mm 단위로 다시 입력해 주세요.`;
+    field.setAttribute('aria-invalid', String(showError));
+    const error = $(`#${key}Error`);
+    error.hidden = !showError;
+    error.textContent = showError ? message : '';
+    if (showError) sizeErrors.push(message);
+  }
+  if (invalidSize || ['w', 'h', 'pitch', 'cab'].some((key) => s[key] === '')) {
     last = null;
     for (const id of ['msgs', 'canvas', 'printCanvas', 'printHead', 'tables', 'lineList', 'rowPlanList']) $(`#${id}`).innerHTML = '';
     $('#rowPlanBox').hidden = true;
     $('#canvas').classList.remove('draw', 'pan');
     $('#lineNotice').hidden = true;
     for (const button of document.querySelectorAll('.exports button')) button.disabled = true;
+    $('#msgs').innerHTML = sizeErrors.map((message) => `<p class="err">${esc(message)}</p>`).join('');
     return;
   }
   const input = toInput(s);
@@ -355,6 +371,7 @@ function init() {
   const inList = (e) => e.target.closest?.('#lineList');
   form.addEventListener('input', (e) => { if (!inList(e)) update(); });
   form.addEventListener('change', (e) => { if (!inList(e)) update(); });
+  form.addEventListener('focusout', (e) => { if (['w', 'h'].includes(e.target.name)) update(); });
   $('#rowPlanList').addEventListener('click', (e) => {
     const b = e.target.closest('button[data-act]');
     if (!b || !last) return;

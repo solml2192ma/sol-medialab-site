@@ -26,8 +26,8 @@
   <form id="form" class="panel" autocomplete="off">
     <h2>입력</h2>
     <div class="row2">
-      <label>가로 (mm)<input type="number" name="w" inputmode="numeric" min="1" step="any" value=""></label>
-      <label>세로 (mm)<input type="number" name="h" inputmode="numeric" min="1" step="any" value=""></label>
+      <label>가로 (mm)<input type="number" name="w" inputmode="numeric" min="500" step="500" value="" placeholder="500mm 단위" aria-describedby="wError"><span id="wError" class="size-error" aria-live="polite" hidden></span></label>
+      <label>세로 (mm)<input type="number" name="h" inputmode="numeric" min="500" step="500" value="" placeholder="500mm 단위" aria-describedby="hError"><span id="hError" class="size-error" aria-live="polite" hidden></span></label>
     </div>
     <label>픽셀피치
       <select name="pitch"></select>
