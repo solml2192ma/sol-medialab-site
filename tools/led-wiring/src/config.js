@@ -22,4 +22,13 @@ export const config = {
   limits: { maxCabinets: 4000 }, // 입력 실수 방지 (이보다 많으면 계산하지 않음)
   defaultDirection: 'hz-tl', // layout.js PATTERNS의 id (예: hz-tl 가로 지그재그 좌상단 시작)
   baseCabinetMm: 500, // pixel 표의 해상도 기준 캐비닛 크기
+  rowPlan: { fillerPosition: 'top' }, // 남는 높이의 500 줄은 기본 배치에서 맨 위에 둔다.
+  cabinetOptions: [
+    { value: '500x500', label: '500 × 500' },
+    { value: '500x1000', label: '500 × 1000' },
+  ],
+  emptyInputs: {
+    w: '', h: '', pitch: '', cab: '', cw: '', ch: '', boxQty: '',
+    maxPerLine: '', perSmps: '', bays: '', tiers: '', cur: '',
+  }, // 초기화 및 저장값 없는 첫 화면은 입력을 비운다.
 };

@@ -82,7 +82,7 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
   const pattern = patternOf(opt.pattern ?? opt.direction ?? cfg.defaultDirection);
   const base = cfg.baseCabinetMm;
 
-  // 행 정의: 메인 캐비닛 줄 → 아래쪽에 보충(500) 줄
+  // 행 정의: 계산된 사용자/기본 행 배치 순서를 그대로 따른다.
   const rowDefs = grid.rowPlan.map((r) => ({ h: r.h, px: r.kind === 'main' ? pixel.mainCab : pixel.fillerCab }));
   const cabW = grid.mainCab.w;
   const cols = grid.cols;
@@ -121,8 +121,16 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
   const warnings = [];
   // parts: 한 UTP를 이루는 구간들(직접 그릴 때 같은 번호로 여러 번 드래그하면 구간이 이어진다)
   const mk = (id, cellsIn, rect, pat, src = null, parts = null) => {
-    const pixels = cellsIn.reduce((s, c) => s + c.pixels, 0);
-    return { id, cells: cellsIn, parts: parts ?? [cellsIn], pixels, rect, pattern: pat.id, src, over: pixels > limit || cellsIn.length > maxCabs };
+    // 같은 UTP의 모든 구간을 감싸는 사각형으로 환산한다.
+    // 빈 칸이나 다른 UTP 소유 칸이 끼어 있어도 사각형 안의 해상도는 모두 포함한다.
+    const bounds = cellsIn.reduce((b, c) => ({
+      r0: Math.min(b.r0, c.row), r1: Math.max(b.r1, c.row + 1),
+      c0: Math.min(b.c0, c.col), c1: Math.max(b.c1, c.col + 1),
+    }), { r0: rows, r1: 0, c0: cols, c1: 0 });
+    const width = bounds.c1 - bounds.c0;
+    const pixels = width * rowPx.slice(bounds.r0, bounds.r1).reduce((s, px) => s + px, 0);
+    const areaCabs = width * (bounds.r1 - bounds.r0);
+    return { id, cells: cellsIn, parts: parts ?? [cellsIn], pixels, rect, pattern: pat.id, src, over: pixels > limit || areaCabs > maxCabs };
   };
   let lanLines;
   let uncovered = [];
@@ -153,14 +161,16 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
     uncovered = cells.filter((c) => !owner.has(c.id)).map((c) => c.id);
     if (uncovered.length) warnings.push(`배선이 연결되지 않은 캐비닛이 ${uncovered.length}장 있습니다.`);
   } else {
-    // 자동 배선: 포트 한도 안에서 사각형(ㅁ)으로만 나눈다. 세로 패턴이면 세로로 긴 사각형을 우선.
+    // 자동 배선: 한도 안의 사각형(ㅁ)으로 나누되 줄 수를 우선하고, 같으면 패턴 축을 따른다.
     const preferV = pattern.axis === 'v';
     const byRows = partitionByRowBands(rowPx, cols, limit, maxCabs);
     const byCols = partitionByColBands(rowPx, cols, limit, maxCabs);
-    let rects;
-    if (byRows.length === byCols.length) rects = preferV ? byCols : byRows;
-    else rects = byRows.length < byCols.length ? byRows : byCols;
-    rects.sort(preferV ? (p, q) => p.c0 - q.c0 || p.r0 - q.r0 : (p, q) => p.r0 - q.r0 || p.c0 - q.c0);
+    const rects = byRows.length === byCols.length
+      ? (preferV ? byCols : byRows)
+      : (byRows.length < byCols.length ? byRows : byCols);
+    const rowOrder = (p, q) => pattern.top ? p.r0 - q.r0 : q.r1 - p.r1;
+    const colOrder = (p, q) => pattern.left ? p.c0 - q.c0 : q.c1 - p.c1;
+    rects.sort(preferV ? (p, q) => colOrder(p, q) || rowOrder(p, q) : (p, q) => rowOrder(p, q) || colOrder(p, q));
     lanLines = rects.map((rc, i) => mk(i + 1, orderRect(rc, pattern).map(([r, c]) => at[r][c]), rc, pattern));
   }
   for (const l of lanLines) {
@@ -195,32 +205,38 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
 
 const range = (a, b) => Array.from({ length: b - a }, (_, i) => a + i); // [a, b)
 
-/** n을 k개로 최대한 균등하게 나눈 폭들 */
-function balanced(n, k) {
-  const base = Math.floor(n / k);
-  const extra = n % k;
-  return Array.from({ length: k }, (_, i) => base + (i < extra ? 1 : 0));
-}
-
 /** 행 [r0,r1) 묶음에서 한 줄에 물릴 수 있는 최대 열 수 */
 function maxColsFor(rowPx, r0, r1, limit, maxCabs) {
   let px = 0;
   for (let r = r0; r < r1; r++) px += rowPx[r];
-  return Math.max(1, Math.min(Math.floor(limit / px), Math.floor(maxCabs / (r1 - r0))));
+  const maxCols = Math.min(Math.floor(limit / px), Math.floor(maxCabs / (r1 - r0)));
+  // 여러 행을 묶어 1열도 한도 안에 넣을 수 없으면 불가능한 후보다.
+  // 캐비닛 1장 자체가 한도를 넘는 경우만 1칸으로 남겨 기존 경고를 표시한다.
+  return Math.max(r1 - r0 === 1 ? 1 : 0, maxCols);
 }
 
-/** 가로 띠(연속된 행 묶음)로 나누고 각 띠를 열 방향으로 균등 분할. 사각형 개수 최소(DP). */
+/** 전체 폭을 비슷한 폭의 k개 영역으로 나눈다. */
+function balanced(n, k) {
+  const base = Math.floor(n / k);
+  return Array.from({ length: k }, (_, i) => base + (i < n % k ? 1 : 0));
+}
+
+/** 가로 띠별 분할 개수가 최소가 되도록 연속 행 묶음을 선택한다. */
 function partitionByRowBands(rowPx, cols, limit, maxCabs) {
   const R = rowPx.length;
-  // 비용 = (사각형 개수, 같을 때는 띠 높이² 가중합이 작은 쪽 = 가로로 긴 모양)
   const cost = Array(R + 1).fill(null);
   const from = Array(R + 1).fill(0);
   cost[0] = { n: 0, sq: 0 };
   for (let i = 1; i <= R; i++) {
     for (let j = 0; j < i; j++) {
-      const k = Math.ceil(cols / maxColsFor(rowPx, j, i, limit, maxCabs));
-      const cand = { n: cost[j].n + k, sq: cost[j].sq + k * (i - j) ** 2 };
-      if (!cost[i] || cand.n < cost[i].n || (cand.n === cost[i].n && cand.sq < cost[i].sq)) { cost[i] = cand; from[i] = j; }
+      const maxCols = maxColsFor(rowPx, j, i, limit, maxCabs);
+      if (maxCols === 0) continue;
+      const k = Math.ceil(cols / maxCols);
+      const candidate = { n: cost[j].n + k, sq: cost[j].sq + k * (i - j) ** 2 };
+      if (!cost[i] || candidate.n < cost[i].n || (candidate.n === cost[i].n && candidate.sq < cost[i].sq)) {
+        cost[i] = candidate;
+        from[i] = j;
+      }
     }
   }
   const rects = [];
@@ -228,34 +244,39 @@ function partitionByRowBands(rowPx, cols, limit, maxCabs) {
     const j = from[i];
     const k = Math.ceil(cols / maxColsFor(rowPx, j, i, limit, maxCabs));
     let c = 0;
-    for (const w of balanced(cols, k)) { rects.push({ r0: j, r1: i, c0: c, c1: c + w }); c += w; }
+    for (const w of balanced(cols, k)) {
+      rects.push({ r0: j, r1: i, c0: c, c1: c + w });
+      c += w;
+    }
   }
   return rects;
 }
 
-/** 세로 띠(연속된 열 묶음)로 나누고 각 띠를 행 방향으로 분할. 사각형 개수 최소가 되는 띠 개수를 탐색. */
+/** 세로 띠의 폭을 탐색하고 각 띠를 한도까지 채워 가장 적은 줄 수를 선택한다. */
 function partitionByColBands(rowPx, cols, limit, maxCabs) {
   const R = rowPx.length;
-  let best = null;
   const maxRowPx = Math.max(...rowPx);
+  let best = null;
   for (let bands = 1; bands <= cols; bands++) {
     const widths = balanced(cols, bands);
-    // 한 행만으로도 한도를 넘는 폭은 사각형이 될 수 없으므로 건너뜀 (폭 1은 불가피하게 허용)
     if (widths[0] > 1 && (widths[0] * maxRowPx > limit || widths[0] > maxCabs)) continue;
     const rects = [];
     let c = 0;
     for (const w of widths) {
       let r = 0;
-      while (r < R) { // 행을 위에서부터 한도까지 채움 (연속 구간 최소 분할은 탐욕이 최적)
+      while (r < R) {
         let r1 = r + 1;
         let px = rowPx[r] * w;
-        while (r1 < R && px + rowPx[r1] * w <= limit && w * (r1 + 1 - r) <= maxCabs) { px += rowPx[r1] * w; r1++; }
+        while (r1 < R && px + rowPx[r1] * w <= limit && w * (r1 + 1 - r) <= maxCabs) {
+          px += rowPx[r1] * w;
+          r1++;
+        }
         rects.push({ r0: r, r1, c0: c, c1: c + w });
         r = r1;
       }
       c += w;
     }
-    if (!best || rects.length <= best.length) best = rects; // 같은 개수면 띠가 더 많은(좁고 긴) 쪽
+    if (!best || rects.length <= best.length) best = rects;
   }
   return best;
 }

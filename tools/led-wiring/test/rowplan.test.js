@@ -25,11 +25,29 @@ test('행 배치 편집 함수: 이동/나누기/합치기/문자열', () => {
   assert.ok(sameRows([1, 2], [1, 2]) && !sameRows([1, 2], [2, 1]));
 });
 
-test('기본 배치: 1000 세 줄 + 아래 500 한 줄 (8000×3500)', () => {
+test('기본 배치: 위 500 한 줄 + 1000 세 줄 (8000×3500)', () => {
   const r = run(null);
-  assert.deepEqual(r.rowPlan, [1000, 1000, 1000, 500]);
+  assert.deepEqual(r.rowPlan, [500, 1000, 1000, 1000]);
+  assert.deepEqual(r.rowPlanDefault, [500, 1000, 1000, 1000]);
   assert.deepEqual([r.grid.mainRows, r.grid.fillerRows], [3, 1]);
   assert.equal(r.counts.total, 16 * 4);
+});
+
+test('사용자 배치를 기본 배치로 되돌리면 500 줄이 맨 위에 오고 도면 위치도 일치한다', () => {
+  const custom = run([1000, 500, 1000, 500, 500]);
+  const reset = run(custom.rowPlanDefault);
+  assert.deepEqual(reset.rowPlan, [500, 1000, 1000, 1000]);
+  const lay = buildLayout(reset, { pattern: 'hz-tl' });
+  assert.deepEqual([0, 1, 2, 3].map((i) => [lay.cells[i * 16].y, lay.cells[i * 16].h]),
+    [[0, 500], [500, 1000], [1500, 1000], [2500, 1000]]);
+  assert.equal(reset.counts.total, 64);
+  assert.equal(reset.pixel.resolution.h, 896);
+});
+
+test('남는 높이가 없으면 기본 배치는 1000 줄만 사용한다', () => {
+  const r = calc({ cabW: 500, cabH: 1000, widthMm: 8000, heightMm: 3000, pitch: '3.9-in' }, pixel);
+  assert.deepEqual(r.rowPlanDefault, [1000, 1000, 1000]);
+  assert.equal(r.grid.fillerRows, 0);
 });
 
 test('사용자 배치: 위 500 한 줄, 가운데 1000 두 줄, 아래 500 두 줄', () => {
@@ -58,7 +76,7 @@ test('사용자 배치: 위 500 한 줄, 가운데 1000 두 줄, 아래 500 두 
 test('크기가 안 맞는 저장된 배치는 무시하고 기본 배치로 계산 + 알림', () => {
   const bad = run([1000, 1000, 500]); // 합 2500 ≠ 3500
   assert.equal(bad.rowPlanIgnored, true);
-  assert.deepEqual(bad.rowPlan, [1000, 1000, 1000, 500]);
+  assert.deepEqual(bad.rowPlan, [500, 1000, 1000, 1000]);
   assert.ok(bad.warnings.some((w) => w.includes('행 배치')));
   const odd = run([2000, 1500]); // 허용되지 않는 높이
   assert.equal(odd.rowPlanIgnored, true);

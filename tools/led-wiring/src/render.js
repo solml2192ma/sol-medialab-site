@@ -27,11 +27,11 @@ export function renderSvg(lay, opt = {}) {
   const H = lay.totalH;
   const u = Math.max(W, H) / 220; // 기준 길이 단위 (선 굵기/글자 크기)
   const marginL = u * MARGIN_L;
-  const marginT = u * 14; // 치수선
+  const marginT = u * 14; // 제목과 열 번호
   const marginR = u * MARGIN_R;
   const legendRows = (showLan ? Math.ceil(lay.lanLines.length / 4) : 0) + (showPower ? Math.ceil(lay.powerChains.length / 4) : 0) + 2;
   const legendH = u * (5 + legendRows * 5);
-  const marginB = legendH + u * 4;
+  const marginB = legendH + u * 12; // 아래쪽 가로 치수선과 범례
   const vbW = marginL + W + marginR;
   const vbH = marginT + H + marginB;
   const out = [];
@@ -42,9 +42,29 @@ export function renderSvg(lay, opt = {}) {
   if (title) out.push(text(marginL, u * 4, title, u * 3.4, '#111', 'start', 'bold'));
   out.push(`<g transform="translate(${f(marginL)} ${f(marginT)})">`);
 
-  // 치수선
-  out.push(`<line x1="0" y1="${f(-u * 3)}" x2="${f(W)}" y2="${f(-u * 3)}" stroke="#555" stroke-width="${f(u * 0.3)}"/>`);
-  out.push(text(W / 2, -u * 4.2, `${W.toLocaleString()} mm`, u * 3, '#333', 'middle'));
+  // 상단 열 번호 / 좌측 행 번호: 각 실제 캐비닛의 중심에 맞춘다.
+  const axisFont = Math.min(u * 3.2, ...lay.cells.map((c) => Math.min(c.w, c.h) * 0.24));
+  const axisBadge = (x, y, n) => {
+    const label = String(n);
+    const size = axisFont * 0.8 * Math.min(1, 2 / label.length);
+    return `<circle cx="${f(x)}" cy="${f(y)}" r="${f(axisFont * 0.75)}" fill="#000"/>`
+      + text(x, y + size * 0.35, label, size, '#fff', 'middle', 'bold');
+  };
+  out.push('<g data-axis="columns" aria-label="열 번호">');
+  for (const c of lay.cells.filter((c) => c.row === 0)) {
+    out.push(axisBadge(c.x + c.w / 2, -u * 5, c.col + 1));
+  }
+  out.push('</g><g data-axis="rows" aria-label="행 번호">');
+  for (const c of lay.cells.filter((c) => c.col === 0)) {
+    out.push(axisBadge(-u * 4, c.y + c.h / 2, c.row + 1));
+  }
+  out.push('</g>');
+
+  // 치수선: 전체 가로 길이는 아래쪽, 세로 길이는 오른쪽.
+  out.push('<g data-dimension="width">');
+  out.push(`<line x1="0" y1="${f(H + u * 3)}" x2="${f(W)}" y2="${f(H + u * 3)}" stroke="#555" stroke-width="${f(u * 0.3)}"/>`);
+  out.push(text(W / 2, H + u * 7, `${W.toLocaleString()} mm`, u * 3, '#333', 'middle'));
+  out.push('</g>');
   out.push(`<line x1="${f(W + u * 3)}" y1="0" x2="${f(W + u * 3)}" y2="${f(H)}" stroke="#555" stroke-width="${f(u * 0.3)}"/>`);
   out.push(
     `<text transform="translate(${f(W + u * 6)} ${f(H / 2)}) rotate(90)" font-size="${f(u * 3)}" text-anchor="middle" fill="#333">${H.toLocaleString()} mm</text>`,
@@ -142,7 +162,7 @@ export function renderSvg(lay, opt = {}) {
   out.push('</g>');
 
   // 범례
-  const ly = marginT + H + u * 7;
+  const ly = marginT + H + u * 15;
   let row = 0;
   out.push(text(marginL, ly, `LED ${lay.cols}×${lay.rows}열·행${showLan ? ` / UTP ${lay.lanLines.length}줄` : ''}${showPower ? ` / 롱파워 ${lay.powerChains.length}포트` : ''}`, u * 2.8, '#222', 'start', 'bold'));
   if (showLan) {

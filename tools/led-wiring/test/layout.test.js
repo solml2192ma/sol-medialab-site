@@ -47,6 +47,67 @@ test('LAN 줄 수는 포트 용량 하한과 같거나 약간 많다 (8000×4000
   assert.equal(lay.lanLines.length, 8);
 });
 
+test('6000×5500 p1.5: 모든 자동 패턴에서 한도 안의 사각형으로 끊고 전체 캐비닛을 연결한다', () => {
+  for (const pattern of PATTERNS) {
+    const { res, lay } = make({ widthMm: 6000, heightMm: 5500, pitch: '1.5-in' }, pattern.id);
+    assert.deepEqual(lay.warnings, [], pattern.id);
+    assert.equal(lay.lanLines.length, 22, pattern.id);
+    assert.ok(lay.lanLines.every((line) => !line.over && line.pixels <= lay.limit && isRectangle(line)), pattern.id);
+    const assigned = lay.lanLines.flatMap((line) => line.cells.map((cell) => cell.id)).sort((a, b) => a - b);
+    assert.deepEqual(assigned, lay.cells.map((cell) => cell.id), pattern.id);
+    assert.equal(assigned.length, res.counts.total);
+  }
+});
+
+test('긴 세로 영역과 장수 제한도 자동 배선에서 한도를 넘는 행 묶음으로 취급하지 않는다', () => {
+  const cases = [
+    { input: { widthMm: 500, heightMm: 5500, pitch: '1.5-in' }, cfg: config },
+    { input: { widthMm: 6000, heightMm: 5500, pitch: '2.6-in' }, cfg: { ...config, lan: { ...config.lan, maxCabinetsPerLine: 3 } } },
+    { input: { widthMm: 6000, heightMm: 3500, cabH: 1000, rowPlan: [500, 1000, 1000, 1000], pitch: '3.9-in' }, cfg: { ...config, lan: { ...config.lan, maxCabinetsPerLine: 2 } } },
+  ];
+  for (const { input, cfg } of cases) {
+    for (const pattern of PATTERNS) {
+      const { lay } = make(input, pattern.id, cfg);
+      assert.deepEqual(lay.warnings, []);
+      assert.ok(lay.lanLines.every((line) => !line.over && isRectangle(line)));
+      const assigned = lay.lanLines.flatMap((line) => line.cells.map((cell) => cell.id)).sort((a, b) => a - b);
+      assert.deepEqual(assigned, lay.cells.map((cell) => cell.id));
+    }
+  }
+});
+
+test('6000×5500 p1.5는 세로 패턴이어도 줄 수를 줄이고 사각형 안에서 패턴 순서를 따른다', () => {
+  for (const pattern of PATTERNS.filter((p) => p.axis === 'v')) {
+    const { lay } = make({ widthMm: 6000, heightMm: 5500, pitch: '1.5-in' }, pattern.id);
+    assert.deepEqual(lay.warnings, [], pattern.id);
+    assert.ok(lay.lanLines.every((line) => isRectangle(line) && !line.over));
+    for (const line of lay.lanLines) {
+      const expected = orderRect(line.rect, pattern).map(([r, c]) => r * lay.cols + c + 1);
+      assert.deepEqual(line.cells.map((cell) => cell.id), expected, pattern.id);
+    }
+  }
+});
+
+test('6000×3500 p2.6 두 제조사: 방향보다 줄 수를 우선해 6줄로 나누고 시작 모서리를 지킨다', () => {
+  for (const pitch of ['2.6-in', '2.6-flex-in']) {
+    for (const pattern of PATTERNS) {
+      const { lay } = make({ widthMm: 6000, heightMm: 3500, pitch }, pattern.id);
+      assert.deepEqual(lay.warnings, []);
+      assert.equal(lay.lanLines.length, 6, pattern.id);
+      for (const line of lay.lanLines) {
+        assert.ok(isRectangle(line) && !line.over);
+        const expected = orderRect(line.rect, pattern).map(([r, c]) => r * lay.cols + c + 1);
+        assert.deepEqual(line.cells.map((cell) => cell.id), expected);
+      }
+      const first = lay.lanLines[0].cells[0];
+      assert.equal(first.row, pattern.top ? 0 : lay.rows - 1, pattern.id);
+      assert.equal(first.col, pattern.left ? 0 : lay.cols - 1, pattern.id);
+      const assigned = lay.lanLines.flatMap((line) => line.cells.map((cell) => cell.id)).sort((a, b) => a - b);
+      assert.deepEqual(assigned, lay.cells.map((cell) => cell.id));
+    }
+  }
+});
+
 test('줄당 최대 캐비닛 수를 강제해도 줄은 직사각형', () => {
   const cfg = { ...config, lan: { ...config.lan, maxCabinetsPerLine: 10 } };
   for (const dir of ['h-zigzag', 'v-zigzag']) {
@@ -74,14 +135,27 @@ test('세로 지그재그에서는 세로로 긴 사각형을 우선한다 (한�
   assert.ok(v.lanLines[0].rect.c0 === 0 && h.lanLines[0].rect.r0 === 0);
 });
 
-test('LAN 줄 수·파워 체인 수가 엑셀 롱랜선/롱파워와 일치 (1000 샘플)', () => {
+test('1000 샘플: LAN 줄 수 최소화로 4줄을 사용하고 파워 체인 수는 기존 산식을 유지한다', () => {
   const a = make({ widthMm: 10000, heightMm: 3500, cabH: 1000, pitch: '3.9-in' }, 'h-zigzag');
   assert.equal(a.lay.lanLines.length, 4);
   assert.equal(a.lay.powerChains.length, 7);
   assert.equal(a.lay.powerChains.length, a.res.power.ports);
   const b = make({ widthMm: 7000, heightMm: 5000, cabH: 1000, pitch: '3.9-in' }, 'h-zigzag');
+  assert.equal(b.res.lan.ports, 4); // 용량만으로 계산한 하한
   assert.equal(b.lay.lanLines.length, 4);
   assert.equal(b.lay.powerChains.length, 10);
+});
+
+test('가로 전체가 한도를 넘으면 선택한 시작점에서 한도 안의 사각형으로 분할한다', () => {
+  for (const pattern of PATTERNS.filter((p) => p.axis === 'h')) {
+    const { res, lay } = make({ widthMm: 12000, heightMm: 1000, pitch: '2.6-in' }, pattern.id);
+    assert.deepEqual(lay.warnings, []);
+    const first = lay.lanLines[0];
+    assert.ok(first.cells.length <= res.lan.maxCabinetsPerLine);
+    assert.equal(first.cells[0].col, pattern.left ? 0 : lay.cols - 1);
+    assert.equal(first.cells[0].row, pattern.top ? 0 : lay.rows - 1);
+    assert.ok(lay.lanLines.every((line) => !line.over && isRectangle(line)));
+  }
 });
 
 test('파워 체인은 SMPS 그룹(기본 4장)으로 나뉜다', () => {
@@ -246,4 +320,35 @@ test('같은 UTP에 구간을 이어 그려 한도를 넘는 순간 판정된다
   const seg = (r) => ({ r0: r, r1: r + 1, c0: 0, c1: 10, p: 'hz-tl', n: 1 }); // 10장씩
   assert.equal(limitError(buildLayout(res, { manual: [seg(0)] }), 1), null);
   assert.ok(limitError(buildLayout(res, { manual: [seg(0), seg(1)] }), 1)); // 20장 > 17장
+});
+
+test('7000×3500 p3.9: UTP 2의 36번 확장은 사각형 환산으로 허용, 37번 확장은 차단한다', () => {
+  const res = calc({ cabW: 500, cabH: 1000, widthMm: 7000, heightMm: 3500, pitch: '3.9-in' }, pixel);
+  const initial = [
+    { r0: 0, r1: 3, c0: 7, c1: 14, p: 'hz-tr', n: 1 },
+    { r0: 0, r1: 3, c0: 0, c1: 7, p: 'hz-tr', n: 2 },
+    { r0: 3, r1: 4, c0: 0, c1: 14, p: 'hz-tr', n: 3 },
+  ];
+  const with36 = [...initial, { r0: 2, r1: 3, c0: 7, c1: 8, p: 'hz-tr', n: 2 }];
+  const ok = buildLayout(res, { manual: with36 });
+  assert.equal(ok.lanLines.find((l) => l.id === 2).pixels, 1024 * 640);
+  assert.equal(limitError(ok, 2), null);
+  const with37 = [...with36, { r0: 2, r1: 3, c0: 8, c1: 9, p: 'hz-tr', n: 2 }];
+  const bad = buildLayout(res, { manual: with37 });
+  const line = bad.lanLines.find((l) => l.id === 2);
+  assert.equal(line.cells.reduce((total, cell) => total + cell.pixels, 0), 638976); // 실제 연결 칸만 더하면 한도 안
+  assert.equal(line.pixels, 1152 * 640); // 가로 4500 × 세로 2500 전체 사각형
+  assert.equal(limitError(bad, 2).title, 'UTP 2: 한 포트 한도를 넘습니다.');
+  assert.deepEqual(bad.lanLines.map((l) => l.id), [1, 2, 3]);
+});
+
+test('떨어진 구간 사이의 빈 칸도 사각형 환산 한도와 강제 장수 제한에 포함한다', () => {
+  const res = grid44();
+  const lines = [L(0, 0, 1, 1, 7), L(3, 3, 4, 4, 7)];
+  const cfg = { ...config, lan: { ...config.lan, maxCabinetsPerLine: 10 } };
+  const lay = buildLayout(res, { manual: lines }, cfg);
+  const line = lay.lanLines[0];
+  assert.equal(line.cells.length, 2);
+  assert.equal(line.pixels, res.pixel.mainCab.w * res.pixel.mainCab.h * 16);
+  assert.ok(limitError(lay, 7));
 });

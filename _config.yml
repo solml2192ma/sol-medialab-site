@@ -12,6 +12,10 @@ collections:
 
 defaults:
   - scope:
+      path: "tools/led-wiring"
+    values:
+      sitemap: false
+  - scope:
       path: ""
       type: portfolio
     values:
@@ -19,6 +23,12 @@ defaults:
 
 exclude:
   - README.md
+  - tools/led-wiring/README.md
+  - tools/led-wiring/test/
+  - tools/led-wiring/package.json
+  - tools/led-wiring/start.bat
+  - tools/led-wiring/serve.py
+  - tools/led-wiring/AGENTS.md
 
 sass:
   quiet_deps: true

@@ -1,5 +1,6 @@
 import { config } from './config.js';
 import { calc, findPitch } from './calc.js';
+import { cabinetOptions, normalizeCabinetState } from './cabinet.js';
 import { buildLayout, PATTERNS, patternOf, orderRect, encodeManual, decodeManual, nextFreeNumber, limitError } from './layout.js';
 import { renderSvg, renderCombined, detailFor, LAN_COLORS } from './render.js';
 import { buildReport } from './report.js';
@@ -9,9 +10,9 @@ import { exportPng, exportXlsx, printPdf } from './export.js';
 const $ = (s) => document.querySelector(s);
 const form = $('#form');
 const DEFAULTS = {
-  w: '8000', h: '4000', cab: '500x500', cw: '500', ch: '500', boxQty: '', pitch: '2.6-in',
-  pat: config.defaultDirection, mode: 'auto', ml: '', maxPerLine: '', perSmps: String(config.power.cabinetsPerSmps),
-  bays: '', tiers: '', topPlank: '1', tab: 'lan', cur: '1', rows: '',
+  ...config.emptyInputs,
+  pat: config.defaultDirection, mode: 'auto', ml: '',
+  topPlank: '1', tab: 'lan', rows: '',
 };
 const STORE = 'led-wiring:v1';
 let pixelData;
@@ -32,6 +33,8 @@ function readState() {
 }
 
 function writeState(s) {
+  s = normalizeCabinetState(s, pixelData);
+  syncCabinetOptions(s);
   for (const [k, v] of Object.entries(s)) {
     const el = form.elements[k];
     if (el && el.type !== 'checkbox') el.value = v;
@@ -39,10 +42,22 @@ function writeState(s) {
   form.topPlank.checked = s.topPlank !== '0';
 }
 
+function syncCabinetOptions(s) {
+  const options = cabinetOptions(s.pitch, pixelData);
+  const values = ['', ...options.map((option) => option.value)].join('|');
+  if (Array.from(form.cab.options, (option) => option.value).join('|') !== values) {
+    form.cab.innerHTML = '<option value="">선택해 주세요</option>' + options.map((option) => `<option value="${option.value}">${option.label}</option>`).join('');
+  }
+  form.cab.value = s.cab;
+  form.rows.value = s.rows;
+}
+
 function loadState() {
   const s = { ...DEFAULTS };
-  try { Object.assign(s, JSON.parse(localStorage.getItem(STORE) || '{}')); } catch { /* 저장소 사용 불가 */ }
   const q = new URLSearchParams(location.search);
+  if (q.get('empty') !== '1') {
+    try { Object.assign(s, JSON.parse(localStorage.getItem(STORE) || '{}')); } catch { /* 저장소 사용 불가 */ }
+  }
   for (const k of Object.keys(DEFAULTS)) if (q.has(k)) s[k] = q.get(k);
   if (q.has('dir') && !q.has('pat')) s.pat = q.get('dir'); // 구버전 URL
   s.pat = patternOf(s.pat).id;
@@ -51,6 +66,7 @@ function loadState() {
 
 function saveState(s) {
   const q = new URLSearchParams();
+  if (Object.keys(config.emptyInputs).every((key) => s[key] === '')) q.set('empty', '1');
   for (const [k, v] of Object.entries(s)) if (v !== '' && v !== DEFAULTS[k]) q.set(k, v);
   const qs = q.toString();
   try { history.replaceState(null, '', qs ? `?${qs}` : location.pathname); } catch { /* iframe 등 */ }
@@ -87,9 +103,20 @@ function update() {
 }
 
 function render() {
-  const s = readState();
+  const s = normalizeCabinetState(readState(), pixelData);
+  syncCabinetOptions(s);
   form.querySelector('.custom').hidden = s.cab !== 'custom';
   saveState(s);
+  syncWiringUi(s);
+  if (['w', 'h', 'pitch', 'cab'].some((key) => s[key] === '')) {
+    last = null;
+    for (const id of ['msgs', 'canvas', 'printCanvas', 'printHead', 'tables', 'lineList', 'rowPlanList']) $(`#${id}`).innerHTML = '';
+    $('#rowPlanBox').hidden = true;
+    $('#canvas').classList.remove('draw', 'pan');
+    $('#lineNotice').hidden = true;
+    for (const button of document.querySelectorAll('.exports button')) button.disabled = true;
+    return;
+  }
   const input = toInput(s);
   // 비워둔 값은 calc가 자동 산출하도록 undefined로 넘긴다
   for (const k of ['bays', 'tiers']) if (input[k] == null) delete input[k];
@@ -109,6 +136,7 @@ function render() {
   $('#msgs').innerHTML = msgs.join('');
   const title = `LED ${fmt(input.widthMm)}×${fmt(input.heightMm)}mm · ${res.pitchInfo.label} · ${input.cabW}×${input.cabH}`;
   last = { s, input, res, lay, cfg, title };
+  for (const button of document.querySelectorAll('.exports button')) button.disabled = false;
   detailOn = detailFor(lay, displayWidth());
   const svg = renderSvg(lay, { showLan: s.tab !== 'pw', showPower: s.tab === 'pw', title, detail: detailOn });
   $('#canvas').innerHTML = svg;
@@ -118,7 +146,7 @@ function render() {
   renderLineList(lay, s);
   const rep = buildReport(res, lay, input);
   $('#tables').innerHTML = tables(rep);
-  $('#printHead').innerHTML = `<h1>LED 설치 배선도 · SOL MEDIA LAB</h1><p>${rep.inputs.map(([k, v]) => `${k}: ${esc(v)}`).join(' / ')}</p>`;
+  $('#printHead').innerHTML = `<div class="print-brand"><h1>LED 배선도면</h1>${document.querySelector('.company-brand').outerHTML}</div><p>${rep.inputs.map(([k, v]) => `${k}: ${esc(v)}`).join(' / ')}</p>`;
 }
 
 // ---------- LAN 배선 UI (패턴 아이콘 / 직접 그리기) ----------
@@ -318,7 +346,7 @@ function applyZoom() {
 
 function init() {
   const pitchSel = form.pitch;
-  pitchSel.innerHTML = Object.entries(pixelData.pitches).map(([id, p]) => `<option value="${id}">${p.label}</option>`).join('');
+  pitchSel.innerHTML = '<option value="">선택해 주세요</option>' + Object.entries(pixelData.pitches).map(([id, p]) => `<option value="${id}">${p.label}</option>`).join('');
   buildPatternButtons();
   const st = loadState();
   st.pitch = findPitch(pixelData, st.pitch)?.id ?? DEFAULTS.pitch; // 구버전 값(2.6 등)도 허용
@@ -379,7 +407,12 @@ function init() {
   });
   $('#panMode').addEventListener('change', update);
   for (const b of document.querySelectorAll('.tabs [data-tab]')) b.addEventListener('click', () => { form.tab.value = b.dataset.tab; update(); });
-  $('#reset').addEventListener('click', () => { writeState(DEFAULTS); update(); });
+  $('#reset').addEventListener('click', () => {
+    zoom = 1;
+    $('#panMode').checked = false;
+    writeState(DEFAULTS);
+    update();
+  });
   $('#zoomIn').addEventListener('click', () => { zoom = Math.min(8, zoom * 1.25); applyZoom(); });
   $('#zoomOut').addEventListener('click', () => { zoom = Math.max(0.5, zoom / 1.25); applyZoom(); });
   $('#zoomFit').addEventListener('click', () => { zoom = 1; applyZoom(); });

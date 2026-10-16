@@ -56,9 +56,13 @@ export function calc(input, pixelData, cfg = defaultConfig) {
     errors.push(`LED 크기(${widthMm}×${heightMm}mm)가 캐비닛 1장(${cabW}×${cabH}mm)보다 작습니다.`);
     return { errors, warnings: [] };
   }
-  // 행 배치: 기본은 메인 캐비닛(예: 1000) 줄을 위에서부터, 남는 높이는 500 줄을 아래에 둔다.
+  // 행 배치: 남는 높이의 기본 위치는 config에서 정한다.
   // 사용자가 줄 순서를 바꾸거나 1000 한 줄을 500 두 줄로 나눌 수 있다 (전체 높이는 같아야 함).
-  const defaultPlan = [...Array(mainRows).fill(cabH), ...Array(fillerRows).fill(base)];
+  const mainPlan = Array(mainRows).fill(cabH);
+  const fillerPlan = Array(fillerRows).fill(base);
+  const defaultPlan = cfg.rowPlan.fillerPosition === 'top'
+    ? [...fillerPlan, ...mainPlan]
+    : [...mainPlan, ...fillerPlan];
   let plan = defaultPlan;
   let rowPlanIgnored = false;
   if (Array.isArray(input.rowPlan) && input.rowPlan.length) {

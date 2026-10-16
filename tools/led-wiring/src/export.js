@@ -44,7 +44,7 @@ export async function exportPng(ctx) {
 
 export function exportXlsx(ctx) {
   const { inputs, sections } = buildReport(ctx.res, ctx.lay, ctx.input, ctx.dir);
-  const rows = [[{ v: 'LED 설치 배선도 자재표', bold: true }], ...inputs.map(([k, v]) => [{ v: k, bold: true }, v]), []];
+  const rows = [[{ v: 'LED 배선도면 자재표', bold: true }], ...inputs.map(([k, v]) => [{ v: k, bold: true }, v]), []];
   for (const s of sections) {
     rows.push([{ v: s.title, bold: true }]);
     rows.push(s.header.map((h) => ({ v: h, fill: true })));

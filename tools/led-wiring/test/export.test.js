@@ -92,3 +92,41 @@ test('상세 정보 자동 표시 기준: 칸 1장이 화면에서 95px 이상�
   const wide = calc({ widthMm: 20000, heightMm: 4000, cabW: 500, cabH: 500, pitch: 2.6 }, pixel);
   assert.equal(detailFor(buildLayout(wide, { pattern: 'hz-tl' }), 1900), false);
 });
+
+test('UTP/파워/내보내기 도면: 상단 열 번호와 좌측 행 번호, 아래쪽 가로 치수선', () => {
+  const { lay } = sample();
+  for (const opt of [{ showLan: true, showPower: false }, { showLan: false, showPower: true }]) {
+    const svg = renderSvg(lay, opt);
+    const axis = (name) => svg.match(new RegExp(`<g data-axis="${name}"[^>]*>(.*?)</g>`))[1];
+    const texts = (s) => [...s.matchAll(/<text x="([\d.-]+)" y="([\d.-]+)"[^>]*>(.*?)<\/text>/g)];
+    const columns = texts(axis('columns'));
+    const rows = texts(axis('rows'));
+    for (const name of ['columns', 'rows']) {
+      const group = axis(name);
+      const circles = [...group.matchAll(/<circle[^>]*fill="#000"/g)];
+      assert.equal(circles.length, name === 'columns' ? lay.cols : lay.rows);
+      assert.ok(texts(group).every((m) => m[0].includes('fill="#fff"')));
+    }
+    assert.deepEqual(columns.map((m) => m[3]), Array.from({ length: lay.cols }, (_, i) => String(i + 1)));
+    assert.deepEqual(rows.map((m) => m[3]), Array.from({ length: lay.rows }, (_, i) => String(i + 1)));
+    assert.ok(columns.every((m) => Number(m[2]) < 0));
+    assert.ok(rows.every((m) => Number(m[1]) < 0));
+    const dimension = svg.match(/<g data-dimension="width">(.*?)<\/g>/)[1];
+    assert.ok(Number(dimension.match(/y1="([\d.]+)"/)[1]) > lay.totalH);
+    assert.ok(Number(texts(dimension)[0][2]) > lay.totalH);
+  }
+  const combined = renderCombined(lay);
+  assert.equal((combined.match(/data-axis="columns"/g) || []).length, 2);
+  assert.equal((combined.match(/data-axis="rows"/g) || []).length, 2);
+});
+
+test('500/1000 혼합 행의 번호는 각 행의 실제 높이 중앙에 배치한다', () => {
+  const res = calc({ widthMm: 6000, heightMm: 3500, cabW: 500, cabH: 1000, pitch: '3.9-in', rowPlan: [500, 1000, 1000, 1000] }, pixel);
+  const lay = buildLayout(res, { pattern: 'hz-tl' });
+  const svg = renderSvg(lay);
+  const rowLabels = svg.match(/<g data-axis="rows"[^>]*>(.*?)<\/g>/)[1];
+  const ys = [...rowLabels.matchAll(/<text[^>]* y="([\d.]+)"/g)].map((m) => Number(m[1]));
+  assert.equal(ys.length, 4);
+  assert.equal(ys[1] - ys[0], 750);
+  assert.equal(ys[2] - ys[1], 1000);
+});

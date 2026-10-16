@@ -136,16 +136,34 @@ test('나누어떨어지지 않으면 경고, 설정으로 줄당 최대 캐비�
   assert.equal(r.lan.maxCabinetsPerLine, 10);
 });
 
-test('피치 5종: 3.9 인도어/아웃도어는 해상도·포트한도는 같고, 아웃도어 박스 수량은 미정(오류 안내)', () => {
+test('3.9 인도어/아웃도어는 해상도·포트한도는 같고, 아웃도어 박스 수량은 미정(오류 안내)', () => {
   const inn = run({ widthMm: 8000, heightMm: 4000, pitch: '3.9-in' });
   const out = run({ widthMm: 8000, heightMm: 4000, pitch: '3.9-out' });
-  assert.equal(out.pitchInfo.label, '3.9 (outdoor)');
+  assert.equal(out.pitchInfo.label, 'p3.9 outdoor ABSEN');
   assert.equal(out.pixel.resolution.w, inn.pixel.resolution.w);
   assert.ok(Math.abs(out.lan.capacityCabs - 656000 / (128 * 128)) < 1e-9); // 3.9는 인/아웃 모두 65.6만
   assert.equal(inn.errors.length, 0);
   assert.equal(out.errors.length, 1);
-  assert.match(out.errors[0], /3\.9 \(outdoor\)/);
+  assert.match(out.errors[0], /p3\.9 outdoor ABSEN/);
   assert.equal(out.boxes[0].boxes, null);
+});
+
+test('p2.6 flexible WISDOM: 기존 p2.6 바로 아래, 500 규격 14장/박스, 기존 p2.6 선택 유지', () => {
+  const ids = Object.keys(pixel.pitches);
+  assert.equal(ids[ids.indexOf('2.6-in') + 1], '2.6-flex-in');
+  const input = { widthMm: 8000, heightMm: 4000 };
+  const flexible = run({ ...input, pitch: '2.6-flex-in' });
+  const original = run({ ...input, pitch: 2.6 });
+  assert.deepEqual(flexible.errors, []);
+  assert.equal(flexible.pitchInfo.label, 'p2.6 indoor flexible WISDOM');
+  assert.deepEqual(flexible.pixel, original.pixel);
+  assert.deepEqual(flexible.lan, original.lan);
+  assert.deepEqual([flexible.boxes[0].need, flexible.boxes[0].perBox, flexible.boxes[0].boxes, flexible.boxes[0].packQty], [128, 14, 10, 140]);
+  assert.equal(original.pitchInfo.id, '2.6-in');
+  assert.equal(original.boxes[0].perBox, 12);
+  const tall = run({ ...input, cabH: 1000, pitch: '2.6-flex-in' });
+  assert.equal(tall.boxes[0].perBox, null);
+  assert.match(tall.errors[0], /1박스 수량/);
 });
 
 test('피치를 숫자로 주면(구버전 URL) 해당 피치의 첫 항목(인도어)으로 처리', () => {

@@ -3,25 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LED 설치 배선도 생성기 | SOL MEDIA LAB</title>
+<meta name="robots" content="noindex, nofollow">
+<title>LED 배선도면 | SOL MEDIA LAB Inc.</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top"><h1>LED 설치 배선도 생성기</h1><span>SOL MEDIA LAB</span></header>
+<header class="top">
+  <div class="company-brand">
+    <img class="company-logo" src="assets/logo.png" alt="솔미디어랩 로고" width="87" height="40">
+    <div class="company-name">
+      <p class="company-ko">주식회사 솔미디어랩</p>
+      <p class="company-en"><strong>SOL MEDIA LAB Inc.</strong></p>
+    </div>
+  </div>
+  <h1 class="tool-title">
+    <span class="tool-label">LED TOOL</span>
+    <span class="tool-name">배선도면 (UTP &amp; POWER)</span>
+  </h1>
+</header>
 
 <main>
   <form id="form" class="panel" autocomplete="off">
     <h2>입력</h2>
     <div class="row2">
-      <label>가로 (mm)<input type="number" name="w" inputmode="numeric" min="1" step="any" value="8000"></label>
-      <label>세로 (mm)<input type="number" name="h" inputmode="numeric" min="1" step="any" value="4000"></label>
+      <label>가로 (mm)<input type="number" name="w" inputmode="numeric" min="1" step="any" value=""></label>
+      <label>세로 (mm)<input type="number" name="h" inputmode="numeric" min="1" step="any" value=""></label>
     </div>
+    <label>픽셀피치
+      <select name="pitch"></select>
+    </label>
     <label>캐비닛 규격
-      <select name="cab">
-        <option value="500x500">500 × 500</option>
-        <option value="500x1000">500 × 1000</option>
-        <option value="custom">직접 입력</option>
-      </select>
+      <select name="cab"></select>
     </label>
     <div class="row3 custom" hidden>
       <label>캐비닛 가로<input type="number" name="cw" inputmode="decimal" min="1" step="any" value="500"></label>
@@ -31,15 +43,12 @@
     <fieldset class="rowplan" id="rowPlanBox" hidden>
       <legend>행 배치 (위 → 아래)</legend>
       <input type="hidden" name="rows" value="">
-      <ol id="rowPlanList" class="rowplan-list"></ol>
       <button type="button" id="rowReset" class="ghost">기본 배치로</button>
+      <ol id="rowPlanList" class="rowplan-list"></ol>
       <p class="hint">1000 줄을 500 두 줄로 나누거나, 줄 위치를 옮겨 배치를 바꿉니다. 바꾸면 직접 그린 UTP 줄은 지워집니다.</p>
     </fieldset>
-    <label>픽셀피치
-      <select name="pitch"></select>
-    </label>
     <fieldset class="wiring">
-      <legend>LAN(UTP) 배선</legend>
+      <legend>UTP(LAN) 배선</legend>
       <div class="seg" role="radiogroup" aria-label="배선 방식">
         <label><input type="radio" name="mode" value="auto" checked><span>자동</span></label>
         <label><input type="radio" name="mode" value="manual"><span>직접 그리기</span></label>
@@ -50,17 +59,15 @@
       <div id="patterns" class="patterns" role="group" aria-label="배선 패턴"></div>
       <p id="patLabel" class="hint"></p>
       <div id="manualTools" hidden>
-        <p class="hint">패턴을 고른 뒤, 도면에서 <b>시작 캐비닛부터 끝 캐비닛까지 드래그</b>하면 그 사각형 영역이 한 줄로 배선됩니다. 나중에 그린 줄이 겹친 캐비닛을 가져갑니다. 자동에서 처음 넘어오면 자동 배선 결과가 미리 채워집니다.</p>
-        <div class="cur">
-          <label>그리는 UTP 번호<input type="number" name="cur" min="1" step="1" inputmode="numeric" value="1"></label>
-          <button type="button" id="mNew">새 UTP</button>
-        </div>
-        <p class="hint">같은 번호로 계속 드래그하면 한 UTP에 구간이 이어집니다. 번호를 바꾸거나 '새 UTP'를 눌러야 다음 UTP로 넘어갑니다.</p>
+        <label class="chk"><input type="checkbox" id="panMode"> 이동 모드 (확대 후 터치로 화면 이동)</label>
         <div class="row2 tools">
           <button type="button" id="mUndo">되돌리기</button>
           <button type="button" id="mClear">모두 지우기</button>
         </div>
-        <label class="chk"><input type="checkbox" id="panMode"> 이동 모드 (확대 후 터치로 화면 이동)</label>
+        <div class="cur">
+          <label>UTP(LAN) 번호<input type="number" name="cur" min="1" step="1" inputmode="numeric" value="1"></label>
+          <button type="button" id="mNew">새 UTP</button>
+        </div>
         <p id="lineNotice" class="notice" role="alert" hidden></p>
         <ul id="lineList" class="lines"></ul>
       </div>
@@ -70,7 +77,7 @@
       <summary>설정 (규칙)</summary>
       <div class="row2">
         <label>LAN 줄당 최대 캐비닛 수<input type="number" name="maxPerLine" inputmode="numeric" min="1" step="1" placeholder="자동(픽셀 기준)"></label>
-        <label>SMPS 1대당 캐비닛 수<input type="number" name="perSmps" inputmode="numeric" min="1" step="1" value="4"></label>
+        <label>SMPS 1대당 캐비닛 수<input type="number" name="perSmps" inputmode="numeric" min="1" step="1" placeholder="자동"></label>
       </div>
       <h3>아시바</h3>
       <div class="row2">
