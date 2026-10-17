@@ -7,29 +7,41 @@ const mm = (n) => Number(n).toLocaleString('ko-KR');
 export function buildReport(res, lay, input) {
   const g = res.grid;
   const sc = res.scaffold;
+  const cabinetTypes = [
+    { count: res.counts.main, rows: g.mainRows, cabinet: g.mainCab, pixels: res.pixel.mainCab },
+    { count: res.counts.filler, rows: g.fillerRows, cabinet: g.fillerCab, pixels: res.pixel.fillerCab },
+  ].filter((entry) => entry.count > 0)
+    .sort((a, b) => a.cabinet.h - b.cabinet.h);
+  const cabinetCounts = cabinetTypes
+    .map(({ count, rows, cabinet }) => `가로${g.cols} × 세로${rows} = ${count} (캐비닛 ${cabinet.w}×${cabinet.h}mm)`)
+    .join('\n');
+  const cabinetResolutions = cabinetTypes
+    .map(({ cabinet, pixels }) => `${pixels.w}×${pixels.h}px (캐비닛 ${cabinet.w}×${cabinet.h}mm)`)
+    .join('\n');
   const inputs = [
     ['전체 사이즈', `${mm(input.widthMm)} × ${mm(input.heightMm)} mm`],
     ['캐비닛', `${input.cabW} × ${input.cabH} mm`],
     ['픽셀피치', res.pitchInfo.label],
     ['LAN 배선', `${lay.manual ? '직접 배선' : '자동 배선'} / ${patternOf(lay.pattern).label}`],
+    ['파워 배선', `${lay.powerManual ? '직접 배선' : '자동 배선'} / ${patternOf(lay.powerPattern).label}`],
   ];
-  const maxLine = lay.lanLines.length ? Math.max(...lay.lanLines.map((l) => l.cells.length)) : 0;
   const sections = [
     {
-      title: '자재 수량표',
+      title: '배선도면 세부내역',
       header: ['구분', '수량', '비고'],
       rows: [
-        ['캐비닛 수량', res.counts.total, `가로 ${g.cols} × 세로 ${g.mainRows}${g.fillerRows ? ` + 500규격 ${g.fillerRows}줄` : ''}`],
-        ['해상도', `${mm(res.pixel.resolution.w)} × ${mm(res.pixel.resolution.h)}`, `캐비닛 1장 ${res.pixel.mainCab.w}×${res.pixel.mainCab.h}px`],
-        ['MCU', res.mcu, ''],
-        ['롱랜선 (LAN 포트수)', lay.lanLines.length, `1포트 최대 ${Math.round(res.lan.capacityCabs * 100) / 100}장 → 줄당 최대 ${maxLine}장`],
-        ['롱파워 (파워 포트수)', lay.powerChains.length, `SMPS 그룹 ${lay.powerChains.reduce((a, c) => a + c.smps.length, 0)}개`],
+        ['캐비닛 수량', res.counts.total, cabinetCounts],
+        ['해상도', `${mm(res.pixel.resolution.w)} × ${mm(res.pixel.resolution.h)}`, cabinetResolutions],
+        ['LAN포트수', lay.lanLines.length, ''],
+        ['파워포트수', lay.powerChains.length, ''],
       ],
     },
     {
       title: '박스',
-      header: ['캐비닛', '필요수량', '1박스 수량', '포장박스', '포장수량'],
-      rows: res.boxes.map((b) => [b.cabinet.replace('x', '×'), b.need, b.perBox, b.boxes, b.packQty]),
+      header: ['캐비닛', '필요수량', '', '출고수량', '', '1박스수량', '', '출고박스'],
+      rows: res.boxes.filter((b) => b.need > 0)
+        .sort((a, b) => Number(a.cabinet.split('x')[1]) - Number(b.cabinet.split('x')[1]))
+        .map((b) => [b.cabinet.replace('x', '×'), b.need, b.packQty == null ? '' : b.need < b.packQty ? '<' : '=', b.packQty, b.packQty == null ? '' : '=', b.perBox, b.packQty == null ? '' : '×', b.boxes]),
     },
     {
       title: '아시바',
@@ -44,16 +56,16 @@ export function buildReport(res, lay, input) {
       ],
     },
     {
-      title: 'UTP(LAN) 줄별 구성',
+      title: 'LAN 줄별 구성',
       tab: 'lan',
       header: ['줄', '캐비닛 수', '시작 → 끝 번호', '픽셀 합계'],
-      rows: lay.lanLines.map((l) => [`UTP ${l.id}`, l.cells.length, `${l.cells[0].id} → ${l.cells[l.cells.length - 1].id}`, Math.round(l.pixels)]),
+      rows: lay.lanLines.map((l) => [`LAN ${l.id}`, l.cells.length, `${l.cells[0].id} → ${l.cells[l.cells.length - 1].id}`, Math.round(l.pixels)]),
     },
     {
-      title: '파워(롱파워) 포트별 구성',
+      title: '파워 포트별 구성',
       tab: 'pw',
-      header: ['포트', '캐비닛 수', '시작 → 끝 번호', 'SMPS 그룹'],
-      rows: lay.powerChains.map((c) => [`파워 ${c.id}`, c.cells.length, `${c.cells[0].id} → ${c.cells[c.cells.length - 1].id}`, c.smps.length]),
+      header: ['포트', '캐비닛 수', '시작 → 끝 번호'],
+      rows: lay.powerChains.map((c) => [`파워 ${c.id}`, c.cells.length, `${c.cells[0].id} → ${c.cells[c.cells.length - 1].id}`]),
     },
   ];
   return { inputs, sections };

@@ -115,9 +115,9 @@ export function calc(input, pixelData, cfg = defaultConfig) {
   if (fillerRows > 0) boxes.push(boxFor(fillerCab.w, fillerCab.h, fillerCount));
 
   // --- 파워 포트 (롱파워) ---
-  const rows500 = Math.ceil(heightMm / base);
-  const units500 = Math.ceil(widthMm / base);
-  const powerPorts = rows500 * Math.ceil(units500 / cfg.power.maxWidthUnitsPerPort);
+  // 장수 기준 최소 예상값. 실제 자재표는 배선 도면의 포트 수를 사용한다.
+  const powerUnits = (mainCount * cabW * cabH + fillerCount * fillerCab.w * fillerCab.h) / (base * base);
+  const powerPorts = Math.ceil(powerUnits / cfg.power.autoMaxCabinetsPerPort);
 
   // --- 아시바 ---
   // 아시바는 절대 LED 가로/세로보다 커지면 안 된다. 자동 산출은 들어가는 최대치(내림).
@@ -165,7 +165,6 @@ export function calc(input, pixelData, cfg = defaultConfig) {
     boxes,
     pitchInfo: { id: pt.id, pitch: pt.pitch, env: pt.env, label: pt.label },
     scaffold,
-    mcu: 1,
   };
 }
 

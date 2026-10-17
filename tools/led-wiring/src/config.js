@@ -7,11 +7,9 @@ export const config = {
     maxPixelsPerPortByPitch: { 3.9: 656000 }, // 피치별 예외
     maxCabinetsPerLine: null, // 숫자를 넣으면 계산값 대신 이 값으로 강제 (예: 10)
   },
-  // 파워: 롱파워 포트수 = (높이/500) × ceil(가로 500단위 수 / maxWidthUnitsPerPort)
-  // 500캐비닛 20장 / 1000캐비닛 10장(가로 10m)이 권장 최대. 더 길게 해도 되는 값이라 경고 없이 계산에만 사용.
+  // 파워: 픽셀과 무관하게 500×500을 1장분, 500×1000을 2장분으로 계산한다.
   power: {
-    maxWidthUnitsPerPort: 20,
-    cabinetsPerSmps: 4, // 2차 파워 그룹 크기 (도면용)
+    autoMaxCabinetsPerPort: 20, // 자동 배선: 500×500 환산 20장분. 직접 배선은 제한 없음.
   },
   // 아시바(비계) 규격
   scaffold: {
@@ -29,6 +27,6 @@ export const config = {
   ],
   emptyInputs: {
     w: '', h: '', pitch: '', cab: '', cw: '', ch: '', boxQty: '',
-    maxPerLine: '', perSmps: '', bays: '', tiers: '', cur: '',
+    maxPerLine: '', bays: '', tiers: '', cur: '',
   }, // 초기화 및 저장값 없는 첫 화면은 입력을 비운다.
 };

@@ -18,7 +18,7 @@
   </div>
   <h1 class="tool-title">
     <span class="tool-label">LED TOOL</span>
-    <span class="tool-name">배선도면 (UTP &amp; POWER)</span>
+    <span class="tool-name">배선도면 (LAN &amp; POWER)</span>
   </h1>
 </header>
 
@@ -45,10 +45,10 @@
       <input type="hidden" name="rows" value="">
       <button type="button" id="rowReset" class="ghost">기본 배치로</button>
       <ol id="rowPlanList" class="rowplan-list"></ol>
-      <p class="hint">1000 줄을 500 두 줄로 나누거나, 줄 위치를 옮겨 배치를 바꿉니다. 바꾸면 직접 그린 UTP 줄은 지워집니다.</p>
+      <p class="hint">1000 줄을 500 두 줄로 나누거나, 줄 위치를 옮겨 배치를 바꿉니다. 바꾸면 직접 그린 LAN·파워 배선은 지워집니다.</p>
     </fieldset>
     <fieldset class="wiring">
-      <legend>UTP(LAN) 배선</legend>
+      <legend id="wiringTitle">LAN 배선</legend>
       <div class="seg" role="radiogroup" aria-label="배선 방식">
         <label><input type="radio" name="mode" value="auto" checked><span>자동</span></label>
         <label><input type="radio" name="mode" value="manual"><span>직접 그리기</span></label>
@@ -56,8 +56,13 @@
       <input type="hidden" name="pat" value="hz-tl">
       <input type="hidden" name="tab" value="lan">
       <input type="hidden" name="ml" value="">
+      <input type="hidden" name="powerMode" value="auto">
+      <input type="hidden" name="powerPat" value="hz-tl">
+      <input type="hidden" name="powerMl" value="">
+      <input type="hidden" name="powerCur" value="">
       <div id="patterns" class="patterns" role="group" aria-label="배선 패턴"></div>
       <p id="patLabel" class="hint"></p>
+      <p id="powerHint" class="hint" hidden>자동 배선은 포트당 500×500 기준 20장분 이내로 나눕니다. 500×1000은 2장분으로 계산하며, 직접 그리기는 초과해도 연결할 수 있습니다.</p>
       <div id="manualTools" hidden>
         <label class="chk"><input type="checkbox" id="panMode"> 이동 모드 (확대 후 터치로 화면 이동)</label>
         <div class="row2 tools">
@@ -65,8 +70,8 @@
           <button type="button" id="mClear">모두 지우기</button>
         </div>
         <div class="cur">
-          <label>UTP(LAN) 번호<input type="number" name="cur" min="1" step="1" inputmode="numeric" value="1"></label>
-          <button type="button" id="mNew">새 UTP</button>
+          <label><span id="currentPortLabel">LAN 번호</span><input type="number" name="cur" min="1" step="1" inputmode="numeric" value="1"></label>
+          <button type="button" id="mNew">새 LAN</button>
         </div>
         <p id="lineNotice" class="notice" role="alert" hidden></p>
         <ul id="lineList" class="lines"></ul>
@@ -77,7 +82,6 @@
       <summary>설정 (규칙)</summary>
       <div class="row2">
         <label>LAN 줄당 최대 캐비닛 수<input type="number" name="maxPerLine" inputmode="numeric" min="1" step="1" placeholder="자동(픽셀 기준)"></label>
-        <label>SMPS 1대당 캐비닛 수<input type="number" name="perSmps" inputmode="numeric" min="1" step="1" placeholder="자동"></label>
       </div>
       <h3>아시바</h3>
       <div class="row2">
@@ -93,7 +97,7 @@
     <div id="msgs"></div>
     <div class="toolbar">
       <div class="tabs" role="tablist" aria-label="도면 종류">
-        <button type="button" role="tab" id="tabLan" data-tab="lan" aria-selected="true">UTP(LAN)</button>
+        <button type="button" role="tab" id="tabLan" data-tab="lan" aria-selected="true">LAN</button>
         <button type="button" role="tab" id="tabPw" data-tab="pw" aria-selected="false">파워</button>
       </div>
       <span class="spacer"></span>

@@ -67,7 +67,7 @@ test('사용자 배치: 위 500 한 줄, 가운데 1000 두 줄, 아래 500 두 
   assert.equal(lay.totalH, 3500);
   const rowsY = [0, 1, 2, 3, 4].map((i) => [lay.cells[i * 16].y, lay.cells[i * 16].h]);
   assert.deepEqual(rowsY, [[0, 500], [500, 1000], [1500, 1000], [2500, 500], [3000, 500]]);
-  // 모든 캐비닛이 UTP에 한 번씩 들어가고 줄은 직사각형
+  // 모든 캐비닛이 LAN에 한 번씩 들어가고 줄은 직사각형
   const ids = lay.lanLines.flatMap((l) => l.cells.map((c) => c.id));
   assert.equal(new Set(ids).size, 80);
   assert.equal(ids.length, 80);

@@ -33,19 +33,19 @@ export function orderRect(rect, pattern) {
 }
 
 /**
- * UTP n번이 포트 한도를 넘으면 오류 창에 쓸 {title, detail}, 아니면 null.
+ * LAN n번이 포트 한도를 넘으면 오류 창에 쓸 {title, detail}, 아니면 null.
  * 직접 그릴 때 이 결과가 null이 아니면 그 구간은 도면에 반영하지 않는다.
  */
 export function limitError(lay, n) {
   const l = lay.lanLines.find((x) => x.id === n);
   if (!l || !l.over) return null;
   return {
-    title: `UTP ${n}: 한 포트 한도를 넘습니다.`,
-    detail: '영역을 줄이거나 다른 UTP 번호로 나누어 그려 주세요.',
+    title: `LAN ${n}: 한 포트 한도를 넘습니다.`,
+    detail: '영역을 줄이거나 다른 LAN 번호로 나누어 그려 주세요.',
   };
 }
 
-/** 줄 목록에서 아직 안 쓰인 가장 작은 UTP 번호 */
+/** 줄 목록에서 아직 안 쓰인 가장 작은 LAN 번호 */
 export function nextFreeNumber(lines) {
   const used = new Set(lines.map((l) => l.n));
   let n = 1;
@@ -55,7 +55,7 @@ export function nextFreeNumber(lines) {
 
 /**
  * 직접 배선 줄 목록 <-> 문자열 (URL/저장용).
- * 줄: {r0,c0,r1,c1,p,n} (끝 미포함, n = 사용자가 정하는 UTP 포트 번호. 한 번 정해지면 다른 줄을 지워도 바뀌지 않는다)
+ * 줄: {r0,c0,r1,c1,p,n} (끝 미포함, n = 사용자가 정하는 LAN 포트 번호. 한 번 정해지면 다른 줄을 지워도 바뀌지 않는다)
  */
 export const encodeManual = (lines) => lines.map((l) => `${l.r0}.${l.c0}.${l.r1}.${l.c1}.${l.p}.${l.n ?? ''}`).join('~');
 export function decodeManual(s) {
@@ -74,13 +74,13 @@ export function decodeManual(s) {
 
 /**
  * @param {object} res calc() 결과 (errors 없는 것)
- * @param {{pattern?: string, direction?: string, manual?: Array<{r0:number,c0:number,r1:number,c1:number,p:string}>|null}} opt
- *   manual이 배열이면 직접 배선 모드, null/undefined면 자동 배선
+ * @param {{pattern?: string, direction?: string, manual?: Array|null, powerPattern?: string, powerManual?: Array|null, powerOnly?: boolean}} opt
+ *   manual/powerManual이 배열이면 해당 배선의 직접 모드, null/undefined면 자동 배선.
+ *   powerOnly는 동일한 격자·패턴·구간 소유권 계산을 재사용하는 내부 경로다.
  */
 export function buildLayout(res, opt, cfg = defaultConfig) {
   const { grid, pixel } = res;
   const pattern = patternOf(opt.pattern ?? opt.direction ?? cfg.defaultDirection);
-  const base = cfg.baseCabinetMm;
 
   // 행 정의: 계산된 사용자/기본 행 배치 순서를 그대로 따른다.
   const rowDefs = grid.rowPlan.map((r) => ({ h: r.h, px: r.kind === 'main' ? pixel.mainCab : pixel.fillerCab }));
@@ -117,12 +117,15 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
   // 1포트 한도는 배선 모양과 무관하게 사각형으로 환산해 계산하므로, 줄 하나는 항상 직사각형 영역이다.
   const limit = cfg.lan.maxPixelsPerPortByPitch?.[res.pitchInfo.pitch] ?? cfg.lan.maxPixelsPerPort;
   const maxCabs = cfg.lan.maxCabinetsPerLine ?? Infinity;
-  const rowPx = rowDefs.map((rd) => rd.px.w * rd.px.h); // 행별 캐비닛 1장 픽셀
+  // 파워 내부 경로는 픽셀 대신 500×500 환산 장수를 사용한다.
+  const rowPx = rowDefs.map((rd) => opt.powerOnly
+    ? (cabW / cfg.baseCabinetMm) * (rd.h / cfg.baseCabinetMm)
+    : rd.px.w * rd.px.h);
   const warnings = [];
-  // parts: 한 UTP를 이루는 구간들(직접 그릴 때 같은 번호로 여러 번 드래그하면 구간이 이어진다)
+  // parts: 한 LAN를 이루는 구간들(직접 그릴 때 같은 번호로 여러 번 드래그하면 구간이 이어진다)
   const mk = (id, cellsIn, rect, pat, src = null, parts = null) => {
-    // 같은 UTP의 모든 구간을 감싸는 사각형으로 환산한다.
-    // 빈 칸이나 다른 UTP 소유 칸이 끼어 있어도 사각형 안의 해상도는 모두 포함한다.
+    // 같은 LAN의 모든 구간을 감싸는 사각형으로 환산한다.
+    // 빈 칸이나 다른 LAN 소유 칸이 끼어 있어도 사각형 안의 해상도는 모두 포함한다.
     const bounds = cellsIn.reduce((b, c) => ({
       r0: Math.min(b.r0, c.row), r1: Math.max(b.r1, c.row + 1),
       c0: Math.min(b.c0, c.col), c1: Math.max(b.c1, c.col + 1),
@@ -140,7 +143,7 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
     const owner = new Map();
     const valid = opt.manual.map((l, src) => ({ ...l, src })).filter((l) => l.r0 >= 0 && l.c0 >= 0 && l.r1 <= rows && l.c1 <= cols && l.r1 > l.r0 && l.c1 > l.c0);
     valid.forEach((l, i) => orderRect(l, patternOf(l.p)).forEach(([r, c]) => owner.set(at[r][c].id, i)));
-    // 같은 번호(n)의 항목들은 한 UTP의 구간들: 그린 순서대로 이어 붙인다
+    // 같은 번호(n)의 항목들은 한 LAN의 구간들: 그린 순서대로 이어 붙인다
     const groups = new Map();
     valid.forEach((l, i) => {
       const n = l.n ?? l.src + 1;
@@ -161,50 +164,112 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
     uncovered = cells.filter((c) => !owner.has(c.id)).map((c) => c.id);
     if (uncovered.length) warnings.push(`배선이 연결되지 않은 캐비닛이 ${uncovered.length}장 있습니다.`);
   } else {
-    // 자동 배선: 한도 안의 사각형(ㅁ)으로 나누되 줄 수를 우선하고, 같으면 패턴 축을 따른다.
-    const preferV = pattern.axis === 'v';
-    const byRows = partitionByRowBands(rowPx, cols, limit, maxCabs);
-    const byCols = partitionByColBands(rowPx, cols, limit, maxCabs);
-    const rects = byRows.length === byCols.length
-      ? (preferV ? byCols : byRows)
-      : (byRows.length < byCols.length ? byRows : byCols);
-    const rowOrder = (p, q) => pattern.top ? p.r0 - q.r0 : q.r1 - p.r1;
-    const colOrder = (p, q) => pattern.left ? p.c0 - q.c0 : q.c1 - p.c1;
-    rects.sort(preferV ? (p, q) => colOrder(p, q) || rowOrder(p, q) : (p, q) => rowOrder(p, q) || colOrder(p, q));
+    // LAN는 포트 수 최소화 우선, 파워는 방향 우선·균등 분할로 각각 계산한다.
+    const rects = opt.powerOnly
+      ? partitionByDirection(rowPx, cols, limit, maxCabs, pattern)
+      : partitionLan(rowPx, cols, limit, maxCabs, pattern);
     lanLines = rects.map((rc, i) => mk(i + 1, orderRect(rc, pattern).map(([r, c]) => at[r][c]), rc, pattern));
   }
   for (const l of lanLines) {
-    if (l.over) warnings.push(`UTP ${l.id}: 한 포트 한도를 넘습니다.`);
+    if (l.over) warnings.push(`LAN ${l.id}: 한 포트 한도를 넘습니다.`);
   }
 
-  // --- 파워: 500mm 높이 띠마다 가로로 체인 (최대 폭 단위 초과 시 새 포트) ---
-  const maxUnits = cfg.power.maxWidthUnitsPerPort;
-  const perSmps = cfg.power.cabinetsPerSmps;
-  const unitsPerCab = cabW / base;
-  const powerChains = [];
-  for (let r = 0; r < rows; r++) {
-    const strips = Math.max(1, Math.round(rowDefs[r].h / base));
-    for (let s = 0; s < strips; s++) {
-      const cy = at[r][0].y + ((s + 0.5) * rowDefs[r].h) / strips;
-      let seg = null;
-      for (let c = 0; c < cols; c++) {
-        if (!seg || (seg.cells.length + 1) * unitsPerCab > maxUnits) {
-          seg = { id: powerChains.length + 1, y: cy, h: rowDefs[r].h / strips, cells: [], smps: [] };
-          powerChains.push(seg);
-        }
-        seg.cells.push(at[r][c]);
-      }
-    }
-  }
-  for (const ch of powerChains) {
-    for (let i = 0; i < ch.cells.length; i += perSmps) ch.smps.push(ch.cells.slice(i, i + perSmps));
-  }
-
-  return { pattern: pattern.id, manual: Array.isArray(opt.manual), cells, rows, cols, totalW, totalH, lanLines, powerChains, uncovered, alive, limit, maxCabs, warnings };
+  if (opt.powerOnly) return { lanLines, uncovered, alive };
+  // 파워는 픽셀과 무관하다. 자동은 500×500 환산 20장 이하, 직접 그리기는 제한 없음.
+  const powerPattern = patternOf(opt.powerPattern ?? cfg.defaultDirection).id;
+  const powerManual = Array.isArray(opt.powerManual);
+  const power = buildLayout(res, { pattern: powerPattern, manual: opt.powerManual, powerOnly: true }, {
+    ...cfg,
+    lan: { maxPixelsPerPort: powerManual ? Infinity : cfg.power.autoMaxCabinetsPerPort, maxPixelsPerPortByPitch: {}, maxCabinetsPerLine: Infinity },
+  });
+  const powerChains = power.lanLines.map((line) => ({ ...line, over: false }));
+  if (power.uncovered.length) warnings.push(`파워 배선이 연결되지 않은 캐비닛이 ${power.uncovered.length}장 있습니다.`);
+  return { pattern: pattern.id, manual: Array.isArray(opt.manual), cells, rows, cols, totalW, totalH, lanLines, powerChains, uncovered, alive, limit, maxCabs, warnings, powerPattern, powerManual, powerUncovered: power.uncovered, powerAlive: power.alive };
 }
 
 const range = (a, b) => Array.from({ length: b - a }, (_, i) => a + i); // [a, b)
 
+/** 선택 방향의 띠를 먼저 만들고, 분할이 필요하면 부하를 균등하게 나눈다. */
+function partitionByDirection(rowPx, cols, limit, maxCabs, pattern) {
+  const rowOrder = range(0, rowPx.length);
+  const colOrder = range(0, cols);
+  if (!pattern.top) rowOrder.reverse();
+  if (!pattern.left) colOrder.reverse();
+  const rect = (rs, cs) => ({ r0: Math.min(...rs), r1: Math.max(...rs) + 1, c0: Math.min(...cs), c1: Math.max(...cs) + 1 });
+  const out = [];
+  if (pattern.axis === 'h') {
+    for (let i = 0; i < rowOrder.length;) {
+      const parts = balancedParts(colOrder.map(() => rowPx[rowOrder[i]]), limit, maxCabs);
+      const maxWidth = Math.max(...parts.map((part) => part.length));
+      let end = i + 1;
+      let sum = rowPx[rowOrder[i]];
+      while (end < rowOrder.length && maxWidth * (sum + rowPx[rowOrder[end]]) <= limit && maxWidth * (end - i + 1) <= maxCabs) {
+        sum += rowPx[rowOrder[end++]];
+      }
+      for (const part of parts) out.push(rect(rowOrder.slice(i, end), part.map((index) => colOrder[index])));
+      i = end;
+    }
+  } else {
+    const parts = balancedParts(rowOrder.map((r) => rowPx[r]), limit, maxCabs);
+    const largestLoad = Math.max(...parts.map((part) => part.reduce((sum, index) => sum + rowPx[rowOrder[index]], 0)));
+    const largestCount = Math.max(...parts.map((part) => part.length));
+    const width = Math.max(1, Math.min(cols, Math.floor(limit / largestLoad), Math.floor(maxCabs / largestCount)));
+    // 여러 열을 묶을 때도 마지막 띠만 짧아지지 않도록 균등 분할한다.
+    const widths = balancedLengths(cols, Math.ceil(cols / width));
+    let start = 0;
+    for (const count of widths) {
+      for (const part of parts) out.push(rect(part.map((index) => rowOrder[index]), colOrder.slice(start, start + count)));
+      start += count;
+    }
+  }
+  return out;
+}
+
+const balancedLengths = (n, k) => Array.from({ length: k }, (_, i) => Math.floor(n / k) + (i < n % k ? 1 : 0));
+
+/** 연속한 칸을 필요한 최소 구간 수로 나누고, 최대 부하를 최소화한다. */
+function balancedParts(weights, limit, maxCount) {
+  const groupsFor = (capacity) => {
+    const groups = [];
+    let group = [], sum = 0;
+    for (let i = 0; i < weights.length; i++) {
+      if (group.length && (sum + weights[i] > capacity || group.length >= maxCount)) {
+        groups.push(group); group = []; sum = 0;
+      }
+      group.push(i); sum += weights[i];
+    }
+    if (group.length) groups.push(group);
+    return groups;
+  };
+  const count = groupsFor(limit).length;
+  if (weights.every((weight) => weight === weights[0])) {
+    let offset = 0;
+    return balancedLengths(weights.length, count).map((length) => {
+      const indices = range(offset, offset + length); offset += length; return indices;
+    });
+  }
+  let lo = Math.max(...weights), hi = weights.reduce((sum, weight) => sum + weight, 0);
+  while (lo < hi) {
+    const mid = Math.floor((lo + hi) / 2);
+    if (groupsFor(mid).length <= count) hi = mid;
+    else lo = mid + 1;
+  }
+  return groupsFor(lo);
+}
+
+/** LAN: 가로·세로 분할 중 포트 수가 적은 쪽, 같으면 선택 방향을 따른다. */
+function partitionLan(rowPx, cols, limit, maxCabs, pattern) {
+  const byRows = partitionByRowBands(rowPx, cols, limit, maxCabs);
+  const byCols = partitionByColBands(rowPx, cols, limit, maxCabs);
+  const preferV = pattern.axis === 'v';
+  const rects = byRows.length === byCols.length
+    ? (preferV ? byCols : byRows)
+    : (byRows.length < byCols.length ? byRows : byCols);
+  const rowOrder = (p, q) => pattern.top ? p.r0 - q.r0 : q.r1 - p.r1;
+  const colOrder = (p, q) => pattern.left ? p.c0 - q.c0 : q.c1 - p.c1;
+  rects.sort(preferV ? (p, q) => colOrder(p, q) || rowOrder(p, q) : (p, q) => rowOrder(p, q) || colOrder(p, q));
+  return rects;
+}
 /** 행 [r0,r1) 묶음에서 한 줄에 물릴 수 있는 최대 열 수 */
 function maxColsFor(rowPx, r0, r1, limit, maxCabs) {
   let px = 0;

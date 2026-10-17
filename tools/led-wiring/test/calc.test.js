@@ -82,7 +82,7 @@ test('엑셀 1000시트: 10000×3500 / 500×1000 / 3.9 (1000+500 혼합)', () =>
   assert.deepEqual([main.need, main.perBox, main.boxes, main.packQty], [60, 7, 9, 63]);
   assert.deepEqual([filler.need, filler.perBox, filler.boxes, filler.packQty], [20, 14, 2, 28]);
   assert.equal(r.lan.ports, 4); // 엑셀 롱랜선 = 4
-  assert.equal(r.power.ports, 7); // 엑셀 롱파워 = 7
+  assert.equal(r.power.ports, 7); // 500×500 환산 140장분 / 20
 });
 
 test('역삼멀티캠퍼스: 7000×5000 / 500×1000 / 3.9', () => {
@@ -92,7 +92,7 @@ test('역삼멀티캠퍼스: 7000×5000 / 500×1000 / 3.9', () => {
   assert.deepEqual([r.boxes[0].boxes, r.boxes[0].packQty], [10, 70]);
   assert.ok(Math.abs(r.lan.capacityCabs - 656000 / (128 * 256)) < 1e-9);
   assert.equal(r.lan.ports, 4); // 엑셀 롱랜선 = 4
-  assert.equal(r.power.ports, 10); // 엑셀 롱파워 = 10
+  assert.equal(r.power.ports, 7); // 500×1000 70장 = 140장분 / 20
 });
 
 test('8000×4000 / 500×500 : 피치별 해상도·1port·박스', () => {
@@ -101,7 +101,7 @@ test('8000×4000 / 500×500 : 피치별 해상도·1port·박스', () => {
     [1.5, 320, 650000 / (320 * 320), 10, 140],
     [2.6, 192, 650000 / (192 * 192), 11, 132],
     [3.9, 128, 656000 / (128 * 128), 10, 140], // 3.9피치만 65.6만,
-    [4.8, 104, 650000 / (104 * 104), null, null], // 아웃도어: 박스 수량 미정
+    [4.8, 104, 650000 / (104 * 104), 10, 140], // 아웃도어 14장/박스
   ];
   for (const [pitch, px, port, boxes, pack] of cases) {
     const r = run({ widthMm: 8000, heightMm: 4000, pitch });
@@ -110,6 +110,19 @@ test('8000×4000 / 500×500 : 피치별 해상도·1port·박스', () => {
     assert.ok(Math.abs(r.lan.capacityCabs - port) < 1e-9);
     assert.deepEqual([r.boxes[0].boxes, r.boxes[0].packQty], [boxes, pack], `pitch ${pitch}`);
     assert.equal(r.errors.length, boxes == null ? 1 : 0);
+  }
+});
+
+test('사용자가 확정한 피치·캐비닛별 1박스 수량으로 출고수량을 계산한다', () => {
+  for (const [pitch, cabH, expected] of [
+    ['1.5-in', 500, 14], ['2.6-in', 500, 12], ['2.6-flex-in', 500, 14],
+    ['3.9-in', 500, 14], ['3.9-in', 1000, 7], ['3.9-out', 1000, 12], ['4.8-out', 500, 14],
+  ]) {
+    const r = run({ widthMm: 2500, heightMm: 2000, cabH, pitch });
+    const box = r.boxes.find((b) => b.cabinet === `500x${cabH}`);
+    assert.equal(box.perBox, expected, pitch);
+    assert.equal(box.boxes, Math.ceil(box.need / expected), pitch);
+    assert.equal(box.packQty, box.boxes * expected, pitch);
   }
 });
 

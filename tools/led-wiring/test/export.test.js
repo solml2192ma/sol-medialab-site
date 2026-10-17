@@ -17,7 +17,53 @@ test('자재표 데이터: 8000×4000 / 2.6', () => {
   const res = calc(input, pixel);
   const rep = buildReport(res, buildLayout(res, { pattern: 'hz-tl' }), input);
   const box = rep.sections.find((s) => s.title === '박스');
-  assert.deepEqual(box.rows[0], ['500×500', 128, 12, 11, 132]);
+  assert.deepEqual(box.rows[0], ['500×500', 128, '<', 132, '=', 12, '×', 11]);
+  const summary = rep.sections[0].rows;
+  assert.ok(summary.some((row) => row[0] === 'LAN포트수'));
+  assert.ok(summary.some((row) => row[0] === '파워포트수'));
+  assert.doesNotMatch(JSON.stringify(rep), /UTP|SMPS|MCU/);
+});
+
+test('박스 표는 500 규격을 먼저 표시하고 출고수량 계산식을 보여 준다', () => {
+  const input = { widthMm: 2500, heightMm: 2500, cabW: 500, cabH: 1000, pitch: '3.9-in' };
+  const res = calc(input, pixel);
+  const box = buildReport(res, buildLayout(res, {}), input).sections.find((s) => s.title === '박스');
+  assert.deepEqual(box.rows, [
+    ['500×500', 5, '<', 14, '=', 14, '×', 1],
+    ['500×1000', 10, '<', 14, '=', 7, '×', 2],
+  ]);
+  const exactInput = { ...input, widthMm: 3500, heightMm: 2000 };
+  const exact = calc(exactInput, pixel);
+  const exactBox = buildReport(exact, buildLayout(exact, {}), exactInput).sections.find((s) => s.title === '박스');
+  assert.deepEqual(exactBox.rows[0], ['500×1000', 14, '=', 14, '=', 7, '×', 2]);
+});
+
+test('해상도 비고는 실제 사용하는 캐비닛 규격별 픽셀을 표시한다', () => {
+  for (const [cabH, heightMm, rowPlan, expected] of [
+    [500, 3500, undefined, '128×128px (캐비닛 500×500mm)'],
+    [1000, 4000, undefined, '128×256px (캐비닛 500×1000mm)'],
+    [1000, 3500, undefined, '128×128px (캐비닛 500×500mm)\n128×256px (캐비닛 500×1000mm)'],
+    [1000, 2000, [500, 500, 500, 500], '128×128px (캐비닛 500×500mm)'],
+  ]) {
+    const input = { widthMm: 6000, heightMm, cabW: 500, cabH, rowPlan, pitch: '3.9-in' };
+    const res = calc(input, pixel);
+    const rep = buildReport(res, buildLayout(res, {}), input);
+    assert.equal(rep.sections[0].rows.find((row) => row[0] === '해상도')[2], expected);
+  }
+});
+
+test('캐비닛 수량 비고는 실제 규격별 가로·세로·장수를 표시한다', () => {
+  for (const [cabH, heightMm, rowPlan, total, expected] of [
+    [1000, 2000, undefined, 10, '가로5 × 세로2 = 10 (캐비닛 500×1000mm)'],
+    [500, 2000, undefined, 20, '가로5 × 세로4 = 20 (캐비닛 500×500mm)'],
+    [1000, 2500, undefined, 15, '가로5 × 세로1 = 5 (캐비닛 500×500mm)\n가로5 × 세로2 = 10 (캐비닛 500×1000mm)'],
+    [1000, 2000, [500, 500, 500, 500], 20, '가로5 × 세로4 = 20 (캐비닛 500×500mm)'],
+  ]) {
+    const input = { widthMm: 2500, heightMm, cabW: 500, cabH, rowPlan, pitch: '3.9-in' };
+    const res = calc(input, pixel);
+    const rep = buildReport(res, buildLayout(res, {}), input);
+    assert.deepEqual(rep.sections[0].rows.find((row) => row[0] === '캐비닛 수량'), ['캐비닛 수량', total, expected]);
+  }
 });
 
 test('xlsx 파일이 zip 구조이고 외부 도구(openpyxl)로 읽힌다', (t) => {
@@ -46,30 +92,30 @@ const sample = () => {
   return { input, res, lay: buildLayout(res, { pattern: 'hz-tl' }) };
 };
 
-test('내보내기 도면: 위 UTP / 아래 파워를 세로로 쌓는다', () => {
+test('내보내기 도면: 위 LAN / 아래 파워를 세로로 쌓는다', () => {
   const { lay } = sample();
   const onlyLan = renderSvg(lay, { showLan: true, showPower: false });
   const onlyPw = renderSvg(lay, { showLan: false, showPower: true });
-  assert.ok(onlyLan.includes('UTP 1:') && !onlyLan.includes('분전반'));
-  assert.ok(onlyPw.includes('파워 1:') && !onlyPw.includes('분전반') && !onlyPw.includes('UTP 1:'));
+  assert.ok(onlyLan.includes('LAN 1:') && !onlyLan.includes('분전반'));
+  assert.ok(onlyPw.includes('파워 1:') && !onlyPw.includes('분전반') && !onlyPw.includes('LAN 1:'));
   const both = renderCombined(lay, { title: '테스트' });
   const vb = (s) => s.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/).slice(1).map(Number);
   const [, hLan] = vb(onlyLan);
   const [, hPw] = vb(onlyPw);
   const [, hAll] = vb(both);
   assert.ok(Math.abs(hAll - (hLan + hPw)) < 0.05);
-  assert.ok(both.indexOf('UTP(LAN) 배선') < both.indexOf('파워 배선')); // UTP가 위
+  assert.ok(both.indexOf('LAN 배선') < both.indexOf('파워 배선')); // LAN가 위
   assert.equal((both.match(/<svg /g) || []).length, 3); // 바깥 1 + 안쪽 2
   assert.ok(!/<svg [^>]*width=/.test(renderCombined(lay, { sized: false }).split('>')[0]));
 });
 
-test('엑셀 자재표: UTP 줄별 구성 아래에 파워 포트별 구성', () => {
+test('엑셀 자재표: LAN 줄별 구성 아래에 파워 포트별 구성', () => {
   const { res, lay, input } = sample();
   const titles = buildReport(res, lay, input).sections.map((s) => s.title);
-  assert.ok(titles.indexOf('UTP(LAN) 줄별 구성') < titles.indexOf('파워(롱파워) 포트별 구성'));
+  assert.ok(titles.indexOf('LAN 줄별 구성') < titles.indexOf('파워 포트별 구성'));
   const pw = buildReport(res, lay, input).sections.find((s) => s.title.startsWith('파워'));
   assert.equal(pw.rows.length, lay.powerChains.length);
-  assert.deepEqual(pw.rows[0], ['파워 1', 16, '1 → 16', 4]);
+  assert.deepEqual(pw.rows[0], ['파워 1', 16, '1 → 16']);
 });
 
 test('칸 안 상세 정보: 확대했을 때만(detail) 항목을 줄 나눠 적는다', () => {
@@ -77,11 +123,14 @@ test('칸 안 상세 정보: 확대했을 때만(detail) 항목을 줄 나눠 �
   const off = renderSvg(lay, { showLan: true, showPower: false, detail: false });
   const on = renderSvg(lay, { showLan: true, showPower: false, detail: true });
   assert.ok(!off.includes('번째') && !off.includes('가로192px'));
-  // 한 줄에 하나씩: UTP 번호 / 순서 / 가로 / 세로
-  for (const s of ['>UTP 1<', '>1번째<', '>16번째<', '>가로192px<', '>세로192px<']) assert.ok(on.includes(s), s);
+  // 한 줄에 하나씩: LAN 번호 / 순서 / 가로 / 세로
+  for (const s of ['>LAN 1<', '>1번째<', '>16번째<', '>가로192px<', '>세로192px<']) assert.ok(on.includes(s), s);
   const pw = renderSvg(lay, { showLan: false, showPower: true, detail: true });
-  for (const s of ['>파워 1<', '>그룹 1-1<', '>그룹 1-4<', '>가로192px<']) assert.ok(pw.includes(s), s);
-  assert.ok(!pw.includes('>UTP 1<'));
+  for (const s of ['>파워 1<', '>1번째<', '>16번째<']) assert.ok(pw.includes(s), s);
+  assert.ok(!pw.includes('px<'));
+  assert.ok(!pw.includes('그룹'));
+  assert.ok(!pw.includes('SMPS'));
+  assert.ok(!pw.includes('>LAN 1<'));
 });
 
 test('상세 정보 자동 표시 기준: 칸 1장이 화면에서 95px 이상일 때', () => {
@@ -93,7 +142,7 @@ test('상세 정보 자동 표시 기준: 칸 1장이 화면에서 95px 이상�
   assert.equal(detailFor(buildLayout(wide, { pattern: 'hz-tl' }), 1900), false);
 });
 
-test('UTP/파워/내보내기 도면: 상단 열 번호와 좌측 행 번호, 아래쪽 가로 치수선', () => {
+test('LAN/파워/내보내기 도면: 상단 열 번호와 좌측 행 번호, 아래쪽 가로 치수선', () => {
   const { lay } = sample();
   for (const opt of [{ showLan: true, showPower: false }, { showLan: false, showPower: true }]) {
     const svg = renderSvg(lay, opt);

@@ -1,11 +1,11 @@
 {
-  "_설명": "엑셀 'pixel' 시트를 옮긴 표. pixels500 = 500×500 캐비닛 1장의 가로/세로 픽셀 수. boxQty = 캐비닛 규격(가로x세로 mm)별 1박스 수량, null이면 아직 모르거나 해당 규격 박스 없음. 엑셀의 박스 수량은 인도어 기준이라 아웃도어는 null(추후 입력). 새 피치/규격은 여기에만 추가하면 된다.",
+  "_설명": "pixels500 = 500×500 캐비닛 1장의 가로/세로 픽셀 수. boxQty = 규격별 1박스 수량. 사용자 확정값을 사용하며 3.9 야외 500×500은 박스마다 수량이 달라 null로 유지한다. 새 피치/규격은 여기에만 추가하면 된다.",
   "pitches": {
     "1.5-in": { "pitch": 1.5, "env": "indoor", "label": "p1.5 indoor JHT", "allowedCabinets": ["500x500"], "pixels500": 320, "boxQty": { "500x500": 14, "500x1000": null } },
     "2.6-in": { "pitch": 2.6, "env": "indoor", "label": "p2.6 indoor UNILUMIN", "allowedCabinets": ["500x500"], "pixels500": 192, "boxQty": { "500x500": 12, "500x1000": null } },
     "2.6-flex-in": { "pitch": 2.6, "env": "indoor", "label": "p2.6 indoor flexible WISDOM", "allowedCabinets": ["500x500"], "pixels500": 192, "boxQty": { "500x500": 14, "500x1000": null } },
     "3.9-in": { "pitch": 3.9, "env": "indoor", "label": "p3.9 indoor JHT", "pixels500": 128, "boxQty": { "500x500": 14, "500x1000": 7 } },
-    "3.9-out": { "pitch": 3.9, "env": "outdoor", "label": "p3.9 outdoor ABSEN", "pixels500": 128, "boxQty": { "500x500": null, "500x1000": null } },
-    "4.8-out": { "pitch": 4.8, "env": "outdoor", "label": "p4.8 outdoor UNILUMIN", "allowedCabinets": ["500x500"], "pixels500": 104, "boxQty": { "500x500": null, "500x1000": null } }
+    "3.9-out": { "pitch": 3.9, "env": "outdoor", "label": "p3.9 outdoor ABSEN", "pixels500": 128, "boxQty": { "500x500": null, "500x1000": 12 } },
+    "4.8-out": { "pitch": 4.8, "env": "outdoor", "label": "p4.8 outdoor UNILUMIN", "allowedCabinets": ["500x500"], "pixels500": 104, "boxQty": { "500x500": 14, "500x1000": null } }
   }
 }

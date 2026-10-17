@@ -12,6 +12,7 @@ const form = $('#form');
 const DEFAULTS = {
   ...config.emptyInputs,
   pat: config.defaultDirection, mode: 'auto', ml: '',
+  powerPat: config.defaultDirection, powerMode: 'auto', powerMl: '', powerCur: '',
   topPlank: '1', tab: 'lan', rows: '',
 };
 const STORE = 'led-wiring:v1';
@@ -23,18 +24,31 @@ const displayWidth = () => Math.max(280, $('#canvas').clientWidth - 2) * zoom;
 
 const num = (v) => (v === '' || v == null ? null : Number(v));
 const fmt = (n) => (n == null ? '-' : Number(n).toLocaleString('ko-KR', { maximumFractionDigits: 2 }));
+const wiringKeys = [['pat', 'powerPat'], ['mode', 'powerMode'], ['ml', 'powerMl'], ['cur', 'powerCur']];
+// 화면의 공통 컨트롤과 저장되는 LAN/파워 상태를 변환한다. 같은 변환을 두 번 하면 원래 상태다.
+function swapWiring(s) {
+  const out = { ...s };
+  if (s.tab === 'pw') for (const [lan, power] of wiringKeys) [out[lan], out[power]] = [out[power], out[lan]];
+  return out;
+}
+const activeWiring = (s) => swapWiring(s);
+const layoutOptions = (s) => ({
+  pattern: s.pat, manual: s.mode === 'manual' ? decodeManual(s.ml) : null,
+  powerPattern: s.powerPat, powerManual: s.powerMode === 'manual' ? decodeManual(s.powerMl) : null,
+});
 
 function readState() {
   const s = { ...DEFAULTS };
   const fd = new FormData(form);
   for (const k of Object.keys(DEFAULTS)) if (fd.has(k)) s[k] = fd.get(k);
   s.topPlank = form.topPlank.checked ? '1' : '0';
-  return s;
+  return swapWiring(s);
 }
 
 function writeState(s) {
   s = normalizeCabinetState(s, pixelData);
   syncCabinetOptions(s);
+  s = swapWiring(s);
   for (const [k, v] of Object.entries(s)) {
     const el = form.elements[k];
     if (el && el.type !== 'checkbox') el.value = v;
@@ -88,7 +102,6 @@ function toConfig(s) {
   return {
     ...config,
     lan: { ...config.lan, maxCabinetsPerLine: num(s.maxPerLine) ?? config.lan.maxCabinetsPerLine },
-    power: { ...config.power, cabinetsPerSmps: Math.max(1, num(s.perSmps) ?? config.power.cabinetsPerSmps) },
   };
 }
 
@@ -146,8 +159,7 @@ function render() {
   syncWiringUi(s);
   if (blocked) { $('#msgs').innerHTML = msgs.join(''); $('#canvas').innerHTML = ''; $('#printCanvas').innerHTML = ''; $('#tables').innerHTML = ''; $('#lineList').innerHTML = ''; last = null; return; }
 
-  const manual = s.mode === 'manual' ? decodeManual(s.ml) : null;
-  const lay = buildLayout(res, { pattern: s.pat, manual }, cfg);
+  const lay = buildLayout(res, layoutOptions(s), cfg);
   msgs.push(...lay.warnings.map((m) => `<p class="warn">${esc(m)}</p>`));
   $('#msgs').innerHTML = msgs.join('');
   const title = `LED ${fmt(input.widthMm)}×${fmt(input.heightMm)}mm · ${res.pitchInfo.label} · ${input.cabW}×${input.cabH}`;
@@ -156,10 +168,10 @@ function render() {
   detailOn = detailFor(lay, displayWidth());
   const svg = renderSvg(lay, { showLan: s.tab !== 'pw', showPower: s.tab === 'pw', title, detail: detailOn });
   $('#canvas').innerHTML = svg;
-  $('#printCanvas').innerHTML = renderCombined(lay, { title, sized: false }); // 인쇄(PDF)용: UTP 위, 파워 아래
+  $('#printCanvas').innerHTML = renderCombined(lay, { title, sized: false }); // 인쇄(PDF)용: LAN 위, 파워 아래
   applyZoom();
-  bindDraw($('#canvas svg'), lay, s);
-  renderLineList(lay, s);
+  bindDraw($('#canvas svg'), lay, activeWiring(s));
+  renderLineList(lay, activeWiring(s));
   const rep = buildReport(res, lay, input);
   $('#tables').innerHTML = tables(rep);
   $('#printHead').innerHTML = `<div class="print-brand"><h1>LED 배선도면</h1>${document.querySelector('.company-brand').outerHTML}</div><p>${rep.inputs.map(([k, v]) => `${k}: ${esc(v)}`).join(' / ')}</p>`;
@@ -193,7 +205,13 @@ function buildPatternButtons() {
 }
 
 function syncWiringUi(s) {
+  s = activeWiring(s);
   const manual = s.mode === 'manual';
+  const power = s.tab === 'pw';
+  $('#wiringTitle').textContent = power ? '파워 배선' : 'LAN 배선';
+  $('#currentPortLabel').textContent = power ? '파워 포트 번호' : 'LAN 번호';
+  $('#mNew').textContent = power ? '새 파워 포트' : '새 LAN';
+  $('#powerHint').hidden = !power;
   $('#manualTools').hidden = !manual;
   document.body.dataset.tab = s.tab === 'pw' ? 'pw' : 'lan';
   for (const b of document.querySelectorAll('.tabs [data-tab]')) b.setAttribute('aria-selected', String(b.dataset.tab === document.body.dataset.tab));
@@ -206,16 +224,19 @@ function renderLineList(lay, s) {
   const ul = $('#lineList');
   $('#lineNotice').hidden = true;
   if (s.mode !== 'manual') { ul.innerHTML = ''; return; }
-  ul.innerHTML = lay.lanLines
-    .map((l) => `<li data-n="${l.id}" class="${l.over ? 'over' : ''}${l.id === Number(s.cur) ? ' cur' : ''}"><span class="sw" style="background:${LAN_COLORS[(l.id - 1) % LAN_COLORS.length]}"></span><label class="num">UTP <input type="number" min="1" step="1" inputmode="numeric" value="${l.id}" data-n="${l.id}" aria-label="UTP 포트 번호"></label><span class="t">${l.cells.length}장${l.parts.length > 1 ? ` · ${l.parts.length}구간` : ''} · ${esc(patternOf(l.pattern).label)}${l.over ? ' · 한도 초과' : ''}${l.id === Number(s.cur) ? ' · 그리는 중' : ''}</span><button type="button" data-n="${l.id}" aria-label="UTP ${l.id} 삭제">✕</button></li>`)
+  const label = s.tab === 'pw' ? '파워' : 'LAN';
+  ul.innerHTML = (s.tab === 'pw' ? lay.powerChains : lay.lanLines)
+    .map((l) => `<li data-n="${l.id}" class="${l.over ? 'over' : ''}${l.id === Number(s.cur) ? ' cur' : ''}"><span class="sw" style="background:${LAN_COLORS[(l.id - 1) % LAN_COLORS.length]}"></span><label class="num">${label} <input type="number" min="1" step="1" inputmode="numeric" value="${l.id}" data-n="${l.id}" aria-label="${label} 포트 번호"></label><span class="t">${l.cells.length}장${l.parts.length > 1 ? ` · ${l.parts.length}구간` : ''} · ${esc(patternOf(l.pattern).label)}${l.over ? ' · 한도 초과' : ''}${l.id === Number(s.cur) ? ' · 그리는 중' : ''}</span><button type="button" data-n="${l.id}" aria-label="${label} ${l.id} 삭제">✕</button></li>`)
     .join('');
 }
 
 // 나중에 그린 줄에 완전히 덮여 보이지 않게 된 줄은 목록에서 정리 (번호가 숨은 채 남지 않도록)
 function pruneHidden(lines) {
   if (!last) return lines;
-  const lay = buildLayout(last.res, { pattern: last.s.pat, manual: lines }, last.cfg);
-  const alive = new Set(lay.alive);
+  const s = readState();
+  const power = s.tab === 'pw';
+  const lay = buildLayout(last.res, { ...layoutOptions(s), [power ? 'powerManual' : 'manual']: lines }, last.cfg);
+  const alive = new Set(power ? lay.powerAlive : lay.alive);
   return lines.filter((_, i) => alive.has(i));
 }
 
@@ -247,13 +268,14 @@ function renderRowPlan(res, input) {
     .join('');
 }
 
-// 행 배치를 바꾸면 격자가 달라지므로 직접 그린 UTP 줄은 지운다 (확인 후)
+// 행 배치를 바꾸면 격자가 달라지므로 직접 그린 LAN 줄은 지운다 (확인 후)
 function applyRowPlan(next) {
   if (!last) return;
   const def = last.res.rowPlanDefault;
-  if (form.ml.value && !confirm('행 배치를 바꾸면 직접 그린 UTP 줄이 모두 지워집니다. 계속할까요?')) return;
+  if ((form.ml.value || form.powerMl.value) && !confirm('행 배치를 바꾸면 직접 그린 LAN·파워 배선이 모두 지워집니다. 계속할까요?')) return;
   form.rows.value = sameRows(next, def) ? '' : encodeRows(next);
   if (form.ml.value) { form.ml.value = ''; form.cur.value = '1'; }
+  form.powerMl.value = ''; form.powerCur.value = '1';
   update();
 }
 
@@ -264,7 +286,7 @@ function setManual(lines) {
 
 function bindDraw(svg, lay, s) {
   const canvas = $('#canvas');
-  const manual = s.mode === 'manual' && s.tab !== 'pw'; // 직접 그리기는 UTP 탭에서만
+  const manual = s.mode === 'manual';
   const pan = $('#panMode').checked;
   canvas.classList.toggle('draw', manual);
   canvas.classList.toggle('pan', manual && pan);
@@ -321,10 +343,10 @@ function bindDraw(svg, lay, s) {
     const lines = decodeManual(s.ml);
     const cur = Number(s.cur);
     const n = Number.isInteger(cur) && cur >= 1 ? cur : nextFreeNumber(lines);
-    // 번호는 사용자가 바꾸기 전까지 그대로: 같은 번호로 그리면 그 UTP의 다음 구간이 된다
+    // 번호는 사용자가 바꾸기 전까지 그대로: 같은 번호로 그리면 그 LAN의 다음 구간이 된다
     const next = [...lines, { r0: Math.min(a.row, end.row), r1: Math.max(a.row, end.row) + 1, c0: Math.min(a.col, end.col), c1: Math.max(a.col, end.col) + 1, p: s.pat, n }];
-    // 이 구간 때문에 UTP가 포트 한도를 넘으면 도면에 반영하지 않고 오류 창을 띄운다
-    const err = last && limitError(buildLayout(last.res, { pattern: s.pat, manual: next }, last.cfg), n);
+    // 이 구간 때문에 LAN가 포트 한도를 넘으면 도면에 반영하지 않고 오류 창을 띄운다
+    const err = s.tab !== 'pw' && last && limitError(buildLayout(last.res, { ...layoutOptions(last.s), manual: next }, last.cfg), n);
     if (err) {
       ov.setAttribute('visibility', 'hidden');
       showError(err.title, err.detail);
@@ -336,15 +358,31 @@ function bindDraw(svg, lay, s) {
 }
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+function cabinetNote(value, label) {
+  const quantity = label === '캐비닛 수량';
+  const pattern = quantity
+    ? /^가로(\d+) × 세로(\d+) = (\d+) (\(캐비닛 .+\))$/
+    : /^([\d.]+)×([\d.]+)px (\(캐비닛 .+\))$/;
+  const lines = String(value).split('\n').map((line) => line.match(pattern));
+  if (!lines.every(Boolean)) return esc(value);
+  const content = lines.map((m) => quantity
+    ? `<span>가로</span><span class="note-number">${esc(m[1])}</span><span>×</span><span>세로</span><span class="note-number">${esc(m[2])}</span><span>=</span><strong class="note-number">${esc(m[3])}</strong><span class="note-cabinet">${esc(m[4])}</span>`
+    : `<span class="note-number">${esc(m[1])}</span><span>×</span><span class="note-number">${esc(m[2])}px</span><span class="note-cabinet">${esc(m[3])}</span>`).join('');
+  return `<span class="cabinet-note ${quantity ? 'quantity-note' : 'resolution-note'}">${content}</span>`;
+}
 function tables(rep) {
   return rep.sections
     .map((sec) => {
       const numCol = (i) => sec.rows.some((r) => typeof r[i] === 'number');
       const head = sec.header.map((h, i) => `<th${numCol(i) ? ' class="n"' : ''}>${h}</th>`).join('');
       const body = sec.rows
-        .map((r) => `<tr>${r.map((v, i) => `<td${typeof v === 'number' ? ' class="n"' : ''}>${v == null ? '-' : esc(typeof v === 'number' ? fmt(v) : v)}</td>`).join('')}</tr>`)
+        .map((r) => `<tr>${r.map((v, i) => {
+          const result = typeof v === 'number' || (i === 1 && sec.header[i] === '수량');
+          const content = v == null ? '-' : i === 2 && ['캐비닛 수량', '해상도'].includes(r[0]) ? cabinetNote(v, r[0]) : esc(typeof v === 'number' ? fmt(v) : v);
+          return `<td${typeof v === 'number' ? ' class="n"' : ''}>${result && v != null ? `<strong>${content}</strong>` : content}</td>`;
+        }).join('')}</tr>`)
         .join('');
-      return `<div class="sec"${sec.tab ? ` data-tab="${sec.tab}"` : ''}><h2>${sec.title}</h2><div class="tw"><table><tr>${head}</tr>${body}</table></div></div>`;
+      return `<div class="sec${sec.title === '박스' ? ' box-section' : ''}"${sec.tab ? ` data-tab="${sec.tab}"` : ''}><h2>${sec.title}</h2><div class="tw"><table><tr>${head}</tr>${body}</table></div></div>`;
     })
     .join('');
 }
@@ -367,7 +405,7 @@ function init() {
   const st = loadState();
   st.pitch = findPitch(pixelData, st.pitch)?.id ?? DEFAULTS.pitch; // 구버전 값(2.6 등)도 허용
   writeState(st);
-  // UTP 번호 입력칸은 타이핑 중에 다시 그리면 포커스를 잃으므로 폼 공통 갱신에서 제외 (아래 change 핸들러가 처리)
+  // LAN 번호 입력칸은 타이핑 중에 다시 그리면 포커스를 잃으므로 폼 공통 갱신에서 제외 (아래 change 핸들러가 처리)
   const inList = (e) => e.target.closest?.('#lineList');
   form.addEventListener('input', (e) => { if (!inList(e)) update(); });
   form.addEventListener('change', (e) => { if (!inList(e)) update(); });
@@ -392,10 +430,11 @@ function init() {
     r.addEventListener('change', () => {
       if (r.value !== 'manual' || !r.checked || form.ml.value || !last) return;
       const pat = form.pat.value;
-      const a = buildLayout(last.res, { pattern: pat }, last.cfg);
-      const filled = a.lanLines.map((l, i) => ({ r0: l.rect.r0, c0: l.rect.c0, r1: l.rect.r1, c1: l.rect.c1, p: pat, n: i + 1 }));
+      const power = form.tab.value === 'pw';
+      const a = buildLayout(last.res, { ...layoutOptions(readState()), [power ? 'powerManual' : 'manual']: null }, last.cfg);
+      const filled = (power ? a.powerChains : a.lanLines).map((l, i) => ({ r0: l.rect.r0, c0: l.rect.c0, r1: l.rect.r1, c1: l.rect.c1, p: pat, n: i + 1 }));
       form.ml.value = encodeManual(filled);
-      form.cur.value = String(nextFreeNumber(filled)); // 채워진 줄에 덧붙지 않고 새 UTP에서 시작
+      form.cur.value = String(nextFreeNumber(filled)); // 채워진 줄에 덧붙지 않고 새 LAN에서 시작
     });
   }
   $('#lineList').addEventListener('change', (e) => {
@@ -405,25 +444,31 @@ function init() {
     const n = Number(inp.value);
     const lines = decodeManual(form.ml.value);
     const notice = (msg) => { inp.value = String(old); $('#lineNotice').textContent = msg; $('#lineNotice').hidden = false; };
-    if (!Number.isInteger(n) || n < 1) return notice('UTP 번호는 1 이상의 정수여야 합니다.');
-    if (n !== old && lines.some((l) => l.n === n)) return notice(`UTP ${n}번은 이미 다른 줄이 사용 중입니다. 다른 번호를 입력해 주세요.`);
-    for (const l of lines) if (l.n === old) l.n = n; // 이 UTP의 모든 구간 번호만 바꾼다 (다른 줄은 그대로)
-    if (Number(form.cur.value) === old) form.cur.value = String(n); // 그리는 중이던 UTP면 번호를 따라간다
+    const label = form.tab.value === 'pw' ? '파워' : 'LAN';
+    if (!Number.isInteger(n) || n < 1) return notice(`${label} 번호는 1 이상의 정수여야 합니다.`);
+    if (n !== old && lines.some((l) => l.n === n)) return notice(`${label} ${n}번은 이미 다른 줄이 사용 중입니다. 다른 번호를 입력해 주세요.`);
+    for (const l of lines) if (l.n === old) l.n = n; // 이 LAN의 모든 구간 번호만 바꾼다 (다른 줄은 그대로)
+    if (Number(form.cur.value) === old) form.cur.value = String(n); // 그리는 중이던 LAN면 번호를 따라간다
     setManual(lines);
   });
   $('#lineList').addEventListener('click', (e) => {
     const del = e.target.closest('button[data-n]');
     if (del) {
       const n = Number(del.dataset.n);
-      setManual(decodeManual(form.ml.value).filter((l) => l.n !== n)); // 그 UTP의 모든 구간 삭제 (다른 번호는 그대로)
+      setManual(decodeManual(form.ml.value).filter((l) => l.n !== n)); // 그 LAN의 모든 구간 삭제 (다른 번호는 그대로)
       return;
     }
     if (e.target.closest('input')) return;
     const li = e.target.closest('li[data-n]');
-    if (li) { form.cur.value = li.dataset.n; update(); } // 목록에서 골라 그 UTP를 이어서 그린다
+    if (li) { form.cur.value = li.dataset.n; update(); } // 목록에서 골라 그 LAN를 이어서 그린다
   });
   $('#panMode').addEventListener('change', update);
-  for (const b of document.querySelectorAll('.tabs [data-tab]')) b.addEventListener('click', () => { form.tab.value = b.dataset.tab; update(); });
+  for (const b of document.querySelectorAll('.tabs [data-tab]')) b.addEventListener('click', () => {
+    const s = readState();
+    s.tab = b.dataset.tab;
+    writeState(s);
+    update();
+  });
   $('#reset').addEventListener('click', () => {
     zoom = 1;
     $('#panMode').checked = false;
