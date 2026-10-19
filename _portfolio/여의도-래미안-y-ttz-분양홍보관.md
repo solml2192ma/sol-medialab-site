@@ -1,13 +1,14 @@
 ---
+slug: 여의도래미안yttz분양홍보관
 title: 여의도 래미안 Y'TTZ 분양홍보관
 post_date: 2026-10-19T16:45:00+09:00
 overview_category:
   - 분양홍보관·모델하우스
 client: ''
 location: 서울 여의도
-cover_image: /assets/img/portfolio/05_운영모습.webp
+cover_image: /assets/img/portfolio/gnvvdbmm8e.webp
 gallery:
-  - /assets/img/portfolio/02_홍보관내부.webp
+  - /assets/img/portfolio/vq0hmev486.webp
 ---
 
 ## 현장 소개
