@@ -7,7 +7,7 @@ export const config = {
     maxPixelsPerPortByPitch: { 3.9: 656000 }, // 피치별 예외
     maxCabinetsPerLine: null, // 숫자를 넣으면 계산값 대신 이 값으로 강제 (예: 10)
   },
-  // 파워: 픽셀과 무관하게 500×500을 1장분, 500×1000을 2장분으로 계산한다.
+  // POWER: 픽셀과 무관하게 500×500을 1장분, 500×1000을 2장분으로 계산한다.
   power: {
     autoMaxCabinetsPerPort: 20, // 자동 배선: 500×500 환산 20장분. 직접 배선은 제한 없음.
   },
@@ -22,9 +22,10 @@ export const config = {
   baseCabinetMm: 500, // pixel 표의 해상도 기준 캐비닛 크기
   rowPlan: { fillerPosition: 'top' }, // 남는 높이의 500 줄은 기본 배치에서 맨 위에 둔다.
   cabinetOptions: [
-    { value: '500x500', label: '500 × 500' },
     { value: '500x1000', label: '500 × 1000' },
+    { value: '500x500', label: '500 × 500' },
   ],
+  fallbackCabinet: '500x500', // 구버전 custom/잘못된 저장값 보정은 표시 순서와 별개다.
   emptyInputs: {
     w: '', h: '', pitch: '', cab: '', cw: '', ch: '', boxQty: '',
     maxPerLine: '', bays: '', tiers: '', cur: '',

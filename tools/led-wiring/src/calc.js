@@ -103,7 +103,7 @@ export function calc(input, pixelData, cfg = defaultConfig) {
     let perBox = pt.boxQty[key(w, h)];
     if (perBox === undefined && input.boxQty && w === cabW && h === cabH) perBox = input.boxQty;
     if (perBox == null) {
-      errors.push(`피치 ${pt.label} / ${w}×${h} 캐비닛의 1박스 수량 정보가 없습니다. (data/pixel.json 또는 직접 입력)`);
+      errors.push(`피치 ${pt.label} / ${w}×${h} 캐비닛의 1박스 수량 정보가 없습니다.`);
       return { cabinet: key(w, h), need: count, perBox: null, boxes: null, packQty: null };
     }
     const boxes = Math.ceil(count / perBox);
@@ -114,7 +114,7 @@ export function calc(input, pixelData, cfg = defaultConfig) {
   const boxes = [boxFor(cabW, cabH, mainCount)];
   if (fillerRows > 0) boxes.push(boxFor(fillerCab.w, fillerCab.h, fillerCount));
 
-  // --- 파워 포트 (롱파워) ---
+  // --- POWER 포트 (롱POWER) ---
   // 장수 기준 최소 예상값. 실제 자재표는 배선 도면의 포트 수를 사용한다.
   const powerUnits = (mainCount * cabW * cabH + fillerCount * fillerCab.w * fillerCab.h) / (base * base);
   const powerPorts = Math.ceil(powerUnits / cfg.power.autoMaxCabinetsPerPort);
@@ -163,7 +163,7 @@ export function calc(input, pixelData, cfg = defaultConfig) {
     lan: { capacityCabs: lanCapacityCabs, maxCabinetsPerLine, ports: lanPorts },
     power: { ports: powerPorts },
     boxes,
-    pitchInfo: { id: pt.id, pitch: pt.pitch, env: pt.env, label: pt.label },
+    pitchInfo: { id: pt.id, pitch: pt.pitch, env: pt.env, label: pt.label, thicknessMm: pt.thicknessMm ?? null },
     scaffold,
   };
 }

@@ -25,7 +25,7 @@ const displayWidth = () => Math.max(280, $('#canvas').clientWidth - 2) * zoom;
 const num = (v) => (v === '' || v == null ? null : Number(v));
 const fmt = (n) => (n == null ? '-' : Number(n).toLocaleString('ko-KR', { maximumFractionDigits: 2 }));
 const wiringKeys = [['pat', 'powerPat'], ['mode', 'powerMode'], ['ml', 'powerMl'], ['cur', 'powerCur']];
-// 화면의 공통 컨트롤과 저장되는 LAN/파워 상태를 변환한다. 같은 변환을 두 번 하면 원래 상태다.
+// 화면의 공통 컨트롤과 저장되는 LAN/POWER 상태를 변환한다. 같은 변환을 두 번 하면 원래 상태다.
 function swapWiring(s) {
   const out = { ...s };
   if (s.tab === 'pw') for (const [lan, power] of wiringKeys) [out[lan], out[power]] = [out[power], out[lan]];
@@ -161,6 +161,7 @@ function render() {
 
   const lay = buildLayout(res, layoutOptions(s), cfg);
   msgs.push(...lay.warnings.map((m) => `<p class="warn">${esc(m)}</p>`));
+  if (s.tab === 'pw') msgs.push(...lay.powerLoadWarnings.map((m) => `<p class="warn" role="status">${esc(m)}</p>`));
   $('#msgs').innerHTML = msgs.join('');
   const title = `LED ${fmt(input.widthMm)}×${fmt(input.heightMm)}mm · ${res.pitchInfo.label} · ${input.cabW}×${input.cabH}`;
   last = { s, input, res, lay, cfg, title };
@@ -168,7 +169,7 @@ function render() {
   detailOn = detailFor(lay, displayWidth());
   const svg = renderSvg(lay, { showLan: s.tab !== 'pw', showPower: s.tab === 'pw', title, detail: detailOn });
   $('#canvas').innerHTML = svg;
-  $('#printCanvas').innerHTML = renderCombined(lay, { title, sized: false }); // 인쇄(PDF)용: LAN 위, 파워 아래
+  $('#printCanvas').innerHTML = renderCombined(lay, { title, sized: false }); // 인쇄(PDF)용: LAN 위, POWER 아래
   applyZoom();
   bindDraw($('#canvas svg'), lay, activeWiring(s));
   renderLineList(lay, activeWiring(s));
@@ -208,9 +209,9 @@ function syncWiringUi(s) {
   s = activeWiring(s);
   const manual = s.mode === 'manual';
   const power = s.tab === 'pw';
-  $('#wiringTitle').textContent = power ? '파워 배선' : 'LAN 배선';
-  $('#currentPortLabel').textContent = power ? '파워 포트 번호' : 'LAN 번호';
-  $('#mNew').textContent = power ? '새 파워 포트' : '새 LAN';
+  $('#wiringTitle').textContent = power ? 'POWER 배선' : 'LAN 배선';
+  $('#currentPortLabel').textContent = power ? 'POWER 포트 번호' : 'LAN 번호';
+  $('#mNew').textContent = power ? '새 POWER 포트' : '새 LAN';
   $('#powerHint').hidden = !power;
   $('#manualTools').hidden = !manual;
   document.body.dataset.tab = s.tab === 'pw' ? 'pw' : 'lan';
@@ -224,7 +225,7 @@ function renderLineList(lay, s) {
   const ul = $('#lineList');
   $('#lineNotice').hidden = true;
   if (s.mode !== 'manual') { ul.innerHTML = ''; return; }
-  const label = s.tab === 'pw' ? '파워' : 'LAN';
+  const label = s.tab === 'pw' ? 'POWER' : 'LAN';
   ul.innerHTML = (s.tab === 'pw' ? lay.powerChains : lay.lanLines)
     .map((l) => `<li data-n="${l.id}" class="${l.over ? 'over' : ''}${l.id === Number(s.cur) ? ' cur' : ''}"><span class="sw" style="background:${LAN_COLORS[(l.id - 1) % LAN_COLORS.length]}"></span><label class="num">${label} <input type="number" min="1" step="1" inputmode="numeric" value="${l.id}" data-n="${l.id}" aria-label="${label} 포트 번호"></label><span class="t">${l.cells.length}장${l.parts.length > 1 ? ` · ${l.parts.length}구간` : ''} · ${esc(patternOf(l.pattern).label)}${l.over ? ' · 한도 초과' : ''}${l.id === Number(s.cur) ? ' · 그리는 중' : ''}</span><button type="button" data-n="${l.id}" aria-label="${label} ${l.id} 삭제">✕</button></li>`)
     .join('');
@@ -272,7 +273,7 @@ function renderRowPlan(res, input) {
 function applyRowPlan(next) {
   if (!last) return;
   const def = last.res.rowPlanDefault;
-  if ((form.ml.value || form.powerMl.value) && !confirm('행 배치를 바꾸면 직접 그린 LAN·파워 배선이 모두 지워집니다. 계속할까요?')) return;
+  if ((form.ml.value || form.powerMl.value) && !confirm('행 배치를 바꾸면 직접 그린 LAN·POWER 배선이 모두 지워집니다. 계속할까요?')) return;
   form.rows.value = sameRows(next, def) ? '' : encodeRows(next);
   if (form.ml.value) { form.ml.value = ''; form.cur.value = '1'; }
   form.powerMl.value = ''; form.powerCur.value = '1';
@@ -359,7 +360,7 @@ function bindDraw(svg, lay, s) {
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 function cabinetNote(value, label) {
-  const quantity = label === '캐비닛 수량';
+  const quantity = label === '캐비닛 수';
   const pattern = quantity
     ? /^가로(\d+) × 세로(\d+) = (\d+) (\(캐비닛 .+\))$/
     : /^([\d.]+)×([\d.]+)px (\(캐비닛 .+\))$/;
@@ -367,22 +368,33 @@ function cabinetNote(value, label) {
   if (!lines.every(Boolean)) return esc(value);
   const content = lines.map((m) => quantity
     ? `<span>가로</span><span class="note-number">${esc(m[1])}</span><span>×</span><span>세로</span><span class="note-number">${esc(m[2])}</span><span>=</span><strong class="note-number">${esc(m[3])}</strong><span class="note-cabinet">${esc(m[4])}</span>`
-    : `<span class="note-number">${esc(m[1])}</span><span>×</span><span class="note-number">${esc(m[2])}px</span><span class="note-cabinet">${esc(m[3])}</span>`).join('');
+    : `<span class="note-number">${esc(m[1])}</span><span>×</span><span class="note-number">${esc(m[2])}&nbsp;px</span><span class="note-cabinet">${esc(m[3])}</span>`).join('');
   return `<span class="cabinet-note ${quantity ? 'quantity-note' : 'resolution-note'}">${content}</span>`;
 }
 function tables(rep) {
   return rep.sections
     .map((sec) => {
       const numCol = (i) => sec.rows.some((r) => typeof r[i] === 'number');
-      const head = sec.header.map((h, i) => `<th${numCol(i) ? ' class="n"' : ''}>${h}</th>`).join('');
+      const head = sec.header.map((h, i) => `<th${numCol(i) ? ' class="n"' : ''}>${esc(h)}</th>`).join('');
       const body = sec.rows
         .map((r) => `<tr>${r.map((v, i) => {
-          const result = typeof v === 'number' || (i === 1 && sec.header[i] === '수량');
-          const content = v == null ? '-' : i === 2 && ['캐비닛 수량', '해상도'].includes(r[0]) ? cabinetNote(v, r[0]) : esc(typeof v === 'number' ? fmt(v) : v);
-          return `<td${typeof v === 'number' ? ' class="n"' : ''}>${result && v != null ? `<strong>${content}</strong>` : content}</td>`;
+          const result = sec.title === '박스'
+            ? typeof v === 'number' && ['출고수량', '출고박스'].includes(sec.header[i])
+            : typeof v === 'number' || (i === 1 && sec.header[i] === '수량');
+          const content = v == null ? '-' : i === 2 && ['캐비닛 수', '해상도'].includes(r[0]) ? cabinetNote(v, r[0]) : esc(typeof v === 'number' ? fmt(v) : v);
+          const numeric = typeof v === 'number' || (i === 1 && sec.header[i] === '수량');
+          const boxUnit = sec.title === '박스' && sec.header[i] === '출고박스' && v != null ? ' <span class="box-unit">box</span>' : '';
+          return `<td${numeric ? ' class="n"' : ''}>${result && v != null ? `<strong>${content}</strong>` : content}${boxUnit}</td>`;
         }).join('')}</tr>`)
         .join('');
-      return `<div class="sec${sec.title === '박스' ? ' box-section' : ''}"${sec.tab ? ` data-tab="${sec.tab}"` : ''}><h2>${sec.title}</h2><div class="tw"><table><tr>${head}</tr>${body}</table></div></div>`;
+      const columns = `<colgroup>${sec.header.map(() => '<col>').join('')}</colgroup>`;
+      const pitchLabel = sec.title === '박스' ? rep.inputs.find(([label]) => label === '픽셀피치')?.[1] : null;
+      const ledSize = sec.title === '아시바' ? rep.sections.find((section) => section.title === '배선도면 세부내역')?.rows[0]?.[1] : null;
+      const sectionClass = sec.title === '박스' ? ' box-section'
+        : sec.header[1] === '수량' ? ` quantity-section${sec.title === '배선도면 세부내역' ? ' summary-section' : ''}`
+        : ` wiring-section${sec.header.length === 4 ? ' four-columns' : ''}`;
+      const heading = `${esc(sec.title)}${pitchLabel ? ` <span class="box-pitch">${esc(pitchLabel)}</span>` : ''}${ledSize ? ` <span class="box-pitch">LED ${esc(ledSize)} mm</span>` : ''}`;
+      return `<div class="sec${sectionClass}"${sec.tab ? ` data-tab="${sec.tab}"` : ''}><h2>${heading}</h2><div class="tw"><table>${columns}<tr>${head}</tr>${body}</table></div></div>`;
     })
     .join('');
 }
@@ -444,7 +456,7 @@ function init() {
     const n = Number(inp.value);
     const lines = decodeManual(form.ml.value);
     const notice = (msg) => { inp.value = String(old); $('#lineNotice').textContent = msg; $('#lineNotice').hidden = false; };
-    const label = form.tab.value === 'pw' ? '파워' : 'LAN';
+    const label = form.tab.value === 'pw' ? 'POWER' : 'LAN';
     if (!Number.isInteger(n) || n < 1) return notice(`${label} 번호는 1 이상의 정수여야 합니다.`);
     if (n !== old && lines.some((l) => l.n === n)) return notice(`${label} ${n}번은 이미 다른 줄이 사용 중입니다. 다른 번호를 입력해 주세요.`);
     for (const l of lines) if (l.n === old) l.n = n; // 이 LAN의 모든 구간 번호만 바꾼다 (다른 줄은 그대로)

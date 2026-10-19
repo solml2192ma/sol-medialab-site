@@ -135,7 +135,7 @@ test('세로 지그재그에서는 세로로 긴 사각형을 우선한다 (한�
   assert.ok(v.lanLines[0].rect.c0 === 0 && h.lanLines[0].rect.r0 === 0);
 });
 
-test('1000 샘플: 파워는 500×1000을 2장분으로 환산해 20장분 이내로 나눈다', () => {
+test('1000 샘플: POWER는 500×1000을 2장분으로 환산해 20장분 이내로 나눈다', () => {
   const a = make({ widthMm: 10000, heightMm: 3500, cabH: 1000, pitch: '3.9-in' }, 'h-zigzag');
   assert.equal(a.lay.lanLines.length, 4);
   assert.equal(a.lay.powerChains.length, 7);
@@ -159,14 +159,14 @@ test('가로 전체가 한도를 넘으면 선택한 시작점에서 한도 안�
   }
 });
 
-test('파워 16장은 한 포트로 연결한다', () => {
+test('POWER 16장은 한 포트로 연결한다', () => {
   const { lay } = make({ widthMm: 8000, heightMm: 500, pitch: '2.6-in' }, 'h-zigzag');
   assert.equal(lay.powerChains.length, 1);
   assert.equal(lay.powerChains[0].cells.length, 16);
 });
 
 // ---------- 배선 패턴 / 직접 배선 ----------
-test('파워는 방향을 우선하고 가로 24열은 12열씩 균등 배분한다', () => {
+test('POWER는 방향을 우선하고 가로 24열은 12열씩 균등 배분한다', () => {
   const { res } = make({ widthMm: 12000, heightMm: 1500, pitch: '2.6-in' }, 'hz-tl');
   for (const p of PATTERNS) {
     const lay = buildLayout(res, { pattern: p.id, powerPattern: p.id });
@@ -181,7 +181,7 @@ test('파워는 방향을 우선하고 가로 24열은 12열씩 균등 배분한
   }
 });
 
-test('같은 화면에서 LAN는 최소 포트 수, 파워는 방향 우선으로 독립 적용한다', () => {
+test('같은 화면에서 LAN는 최소 포트 수, POWER는 방향 우선으로 독립 적용한다', () => {
   const { res } = make({ widthMm: 6000, heightMm: 3500, pitch: '2.6-in' }, 'hz-tl');
   const horizontal = buildLayout(res, { pattern: 'hz-tl', powerPattern: 'hz-tl' });
   const verticalPower = buildLayout(res, { pattern: 'hz-tl', powerPattern: 'vz-tl' });
@@ -194,7 +194,7 @@ test('같은 화면에서 LAN는 최소 포트 수, 파워는 방향 우선으�
   assert.deepEqual(horizontal.powerChains, verticalLan.powerChains);
 });
 
-test('파워 세로 패턴은 세로 30장을 15장씩 균등 분할한다', () => {
+test('POWER 세로 패턴은 세로 30장을 15장씩 균등 분할한다', () => {
   const { res } = make({ widthMm: 1500, heightMm: 15000, pitch: '3.9-in' }, 'hz-tl');
   for (const p of PATTERNS.filter((p) => p.axis === 'v')) {
     const lay = buildLayout(res, { powerPattern: p.id });
@@ -204,7 +204,7 @@ test('파워 세로 패턴은 세로 30장을 15장씩 균등 분할한다', () 
   }
 });
 
-test('파워 자동: 모든 패턴과 혼합 규격에서 포트당 환산 20장분 이하로 전체를 한 번씩 연결한다', () => {
+test('POWER 자동: 모든 패턴과 혼합 규격에서 포트당 환산 20장분 이하로 전체를 한 번씩 연결한다', () => {
   for (const cabH of [500, 1000]) {
     const { res } = make({ widthMm: 12000, heightMm: 3500, cabH, pitch: '3.9-in' }, 'hz-tl');
     for (const p of PATTERNS) {
@@ -230,7 +230,36 @@ test('500×1000 11장은 자동에서 분할하고 직접 배선에서는 한 �
   assert.equal(manual.powerChains[0].over, false);
 });
 
-test('파워 직접: 20장과 LAN 픽셀 한도를 넘어도 허용하고 LAN 배선은 유지한다', () => {
+test('POWER 직접: 20장분 초과 경고는 배선을 유지하며 경계값·피치·설정 기준을 따른다', () => {
+  for (const pitch of ['1.5-in', '3.9-in']) {
+    const { res } = make({ widthMm: 10500, heightMm: 500, pitch }, 'hz-tl');
+    const segment = { r0: 0, r1: 1, c0: 0, c1: 20, p: 'hz-tl', n: 4 };
+    assert.deepEqual(buildLayout(res, { powerManual: [segment] }).powerLoadWarnings, []);
+    const lay = buildLayout(res, { powerManual: [{ ...segment, c1: 21 }] });
+    assert.deepEqual(lay.powerLoadWarnings, ['POWER 4: 500×500 기준 20장분을 넘었습니다. 배선은 유지됩니다.']);
+    assert.equal(lay.powerChains[0].cells.length, 21);
+    assert.equal(lay.powerChains[0].over, false);
+    assert.deepEqual(buildLayout(res, {}).powerLoadWarnings, []);
+    assert.deepEqual(buildLayout(res, { powerManual: [] }).powerLoadWarnings, []);
+    const cfg = { ...config, power: { ...config.power, autoMaxCabinetsPerPort: 21 } };
+    assert.deepEqual(buildLayout(res, { powerManual: [{ ...segment, c1: 21 }] }, cfg).powerLoadWarnings, []);
+  }
+});
+
+test('POWER 경고는 혼합 규격·동일 포트의 구간을 합산하고 덮어쓴 칸과 빈 칸은 제외한다', () => {
+  const { res } = make({ widthMm: 5500, heightMm: 1500, cabH: 1000, pitch: '3.9-in' }, 'hz-tl');
+  const top = { r0: 0, r1: 1, c0: 0, c1: 1, p: 'hz-tl', n: 7 };
+  const bottom = { r0: 1, r1: 2, c0: 0, c1: 10, p: 'hz-tl', n: 7 };
+  assert.equal(buildLayout(res, { powerManual: [top, bottom] }).powerLoadWarnings.length, 1); // 1 + 10×2
+  const overwritten = buildLayout(res, { powerManual: [top, bottom, { ...top, n: 8 }] });
+  assert.deepEqual(overwritten.powerLoadWarnings, []); // POWER 7=20, POWER 8=1
+  const sparse = buildLayout(res, { powerManual: [top, { ...bottom, c0: 10, c1: 11 }] });
+  assert.deepEqual(sparse.powerLoadWarnings, []); // 사각형 면적 대신 실제 연결한 3장분
+  const fullBottom = { ...bottom, c1: 11 };
+  assert.equal(buildLayout(res, { powerManual: [fullBottom] }).powerLoadWarnings.length, 1); // 1000 규격 11장=22장분
+});
+
+test('POWER 직접: 20장과 LAN 픽셀 한도를 넘어도 허용하고 LAN 배선은 유지한다', () => {
   const { res } = make({ widthMm: 6000, heightMm: 4000, pitch: '1.5-in' }, 'hz-tl');
   const auto = buildLayout(res, { pattern: 'hz-tl' });
   const segment = { r0: 0, r1: 4, c0: 0, c1: 12, p: 'vz-br', n: 7 };
@@ -245,7 +274,7 @@ test('파워 직접: 20장과 LAN 픽셀 한도를 넘어도 허용하고 LAN �
   assert.equal(limitError(buildLayout(res, { manual: [segment] }), 7)?.title, 'LAN 7: 한 포트 한도를 넘습니다.');
 });
 
-test('파워 직접: 같은 번호 이어그리기·겹침·빈 상태는 LAN와 독립적으로 유지한다', () => {
+test('POWER 직접: 같은 번호 이어그리기·겹침·빈 상태는 LAN와 독립적으로 유지한다', () => {
   const { res } = make({ widthMm: 6000, heightMm: 4000, pitch: '3.9-in' }, 'hz-tl');
   const one = { r0: 0, r1: 2, c0: 0, c1: 4, p: 'hz-tl', n: 5 };
   const two = { ...one, r0: 2, r1: 4 };

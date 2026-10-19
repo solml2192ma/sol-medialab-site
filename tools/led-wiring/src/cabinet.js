@@ -13,5 +13,5 @@ export function normalizeCabinetState(state, pixelData, cfg = config) {
   if (state.cab === '') return { ...state }; // 미선택 상태는 자동으로 채우지 않는다.
   const options = cabinetOptions(state.pitch, pixelData, cfg);
   if (options.some((option) => option.value === state.cab)) return { ...state };
-  return { ...state, cab: options[0]?.value ?? '', rows: '' };
+  return { ...state, cab: options.find((option) => option.value === cfg.fallbackCabinet)?.value ?? options[0]?.value ?? '', rows: '' };
 }

@@ -78,7 +78,7 @@ export function renderSvg(lay, opt = {}) {
     out.push(text(c.x + c.w * 0.06, c.y + fs * 1.05, String(c.id), fs, '#37474f', 'start'));
   }
 
-  // LAN·파워: 구간(part)마다 선과 영역 테두리, 구간 사이는 점선으로 연결
+  // LAN·POWER: 구간(part)마다 선과 영역 테두리, 구간 사이는 점선으로 연결
   for (const lines of [showLan ? lay.lanLines : [], showPower ? lay.powerChains : []]) {
     const at = (c) => [c.x + c.w * 0.5, c.y + c.h * (detail ? 0.25 : 0.4)]; // 상세 표시 때는 선을 위로 올려 아래 글자 자리 확보
     lines.forEach((line) => {
@@ -119,7 +119,7 @@ export function renderSvg(lay, opt = {}) {
     for (const c of lay.cells) {
       const rows = [];
       if (showLan && lan.has(c.id)) rows.push(`LAN ${lan.get(c.id).id}`, `${lan.get(c.id).order}번째`);
-      if (showPower && pw.has(c.id)) rows.push(`파워 ${pw.get(c.id).id}`, `${pw.get(c.id).order}번째`);
+      if (showPower && pw.has(c.id)) rows.push(`POWER ${pw.get(c.id).id}`, `${pw.get(c.id).order}번째`);
       if (showLan) rows.push(`가로${fmtPx(c.pw)}px`, `세로${fmtPx(c.ph)}px`);
       const fs = Math.min(c.w * 0.165, c.h * 0.165, (c.h * 0.72) / (rows.length * 1.1));
       rows.forEach((s, i) => {
@@ -133,7 +133,7 @@ export function renderSvg(lay, opt = {}) {
   // 범례
   const ly = marginT + H + u * 15;
   let row = 0;
-  out.push(text(marginL, ly, `LED ${lay.cols}×${lay.rows}열·행${showLan ? ` / LAN ${lay.lanLines.length}줄` : ''}${showPower ? ` / 파워 ${lay.powerChains.length}포트` : ''}`, u * 2.8, '#222', 'start', 'bold'));
+  out.push(text(marginL, ly, `LED ${lay.cols}×${lay.rows}열·행${showLan ? ` / LAN ${lay.lanLines.length}줄` : ''}${showPower ? ` / POWER ${lay.powerChains.length}포트` : ''}`, u * 2.8, '#222', 'start', 'bold'));
   if (showLan) {
     lay.lanLines.forEach((line, i) => {
       const col = i % 4;
@@ -153,7 +153,7 @@ export function renderSvg(lay, opt = {}) {
       const x = marginL + col * (vbW - marginL - marginR) / 4;
       const y = ly + u * 5 * (base + r + 1);
       out.push(`<rect x="${f(x)}" y="${f(y - u * 2)}" width="${f(u * 3.5)}" height="${f(u * 1.2)}" fill="${LAN_COLORS[(ch.id - 1) % LAN_COLORS.length]}"/>`);
-      out.push(text(x + u * 4.5, y - u * 0.3, `파워 ${ch.id}: ${ch.cells.length}장 (${ch.cells[0].id}→${ch.cells[ch.cells.length - 1].id})`, u * 2.2, '#222', 'start'));
+      out.push(text(x + u * 4.5, y - u * 0.3, `POWER ${ch.id}: ${ch.cells.length}장 (${ch.cells[0].id}→${ch.cells[ch.cells.length - 1].id})`, u * 2.2, '#222', 'start'));
       row = base + r + 1;
     });
   }
@@ -169,13 +169,13 @@ function text(x, y, s, size, fill, anchor = 'start', weight = 'normal') {
 }
 
 /**
- * 내보내기용: 위에 LAN 도면, 아래에 파워 도면을 세로로 쌓은 SVG.
+ * 내보내기용: 위에 LAN 도면, 아래에 POWER 도면을 세로로 쌓은 SVG.
  * sized=false 이면 width/height 없이 viewBox만 둔다 (인쇄 화면에서 CSS로 크기를 맞출 때).
  */
 export function renderCombined(lay, opt = {}) {
   const { title = '', sized = true, detail = false } = opt;
   const a = renderSvg(lay, { showLan: true, showPower: false, detail, title: `${title}${title ? ' — ' : ''}LAN 배선` });
-  const b = renderSvg(lay, { showLan: false, showPower: true, detail, title: `${title}${title ? ' — ' : ''}파워 배선` });
+  const b = renderSvg(lay, { showLan: false, showPower: true, detail, title: `${title}${title ? ' — ' : ''}POWER 배선` });
   const dim = (s) => {
     const m = s.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
     return [Number(m[1]), Number(m[2])];

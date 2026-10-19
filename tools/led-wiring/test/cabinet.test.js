@@ -38,7 +38,7 @@ test('제한된 피치로 변경하거나 저장 상태를 복원하면 다른 �
 
 test('p3.9 인도어/아웃도어는 표준 두 규격과 사용자 행 배치를 유지한다', () => {
   for (const pitch of ['3.9-in', '3.9-out']) {
-    assert.deepEqual(cabinetOptions(pitch, pixel).map((option) => option.value), ['500x500', '500x1000']);
+    assert.deepEqual(cabinetOptions(pitch, pixel).map((option) => option.value), ['500x1000', '500x500']);
     for (const cab of ['500x500', '500x1000']) {
       const state = { pitch, cab, rows: '500-1000-1000' };
       assert.deepEqual(normalizeCabinetState(state, pixel), state);

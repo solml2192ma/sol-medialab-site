@@ -1,4 +1,4 @@
-// 격자 배치 + LAN 줄 나누기 + 파워 체인 계산 (순수 함수, DOM 없음)
+// 격자 배치 + LAN 줄 나누기 + POWER 체인 계산 (순수 함수, DOM 없음)
 import { config as defaultConfig } from './config.js';
 
 // 배선 패턴: 시작 모서리(top/left) × 진행 축(h=가로, v=세로) × 지그재그 (8종)
@@ -117,7 +117,7 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
   // 1포트 한도는 배선 모양과 무관하게 사각형으로 환산해 계산하므로, 줄 하나는 항상 직사각형 영역이다.
   const limit = cfg.lan.maxPixelsPerPortByPitch?.[res.pitchInfo.pitch] ?? cfg.lan.maxPixelsPerPort;
   const maxCabs = cfg.lan.maxCabinetsPerLine ?? Infinity;
-  // 파워 내부 경로는 픽셀 대신 500×500 환산 장수를 사용한다.
+  // POWER 내부 경로는 픽셀 대신 500×500 환산 장수를 사용한다.
   const rowPx = rowDefs.map((rd) => opt.powerOnly
     ? (cabW / cfg.baseCabinetMm) * (rd.h / cfg.baseCabinetMm)
     : rd.px.w * rd.px.h);
@@ -164,7 +164,7 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
     uncovered = cells.filter((c) => !owner.has(c.id)).map((c) => c.id);
     if (uncovered.length) warnings.push(`배선이 연결되지 않은 캐비닛이 ${uncovered.length}장 있습니다.`);
   } else {
-    // LAN는 포트 수 최소화 우선, 파워는 방향 우선·균등 분할로 각각 계산한다.
+    // LAN는 포트 수 최소화 우선, POWER는 방향 우선·균등 분할로 각각 계산한다.
     const rects = opt.powerOnly
       ? partitionByDirection(rowPx, cols, limit, maxCabs, pattern)
       : partitionLan(rowPx, cols, limit, maxCabs, pattern);
@@ -175,7 +175,7 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
   }
 
   if (opt.powerOnly) return { lanLines, uncovered, alive };
-  // 파워는 픽셀과 무관하다. 자동은 500×500 환산 20장 이하, 직접 그리기는 제한 없음.
+  // POWER는 픽셀과 무관하다. 자동은 500×500 환산 20장 이하, 직접 그리기는 제한 없음.
   const powerPattern = patternOf(opt.powerPattern ?? cfg.defaultDirection).id;
   const powerManual = Array.isArray(opt.powerManual);
   const power = buildLayout(res, { pattern: powerPattern, manual: opt.powerManual, powerOnly: true }, {
@@ -183,8 +183,14 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
     lan: { maxPixelsPerPort: powerManual ? Infinity : cfg.power.autoMaxCabinetsPerPort, maxPixelsPerPortByPitch: {}, maxCabinetsPerLine: Infinity },
   });
   const powerChains = power.lanLines.map((line) => ({ ...line, over: false }));
-  if (power.uncovered.length) warnings.push(`파워 배선이 연결되지 않은 캐비닛이 ${power.uncovered.length}장 있습니다.`);
-  return { pattern: pattern.id, manual: Array.isArray(opt.manual), cells, rows, cols, totalW, totalH, lanLines, powerChains, uncovered, alive, limit, maxCabs, warnings, powerPattern, powerManual, powerUncovered: power.uncovered, powerAlive: power.alive };
+  const powerLoadWarnings = powerManual ? powerChains.flatMap((line) => {
+    const load = line.cells.reduce((sum, cell) => sum + cell.w * cell.h / cfg.baseCabinetMm ** 2, 0);
+    return load > cfg.power.autoMaxCabinetsPerPort
+      ? [`POWER ${line.id}: 500×500 기준 ${cfg.power.autoMaxCabinetsPerPort}장분을 넘었습니다. 배선은 유지됩니다.`]
+      : [];
+  }) : [];
+  if (power.uncovered.length) warnings.push(`POWER 배선이 연결되지 않은 캐비닛이 ${power.uncovered.length}장 있습니다.`);
+  return { pattern: pattern.id, manual: Array.isArray(opt.manual), cells, rows, cols, totalW, totalH, lanLines, powerChains, uncovered, alive, limit, maxCabs, warnings, powerPattern, powerManual, powerLoadWarnings, powerUncovered: power.uncovered, powerAlive: power.alive };
 }
 
 const range = (a, b) => Array.from({ length: b - a }, (_, i) => a + i); // [a, b)

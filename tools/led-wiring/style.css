@@ -52,12 +52,30 @@ table { width:100%; border-collapse:collapse; font-size:14px; margin-bottom:16px
 th, td { text-align:left; padding:7px 8px; border-bottom:1px solid var(--line); } th { color:var(--mute); font-weight:600; font-size:13px; }
 td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
 td:last-child:not(.n) { white-space:pre-line; }
+.summary-section td strong, .box-section td strong { color:var(--brand); }
 .cabinet-note { display:inline-grid; gap:4px 3px; align-items:baseline; white-space:nowrap; font-variant-numeric:tabular-nums; }
 .quantity-note { grid-template-columns:repeat(8,max-content); }
 .resolution-note { grid-template-columns:repeat(4,max-content); }
 .cabinet-note .note-number { text-align:right; }
-.cabinet-note .note-cabinet { padding-left:9px; }
+.cabinet-note .note-cabinet { grid-column:1 / -1; color:var(--mute); }
+.quantity-section table, .wiring-section table { table-layout:fixed; }
+.quantity-section col:first-child, .wiring-section col:first-child { width:25%; }
+.quantity-section col:nth-child(2), .wiring-section col:nth-child(2) { width:27%; }
+.quantity-section col:nth-child(3), .wiring-section col:nth-child(3) { width:48%; }
+.wiring-section.four-columns col:nth-child(2) { width:19%; }
+.wiring-section.four-columns col:nth-child(3), .wiring-section.four-columns col:nth-child(4) { width:28%; }
+.quantity-section :is(th,td):nth-child(2), .wiring-section :is(th,td):nth-child(2) { background:rgba(100,112,125,.06); border-left:1px solid var(--line); border-right:1px solid var(--line); }
+.quantity-section :is(th,td):nth-child(3), .wiring-section :is(th,td):nth-child(3) { padding-left:14px; }
 .box-section th, .box-section td { white-space:nowrap; }
+.box-section th { font-weight:400; }
+.box-pitch { margin-left:10px; color:var(--mute); font-size:.9em; font-weight:400; }
+.box-unit { color:var(--ink); font-weight:400; }
+.box-section table { table-layout:fixed; min-width:500px; }
+.box-section col { width:18%; }
+.box-section col:first-child { width:16%; }
+.box-section col:is(:nth-child(3),:nth-child(5),:nth-child(7)) { width:4%; }
+.box-section :is(th,td).n { text-align:center; }
+.box-section td:not(:first-child) { text-align:center; }
 .box-section :is(th,td):is(:nth-child(3),:nth-child(5),:nth-child(7)) { padding-left:2px; padding-right:2px; text-align:center; color:var(--mute); }
 .tw { overflow-x:auto; }
 @media screen {
@@ -68,6 +86,7 @@ td:last-child:not(.n) { white-space:pre-line; }
   #tables th, #tables td { padding:5px 6px; vertical-align:top; }
   #tables th { font-size:12px; }
   #tables td.n, #tables th.n { white-space:nowrap; }
+  #tables .summary-section tr:nth-child(2) td { white-space:normal; overflow-wrap:anywhere; }
   #tables td:last-child:not(.n) { overflow-wrap:anywhere; }
 }
 @media (min-width: 900px) { main { grid-template-columns:320px minmax(0,1fr); } #tables { grid-column:1 / -1; } }

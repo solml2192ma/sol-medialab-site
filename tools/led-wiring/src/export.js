@@ -18,7 +18,7 @@ export function fileBase(ctx) {
   return `LED배선도_${input.widthMm}x${input.heightMm}_${ctx.res.pitchInfo.id}`;
 }
 
-// 위: LAN 도면 / 아래: 파워 도면
+// 위: LAN 도면 / 아래: POWER 도면
 export async function exportPng(ctx) {
   // 칸이 충분히 크면(가로 3200px 기준) 칸 안에 LAN 번호·순서·해상도도 함께 적는다
   const svg = renderCombined(ctx.lay, { title: ctx.title, detail: detailFor(ctx.lay, 3200) });
@@ -48,8 +48,12 @@ export function exportXlsx(ctx) {
   for (const s of sections) {
     rows.push([{ v: s.title, bold: true }]);
     rows.push(s.header.map((h) => ({ v: h, fill: true })));
-    rows.push(...s.rows.map((row) => row.map((v, i) =>
-      typeof v === 'number' || (i === 1 && s.header[i] === '수량') ? { v, bold: true } : v)));
+    rows.push(...s.rows.map((row) => row.map((v, i) => {
+      const bold = s.title === '박스'
+        ? typeof v === 'number' && ['출고수량', '출고박스'].includes(s.header[i])
+        : typeof v === 'number' || (i === 1 && s.header[i] === '수량');
+      return bold ? { v, bold: true } : v;
+    })));
     rows.push([]);
   }
   const bytes = makeXlsx(rows, { sheetName: '자재표', widths: [24, 18, 22, 14, 14] });

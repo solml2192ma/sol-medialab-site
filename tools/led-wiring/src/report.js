@@ -1,7 +1,12 @@
 // 자재 수량표 데이터 (화면 표 / 엑셀 / 인쇄가 같은 데이터를 쓴다)
 import { patternOf } from './layout.js';
+import { config } from './config.js';
 
 const mm = (n) => Number(n).toLocaleString('ko-KR');
+const cabinetOrder = (size) => {
+  const index = config.cabinetOptions.findIndex((option) => option.value === size);
+  return index < 0 ? config.cabinetOptions.length : index;
+};
 
 /** @returns {{inputs: Array<[string, string|number]>, sections: Array<{title: string, header: string[], rows: Array<Array<string|number|null>>}>}} */
 export function buildReport(res, lay, input) {
@@ -11,7 +16,7 @@ export function buildReport(res, lay, input) {
     { count: res.counts.main, rows: g.mainRows, cabinet: g.mainCab, pixels: res.pixel.mainCab },
     { count: res.counts.filler, rows: g.fillerRows, cabinet: g.fillerCab, pixels: res.pixel.fillerCab },
   ].filter((entry) => entry.count > 0)
-    .sort((a, b) => a.cabinet.h - b.cabinet.h);
+    .sort((a, b) => cabinetOrder(`${a.cabinet.w}x${a.cabinet.h}`) - cabinetOrder(`${b.cabinet.w}x${b.cabinet.h}`));
   const cabinetCounts = cabinetTypes
     .map(({ count, rows, cabinet }) => `가로${g.cols} × 세로${rows} = ${count} (캐비닛 ${cabinet.w}×${cabinet.h}mm)`)
     .join('\n');
@@ -23,24 +28,25 @@ export function buildReport(res, lay, input) {
     ['캐비닛', `${input.cabW} × ${input.cabH} mm`],
     ['픽셀피치', res.pitchInfo.label],
     ['LAN 배선', `${lay.manual ? '직접 배선' : '자동 배선'} / ${patternOf(lay.pattern).label}`],
-    ['파워 배선', `${lay.powerManual ? '직접 배선' : '자동 배선'} / ${patternOf(lay.powerPattern).label}`],
+    ['POWER 배선', `${lay.powerManual ? '직접 배선' : '자동 배선'} / ${patternOf(lay.powerPattern).label}`],
   ];
   const sections = [
     {
       title: '배선도면 세부내역',
       header: ['구분', '수량', '비고'],
       rows: [
-        ['캐비닛 수량', res.counts.total, cabinetCounts],
+        [res.pitchInfo.label, `${mm(input.widthMm)} × ${mm(input.heightMm)} × ${res.pitchInfo.thicknessMm ?? '-'}`, 'mm (가로 × 세로 × 두께)'],
+        ['캐비닛 수', res.counts.total, cabinetCounts],
         ['해상도', `${mm(res.pixel.resolution.w)} × ${mm(res.pixel.resolution.h)}`, cabinetResolutions],
-        ['LAN포트수', lay.lanLines.length, ''],
-        ['파워포트수', lay.powerChains.length, ''],
+        ['LAN포트 수', lay.lanLines.length, ''],
+        ['POWER 포트 수', lay.powerChains.length, ''],
       ],
     },
     {
       title: '박스',
-      header: ['캐비닛', '필요수량', '', '출고수량', '', '1박스수량', '', '출고박스'],
+      header: ['캐비닛', '필요수량', '<', '출고수량', '=', '1박스수량', '×', '출고박스'],
       rows: res.boxes.filter((b) => b.need > 0)
-        .sort((a, b) => Number(a.cabinet.split('x')[1]) - Number(b.cabinet.split('x')[1]))
+        .sort((a, b) => cabinetOrder(a.cabinet) - cabinetOrder(b.cabinet))
         .map((b) => [b.cabinet.replace('x', '×'), b.need, b.packQty == null ? '' : b.need < b.packQty ? '<' : '=', b.packQty, b.packQty == null ? '' : '=', b.perBox, b.packQty == null ? '' : '×', b.boxes]),
     },
     {
@@ -62,10 +68,10 @@ export function buildReport(res, lay, input) {
       rows: lay.lanLines.map((l) => [`LAN ${l.id}`, l.cells.length, `${l.cells[0].id} → ${l.cells[l.cells.length - 1].id}`, Math.round(l.pixels)]),
     },
     {
-      title: '파워 포트별 구성',
+      title: 'POWER 포트별 구성',
       tab: 'pw',
       header: ['포트', '캐비닛 수', '시작 → 끝 번호'],
-      rows: lay.powerChains.map((c) => [`파워 ${c.id}`, c.cells.length, `${c.cells[0].id} → ${c.cells[c.cells.length - 1].id}`]),
+      rows: lay.powerChains.map((c) => [`POWER ${c.id}`, c.cells.length, `${c.cells[0].id} → ${c.cells[c.cells.length - 1].id}`]),
     },
   ];
   return { inputs, sections };
