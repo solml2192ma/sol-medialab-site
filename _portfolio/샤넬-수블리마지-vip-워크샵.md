@@ -1,13 +1,14 @@
 ---
+slug: 샤넬수블리마지vip워크샵
 title: 샤넬 수블리마지 VIP 워크샵
 post_date: 2026-10-19T15:54:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 풀만 앰배서더 서울 이스트폴
-cover_image: /assets/img/portfolio/04_영상송출.webp
+cover_image: /assets/img/portfolio/mm054acxc4.webp
 gallery:
-  - /assets/img/portfolio/07_측면전경.webp
+  - /assets/img/portfolio/2bfew8n621.webp
 ---
 
 ## 프로젝트 개요
