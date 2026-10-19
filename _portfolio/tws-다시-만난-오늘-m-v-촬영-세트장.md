@@ -1,7 +1,7 @@
 ---
+title: TWS - 다시 만난 오늘 M/V 촬영 세트장
 slug: tws다시만난오늘mv촬영세트장
 post_date: 2026-08-20T13:06:57+09:00
-title: TWS - 다시 만난 오늘 M/V 촬영 세트장
 overview_category:
   - 방송·촬영
 client: ''
@@ -52,4 +52,4 @@ P3는 픽셀 간격이 3mm로 촘촘해, 격자의 주기가 센서 화소와 �
 
 뮤직비디오·방송·광고 촬영 현장에 맞춰 패널 선정부터 프로세싱, 현장 세팅을 진행 합니다.
 
-[https://youtu.be/w7oZ9zoBemM?si=np5U2erPclX7ER1e](https://youtu.be/w7oZ9zoBemM?si=np5U2erPclX7ER1e)
+[https://youtu.be/w7oZ9zoBemM?si=YTCmXtgGokPhUeLO](https://youtu.be/w7oZ9zoBemM?si=YTCmXtgGokPhUeLO)
