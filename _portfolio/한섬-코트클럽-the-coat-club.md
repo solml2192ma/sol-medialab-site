@@ -1,14 +1,15 @@
 ---
+slug: 한섬코트클럽thecoatclub
 title: 한섬 코트클럽(THE COAT CLUB)
 post_date: 2026-10-19T12:30:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수
-cover_image: /assets/img/portfolio/08_콘텐츠송출.webp
+cover_image: /assets/img/portfolio/999te3tptx.webp
 gallery:
-  - /assets/img/portfolio/02_야간점등확인1.webp
-  - /assets/img/portfolio/07_측면콘텐츠.webp
+  - /assets/img/portfolio/9k9io0s2jn.webp
+  - /assets/img/portfolio/0920d9ec61.webp
 ---
 
 ## 프로젝트 개요
