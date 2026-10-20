@@ -12,6 +12,18 @@ import { renderSvg, renderCombined, detailFor } from '../src/render.js';
 
 const pixel = JSON.parse(readFileSync(new URL('../data/pixel.json', import.meta.url)));
 
+test('내보내기 자재표는 베이스·단 높이와 바닥부터 LED 시작·상단 높이를 함께 보존한다', () => {
+  const input={widthMm:7000,heightMm:3000,cabW:500,cabH:500,pitch:'4.8-out',baseEnabled:true,stageEnabled:true,stageHeightMm:600};
+  const res=calc(input,pixel);
+  const report=buildReport(res,buildLayout(res,{}),input);
+  const values=Object.fromEntries(report.inputs);
+  assert.equal(values['베이스 높이'],'40 mm');
+  assert.equal(values['LED 단 높이'],'600 mm');
+  assert.equal(values['바닥부터 LED 시작 높이'],'640 mm');
+  assert.equal(values['바닥부터 LED 상단 높이'],'3,640 mm');
+  assert.equal(report.sections.find(s=>s.title==='아시바').rows[0][1],'5,520 × 3,425 × 900 mm');
+});
+
 test('자재표 데이터: 8000×4000 / 2.6', () => {
   const input = { widthMm: 8000, heightMm: 4000, cabW: 500, cabH: 500, pitch: 2.6 };
   const res = calc(input, pixel);
@@ -36,6 +48,22 @@ test('세부내역 첫 행에 선택 제품과 가로·세로·두께를 표시�
     const supplied = { ...res, pitchInfo: { ...res.pitchInfo, thicknessMm: 88 } };
     assert.equal(buildReport(supplied, buildLayout(supplied, {}), input).sections[0].rows[0][1], '2,000 × 1,000 × 88');
   }
+});
+
+test('아시바 크기는 가로·높이·깊이를 mm로 함께 표시한다', () => {
+  const input = { widthMm: 6000, heightMm: 3500, cabW: 500, cabH: 500, pitch: '3.9-in' };
+  const res = calc(input, pixel);
+  const section = buildReport(res, buildLayout(res, {}), input).sections.find((s) => s.title === '아시바');
+  assert.deepEqual(section.rows[0], ['크기', '5,520 × 3,425 × 900 mm', '3칸 × 2단 × 1폭']);
+  assert.deepEqual(section.rows.find((row) => row[0] === '핀'), ['핀', 8, '핀높이 25mm']);
+  assert.deepEqual(section.rows.find((row) => row[0] === '아시바(기둥)'), ['아시바(기둥)', 8, '높이 1700mm']);
+  assert.ok(!section.rows.some((row) => row[0] === '깊이'));
+  const shortInput = { ...input, heightMm: 3000 };
+  const shortRes = calc(shortInput, pixel);
+  const shortSection = buildReport(shortRes, buildLayout(shortRes, {}), shortInput).sections.find((s) => s.title === '아시바');
+  assert.deepEqual(shortSection.rows[0], ['크기', '5,520 × 2,625 × 900 mm', '3칸 × 1.5단 × 1폭']);
+  assert.deepEqual(shortSection.rows.find((row) => row[0] === '아시바(짧은기둥)'), ['아시바(짧은기둥)', 4, '높이 900mm']);
+  assert.doesNotMatch(JSON.stringify(shortSection), /짧은아시바|\d(?:\.\d+)?m(?!m)/);
 });
 
 test('박스 표는 1000 규격을 먼저 표시하고 출고수량 계산식을 보여 준다', () => {
@@ -123,10 +151,10 @@ test('내보내기 도면: 위 LAN / 아래 POWER를 세로로 쌓는다', () =>
   assert.ok(!/<svg [^>]*width=/.test(renderCombined(lay, { sized: false }).split('>')[0]));
 });
 
-test('엑셀 자재표: LAN 줄별 구성 아래에 POWER 포트별 구성', () => {
+test('엑셀 자재표: LAN포트 구성 아래에 POWER포트 구성', () => {
   const { res, lay, input } = sample();
   const titles = buildReport(res, lay, input).sections.map((s) => s.title);
-  assert.ok(titles.indexOf('LAN 줄별 구성') < titles.indexOf('POWER 포트별 구성'));
+  assert.ok(titles.indexOf('LAN포트 구성') < titles.indexOf('POWER포트 구성'));
   const pw = buildReport(res, lay, input).sections.find((s) => s.title.startsWith('POWER'));
   assert.equal(pw.rows.length, lay.powerChains.length);
   assert.deepEqual(pw.rows[0], ['POWER 1', 16, '1 → 16']);
@@ -137,8 +165,9 @@ test('칸 안 상세 정보: 확대했을 때만(detail) 항목을 줄 나눠 �
   const off = renderSvg(lay, { showLan: true, showPower: false, detail: false });
   const on = renderSvg(lay, { showLan: true, showPower: false, detail: true });
   assert.ok(!off.includes('번째') && !off.includes('가로192px'));
-  // 한 줄에 하나씩: LAN 번호 / 순서 / 가로 / 세로
-  for (const s of ['>LAN 1<', '>1번째<', '>16번째<', '>가로192px<', '>세로192px<']) assert.ok(on.includes(s), s);
+  // 한 줄에 하나씩: LAN 번호 / 순서. 가로·세로 픽셀은 표시하지 않는다.
+  for (const s of ['>LAN 1<', '>1번째<', '>16번째<']) assert.ok(on.includes(s), s);
+  assert.doesNotMatch(on, /(?:가로|세로)[\d.,]+px|px</);
   const pw = renderSvg(lay, { showLan: false, showPower: true, detail: true });
   for (const s of ['>POWER 1<', '>1번째<', '>16번째<']) assert.ok(pw.includes(s), s);
   assert.ok(!pw.includes('px<'));

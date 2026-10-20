@@ -6,6 +6,7 @@ import { renderSvg, renderCombined, detailFor, LAN_COLORS } from './render.js';
 import { buildReport } from './report.js';
 import { encodeRows, decodeRows, sameRows, movePlan, splitRow, mergeRows, canMerge } from './rowplan.js';
 import { exportPng, exportXlsx, printPdf } from './export.js';
+import { scaffoldViewUrl } from './scaffold-view-data.js';
 
 const $ = (s) => document.querySelector(s);
 const form = $('#form');
@@ -13,7 +14,9 @@ const DEFAULTS = {
   ...config.emptyInputs,
   pat: config.defaultDirection, mode: 'auto', ml: '',
   powerPat: config.defaultDirection, powerMode: 'auto', powerMl: '', powerCur: '',
-  topPlank: '1', tab: 'lan', rows: '',
+  topPlank: config.scaffold.topPlankDefault ? '1' : '0', tab: 'lan', rows: '',
+  baseEnabled: config.scaffold.baseEnabledDefault ? '1' : '0',
+  stageEnabled: config.scaffold.stageEnabledDefault ? '1' : '0',
 };
 const STORE = 'led-wiring:v1';
 let pixelData;
@@ -42,6 +45,8 @@ function readState() {
   const fd = new FormData(form);
   for (const k of Object.keys(DEFAULTS)) if (fd.has(k)) s[k] = fd.get(k);
   s.topPlank = form.topPlank.checked ? '1' : '0';
+  s.baseEnabled = form.baseEnabled.checked ? '1' : '0';
+  s.stageEnabled = form.stageEnabled.checked ? '1' : '0';
   return swapWiring(s);
 }
 
@@ -54,6 +59,8 @@ function writeState(s) {
     if (el && el.type !== 'checkbox') el.value = v;
   }
   form.topPlank.checked = s.topPlank !== '0';
+  form.baseEnabled.checked = s.baseEnabled === '1';
+  form.stageEnabled.checked = s.stageEnabled === '1';
 }
 
 function syncCabinetOptions(s) {
@@ -95,6 +102,7 @@ function toInput(s) {
     boxQty: custom ? num(s.boxQty) : null,
     bays: num(s.bays), tiers: num(s.tiers), topPlank: s.topPlank !== '0',
     rowPlan: decodeRows(s.rows),
+    baseEnabled: s.baseEnabled === '1', stageEnabled: s.stageEnabled === '1', stageHeightMm: num(s.stageHeight),
   };
 }
 
@@ -174,7 +182,7 @@ function render() {
   bindDraw($('#canvas svg'), lay, activeWiring(s));
   renderLineList(lay, activeWiring(s));
   const rep = buildReport(res, lay, input);
-  $('#tables').innerHTML = tables(rep);
+  $('#tables').innerHTML = tables(rep, res.scaffold, input);
   $('#printHead').innerHTML = `<div class="print-brand"><h1>LED 배선도면</h1>${document.querySelector('.company-brand').outerHTML}</div><p>${rep.inputs.map(([k, v]) => `${k}: ${esc(v)}`).join(' / ')}</p>`;
 }
 
@@ -371,20 +379,36 @@ function cabinetNote(value, label) {
     : `<span class="note-number">${esc(m[1])}</span><span>×</span><span class="note-number">${esc(m[2])}&nbsp;px</span><span class="note-cabinet">${esc(m[3])}</span>`).join('');
   return `<span class="cabinet-note ${quantity ? 'quantity-note' : 'resolution-note'}">${content}</span>`;
 }
-function tables(rep) {
+function scaffoldNote(value) {
+  const match = String(value).match(/^(높이|핀높이) (.+)$/);
+  return match
+    ? `<span class="scaffold-note"><span class="scaffold-note-label">${[...match[1]].map((char) => `<span>${esc(char)}</span>`).join('')}</span><span>${esc(match[2])}</span></span>`
+    : esc(value);
+}
+function tables(rep, scaffold, input) {
   return rep.sections
     .map((sec) => {
       const numCol = (i) => sec.rows.some((r) => typeof r[i] === 'number');
-      const head = sec.header.map((h, i) => `<th${numCol(i) ? ' class="n"' : ''}>${esc(h)}</th>`).join('');
+      const head = sec.header.map((h, i) => {
+        const label = sec.title === '박스'
+          ? esc(h).replace(/^(필요|출고|1박스)(수량|박스)$/, '<span class="box-heading-part">$1</span><wbr><span class="box-heading-part">$2</span>') : esc(h);
+        return `<th${numCol(i) ? ' class="n"' : ''}>${label}</th>`;
+      }).join('');
       const body = sec.rows
         .map((r) => `<tr>${r.map((v, i) => {
           const result = sec.title === '박스'
             ? typeof v === 'number' && ['출고수량', '출고박스'].includes(sec.header[i])
             : typeof v === 'number' || (i === 1 && sec.header[i] === '수량');
-          const content = v == null ? '-' : i === 2 && ['캐비닛 수', '해상도'].includes(r[0]) ? cabinetNote(v, r[0]) : esc(typeof v === 'number' ? fmt(v) : v);
+          const plankOption = sec.title === '아시바' && r[0] === '발판' && i === 2;
+          const content = plankOption
+            ? `<label class="chk plank-option"><input type="checkbox" id="topPlankToggle"${scaffold.topPlank ? ' checked' : ''}> 상단발판포함</label>`
+            : v == null ? '-' : sec.title === '박스' && i === 0 ? esc(v).replace('×', '×<wbr>')
+            : sec.title === '아시바' && i === 2 ? scaffoldNote(v)
+            : i === 2 && ['캐비닛 수', '해상도'].includes(r[0]) ? cabinetNote(v, r[0]) : esc(typeof v === 'number' ? fmt(v) : v);
           const numeric = typeof v === 'number' || (i === 1 && sec.header[i] === '수량');
           const boxUnit = sec.title === '박스' && sec.header[i] === '출고박스' && v != null ? ' <span class="box-unit">box</span>' : '';
-          return `<td${numeric ? ' class="n"' : ''}>${result && v != null ? `<strong>${content}</strong>` : content}${boxUnit}</td>`;
+          const scaffoldCount = sec.title === '아시바' && i === 1 && typeof v === 'number';
+          return `<td${numeric ? ` class="n${scaffoldCount ? ' scaffold-count' : ''}"` : ''}>${result && v != null ? `<strong>${content}</strong>` : content}${boxUnit}</td>`;
         }).join('')}</tr>`)
         .join('');
       const columns = `<colgroup>${sec.header.map(() => '<col>').join('')}</colgroup>`;
@@ -394,7 +418,21 @@ function tables(rep) {
         : sec.header[1] === '수량' ? ` quantity-section${sec.title === '배선도면 세부내역' ? ' summary-section' : ''}`
         : ` wiring-section${sec.header.length === 4 ? ' four-columns' : ''}`;
       const heading = `${esc(sec.title)}${pitchLabel ? ` <span class="box-pitch">${esc(pitchLabel)}</span>` : ''}${ledSize ? ` <span class="box-pitch">LED ${esc(ledSize)} mm</span>` : ''}`;
-      return `<div class="sec${sectionClass}"${sec.tab ? ` data-tab="${sec.tab}"` : ''}><h2>${heading}</h2><div class="tw"><table>${columns}<tr>${head}</tr>${body}</table></div></div>`;
+      const installationInvalid = input.stageEnabled && (input.stageHeightMm == null || !Number.isFinite(input.stageHeightMm) || input.stageHeightMm < 0);
+      const installationControls = sec.title === '아시바' ? `<div class="scaffold-installation">
+        <label class="chk"><input type="checkbox" id="baseToggle"${scaffold.baseEnabled ? ' checked' : ''}> 베이스 높이(${fmt(config.scaffold.baseHeightMm)}mm)</label>
+        <div class="stage-height-group"><label class="chk"><input type="checkbox" id="stageToggle"${scaffold.stageEnabled ? ' checked' : ''}> LED단 높이(mm)</label>
+        <input type="number" id="stageHeightInput" aria-label="LED단 높이(mm)" min="0" step="1" inputmode="numeric" value="${input.stageHeightMm ?? ''}"${scaffold.stageEnabled ? '' : ' disabled'} aria-invalid="${installationInvalid}"></div>
+        <p class="installation-height">${installationInvalid ? 'LED 단 높이를 입력해 주세요.' : `LED 설치 시작 높이 ${fmt(scaffold.ledBottomMm)}mm · 바닥부터 LED 상단 ${fmt(scaffold.ledTopMm)}mm`}</p>
+      </div>` : '';
+      const scaffoldLink = sec.title === '아시바' && scaffold.bays > 0 && scaffold.tiers > 0 && !installationInvalid
+        ? `<a class="scaffold-view-link" href="${scaffoldViewUrl(input, scaffold)}" target="led-scaffold-view">3D도면 자세히보기</a>` : '';
+      const sectionHeading = sec.title === '아시바'
+        ? `<div class="scaffold-section-heading"><h2>${heading}</h2><span class="scaffold-mobile-link">${scaffoldLink}</span></div>`
+        : `<h2>${heading}</h2>`;
+      const preview = sec.title === '아시바' && scaffoldLink
+        ? `<div class="sec scaffold-preview"><div class="scaffold-preview-heading"><h2>아시바 3D 미리보기</h2>${scaffoldLink}</div><iframe title="아시바 3D 미리보기" src="${scaffoldViewUrl(input, scaffold)}&preview=1" loading="lazy"></iframe><p>드래그해서 회전할 수 있습니다.</p></div>` : '';
+      return `<div class="sec${sectionClass}"${sec.tab ? ` data-tab="${sec.tab}"` : ''}>${sectionHeading}${installationControls}<div class="tw"><table>${columns}<tr>${head}</tr>${body}</table></div></div>${preview}`;
     })
     .join('');
 }
@@ -422,6 +460,21 @@ function init() {
   form.addEventListener('input', (e) => { if (!inList(e)) update(); });
   form.addEventListener('change', (e) => { if (!inList(e)) update(); });
   form.addEventListener('focusout', (e) => { if (['w', 'h'].includes(e.target.name)) update(); });
+  $('#tables').addEventListener('input', (e) => {
+    if (e.target.id !== 'stageHeightInput') return;
+    form.elements.namedItem('stageHeight').value = e.target.value;
+    saveState(readState());
+  });
+  $('#tables').addEventListener('focusout', (e) => {
+    if (e.target.id === 'stageHeightInput') update();
+  });
+  $('#tables').addEventListener('change', (e) => {
+    const checkboxFields = { topPlankToggle: 'topPlank', baseToggle: 'baseEnabled', stageToggle: 'stageEnabled' };
+    if (checkboxFields[e.target.id]) form.elements[checkboxFields[e.target.id]].checked = e.target.checked;
+    else if (e.target.id === 'stageHeightInput') form.elements.namedItem('stageHeight').value = e.target.value;
+    else return;
+    update();
+  });
   $('#rowPlanList').addEventListener('click', (e) => {
     const b = e.target.closest('button[data-act]');
     if (!b || !last) return;

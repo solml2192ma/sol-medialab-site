@@ -30,6 +30,12 @@ export function buildReport(res, lay, input) {
     ['LAN 배선', `${lay.manual ? '직접 배선' : '자동 배선'} / ${patternOf(lay.pattern).label}`],
     ['POWER 배선', `${lay.powerManual ? '직접 배선' : '자동 배선'} / ${patternOf(lay.powerPattern).label}`],
   ];
+  if (sc.baseEnabled || sc.stageEnabled) inputs.push(
+    ['베이스 높이', `${mm(sc.baseHeightMm)} mm`],
+    ['LED 단 높이', `${mm(sc.stageHeightMm)} mm`],
+    ['바닥부터 LED 시작 높이', `${mm(sc.ledBottomMm)} mm`],
+    ['바닥부터 LED 상단 높이', `${mm(sc.ledTopMm)} mm`],
+  );
   const sections = [
     {
       title: '배선도면 세부내역',
@@ -53,22 +59,22 @@ export function buildReport(res, lay, input) {
       title: '아시바',
       header: ['구분', '수량', '비고'],
       rows: [
-        ['크기', `${sc.widthM} × ${sc.heightM} m`, `${sc.bays}칸 × ${sc.tiers}단${sc.shortPosts ? ' + 짧은아시바' : ''}`],
-        ['아시바(기둥)', sc.posts, ''],
-        ['짧은아시바', sc.shortPosts, sc.shortPosts ? `높이 ${sc.shortPostHeightM}m` : ''],
-        ['핀', sc.pins, ''],
+        ['크기', `${mm(sc.widthM * 1000)} × ${mm(sc.heightM * 1000)} × ${mm(sc.depthM * 1000)} mm`, `${sc.bays}칸 × ${sc.displayTiers}단 × ${sc.depthBays}폭`],
+        ['아시바(기둥)', sc.posts, `높이 ${sc.tierHeightM * 1000}mm`],
+        ['아시바(짧은기둥)', sc.shortPosts, `높이 ${mm(sc.shortPostHeightM * 1000)}mm`],
+        ['핀', sc.pins, `핀높이 ${mm(sc.pinExposedM * 1000)}mm`],
         ['x바', sc.xBars, ''],
-        ['발판', sc.planks, sc.topPlank ? '윗단 포함' : '윗단 제외'],
+        ['발판', sc.planks, sc.topPlank ? '상단 포함' : '상단 제외'],
       ],
     },
     {
-      title: 'LAN 줄별 구성',
+      title: 'LAN포트 구성',
       tab: 'lan',
       header: ['줄', '캐비닛 수', '시작 → 끝 번호', '픽셀 합계'],
       rows: lay.lanLines.map((l) => [`LAN ${l.id}`, l.cells.length, `${l.cells[0].id} → ${l.cells[l.cells.length - 1].id}`, Math.round(l.pixels)]),
     },
     {
-      title: 'POWER 포트별 구성',
+      title: 'POWER포트 구성',
       tab: 'pw',
       header: ['포트', '캐비닛 수', '시작 → 끝 번호'],
       rows: lay.powerChains.map((c) => [`POWER ${c.id}`, c.cells.length, `${c.cells[0].id} → ${c.cells[c.cells.length - 1].id}`]),

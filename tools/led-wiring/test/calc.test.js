@@ -8,6 +8,50 @@ import { config } from '../src/config.js';
 const pixel = JSON.parse(readFileSync(new URL('../data/pixel.json', import.meta.url)));
 const run = (i) => calc({ cabW: 500, cabH: 500, ...i }, pixel);
 
+test('LED 단 600mm와 베이스 40mm는 LED 시작 640mm부터 상단까지 아시바 높이에 포함한다', () => {
+  const input={widthMm:7000,heightMm:3000,pitch:'4.8-out'};
+  const floor=run(input);
+  const raised=run({...input,baseEnabled:true,stageEnabled:true,stageHeightMm:600});
+  assert.deepEqual(raised.errors,[]);
+  assert.deepEqual([raised.scaffold.baseHeightMm,raised.scaffold.stageHeightMm,raised.scaffold.ledBottomMm,raised.scaffold.ledTopMm],[40,600,640,3640]);
+  assert.deepEqual([floor.scaffold.heightM,raised.scaffold.heightM,raised.scaffold.tiers],[2.625,3.425,2]);
+  for(const key of ['grid','counts','pixel','lan','power','boxes']) assert.deepEqual(raised[key],floor[key]);
+});
+
+test('베이스와 LED 단은 각각 선택하고 해제한 단 높이는 계산에서 제외한다', () => {
+  const input={widthMm:7000,heightMm:3000,pitch:'4.8-out',stageHeightMm:600};
+  for(const [baseEnabled,stageEnabled,bottom] of [[false,false,0],[true,false,40],[false,true,600],[true,true,640]]) {
+    const r=run({...input,baseEnabled,stageEnabled});
+    assert.equal(r.scaffold.ledBottomMm,bottom);
+    assert.equal(r.scaffold.ledTopMm,3000+bottom);
+    assert.ok(r.scaffold.heightM*1000<=r.scaffold.ledTopMm);
+  }
+});
+
+test('올린 LED도 연결핀 포함 높이를 넘지 않으며 수동 단 수의 초과를 판정한다', () => {
+  const input={widthMm:7000,heightMm:4500,pitch:'4.8-out',baseEnabled:true,stageEnabled:true};
+  const below=run({...input,stageHeightMm:600}); // LED 상단 5140, 일반 3단은 5150
+  const exact=run({...input,stageHeightMm:610});
+  assert.deepEqual([below.scaffold.heightM,exact.scaffold.heightM],[4.35,5.15]);
+  const forced=run({...input,stageHeightMm:600,tiers:3});
+  assert.ok(forced.errors.some(e=>e.includes('아시바 높이')&&e.includes('5140')));
+});
+
+test('LED 단 높이는 사용 시 필수이며 음수나 잘못된 값은 오류로 처리한다', () => {
+  for(const stageHeightMm of [undefined,null,-1,NaN,Infinity]) {
+    const r=run({widthMm:7000,heightMm:3000,pitch:'4.8-out',stageEnabled:true,stageHeightMm});
+    assert.ok(r.errors.some(e=>e.includes('LED 단 높이')));
+  }
+  const r=run({widthMm:7000,heightMm:3000,pitch:'4.8-out',stageEnabled:true,stageHeightMm:0});
+  assert.deepEqual(r.errors,[]);
+});
+
+test('베이스 높이는 config의 값을 사용한다', () => {
+  const cfg={...config,scaffold:{...config.scaffold,baseHeightMm:50}};
+  const r=calc({widthMm:7000,heightMm:3000,cabW:500,cabH:500,pitch:'4.8-out',baseEnabled:true},pixel,cfg);
+  assert.equal(r.scaffold.ledBottomMm,50);
+});
+
 test('엑셀 500시트: 8000×4000 / 500×500 / 2.6', () => {
   const r = run({ widthMm: 8000, heightMm: 4000, pitch: 2.6, bays: 3, tiers: 2 });
   assert.deepEqual(r.errors, []);
@@ -22,45 +66,109 @@ test('엑셀 500시트: 8000×4000 / 500×500 / 2.6', () => {
   const b = r.boxes[0];
   assert.deepEqual([b.need, b.perBox, b.boxes, b.packQty], [128, 12, 11, 132]); // Z,AA,AC,AD
   const s = r.scaffold;
-  assert.equal(s.widthM, 5.4); // M11
-  assert.equal(s.heightM, 3.4); // M12
+  assert.equal(s.widthM, 5.52); // 사용자가 정정한 가로 1.84m/칸
+  assert.equal(s.heightM, 3.425); // 1700×2 + 연결핀 25mm
   assert.equal(s.posts, 8); // M13
   assert.equal(s.shortPosts, 0); // 엑셀 R13=4지만 3.4m+0.9m가 LED 4m를 넘어 끼우지 않음
   assert.equal(s.pins, 8); // M14
   assert.equal(s.xBars, 12); // M15
 });
 
-test('아시바 발판: 사용자 규칙(칸×단). 엑셀 M16(칸×(단-1))과 의도적으로 다름', () => {
-  const one = run({ widthMm: 1800, heightMm: 1700, pitch: 2.6, bays: 1, tiers: 1 });
+test('아시바 발판은 기본 윗단 제외로 계산한다', () => {
+  const one = run({ widthMm: 2000, heightMm: 1700, pitch: 2.6, bays: 1, tiers: 1 });
   assert.deepEqual(
     [one.scaffold.posts, one.scaffold.xBars, one.scaffold.planks, one.scaffold.widthM, one.scaffold.heightM],
-    [2, 2, 1, 1.8, 1.7],
+    [2, 2, 0, 1.84, 1.7],
   );
-  const wide = run({ widthMm: 3600, heightMm: 1700, pitch: 2.6, bays: 2, tiers: 1 }); // 기둥3 x바4 발판2, 3.6×1.7
-  assert.deepEqual([wide.scaffold.posts, wide.scaffold.xBars, wide.scaffold.planks, wide.scaffold.widthM], [3, 4, 2, 3.6]);
-  const tall = run({ widthMm: 1800, heightMm: 3400, pitch: 2.6, bays: 1, tiers: 2 }); // 기둥4 핀4 발판2 x바4
+  const wide = run({ widthMm: 4000, heightMm: 1700, pitch: 2.6, bays: 2, tiers: 1 }); // 기둥3 x바4 발판2
+  assert.deepEqual([wide.scaffold.posts, wide.scaffold.xBars, wide.scaffold.planks, wide.scaffold.widthM], [3, 4, 0, 3.68]);
+  const tall = run({ widthMm: 2000, heightMm: 3500, pitch: 2.6, bays: 1, tiers: 2 }); // 기둥4 핀4 발판2 x바4
   assert.deepEqual([one.errors, wide.errors, tall.errors], [[], [], []]);
-  assert.deepEqual([tall.scaffold.posts, tall.scaffold.pins, tall.scaffold.planks, tall.scaffold.xBars], [4, 4, 2, 4]);
+  assert.deepEqual([tall.scaffold.posts, tall.scaffold.pins, tall.scaffold.planks, tall.scaffold.xBars], [4, 4, 1, 4]);
 });
 
 test('아시바 자동 산출: LED보다 절대 커지지 않고, 남는 높이는 짧은아시바로 채움', () => {
-  // LED 높이 3000: 1단 1700, 2단 3400은 초과 → 1단 + 짧은아시바 = 2600
+  // LED 높이 3000: 일반 2단 3425는 초과 → 일반 1단 + 짧은기둥 + 핀 = 2625
   const r = run({ widthMm: 8000, heightMm: 3000, pitch: 2.6 });
   assert.deepEqual(r.errors, []);
-  assert.equal(r.scaffold.bays, 4); // 7.2m ≤ 8m
-  assert.equal(r.scaffold.widthM, 7.2);
+  assert.equal(r.scaffold.bays, 4); // 7.36m ≤ 8m
+  assert.equal(r.scaffold.widthM, 7.36);
   assert.equal(r.scaffold.tiers, 1);
-  assert.equal(r.scaffold.heightM, 2.6);
+  assert.equal(r.scaffold.heightM, 2.625);
   assert.equal(r.scaffold.shortPosts, 5); // 기둥 5개 위에 1개씩
-  // 3400이면 2단이 딱 맞고 짧은아시바 불필요
+  // 3400에는 핀 포함 2단(3425)이 안 들어가므로 1단+짧은기둥을 사용한다.
   const r2 = run({ widthMm: 8000, heightMm: 3400, pitch: 2.6 });
-  assert.deepEqual([r2.scaffold.tiers, r2.scaffold.shortPosts, r2.scaffold.heightM], [2, 0, 3.4]);
+  assert.deepEqual([r2.scaffold.tiers, r2.scaffold.shortPosts, r2.scaffold.heightM], [1, 5, 2.625]);
+});
+
+test('아시바 높이는 일반·짧은 기둥의 각 연결부 핀을 포함해 LED 안에서 자동 선택한다', () => {
+  for (const [heightMm, tiers, short, actualMm] of [
+    [1700, 1, false, 1700], [2600, 1, false, 1700], [2624, 1, false, 1700],
+    [2625, 1, true, 2625], [3424, 1, true, 2625], [3425, 2, false, 3425],
+    [4349, 2, false, 3425], [4350, 2, true, 4350], [5149, 2, true, 4350],
+    [5150, 3, false, 5150], [6075, 3, true, 6075],
+  ]) {
+    const r = run({ widthMm: 6000, heightMm, pitch: '3.9-in' });
+    assert.deepEqual([r.scaffold.tiers, r.scaffold.shortPosts > 0, Math.round(r.scaffold.heightM * 1000)], [tiers, short, actualMm], String(heightMm));
+    assert.ok(r.scaffold.heightM * 1000 <= heightMm);
+    assert.equal(r.scaffold.pins, 8 * (tiers - 1 + Number(short)));
+  }
+});
+
+test('수동 지정한 일반·짧은기둥도 핀 포함 높이로 초과를 판정하고 설정된 핀 길이를 사용한다', () => {
+  for (const input of [{ heightMm: 3400, tiers: 2 }, { heightMm: 2600, tiers: 1, shortPost: true }]) {
+    const r = run({ widthMm: 6000, pitch: '3.9-in', ...input });
+    assert.ok(r.errors.some((message) => message.includes('아시바 높이')));
+  }
+  const cfg = { ...config, scaffold: { ...config.scaffold, pinExposedM: 0.03 } };
+  const r = calc({ widthMm: 6000, heightMm: 5000, cabW: 500, cabH: 500, pitch: '3.9-in', tiers: 2, shortPost: true }, pixel, cfg);
+  assert.equal(r.scaffold.heightM, 4.36); // 1700×2 + 900 + 30×2
+  assert.equal(r.scaffold.pinExposedM, 0.03);
+});
+
+test('아시바 가로는 1840mm씩 계산하고 LED 경계 안에서 내림하며 깊이는 900mm다', () => {
+  for (const [widthMm, bays, widthM] of [[1840, 1, 1.84], [3680, 2, 3.68], [5520, 3, 5.52], [5519, 2, 3.68]]) {
+    const r = run({ widthMm, heightMm: 3500, pitch: '3.9-in' });
+    assert.deepEqual([r.scaffold.bays, r.scaffold.widthM, r.scaffold.depthM], [bays, widthM, 0.9]);
+    assert.ok(r.scaffold.widthM * 1000 <= widthMm);
+  }
+  const tooWide = run({ widthMm: 5519, heightMm: 3500, pitch: '3.9-in', bays: 3 });
+  assert.ok(tooWide.errors.some((message) => message.includes('아시바 가로')));
+});
+
+test('짧은기둥이 있으면 일반기둥 상단은 기본 포함하고 짧은기둥 상단만 선택한다', () => {
+  for (const [heightMm, tiers, basePlanks, allPlanks] of [[3000, 1, 3, 6], [5000, 2, 6, 9]]) {
+    const input = { widthMm: 7000, heightMm, pitch: '4.8-out' };
+    const base = run(input);
+    const on = run({ ...input, topPlank: true });
+    const off = run({ ...input, topPlank: false });
+    assert.deepEqual([base.errors, on.errors, off.errors], [[], [], []]);
+    assert.equal(base.scaffold.tiers, tiers);
+    assert.equal(base.scaffold.shortPosts, 4);
+    assert.deepEqual([base.scaffold.planks, on.scaffold.planks, off.scaffold.planks], [basePlanks, allPlanks, basePlanks]);
+    assert.equal(on.scaffold.posts, base.scaffold.posts);
+    assert.equal(on.scaffold.pins, base.scaffold.pins);
+    assert.equal(on.scaffold.xBars, base.scaffold.xBars);
+  }
 });
 
 test('아시바 윗단 발판은 선택사항', () => {
-  const on = run({ widthMm: 5400, heightMm: 3400, pitch: 2.6, bays: 3, tiers: 2, topPlank: true });
-  const off = run({ widthMm: 5400, heightMm: 3400, pitch: 2.6, bays: 3, tiers: 2, topPlank: false });
+  const on = run({ widthMm: 6000, heightMm: 3500, pitch: 2.6, bays: 3, tiers: 2, topPlank: true });
+  const off = run({ widthMm: 6000, heightMm: 3500, pitch: 2.6, bays: 3, tiers: 2, topPlank: false });
+  assert.deepEqual([on.errors, off.errors], [[], []]);
   assert.deepEqual([on.scaffold.planks, off.scaffold.planks], [6, 3]); // 엑셀 M16 = 3
+});
+
+test('7360×3425×900 아시바는 발판 기본 4개이며 윗단 포함 시 8개다', () => {
+  const input = { widthMm: 8000, heightMm: 3500, pitch: '3.9-in' };
+  const base = run(input);
+  const on = run({ ...input, topPlank: true });
+  const off = run({ ...input, topPlank: false });
+  assert.deepEqual([base.scaffold.widthM, base.scaffold.heightM, base.scaffold.depthM], [7.36, 3.425, 0.9]);
+  assert.deepEqual([base.scaffold.planks, on.scaffold.planks, off.scaffold.planks], [4, 8, 4]);
+  assert.deepEqual([base.scaffold.topPlank, on.scaffold.topPlank, off.scaffold.topPlank], [false, true, false]);
+  assert.equal(on.scaffold.posts, base.scaffold.posts);
+  assert.equal(on.scaffold.pins, base.scaffold.pins);
 });
 
 test('직접 지정한 아시바가 LED보다 크면 오류', () => {

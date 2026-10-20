@@ -120,7 +120,6 @@ export function renderSvg(lay, opt = {}) {
       const rows = [];
       if (showLan && lan.has(c.id)) rows.push(`LAN ${lan.get(c.id).id}`, `${lan.get(c.id).order}번째`);
       if (showPower && pw.has(c.id)) rows.push(`POWER ${pw.get(c.id).id}`, `${pw.get(c.id).order}번째`);
-      if (showLan) rows.push(`가로${fmtPx(c.pw)}px`, `세로${fmtPx(c.ph)}px`);
       const fs = Math.min(c.w * 0.165, c.h * 0.165, (c.h * 0.72) / (rows.length * 1.1));
       rows.forEach((s, i) => {
         const y = c.y + c.h - fs * 0.45 - (rows.length - 1 - i) * fs * 1.1; // 아래 테두리와 간격
@@ -162,7 +161,6 @@ export function renderSvg(lay, opt = {}) {
 }
 
 const f = (n) => Math.round(n * 100) / 100;
-const fmtPx = (n) => (Number.isInteger(n) ? String(n) : String(f(n)));
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 function text(x, y, s, size, fill, anchor = 'start', weight = 'normal') {
   return `<text x="${f(x)}" y="${f(y)}" font-size="${f(size)}" fill="${fill}" text-anchor="${anchor}" font-weight="${weight}">${esc(s)}</text>`;

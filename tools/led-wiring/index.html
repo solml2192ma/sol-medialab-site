@@ -88,7 +88,10 @@
         <label>칸 수<input type="number" name="bays" inputmode="numeric" min="0" step="1" placeholder="자동"></label>
         <label>단(줄) 수<input type="number" name="tiers" inputmode="numeric" min="0" step="1" placeholder="자동"></label>
       </div>
-      <label class="chk"><input type="checkbox" name="topPlank" checked> 윗단 발판 포함</label>
+      <input type="checkbox" name="topPlank" hidden aria-hidden="true">
+      <input type="checkbox" name="baseEnabled" hidden aria-hidden="true">
+      <input type="checkbox" name="stageEnabled" hidden aria-hidden="true">
+      <input type="hidden" name="stageHeight">
     </details>
     <button type="button" id="reset" class="ghost">초기화</button>
   </form>

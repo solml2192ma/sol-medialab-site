@@ -1,0 +1,30 @@
+main.scaffold-page { max-width:960px; grid-template-columns:minmax(0,1fr); }
+.scaffold-page h1 { font-size:20px; margin:6px 0; }
+#scaffold-orbit { --background:var(--card); --foreground:var(--ink); --muted-foreground:var(--mute); --orange:var(--warn); --viz-series-1:var(--brand); --led-front:#0a0c0f; --led-side:#1c2229; --led-rear:#272f39; --led-cover:#343f4b; --led-edge:#74818f; }
+#scaffold-orbit { --stage-box:#2563eb; --base-box:#949da8; }
+.installation-legend { display:flex; flex-wrap:wrap; gap:8px 20px; font-size:13px; }
+.installation-legend > span { display:inline-flex; align-items:center; gap:6px; }
+.installation-legend i { display:inline-block; width:12px; height:12px; }
+.stage-swatch { background:var(--stage-box); }
+.base-swatch { background:var(--base-box); }
+.scaffold-heading { display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 16px; }
+.scaffold-heading h2 { margin:0; }
+.scaffold-caption { color:var(--mute); font-size:13px; margin:8px 0; }
+.scaffold-scene { display:block; width:100%; height:520px; touch-action:none; cursor:grab; }
+.scaffold-scene:active { cursor:grabbing; }
+.scaffold-controls { display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; }
+.scaffold-options { display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; }
+.scaffold-options .chk input { width:14px; height:14px; accent-color:var(--brand); }
+.scaffold-controls label { flex:1 1 220px; margin:0; color:var(--ink); }
+.scaffold-controls input[type=range] { display:block; width:100%; min-height:32px; accent-color:var(--brand); }
+.scaffold-controls .chk { flex:0 1 auto; min-height:44px; }
+.scaffold-controls .chk input { width:14px; height:14px; accent-color:var(--brand); }
+.pin-key { color:var(--warn); }
+[data-counts] { font-variant-numeric:tabular-nums; }
+@media(max-width:500px) { .scaffold-scene { height:360px; } }
+body[data-preview] { background:var(--card); }
+body[data-preview] main.scaffold-page { display:block; padding:0; max-width:none; }
+body[data-preview] main > h1 { display:none; }
+body[data-preview] #scaffold-orbit { border:0; padding:0; }
+body[data-preview] #scaffold-orbit > :not(.scaffold-scene) { display:none; }
+body[data-preview] .scaffold-scene { height:100vh; }

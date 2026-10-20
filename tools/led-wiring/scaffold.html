@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>아시바 3D 도면 | SOL MEDIA LAB Inc.</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="scaffold.css">
+</head>
+<body>
+<main class="scaffold-page">
+  <h1>아시바 3D 도면</h1>
+  <p id="scaffold-error" role="status">도면을 불러오는 중입니다.</p>
+  <section id="scaffold-orbit" class="panel" hidden>
+    <div class="scaffold-heading"><h2 data-title></h2><span data-size></span></div>
+    <p class="scaffold-caption" data-led></p>
+    <div class="installation-legend" data-installation-legend hidden>
+      <span data-stage-legend><i class="stage-swatch" aria-hidden="true"></i><span></span></span>
+      <span data-base-legend><i class="base-swatch" aria-hidden="true"></i><span></span></span>
+    </div>
+    <svg class="scaffold-scene" role="img" aria-label="회전 가능한 아시바 개념도"></svg>
+    <div class="scaffold-options">
+      <label class="chk"><input type="checkbox" data-top> 상단발판포함</label>
+      <label class="chk"><input type="checkbox" data-panel> LED 패널 표시</label>
+    </div>
+    <p class="scaffold-caption">LED 패널 표시 여부를 선택하고, 드래그해 회전하거나 슬라이더로 시점을 조절하세요.</p>
+    <div class="scaffold-controls">
+      <label>좌우 회전 <output data-angle></output><input type="range" min="0" max="360" value="28" aria-label="좌우 회전"></label>
+      <label>위아래 시점 <output data-pitch-angle></output><input type="range" min="-15" max="70" value="18" aria-label="위아래 시점"></label>
+    </div>
+    <p data-counts aria-live="polite"></p>
+    <p class="scaffold-caption"><span class="pin-key">●</span> <span data-pin></span> · 패널 뒷면 형상·설치 위치는 개념 표현입니다.</p>
+    <p class="scaffold-caption">단·베이스의 가로·깊이는 LED 위치를 보여 주기 위한 개념 표현입니다.</p>
+  </section>
+</main>
+<script type="module" src="src/scaffold-view.js"></script>
+</body>
+</html>

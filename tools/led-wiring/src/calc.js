@@ -16,7 +16,7 @@ export function findPitch(pixelData, id) {
  * @param {number} input.cabW 캐비닛 가로(mm)
  * @param {number} input.cabH 캐비닛 세로(mm)
  * @param {number|string} input.pitch 픽셀피치
- * @param {number} [input.bays] 아시바 칸 수 (기본: 가로/1.8m 올림)
+ * @param {number} [input.bays] 아시바 칸 수 (기본: 가로/설정된 칸 너비 내림)
  * @param {number} [input.tiers] 아시바 줄(단) 수 (기본: 세로/1.7m 올림)
  * @param {number[]|null} [input.rowPlan] 행 배치(위→아래 각 행 높이 mm). 없거나 크기가 안 맞으면 기본 배치
  * @param {number|null} [input.boxQty] 표에 없는 캐비닛 규격의 1박스 수량(직접 입력)
@@ -120,35 +120,51 @@ export function calc(input, pixelData, cfg = defaultConfig) {
   const powerPorts = Math.ceil(powerUnits / cfg.power.autoMaxCabinetsPerPort);
 
   // --- 아시바 ---
-  // 아시바는 절대 LED 가로/세로보다 커지면 안 된다. 자동 산출은 들어가는 최대치(내림).
-  // 높이가 1.7m 단 + 짧은아시바(0.9m) 1개로 더 채워지면 짧은아시바를 끼운다.
-  const { bayWidthM, tierHeightM, shortPostHeightM } = cfg.scaffold;
+  // 아시바는 바닥에서 LED 상단 높이까지 들어가는 최대치로 산출한다.
+  // 일반/짧은 기둥을 위에 연결할 때마다 핀 노출 길이를 높이에 더한다.
+  const { bayWidthM, tierHeightM, shortPostHeightM, pinExposedM } = cfg.scaffold;
   const wM = widthMm / 1000;
-  const hM = heightMm / 1000;
+  const baseEnabled = input.baseEnabled ?? cfg.scaffold.baseEnabledDefault;
+  const stageEnabled = input.stageEnabled ?? cfg.scaffold.stageEnabledDefault;
+  const stageHeightValid = Number.isFinite(input.stageHeightMm) && input.stageHeightMm >= 0;
+  if (stageEnabled && !stageHeightValid) errors.push('아시바 계산: LED 단 높이를 0 이상의 숫자로 입력해 주세요.');
+  const baseHeightMm = baseEnabled ? cfg.scaffold.baseHeightMm : 0;
+  const stageHeightMm = stageEnabled && stageHeightValid ? input.stageHeightMm : 0;
+  const ledBottomMm = baseHeightMm + stageHeightMm;
+  const ledTopMm = heightMm + ledBottomMm;
+  const hM = ledTopMm / 1000;
   const eps = 1e-9;
   const bays = input.bays ?? Math.floor(wM / bayWidthM + eps);
-  const tiers = input.tiers ?? Math.floor(hM / tierHeightM + eps);
-  const useShort = input.shortPost ?? (tiers >= 1 && tiers * tierHeightM + shortPostHeightM <= hM + eps);
-  const topPlank = input.topPlank ?? true; // 윗단 발판 선택사항
+  const tiers = input.tiers ?? Math.floor((hM + pinExposedM) / (tierHeightM + pinExposedM) + eps);
+  const normalHeight = tiers * tierHeightM + Math.max(0, tiers - 1) * pinExposedM;
+  const useShort = input.shortPost ?? (tiers >= 1 && normalHeight + shortPostHeightM + pinExposedM <= hM + eps);
+  const topPlank = input.topPlank ?? cfg.scaffold.topPlankDefault;
   const scaffoldW = bays * bayWidthM;
-  const scaffoldH = tiers * tierHeightM + (useShort ? shortPostHeightM : 0);
+  const connections = Math.max(0, tiers - 1 + (useShort ? 1 : 0));
+  const scaffoldH = tiers * tierHeightM + (useShort ? shortPostHeightM : 0) + connections * pinExposedM;
   if (bays < 1) errors.push(`LED 가로 ${widthMm}mm가 아시바 1칸(${bayWidthM * 1000}mm)보다 짧아 아시바를 세울 수 없습니다.`);
-  if (tiers < 1) errors.push(`LED 세로 ${heightMm}mm가 아시바 1단(${tierHeightM * 1000}mm)보다 낮아 아시바를 세울 수 없습니다.`);
-  if (scaffoldW > wM + eps) errors.push(`아시바 가로 ${round(scaffoldW)}m가 LED 가로 ${wM}m보다 깁니다.`);
-  if (scaffoldH > hM + eps) errors.push(`아시바 높이 ${round(scaffoldH)}m가 LED 세로 ${hM}m보다 높습니다.`);
+  if (tiers < 1) errors.push(`LED 상단 높이 ${ledTopMm}mm가 아시바 1단(${tierHeightM * 1000}mm)보다 낮아 아시바를 세울 수 없습니다.`);
+  if (scaffoldW > wM + eps) errors.push(`아시바 가로 ${round(scaffoldW * 1000)}mm가 LED 가로 ${widthMm}mm보다 깁니다.`);
+  if (scaffoldH > hM + eps) errors.push(`아시바 높이 ${round(scaffoldH * 1000)}mm가 LED 상단 높이 ${ledTopMm}mm보다 높습니다.`);
   const columns = bays + 1;
   const scaffold = {
     bays,
     tiers,
+    displayTiers: tiers + (useShort ? cfg.scaffold.shortPostDisplayTiers : 0),
+    depthBays: cfg.scaffold.depthBays,
     topPlank,
+    baseEnabled, stageEnabled, baseHeightMm, stageHeightMm, ledBottomMm, ledTopMm,
     widthM: round(scaffoldW),
     heightM: round(scaffoldH),
+    depthM: cfg.scaffold.depthM,
     posts: columns * tiers, // 아시바(기둥)
     shortPosts: useShort ? columns : 0, // 짧은아시바(0.9m)
     shortPostHeightM,
-    pins: columns * 2 * (tiers - 1 + (useShort ? 1 : 0)), // 핀: 기둥 1개당 2개, 윗단(짧은아시바 포함) 연결용
+    tierHeightM,
+    pinExposedM,
+    pins: columns * 2 * connections, // 핀: 기둥 1개당 2개, 윗단(짧은아시바 포함) 연결용
     xBars: bays * 2 * tiers, // x바: 칸·단마다 2개
-    planks: bays * (topPlank ? tiers : tiers - 1), // 발판: 칸·단마다 1개 (윗단은 선택)
+    planks: bays * (tiers + (useShort ? cfg.scaffold.shortPostPlankLevels : 0) - (topPlank ? 0 : 1)), // 최상단만 선택, 그 아래는 기본 포함
   };
 
   return {

@@ -13,9 +13,22 @@ export const config = {
   },
   // 아시바(비계) 규격
   scaffold: {
-    bayWidthM: 1.8, // 칸 1개 가로
+    bayWidthM: 1.84, // 가로: 1,840 + (칸 수 - 1) × 1,840mm
+    depthM: 0.9, // 깊이 900mm
     tierHeightM: 1.7, // 줄 1단 세로
     shortPostHeightM: 0.9,
+    pinExposedM: 0.025, // 위아래 기둥 연결부마다 높이에 더하는 노출 길이
+    shortPostDisplayTiers: 0.5, // 짧은기둥 사용 시 비고에 반 단으로 표기
+    depthBays: 1, // 깊이 방향 폭 수
+    topPlankDefault: false, // 발판은 기본적으로 상단 제외
+    shortPostPlankLevels: 1, // 짧은기둥 상단에도 발판 한 층을 선택할 수 있음
+    ledPanelAlignment: { horizontal: 'center', vertical: 'bottom' }, // 3D 도면의 LED 설치 위치
+    showLedPanelDefault: true, // 3D 도면은 LED 패널을 붙인 상태로 시작
+    viewAngles: { yaw: 28, pitch: 18 },
+    previewAngles: { yaw: 30, pitch: 20 }, // 미리보기 기본 시점(도)
+    baseHeightMm: 40,
+    baseEnabledDefault: false,
+    stageEnabledDefault: false,
   },
   limits: { maxCabinets: 4000 }, // 입력 실수 방지 (이보다 많으면 계산하지 않음)
   defaultDirection: 'hz-tl', // layout.js PATTERNS의 id (예: hz-tl 가로 지그재그 좌상단 시작)
@@ -28,6 +41,6 @@ export const config = {
   fallbackCabinet: '500x500', // 구버전 custom/잘못된 저장값 보정은 표시 순서와 별개다.
   emptyInputs: {
     w: '', h: '', pitch: '', cab: '', cw: '', ch: '', boxQty: '',
-    maxPerLine: '', bays: '', tiers: '', cur: '',
+    maxPerLine: '', bays: '', tiers: '', cur: '', stageHeight: '',
   }, // 초기화 및 저장값 없는 첫 화면은 입력을 비운다.
 };
