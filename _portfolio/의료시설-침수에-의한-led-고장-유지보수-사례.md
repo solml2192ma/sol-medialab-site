@@ -1,13 +1,14 @@
 ---
+slug: 의료시설침수에의한led고장유지보수사례
 title: 의료시설 침수에 의한 LED 고장, 유지보수 사례
 post_date: 2026-10-21T16:22:00+09:00
 overview_category:
   - 유지·보수
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/01_증상확인.webp
+cover_image: /assets/img/portfolio/saz0gbdscr.webp
 gallery:
-  - /assets/img/portfolio/03_점검패턴확인.webp
+  - /assets/img/portfolio/6a92g3w1l1.webp
 ---
 
 
