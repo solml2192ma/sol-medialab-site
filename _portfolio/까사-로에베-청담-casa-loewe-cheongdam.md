@@ -1,13 +1,14 @@
 ---
+slug: 까사로에베청담casaloewecheongdam
 title: 까사 로에베 청담 (CASA LOEWE CHEONGDAM)
 post_date: 2026-10-21T15:37:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 까사 로에베 서울 청담
-cover_image: /assets/img/portfolio/07_영상재생3.webp
+cover_image: /assets/img/portfolio/s0kie38y4g.webp
 gallery:
-  - /assets/img/portfolio/08_영상재생4.webp
+  - /assets/img/portfolio/v29vuh6dh4.webp
 ---
 
 ## 프로젝트 개요
