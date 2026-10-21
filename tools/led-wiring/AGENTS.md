@@ -81,7 +81,7 @@ SOL MEDIA LAB의 LED 설치 후 LAN·POWER 배선도와 자재 수량표를 만�
 
 ## 미확정 / 대기 중
 
-- 세부내역의 캐비닛 수 위에 선택한 픽셀피치명을 항목명으로 표시하고, 값은 LED 가로 × 세로 × 두께, 비고는 `mm (가로 × 세로 × 두께)`로 표시한다. 제품별 두께는 `data/pixel.json`의 `thicknessMm`에 저장한다. 확정값: P1.5 JHT 88mm, P2.6 UNILUMIN 83mm, P3.9 JHT 88mm, P3.9 ABSEN 85mm, P4.8 UNILUMIN 74mm. P2.6 flexible WISDOM은 본체 두께 73mm이며 `잠금장치 포함 시 약 90mm`를 비고와 3D 안내에 표시한다. 본체 두께와 설명은 `pixel.json`의 `thicknessMm`, `thicknessNote`에 저장한다.
+- 세부내역의 캐비닛 수 위에 선택한 픽셀피치명을 항목명으로 표시하고, 값은 LED 가로 × 세로 × 두께, 비고는 `mm (가로 × 세로 × 두께)`로 표시한다. 제품별 두께는 `data/pixel.json`의 `thicknessMm`에 저장한다. 확정값: P1.5 JHT 88mm, P2.6 UNILUMIN 83mm, P3.9 JHT 88mm, P3.9 ABSEN 85mm, P4.8 UNILUMIN 74mm. P2.6 flexible WISDOM은 본체 두께 73mm이며 `잠금장치 포함 두께 약90mm`를 비고와 3D 안내에 표시한다. 본체 두께와 설명은 `pixel.json`의 `thicknessMm`, `thicknessNote`에 저장한다.
 - p3.9 야외 500×500 박스는 수량이 일정하지 않아 자동 산출하지 않는다.
 - LAN 줄별 표의 `픽셀 합계` 표시는 유지하고 있다.
 - 캐비닛 규격의 직접 입력(custom) 선택은 제거했다. 기존 URL/저장값의 custom은 500×500으로 전환한다.

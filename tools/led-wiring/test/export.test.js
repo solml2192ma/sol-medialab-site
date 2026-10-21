@@ -44,7 +44,7 @@ test('세부내역 첫 행에 선택 제품과 가로·세로·두께를 표시�
     const input = { widthMm: 2000, heightMm: 1000, cabW: 500, cabH: 500, pitch };
     const res = calc(input, pixel);
     const row = buildReport(res, buildLayout(res, {}), input).sections[0].rows[0];
-    assert.deepEqual(row, [pixel.pitches[pitch].label, `2,000 × 1,000 × ${pixel.pitches[pitch].thicknessMm ?? '-'}`, `mm (가로 × 세로 × 두께)${pitch === '2.6-flex-in' ? '\n(잠금장치 포함 시 약 90mm)' : ''}`]);
+    assert.deepEqual(row, [pixel.pitches[pitch].label, `2,000 × 1,000 × ${pixel.pitches[pitch].thicknessMm ?? '-'}`, `mm (가로 × 세로 × 두께)${pitch === '2.6-flex-in' ? '\n(잠금장치 포함 두께 약90mm)' : ''}`]);
     const supplied = { ...res, pitchInfo: { ...res.pitchInfo, thicknessMm: 88 } };
     assert.equal(buildReport(supplied, buildLayout(supplied, {}), input).sections[0].rows[0][1], '2,000 × 1,000 × 88');
   }
