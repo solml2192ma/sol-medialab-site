@@ -37,6 +37,7 @@ function initOrbit(data) {
   root.querySelector('[data-title]').textContent = '아시바 ' + data.off.bays + '칸 × ' + data.off.displayTiers + '단';
   root.querySelector('[data-size]').textContent = fmt(W) + ' × ' + fmt(H) + ' × ' + fmt(D) + ' mm';
   root.querySelector('[data-led]').textContent = 'LED ' + fmt(data.input.widthMm) + ' × ' + fmt(data.input.heightMm) + ' × ' + (data.pitch.thicknessMm ?? '-') + ' mm 기준';
+  if (data.pitch.thicknessNote) root.querySelector('[data-led]').textContent += ` (${data.pitch.thicknessNote})`;
   if(data.off.baseEnabled || data.off.stageEnabled) root.querySelector('[data-led]').textContent += ` · 바닥부터 LED 시작 ${fmt(data.off.ledBottomMm)}mm / 상단 ${fmt(data.off.ledTopMm)}mm (단 ${fmt(data.off.stageHeightMm)} + 베이스 ${fmt(data.off.baseHeightMm)}mm)`;
   root.querySelector('[data-pin]').textContent = '연결핀 노출 높이 ' + pinH + 'mm';
   const installationLegend = root.querySelector('[data-installation-legend]');

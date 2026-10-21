@@ -179,7 +179,7 @@ export function calc(input, pixelData, cfg = defaultConfig) {
     lan: { capacityCabs: lanCapacityCabs, maxCabinetsPerLine, ports: lanPorts },
     power: { ports: powerPorts },
     boxes,
-    pitchInfo: { id: pt.id, pitch: pt.pitch, env: pt.env, label: pt.label, thicknessMm: pt.thicknessMm ?? null },
+    pitchInfo: { id: pt.id, pitch: pt.pitch, env: pt.env, label: pt.label, thicknessMm: pt.thicknessMm ?? null, thicknessNote: pt.thicknessNote },
     scaffold,
   };
 }

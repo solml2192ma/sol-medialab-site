@@ -58,11 +58,11 @@ test('3D LED 패널은 사용자 지정 500/1000 혼합 행의 위아래 순서�
   assert.equal(model.panel.thicknessMm,88);
 });
 
-test('미확정 LED 두께는 임의 치수를 만들지 않는다', () => {
+test('플렉서블 LED 패널은 확정된 본체 두께 73mm를 사용한다', () => {
   const input={widthMm:7000,heightMm:3000,cabW:500,cabH:500,pitch:'2.6-flex-in'};
   const result=calc(input,pixel);
   const url=new URL(scaffoldViewUrl(input,result.scaffold),'https://example.com/');
-  assert.equal(scaffoldViewData(url.searchParams,pixel).panel.thicknessMm,null);
+  assert.equal(scaffoldViewData(url.searchParams,pixel).panel.thicknessMm,73);
 });
 
 test('LED 패널 표시는 기본 켜짐이며 숨김 선택을 주소로 복원해도 아시바 수량은 유지한다', () => {

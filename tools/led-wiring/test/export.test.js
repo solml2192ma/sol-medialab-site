@@ -38,13 +38,13 @@ test('자재표 데이터: 8000×4000 / 2.6', () => {
 
 test('세부내역 첫 행에 선택 제품과 가로·세로·두께를 표시하고 미정 두께는 대시로 표시한다', () => {
   assert.deepEqual(Object.fromEntries(Object.entries(pixel.pitches).map(([id, info]) => [id, info.thicknessMm])), {
-    '1.5-in': 88, '2.6-in': 83, '2.6-flex-in': null, '3.9-in': 88, '3.9-out': 85, '4.8-out': 74,
+    '1.5-in': 88, '2.6-in': 83, '2.6-flex-in': 73, '3.9-in': 88, '3.9-out': 85, '4.8-out': 74,
   });
   for (const pitch of Object.keys(pixel.pitches)) {
     const input = { widthMm: 2000, heightMm: 1000, cabW: 500, cabH: 500, pitch };
     const res = calc(input, pixel);
     const row = buildReport(res, buildLayout(res, {}), input).sections[0].rows[0];
-    assert.deepEqual(row, [pixel.pitches[pitch].label, `2,000 × 1,000 × ${pixel.pitches[pitch].thicknessMm ?? '-'}`, 'mm (가로 × 세로 × 두께)']);
+    assert.deepEqual(row, [pixel.pitches[pitch].label, `2,000 × 1,000 × ${pixel.pitches[pitch].thicknessMm ?? '-'}`, `mm (가로 × 세로 × 두께)${pitch === '2.6-flex-in' ? '\n(잠금장치 포함 시 약 90mm)' : ''}`]);
     const supplied = { ...res, pitchInfo: { ...res.pitchInfo, thicknessMm: 88 } };
     assert.equal(buildReport(supplied, buildLayout(supplied, {}), input).sections[0].rows[0][1], '2,000 × 1,000 × 88');
   }

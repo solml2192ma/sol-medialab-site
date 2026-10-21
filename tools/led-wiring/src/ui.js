@@ -2,7 +2,7 @@ import { config } from './config.js';
 import { calc, findPitch } from './calc.js';
 import { cabinetOptions, normalizeCabinetState } from './cabinet.js';
 import { buildLayout, PATTERNS, patternOf, orderRect, encodeManual, decodeManual, nextFreeNumber, limitError } from './layout.js';
-import { renderSvg, renderCombined, detailFor, LAN_COLORS } from './render.js';
+import { renderSvg, detailFor, LAN_COLORS } from './render.js';
 import { buildReport } from './report.js';
 import { encodeRows, decodeRows, sameRows, movePlan, splitRow, mergeRows, canMerge } from './rowplan.js';
 import { exportPng, exportXlsx, printPdf } from './export.js';
@@ -10,6 +10,12 @@ import { scaffoldViewUrl } from './scaffold-view-data.js';
 
 const $ = (s) => document.querySelector(s);
 const form = $('#form');
+window.addEventListener('beforeprint', () => {
+  const preview = $('.scaffold-preview');
+  const scene = preview?.querySelector('iframe')?.contentDocument?.querySelector('.scaffold-scene');
+  const printModel = preview?.querySelector('.scaffold-print-model');
+  if (printModel) printModel.innerHTML = scene?.outerHTML ?? '';
+});
 const DEFAULTS = {
   ...config.emptyInputs,
   pat: config.defaultDirection, mode: 'auto', ml: '',
@@ -177,13 +183,13 @@ function render() {
   detailOn = detailFor(lay, displayWidth());
   const svg = renderSvg(lay, { showLan: s.tab !== 'pw', showPower: s.tab === 'pw', title, detail: detailOn });
   $('#canvas').innerHTML = svg;
-  $('#printCanvas').innerHTML = renderCombined(lay, { title, sized: false }); // 인쇄(PDF)용: LAN 위, POWER 아래
   applyZoom();
   bindDraw($('#canvas svg'), lay, activeWiring(s));
   renderLineList(lay, activeWiring(s));
   const rep = buildReport(res, lay, input);
   $('#tables').innerHTML = tables(rep, res.scaffold, input);
   $('#printHead').innerHTML = `<div class="print-brand"><h1>LED 배선도면</h1>${document.querySelector('.company-brand').outerHTML}</div><p>${rep.inputs.map(([k, v]) => `${k}: ${esc(v)}`).join(' / ')}</p>`;
+  $('#printCanvas').innerHTML = ['LAN', 'POWER'].map(kind => `<article class="print-drawing">${$('#printHead').innerHTML}<h2>${kind} 배선도</h2>${renderSvg(lay, { title, showLan: kind === 'LAN', showPower: kind === 'POWER', sized: false })}</article>`).join('');
 }
 
 // ---------- LAN 배선 UI (패턴 아이콘 / 직접 그리기) ----------
@@ -428,10 +434,10 @@ function tables(rep, scaffold, input) {
       const scaffoldLink = sec.title === '아시바' && scaffold.bays > 0 && scaffold.tiers > 0 && !installationInvalid
         ? `<a class="scaffold-view-link" href="${scaffoldViewUrl(input, scaffold)}" target="led-scaffold-view">3D도면 자세히보기</a>` : '';
       const sectionHeading = sec.title === '아시바'
-        ? `<div class="scaffold-section-heading"><h2>${heading}</h2><span class="scaffold-mobile-link">${scaffoldLink}</span></div>`
+        ? `<div class="scaffold-section-heading"><h2>${heading}</h2></div>`
         : `<h2>${heading}</h2>`;
       const preview = sec.title === '아시바' && scaffoldLink
-        ? `<div class="sec scaffold-preview"><div class="scaffold-preview-heading"><h2>아시바 3D 미리보기</h2>${scaffoldLink}</div><iframe title="아시바 3D 미리보기" src="${scaffoldViewUrl(input, scaffold)}&preview=1" loading="lazy"></iframe><p>드래그해서 회전할 수 있습니다.</p></div>` : '';
+        ? `<div class="sec scaffold-preview"><div class="scaffold-preview-heading"><h2>아시바 3D 미리보기</h2>${scaffoldLink}</div><iframe title="아시바 3D 미리보기" src="${scaffoldViewUrl(input, scaffold)}&preview=1"></iframe><div class="scaffold-print-model print-only"></div><p>드래그해서 회전할 수 있습니다.</p></div>` : '';
       return `<div class="sec${sectionClass}"${sec.tab ? ` data-tab="${sec.tab}"` : ''}>${sectionHeading}${installationControls}<div class="tw"><table>${columns}<tr>${head}</tr>${body}</table></div></div>${preview}`;
     })
     .join('');

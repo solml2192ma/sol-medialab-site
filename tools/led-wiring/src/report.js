@@ -41,7 +41,7 @@ export function buildReport(res, lay, input) {
       title: '배선도면 세부내역',
       header: ['구분', '수량', '비고'],
       rows: [
-        [res.pitchInfo.label, `${mm(input.widthMm)} × ${mm(input.heightMm)} × ${res.pitchInfo.thicknessMm ?? '-'}`, 'mm (가로 × 세로 × 두께)'],
+        [res.pitchInfo.label, `${mm(input.widthMm)} × ${mm(input.heightMm)} × ${res.pitchInfo.thicknessMm ?? '-'}`, `mm (가로 × 세로 × 두께)${res.pitchInfo.thicknessNote ? `\n(${res.pitchInfo.thicknessNote})` : ''}`],
         ['캐비닛 수', res.counts.total, cabinetCounts],
         ['해상도', `${mm(res.pixel.resolution.w)} × ${mm(res.pixel.resolution.h)}`, cabinetResolutions],
         ['LAN포트 수', lay.lanLines.length, ''],

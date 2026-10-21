@@ -78,21 +78,13 @@
       </div>
     </fieldset>
 
-    <details>
-      <summary>설정 (규칙)</summary>
-      <div class="row2">
-        <label>LAN 줄당 최대 캐비닛 수<input type="number" name="maxPerLine" inputmode="numeric" min="1" step="1" placeholder="자동(픽셀 기준)"></label>
-      </div>
-      <h3>아시바</h3>
-      <div class="row2">
-        <label>칸 수<input type="number" name="bays" inputmode="numeric" min="0" step="1" placeholder="자동"></label>
-        <label>단(줄) 수<input type="number" name="tiers" inputmode="numeric" min="0" step="1" placeholder="자동"></label>
-      </div>
+      <input type="hidden" name="maxPerLine">
+      <input type="hidden" name="bays">
+      <input type="hidden" name="tiers">
       <input type="checkbox" name="topPlank" hidden aria-hidden="true">
       <input type="checkbox" name="baseEnabled" hidden aria-hidden="true">
       <input type="checkbox" name="stageEnabled" hidden aria-hidden="true">
       <input type="hidden" name="stageHeight">
-    </details>
     <button type="button" id="reset" class="ghost">초기화</button>
   </form>
 
