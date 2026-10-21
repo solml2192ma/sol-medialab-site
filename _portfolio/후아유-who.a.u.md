@@ -1,13 +1,14 @@
 ---
+slug: 후아유whoau
 title: 후아유(WHO.A.U)
 post_date: 2026-10-21T15:43:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 현대백화점 판교
-cover_image: /assets/img/portfolio/08_로고화면.webp
+cover_image: /assets/img/portfolio/avmwi8gfwb.webp
 gallery:
-  - /assets/img/portfolio/06_항공영상.webp
+  - /assets/img/portfolio/8xpcg7to45.webp
 ---
 
 ## 프로젝트 개요
