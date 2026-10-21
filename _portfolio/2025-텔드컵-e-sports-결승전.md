@@ -1,12 +1,13 @@
 ---
+slug: 2025텔드컵esports결승전
 title: 2025 텔드컵 E-SPORTS 결승전
 post_date: 2026-10-21T16:09:00+09:00
 overview_category: []
 client: ''
 location: 화성 오리진홀
-cover_image: /assets/img/portfolio/05_송출화면.webp
+cover_image: /assets/img/portfolio/ipea9n7s76.webp
 gallery:
-  - /assets/img/portfolio/04_테스트패턴.webp
+  - /assets/img/portfolio/6i28xcr9dy.webp
 ---
 
 ## 현장 소개
