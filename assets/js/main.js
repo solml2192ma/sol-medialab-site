@@ -55,13 +55,21 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
   let totalPages = Math.ceil(cards.length / PORTFOLIO_PAGE_SIZE);
   let currentPage = 1;
 
-  // Builds an abbreviated page list like [1, '...', 5, 6, 7, '...', 100]
-  // so wide boards don't render a button for every single page.
+  // Builds an abbreviated page list like [1, '...', 5, 6, 7, 8, 9, '...', 100]
+  // so wide boards don't render a button for every single page. Always
+  // shows a window of 5 numbers around the current page (shifted near the
+  // edges so it never shrinks below 5), plus the first and last page.
   const getPageList = (current, total) => {
-    const delta = 1;
+    const windowSize = 5;
+    let start = Math.max(1, current - Math.floor(windowSize / 2));
+    let end = start + windowSize - 1;
+    if (end > total) {
+      end = total;
+      start = Math.max(1, end - windowSize + 1);
+    }
     const pages = [];
     for (let i = 1; i <= total; i += 1) {
-      if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) {
+      if (i === 1 || i === total || (i >= start && i <= end)) {
         pages.push(i);
       }
     }
