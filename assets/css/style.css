@@ -1265,17 +1265,13 @@ section { position: relative; }
   border-color: #475467;
   color: #fff;
 }
-.portfolio-page-ellipsis {
+.portfolio-page-arrow {
   display: inline-flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  min-width: 20px;
-  height: 36px;
-  padding-bottom: 6px;
-  color: #98A2B3;
-  font-size: 14px;
-  font-weight: 600;
+  padding: 0;
 }
+.portfolio-page-arrow svg { width: 10px; height: 12px; }
 
 @media (max-width: 900px) {
   .portfolio-list { padding: 110px 20px 60px; }

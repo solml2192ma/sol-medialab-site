@@ -55,32 +55,19 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
   let totalPages = Math.ceil(cards.length / PORTFOLIO_PAGE_SIZE);
   let currentPage = 1;
 
-  // Builds an abbreviated page list like [1, '...', 5, 6, 7, 8, 9, '...', 100]
-  // so wide boards don't render a button for every single page. Always
-  // shows a window of 5 numbers around the current page (shifted near the
-  // edges so it never shrinks below 5), plus the first and last page.
-  const getPageList = (current, total) => {
-    const windowSize = 5;
-    let start = Math.max(1, current - Math.floor(windowSize / 2));
-    let end = start + windowSize - 1;
-    if (end > total) {
-      end = total;
-      start = Math.max(1, end - windowSize + 1);
-    }
-    const pages = [];
-    for (let i = 1; i <= total; i += 1) {
-      if (i === 1 || i === total || (i >= start && i <= end)) {
-        pages.push(i);
-      }
-    }
-    const withDots = [];
-    let last;
-    pages.forEach((p) => {
-      if (last !== undefined && p - last > 1) withDots.push('...');
-      withDots.push(p);
-      last = p;
-    });
-    return withDots;
+  // Pages are shown in blocks of 5 (1-5, 6-10, ...). Triangle prev/next
+  // buttons jump to the neighbouring block instead of listing every page.
+  const PAGE_BLOCK_SIZE = 5;
+
+  const makeArrowBtn = (dir, label, target) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'portfolio-page-btn portfolio-page-arrow portfolio-page-arrow--' + dir;
+    btn.setAttribute('aria-label', label);
+    btn.innerHTML = '<svg viewBox="0 0 10 12" aria-hidden="true"><path d="' +
+      (dir === 'prev' ? 'M9 1L1 6l8 5z' : 'M1 1l8 5-8 5z') + '" fill="currentColor"/></svg>';
+    btn.addEventListener('click', () => showPage(target));
+    return btn;
   };
 
   const renderPagination = () => {
@@ -92,14 +79,12 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
     }
     pagination.hidden = false;
     pagination.innerHTML = '';
-    getPageList(currentPage, totalPages).forEach((p) => {
-      if (p === '...') {
-        const span = document.createElement('span');
-        span.className = 'portfolio-page-ellipsis';
-        span.textContent = '...';
-        pagination.appendChild(span);
-        return;
-      }
+    const blockStart = Math.floor((currentPage - 1) / PAGE_BLOCK_SIZE) * PAGE_BLOCK_SIZE + 1;
+    const blockEnd = Math.min(blockStart + PAGE_BLOCK_SIZE - 1, totalPages);
+    if (blockStart > 1) {
+      pagination.appendChild(makeArrowBtn('prev', '이전 페이지 묶음', blockStart - 1));
+    }
+    for (let p = blockStart; p <= blockEnd; p += 1) {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'portfolio-page-btn' + (p === currentPage ? ' is-active' : '');
@@ -107,7 +92,10 @@ document.querySelectorAll('[data-portfolio-grid]').forEach((grid) => {
       btn.setAttribute('aria-current', p === currentPage ? 'page' : 'false');
       btn.addEventListener('click', () => showPage(p));
       pagination.appendChild(btn);
-    });
+    }
+    if (blockEnd < totalPages) {
+      pagination.appendChild(makeArrowBtn('next', '다음 페이지 묶음', blockEnd + 1));
+    }
   };
 
   const showPage = (page) => {
