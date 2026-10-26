@@ -1,13 +1,14 @@
 ---
+slug: 연회공간led화면표시이상모듈단위로점검해해결한유지보수사례
 title: 연회 공간 LED 화면 표시 이상, 모듈 단위로 점검해 해결한 유지보수 사례
 post_date: 2026-10-26T12:29:00+09:00
 overview_category:
   - 유지·보수
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/04_근접점검1.webp
+cover_image: /assets/img/portfolio/owdm5lc4eq.webp
 gallery:
-  - /assets/img/portfolio/01_화면전경.webp
+  - /assets/img/portfolio/gta7fqj9xg.webp
 ---
 
 ## 어떤 문제가 있었나
