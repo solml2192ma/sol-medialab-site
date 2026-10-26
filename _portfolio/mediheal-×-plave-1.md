@@ -1,13 +1,14 @@
 ---
+slug: medihealplave1
 title: MEDIHEAL × PLAVE
 post_date: 2026-10-26T12:17:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수 올리브영N
-cover_image: /assets/img/portfolio/01_대표전경.webp
+cover_image: /assets/img/portfolio/wtnt8ftyrg.webp
 gallery:
-  - /assets/img/portfolio/07_소등정면.webp
+  - /assets/img/portfolio/3l0rbc7dua.webp
 ---
 
 팝업스토어는 문을 여는 순간의 인상이 전부입니다. 성수 올리브영N에서 열린 메디힐 × 플레이브 팝업스토어는 콜라보 현장을 찾은 팬들이 화면 앞에서 직접 사진과 영상을 남기는 공간이었습니다. 솔미디어랩은 이 현장에 **실내용 P1 LED 전광판**을 설치했습니다.
