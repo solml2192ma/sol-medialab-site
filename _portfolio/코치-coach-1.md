@@ -1,13 +1,14 @@
 ---
+slug: 코치coach1
 title: 코치 (COACH)
 post_date: 2026-10-26T12:23:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 잠실 롯데월드몰 롯데에비뉴엘
-cover_image: /assets/img/portfolio/05_콘텐츠송출.webp
+cover_image: /assets/img/portfolio/cgxd6ak768.webp
 gallery:
-  - /assets/img/portfolio/04_화면점검.webp
+  - /assets/img/portfolio/250wr9ehm4.webp
 ---
 
 ## 프로젝트 개요
