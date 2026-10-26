@@ -1,13 +1,14 @@
 ---
+slug: 샤넬수블리마지chanelsublimage1
 title: 샤넬 수블리마지 (CHANEL SUBLIMAGE)
 post_date: 2026-10-26T12:02:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 종로구 북촌 휘겸재
-cover_image: /assets/img/portfolio/06_콘텐츠송출3.webp
+cover_image: /assets/img/portfolio/xj7pz7vwrf.webp
 gallery:
-  - /assets/img/portfolio/04_로고콘텐츠.webp
+  - /assets/img/portfolio/6id52szagp.webp
 ---
 
 ## 현장 개요
