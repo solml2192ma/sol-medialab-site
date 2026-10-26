@@ -1,13 +1,14 @@
 ---
+slug: 화면일부가꺼진실내led전광판유지보수사례
 title: 화면 일부가 꺼진 실내 LED 전광판 유지보수 사례
 post_date: 2026-10-26T16:45:00+09:00
 overview_category:
   - 유지·보수
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/02_증상확인.webp
+cover_image: /assets/img/portfolio/s50wxumabu.webp
 gallery:
-  - /assets/img/portfolio/07_조치완료.webp
+  - /assets/img/portfolio/a9eqrgc7ht.webp
 ---
 
 피트니스 센터 운동 공간 정면 벽에 설치되어 운영 중이던 실내 LED 전광판에서 화면 일부가 나오지 않는 문제가 생겼습니다. 솔미디어랩이 현장에서 증상을 확인하고 원인을 찾아 정상 송출 상태로 되돌린 **유지보수 사례**입니다.
