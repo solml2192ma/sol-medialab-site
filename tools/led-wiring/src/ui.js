@@ -7,6 +7,7 @@ import { buildReport } from './report.js';
 import { encodeRows, decodeRows, sameRows, movePlan, splitRow, mergeRows, canMerge } from './rowplan.js';
 import { exportPng, exportXlsx, printPdf } from './export.js';
 import { scaffoldViewUrl } from './scaffold-view-data.js';
+import { allowedLanNumber, reorderLan } from './manual-order.js';
 
 const $ = (s) => document.querySelector(s);
 const form = $('#form');
@@ -41,6 +42,7 @@ function swapWiring(s) {
   return out;
 }
 const activeWiring = (s) => swapWiring(s);
+const sequentialNumbers = (tab) => (tab === 'pw' ? config.power : config.lan).sequentialManualNumbers;
 const layoutOptions = (s) => ({
   pattern: s.pat, manual: s.mode === 'manual' ? decodeManual(s.ml) : null,
   powerPattern: s.powerPat, powerManual: s.powerMode === 'manual' ? decodeManual(s.powerMl) : null,
@@ -53,7 +55,16 @@ function readState() {
   s.topPlank = form.topPlank.checked ? '1' : '0';
   s.baseEnabled = form.baseEnabled.checked ? '1' : '0';
   s.stageEnabled = form.stageEnabled.checked ? '1' : '0';
-  return swapWiring(s);
+  const state = swapWiring(s);
+  if (config.lan.sequentialManualNumbers && state.mode === 'manual') {
+    state.cur = String(allowedLanNumber(decodeManual(state.ml), state.cur));
+    if (s.tab !== 'pw') form.cur.value = state.cur;
+  }
+  if (config.power.sequentialManualNumbers && state.powerMode === 'manual') {
+    state.powerCur = String(allowedLanNumber(decodeManual(state.powerMl), state.powerCur));
+    if (s.tab === 'pw') form.cur.value = state.powerCur;
+  }
+  return state;
 }
 
 function writeState(s) {
@@ -240,8 +251,9 @@ function renderLineList(lay, s) {
   $('#lineNotice').hidden = true;
   if (s.mode !== 'manual') { ul.innerHTML = ''; return; }
   const label = s.tab === 'pw' ? 'POWER' : 'LAN';
+  const ordered = sequentialNumbers(s.tab);
   ul.innerHTML = (s.tab === 'pw' ? lay.powerChains : lay.lanLines)
-    .map((l) => `<li data-n="${l.id}" class="${l.over ? 'over' : ''}${l.id === Number(s.cur) ? ' cur' : ''}"><span class="sw" style="background:${LAN_COLORS[(l.id - 1) % LAN_COLORS.length]}"></span><label class="num">${label} <input type="number" min="1" step="1" inputmode="numeric" value="${l.id}" data-n="${l.id}" aria-label="${label} 포트 번호"></label><span class="t">${l.cells.length}장${l.parts.length > 1 ? ` · ${l.parts.length}구간` : ''} · ${esc(patternOf(l.pattern).label)}${l.over ? ' · 한도 초과' : ''}${l.id === Number(s.cur) ? ' · 그리는 중' : ''}</span><button type="button" data-n="${l.id}" aria-label="${label} ${l.id} 삭제">✕</button></li>`)
+    .map((l) => `<li data-n="${l.id}" class="${l.over ? 'over' : ''}${l.id === Number(s.cur) ? ' cur' : ''}"><span class="sw" style="background:${LAN_COLORS[(l.id - 1) % LAN_COLORS.length]}"></span><label class="num">${label} <input type="number" min="1" step="1" inputmode="numeric" value="${l.id}" data-n="${l.id}" aria-label="${label} 포트 번호" ${ordered ? 'readonly' : ''}></label>${ordered ? `<button type="button" class="reorder" aria-label="${label} ${l.id} 순서 이동" title="끌어서 순서 변경 (방향키로도 이동)"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 4h12M3 9h12M3 14h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>` : ''}<span class="t">${l.cells.length}장</span><button type="button" data-n="${l.id}" aria-label="${label} ${l.id} 삭제">✕</button></li>`)
     .join('');
 }
 
@@ -496,14 +508,13 @@ function init() {
   $('#mUndo').addEventListener('click', () => setManual(decodeManual(form.ml.value).slice(0, -1)));
   $('#mClear').addEventListener('click', () => { form.cur.value = '1'; setManual([]); });
   $('#mNew').addEventListener('click', () => { form.cur.value = String(nextFreeNumber(decodeManual(form.ml.value))); update(); });
-  // 자동 → 직접 그리기로 처음 넘어올 때(그린 줄이 없을 때) 자동 배선 결과를 출발점으로 채워 준다
+  // 라디오 input이 폼 공통 갱신보다 먼저 실행되므로 현재 보이는 자동 도면을 그대로 복사한다.
+  // change에서 처리하면 앞선 input 갱신으로 이전 직접 배선이 먼저 복원될 수 있다.
   for (const r of form.querySelectorAll('input[name=mode]')) {
-    r.addEventListener('change', () => {
-      if (r.value !== 'manual' || !r.checked || form.ml.value || !last) return;
-      const pat = form.pat.value;
+    r.addEventListener('input', () => {
+      if (r.value !== 'manual' || !r.checked || !last || activeWiring(last.s).mode !== 'auto') return;
       const power = form.tab.value === 'pw';
-      const a = buildLayout(last.res, { ...layoutOptions(readState()), [power ? 'powerManual' : 'manual']: null }, last.cfg);
-      const filled = (power ? a.powerChains : a.lanLines).map((l, i) => ({ r0: l.rect.r0, c0: l.rect.c0, r1: l.rect.r1, c1: l.rect.c1, p: pat, n: i + 1 }));
+      const filled = (power ? last.lay.powerChains : last.lay.lanLines).map(l => ({ ...l.rect, p: l.pattern, n: l.id }));
       form.ml.value = encodeManual(filled);
       form.cur.value = String(nextFreeNumber(filled)); // 채워진 줄에 덧붙지 않고 새 LAN에서 시작
     });
@@ -511,6 +522,7 @@ function init() {
   $('#lineList').addEventListener('change', (e) => {
     const inp = e.target.closest('input[data-n]');
     if (!inp) return;
+    if (sequentialNumbers(form.tab.value)) { update(); return; }
     const old = Number(inp.dataset.n);
     const n = Number(inp.value);
     const lines = decodeManual(form.ml.value);
@@ -523,6 +535,7 @@ function init() {
     setManual(lines);
   });
   $('#lineList').addEventListener('click', (e) => {
+    if (e.target.closest('.reorder')) return;
     const del = e.target.closest('button[data-n]');
     if (del) {
       const n = Number(del.dataset.n);
@@ -532,6 +545,49 @@ function init() {
     if (e.target.closest('input')) return;
     const li = e.target.closest('li[data-n]');
     if (li) { form.cur.value = li.dataset.n; update(); } // 목록에서 골라 그 LAN를 이어서 그린다
+  });
+  const moveLan = (from, to) => {
+    if (!sequentialNumbers(form.tab.value) || from === to) return;
+    const result = reorderLan(decodeManual(form.ml.value), from, to);
+    form.cur.value = String(result.numbers.get(Number(form.cur.value)) ?? nextFreeNumber(result.lines));
+    setManual(result.lines);
+  };
+  let lineDrag = null;
+  $('#lineList').addEventListener('pointerdown', (e) => {
+    const handle = e.target.closest('.reorder');
+    if (!handle || e.button > 0) return;
+    e.preventDefault();
+    handle.setPointerCapture(e.pointerId);
+    const li = handle.closest('li');
+    lineDrag = { from: Number(li.dataset.n), to: Number(li.dataset.n) };
+    li.classList.add('dragging');
+  });
+  $('#lineList').addEventListener('pointermove', (e) => {
+    if (!lineDrag) return;
+    const li = document.elementFromPoint(e.clientX, e.clientY)?.closest('#lineList li');
+    if (!li) return;
+    lineDrag.to = Number(li.dataset.n);
+    for (const row of $('#lineList').children) row.classList.toggle('drop-target', row === li);
+  });
+  const finishLineDrag = (cancel) => {
+    if (!lineDrag) return;
+    const { from, to } = lineDrag;
+    lineDrag = null;
+    for (const row of $('#lineList').children) row.classList.remove('dragging', 'drop-target');
+    if (!cancel) moveLan(from, to);
+  };
+  $('#lineList').addEventListener('pointerup', () => finishLineDrag(false));
+  $('#lineList').addEventListener('pointercancel', () => finishLineDrag(true));
+  $('#lineList').addEventListener('keydown', (e) => {
+    const handle = e.target.closest('.reorder');
+    if (!handle || !['ArrowUp', 'ArrowDown'].includes(e.key)) return;
+    e.preventDefault();
+    const li = handle.closest('li');
+    const target = e.key === 'ArrowUp' ? li.previousElementSibling : li.nextElementSibling;
+    if (!target) return;
+    const from = Number(li.dataset.n), to = Number(target.dataset.n);
+    moveLan(from, to);
+    $(`#lineList li[data-n="${to}"] .reorder`)?.focus();
   });
   $('#panMode').addEventListener('change', update);
   for (const b of document.querySelectorAll('.tabs [data-tab]')) b.addEventListener('click', () => {

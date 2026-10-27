@@ -77,7 +77,7 @@ test('박스 표는 1000 규격을 먼저 표시하고 출고수량 계산식을
   const exactInput = { ...input, widthMm: 3500, heightMm: 2000 };
   const exact = calc(exactInput, pixel);
   const exactBox = buildReport(exact, buildLayout(exact, {}), exactInput).sections.find((s) => s.title === '박스');
-  assert.deepEqual(exactBox.rows[0], ['500×1000', 14, '=', 14, '=', 7, '×', 2]);
+  assert.deepEqual(exactBox.rows[0], ['500×1000', 14, '<', 21, '=', 7, '×', 3]);
 });
 
 test('해상도 비고는 실제 사용하는 캐비닛 규격별 픽셀을 표시한다', () => {

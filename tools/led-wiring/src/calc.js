@@ -106,7 +106,7 @@ export function calc(input, pixelData, cfg = defaultConfig) {
       errors.push(`피치 ${pt.label} / ${w}×${h} 캐비닛의 1박스 수량 정보가 없습니다.`);
       return { cabinet: key(w, h), need: count, perBox: null, boxes: null, packQty: null };
     }
-    const boxes = Math.ceil(count / perBox);
+    const boxes = Math.ceil(count / perBox) + (count % perBox === 0 ? cfg.packing.extraBoxesWhenExact : 0);
     return { cabinet: key(w, h), need: count, perBox, boxes, packQty: boxes * perBox };
   };
   const mainCount = cols * mainRows;

@@ -164,9 +164,9 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
     uncovered = cells.filter((c) => !owner.has(c.id)).map((c) => c.id);
     if (uncovered.length) warnings.push(`배선이 연결되지 않은 캐비닛이 ${uncovered.length}장 있습니다.`);
   } else {
-    // LAN는 포트 수 최소화 우선, POWER는 방향 우선·균등 분할로 각각 계산한다.
-    const rects = opt.powerOnly
-      ? partitionByDirection(rowPx, cols, limit, maxCabs, pattern)
+    // LAN는 선택 방향으로 한도까지 진행하고, POWER는 기존 균등 분할을 유지한다.
+    const rects = opt.powerOnly || cfg.lan.autoDirectionPriority
+      ? partitionByDirection(rowPx, cols, limit, maxCabs, pattern, !!opt.powerOnly)
       : partitionLan(rowPx, cols, limit, maxCabs, pattern);
     lanLines = rects.map((rc, i) => mk(i + 1, orderRect(rc, pattern).map(([r, c]) => at[r][c]), rc, pattern));
   }
@@ -196,7 +196,8 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
 const range = (a, b) => Array.from({ length: b - a }, (_, i) => a + i); // [a, b)
 
 /** 선택 방향의 띠를 먼저 만들고, 분할이 필요하면 부하를 균등하게 나눈다. */
-function partitionByDirection(rowPx, cols, limit, maxCabs, pattern) {
+function partitionByDirection(rowPx, cols, limit, maxCabs, pattern, balance = true) {
+  const split = balance ? balancedParts : maximalParts;
   const rowOrder = range(0, rowPx.length);
   const colOrder = range(0, cols);
   if (!pattern.top) rowOrder.reverse();
@@ -205,7 +206,7 @@ function partitionByDirection(rowPx, cols, limit, maxCabs, pattern) {
   const out = [];
   if (pattern.axis === 'h') {
     for (let i = 0; i < rowOrder.length;) {
-      const parts = balancedParts(colOrder.map(() => rowPx[rowOrder[i]]), limit, maxCabs);
+      const parts = split(colOrder.map(() => rowPx[rowOrder[i]]), limit, maxCabs);
       const maxWidth = Math.max(...parts.map((part) => part.length));
       let end = i + 1;
       let sum = rowPx[rowOrder[i]];
@@ -216,7 +217,7 @@ function partitionByDirection(rowPx, cols, limit, maxCabs, pattern) {
       i = end;
     }
   } else {
-    const parts = balancedParts(rowOrder.map((r) => rowPx[r]), limit, maxCabs);
+    const parts = split(rowOrder.map((r) => rowPx[r]), limit, maxCabs);
     const largestLoad = Math.max(...parts.map((part) => part.reduce((sum, index) => sum + rowPx[rowOrder[index]], 0)));
     const largestCount = Math.max(...parts.map((part) => part.length));
     const width = Math.max(1, Math.min(cols, Math.floor(limit / largestLoad), Math.floor(maxCabs / largestCount)));
@@ -232,6 +233,20 @@ function partitionByDirection(rowPx, cols, limit, maxCabs, pattern) {
 }
 
 const balancedLengths = (n, k) => Array.from({ length: k }, (_, i) => Math.floor(n / k) + (i < n % k ? 1 : 0));
+
+/** 선택 방향으로 한도 안에서 최대한 길게 진행하는 연속 구간. */
+function maximalParts(weights, limit, maxCount) {
+  const parts = [];
+  let part = [], sum = 0;
+  for (let i = 0; i < weights.length; i++) {
+    if (part.length && (sum + weights[i] > limit || part.length >= maxCount)) {
+      parts.push(part); part = []; sum = 0;
+    }
+    part.push(i); sum += weights[i];
+  }
+  if (part.length) parts.push(part);
+  return parts;
+}
 
 /** 연속한 칸을 필요한 최소 구간 수로 나누고, 최대 부하를 최소화한다. */
 function balancedParts(weights, limit, maxCount) {

@@ -1,7 +1,7 @@
 main.scaffold-page { max-width:960px; grid-template-columns:minmax(0,1fr); }
 .scaffold-page h1 { font-size:20px; margin:6px 0; }
 #scaffold-orbit { --background:var(--card); --foreground:var(--ink); --muted-foreground:var(--mute); --orange:var(--warn); --viz-series-1:var(--brand); --led-front:#0a0c0f; --led-side:#1c2229; --led-rear:#272f39; --led-cover:#343f4b; --led-edge:#74818f; }
-#scaffold-orbit { --stage-box:#2563eb; --base-box:#949da8; }
+#scaffold-orbit { --stage-box:#2563eb; --base-box:#facc15; }
 .installation-legend { display:flex; flex-wrap:wrap; gap:8px 20px; font-size:13px; }
 .installation-legend > span { display:inline-flex; align-items:center; gap:6px; }
 .installation-legend i { display:inline-block; width:12px; height:12px; }

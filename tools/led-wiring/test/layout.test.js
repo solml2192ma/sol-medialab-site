@@ -51,7 +51,7 @@ test('6000×5500 p1.5: 모든 자동 패턴에서 한도 안의 사각형으로 
   for (const pattern of PATTERNS) {
     const { res, lay } = make({ widthMm: 6000, heightMm: 5500, pitch: '1.5-in' }, pattern.id);
     assert.deepEqual(lay.warnings, [], pattern.id);
-    assert.equal(lay.lanLines.length, 22, pattern.id);
+    assert.equal(lay.lanLines.length, pattern.axis === 'h' ? 22 : 24, pattern.id);
     assert.ok(lay.lanLines.every((line) => !line.over && line.pixels <= lay.limit && isRectangle(line)), pattern.id);
     const assigned = lay.lanLines.flatMap((line) => line.cells.map((cell) => cell.id)).sort((a, b) => a - b);
     assert.deepEqual(assigned, lay.cells.map((cell) => cell.id), pattern.id);
@@ -76,11 +76,13 @@ test('긴 세로 영역과 장수 제한도 자동 배선에서 한도를 넘는
   }
 });
 
-test('6000×5500 p1.5는 세로 패턴이어도 포트 수를 먼저 줄이고 내부 경로는 패턴을 따른다', () => {
+test('6000×5500 p1.5는 세로 방향으로 한도까지 진행한 뒤 나눈다', () => {
   for (const pattern of PATTERNS.filter((p) => p.axis === 'v')) {
     const { lay } = make({ widthMm: 6000, heightMm: 5500, pitch: '1.5-in' }, pattern.id);
     assert.deepEqual(lay.warnings, [], pattern.id);
     assert.ok(lay.lanLines.every((line) => isRectangle(line) && !line.over));
+    assert.equal(lay.lanLines[0].rect.r1 - lay.lanLines[0].rect.r0, 6);
+    assert.equal(lay.lanLines[0].rect.c1 - lay.lanLines[0].rect.c0, 1);
     for (const line of lay.lanLines) {
       const expected = orderRect(line.rect, pattern).map(([r, c]) => r * lay.cols + c + 1);
       assert.deepEqual(line.cells.map((cell) => cell.id), expected, pattern.id);
@@ -88,14 +90,15 @@ test('6000×5500 p1.5는 세로 패턴이어도 포트 수를 먼저 줄이고 �
   }
 });
 
-test('LAN 6000×3500 p2.6 두 제조사: 모든 방향에서 최소 6포트를 우선한다', () => {
+test('LAN 6000×3500 p2.6 두 제조사: 가로는 전체 폭, 세로는 전체 높이로 통일한다', () => {
   for (const pitch of ['2.6-in', '2.6-flex-in']) {
     for (const pattern of PATTERNS) {
       const { lay } = make({ widthMm: 6000, heightMm: 3500, pitch }, pattern.id);
       assert.deepEqual(lay.warnings, []);
-      assert.equal(lay.lanLines.length, 6, pattern.id);
+      assert.equal(lay.lanLines.length, pattern.axis === 'h' ? 7 : 6, pattern.id);
       for (const line of lay.lanLines) {
         assert.ok(isRectangle(line) && !line.over);
+        assert.equal(pattern.axis === 'h' ? line.rect.c1 - line.rect.c0 : line.rect.r1 - line.rect.r0, pattern.axis === 'h' ? 12 : 7);
         const expected = orderRect(line.rect, pattern).map(([r, c]) => r * lay.cols + c + 1);
         assert.deepEqual(line.cells.map((cell) => cell.id), expected);
       }
@@ -105,6 +108,34 @@ test('LAN 6000×3500 p2.6 두 제조사: 모든 방향에서 최소 6포트를 �
       const assigned = lay.lanLines.flatMap((line) => line.cells.map((cell) => cell.id)).sort((a, b) => a - b);
       assert.deepEqual(assigned, lay.cells.map((cell) => cell.id));
     }
+  }
+});
+
+test('LAN 가로 24열은 선택한 좌우 시작점에서 한도까지 17열을 먼저 연결한다', () => {
+  for (const p of PATTERNS.filter(p => p.axis === 'h')) {
+    const { lay } = make({ widthMm: 12000, heightMm: 500, pitch: '2.6-in' }, p.id);
+    assert.deepEqual(lay.lanLines.map(line => line.cells.length), [17, 7], p.id);
+    assert.equal(lay.lanLines[0].cells[0].col, p.left ? 0 : 23);
+    assert.equal(lay.lanLines[0].cells.at(-1).col, p.left ? 16 : 7);
+    assert.ok(lay.lanLines.every(line => !line.over && isRectangle(line)));
+  }
+});
+
+test('LAN 세로 혼합 행은 위아래 시작점부터 실제 픽셀 부하 한도까지 진행한다', () => {
+  const rows = [500, ...Array(9).fill(1000)];
+  for (const p of PATTERNS.filter(p => p.axis === 'v')) {
+    const { lay } = make({ widthMm: 2000, heightMm: 9500, cabH: 1000, rowPlan: rows, pitch: '2.6-in' }, p.id);
+    const first = lay.lanLines[0];
+    // 위에서 시작하면 500+1000×8, 아래에서는 1000×8까지 들어간다.
+    assert.equal(first.rect.r1 - first.rect.r0, p.top ? 9 : 8, p.id);
+    assert.equal(first.cells[0].row, p.top ? 0 : rows.length - 1);
+    assert.equal(first.cells[0].col, p.left ? 0 : lay.cols - 1);
+    const nextRow = p.top ? first.rect.r1 : first.rect.r0 - 1;
+    assert.ok(first.pixels + lay.cells.find(cell => cell.row === nextRow).pixels > lay.limit);
+    assert.ok(lay.lanLines.every(line => !line.over && isRectangle(line)));
+    const ids = lay.lanLines.flatMap(line => line.cells.map(cell => cell.id));
+    assert.equal(ids.length, lay.cells.length);
+    assert.equal(new Set(ids).size, lay.cells.length);
   }
 });
 
@@ -131,7 +162,8 @@ test('세로 지그재그에서는 세로로 긴 사각형을 우선한다 (한�
   // 1.5피치: 캐비닛 320×320 → 1줄 6장. 3열 × 8행: 세로 띠(3열×2행)면 4줄, 가로 띠도 4줄 → 같으면 방향 우선
   const v = make({ widthMm: 1500, heightMm: 4000, pitch: '1.5-in' }, 'v-zigzag').lay;
   const h = make({ widthMm: 1500, heightMm: 4000, pitch: '1.5-in' }, 'h-zigzag').lay;
-  assert.equal(v.lanLines.length, h.lanLines.length);
+  assert.equal(v.lanLines[0].rect.r1 - v.lanLines[0].rect.r0, 6);
+  assert.equal(h.lanLines[0].rect.c1 - h.lanLines[0].rect.c0, 3);
   assert.ok(v.lanLines[0].rect.c0 === 0 && h.lanLines[0].rect.r0 === 0);
 });
 
@@ -142,7 +174,7 @@ test('1000 샘플: POWER는 500×1000을 2장분으로 환산해 20장분 이내
   assert.equal(a.lay.powerChains.length, a.res.power.ports);
   const b = make({ widthMm: 7000, heightMm: 5000, cabH: 1000, pitch: '3.9-in' }, 'h-zigzag');
   assert.equal(b.res.lan.ports, 4); // 용량만으로 계산한 하한
-  assert.equal(b.lay.lanLines.length, 4); // LAN는 포트 수 최소화 우선.
+  assert.equal(b.lay.lanLines.length, 5); // LAN는 전체 가로 폭을 우선.
   assert.ok(b.lay.powerChains.length >= b.res.power.ports);
   assert.ok(b.lay.powerChains.every((ch) => ch.cells.length <= 10));
 });
@@ -181,12 +213,12 @@ test('POWER는 방향을 우선하고 가로 24열은 12열씩 균등 배분한�
   }
 });
 
-test('같은 화면에서 LAN는 최소 포트 수, POWER는 방향 우선으로 독립 적용한다', () => {
+test('LAN 방향을 우선하도록 변경해도 POWER의 패턴과 균등 분할은 독립적으로 유지한다', () => {
   const { res } = make({ widthMm: 6000, heightMm: 3500, pitch: '2.6-in' }, 'hz-tl');
   const horizontal = buildLayout(res, { pattern: 'hz-tl', powerPattern: 'hz-tl' });
   const verticalPower = buildLayout(res, { pattern: 'hz-tl', powerPattern: 'vz-tl' });
   const verticalLan = buildLayout(res, { pattern: 'vz-tl', powerPattern: 'hz-tl' });
-  assert.equal(horizontal.lanLines.length, 6);
+  assert.equal(horizontal.lanLines.length, 7);
   assert.equal(verticalLan.lanLines.length, 6);
   assert.equal(horizontal.powerChains.length, 7);
   assert.equal(verticalPower.powerChains.length, 6);

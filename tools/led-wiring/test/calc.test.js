@@ -8,6 +8,19 @@ import { config } from '../src/config.js';
 const pixel = JSON.parse(readFileSync(new URL('../data/pixel.json', import.meta.url)));
 const run = (i) => calc({ cabW: 500, cabH: 500, ...i }, pixel);
 
+test('박스에 딱 맞는 필요수량은 여분 1박스를 출고하고 남는 박스에는 추가하지 않는다', () => {
+  for (const pitch of ['1.5-in', '2.6-flex-in', '3.9-in', '4.8-out']) {
+    const b = run({ widthMm: 7000, heightMm: 3000, pitch }).boxes[0];
+    assert.deepEqual([b.need, b.perBox, b.boxes, b.packQty], [84, 14, 7, 98]);
+  }
+  const uni = run({ widthMm: 7000, heightMm: 3000, pitch: '2.6-in' }).boxes[0];
+  assert.deepEqual([uni.need, uni.boxes, uni.packQty], [84, 8, 96]);
+  const partial = run({ widthMm: 6500, heightMm: 3000, pitch: '4.8-out' }).boxes[0];
+  assert.deepEqual([partial.need, partial.boxes, partial.packQty], [78, 6, 84]);
+  const single = run({ widthMm: 3500, heightMm: 1000, pitch: '4.8-out' }).boxes[0];
+  assert.deepEqual([single.need, single.boxes, single.packQty], [14, 2, 28]);
+});
+
 test('LED 단 600mm와 베이스 40mm는 LED 시작 640mm부터 상단까지 아시바 높이에 포함한다', () => {
   const input={widthMm:7000,heightMm:3000,pitch:'4.8-out'};
   const floor=run(input);
@@ -197,7 +210,7 @@ test('역삼멀티캠퍼스: 7000×5000 / 500×1000 / 3.9', () => {
   const r = run({ widthMm: 7000, heightMm: 5000, cabH: 1000, pitch: '3.9-in' });
   assert.equal(r.counts.total, 70);
   assert.equal(r.boxes.length, 1); // 500 보충 줄 없음
-  assert.deepEqual([r.boxes[0].boxes, r.boxes[0].packQty], [10, 70]);
+  assert.deepEqual([r.boxes[0].boxes, r.boxes[0].packQty], [11, 77]); // 딱 맞는 10박스에 여분 1박스
   assert.ok(Math.abs(r.lan.capacityCabs - 656000 / (128 * 256)) < 1e-9);
   assert.equal(r.lan.ports, 4); // 엑셀 롱랜선 = 4
   assert.equal(r.power.ports, 7); // 500×1000 70장 = 140장분 / 20
@@ -244,7 +257,7 @@ test('직접 입력 캐비닛은 박스 수량을 입력받아 사용', () => {
   const r = calc({ widthMm: 4800, heightMm: 3375, cabW: 600, cabH: 337.5, pitch: 2.6, boxQty: 8 }, pixel);
   assert.deepEqual(r.errors, []);
   assert.equal(r.counts.total, 80);
-  assert.equal(r.boxes[0].boxes, 10);
+  assert.equal(r.boxes[0].boxes, 11);
 });
 
 test('나누어떨어지지 않으면 경고, 설정으로 줄당 최대 캐비닛 수 강제', () => {

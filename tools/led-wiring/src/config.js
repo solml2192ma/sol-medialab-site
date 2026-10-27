@@ -1,14 +1,18 @@
 // 규칙/기본값은 이 파일 한 곳에서만 바꾼다.
 export const config = {
+  packing: { extraBoxesWhenExact: 1 }, // 필요수량이 박스에 딱 맞으면 여분 1박스 출고
   // LAN: 1포트 처리 픽셀 수. 줄당 최대 캐비닛 수는 이 값과 캐비닛 해상도로 계산한다.
   // (배선 모양과 무관하게 ㅁ 모양으로 환산해서 계산)
   lan: {
+    sequentialManualNumbers: true, // 새 LAN 번호는 빈 번호 순서대로, 재정렬은 목록 손잡이로
+    autoDirectionPriority: true, // 자동 배선은 포트 수보다 선택 방향으로 길게 진행하는 것을 우선
     maxPixelsPerPort: 650000, // 절대 한도
     maxPixelsPerPortByPitch: { 3.9: 656000 }, // 피치별 예외
     maxCabinetsPerLine: null, // 숫자를 넣으면 계산값 대신 이 값으로 강제 (예: 10)
   },
   // POWER: 픽셀과 무관하게 500×500을 1장분, 500×1000을 2장분으로 계산한다.
   power: {
+    sequentialManualNumbers: true, // 새 POWER 번호와 목록 순서 변경은 LAN과 같은 방식
     autoMaxCabinetsPerPort: 20, // 자동 배선: 500×500 환산 20장분. 직접 배선은 제한 없음.
   },
   // 아시바(비계) 규격
