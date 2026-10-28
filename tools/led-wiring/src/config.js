@@ -1,5 +1,9 @@
 // 규칙/기본값은 이 파일 한 곳에서만 바꾼다.
 export const config = {
+  pngBrand: {
+    companyKo: '주식회사 솔미디어랩', companyEn: 'SOL MEDIA LAB Inc.',
+    headerHeightRatio: 0.065, widthRatio: 0.33, logoWidthRatio: 0.085, logoHeightRatio: 0.04,
+  },
   packing: { extraBoxesWhenExact: 1 }, // 필요수량이 박스에 딱 맞으면 여분 1박스 출고
   // LAN: 1포트 처리 픽셀 수. 줄당 최대 캐비닛 수는 이 값과 캐비닛 해상도로 계산한다.
   // (배선 모양과 무관하게 ㅁ 모양으로 환산해서 계산)

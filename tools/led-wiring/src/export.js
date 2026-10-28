@@ -1,5 +1,5 @@
 // 브라우저 내보내기: PNG / 엑셀 / 인쇄(PDF)
-import { renderCombined, detailFor } from './render.js';
+import { renderCombined, detailFor } from './render.js?png-brand=1';
 import { makeXlsx } from './xlsx.js';
 import { buildReport } from './report.js';
 
@@ -20,8 +20,16 @@ export function fileBase(ctx) {
 
 // 위: LAN 도면 / 아래: POWER 도면
 export async function exportPng(ctx) {
+  const logo = document.querySelector('.company-logo');
+  if (!logo) throw new Error('회사 로고를 찾지 못했습니다. 새로고침 후 다시 시도해 주세요.');
+  await logo.decode();
+  const logoCanvas = document.createElement('canvas');
+  logoCanvas.width = logo.naturalWidth;
+  logoCanvas.height = logo.naturalHeight;
+  logoCanvas.getContext('2d').drawImage(logo, 0, 0);
+  const logoDataUrl = logoCanvas.toDataURL('image/png');
   // 칸이 충분히 크면(가로 3200px 기준) 칸 안에 LAN 번호·순서·해상도도 함께 적는다
-  const svg = renderCombined(ctx.lay, { title: ctx.title, detail: detailFor(ctx.lay, 3200) });
+  const svg = renderCombined(ctx.lay, { title: ctx.title, detail: detailFor(ctx.lay, 3200), logoDataUrl });
   const vb = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
   const ratio = Number(vb[2]) / Number(vb[1]);
   const width = 3200; // 인쇄해도 선명한 크기

@@ -5,6 +5,7 @@ main.scaffold-page { max-width:960px; grid-template-columns:minmax(0,1fr); }
 .installation-legend { display:flex; flex-wrap:wrap; gap:8px 20px; font-size:13px; }
 .installation-legend > span { display:inline-flex; align-items:center; gap:6px; }
 .installation-legend i { display:inline-block; width:12px; height:12px; }
+.installation-legend[hidden], .installation-legend > [hidden] { display:none; }
 .stage-swatch { background:var(--stage-box); }
 .base-swatch { background:var(--base-box); }
 .scaffold-heading { display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 16px; }
@@ -25,6 +26,7 @@ main.scaffold-page { max-width:960px; grid-template-columns:minmax(0,1fr); }
 body[data-preview] { background:var(--card); }
 body[data-preview] main.scaffold-page { display:block; padding:0; max-width:none; }
 body[data-preview] main > h1 { display:none; }
-body[data-preview] #scaffold-orbit { border:0; padding:0; }
-body[data-preview] #scaffold-orbit > :not(.scaffold-scene) { display:none; }
-body[data-preview] .scaffold-scene { height:100vh; }
+body[data-preview] #scaffold-orbit { border:0; padding:0; height:100vh; display:flex; flex-direction:column; }
+body[data-preview] #scaffold-orbit > :not(.scaffold-scene):not(.installation-legend) { display:none; }
+body[data-preview] .installation-legend { flex:none; padding:6px 8px; gap:6px 14px; font-size:12px; }
+body[data-preview] .scaffold-scene { height:0; min-height:0; flex:1; }

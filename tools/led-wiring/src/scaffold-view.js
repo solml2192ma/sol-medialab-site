@@ -46,7 +46,7 @@ function initOrbit(data) {
     const legend = installationLegend.querySelector(`[data-${kind}-legend]`);
     const box = panel.installationBoxes.find(item=>item.kind===kind);
     legend.hidden = !box;
-    if(box) legend.querySelector('span').textContent = `${kind==='stage'?'LED 단':'베이스'} ${fmt(box.h)}mm`;
+    if(box) legend.querySelector('span').textContent = `${kind==='stage'?'LED 단 (파란색)':'베이스 (노란색)'} · 높이 ${fmt(box.h)}mm`;
   }
   const save = () => {
     const url = new URL(location.href);

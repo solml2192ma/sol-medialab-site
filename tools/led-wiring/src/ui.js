@@ -5,7 +5,7 @@ import { buildLayout, PATTERNS, patternOf, orderRect, encodeManual, decodeManual
 import { renderSvg, detailFor, LAN_COLORS } from './render.js';
 import { buildReport } from './report.js';
 import { encodeRows, decodeRows, sameRows, movePlan, splitRow, mergeRows, canMerge } from './rowplan.js';
-import { exportPng, exportXlsx, printPdf } from './export.js';
+import { exportPng, exportXlsx, printPdf } from './export.js?png-brand=1';
 import { scaffoldViewUrl } from './scaffold-view-data.js';
 import { allowedLanNumber, reorderLan } from './manual-order.js';
 

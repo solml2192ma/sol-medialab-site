@@ -151,6 +151,22 @@ test('내보내기 도면: 위 LAN / 아래 POWER를 세로로 쌓는다', () =>
   assert.ok(!/<svg [^>]*width=/.test(renderCombined(lay, { sized: false }).split('>')[0]));
 });
 
+test('PNG 도면 양쪽 머리말에 로고를 내장하고 회사명과 배선 종류를 표시한다', () => {
+  const { lay } = sample();
+  const logoDataUrl = 'data:image/png;base64,dGVzdA==';
+  const svg = renderCombined(lay, { title: 'LED 테스트', logoDataUrl });
+  assert.equal((svg.match(/data-png-brand=/g) || []).length, 2);
+  assert.equal((svg.match(/주식회사 솔미디어랩/g) || []).length, 2);
+  assert.equal((svg.match(/SOL MEDIA LAB Inc\./g) || []).length, 2);
+  assert.equal((svg.match(/<image href="data:image\/png;base64,/g) || []).length, 2);
+  assert.ok(svg.indexOf('data-png-brand="LAN 배선"') < svg.indexOf('data-png-brand="POWER 배선"'));
+  const size = s => s.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/).slice(1).map(Number);
+  const plain = size(renderCombined(lay));
+  const branded = size(svg);
+  assert.equal(branded[0], plain[0]);
+  assert.ok(branded[1] > plain[1]); // 배선·범례 영역을 덮지 않고 머리말 공간을 추가
+});
+
 test('엑셀 자재표: LAN포트 구성 아래에 POWER포트 구성', () => {
   const { res, lay, input } = sample();
   const titles = buildReport(res, lay, input).sections.map((s) => s.title);

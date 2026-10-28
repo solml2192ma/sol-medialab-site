@@ -1,4 +1,5 @@
 // 레이아웃 → SVG 문자열. (PNG/PDF 내보내기에서도 같은 문자열을 사용)
+import { config } from './config.js?png-brand=1';
 export const LAN_COLORS = [
   '#e6194b', '#3cb44b', '#4363d8', '#f58231', '#911eb4', '#0aa5a5',
   '#c2185b', '#7a8b00', '#795548', '#00796b', '#5c6bc0', '#ef6c00',
@@ -171,22 +172,37 @@ function text(x, y, s, size, fill, anchor = 'start', weight = 'normal') {
  * sized=false 이면 width/height 없이 viewBox만 둔다 (인쇄 화면에서 CSS로 크기를 맞출 때).
  */
 export function renderCombined(lay, opt = {}) {
-  const { title = '', sized = true, detail = false } = opt;
-  const a = renderSvg(lay, { showLan: true, showPower: false, detail, title: `${title}${title ? ' — ' : ''}LAN 배선` });
-  const b = renderSvg(lay, { showLan: false, showPower: true, detail, title: `${title}${title ? ' — ' : ''}POWER 배선` });
+  const { title = '', sized = true, detail = false, logoDataUrl = '' } = opt;
+  const a = renderSvg(lay, { showLan: true, showPower: false, detail, title: logoDataUrl ? title : `${title}${title ? ' — ' : ''}LAN 배선` });
+  const b = renderSvg(lay, { showLan: false, showPower: true, detail, title: logoDataUrl ? title : `${title}${title ? ' — ' : ''}POWER 배선` });
   const dim = (s) => {
     const m = s.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
     return [Number(m[1]), Number(m[2])];
   };
-  const [aw, ah] = dim(a);
-  const [bw, bh] = dim(b);
+  const framed = (svg, label) => {
+    if (!logoDataUrl) return svg;
+    const [w, h] = dim(svg), brand = config.pngBrand;
+    const head = w * brand.headerHeightRatio;
+    const x = w * (1 - brand.widthRatio), y = (head - w * brand.logoHeightRatio) / 2;
+    const tx = x + w * (brand.logoWidthRatio + 0.018);
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${f(w)} ${f(h + head)}" width="${f(w)}" height="${f(h + head)}">` +
+      `<rect width="${f(w)}" height="${f(h + head)}" fill="#fff"/>` +
+      `<g data-png-brand="${label}">${text(w * 0.034, head * 0.63, label, w * 0.019, '#111', 'start', 'bold')}` +
+      `<image href="${esc(logoDataUrl)}" x="${f(x)}" y="${f(y)}" width="${f(w * brand.logoWidthRatio)}" height="${f(w * brand.logoHeightRatio)}" preserveAspectRatio="xMidYMid meet"/>` +
+      text(tx, head * 0.45, brand.companyKo, w * 0.014, '#17212b', 'start', 'bold') +
+      text(tx, head * 0.75, brand.companyEn, w * 0.0105, '#64707d', 'start', 'bold') + '</g>' +
+      svg.replace('<svg ', `<svg x="0" y="${f(head)}" `) + '</svg>';
+  };
+  const brandedA = framed(a, 'LAN 배선'), brandedB = framed(b, 'POWER 배선');
+  const [aw, ah] = dim(brandedA);
+  const [bw, bh] = dim(brandedB);
   const W = Math.max(aw, bw);
   const H = ah + bh;
   const place = (s, y) => s.replace('<svg xmlns="http://www.w3.org/2000/svg"', `<svg x="0" y="${f(y)}" xmlns="http://www.w3.org/2000/svg"`);
   const size = sized ? ` width="${f(W)}" height="${f(H)}"` : '';
   return (
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${f(W)} ${f(H)}"${size} font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans KR, sans-serif">` +
-    `<rect width="${f(W)}" height="${f(H)}" fill="#fff"/>${place(a, 0)}${place(b, ah)}` +
+    `<rect width="${f(W)}" height="${f(H)}" fill="#fff"/>${place(brandedA, 0)}${place(brandedB, ah)}` +
     `<line x1="0" y1="${f(ah)}" x2="${f(W)}" y2="${f(ah)}" stroke="#b0bec5" stroke-width="${f(W / 600)}" stroke-dasharray="${f(W / 120)} ${f(W / 200)}"/></svg>`
   );
 }
