@@ -1,7 +1,9 @@
-import { calc } from './calc.js';
+import { calc } from './calc.js?base=1';
 import { encodeRows, decodeRows } from './rowplan.js';
 import { scaffoldPanel } from './scaffold-panel.js';
-import { config } from './config.js';
+import { config } from './config.js?base=1';
+
+export const scaffoldTitle = (scaffold) => `아시바 ${scaffold.bays}칸 × ${scaffold.displayTiers}단 × ${scaffold.depthBays}폭`;
 
 export function scaffoldViewUrl(input, scaffold) {
   const params = new URLSearchParams({
@@ -12,6 +14,7 @@ export function scaffoldViewUrl(input, scaffold) {
     stageEnabled: scaffold.stageEnabled ? '1' : '0',
   });
   if (input.stageHeightMm != null) params.set('stageHeight', input.stageHeightMm);
+  if (input.baseCounts) params.set('baseCounts', input.baseCounts);
   if (input.rowPlan?.length) params.set('rows', encodeRows(input.rowPlan));
   return `scaffold.html?${params}`;
 }
@@ -26,6 +29,7 @@ export function scaffoldViewData(params, pixelData) {
     bays: values.bays, tiers: values.tiers, pitch: params.get('pitch'), rowPlan: decodeRows(params.get('rows')),
     baseEnabled: params.get('baseEnabled') === '1', stageEnabled: params.get('stageEnabled') === '1',
     stageHeightMm: params.has('stageHeight') && params.get('stageHeight') !== '' ? Number(params.get('stageHeight')) : null,
+    baseCounts: params.get('baseCounts') ?? '',
   };
   const off = calc({ ...input, topPlank: false }, pixelData);
   const on = calc({ ...input, topPlank: true }, pixelData);

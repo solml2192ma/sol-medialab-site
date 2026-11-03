@@ -1,7 +1,8 @@
 // 브라우저 내보내기: PNG / 엑셀 / 인쇄(PDF)
-import { renderCombined, detailFor } from './render.js?png-brand=1';
-import { makeXlsx } from './xlsx.js';
-import { buildReport } from './report.js';
+import { renderCombined, detailFor } from './render.js?warnings=1';
+import { makeXlsx } from './xlsx.js?outputs=1';
+import { buildReport } from './report.js?base=1';
+import { outputWarnings } from './output-warnings.js?outputs=1';
 
 function download(blob, name) {
   const a = document.createElement('a');
@@ -29,7 +30,7 @@ export async function exportPng(ctx) {
   logoCanvas.getContext('2d').drawImage(logo, 0, 0);
   const logoDataUrl = logoCanvas.toDataURL('image/png');
   // 칸이 충분히 크면(가로 3200px 기준) 칸 안에 LAN 번호·순서·해상도도 함께 적는다
-  const svg = renderCombined(ctx.lay, { title: ctx.title, detail: detailFor(ctx.lay, 3200), logoDataUrl });
+  const svg = renderCombined(ctx.lay, { title: ctx.title, detail: detailFor(ctx.lay, 3200), logoDataUrl, alerts: outputWarnings(ctx.res, ctx.lay, ctx.input) });
   const vb = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
   const ratio = Number(vb[2]) / Number(vb[1]);
   const width = 3200; // 인쇄해도 선명한 크기
@@ -50,9 +51,12 @@ export async function exportPng(ctx) {
   download(blob, `${fileBase(ctx)}.png`);
 }
 
-export function exportXlsx(ctx) {
+export function buildXlsxRows(ctx) {
   const { inputs, sections } = buildReport(ctx.res, ctx.lay, ctx.input, ctx.dir);
-  const rows = [[{ v: 'LED 배선도면 자재표', bold: true }], ...inputs.map(([k, v]) => [{ v: k, bold: true }, v]), []];
+  const alerts = outputWarnings(ctx.res, ctx.lay, ctx.input);
+  const rows = [[{ v: 'LED 배선도면 자재표', bold: true }],
+    ...(alerts.length ? [[{ v: '주의', warning: true }], ...alerts.map(v => [{ v, warning: true }]), []] : []),
+    ...inputs.map(([k, v]) => [{ v: k, bold: true }, v]), []];
   for (const s of sections) {
     rows.push([{ v: s.title, bold: true }]);
     rows.push(s.header.map((h) => ({ v: h, fill: true })));
@@ -64,7 +68,17 @@ export function exportXlsx(ctx) {
     })));
     rows.push([]);
   }
-  const bytes = makeXlsx(rows, { sheetName: '자재표', widths: [24, 18, 22, 14, 14] });
+  return rows;
+}
+
+export function buildXlsxBytes(ctx) {
+  const rows = buildXlsxRows(ctx);
+  const merges = rows.flatMap((row, i) => row.some(cell => cell?.warning) ? [`A${i + 1}:H${i + 1}`] : []);
+  return makeXlsx(rows, { sheetName: '자재표', widths: [24, 18, 22, 14, 14], merges });
+}
+
+export function exportXlsx(ctx) {
+  const bytes = buildXlsxBytes(ctx);
   download(new Blob([bytes], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), `${fileBase(ctx)}.xlsx`);
 }
 

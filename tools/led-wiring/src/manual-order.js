@@ -5,6 +5,15 @@ export function allowedLanNumber(lines, value) {
   return lines.some(l => l.n === n) || n === nextFreeNumber(lines) ? n : nextFreeNumber(lines);
 }
 
+export function compactManualNumbers(lines, selected) {
+  const ids = [...new Set(lines.map(line => line.n))].sort((a, b) => a - b);
+  const numbers = new Map(ids.map((n, i) => [n, i + 1]));
+  return {
+    lines: lines.map(line => ({ ...line, n: numbers.get(line.n) })),
+    cur: numbers.get(Number(selected)) ?? ids.length + 1,
+  };
+}
+
 // 구간의 그린 순서는 유지해야 겹친 캐비닛의 소유권도 유지된다.
 export function reorderLan(lines, from, to) {
   const ids = [...new Set(lines.map(l => l.n))].sort((a, b) => a - b);

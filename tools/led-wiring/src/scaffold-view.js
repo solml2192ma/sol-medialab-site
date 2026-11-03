@@ -1,4 +1,4 @@
-import { scaffoldViewData } from './scaffold-view-data.js';
+import { scaffoldViewData, scaffoldTitle } from './scaffold-view-data.js?base=1';
 import { config } from './config.js';
 
 document.body.toggleAttribute('data-preview',new URLSearchParams(location.search).get('preview')==='1');
@@ -34,7 +34,7 @@ function initOrbit(data) {
   const fmt = n => n.toLocaleString('ko-KR');
   top = data.topPlank;
   topControl.checked = top;
-  root.querySelector('[data-title]').textContent = '아시바 ' + data.off.bays + '칸 × ' + data.off.displayTiers + '단';
+  root.querySelector('[data-title]').textContent = scaffoldTitle(data.off);
   root.querySelector('[data-size]').textContent = fmt(W) + ' × ' + fmt(H) + ' × ' + fmt(D) + ' mm';
   root.querySelector('[data-led]').textContent = 'LED ' + fmt(data.input.widthMm) + ' × ' + fmt(data.input.heightMm) + ' × ' + (data.pitch.thicknessMm ?? '-') + ' mm 기준';
   if (data.pitch.thicknessNote) root.querySelector('[data-led]').textContent += ` (${data.pitch.thicknessNote})`;

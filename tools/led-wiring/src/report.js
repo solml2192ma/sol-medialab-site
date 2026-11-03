@@ -1,6 +1,6 @@
 // 자재 수량표 데이터 (화면 표 / 엑셀 / 인쇄가 같은 데이터를 쓴다)
 import { patternOf } from './layout.js';
-import { config } from './config.js';
+import { config } from './config.js?base=1';
 
 const mm = (n) => Number(n).toLocaleString('ko-KR');
 const cabinetOrder = (size) => {
@@ -65,6 +65,8 @@ export function buildReport(res, lay, input) {
         ['핀', sc.pins, `핀높이 ${mm(sc.pinExposedM * 1000)}mm`],
         ['x바', sc.xBars, ''],
         ['발판', sc.planks, sc.topPlank ? '상단 포함' : '상단 제외'],
+        ['베이스', sc.basePlan.items.map(item => `${(item.lengthMm / 1000).toFixed(1)}m ${item.count}`).join('\n'),
+          `높이 ${config.scaffold.baseHeightMm}mm\n베이스 길이 ${mm(sc.basePlan.totalWidthMm)}mm\nLED 길이 ${mm(input.widthMm)}mm`],
       ],
     },
     {

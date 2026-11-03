@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>LED 배선도면 | SOL MEDIA LAB Inc.</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?outputs=1">
 </head>
 <body>
 <header class="top">
@@ -85,6 +85,7 @@
       <input type="checkbox" name="baseEnabled" hidden aria-hidden="true">
       <input type="checkbox" name="stageEnabled" hidden aria-hidden="true">
       <input type="hidden" name="stageHeight">
+      <input type="hidden" name="baseCounts">
     <button type="button" id="reset" class="ghost">초기화</button>
   </form>
 
@@ -104,9 +105,10 @@
     <div id="canvas" class="canvas" aria-label="배선도"></div>
     <div id="printCanvas" class="print-only" aria-hidden="true"></div>
     <div class="toolbar exports">
-      <button type="button" id="expPng">PNG 저장</button>
+      <button type="button" id="expPng">PNG</button>
+      <button type="button" id="expTxt">TXT (클립보드)</button>
+      <button type="button" id="expXlsx">EXCEL</button>
       <button type="button" id="expPdf">PDF / 인쇄</button>
-      <button type="button" id="expXlsx">엑셀 저장</button>
     </div>
   </section>
 
@@ -119,6 +121,6 @@
   <form method="dialog"><button autofocus>확인</button></form>
 </dialog>
 
-<script type="module" src="src/ui.js?png-brand=1"></script>
+<script type="module" src="src/ui.js?power-order=1"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 // 순수 계산 모듈 (DOM 의존 없음). 엑셀 '500' / '1000' 시트 로직을 옮긴 것.
-import { config as defaultConfig } from './config.js';
+import { config as defaultConfig } from './config.js?base=1';
+import { basePlan, decodeBaseCounts } from './base-plan.js';
 
 const key = (w, h) => `${w}x${h}`;
 
@@ -154,6 +155,7 @@ export function calc(input, pixelData, cfg = defaultConfig) {
     depthBays: cfg.scaffold.depthBays,
     topPlank,
     baseEnabled, stageEnabled, baseHeightMm, stageHeightMm, ledBottomMm, ledTopMm,
+    basePlan: basePlan(widthMm, baseEnabled, decodeBaseCounts(input.baseCounts, cfg), cfg),
     widthM: round(scaffoldW),
     heightM: round(scaffoldH),
     depthM: cfg.scaffold.depthM,

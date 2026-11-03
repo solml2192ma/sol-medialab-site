@@ -63,7 +63,7 @@ test('아시바 크기는 가로·높이·깊이를 mm로 함께 표시한다', 
   const shortSection = buildReport(shortRes, buildLayout(shortRes, {}), shortInput).sections.find((s) => s.title === '아시바');
   assert.deepEqual(shortSection.rows[0], ['크기', '5,520 × 2,625 × 900 mm', '3칸 × 1.5단 × 1폭']);
   assert.deepEqual(shortSection.rows.find((row) => row[0] === '아시바(짧은기둥)'), ['아시바(짧은기둥)', 4, '높이 900mm']);
-  assert.doesNotMatch(JSON.stringify(shortSection), /짧은아시바|\d(?:\.\d+)?m(?!m)/);
+  assert.doesNotMatch(JSON.stringify(shortSection.rows.filter(row => row[0] !== '베이스')), /짧은아시바|\d(?:\.\d+)?m(?!m)/);
 });
 
 test('박스 표는 1000 규격을 먼저 표시하고 출고수량 계산식을 보여 준다', () => {

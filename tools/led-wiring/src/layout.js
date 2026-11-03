@@ -162,7 +162,7 @@ export function buildLayout(res, opt, cfg = defaultConfig) {
     }
     lanLines.sort((p, q) => p.id - q.id); // 번호순으로 표시 (번호는 재배정하지 않는다)
     uncovered = cells.filter((c) => !owner.has(c.id)).map((c) => c.id);
-    if (uncovered.length) warnings.push(`배선이 연결되지 않은 캐비닛이 ${uncovered.length}장 있습니다.`);
+    if (uncovered.length) warnings.push(`LAN 배선이 연결되지 않은 캐비닛이 ${uncovered.length}장 있습니다.`);
   } else {
     // LAN는 선택 방향으로 한도까지 진행하고, POWER는 기존 균등 분할을 유지한다.
     const rects = opt.powerOnly || cfg.lan.autoDirectionPriority

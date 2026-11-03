@@ -1,13 +1,16 @@
-import { config } from './config.js';
-import { calc, findPitch } from './calc.js';
+import { config } from './config.js?power-order=1';
+import { calc, findPitch } from './calc.js?base=1';
 import { cabinetOptions, normalizeCabinetState } from './cabinet.js';
-import { buildLayout, PATTERNS, patternOf, orderRect, encodeManual, decodeManual, nextFreeNumber, limitError } from './layout.js';
+import { buildLayout, PATTERNS, patternOf, orderRect, encodeManual, decodeManual, nextFreeNumber, limitError } from './layout.js?warnings=1';
 import { renderSvg, detailFor, LAN_COLORS } from './render.js';
-import { buildReport } from './report.js';
+import { buildReport } from './report.js?base=1';
 import { encodeRows, decodeRows, sameRows, movePlan, splitRow, mergeRows, canMerge } from './rowplan.js';
-import { exportPng, exportXlsx, printPdf } from './export.js?png-brand=1';
-import { scaffoldViewUrl } from './scaffold-view-data.js';
-import { allowedLanNumber, reorderLan } from './manual-order.js';
+import { exportPng, exportXlsx, printPdf } from './export.js?outputs=1';
+import { scaffoldViewUrl } from './scaffold-view-data.js?base=1';
+import { copyClipboardText } from './clipboard.js?outputs=1';
+import { allowedLanNumber, reorderLan, compactManualNumbers } from './manual-order.js?power-order=1';
+import { decodeBaseCounts } from './base-plan.js';
+import { baseLengthWarnings, printWarnings } from './output-warnings.js?outputs=1';
 
 const $ = (s) => document.querySelector(s);
 const form = $('#form');
@@ -120,6 +123,7 @@ function toInput(s) {
     bays: num(s.bays), tiers: num(s.tiers), topPlank: s.topPlank !== '0',
     rowPlan: decodeRows(s.rows),
     baseEnabled: s.baseEnabled === '1', stageEnabled: s.stageEnabled === '1', stageHeightMm: num(s.stageHeight),
+    baseCounts: s.baseCounts,
   };
 }
 
@@ -184,8 +188,23 @@ function render() {
   syncWiringUi(s);
   if (blocked) { $('#msgs').innerHTML = msgs.join(''); $('#canvas').innerHTML = ''; $('#printCanvas').innerHTML = ''; $('#tables').innerHTML = ''; $('#lineList').innerHTML = ''; last = null; return; }
 
-  const lay = buildLayout(res, layoutOptions(s), cfg);
-  msgs.push(...lay.warnings.map((m) => `<p class="warn">${esc(m)}</p>`));
+  let lay = buildLayout(res, layoutOptions(s), cfg);
+  if (s.powerMode === 'manual' && cfg.power.compactManualNumbers) {
+    const alive = new Set(lay.powerAlive);
+    const visible = decodeManual(s.powerMl).filter((_, i) => alive.has(i));
+    const next = compactManualNumbers(visible, s.powerCur);
+    const encoded = encodeManual(next.lines);
+    if (encoded !== s.powerMl || String(next.cur) !== s.powerCur) {
+      s.powerMl = encoded;
+      s.powerCur = String(next.cur);
+      if (s.tab === 'pw') { form.ml.value = s.powerMl; form.cur.value = s.powerCur; }
+      else { form.powerMl.value = s.powerMl; form.powerCur.value = s.powerCur; }
+      saveState(s);
+      lay = buildLayout(res, layoutOptions(s), cfg);
+    }
+  }
+  msgs.push(...lay.warnings.map((m) => `<p class="err" role="alert">${esc(m)}</p>`));
+  msgs.push(...baseLengthWarnings(res, input).map(m => `<p class="err" role="alert">${esc(m)}</p>`));
   if (s.tab === 'pw') msgs.push(...lay.powerLoadWarnings.map((m) => `<p class="warn" role="status">${esc(m)}</p>`));
   $('#msgs').innerHTML = msgs.join('');
   const title = `LED ${fmt(input.widthMm)}×${fmt(input.heightMm)}mm · ${res.pitchInfo.label} · ${input.cabW}×${input.cabH}`;
@@ -200,7 +219,7 @@ function render() {
   const rep = buildReport(res, lay, input);
   $('#tables').innerHTML = tables(rep, res.scaffold, input);
   $('#printHead').innerHTML = `<div class="print-brand"><h1>LED 배선도면</h1>${document.querySelector('.company-brand').outerHTML}</div><p>${rep.inputs.map(([k, v]) => `${k}: ${esc(v)}`).join(' / ')}</p>`;
-  $('#printCanvas').innerHTML = ['LAN', 'POWER'].map(kind => `<article class="print-drawing">${$('#printHead').innerHTML}<h2>${kind} 배선도</h2>${renderSvg(lay, { title, showLan: kind === 'LAN', showPower: kind === 'POWER', sized: false })}</article>`).join('');
+  $('#printCanvas').innerHTML = ['LAN', 'POWER'].map(kind => `<article class="print-drawing">${$('#printHead').innerHTML}${printWarnings(res, lay, input)}<h2>${kind} 배선도</h2>${renderSvg(lay, { title, showLan: kind === 'LAN', showPower: kind === 'POWER', sized: false })}</article>`).join('');
 }
 
 // ---------- LAN 배선 UI (패턴 아이콘 / 직접 그리기) ----------
@@ -290,7 +309,7 @@ function renderRowPlan(res, input) {
       const act = main
         ? `<button type="button" data-act="split" data-i="${i}" title="${input.cabH}을 ${base} ${k}줄로 나누기">${base} ${k}줄로</button>`
         : `<button type="button" data-act="merge" data-i="${i}" ${canMerge(plan, i, input.cabH, base) ? '' : 'disabled'} title="아래 ${k - 1}줄과 합쳐 ${input.cabH} 한 줄로">합치기</button>`;
-      return `<li><span class="rp"><span class="bar" style="height:${Math.max(8, h / 40)}px"></span>${i + 1}줄 · ${input.cabW}×${h}</span><button type="button" data-act="up" data-i="${i}" aria-label="위로" ${i === 0 ? 'disabled' : ''}>▲</button><button type="button" data-act="down" data-i="${i}" aria-label="아래로" ${i === plan.length - 1 ? 'disabled' : ''}>▼</button>${act}</li>`;
+      return `<li><span class="rp"><span class="bar${main ? ' tall' : ''}" style="height:${Math.max(8, h / 40)}px"></span>${i + 1}줄 · ${input.cabW}×${h}</span><button type="button" data-act="up" data-i="${i}" aria-label="위로" ${i === 0 ? 'disabled' : ''}>▲</button><button type="button" data-act="down" data-i="${i}" aria-label="아래로" ${i === plan.length - 1 ? 'disabled' : ''}>▼</button>${act}</li>`;
     })
     .join('');
 }
@@ -418,15 +437,28 @@ function tables(rep, scaffold, input) {
             ? typeof v === 'number' && ['출고수량', '출고박스'].includes(sec.header[i])
             : typeof v === 'number' || (i === 1 && sec.header[i] === '수량');
           const plankOption = sec.title === '아시바' && r[0] === '발판' && i === 2;
-          const content = plankOption
+          const baseQuantity = sec.title === '아시바' && r[0] === '베이스' && i === 1;
+          const content = baseQuantity
+            ? `<div class="base-quantities">${scaffold.basePlan.items.map((item, index) => `<label><span>${(item.lengthMm / 1000).toFixed(1)}m</span><input type="number" min="0" step="1" inputmode="numeric" data-base-index="${index}" aria-label="베이스 ${(item.lengthMm / 1000).toFixed(1)}m 수량" value="${item.count}"${scaffold.baseEnabled ? '' : ' disabled'}></label>`).join('')}</div><span class="base-print-only">${esc(v)}</span>`
+            : plankOption
             ? `<label class="chk plank-option"><input type="checkbox" id="topPlankToggle"${scaffold.topPlank ? ' checked' : ''}> 상단발판포함</label>`
             : v == null ? '-' : sec.title === '박스' && i === 0 ? esc(v).replace('×', '×<wbr>')
+            : sec.title === '아시바' && r[0] === '베이스' && i === 2 ? String(v).split('\n').map((line, index) => {
+              if (index === 0) return `<div>${scaffoldNote(line)}</div>`;
+              const split = line.lastIndexOf(' ');
+              const state = !scaffold.baseEnabled ? '' : scaffold.basePlan.totalWidthMm === input.widthMm ? 'base-length-match' : 'base-length-mismatch';
+              const label = line.slice(0, split);
+              const mark = index === 1 && scaffold.baseEnabled
+                ? `<span class="base-length-mark" role="img" aria-label="${state === 'base-length-match' ? 'LED 길이와 일치' : 'LED 길이와 다름'}">${state === 'base-length-match' ? '✓' : '!'}</span>` : '';
+              const rowState = index !== 1 && state === 'base-length-mismatch' ? '' : state;
+              return `<div class="base-length-row ${rowState}"><span class="base-length-label" aria-label="${esc(label)}"><span>${label.startsWith('LED') ? 'LED' : '베이스'}</span><span>길이</span></span><span class="base-length-value"><span class="base-length-number">${esc(line.slice(split + 1))}</span>${mark}</span></div>`;
+            }).join('')
             : sec.title === '아시바' && i === 2 ? scaffoldNote(v)
             : i === 2 && ['캐비닛 수', '해상도'].includes(r[0]) ? cabinetNote(v, r[0]) : esc(typeof v === 'number' ? fmt(v) : v);
           const numeric = typeof v === 'number' || (i === 1 && sec.header[i] === '수량');
           const boxUnit = sec.title === '박스' && sec.header[i] === '출고박스' && v != null ? ' <span class="box-unit">box</span>' : '';
           const scaffoldCount = sec.title === '아시바' && i === 1 && typeof v === 'number';
-          return `<td${numeric ? ` class="n${scaffoldCount ? ' scaffold-count' : ''}"` : ''}>${result && v != null ? `<strong>${content}</strong>` : content}${boxUnit}</td>`;
+          return `<td${numeric ? ` class="n${scaffoldCount ? ' scaffold-count' : ''}"` : ''}>${result && v != null && !baseQuantity ? `<strong>${content}</strong>` : content}${boxUnit}</td>`;
         }).join('')}</tr>`)
         .join('');
       const columns = `<colgroup>${sec.header.map(() => '<col>').join('')}</colgroup>`;
@@ -475,10 +507,11 @@ function init() {
   writeState(st);
   // LAN 번호 입력칸은 타이핑 중에 다시 그리면 포커스를 잃으므로 폼 공통 갱신에서 제외 (아래 change 핸들러가 처리)
   const inList = (e) => e.target.closest?.('#lineList');
-  form.addEventListener('input', (e) => { if (!inList(e)) update(); });
+  form.addEventListener('input', (e) => { if (e.target.name === 'w') form.baseCounts.value = ''; if (!inList(e)) update(); });
   form.addEventListener('change', (e) => { if (!inList(e)) update(); });
   form.addEventListener('focusout', (e) => { if (['w', 'h'].includes(e.target.name)) update(); });
   $('#tables').addEventListener('input', (e) => {
+    if (e.target.matches('[data-base-index]')) { e.target.setCustomValidity(''); return; }
     if (e.target.id !== 'stageHeightInput') return;
     form.elements.namedItem('stageHeight').value = e.target.value;
     saveState(readState());
@@ -487,7 +520,21 @@ function init() {
     if (e.target.id === 'stageHeightInput') update();
   });
   $('#tables').addEventListener('change', (e) => {
+    if (e.target.matches('[data-base-index]')) {
+      const fields = [...$('#tables').querySelectorAll('[data-base-index]')];
+      if (!fields.every(field => field.value !== '' && field.reportValidity())) return;
+      const encoded = fields.map(field => Number(field.value)).join(',');
+      if (!decodeBaseCounts(encoded)) {
+        e.target.setCustomValidity('베이스 수량은 계산 가능한 0 이상의 정수로 입력해 주세요.');
+        e.target.reportValidity();
+        return;
+      }
+      form.baseCounts.value = encoded;
+      update();
+      return;
+    }
     const checkboxFields = { topPlankToggle: 'topPlank', baseToggle: 'baseEnabled', stageToggle: 'stageEnabled' };
+    if (e.target.id === 'baseToggle') form.baseCounts.value = '';
     if (checkboxFields[e.target.id]) form.elements[checkboxFields[e.target.id]].checked = e.target.checked;
     else if (e.target.id === 'stageHeightInput') form.elements.namedItem('stageHeight').value = e.target.value;
     else return;
@@ -611,6 +658,13 @@ function init() {
     try { await fn(); } catch (e) { alert(e.message); }
   };
   $('#expPng').addEventListener('click', guard(() => exportPng(last)));
+  let clipboardFeedback;
+  $('#expTxt').addEventListener('click', guard(async () => {
+    await copyClipboardText(last);
+    $('#expTxt').textContent = '복사 완료';
+    clearTimeout(clipboardFeedback);
+    clipboardFeedback = setTimeout(() => { $('#expTxt').textContent = 'TXT (클립보드)'; }, config.clipboard.feedbackMs);
+  }));
   $('#expXlsx').addEventListener('click', guard(() => exportXlsx(last)));
   $('#expPdf').addEventListener('click', guard(() => printPdf()));
   update();

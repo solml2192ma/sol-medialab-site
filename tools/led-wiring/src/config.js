@@ -1,5 +1,7 @@
 // 규칙/기본값은 이 파일 한 곳에서만 바꾼다.
 export const config = {
+  clipboard: { feedbackMs: 2000 },
+  outputWarnings: { maxLineChars: 72 },
   pngBrand: {
     companyKo: '주식회사 솔미디어랩', companyEn: 'SOL MEDIA LAB Inc.',
     headerHeightRatio: 0.065, widthRatio: 0.33, logoWidthRatio: 0.085, logoHeightRatio: 0.04,
@@ -17,6 +19,7 @@ export const config = {
   // POWER: 픽셀과 무관하게 500×500을 1장분, 500×1000을 2장분으로 계산한다.
   power: {
     sequentialManualNumbers: true, // 새 POWER 번호와 목록 순서 변경은 LAN과 같은 방식
+    compactManualNumbers: true, // 삭제·덮어쓰기 후에도 POWER 목록은 1번부터 연속 번호 유지
     autoMaxCabinetsPerPort: 20, // 자동 배선: 500×500 환산 20장분. 직접 배선은 제한 없음.
   },
   // 아시바(비계) 규격
@@ -35,6 +38,8 @@ export const config = {
     viewAngles: { yaw: 28, pitch: 18 },
     previewAngles: { yaw: 30, pitch: 20 }, // 미리보기 기본 시점(도)
     baseHeightMm: 40,
+    baseLengthsMm: [2500, 2000, 1500, 1000],
+    basePreferFewerShortPieces: true, // 같은 개수면 짧은 규격을 줄여 긴 규격들로 구성
     baseEnabledDefault: false,
     stageEnabledDefault: false,
   },
@@ -49,6 +54,6 @@ export const config = {
   fallbackCabinet: '500x500', // 구버전 custom/잘못된 저장값 보정은 표시 순서와 별개다.
   emptyInputs: {
     w: '', h: '', pitch: '', cab: '', cw: '', ch: '', boxQty: '',
-    maxPerLine: '', bays: '', tiers: '', cur: '', stageHeight: '',
+    maxPerLine: '', bays: '', tiers: '', cur: '', stageHeight: '', baseCounts: '',
   }, // 초기화 및 저장값 없는 첫 화면은 입력을 비운다.
 };
