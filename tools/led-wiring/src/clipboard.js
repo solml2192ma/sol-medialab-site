@@ -9,10 +9,12 @@ export function buildClipboardText({ res, lay, input }) {
   const cabinet = row => row[0].replaceAll('×', '*');
   const sc = res.scaffold;
   const size = report.sections.find(s => s.title === '아시바').rows[0][1];
-  const parts = [`아시바 기둥${sc.posts}ea`];
+  const parts = [
+    ['기둥', sc.posts], ['짧은기둥', sc.shortPosts], ['핀', sc.pins], ['x바', sc.xBars],
+  ].filter(([, count]) => count > 0).map(([name, count]) => `${name}${count}ea`);
   const warnings = outputWarnings(res, lay, input);
-  if (sc.shortPosts > 0) parts.push(`짧은기둥${sc.shortPosts}ea`);
-  parts.push(`x바${sc.xBars}ea`, `발판${sc.planks}ea`);
+  parts.push(`발판${sc.planks}ea`);
+  const bases = sc.basePlan.items.filter(item => item.count > 0);
   return [
     ...(warnings.length ? ['주의', ...warnings, ''] : []),
     res.pitchInfo.label,
@@ -21,8 +23,8 @@ export function buildClipboardText({ res, lay, input }) {
     `해상도 ${res.pixel.resolution.w}*${res.pixel.resolution.h}px`,
     `랜포트 ${lay.lanLines.length}개`,
     `파워포트 ${lay.powerChains.length}개`,
-    '', `${scaffoldTitle(sc)} (${size})`, parts.join(' / '),
-    ...(sc.baseEnabled ? [`베이스 ${sc.basePlan.items.filter(item => item.count > 0).map(item => `${(item.lengthMm / 1000).toFixed(1)}*${item.count}ea`).join(' / ') || '0ea'}`] : []),
+    '', `${scaffoldTitle(sc)} (${size})`, `아시바 ${parts.join(' / ')}`,
+    ...(sc.baseEnabled && bases.length ? [`베이스 ${bases.map(item => `${(item.lengthMm / 1000).toFixed(1)}*${item.count}ea`).join(' / ')}`] : []),
   ].join('\n');
 }
 

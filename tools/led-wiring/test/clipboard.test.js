@@ -47,5 +47,22 @@ test('짧은기둥 포함 시 복사·3D 제목 모두 실제 1.5단과 폭을 �
   assert.equal(scaffoldTitle(data.off), '아시바 6칸 × 1.5단 × 1폭');
   const text = buildClipboardText(ctx);
   assert.ok(text.includes('아시바 6칸 × 1.5단 × 1폭 (11,040 × 2,625 × 900 mm)'));
-  assert.ok(text.includes('아시바 기둥7ea / 짧은기둥7ea / x바12ea / 발판6ea'));
+  assert.ok(text.includes('아시바 기둥7ea / 짧은기둥7ea / 핀14ea / x바12ea / 발판6ea'));
+});
+
+test('TXT는 짧은기둥 뒤에 표와 같은 핀 수량을 포함한다', () => {
+  const ctx = context({ widthMm: 7000, heightMm: 3000, baseEnabled: true });
+  const text = buildClipboardText(ctx);
+  assert.equal(ctx.res.scaffold.pins, 8);
+  assert.ok(text.includes('아시바 기둥4ea / 짧은기둥4ea / 핀8ea / x바6ea / 발판3ea'));
+  assert.ok(text.endsWith('베이스 2.5*2ea / 2.0*1ea'));
+});
+
+test('TXT는 0개 아시바 부재와 베이스를 생략하되 발판0ea는 유지한다', () => {
+  const text = buildClipboardText(context({ baseEnabled: true, baseCounts: '0,0,0,0' }));
+  assert.ok(text.includes('아시바 기둥7ea / x바12ea / 발판0ea'));
+  assert.doesNotMatch(text, /짧은기둥0ea|핀0ea|^베이스 .*ea$/m);
+  const empty = context();
+  Object.assign(empty.res.scaffold, { posts: 0, shortPosts: 0, pins: 0, xBars: 0, planks: 0 });
+  assert.ok(buildClipboardText(empty).endsWith('\n아시바 발판0ea'));
 });

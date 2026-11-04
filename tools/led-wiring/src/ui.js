@@ -7,7 +7,7 @@ import { buildReport } from './report.js?base=1';
 import { encodeRows, decodeRows, sameRows, movePlan, splitRow, mergeRows, canMerge } from './rowplan.js';
 import { exportPng, exportXlsx, printPdf } from './export.js?outputs=1';
 import { scaffoldViewUrl } from './scaffold-view-data.js?base=1';
-import { copyClipboardText } from './clipboard.js?outputs=1';
+import { copyClipboardText } from './clipboard.js?outputs=3';
 import { allowedLanNumber, reorderLan, compactManualNumbers } from './manual-order.js?power-order=1';
 import { decodeBaseCounts } from './base-plan.js';
 import { baseLengthWarnings, printWarnings } from './output-warnings.js?outputs=1';
