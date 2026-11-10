@@ -1,13 +1,14 @@
 ---
+slug: 2024kra컵아시아주니어승마대회kracupcsijbseoul2024
 title: 2024 KRA컵 아시아 주니어 승마대회(KRA CUP CSIJ-B Seoul 2024)
 post_date: 2026-11-10T17:07:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 렛츠런파크 서울 승마경기장
-cover_image: /assets/img/portfolio/03_노을배경.webp
+cover_image: /assets/img/portfolio/obsd0usfga.webp
 gallery:
-  - /assets/img/portfolio/06_하단배너와함께.webp
+  - /assets/img/portfolio/vjh8r887bj.webp
 ---
 
 ## 현장 개요
