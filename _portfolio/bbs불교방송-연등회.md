@@ -1,13 +1,14 @@
 ---
+slug: bbs불교방송연등회2
 title: BBS불교방송 연등회
 post_date: 2026-11-11T16:15:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 종로 세운광장
-cover_image: /assets/img/portfolio/02_주간_메인화면.webp
+cover_image: /assets/img/portfolio/lz5y6xm5we.webp
 gallery:
-  - /assets/img/portfolio/01_현장전경.webp
+  - /assets/img/portfolio/nc2bv6ansm.webp
 ---
 
 종로 세운광장에서 열린 bbs불교방송 연등회 현장에 옥외형 LED 전광판을 렌탈로 공급하고, 행사 운영을 지원했습니다.
