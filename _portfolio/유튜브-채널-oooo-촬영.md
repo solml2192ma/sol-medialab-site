@@ -1,13 +1,14 @@
 ---
+slug: 유튜브채널oooo촬영
 title: 유튜브 채널 OOOO 촬영
 post_date: 2026-11-11T12:35:00+09:00
 overview_category:
   - 방송·촬영
 client: ''
 location: 서울 성북구
-cover_image: /assets/img/portfolio/SE-7c687304-8527-48af-88d8-6ec4bce26e53.webp
+cover_image: /assets/img/portfolio/q6hqf3iekx.webp
 gallery:
-  - /assets/img/portfolio/SE-2cfe18f9-ca30-422f-8668-5e1e513db20b.webp
+  - /assets/img/portfolio/cez9yliu3j.webp
 ---
 
 ## 프로젝트 개요
