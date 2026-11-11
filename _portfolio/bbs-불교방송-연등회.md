@@ -1,13 +1,14 @@
 ---
+slug: bbs불교방송연등회
 title: BBS 불교방송 연등회
 post_date: 2026-11-11T13:01:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 종로구 세운광장
-cover_image: /assets/img/portfolio/01_주간_정면전경.webp
+cover_image: /assets/img/portfolio/82vp6wyw5f.webp
 gallery:
-  - /assets/img/portfolio/08_야간_우천전경.webp
+  - /assets/img/portfolio/k7bjko9y5z.webp
 ---
 
 ## 프로젝트 개요
