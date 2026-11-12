@@ -1,13 +1,14 @@
 ---
+slug: kspodomek청년피스페스티벌
 title: KSPO DOME K청년피스페스티벌
 post_date: 2026-11-12T14:50:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 송파 올림픽공원
-cover_image: /assets/img/portfolio/05_화면송출.webp
+cover_image: /assets/img/portfolio/9zyddza21e.webp
 gallery:
-  - /assets/img/portfolio/02_측면전경.webp
+  - /assets/img/portfolio/135l2jl1ev.webp
 ---
 
 ## 대형 실내 행사장을 채운 LED 전광판 렌탈
