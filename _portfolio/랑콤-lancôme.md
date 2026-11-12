@@ -1,13 +1,14 @@
 ---
+slug: 랑콤lancôme
 title: 랑콤(Lancôme)
 post_date: 2026-11-12T13:22:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 서울 성수
-cover_image: /assets/img/portfolio/06_브랜드공간.webp
+cover_image: /assets/img/portfolio/40d1223shs.webp
 gallery:
-  - /assets/img/portfolio/08_제품전시와LED.webp
+  - /assets/img/portfolio/diqg3dmfvu.webp
 ---
 
 ## 현장 개요
