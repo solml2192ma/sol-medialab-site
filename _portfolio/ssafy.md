@@ -1,15 +1,13 @@
 ---
+title: 삼성 전자 SSAFY 13기 수료식
 slug: ssafy
-title: 삼성 전자 SSAFY
 post_date: 2026-08-20T16:18:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 역삼동 멀티캠퍼스
 cover_image: /assets/img/portfolio/f8hvciqt91.webp
-gallery:
-  - /assets/img/portfolio/iv6z1ofoyz.webp
-  - /assets/img/portfolio/usgcinanpi.webp
+gallery: []
 ---
 
 # 삼성 청년 SW·AI 아카데미
