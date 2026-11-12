@@ -1,13 +1,14 @@
 ---
+slug: 겔랑guerlain
 title: 겔랑(GUERLAIN)
 post_date: 2026-11-12T12:53:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 잠실 롯데월드몰
-cover_image: /assets/img/portfolio/03_점등확인.webp
+cover_image: /assets/img/portfolio/wd6b0mzvdk.webp
 gallery:
-  - /assets/img/portfolio/04_현장전경.webp
+  - /assets/img/portfolio/qfk6e4cx3j.webp
 ---
 
 ## 프로젝트 개요
