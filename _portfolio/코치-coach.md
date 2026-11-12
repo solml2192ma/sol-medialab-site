@@ -9,7 +9,7 @@ location: 성수
 cover_image: /assets/img/portfolio/9neoca9p87.webp
 gallery:
   - /assets/img/portfolio/94mb2kt5k7.webp
-  - /assets/img/portfolio/05_블랙바탕로고.webp
+  - /assets/img/portfolio/k524si0h2f.webp
 ---
 
 # 코치(COACH) 성수 팝업스토어 — 노란 벽 옆에서도 색이 또렷한 1mm 피치 실내 LED를 설치했습니다
