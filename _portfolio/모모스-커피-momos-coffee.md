@@ -1,13 +1,14 @@
 ---
+slug: 모모스커피momoscoffee
 title: 모모스 커피 (MOMOS COFFEE)
 post_date: 2026-11-12T18:21:00+09:00
 overview_category:
   - 전시·컨벤션
 client: ''
 location: 삼성 코엑스
-cover_image: /assets/img/portfolio/06_곡면카운터_정면.webp
+cover_image: /assets/img/portfolio/lzklfnk5z1.webp
 gallery:
-  - /assets/img/portfolio/02_부스입구_전경.webp
+  - /assets/img/portfolio/892c84h65p.webp
 ---
 
 모모스커피 부스에서 가장 먼저 눈에 들어오는 것은 벽면을 가로로 길게 채운 와이드 LED 화면이었습니다. 솔미디어랩은 코엑스 전시관에서 열린 서울디자인페스티벌 모모스커피 부스에 실내용 LED 전광판을 렌탈로 공급하고, 전시 기간 동안 운영을 지원했습니다.
