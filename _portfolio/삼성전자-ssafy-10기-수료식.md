@@ -1,14 +1,15 @@
 ---
+slug: 삼성전자ssafy10기수료식
 title: 삼성전자 SSAFY 10기 수료식
 post_date: 2026-11-12T13:56:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 역삼 멀티캠퍼스
-cover_image: /assets/img/portfolio/01_무대정면.webp
+cover_image: /assets/img/portfolio/wvhe5dyisw.webp
 gallery:
-  - /assets/img/portfolio/06_화면구성.webp
-  - /assets/img/portfolio/04_무대근접.webp
+  - /assets/img/portfolio/o0zg4e1km2.webp
+  - /assets/img/portfolio/yjhyioe55h.webp
 ---
 
 **수료식 무대 전면을 채운 대형 LED, 행사 기간 동안 렌탈로 함께했습니다.**
