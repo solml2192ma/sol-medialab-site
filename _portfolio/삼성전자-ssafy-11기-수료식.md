@@ -1,13 +1,14 @@
 ---
+slug: 삼성전자ssafy11기수료식
 title: 삼성전자 SSAFY 11기 수료식
 post_date: 2026-11-12T17:08:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 역삼 멀티캠퍼스
-cover_image: /assets/img/portfolio/03_화면근접.webp
+cover_image: /assets/img/portfolio/sk8ncd4q9r.webp
 gallery:
-  - /assets/img/portfolio/04_객석측면.webp
+  - /assets/img/portfolio/u74lgm2l0b.webp
 ---
 
 **수료식 무대 중앙을 채운 대형 LED 전광판, 사전 세팅부터 본행사 운영까지 렌탈로 지원했습니다.**
