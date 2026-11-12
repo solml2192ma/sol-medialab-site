@@ -1,13 +1,14 @@
 ---
+slug: 미샤missha
 title: 미샤(MISSHA)
 post_date: 2026-11-12T17:34:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수 무신사 뷰티
-cover_image: /assets/img/portfolio/07_제품이미지_화면.webp
+cover_image: /assets/img/portfolio/m4a6fhgxjs.webp
 gallery:
-  - /assets/img/portfolio/06_SHADOW_화면.webp
+  - /assets/img/portfolio/oczbxk6sr6.webp
 ---
 
 ## 프로젝트 개요
