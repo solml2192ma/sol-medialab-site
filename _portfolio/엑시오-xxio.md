@@ -1,13 +1,14 @@
 ---
+slug: 엑시오xxio
 title: 엑시오(XXIO)
 post_date: 2026-11-12T14:34:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 신세계백화점 강남
-cover_image: /assets/img/portfolio/03_콘텐츠_하늘.webp
+cover_image: /assets/img/portfolio/3cygrleocv.webp
 gallery:
-  - /assets/img/portfolio/04_콘텐츠_골프장.webp
+  - /assets/img/portfolio/pt26gph1ys.webp
 ---
 
 ## 팝업스토어 앞을 지나는 고객의 시선을 붙잡는 화면
