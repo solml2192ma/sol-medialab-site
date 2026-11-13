@@ -1,11 +1,15 @@
 ---
-slug: 모모스커피momoscoffee
 title: 모모스 커피 (MOMOS COFFEE)
+slug: 모모스커피momoscoffee
 post_date: 2026-11-12T18:21:00+09:00
 overview_category:
   - 전시·컨벤션
-client: ''
+client: 모모스커피
 location: 삼성 코엑스
+installation_region: ''
+installation_month: ''
+installation_solution: ''
+installation_project: ''
 cover_image: /assets/img/portfolio/lzklfnk5z1.webp
 gallery:
   - /assets/img/portfolio/892c84h65p.webp
