@@ -34,9 +34,9 @@ collections:
     table_columns:
       - title
       - { field: "overview_category", label: "카테고리" }
-      - { field: "{{last_human_edit | date('YYYY-MM-DD HH:mm')}}", label: "최근수정일" }
+      - { field: "last_human_edit", label: "최근수정일" }
       - { field: "last_human_editor", label: "최근수정자" }
-      - { field: "{{post_date | date('YYYY-MM-DD HH:mm')}}", label: "최초작성일" }
+      - { field: "post_date", label: "최초작성일" }
       - { field: "post_author", label: "최초작성자" }
     sortable_fields:
       - title

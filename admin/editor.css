@@ -43,6 +43,14 @@ section[data-key-path="installation_solution_custom"]:not([data-custom-solution-
 
 :is(table, [role="table"], [role="grid"]):has([role="columnheader"]:nth-last-child(6), th:nth-last-child(6))
   :is(th, td, [role="columnheader"], [role="cell"], [role="gridcell"]):nth-last-child(6) {
-  min-inline-size: clamp(18rem, 30vw, 34rem);
+  min-inline-size: clamp(24rem, 34vw, 48rem);
   white-space: normal;
+}
+
+:is(table, [role="table"], [role="grid"]):has([role="columnheader"]:nth-last-child(6), th:nth-last-child(6))
+  :is(th, td, [role="columnheader"], [role="cell"], [role="gridcell"]):nth-last-child(5) {
+  inline-size: 12rem;
+  max-inline-size: 12rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
