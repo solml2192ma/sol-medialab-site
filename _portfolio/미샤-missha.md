@@ -10,13 +10,13 @@ installation_region: 서울 성동구
 installation_month: 2024년11월
 installation_solution: P1 LED
 installation_project: 무신사 미샤 팝업스토어
-cover_image: /assets/img/portfolio/06_SHADOW_화면.webp
+cover_image: /assets/img/portfolio/eo85e7on3d.webp
 gallery:
-  - /assets/img/portfolio/01_매장전경.webp
-  - /assets/img/portfolio/02_설치현장.webp
-  - /assets/img/portfolio/06_SHADOW_화면.webp
-  - /assets/img/portfolio/04_LED월_전체.webp
-  - /assets/img/portfolio/07_제품이미지_화면.webp
+  - /assets/img/portfolio/569xtk6h2o.webp
+  - /assets/img/portfolio/xhq0zc4rmp.webp
+  - /assets/img/portfolio/eo85e7on3d.webp
+  - /assets/img/portfolio/njfozxlzq6.webp
+  - /assets/img/portfolio/mvc82rb69y.webp
 ---
 
 ## 프로젝트 개요
