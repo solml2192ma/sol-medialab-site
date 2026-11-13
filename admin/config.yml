@@ -359,12 +359,12 @@ collections:
         name: "installation_year"
         widget: "select"
         required: false
-        options: ["2035년", "2034년", "2033년", "2032년", "2031년", "2030년", "2029년", "2028년", "2027년", "2026년", "2025년", "2024년", "2023년", "2022년", "2021년", "2020년", "2019년", "2018년", "2017년", "2016년", "2015년", "2014년", "2013년", "2012년", "2011년", "2010년", "2009년", "2008년", "2007년", "2006년", "2005년", "2004년", "2003년", "2002년", "2001년", "2000년"]
+        options: [{ label: "2035", value: "2035년" }, { label: "2034", value: "2034년" }, { label: "2033", value: "2033년" }, { label: "2032", value: "2032년" }, { label: "2031", value: "2031년" }, { label: "2030", value: "2030년" }, { label: "2029", value: "2029년" }, { label: "2028", value: "2028년" }, { label: "2027", value: "2027년" }, { label: "2026", value: "2026년" }, { label: "2025", value: "2025년" }, { label: "2024", value: "2024년" }, { label: "2023", value: "2023년" }, { label: "2022", value: "2022년" }, { label: "2021", value: "2021년" }, { label: "2020", value: "2020년" }, { label: "2019", value: "2019년" }, { label: "2018", value: "2018년" }, { label: "2017", value: "2017년" }, { label: "2016", value: "2016년" }, { label: "2015", value: "2015년" }, { label: "2014", value: "2014년" }, { label: "2013", value: "2013년" }, { label: "2012", value: "2012년" }, { label: "2011", value: "2011년" }, { label: "2010", value: "2010년" }, { label: "2009", value: "2009년" }, { label: "2008", value: "2008년" }, { label: "2007", value: "2007년" }, { label: "2006", value: "2006년" }, { label: "2005", value: "2005년" }, { label: "2004", value: "2004년" }, { label: "2003", value: "2003년" }, { label: "2002", value: "2002년" }, { label: "2001", value: "2001년" }, { label: "2000", value: "2000년" }]
       - label: "설치 월 (선택)"
         name: "installation_month"
         widget: "select"
         required: false
-        options: ["01월", "02월", "03월", "04월", "05월", "06월", "07월", "08월", "09월", "10월", "11월", "12월"]
+        options: [{ label: "01", value: "01월" }, { label: "02", value: "02월" }, { label: "03", value: "03월" }, { label: "04", value: "04월" }, { label: "05", value: "05월" }, { label: "06", value: "06월" }, { label: "07", value: "07월" }, { label: "08", value: "08월" }, { label: "09", value: "09월" }, { label: "10", value: "10월" }, { label: "11", value: "11월" }, { label: "12", value: "12월" }]
       - label: "솔루션 (선택)"
         name: "installation_solution"
         widget: "select"
