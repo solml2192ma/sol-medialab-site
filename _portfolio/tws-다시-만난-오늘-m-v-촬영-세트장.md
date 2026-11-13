@@ -5,7 +5,13 @@ post_date: 2026-08-20T13:06:57+09:00
 overview_category:
   - 방송·촬영
 client: ''
-location: ''
+location: 칸 스튜디오
+installation_region_selected: 서울특별시 성북구
+installation_year: 2026년
+installation_month: 02월
+installation_solution: P3mm LED전광판
+installation_solution_custom: ''
+installation_project: TWS - 다시 만난 오늘 M/V 촬영
 cover_image: /assets/img/portfolio/60h2zptlbw.webp
 gallery: []
 ---
