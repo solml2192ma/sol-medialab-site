@@ -1,14 +1,22 @@
 ---
-slug: 미샤missha
 title: 미샤(MISSHA)
+slug: 미샤missha
 post_date: 2026-11-12T17:34:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수 무신사 뷰티
-cover_image: /assets/img/portfolio/m4a6fhgxjs.webp
+installation_region: 서울 성동구
+installation_month: 2024년11월
+installation_solution: P1 LED
+installation_project: 무신사 미샤 팝업스토어
+cover_image: /assets/img/portfolio/06_SHADOW_화면.webp
 gallery:
-  - /assets/img/portfolio/oczbxk6sr6.webp
+  - /assets/img/portfolio/01_매장전경.webp
+  - /assets/img/portfolio/02_설치현장.webp
+  - /assets/img/portfolio/06_SHADOW_화면.webp
+  - /assets/img/portfolio/04_LED월_전체.webp
+  - /assets/img/portfolio/07_제품이미지_화면.webp
 ---
 
 ## 프로젝트 개요
