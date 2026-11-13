@@ -16,7 +16,7 @@ cover_image: /assets/img/portfolio/sglz5gue1m.webp
 gallery:
   - /assets/img/portfolio/izd0jmlms9.webp
   - /assets/img/portfolio/8ajjjgyu3q.webp
-  - /assets/img/portfolio/07_색표현.webp
+  - /assets/img/portfolio/ov8qz5gf3l.webp
 ---
 
 ## 프로젝트 개요
