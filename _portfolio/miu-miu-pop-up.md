@@ -12,12 +12,12 @@ installation_month: 04월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 미우미우 팝업스토어
-cover_image: /assets/img/portfolio/03_영상송출.webp
+cover_image: /assets/img/portfolio/n9ckmty7a8.webp
 gallery:
-  - /assets/img/portfolio/04_향수캠페인.webp
-  - /assets/img/portfolio/05_캠페인필름.webp
-  - /assets/img/portfolio/06_근접.webp
-  - /assets/img/portfolio/07_측면영상.webp
+  - /assets/img/portfolio/55aarmlu4j.webp
+  - /assets/img/portfolio/9l7kv3v3v6.webp
+  - /assets/img/portfolio/i1qk16411t.webp
+  - /assets/img/portfolio/ubscvlebsb.webp
 ---
 
 ## 현장 개요
