@@ -15,7 +15,7 @@ installation_project: 해상풍력 공동접속설비 추진 간담회및 MOU �
 cover_image: /assets/img/portfolio/f8m51wztvt.webp
 gallery:
   - /assets/img/portfolio/g5cg805jqw.webp
-  - /assets/img/portfolio/05_서명식현장.webp
+  - /assets/img/portfolio/jvjo9dxfmi.webp
 ---
 
 ## 현장 개요
