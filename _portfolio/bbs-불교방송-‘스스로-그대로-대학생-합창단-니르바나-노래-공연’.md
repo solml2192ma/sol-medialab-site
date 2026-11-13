@@ -10,12 +10,12 @@ installation_region: 서울 종로구
 installation_month: 2024년11월
 installation_solution: P3 LED
 installation_project: 스스로그대로 대학생합창단 니르바나노래공연
-cover_image: /assets/img/portfolio/05_화면근접.webp
+cover_image: /assets/img/portfolio/n3hzuyy2v2.webp
 gallery:
-  - /assets/img/portfolio/03_정면전체.webp
-  - /assets/img/portfolio/02_무대전경.webp
-  - /assets/img/portfolio/01_공연장전경.webp
-  - /assets/img/portfolio/04_측면화면.webp
+  - /assets/img/portfolio/eqzp7ryznk.webp
+  - /assets/img/portfolio/exb6v1uwzy.webp
+  - /assets/img/portfolio/p7x5b8rwzs.webp
+  - /assets/img/portfolio/jay41zof4b.webp
 ---
 
 ## 현장 소개
