@@ -1,11 +1,17 @@
 ---
-slug: arcteryx플래그십스토어
 title: ARC'TERYX 플래그십 스토어
+slug: arcteryx플래그십스토어
 post_date: 2026-10-02T14:58:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 강남 아크테릭스 플래그십 스토어
+installation_region_selected: 서울특별시 강남구
+installation_year: 2026년
+installation_month: 04월
+installation_solution: P2mm LED전광판
+installation_solution_custom: ''
+installation_project: 매장행사
 cover_image: /assets/img/portfolio/nj2uwsbwcw.webp
 gallery:
   - /assets/img/portfolio/njl16z5jvr.webp
