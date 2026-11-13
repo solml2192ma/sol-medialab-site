@@ -1,4 +1,5 @@
 ---
+slug: 나스nars1
 title: 나스(NARS)
 post_date: 2026-11-13T16:58:00+09:00
 overview_category:
@@ -10,11 +11,11 @@ installation_month: 09월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 나스(NARS) 팝업 스토어
-cover_image: /assets/img/portfolio/02_측면전경.webp
+cover_image: /assets/img/portfolio/v98xq0mpdj.webp
 gallery:
-  - /assets/img/portfolio/03_부스전체.webp
-  - /assets/img/portfolio/01_정면전경.webp
-  - /assets/img/portfolio/05_송출전정면.webp
+  - /assets/img/portfolio/594qhwtk61.webp
+  - /assets/img/portfolio/9wtxxurpyz.webp
+  - /assets/img/portfolio/3uxk18ywfo.webp
 ---
 
 백화점 팝업스토어에서 방문객의 시선이 가장 먼저 머무는 곳은 브랜드 영상이 흐르는 메인 화면입니다. 판교현대백화점 나스(NARS) 팝업스토어는 부스 중앙 벽면에 실내용 p1 LED 전광판을 설치해, 제품과 캠페인 영상을 가까운 거리에서도 또렷하게 보여주는 구성으로 진행했습니다.
