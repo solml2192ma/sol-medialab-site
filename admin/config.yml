@@ -35,17 +35,19 @@ collections:
       - title
       - { field: "overview_category", label: "카테고리" }
       - { field: "{{last_human_edit | date('YYYY-MM-DD HH:mm')}}", label: "최근수정일" }
-      - { field: "{{post_date | date('YYYY-MM-DD HH:mm')}}", label: "원문작성일" }
       - { field: "last_human_editor", label: "최근수정자" }
-      - { field: "post_author", label: "최초등록자" }
+      - { field: "{{post_date | date('YYYY-MM-DD HH:mm')}}", label: "최초작성일" }
+      - { field: "post_author", label: "최초작성자" }
     sortable_fields:
       - title
       - { field: "overview_category", label: "카테고리" }
       - { field: "last_human_edit", label: "최근수정일" }
-      - { field: "post_date", label: "원문작성일" }
+      - { field: "last_human_editor", label: "최근수정자" }
+      - { field: "post_date", label: "최초작성일" }
+      - { field: "post_author", label: "최초작성자" }
     fields:
       - { label: "제목", name: "title", widget: "string" }
-      - { label: "최초등록자", name: "post_author", widget: "hidden", required: false }
+      - { label: "최초작성자", name: "post_author", widget: "hidden", required: false }
       - { label: "최근수정자", name: "last_human_editor", widget: "hidden", required: false }
       - { label: "최근수정일", name: "last_human_edit", widget: "hidden", required: false }
       - { label: "URL 슬러그 (자동 생성 — 직접 수정하지 마세요)", name: "slug", widget: "hidden", required: false }
