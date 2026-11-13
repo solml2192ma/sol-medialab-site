@@ -12,12 +12,12 @@ installation_month: 06월
 installation_solution: 유지 보수
 installation_solution_custom: ''
 installation_project: LED 수리
-cover_image: /assets/img/portfolio/05_교체후_운영상태.webp
+cover_image: /assets/img/portfolio/6x2hdtea00.webp
 gallery:
-  - /assets/img/portfolio/04_교체후_송출확인.webp
-  - /assets/img/portfolio/06_엘리베이터홀_LED.webp
-  - /assets/img/portfolio/01_점검전_로비전경.webp
-  - /assets/img/portfolio/02_점검전_손상구간.webp
+  - /assets/img/portfolio/hj2ry6uzd4.webp
+  - /assets/img/portfolio/eqp0eb7qto.webp
+  - /assets/img/portfolio/8sd5gshqcc.webp
+  - /assets/img/portfolio/yswazxm45j.webp
 ---
 
 ## 현장 개요
