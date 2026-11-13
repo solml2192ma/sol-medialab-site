@@ -1,4 +1,5 @@
 ---
+slug: 어퓨apieu
 title: 어퓨(A'pieu)
 post_date: 2026-11-13T16:03:00+09:00
 overview_category:
@@ -8,11 +9,11 @@ installation_region: 서울시 동대문구
 installation_month: 2024년 10월
 installation_solution: P2mm LED전광판
 installation_project: 컬리뷰티페스타 2024
-cover_image: /assets/img/portfolio/01_완성화면.webp
+cover_image: /assets/img/portfolio/umdf70c5au.webp
 gallery:
-  - /assets/img/portfolio/04_화면구성.webp
-  - /assets/img/portfolio/05_콘텐츠송출.webp
-  - /assets/img/portfolio/02_소등상태확인.webp
+  - /assets/img/portfolio/txuyocb7em.webp
+  - /assets/img/portfolio/taqp2ozlf2.webp
+  - /assets/img/portfolio/5l4f20n153.webp
 ---
 
 서울 동대문 DDP에서 열린 컬리뷰티페스타 2024의 **어퓨(A'pieu) 부스**에 실내용 P2 LED 전광판을 시공한 사례입니다. 부스 벽면 위쪽을 가로로 길게 채우는 와이드 화면으로, 제품 이미지와 모델 영상을 부스 앞 통로까지 전달하도록 구성했습니다.
