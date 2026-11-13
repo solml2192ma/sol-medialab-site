@@ -3,17 +3,20 @@ section[data-key-path="installation_year"]:has(+ section[data-key-path="installa
 section[data-key-path="installation_year"] + section[data-key-path="installation_month"] {
   display: inline-block;
   box-sizing: border-box;
-  width: calc(50% - 4px);
+  width: max-content;
   vertical-align: top;
 }
 
 section[data-key-path="installation_year"] > .field-wrapper,
 section[data-key-path="installation_month"] > .field-wrapper {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: var(--date-select-width) auto;
   align-items: center;
   gap: 6px;
 }
+
+section[data-key-path="installation_year"] { --date-select-width: 6rem; }
+section[data-key-path="installation_month"] { --date-select-width: 4.5rem; }
 
 section[data-key-path="installation_year"] > .field-wrapper::after { content: "년"; }
 section[data-key-path="installation_month"] > .field-wrapper::after { content: "월"; }
