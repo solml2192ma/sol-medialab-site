@@ -19,7 +19,7 @@ gallery:
   - /assets/img/portfolio/04_연회장_전경.webp
   - /assets/img/portfolio/05_메인스크린_측면.webp
   - /assets/img/portfolio/08_객석_전경.webp
-  - /assets/img/portfolio/06_오프닝_영상.webp
+  - /assets/img/portfolio/8hfoq4cv6s.webp
 ---
 
 #### **SIDEX 2026 서울국제치과기자재전시회** 
