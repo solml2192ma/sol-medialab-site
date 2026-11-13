@@ -1,14 +1,24 @@
 ---
-title: GAMEX 2026 경기국제종합학술대회 및 치과기자재전시회
+title: GAMEX 경기국제종합학술대회 및 치과기자재전시회
 slug: gamex2026경기국제종합학술대회및치과기자재전시회
 post_date: 2026-09-30T13:31:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 웨스틴 서울 파르나스 아틀라스홀
-cover_image: /assets/img/portfolio/fcqd0taix9.webp
+installation_region_selected: 서울특별시 강남구
+installation_year: 2026년
+installation_month: 09월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: gamex 가멕스 2026 경기국제종합학술대회및 치과기자재전시회
+cover_image: /assets/img/portfolio/게시01_20260918_111618.webp
 gallery:
-  - /assets/img/portfolio/mv3dt72eef.webp
+  - /assets/img/portfolio/게시02_20260918_112028.webp
+  - /assets/img/portfolio/게시04_20260918_163507961_12 (12).webp
+  - /assets/img/portfolio/게시05_20260918_163507961_12 (2).webp
+  - /assets/img/portfolio/게시08_20260918_163507961_12 (7).webp
+  - /assets/img/portfolio/기타04_20260918_112042.webp
 ---
 
 ###  **GAMEX 2026 경기국제종합학술대회 및 치과기자재전시회 — P1.25 메인 스크린과 좌우 LED, 3면 화면으로 완성한 무대**
