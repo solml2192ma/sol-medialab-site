@@ -6,6 +6,12 @@ overview_category:
   - 유지·보수
 client: ''
 location: 동대문 청량리 손한의원
+installation_region_selected: 서울특별시 동대문구
+installation_year: 2026년
+installation_month: 07월
+installation_solution: 유지 보수
+installation_solution_custom: ''
+installation_project: 프로세서 교체
 cover_image: /assets/img/portfolio/fl1xw9hfyk.webp
 gallery:
   - /assets/img/portfolio/mqu1571les.webp
