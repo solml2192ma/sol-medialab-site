@@ -1,14 +1,21 @@
 ---
-slug: 해상풍력공동접속설비추진간담회및mou협약식
 title: 해상풍력 공동접속설비 추진 간담회 및 MOU 협약식
+slug: 해상풍력공동접속설비추진간담회및mou협약식
 post_date: 2026-10-02T13:35:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 한국전력공사 경인건설본부
+installation_region_selected: 서울특별시 중구
+installation_year: 2026년
+installation_month: 05월
+installation_solution: P3mm LED전광판
+installation_solution_custom: ''
+installation_project: 해상풍력 공동접속설비 추진 간담회및 MOU 협약식
 cover_image: /assets/img/portfolio/f8m51wztvt.webp
 gallery:
   - /assets/img/portfolio/g5cg805jqw.webp
+  - /assets/img/portfolio/05_서명식현장.webp
 ---
 
 ## 현장 개요
