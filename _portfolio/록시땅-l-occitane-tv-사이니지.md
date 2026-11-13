@@ -10,13 +10,13 @@ installation_region: 서울 송파
 installation_month: 2024년10월
 installation_solution: 70인치 이상 대형 모니터 사이니지
 installation_project: 록시땅 팝업스토어
-cover_image: /assets/img/portfolio/03_콘텐츠송출확인.webp
+cover_image: /assets/img/portfolio/kc8t6es8um.webp
 gallery:
-  - /assets/img/portfolio/05_팝업현장전경1.webp
-  - /assets/img/portfolio/02_TV설치완료.webp
-  - /assets/img/portfolio/01_브라켓설치작업.webp
-  - /assets/img/portfolio/03_콘텐츠송출확인.webp
-  - /assets/img/portfolio/06_팝업현장전경2.webp
+  - /assets/img/portfolio/4yiqncbsxr.webp
+  - /assets/img/portfolio/x656jtfxu5.webp
+  - /assets/img/portfolio/mbbcpfvl7c.webp
+  - /assets/img/portfolio/kc8t6es8um.webp
+  - /assets/img/portfolio/imompzzqhk.webp
 ---
 
 ## 현장 소개
