@@ -371,7 +371,7 @@ collections:
         required: false
         hint: "설치한 장비나 제공한 서비스를 선택해 주세요. 예시: P2mm LED전광판"
         options:
-          - { label: "직접 입력", value: "직접 입력" }
+          - "직접 입력"
           - "LED전광판"
           - "P1mm LED전광판"
           - "P2mm LED전광판"
