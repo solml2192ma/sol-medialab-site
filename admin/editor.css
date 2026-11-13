@@ -41,16 +41,16 @@ section[data-key-path="installation_solution_custom"]:not([data-custom-solution-
   padding-inline: 16px;
 }
 
-:is(table, [role="table"], [role="grid"]):has([role="columnheader"]:nth-last-child(6), th:nth-last-child(6))
-  :is(th, td, [role="columnheader"], [role="cell"], [role="gridcell"]):nth-last-child(6) {
-  min-inline-size: clamp(24rem, 34vw, 48rem);
+.table-view [role="grid"] .grid-cell.column[data-key="title"] .label {
+  min-inline-size: clamp(21rem, 34vw, 48rem);
+  max-inline-size: 54rem;
   white-space: normal;
+  overflow-wrap: anywhere;
 }
 
-:is(table, [role="table"], [role="grid"]):has([role="columnheader"]:nth-last-child(6), th:nth-last-child(6))
-  :is(th, td, [role="columnheader"], [role="cell"], [role="gridcell"]):nth-last-child(5) {
-  inline-size: 12rem;
-  max-inline-size: 12rem;
+.table-view [role="grid"] .grid-cell.column[data-key="overview_category"] .label {
+  inline-size: 10rem;
+  max-inline-size: 10rem;
   white-space: normal;
   overflow-wrap: anywhere;
 }
