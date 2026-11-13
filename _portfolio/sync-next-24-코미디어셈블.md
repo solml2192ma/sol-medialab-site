@@ -1,4 +1,5 @@
 ---
+slug: syncnext24코미디어셈블
 title: sync next 24 코미디어셈블
 post_date: 2026-11-13T18:04:00+09:00
 overview_category:
@@ -10,11 +11,11 @@ installation_month: 08월
 installation_solution: 70인치 미만 모니터 사이니지
 installation_solution_custom: ''
 installation_project: sync next 24 코미디어셈블
-cover_image: /assets/img/portfolio/02_객석전경.webp
+cover_image: /assets/img/portfolio/wib7j567b8.webp
 gallery:
-  - /assets/img/portfolio/06_모니터근접.webp
-  - /assets/img/portfolio/03_스탠드설치.webp
-  - /assets/img/portfolio/05_화면세팅.webp
+  - /assets/img/portfolio/g2h4625wkx.webp
+  - /assets/img/portfolio/eq93ys416j.webp
+  - /assets/img/portfolio/iqxqkw0333.webp
 ---
 
 ## 현장 개요
