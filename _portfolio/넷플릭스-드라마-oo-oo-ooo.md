@@ -5,11 +5,11 @@ post_date: 2026-10-02T15:24:00+09:00
 overview_category:
   - 방송·촬영
 client: ''
-location: 일산 EBS 스튜디오
-installation_region_selected: ''
-installation_year: ''
-installation_month: ''
-installation_solution: ''
+location: EBS 스튜디오
+installation_region_selected: 경기도 고양시 일산동구
+installation_year: 2026년
+installation_month: 09월
+installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 cover_image: /assets/img/portfolio/1xflegihza.webp
