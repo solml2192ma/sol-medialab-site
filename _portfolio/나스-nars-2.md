@@ -1,4 +1,5 @@
 ---
+slug: 나스nars2
 title: 나스(NARS)
 post_date: 2026-11-13T17:47:00+09:00
 overview_category:
@@ -10,11 +11,11 @@ installation_month: 08월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 나스(NARS) 팝업 스토어
-cover_image: /assets/img/portfolio/08_근접컷.webp
+cover_image: /assets/img/portfolio/k4601js1bs.webp
 gallery:
-  - /assets/img/portfolio/05_화보콘텐츠.webp
-  - /assets/img/portfolio/01_현장전경.webp
-  - /assets/img/portfolio/02_로고송출.webp
+  - /assets/img/portfolio/mtetsi1m3j.webp
+  - /assets/img/portfolio/1zr1ndlwjw.webp
+  - /assets/img/portfolio/49npvwomt3.webp
 ---
 
 # 나스 팝업스토어 — 가까이서 봐도 매끄러운 p1 실내 LED를 시공했습니다
