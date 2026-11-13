@@ -1,15 +1,27 @@
 ---
-slug: 멀버리mulberry
 title: 멀버리 (mulberry)
+slug: 멀버리mulberry
 post_date: 2026-08-26T16:30:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 판교 현대백화점
-cover_image: /assets/img/portfolio/madrjdfixo.webp
+installation_region_selected: 경기도 성남시
+installation_year: 2026년
+installation_month: 04월
+installation_solution: P2mm LED전광판
+installation_solution_custom: ''
+installation_project: 멀버리 팝업스토어
+cover_image: /assets/img/portfolio/01_팝업전경.webp
 gallery:
-  - /assets/img/portfolio/72ko10bzy5.webp
+  - /assets/img/portfolio/02_지퍼영상.webp
   - /assets/img/portfolio/97b2bvg46s.webp
+  - /assets/img/portfolio/03_브랜드인물영상.webp
+  - /assets/img/portfolio/04_영상콘텐츠.webp
+  - /assets/img/portfolio/05_장인영상.webp
+  - /assets/img/portfolio/06_파우치영상.webp
+  - /assets/img/portfolio/07_핸드백영상.webp
+  - /assets/img/portfolio/08_측면전경.webp
 ---
 
 # 멀버리 팝업스토어 — 가까이에서 보는 브랜드 공간일수록, 화면의 밀도가 중요합니다
