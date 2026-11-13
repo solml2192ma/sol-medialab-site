@@ -1,11 +1,17 @@
 ---
-slug: humanskillsaiscale
 title: human skills. AI scale
+slug: humanskillsaiscale
 post_date: 2026-10-01T14:38:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 잠실 시그니엘서울 그랜드볼룸
+installation_region_selected: 서울특별시 송파구
+installation_year: 2026년
+installation_month: 07월
+installation_solution: 시스템 운영
+installation_solution_custom: ''
+installation_project: human skills. AI scale. 세미나
 cover_image: /assets/img/portfolio/imgoc6lkq4.webp
 gallery:
   - /assets/img/portfolio/sy7dol4yzd.webp
