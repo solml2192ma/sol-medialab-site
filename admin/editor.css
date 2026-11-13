@@ -31,3 +31,6 @@ section[data-key-path="installation_month"] { --date-select-width: 4.5rem; }
 
 section[data-key-path="installation_year"] > .field-wrapper::after { content: "년"; }
 section[data-key-path="installation_month"] > .field-wrapper::after { content: "월"; }
+section[data-key-path="installation_solution_custom"]:not([data-custom-solution-active]) {
+  display: none;
+}

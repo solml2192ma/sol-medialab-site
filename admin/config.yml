@@ -371,6 +371,7 @@ collections:
         required: false
         hint: "설치한 장비나 제공한 서비스를 선택해 주세요. 예시: P2mm LED전광판"
         options:
+          - { label: "직접 입력", value: "직접 입력" }
           - "LED전광판"
           - "P1mm LED전광판"
           - "P2mm LED전광판"
@@ -382,7 +383,7 @@ collections:
           - "멀티비젼 비디오월"
           - "시스템 운영"
           - "유지 보수"
-      - { label: "솔루션 직접 입력 (선택)", name: "installation_solution_custom", widget: "string", required: false, hint: "목록에 없는 솔루션을 입력해 주세요. 이 칸을 채우면 직접 입력한 내용이 홈페이지에 표시됩니다." }
+      - { label: "솔루션 직접 입력 (선택)", name: "installation_solution_custom", widget: "string", required: false, hint: "목록에 없는 솔루션을 입력해 주세요." }
       - { label: "프로젝트명 (선택)", name: "installation_project", widget: "string", required: false, hint: "행사명이나 프로젝트명을 입력해 주세요. 예시: 홍콩만찬리셉션" }
       - { label: "대표 이미지", name: "cover_image", widget: "image" }
       - label: "추가 사진 (선택)"

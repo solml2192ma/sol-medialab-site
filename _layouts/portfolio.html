@@ -129,7 +129,10 @@
   {% endif %}
 
   {% assign custom_solution = page.installation_solution_custom | strip %}
-  {% assign installation_solution = custom_solution | default: page.installation_solution %}
+  {% assign installation_solution = page.installation_solution %}
+  {% if installation_solution == '직접 입력' %}
+    {% assign installation_solution = custom_solution %}
+  {% endif %}
   {% capture installation_date %}{{ page.installation_year }} {{ page.installation_month }}{% endcapture %}
   {% assign installation_date = installation_date | strip %}
   {% assign installation_region = page.installation_region_selected | default: page.installation_region %}
