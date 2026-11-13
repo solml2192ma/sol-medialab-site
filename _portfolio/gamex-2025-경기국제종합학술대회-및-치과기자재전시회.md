@@ -1,11 +1,17 @@
 ---
+title: GAMEX 경기국제종합학술대회 및 치과기자재전시회
 slug: gamex2025경기국제종합학술대회및치과기자재전시회
-title: GAMEX 2025 경기국제종합학술대회 및 치과기자재전시회
 post_date: 2026-10-19T15:18:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 삼성 코엑스
+installation_region_selected: ''
+installation_year: ''
+installation_month: ''
+installation_solution: ''
+installation_solution_custom: ''
+installation_project: ''
 cover_image: /assets/img/portfolio/7k0dyuf7hj.webp
 gallery:
   - /assets/img/portfolio/eewnp2tirx.webp
