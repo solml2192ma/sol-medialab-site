@@ -1,4 +1,5 @@
 ---
+slug: gamex경기국제종합학술대회및치과기자재전시회
 title: GAMEX 경기국제종합학술대회 및 치과기자재전시회
 post_date: 2026-11-13T17:21:00+09:00
 overview_category:
@@ -10,11 +11,11 @@ installation_month: 09월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: GAMEX 경기국제종합학술대회 및 치과기자재전시회
-cover_image: /assets/img/portfolio/08_무대조명.webp
+cover_image: /assets/img/portfolio/6hr40cfgao.webp
 gallery:
-  - /assets/img/portfolio/05_LED화면근접.webp
-  - /assets/img/portfolio/06_조명연출.webp
-  - /assets/img/portfolio/04_행사장세팅.webp
+  - /assets/img/portfolio/3l4mek1x94.webp
+  - /assets/img/portfolio/ufcypl36b5.webp
+  - /assets/img/portfolio/ksiwo60wg3.webp
 ---
 
 ## 호텔 볼룸 학술대회에 공급한 대형 LED 전광판 렌탈
