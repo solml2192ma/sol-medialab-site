@@ -10,13 +10,13 @@ installation_region: 부산 해운대
 installation_month: 2024년10월
 installation_solution: P2mm LED전광판
 installation_project: 부산 디자인 페스티벌 모모스커피
-cover_image: /assets/img/portfolio/01_화면송출전경.webp
+cover_image: /assets/img/portfolio/8n7kjtb2qu.webp
 gallery:
-  - /assets/img/portfolio/02_화면송출정면.webp
-  - /assets/img/portfolio/03_와이드전경.webp
-  - /assets/img/portfolio/04_부스전경.webp
-  - /assets/img/portfolio/05_송출전부스.webp
-  - /assets/img/portfolio/06_송출전화면.webp
+  - /assets/img/portfolio/00mqdo45oc.webp
+  - /assets/img/portfolio/llxcv5abuw.webp
+  - /assets/img/portfolio/w8dgmwsdsi.webp
+  - /assets/img/portfolio/4t65ye58yd.webp
+  - /assets/img/portfolio/zvf0r6wbay.webp
 ---
 
 ## MOMOS COFFEE 부스 — 벡스코에 수평선을 놓았습니다
