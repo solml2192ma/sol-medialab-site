@@ -6,15 +6,15 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 서울 강남구 (역삼 멀티캠퍼스)
-cover_image: /assets/img/portfolio/ssafy11-meetup-03.jpg
+cover_image: /assets/img/portfolio/h2avvngtv5.webp
 gallery:
-  - /assets/img/portfolio/ssafy11-meetup-01.jpg
-  - /assets/img/portfolio/ssafy11-meetup-02.jpg
-  - /assets/img/portfolio/ssafy11-meetup-04.jpg
-  - /assets/img/portfolio/ssafy11-meetup-05.jpg
-  - /assets/img/portfolio/ssafy11-meetup-06.jpg
-  - /assets/img/portfolio/ssafy11-meetup-07.jpg
-  - /assets/img/portfolio/ssafy11-meetup-08.jpg
+  - /assets/img/portfolio/blkwrf13be.webp
+  - /assets/img/portfolio/0049bxlc9t.webp
+  - /assets/img/portfolio/4kszag4iq4.webp
+  - /assets/img/portfolio/8fk7shrzks.webp
+  - /assets/img/portfolio/slmj4h1m7h.webp
+  - /assets/img/portfolio/84vm8bsown.webp
+  - /assets/img/portfolio/dig8d9kgqj.webp
 ---
 
 ## 현장 개요
