@@ -12,15 +12,15 @@ installation_month: 05월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 멀버리 팝업스토어
-cover_image: /assets/img/portfolio/03_042244.webp
+cover_image: /assets/img/portfolio/aezbppyoi5.webp
 gallery:
-  - /assets/img/portfolio/01_042208.webp
-  - /assets/img/portfolio/02_042212.webp
-  - /assets/img/portfolio/04_042136.webp
-  - /assets/img/portfolio/05_042139.webp
-  - /assets/img/portfolio/06_042024.webp
-  - /assets/img/portfolio/07_042505.webp
-  - /assets/img/portfolio/08_042552.webp
+  - /assets/img/portfolio/g8rgsjcura.webp
+  - /assets/img/portfolio/6nm30ixb1w.webp
+  - /assets/img/portfolio/bn4cekxf2y.webp
+  - /assets/img/portfolio/t85x0jznv4.webp
+  - /assets/img/portfolio/8uq4g4z7yo.webp
+  - /assets/img/portfolio/7r18qszfwa.webp
+  - /assets/img/portfolio/nv1i17dgwq.webp
 ---
 
 스타필드 하남 1층에 문을 연 멀버리 팝업스토어에 실내 LED 전광판을 설치한 사례입니다. 가죽 소재의 질감과 장인의 작업 장면을 담은 브랜드 영상이 세로로 긴 화면에서 송출되며, 방문객이 가장 먼저 마주하는 시선의 중심이 되도록 구성했습니다.
