@@ -1,4 +1,5 @@
 ---
+slug: bbs불교방송청년명상노래콘테스트
 title: BBS불교방송 청년명상노래 콘테스트
 post_date: 2026-11-13T17:32:00+09:00
 overview_category:
@@ -10,11 +11,11 @@ installation_month: 09월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 스스로 그대로 청년명상노래 콘테스트
-cover_image: /assets/img/portfolio/01_공연리허설전경.webp
+cover_image: /assets/img/portfolio/ljaic8rgtd.webp
 gallery:
-  - /assets/img/portfolio/05_정면전경.webp
-  - /assets/img/portfolio/02_라떼아트화면.webp
-  - /assets/img/portfolio/04_객석측면전경.webp
+  - /assets/img/portfolio/qixt2gm6lm.webp
+  - /assets/img/portfolio/osigm065ur.webp
+  - /assets/img/portfolio/squere12gl.webp
 ---
 
 ## 현장 소개
