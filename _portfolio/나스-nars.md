@@ -1,4 +1,5 @@
 ---
+slug: 나스nars
 title: 나스(NARS)
 post_date: 2026-11-13T16:32:00+09:00
 overview_category:
@@ -10,11 +11,11 @@ installation_month: 10월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 나스(NARS) 팝업 스토어
-cover_image: /assets/img/portfolio/02_LED정면.webp
+cover_image: /assets/img/portfolio/831ktqs201.webp
 gallery:
-  - /assets/img/portfolio/04_측면근접.webp
-  - /assets/img/portfolio/03_캠페인영상송출.webp
-  - /assets/img/portfolio/08_정면전경.webp
+  - /assets/img/portfolio/7wtxvoh59x.webp
+  - /assets/img/portfolio/88q56jkxsh.webp
+  - /assets/img/portfolio/oygtjy5n37.webp
 ---
 
 ## 프로젝트 개요
