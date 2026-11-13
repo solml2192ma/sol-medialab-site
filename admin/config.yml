@@ -58,12 +58,28 @@ collections:
           - "유지·보수"
           - "제품 유통"
         required: false
-      - { label: "클라이언트 (선택)", name: "client", widget: "string", required: false }
-      - { label: "장소 (선택)", name: "location", widget: "string", required: false }
-      - { label: "설치 지역 (선택)", name: "installation_region", widget: "string", required: false }
-      - { label: "설치 일자 (선택)", name: "installation_month", widget: "string", required: false, hint: "예: 2026년 02월" }
-      - { label: "솔루션 (선택)", name: "installation_solution", widget: "string", required: false }
-      - { label: "프로젝트명 (선택)", name: "installation_project", widget: "string", required: false }
+      - { label: "클라이언트", name: "client", widget: "hidden", required: false }
+      - { label: "장소 (선택)", name: "location", widget: "string", required: false, hint: "시설명과 세부 장소를 입력해 주세요. 예시: 서울신라호텔 영빈관 루비홀" }
+      - { label: "설치 지역 (선택)", name: "installation_region", widget: "string", required: false, hint: "시·군·구까지 입력해 주세요. 예시: 서울시 중구" }
+      - { label: "설치 일자 (선택)", name: "installation_month", widget: "string", required: false, hint: "실제 설치 연도와 월을 입력해 주세요. 예시: 2026년 02월" }
+      - label: "솔루션 (선택)"
+        name: "installation_solution"
+        widget: "select"
+        required: false
+        hint: "설치한 장비나 제공한 서비스를 선택해 주세요. 예시: P2mm LED전광판"
+        options:
+          - "LED전광판"
+          - "P1mm LED전광판"
+          - "P2mm LED전광판"
+          - "P3mm LED전광판"
+          - "P4mm LED전광판"
+          - "Flexible 곡면형 커브드 LED전광판"
+          - "70인치 이상 대형 모니터 사이니지"
+          - "70인치 미만 모니터 사이니지"
+          - "멀티비젼 비디오월"
+          - "시스템 운영"
+          - "유지 보수"
+      - { label: "프로젝트명 (선택)", name: "installation_project", widget: "string", required: false, hint: "행사명이나 프로젝트명을 입력해 주세요. 예시: 홍콩만찬리셉션" }
       - { label: "대표 이미지", name: "cover_image", widget: "image" }
       - label: "추가 사진 (선택)"
         name: "gallery"

@@ -1333,11 +1333,6 @@ section { position: relative; }
   color: #98A2B3;
   font-size: 14px;
 }
-.portfolio-detail-cover {
-  max-width: 1080px;
-  margin: 48px auto 0;
-}
-.portfolio-detail-cover img { width: 100%; display: block; }
 .portfolio-installation-info {
   max-width: 1080px;
   margin: 48px auto 0;
@@ -1385,8 +1380,7 @@ section { position: relative; }
 .portfolio-detail-body img { width: 100%; border-radius: 16px; margin: 24px 0; }
 .yt-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 24px 0; border-radius: 16px; overflow: hidden; background: #000; }
 .yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.case-gallery { max-width: 1040px; margin: 36px auto 0; }
-.case-gallery--wide { max-width: none; }
+.case-gallery { margin: 36px auto 0; }
 .case-gallery-frame { position: relative; }
 .case-gallery-track {
   --photo-gap: 54px;
@@ -1403,24 +1397,12 @@ section { position: relative; }
   display: block;
   flex: 0 0 auto;
   min-width: 0;
-  width: auto;
-  max-width: calc((100% - 2 * var(--photo-gap)) / 3);
+  width: min(760px, calc((100% - 2 * var(--photo-gap)) / 3));
   height: auto;
-  max-height: min(55svh, 420px);
   object-fit: contain;
   scroll-snap-align: start;
 }
-.case-gallery-track[data-count="1"] img { max-width: 100%; margin-inline: auto; }
-.case-gallery--wide .case-gallery-track img {
-  --columns: min(var(--photo-count), 3);
-  max-width: calc((100% + var(--photo-gap)) / var(--columns) - var(--photo-gap));
-}
-@media (min-width: 1500px) {
-  .case-gallery--wide .case-gallery-track img { --columns: min(var(--photo-count), 4); }
-}
-@media (min-width: 1950px) {
-  .case-gallery--wide .case-gallery-track img { --columns: min(var(--photo-count), 5); }
-}
+.case-gallery-track[data-count="1"] img { margin-inline: auto; }
 .case-gallery-track img:last-child { scroll-snap-align: end; }
 .case-gallery-track.has-centered-slides img { scroll-snap-align: center; }
 .case-gallery-track.has-centered-slides img:not(.is-selected) {
@@ -1489,10 +1471,10 @@ section { position: relative; }
 @media (max-width: 900px) {
   .portfolio-detail { padding: 110px 20px 60px; }
   .portfolio-detail-body { font-size: 15px; }
-  .case-gallery .case-gallery-track:not([data-count="1"]) img { max-width: 72%; }
+  .case-gallery-track img { width: 72%; }
 }
 @media (max-width: 540px) {
-  .case-gallery .case-gallery-track:not([data-count="1"]) img { max-width: 86%; }
+  .case-gallery-track img { width: 86%; }
 }
 
 /* ===== Portfolio contact card (게시글 하단 QR 문의 카드) ===== */

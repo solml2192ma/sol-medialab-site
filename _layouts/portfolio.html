@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=131"></head><body>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=134"></head><body>
 
 <header class="site-header header-solid" id="siteHeader">
   <div class="header-inner">
@@ -110,14 +110,10 @@
   {% if page.cover_image %}
     {% assign photo_count = photo_count | plus: 1 %}
   {% endif %}
-  {% if photo_count == 1 and page.cover_image %}
-  <div class="portfolio-detail-cover">
-    <img src="{{ site.baseurl }}{{ page.cover_image }}" alt="{{ page.title | escape }}">
-  </div>
-  {% elsif photo_count > 0 %}
-  <section class="case-gallery{% if photo_count >= 2 %} case-gallery--wide{% endif %}" aria-label="사례 사진">
+  {% if photo_count > 0 %}
+  <section class="case-gallery" aria-label="사례 사진">
     <div class="case-gallery-frame">
-      <div class="case-gallery-track" data-count="{{ photo_count }}" style="--photo-count: {{ photo_count }}" tabindex="0" role="group" aria-label="가로로 넘겨 보는 사례 사진">
+      <div class="case-gallery-track" data-count="{{ photo_count }}"{% if photo_count > 1 %} tabindex="0"{% endif %} role="group" aria-label="사례 사진 모음">
         {% if page.cover_image %}
         <img src="{{ site.baseurl }}{{ page.cover_image }}" alt="{{ page.title | escape }} 대표 사진">
         {% endif %}
