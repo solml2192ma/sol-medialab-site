@@ -21,7 +21,7 @@ gallery:
   - /assets/img/portfolio/05_장인영상.webp
   - /assets/img/portfolio/06_파우치영상.webp
   - /assets/img/portfolio/07_핸드백영상.webp
-  - /assets/img/portfolio/08_측면전경.webp
+  - /assets/img/portfolio/zu1qqdx6f3.webp
 ---
 
 # 멀버리 팝업스토어 — 가까이에서 보는 브랜드 공간일수록, 화면의 밀도가 중요합니다
