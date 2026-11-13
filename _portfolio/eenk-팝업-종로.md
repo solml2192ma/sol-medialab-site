@@ -1,5 +1,5 @@
 ---
-title: EENK 팝업 (종로)
+title: EENK
 slug: eenk팝업종로
 post_date: 2026-09-30T14:19:00+09:00
 overview_category:
