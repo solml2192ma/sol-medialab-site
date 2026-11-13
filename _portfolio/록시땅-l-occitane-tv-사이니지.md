@@ -1,14 +1,22 @@
 ---
-slug: 록시땅loccitanetv사이니지
 title: 록시땅(L'OCCITANE) TV 사이니지
+slug: 록시땅loccitanetv사이니지
 post_date: 2026-11-13T12:40:00+09:00
 overview_category:
   - 사이니지·모니터(설치)
 client: ''
 location: 잠실 롯데월드몰
-cover_image: /assets/img/portfolio/fdweikgoap.webp
+installation_region: 서울 송파
+installation_month: 2024년10월
+installation_solution: 70인치 이상 대형 모니터 사이니지
+installation_project: 록시땅 팝업스토어
+cover_image: /assets/img/portfolio/03_콘텐츠송출확인.webp
 gallery:
-  - /assets/img/portfolio/6s3b7htncg.webp
+  - /assets/img/portfolio/05_팝업현장전경1.webp
+  - /assets/img/portfolio/02_TV설치완료.webp
+  - /assets/img/portfolio/01_브라켓설치작업.webp
+  - /assets/img/portfolio/03_콘텐츠송출확인.webp
+  - /assets/img/portfolio/06_팝업현장전경2.webp
 ---
 
 ## 현장 소개
