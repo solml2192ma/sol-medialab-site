@@ -1,4 +1,5 @@
 ---
+slug: 삼성전자ssafy12기입학식
 title: 삼성전자 SSAFY 12기 입학식
 post_date: 2026-11-13T18:26:00+09:00
 overview_category:
@@ -10,11 +11,11 @@ installation_month: 07월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 삼성전자 SSAFY 12기 입학식
-cover_image: /assets/img/portfolio/06_화면근접_팔로우.webp
+cover_image: /assets/img/portfolio/7zvn0acpc4.webp
 gallery:
-  - /assets/img/portfolio/07_영상송출.webp
-  - /assets/img/portfolio/03_캠퍼스연결화면.webp
-  - /assets/img/portfolio/04_화면근접_입학다짐.webp
+  - /assets/img/portfolio/onc51mjduz.webp
+  - /assets/img/portfolio/9hsje949kk.webp
+  - /assets/img/portfolio/hvrwpwx4xi.webp
 ---
 
 ## 입학식의 중심이 된 실내 대형 LED 전광판
