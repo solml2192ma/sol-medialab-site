@@ -10,13 +10,13 @@ installation_region: 서울 송파
 installation_month: 2024년10월
 installation_solution: P2mm LED전광판
 installation_project: 록시땅 팝업스토어
-cover_image: /assets/img/portfolio/01_정면전경.webp
+cover_image: /assets/img/portfolio/x9ekc5durp.webp
 gallery:
-  - /assets/img/portfolio/03_화면클로즈업.webp
-  - /assets/img/portfolio/04_콘텐츠송출.webp
-  - /assets/img/portfolio/05_와이드화면.webp
-  - /assets/img/portfolio/06_화면디테일.webp
-  - /assets/img/portfolio/02_설치현장.webp
+  - /assets/img/portfolio/b36l7jir2g.webp
+  - /assets/img/portfolio/5bl0kgwvda.webp
+  - /assets/img/portfolio/st9pqckc3t.webp
+  - /assets/img/portfolio/5ktpa1t1k6.webp
+  - /assets/img/portfolio/meq9c33de1.webp
 ---
 
 ## 현장 소개
