@@ -1,11 +1,17 @@
 ---
+title: SIDEX 서울국제치과기자재전시회
 slug: sidex2026
-title: SIDEX 2026
 post_date: 2026-08-20T13:15:56+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 그랜드 인터컨티넨탈 서울 파르나스 그랜드 볼룸
+installation_region_selected: ''
+installation_year: ''
+installation_month: ''
+installation_solution: ''
+installation_solution_custom: ''
+installation_project: ''
 cover_image: /assets/img/portfolio/vkl4vlzqrd.webp
 gallery:
   - /assets/img/portfolio/tj9l4knmbl.webp
