@@ -31,11 +31,6 @@ collections:
     folder: "_portfolio"
     create: true
     slug: "{{slug}}"
-    table_columns:
-      - { field: "_summary", label: "제목" }
-      - { field: "{{gallery | photo_count('{{cover_image}}')}}", label: "사진수" }
-      - { field: "overview_category", label: "카테고리" }
-      - { field: "{{commit_date | date('YYYY-MM-DD HH:mm')}}", label: "최근수정일" }
     fields:
       - { label: "제목", name: "title", widget: "string" }
       - { label: "URL 슬러그 (자동 생성 — 직접 수정하지 마세요)", name: "slug", widget: "hidden", required: false }
