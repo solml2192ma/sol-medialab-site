@@ -1,11 +1,15 @@
 ---
+title: 삼성전자 SSAFY 11기 Meet Up
 slug: 역삼멀티캠퍼스삼성청년sw아카데미11기ssafy밋업p3led전광판렌탈운영
-title: 역삼 멀티캠퍼스 삼성 청년 SW 아카데미 11기 SSAFY 밋업 p3 LED 전광판 렌탈 운영
 post_date: 2026-11-13T14:08:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
-location: 서울 강남구 (역삼 멀티캠퍼스)
+location: 역삼 멀티캠퍼스
+installation_region: ''
+installation_month: ''
+installation_solution: ''
+installation_project: ''
 cover_image: /assets/img/portfolio/h2avvngtv5.webp
 gallery:
   - /assets/img/portfolio/blkwrf13be.webp
