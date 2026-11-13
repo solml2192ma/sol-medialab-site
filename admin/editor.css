@@ -7,12 +7,23 @@ section[data-key-path="installation_year"] + section[data-key-path="installation
   vertical-align: top;
 }
 
+/* Match the centered 768px content column used by the other CMS fields. */
+section[data-key-path="installation_year"]:has(+ section[data-key-path="installation_month"]) {
+  margin-inline-start: max(0px, calc((100% - 768px) / 2 - var(--field-editor-padding, 16px)));
+}
+
 section[data-key-path="installation_year"] > .field-wrapper,
 section[data-key-path="installation_month"] > .field-wrapper {
   display: grid;
   grid-template-columns: var(--date-select-width) auto;
   align-items: center;
   gap: 6px;
+}
+
+section:is([data-key-path="installation_year"], [data-key-path="installation_month"]) > .field-wrapper > *,
+section:is([data-key-path="installation_year"], [data-key-path="installation_month"]) > .field-wrapper [aria-haspopup="listbox"] {
+  min-inline-size: 0;
+  max-inline-size: 100%;
 }
 
 section[data-key-path="installation_year"] { --date-select-width: 6rem; }
