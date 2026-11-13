@@ -1,11 +1,17 @@
 ---
+title: 넷플릭스 드라마
 slug: 넷플릭스드라마ooooooo
-title: 넷플릭스 드라마 - OO OO OOO
 post_date: 2026-10-02T15:24:00+09:00
 overview_category:
   - 방송·촬영
 client: ''
 location: 일산 EBS 스튜디오
+installation_region_selected: ''
+installation_year: ''
+installation_month: ''
+installation_solution: ''
+installation_solution_custom: ''
+installation_project: ''
 cover_image: /assets/img/portfolio/1xflegihza.webp
 gallery:
   - /assets/img/portfolio/2sofyf7ybc.webp
