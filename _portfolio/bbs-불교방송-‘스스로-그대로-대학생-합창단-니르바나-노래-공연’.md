@@ -1,14 +1,21 @@
 ---
-slug: bbs불교방송스스로그대로대학생합창단니르바나노래공연
 title: BBS 불교방송 ‘스스로 그대로 대학생 합창단 니르바나 노래 공연’
+slug: bbs불교방송스스로그대로대학생합창단니르바나노래공연
 post_date: 2026-11-12T17:48:00+09:00
 overview_category:
   - 공연·행사
-client: ''
+client: BBS
 location: 종로구 조계사 불교중앙박물관
-cover_image: /assets/img/portfolio/fnwmlzirma.webp
+installation_region: 서울 종로구
+installation_month: 2024년11월
+installation_solution: P3 LED
+installation_project: 스스로그대로 대학생합창단 니르바나노래공연
+cover_image: /assets/img/portfolio/05_화면근접.webp
 gallery:
-  - /assets/img/portfolio/tkqwn63xmp.webp
+  - /assets/img/portfolio/03_정면전체.webp
+  - /assets/img/portfolio/02_무대전경.webp
+  - /assets/img/portfolio/01_공연장전경.webp
+  - /assets/img/portfolio/04_측면화면.webp
 ---
 
 ## 현장 소개
