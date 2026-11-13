@@ -6,6 +6,12 @@ overview_category:
   - 사이니지·모니터(렌탈)
 client: ''
 location: 양재 엘타워 골드홀
+installation_region_selected: 서울특별시 서초구
+installation_year: 2026년
+installation_month: 09월
+installation_solution: 70인치 미만 모니터 사이니지
+installation_solution_custom: ''
+installation_project: 2026 faro creaform innovation forum
 cover_image: /assets/img/portfolio/hxnbnu10lf.webp
 gallery:
   - /assets/img/portfolio/gdj3rkqnus.webp
