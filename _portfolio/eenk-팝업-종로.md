@@ -6,6 +6,12 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 서울 종로
+installation_region_selected: 서울특별시 종로구
+installation_year: 2026년
+installation_month: 09월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: EENK 의류제품 프레젠테이션
 cover_image: /assets/img/portfolio/tz10ru1nqf.webp
 gallery:
   - /assets/img/portfolio/o6gx5qsonu.webp
