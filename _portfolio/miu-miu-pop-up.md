@@ -6,9 +6,18 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 더현대 서울
-cover_image: /assets/img/portfolio/s9w67akm8e.webp
+installation_region_selected: 서울특별시 영등포구
+installation_year: 2026년
+installation_month: 04월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: 미우미우 팝업스토어
+cover_image: /assets/img/portfolio/03_영상송출.webp
 gallery:
-  - /assets/img/portfolio/voxe3tdnxe.webp
+  - /assets/img/portfolio/04_향수캠페인.webp
+  - /assets/img/portfolio/05_캠페인필름.webp
+  - /assets/img/portfolio/06_근접.webp
+  - /assets/img/portfolio/07_측면영상.webp
 ---
 
 ## 현장 개요
