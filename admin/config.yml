@@ -31,6 +31,9 @@ collections:
     folder: "_portfolio"
     create: true
     slug: "{{slug}}"
+    table_columns:
+      - title
+      - { field: "commit_date", label: "최근수정일" }
     fields:
       - { label: "제목", name: "title", widget: "string" }
       - { label: "URL 슬러그 (자동 생성 — 직접 수정하지 마세요)", name: "slug", widget: "hidden", required: false }
