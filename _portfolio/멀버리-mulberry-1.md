@@ -21,6 +21,9 @@ gallery:
   - /assets/img/portfolio/8uq4g4z7yo.webp
   - /assets/img/portfolio/7r18qszfwa.webp
   - /assets/img/portfolio/nv1i17dgwq.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T18:21:36+09:00'
 ---
 
 스타필드 하남 1층에 문을 연 멀버리 팝업스토어에 실내 LED 전광판을 설치한 사례입니다. 가죽 소재의 질감과 장인의 작업 장면을 담은 브랜드 영상이 세로로 긴 화면에서 송출되며, 방문객이 가장 먼저 마주하는 시선의 중심이 되도록 구성했습니다.

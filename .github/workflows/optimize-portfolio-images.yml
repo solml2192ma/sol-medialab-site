@@ -29,6 +29,9 @@ jobs:
       - name: Resize and convert new/changed photos to WebP
         run: python3 scripts/optimize_portfolio_images.py "${{ github.event.before }}" "${{ github.sha }}"
 
+      - name: Refresh portfolio edit history
+        run: ruby scripts/update_portfolio_history.rb
+
       - name: Commit and push if anything changed
         run: |
           if [ -z "$(git status --porcelain)" ]; then

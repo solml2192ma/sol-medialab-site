@@ -9,6 +9,9 @@ location: 서울 한강 노들섬
 cover_image: /assets/img/portfolio/vvck23mn7f.webp
 gallery:
   - /assets/img/portfolio/acnkaxzz87.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-21T16:07:30+09:00'
 ---
 
 한강 노들섬에서 열린 2025 올리브영페스타의 **닥터지 부스**에 야외형 LED 전광판을 설치한 사례입니다. 브랜드 존 안쪽 벽면에 가로로 길게 이어지는 화면을 시공해, 부스를 찾은 방문객이 캠페인 메시지와 제품 이미지를 한눈에 볼 수 있도록 구성했습니다.

@@ -9,6 +9,9 @@ location: 현대백화점 판교
 cover_image: /assets/img/portfolio/avmwi8gfwb.webp
 gallery:
   - /assets/img/portfolio/8xpcg7to45.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-21T15:44:42+09:00'
 ---
 
 ## 프로젝트 개요

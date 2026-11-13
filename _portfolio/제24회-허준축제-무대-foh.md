@@ -9,6 +9,9 @@ location: 서울식물원
 cover_image: /assets/img/portfolio/zholjqd6m0.webp
 gallery:
   - /assets/img/portfolio/h6oy3zi5j4.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-14T17:52:02+09:00'
 ---
 
 제24회 허준축제가 열린 서울 강서구 서울식물원 야외 행사장에 LED 전광판을 렌탈로 세팅하고 행사 기간 동안 운영한 사례입니다. 야외 P3 LED로 메인 무대 FOH에 설치하였습니다.

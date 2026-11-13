@@ -9,6 +9,9 @@ location: 서울 성수
 cover_image: /assets/img/portfolio/40d1223shs.webp
 gallery:
   - /assets/img/portfolio/diqg3dmfvu.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-12T13:25:55+09:00'
 ---
 
 ## 현장 개요

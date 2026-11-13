@@ -9,6 +9,9 @@ location: 더현대 서울
 cover_image: /assets/img/portfolio/blhzce867u.webp
 gallery:
   - /assets/img/portfolio/o7mfi1pi8x.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-02T14:42:06+09:00'
 ---
 
 # COACH 팝업스토어 — 가까이 다가가도 매끄러운 실내 LED를 설치했습니다

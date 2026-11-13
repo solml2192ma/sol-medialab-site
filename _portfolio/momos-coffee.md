@@ -17,6 +17,9 @@ gallery:
   - /assets/img/portfolio/w8dgmwsdsi.webp
   - /assets/img/portfolio/4t65ye58yd.webp
   - /assets/img/portfolio/zvf0r6wbay.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T16:09:11+09:00'
 ---
 
 ## MOMOS COFFEE 부스 — 벡스코에 수평선을 놓았습니다

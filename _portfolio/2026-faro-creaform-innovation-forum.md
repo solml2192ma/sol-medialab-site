@@ -16,6 +16,9 @@ cover_image: /assets/img/portfolio/hxnbnu10lf.webp
 gallery:
   - /assets/img/portfolio/gdj3rkqnus.webp
   - /assets/img/portfolio/jslvahm2e8.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T17:11:46+09:00'
 ---
 
 ## 스탠드형 모니터로 구성한 포럼 현장

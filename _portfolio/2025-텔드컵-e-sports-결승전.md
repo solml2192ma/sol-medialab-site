@@ -8,6 +8,9 @@ location: 화성 오리진홀
 cover_image: /assets/img/portfolio/ipea9n7s76.webp
 gallery:
   - /assets/img/portfolio/6i28xcr9dy.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-21T16:18:06+09:00'
 ---
 
 ## 현장 소개

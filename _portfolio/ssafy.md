@@ -8,6 +8,9 @@ client: ''
 location: 역삼동 멀티캠퍼스
 cover_image: /assets/img/portfolio/f8hvciqt91.webp
 gallery: []
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-12T13:56:16+09:00'
 ---
 
 # 삼성 청년 SW·AI 아카데미

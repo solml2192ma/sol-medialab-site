@@ -15,6 +15,9 @@ installation_project: ''
 cover_image: /assets/img/portfolio/aclxpm0k2p.webp
 gallery:
   - /assets/img/portfolio/dsb3jufkav.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T17:09:50+09:00'
 ---
 
 **포커 대회장 세트 안의 화면, 카메라가 가까이 와도 괜찮아야 했습니다**

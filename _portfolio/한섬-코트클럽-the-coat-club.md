@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/999te3tptx.webp
 gallery:
   - /assets/img/portfolio/9k9io0s2jn.webp
   - /assets/img/portfolio/0920d9ec61.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-19T12:33:58+09:00'
 ---
 
 ## 프로젝트 개요

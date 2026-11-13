@@ -20,6 +20,9 @@ gallery:
   - /assets/img/portfolio/slmj4h1m7h.webp
   - /assets/img/portfolio/84vm8bsown.webp
   - /assets/img/portfolio/dig8d9kgqj.webp
+post_author: 'solml2192ma'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-11-13T16:02:53+09:00'
 ---
 
 ## 현장 개요

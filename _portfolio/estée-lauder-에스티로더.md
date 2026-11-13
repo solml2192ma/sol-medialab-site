@@ -9,6 +9,9 @@ location: ''
 cover_image: /assets/img/portfolio/nqbb66wg1k.webp
 gallery:
   - /assets/img/portfolio/y17so7fose.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 **기둥 자체가 스크린이 되도록**

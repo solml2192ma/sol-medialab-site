@@ -16,6 +16,9 @@ cover_image: /assets/img/portfolio/tz10ru1nqf.webp
 gallery:
   - /assets/img/portfolio/o6gx5qsonu.webp
   - /assets/img/portfolio/9aesf25leg.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T17:35:38+09:00'
 ---
 
 #### **종로 EENK FW26 프레젠테이션 — 공간의 결을 살린 세로형 LED**

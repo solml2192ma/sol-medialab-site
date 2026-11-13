@@ -19,6 +19,9 @@ gallery:
   - /assets/img/portfolio/게시05_20260918_163507961_12 (2).webp
   - /assets/img/portfolio/게시08_20260918_163507961_12 (7).webp
   - /assets/img/portfolio/drt4f8vjlw.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T16:33:53+09:00'
 ---
 
 ###  **GAMEX 2026 경기국제종합학술대회 및 치과기자재전시회 — P1.25 메인 스크린과 좌우 LED, 3면 화면으로 완성한 무대**

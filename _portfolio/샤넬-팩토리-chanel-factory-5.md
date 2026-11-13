@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/7jikh7r7xu.webp
 gallery:
   - /assets/img/portfolio/gfrinf09uy.webp
   - /assets/img/portfolio/kckko0z8l0.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 # CHANEL FACTORY 5 — 실물이 바로 옆에 있는 화면

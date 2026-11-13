@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/zi1dygkw8g.webp
 gallery:
   - /assets/img/portfolio/1ps1zf9ght.webp
   - /assets/img/portfolio/pml09dazpb.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-19T16:30:52+09:00'
 ---
 
 반얀트리 클럽 앤 스파 서울 크리스탈볼룸에서 열린 큐어젯 아카데미 앤 트레이닝 심포지엄(Curejet Academy and Training Symposium)에 **LED 화면 운영**과 **TV 프롬프터 렌탈**로 참여했습니다. 볼룸에는 호텔이 보유한 LED 화면이 이미 설치되어 있어, 솔미디어랩은 화면을 새로 반입하는 대신 행사 진행에 맞춰 화면을 운영하는 역할을 맡았고, 무대 앞에는 발표자용 TV 프롬프터를 렌탈로 세팅했습니다.

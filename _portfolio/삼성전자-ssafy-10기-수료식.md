@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/wvhe5dyisw.webp
 gallery:
   - /assets/img/portfolio/o0zg4e1km2.webp
   - /assets/img/portfolio/yjhyioe55h.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-12T13:58:33+09:00'
 ---
 
 **수료식 무대 전면을 채운 대형 LED, 행사 기간 동안 렌탈로 함께했습니다.**

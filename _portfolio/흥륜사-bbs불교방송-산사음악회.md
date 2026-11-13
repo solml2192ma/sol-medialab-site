@@ -15,6 +15,9 @@ cover_image: /assets/img/portfolio/69u5h4ce8n.webp
 gallery:
   - /assets/img/portfolio/a37rb7n8gw.webp
   - /assets/img/portfolio/80ooagpv8i.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T17:29:27+09:00'
 ---
 
 ## 사찰 음악회에 맞춘 옥외 LED 전광판 렌탈

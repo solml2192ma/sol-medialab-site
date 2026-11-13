@@ -16,6 +16,9 @@ gallery:
   - /assets/img/portfolio/7wtxvoh59x.webp
   - /assets/img/portfolio/88q56jkxsh.webp
   - /assets/img/portfolio/oygtjy5n37.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T16:35:22+09:00'
 ---
 
 ## 프로젝트 개요

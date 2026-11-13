@@ -16,6 +16,9 @@ gallery:
   - /assets/img/portfolio/g2h4625wkx.webp
   - /assets/img/portfolio/eq93ys416j.webp
   - /assets/img/portfolio/iqxqkw0333.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T18:08:12+09:00'
 ---
 
 ## 현장 개요

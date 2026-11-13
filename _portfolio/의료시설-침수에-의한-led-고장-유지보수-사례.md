@@ -9,6 +9,9 @@ location: ''
 cover_image: /assets/img/portfolio/saz0gbdscr.webp
 gallery:
   - /assets/img/portfolio/6a92g3w1l1.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-21T16:24:04+09:00'
 ---
 
 

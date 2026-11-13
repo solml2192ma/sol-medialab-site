@@ -15,6 +15,9 @@ installation_project: human skills. AI scale. 세미나
 cover_image: /assets/img/portfolio/imgoc6lkq4.webp
 gallery:
   - /assets/img/portfolio/sy7dol4yzd.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T17:27:45+09:00'
 ---
 
 ## 행사 개요

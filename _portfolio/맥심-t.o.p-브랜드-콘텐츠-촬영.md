@@ -9,6 +9,9 @@ location: ''
 cover_image: /assets/img/portfolio/15nsd6ck1n.webp
 gallery:
   - /assets/img/portfolio/rcdqknjm4m.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 **움직이는 카메라, 끊기지 않는 무대 배경**

@@ -9,6 +9,9 @@ location: 종로구 세운광장
 cover_image: /assets/img/portfolio/82vp6wyw5f.webp
 gallery:
   - /assets/img/portfolio/k7bjko9y5z.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-11T13:02:32+09:00'
 ---
 
 ## 프로젝트 개요

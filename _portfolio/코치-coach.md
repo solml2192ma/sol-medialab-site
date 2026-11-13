@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/9neoca9p87.webp
 gallery:
   - /assets/img/portfolio/94mb2kt5k7.webp
   - /assets/img/portfolio/k524si0h2f.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-12T13:09:36+09:00'
 ---
 
 # 코치(COACH) 성수 팝업스토어 — 노란 벽 옆에서도 색이 또렷한 1mm 피치 실내 LED를 설치했습니다

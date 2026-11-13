@@ -9,6 +9,9 @@ location: LH 천안 도시재생뉴딜 체험관
 cover_image: /assets/img/portfolio/phstc4lnhj.webp
 gallery:
   - /assets/img/portfolio/jrztxu5t8q.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-30T18:26:10+09:00'
 ---
 
 # LH 천안 도시재생뉴딜 체험관 — 한 면이 아니라, 여러 화면이 이야기를 나눠 맡습니다

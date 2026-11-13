@@ -9,6 +9,9 @@ location: 송파 올림픽공원
 cover_image: /assets/img/portfolio/9zyddza21e.webp
 gallery:
   - /assets/img/portfolio/135l2jl1ev.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-12T14:53:45+09:00'
 ---
 
 ## 대형 실내 행사장을 채운 LED 전광판 렌탈

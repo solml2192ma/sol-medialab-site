@@ -15,6 +15,9 @@ installation_project: ''
 cover_image: /assets/img/portfolio/q6hqf3iekx.webp
 gallery:
   - /assets/img/portfolio/cez9yliu3j.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T17:16:54+09:00'
 ---
 
 ## 프로젝트 개요

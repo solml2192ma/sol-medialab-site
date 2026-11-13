@@ -18,6 +18,9 @@ gallery:
   - /assets/img/portfolio/6hg7qxzfq5.webp
   - /assets/img/portfolio/1hmha41ua4.webp
   - /assets/img/portfolio/5i0p00c43w.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T15:58:32+09:00'
 ---
 
 모모스커피 부스에서 가장 먼저 눈에 들어오는 것은 벽면을 가로로 길게 채운 와이드 LED 화면이었습니다. 솔미디어랩은 코엑스 전시관에서 열린 서울디자인페스티벌 모모스커피 부스에 실내용 LED 전광판을 렌탈로 공급하고, 전시 기간 동안 운영을 지원했습니다.

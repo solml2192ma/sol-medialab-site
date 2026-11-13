@@ -18,6 +18,9 @@ gallery:
   - /assets/img/portfolio/9l7kv3v3v6.webp
   - /assets/img/portfolio/i1qk16411t.webp
   - /assets/img/portfolio/ubscvlebsb.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T18:30:34+09:00'
 ---
 
 ## 현장 개요

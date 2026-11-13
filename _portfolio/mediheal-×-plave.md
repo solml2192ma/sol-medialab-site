@@ -8,6 +8,9 @@ client: ''
 location: 성수 올리브영N
 cover_image: /assets/img/portfolio/ebi70d5tiv.webp
 gallery: []
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 ##### **MEDIHEAL × PLAVE 성수 올리브영N — 실내에 설치하고, 거리를 향해 틀었습니다.**

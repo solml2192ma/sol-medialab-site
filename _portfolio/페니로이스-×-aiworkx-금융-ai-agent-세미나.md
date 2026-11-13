@@ -16,6 +16,9 @@ cover_image: /assets/img/portfolio/gdutrul8lj.webp
 gallery:
   - /assets/img/portfolio/872dkfnizj.webp
   - /assets/img/portfolio/k38kzy01pk.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T17:20:07+09:00'
 ---
 
 ## 세미나실 한 면을 채운 P1.5 실내 LED 렌탈

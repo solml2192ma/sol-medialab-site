@@ -14,6 +14,9 @@ installation_solution_custom: ''
 installation_project: TWS - 다시 만난 오늘 M/V 촬영
 cover_image: /assets/img/portfolio/60h2zptlbw.webp
 gallery: []
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T17:13:21+09:00'
 ---
 
 **카메라 앞에 세울 수 있는 화면인가?**

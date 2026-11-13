@@ -22,6 +22,9 @@ gallery:
   - /assets/img/portfolio/06_파우치영상.webp
   - /assets/img/portfolio/07_핸드백영상.webp
   - /assets/img/portfolio/zu1qqdx6f3.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T18:27:23+09:00'
 ---
 
 # 멀버리 팝업스토어 — 가까이에서 보는 브랜드 공간일수록, 화면의 밀도가 중요합니다

@@ -18,6 +18,9 @@ gallery:
   - /assets/img/portfolio/eo85e7on3d.webp
   - /assets/img/portfolio/njfozxlzq6.webp
   - /assets/img/portfolio/mvc82rb69y.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-11-13T16:02:53+09:00'
 ---
 
 ## 프로젝트 개요

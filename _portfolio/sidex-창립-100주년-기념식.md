@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/wcfc9ujtwt.webp
 gallery:
   - /assets/img/portfolio/z3bv37zh49.webp
   - /assets/img/portfolio/2hhjlxiboq.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 **100년에 한 번뿐인 자리였습니다**

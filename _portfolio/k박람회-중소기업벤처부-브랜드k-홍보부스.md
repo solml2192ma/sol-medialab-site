@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/zt71evzj66.webp
 gallery:
   - /assets/img/portfolio/94kmhhkyjq.webp
   - /assets/img/portfolio/s6haobwdxp.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 # K박람회 브랜드K 홍보부스 LED 설치

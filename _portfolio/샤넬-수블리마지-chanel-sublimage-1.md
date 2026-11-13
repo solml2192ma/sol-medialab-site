@@ -9,6 +9,9 @@ location: 종로구 북촌 휘겸재
 cover_image: /assets/img/portfolio/xj7pz7vwrf.webp
 gallery:
   - /assets/img/portfolio/6id52szagp.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-26T12:03:02+09:00'
 ---
 
 ## 현장 개요

@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/mlun54qpgc.webp
 gallery:
   - /assets/img/portfolio/3jkocvt0so.webp
   - /assets/img/portfolio/qmywl2759k.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 # 샤넬 팝업스토어 — 가까이에서 보는 공간일수록, 화면의 완성도는 더 중요합니다

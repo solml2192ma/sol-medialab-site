@@ -9,6 +9,9 @@ location: ''
 cover_image: /assets/img/portfolio/028ll35n1k.webp
 gallery:
   - /assets/img/portfolio/vy3x9uqiic.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 **로비에서 생방송이 가능한 화면인가?**

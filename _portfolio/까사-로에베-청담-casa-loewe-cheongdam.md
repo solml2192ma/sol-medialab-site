@@ -9,6 +9,9 @@ location: 까사 로에베 서울 청담
 cover_image: /assets/img/portfolio/s0kie38y4g.webp
 gallery:
   - /assets/img/portfolio/v29vuh6dh4.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-21T15:39:56+09:00'
 ---
 
 ## 프로젝트 개요

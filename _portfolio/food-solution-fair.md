@@ -9,6 +9,9 @@ location: 양재 aT센터
 cover_image: /assets/img/portfolio/um89q9tfhe.webp
 gallery:
   - /assets/img/portfolio/k5lf5wqyd1.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 # CJ프레시웨이 FOOD SOLUTION FAIR — 한 행사, 두 무대, 동시에

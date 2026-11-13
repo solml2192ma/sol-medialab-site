@@ -15,6 +15,9 @@ installation_project: ''
 cover_image: /assets/img/portfolio/1xflegihza.webp
 gallery:
   - /assets/img/portfolio/2sofyf7ybc.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T17:11:22+09:00'
 ---
 
 **드라마 세트의 배경 화면, 카메라 앞에서 버틸 수 있는가?**

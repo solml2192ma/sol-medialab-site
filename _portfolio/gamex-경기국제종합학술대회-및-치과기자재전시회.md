@@ -16,6 +16,9 @@ gallery:
   - /assets/img/portfolio/3l4mek1x94.webp
   - /assets/img/portfolio/ufcypl36b5.webp
   - /assets/img/portfolio/ksiwo60wg3.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T17:24:20+09:00'
 ---
 
 ## 호텔 볼룸 학술대회에 공급한 대형 LED 전광판 렌탈

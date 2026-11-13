@@ -9,6 +9,9 @@ location: 송파구 래미안갤러리 아트홀
 cover_image: /assets/img/portfolio/gzq1lvyx04.webp
 gallery:
   - /assets/img/portfolio/0ytd7rhc1c.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-02T15:50:37+09:00'
 ---
 
 ## 아트홀 무대 중앙에 세운 행사용 LED 스크린

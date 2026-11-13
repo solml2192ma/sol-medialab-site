@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/ye958xybdp.webp
 gallery:
   - /assets/img/portfolio/kpbfpxx1vn.webp
   - /assets/img/portfolio/zafadwnytu.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-14T16:44:10+09:00'
 ---
 
 ## 현장 소개

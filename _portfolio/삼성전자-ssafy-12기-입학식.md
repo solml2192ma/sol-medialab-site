@@ -16,6 +16,9 @@ gallery:
   - /assets/img/portfolio/onc51mjduz.webp
   - /assets/img/portfolio/9hsje949kk.webp
   - /assets/img/portfolio/hvrwpwx4xi.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T18:27:53+09:00'
 ---
 
 ## 입학식의 중심이 된 실내 대형 LED 전광판

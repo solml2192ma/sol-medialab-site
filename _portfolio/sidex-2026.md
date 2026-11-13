@@ -20,6 +20,9 @@ gallery:
   - /assets/img/portfolio/05_메인스크린_측면.webp
   - /assets/img/portfolio/08_객석_전경.webp
   - /assets/img/portfolio/8hfoq4cv6s.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T18:07:29+09:00'
 ---
 
 #### **SIDEX 2026 서울국제치과기자재전시회** 

@@ -16,6 +16,9 @@ gallery:
   - /assets/img/portfolio/594qhwtk61.webp
   - /assets/img/portfolio/9wtxxurpyz.webp
   - /assets/img/portfolio/3uxk18ywfo.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T17:01:13+09:00'
 ---
 
 백화점 팝업스토어에서 방문객의 시선이 가장 먼저 머무는 곳은 브랜드 영상이 흐르는 메인 화면입니다. 판교현대백화점 나스(NARS) 팝업스토어는 부스 중앙 벽면에 실내용 p1 LED 전광판을 설치해, 제품과 캠페인 영상을 가까운 거리에서도 또렷하게 보여주는 구성으로 진행했습니다.

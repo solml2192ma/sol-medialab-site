@@ -11,6 +11,9 @@ gallery:
   - /assets/img/portfolio/itl43yokj4.webp
   - /assets/img/portfolio/uwt156x0ff.webp
   - /assets/img/portfolio/j154zc62uf.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 안녕하세요 솔미디어랩 입니다.

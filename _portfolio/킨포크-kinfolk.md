@@ -16,6 +16,9 @@ cover_image: /assets/img/portfolio/5dzcchanfx.webp
 gallery:
   - /assets/img/portfolio/mvmc0v019u.webp
   - /assets/img/portfolio/7ccw8m64p4.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T17:43:25+09:00'
 ---
 
 ## 진열 벽 안쪽에 들어간 P1 LED 화면

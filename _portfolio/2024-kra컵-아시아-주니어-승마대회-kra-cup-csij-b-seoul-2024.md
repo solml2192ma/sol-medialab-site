@@ -9,6 +9,9 @@ location: 렛츠런파크 서울 승마경기장
 cover_image: /assets/img/portfolio/obsd0usfga.webp
 gallery:
   - /assets/img/portfolio/vjh8r887bj.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-10T17:08:28+09:00'
 ---
 
 ## 현장 개요

@@ -10,6 +10,9 @@ cover_image: /assets/img/portfolio/4ikyauslu9.webp
 gallery:
   - /assets/img/portfolio/u9lsy43qil.webp
   - /assets/img/portfolio/ee8vg2pj20.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 # CHANEL SUBLIMAGE  — LED에서 가장 어려운 색은 검정입니다

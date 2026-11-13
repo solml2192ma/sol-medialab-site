@@ -16,6 +16,9 @@ gallery:
   - /assets/img/portfolio/mtetsi1m3j.webp
   - /assets/img/portfolio/1zr1ndlwjw.webp
   - /assets/img/portfolio/49npvwomt3.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-13T17:49:38+09:00'
 ---
 
 # 나스 팝업스토어 — 가까이서 봐도 매끄러운 p1 실내 LED를 시공했습니다

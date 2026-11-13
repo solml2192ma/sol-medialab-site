@@ -9,6 +9,9 @@ location: 제주 국제컨벤션센터(ICC Jeju)
 cover_image: /assets/img/portfolio/ae080jh3wr.webp
 gallery:
   - /assets/img/portfolio/848ftqnuaq.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 # KSMCB 국제학술대회 — 햇빛이 들어오는 곳에서도, 화면은 선명해야 합니다

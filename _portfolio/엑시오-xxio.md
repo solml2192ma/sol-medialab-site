@@ -9,6 +9,9 @@ location: 신세계백화점 강남
 cover_image: /assets/img/portfolio/3cygrleocv.webp
 gallery:
   - /assets/img/portfolio/pt26gph1ys.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-12T14:35:30+09:00'
 ---
 
 ## 팝업스토어 앞을 지나는 고객의 시선을 붙잡는 화면

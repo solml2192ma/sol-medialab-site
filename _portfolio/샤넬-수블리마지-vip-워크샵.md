@@ -9,6 +9,9 @@ location: 풀만 앰배서더 서울 이스트폴
 cover_image: /assets/img/portfolio/mm054acxc4.webp
 gallery:
   - /assets/img/portfolio/2bfew8n621.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-19T15:55:23+09:00'
 ---
 
 ## 프로젝트 개요

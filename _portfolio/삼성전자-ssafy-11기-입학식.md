@@ -9,6 +9,9 @@ location: 역삼 멀티캠퍼스
 cover_image: /assets/img/portfolio/u7psmqi9yj.webp
 gallery:
   - /assets/img/portfolio/7llchq8ib6.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-12T14:42:55+09:00'
 ---
 
 삼성 청년SW아카데미(SSAFY) 11기 입학식이 열린 멀티캠퍼스 역삼 행사장에 실내용 2mm 픽셀 피치 LED 전광판을 렌탈로 공급했습니다. 행사 기간 동안 현장 세팅과 영상 송출 지원, 행사 종료 후 철수까지 솔미디어랩이 함께 진행했습니다.

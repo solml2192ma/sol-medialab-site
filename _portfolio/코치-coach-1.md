@@ -9,6 +9,9 @@ location: 잠실 롯데월드몰 롯데에비뉴엘
 cover_image: /assets/img/portfolio/cgxd6ak768.webp
 gallery:
   - /assets/img/portfolio/250wr9ehm4.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-10-26T12:24:16+09:00'
 ---
 
 ## 프로젝트 개요

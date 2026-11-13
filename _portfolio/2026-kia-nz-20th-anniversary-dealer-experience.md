@@ -17,6 +17,9 @@ gallery:
   - /assets/img/portfolio/lu17up59rs.webp
   - /assets/img/portfolio/q6o03so6pr.webp
   - /assets/img/portfolio/hk1o8b6fcn.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-13T18:09:55+09:00'
 ---
 
 서울 용산 그랜드 하얏트 남산홀에서 열린 **2026 Kia NZ 20th Anniversary Dealer Experience** 행사에 **실내 P2 LED 전광판과 프롬프터용 모니터를 렌탈**로 운영했습니다.

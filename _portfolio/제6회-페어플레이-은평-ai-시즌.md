@@ -9,6 +9,9 @@ location: 은평 롯데백화점
 cover_image: /assets/img/portfolio/bjn9f2dp0s.webp
 gallery:
   - /assets/img/portfolio/0384ysqyqf.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-09-28T16:04:26+09:00'
 ---
 
 **1. 경기 화면과 중계, 끊김 없이 넘길 수 있는 시스템인가?**
