@@ -6,10 +6,10 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 역삼 멀티캠퍼스
-installation_region: ''
-installation_month: ''
-installation_solution: ''
-installation_project: ''
+installation_region: 서울시 강남구
+installation_month: 2024년 5월
+installation_solution: P3 LED
+installation_project: 삼성 SW 아카데미 SSAFY 11기 Meet Up
 cover_image: /assets/img/portfolio/h2avvngtv5.webp
 gallery:
   - /assets/img/portfolio/blkwrf13be.webp
