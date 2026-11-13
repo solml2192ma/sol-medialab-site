@@ -1,11 +1,17 @@
 ---
+title: 유튜브 스튜디오  촬영
 slug: 유튜브채널oooo촬영
-title: 유튜브 채널 OOOO 촬영
 post_date: 2026-11-11T12:35:00+09:00
 overview_category:
   - 방송·촬영
 client: ''
-location: 서울 성북구
+location: 동국대학교 혜화관 별관 스튜디오
+installation_region_selected: 서울특별시 성북구
+installation_year: 2024년
+installation_month: 05월
+installation_solution: P3mm LED전광판
+installation_solution_custom: ''
+installation_project: ''
 cover_image: /assets/img/portfolio/q6hqf3iekx.webp
 gallery:
   - /assets/img/portfolio/cez9yliu3j.webp
