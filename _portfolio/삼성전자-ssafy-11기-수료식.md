@@ -7,7 +7,8 @@ overview_category:
 client: 삼성전자
 location: 역삼 멀티캠퍼스
 installation_region: 서울 강남
-installation_month: 2024년 12월
+installation_year: 2024년
+installation_month: 12월
 installation_solution: P3 LED
 installation_project: 삼성 청년sw아카데미 11기 수료식
 cover_image: /assets/img/portfolio/7mwvq54a21.webp

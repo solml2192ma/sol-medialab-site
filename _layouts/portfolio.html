@@ -128,21 +128,26 @@
   </section>
   {% endif %}
 
-  {% if page.installation_region or page.installation_month or page.installation_solution or page.installation_project %}
+  {% assign custom_solution = page.installation_solution_custom | strip %}
+  {% assign installation_solution = custom_solution | default: page.installation_solution %}
+  {% capture installation_date %}{{ page.installation_year }} {{ page.installation_month }}{% endcapture %}
+  {% assign installation_date = installation_date | strip %}
+  {% assign installation_region = page.installation_region_selected | default: page.installation_region %}
+  {% if installation_region or installation_date != empty or installation_solution or page.installation_project %}
   <section class="portfolio-installation-info" aria-labelledby="installation-info-title">
     <h2 id="installation-info-title">설치 사례 정보</h2>
     <dl>
-      {% if page.installation_region and page.installation_region != empty %}
-      <div><dt>지역</dt><dd>{{ page.installation_region | escape }}</dd></div>
+      {% if installation_region and installation_region != empty %}
+      <div><dt>지역</dt><dd>{{ installation_region | escape }}</dd></div>
       {% endif %}
       {% if page.location and page.location != empty %}
       <div><dt>장소</dt><dd>{{ page.location | escape }}</dd></div>
       {% endif %}
-      {% if page.installation_month and page.installation_month != empty %}
-      <div><dt>일자</dt><dd>{{ page.installation_month | escape }}</dd></div>
+      {% if installation_date != empty %}
+      <div><dt>일자</dt><dd>{{ installation_date | escape }}</dd></div>
       {% endif %}
-      {% if page.installation_solution and page.installation_solution != empty %}
-      <div><dt>솔루션</dt><dd>{{ page.installation_solution | escape }}</dd></div>
+      {% if installation_solution and installation_solution != empty %}
+      <div><dt>솔루션</dt><dd>{{ installation_solution | escape }}</dd></div>
       {% endif %}
       {% if page.overview_category and page.overview_category.size > 0 %}
       <div><dt>카테고리</dt><dd>{{ page.overview_category | join: ', ' | escape }}</dd></div>

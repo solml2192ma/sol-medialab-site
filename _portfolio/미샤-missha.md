@@ -7,7 +7,8 @@ overview_category:
 client: ''
 location: 성수 무신사 뷰티
 installation_region: 서울 성동구
-installation_month: 2024년11월
+installation_year: 2024년
+installation_month: 11월
 installation_solution: P1 LED
 installation_project: 무신사 미샤 팝업스토어
 cover_image: /assets/img/portfolio/eo85e7on3d.webp
