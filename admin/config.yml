@@ -35,8 +35,16 @@ collections:
       - title
       - { field: "overview_category", label: "카테고리" }
       - { field: "commit_date", label: "최근수정일" }
+      - { field: "post_date", label: "원문작성일" }
+      - { field: "commit_author", label: "최근수정자" }
+      - { field: "post_author", label: "원문작성자" }
+    sortable_fields:
+      - title
+      - { field: "overview_category", label: "카테고리" }
+      - { field: "commit_date", label: "최근수정일" }
     fields:
       - { label: "제목", name: "title", widget: "string" }
+      - { label: "글작성자 (선택)", name: "post_author", widget: "string", required: false, hint: "이 글을 처음 작성한 사람의 이름을 입력해 주세요." }
       - { label: "URL 슬러그 (자동 생성 — 직접 수정하지 마세요)", name: "slug", widget: "hidden", required: false }
       - label: "등록일시 (자동 입력 — CMS 확인용, 홈페이지에는 노출되지 않습니다)"
         name: "post_date"
