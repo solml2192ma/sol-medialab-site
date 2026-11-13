@@ -1,14 +1,22 @@
 ---
-slug: momoscoffee
 title: 모모스 커피 (MOMOS COFFEE)
+slug: momoscoffee
 post_date: 2026-08-19T16:01:00+09:00
 overview_category:
   - 전시·컨벤션
 client: ''
 location: 벡스코
-cover_image: /assets/img/portfolio/eqb9y25xza.webp
+installation_region: 부산 해운대
+installation_month: 2024년10월
+installation_solution: P2mm LED전광판
+installation_project: 부산 디자인 페스티벌 모모스커피
+cover_image: /assets/img/portfolio/01_화면송출전경.webp
 gallery:
-  - /assets/img/portfolio/7u3sn07m1r.webp
+  - /assets/img/portfolio/02_화면송출정면.webp
+  - /assets/img/portfolio/03_와이드전경.webp
+  - /assets/img/portfolio/04_부스전경.webp
+  - /assets/img/portfolio/05_송출전부스.webp
+  - /assets/img/portfolio/06_송출전화면.webp
 ---
 
 ## MOMOS COFFEE 부스 — 벡스코에 수평선을 놓았습니다
