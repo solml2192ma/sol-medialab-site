@@ -1,11 +1,17 @@
 ---
-slug: 하우스오브우물야외led스크린
 title: 하우스오브우물, 야외 LED 스크린
+slug: 하우스오브우물야외led스크린
 post_date: 2026-10-01T12:52:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 마포 하우스오브우물
+installation_region_selected: 서울특별시 마포구
+installation_year: 2026년
+installation_month: 09월
+installation_solution: P4mm LED전광판
+installation_solution_custom: ''
+installation_project: 하우스오브우물 행사
 cover_image: /assets/img/portfolio/cjnit3w1pq.webp
 gallery:
   - /assets/img/portfolio/c8hw8497vq.webp
