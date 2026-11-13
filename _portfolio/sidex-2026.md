@@ -5,16 +5,21 @@ post_date: 2026-08-20T13:15:56+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
-location: 그랜드 인터컨티넨탈 서울 파르나스 그랜드 볼룸
-installation_region_selected: ''
-installation_year: ''
-installation_month: ''
-installation_solution: ''
+location: 웨스턴서울파르나스 하모니몰
+installation_region_selected: 서울특별시 강남구
+installation_year: 2026년
+installation_month: 05월
+installation_solution: P3mm LED전광판
 installation_solution_custom: ''
-installation_project: ''
-cover_image: /assets/img/portfolio/vkl4vlzqrd.webp
+installation_project: sidex 2026 seoul night 서울치과협회
+cover_image: /assets/img/portfolio/07_정면_전경.webp
 gallery:
-  - /assets/img/portfolio/tj9l4knmbl.webp
+  - /assets/img/portfolio/05_메인스크린_측면.webp
+  - /assets/img/portfolio/03_콘텐츠_테스트.webp
+  - /assets/img/portfolio/04_연회장_전경.webp
+  - /assets/img/portfolio/05_메인스크린_측면.webp
+  - /assets/img/portfolio/08_객석_전경.webp
+  - /assets/img/portfolio/06_오프닝_영상.webp
 ---
 
 #### **SIDEX 2026 서울국제치과기자재전시회** 
