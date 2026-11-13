@@ -10,14 +10,14 @@ installation_region: 서울시 강남구
 installation_month: 2024년11월
 installation_solution: P2 LED
 installation_project: 서울 디자인 페스티벌 모모스커피
-cover_image: /assets/img/portfolio/02_부스입구_전경.webp
+cover_image: /assets/img/portfolio/3ceggvn4bt.webp
 gallery:
-  - /assets/img/portfolio/01_와이드화면_점등.webp
-  - /assets/img/portfolio/03_화면_측면.webp
-  - /assets/img/portfolio/04_화면_정면.webp
-  - /assets/img/portfolio/05_화면_정면_전경.webp
-  - /assets/img/portfolio/06_곡면카운터_정면.webp
-  - /assets/img/portfolio/07_현장_정리.webp
+  - /assets/img/portfolio/u2c8x39beb.webp
+  - /assets/img/portfolio/n6r9ayqnhy.webp
+  - /assets/img/portfolio/ii4a2m5fhh.webp
+  - /assets/img/portfolio/6hg7qxzfq5.webp
+  - /assets/img/portfolio/1hmha41ua4.webp
+  - /assets/img/portfolio/5i0p00c43w.webp
 ---
 
 모모스커피 부스에서 가장 먼저 눈에 들어오는 것은 벽면을 가로로 길게 채운 와이드 LED 화면이었습니다. 솔미디어랩은 코엑스 전시관에서 열린 서울디자인페스티벌 모모스커피 부스에 실내용 LED 전광판을 렌탈로 공급하고, 전시 기간 동안 운영을 지원했습니다.
