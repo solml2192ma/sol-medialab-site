@@ -6,7 +6,7 @@ overview_category:
   - 전시·컨벤션
 client: 모모스커피
 location: 삼성 코엑스
-installation_region: ''
+installation_region: 서울시 강남구
 installation_month: ''
 installation_solution: ''
 installation_project: ''
