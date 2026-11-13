@@ -60,6 +60,10 @@ collections:
         required: false
       - { label: "클라이언트 (선택)", name: "client", widget: "string", required: false }
       - { label: "장소 (선택)", name: "location", widget: "string", required: false }
+      - { label: "설치 지역 (선택)", name: "installation_region", widget: "string", required: false }
+      - { label: "설치 일자 (선택)", name: "installation_month", widget: "string", required: false, hint: "예: 2026년 02월" }
+      - { label: "솔루션 (선택)", name: "installation_solution", widget: "string", required: false }
+      - { label: "프로젝트명 (선택)", name: "installation_project", widget: "string", required: false }
       - { label: "대표 이미지", name: "cover_image", widget: "image" }
       - label: "추가 사진 (선택)"
         name: "gallery"

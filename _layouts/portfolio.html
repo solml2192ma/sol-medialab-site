@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=116"></head><body>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v=131"></head><body>
 
 <header class="site-header header-solid" id="siteHeader">
   <div class="header-inner">
@@ -105,18 +105,57 @@
     </div>
   </div>
 
+  {% assign gallery_images = page.gallery | default: empty %}
+  {% assign photo_count = gallery_images.size | default: 0 %}
   {% if page.cover_image %}
+    {% assign photo_count = photo_count | plus: 1 %}
+  {% endif %}
+  {% if photo_count == 1 and page.cover_image %}
   <div class="portfolio-detail-cover">
-    <img src="{{ site.baseurl }}{{ page.cover_image }}" alt="{{ page.title }}">
+    <img src="{{ site.baseurl }}{{ page.cover_image }}" alt="{{ page.title | escape }}">
   </div>
+  {% elsif photo_count > 0 %}
+  <section class="case-gallery{% if photo_count >= 2 %} case-gallery--wide{% endif %}" aria-label="사례 사진">
+    <div class="case-gallery-frame">
+      <div class="case-gallery-track" data-count="{{ photo_count }}" style="--photo-count: {{ photo_count }}" tabindex="0" role="group" aria-label="가로로 넘겨 보는 사례 사진">
+        {% if page.cover_image %}
+        <img src="{{ site.baseurl }}{{ page.cover_image }}" alt="{{ page.title | escape }} 대표 사진">
+        {% endif %}
+        {% for img in gallery_images %}
+        <img src="{{ site.baseurl }}{{ img }}" alt="{{ page.title | escape }} 추가 사진 {{ forloop.index }}" loading="lazy" decoding="async">
+        {% endfor %}
+      </div>
+      <button class="case-gallery-arrow case-gallery-prev" type="button" aria-label="이전 사진" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <button class="case-gallery-arrow case-gallery-next" type="button" aria-label="다음 사진" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
+    <div class="case-gallery-dots" role="group" aria-label="사진 위치 선택" hidden></div>
+  </section>
   {% endif %}
 
-  {% if page.gallery %}
-  <div class="portfolio-detail-gallery">
-    {% for img in page.gallery %}
-    <img src="{{ site.baseurl }}{{ img }}" alt="{{ page.title }}">
-    {% endfor %}
-  </div>
+  {% if page.installation_region or page.installation_month or page.installation_solution or page.installation_project %}
+  <section class="portfolio-installation-info" aria-labelledby="installation-info-title">
+    <h2 id="installation-info-title">설치 사례 정보</h2>
+    <dl>
+      {% if page.installation_region and page.installation_region != empty %}
+      <div><dt>지역</dt><dd>{{ page.installation_region | escape }}</dd></div>
+      {% endif %}
+      {% if page.location and page.location != empty %}
+      <div><dt>장소</dt><dd>{{ page.location | escape }}</dd></div>
+      {% endif %}
+      {% if page.installation_month and page.installation_month != empty %}
+      <div><dt>일자</dt><dd>{{ page.installation_month | escape }}</dd></div>
+      {% endif %}
+      {% if page.installation_solution and page.installation_solution != empty %}
+      <div><dt>솔루션</dt><dd>{{ page.installation_solution | escape }}</dd></div>
+      {% endif %}
+      {% if page.overview_category and page.overview_category.size > 0 %}
+      <div><dt>카테고리</dt><dd>{{ page.overview_category | join: ', ' | escape }}</dd></div>
+      {% endif %}
+      {% if page.installation_project and page.installation_project != empty %}
+      <div><dt>프로젝트</dt><dd>{{ page.installation_project | escape }}</dd></div>
+      {% endif %}
+    </dl>
+  </section>
   {% endif %}
 
   <div class="portfolio-detail-body">
@@ -231,6 +270,7 @@
 </div>
 
 <script src="{{ site.baseurl }}/assets/js/main.js?v=29"></script>
+<script src="{{ site.baseurl }}/assets/js/case-gallery.js?v=7" defer></script>
 <script src="{{ site.baseurl }}/assets/js/qrcode.min.js?v=1"></script>
 <script src="{{ site.baseurl }}/assets/js/portfolio-contact-card.js?v=1"></script>
 </body>

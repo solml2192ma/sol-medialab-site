@@ -1338,6 +1338,42 @@ section { position: relative; }
   margin: 48px auto 0;
 }
 .portfolio-detail-cover img { width: 100%; display: block; }
+.portfolio-installation-info {
+  max-width: 1080px;
+  margin: 48px auto 0;
+  color: #101828;
+}
+.portfolio-installation-info h2 {
+  margin: 0 0 16px;
+  font-size: clamp(21px, 2.3vw, 28px);
+}
+.portfolio-installation-info dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px 48px;
+  margin: 0;
+  padding: 24px;
+  border-radius: 12px;
+  background: #f5f6f8;
+}
+.portfolio-installation-info dl > div {
+  display: grid;
+  grid-template-columns: 4em minmax(0, 1fr);
+  gap: 20px;
+}
+.portfolio-installation-info dt {
+  font-weight: 700;
+  text-align: justify;
+  text-align-last: justify;
+  text-justify: inter-character;
+}
+.portfolio-installation-info dd { margin: 0; color: #475467; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .portfolio-installation-info dl { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
+}
+@media (max-width: 520px) {
+  .portfolio-installation-info dl { grid-template-columns: 1fr; padding: 20px; }
+}
 .portfolio-detail-body {
   max-width: 760px;
   margin: 48px auto 0;
@@ -1349,15 +1385,97 @@ section { position: relative; }
 .portfolio-detail-body img { width: 100%; border-radius: 16px; margin: 24px 0; }
 .yt-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 24px 0; border-radius: 16px; overflow: hidden; background: #000; }
 .yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.portfolio-detail-gallery {
-  max-width: 1080px;
-  margin: 24px auto 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: start;
-  gap: 16px;
+.case-gallery { max-width: 1040px; margin: 36px auto 0; }
+.case-gallery--wide { max-width: none; }
+.case-gallery-frame { position: relative; }
+.case-gallery-track {
+  --photo-gap: 54px;
+  display: flex;
+  align-items: center;
+  gap: var(--photo-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
 }
-.portfolio-detail-gallery img { width: 100%; height: auto; display: block; }
+.case-gallery.is-ready .case-gallery-track { scrollbar-width: none; }
+.case-gallery.is-ready .case-gallery-track::-webkit-scrollbar { display: none; }
+.case-gallery-track img {
+  display: block;
+  flex: 0 0 auto;
+  min-width: 0;
+  width: auto;
+  max-width: calc((100% - 2 * var(--photo-gap)) / 3);
+  height: auto;
+  max-height: min(55svh, 420px);
+  object-fit: contain;
+  scroll-snap-align: start;
+}
+.case-gallery-track[data-count="1"] img { max-width: 100%; margin-inline: auto; }
+.case-gallery--wide .case-gallery-track img {
+  --columns: min(var(--photo-count), 3);
+  max-width: calc((100% + var(--photo-gap)) / var(--columns) - var(--photo-gap));
+}
+@media (min-width: 1500px) {
+  .case-gallery--wide .case-gallery-track img { --columns: min(var(--photo-count), 4); }
+}
+@media (min-width: 1950px) {
+  .case-gallery--wide .case-gallery-track img { --columns: min(var(--photo-count), 5); }
+}
+.case-gallery-track img:last-child { scroll-snap-align: end; }
+.case-gallery-track.has-centered-slides img { scroll-snap-align: center; }
+.case-gallery-track.has-centered-slides img:not(.is-selected) {
+  opacity: .65;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .case-gallery-track.has-centered-slides img { transition: opacity .25s ease; }
+}
+.case-gallery-track.has-centered-slides::before,
+.case-gallery-track.has-centered-slides::after {
+  content: "";
+  flex: 0 0 max(0px, calc(var(--edge-space-start) - var(--photo-gap)));
+}
+.case-gallery-track.has-centered-slides::after {
+  flex-basis: max(0px, calc(var(--edge-space-end) - var(--photo-gap)));
+}
+.case-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #101828;
+  border-radius: 50%;
+  background: #fff;
+  color: #101828;
+  cursor: pointer;
+}
+.case-gallery-arrow svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 2.4; }
+.case-gallery-arrow[aria-disabled="true"] { opacity: .45; cursor: default; }
+.case-gallery-prev { left: 12px; }
+.case-gallery-next { right: 12px; }
+.case-gallery-dots { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+.case-gallery-arrow[hidden], .case-gallery-dots[hidden] { display: none; }
+.case-gallery-dot {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.case-gallery-dot::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #b5b5b5; }
+.case-gallery-dot[aria-current="true"]::before { background: #101828; transform: scale(1.35); }
+@media (prefers-reduced-motion: no-preference) {
+  .case-gallery-dot::before { transition: background-color .2s ease, transform .2s ease; }
+}
+.case-gallery :focus-visible { outline: 2px solid #2156e8; outline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) {
+  .case-gallery-frame:not(:hover):not(:focus-within) .case-gallery-arrow { opacity: 0; pointer-events: none; }
+}
 .portfolio-detail-back {
   display: block;
   max-width: 760px;
@@ -1371,7 +1489,10 @@ section { position: relative; }
 @media (max-width: 900px) {
   .portfolio-detail { padding: 110px 20px 60px; }
   .portfolio-detail-body { font-size: 15px; }
-  .portfolio-detail-gallery { grid-template-columns: 1fr; }
+  .case-gallery .case-gallery-track:not([data-count="1"]) img { max-width: 72%; }
+}
+@media (max-width: 540px) {
+  .case-gallery .case-gallery-track:not([data-count="1"]) img { max-width: 86%; }
 }
 
 /* ===== Portfolio contact card (게시글 하단 QR 문의 카드) ===== */
