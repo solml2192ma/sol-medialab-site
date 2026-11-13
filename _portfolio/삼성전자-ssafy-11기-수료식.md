@@ -10,12 +10,12 @@ installation_region: 서울 강남
 installation_month: 2024년 12월
 installation_solution: P3 LED
 installation_project: 삼성 청년sw아카데미 11기 수료식
-cover_image: /assets/img/portfolio/wjng8fu9fa.webp
+cover_image: /assets/img/portfolio/03_화면근접.webp
 gallery:
-  - /assets/img/portfolio/k4cq7xqtjg.webp
-  - /assets/img/portfolio/1r9yz7oznl.webp
-  - /assets/img/portfolio/kl1ctjlod1.webp
-  - /assets/img/portfolio/7ev79u1cz8.webp
+  - /assets/img/portfolio/04_객석측면.webp
+  - /assets/img/portfolio/05_행사진행.webp
+  - /assets/img/portfolio/02_현장전경.webp
+  - /assets/img/portfolio/01_세팅점검.webp
 ---
 
 **수료식 무대 중앙을 채운 대형 LED 전광판, 사전 세팅부터 본행사 운영까지 렌탈로 지원했습니다.**
