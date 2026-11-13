@@ -1,11 +1,17 @@
 ---
+title: 넷플릭스 드라마
 slug: 넷플릭스드라마oo
-title: 넷플릭스 드라마 - OO
 post_date: 2026-10-02T16:21:00+09:00
 overview_category:
   - 방송·촬영
 client: ''
-location: 인천 넥스트 스튜디오
+location: 넥스트 스튜디오
+installation_region_selected: 인천광역시 중구
+installation_year: 2026년
+installation_month: 03월
+installation_solution: Flexible 곡면형 커브드 LED전광판
+installation_solution_custom: ''
+installation_project: ''
 cover_image: /assets/img/portfolio/aclxpm0k2p.webp
 gallery:
   - /assets/img/portfolio/dsb3jufkav.webp
