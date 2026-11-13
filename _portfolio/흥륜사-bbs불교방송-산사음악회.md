@@ -1,4 +1,5 @@
 ---
+slug: 흥륜사bbs불교방송산사음악회
 title: 흥륜사 BBS불교방송 산사음악회
 post_date: 2026-11-13T17:28:00+09:00
 overview_category:
@@ -10,10 +11,10 @@ installation_month: 09월
 installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: 흥륜사 산사 음악회
-cover_image: /assets/img/portfolio/01_현장전경.webp
+cover_image: /assets/img/portfolio/69u5h4ce8n.webp
 gallery:
-  - /assets/img/portfolio/02_측면전경.webp
-  - /assets/img/portfolio/03_완성모습.webp
+  - /assets/img/portfolio/a37rb7n8gw.webp
+  - /assets/img/portfolio/80ooagpv8i.webp
 ---
 
 ## 사찰 음악회에 맞춘 옥외 LED 전광판 렌탈
