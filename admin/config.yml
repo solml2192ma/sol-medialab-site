@@ -33,6 +33,7 @@ collections:
     slug: "{{slug}}"
     table_columns:
       - title
+      - { field: "overview_category", label: "카테고리" }
       - { field: "commit_date", label: "최근수정일" }
     fields:
       - { label: "제목", name: "title", widget: "string" }
