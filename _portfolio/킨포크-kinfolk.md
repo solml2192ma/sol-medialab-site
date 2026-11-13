@@ -1,11 +1,17 @@
 ---
-slug: 킨포크kinfolk
 title: 킨포크(KINFOLK)
+slug: 킨포크kinfolk
 post_date: 2026-10-01T15:36:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 더현대 서울
+installation_region_selected: 서울특별시 영등포구
+installation_year: 2026년
+installation_month: 07월
+installation_solution: P2mm LED전광판
+installation_solution_custom: ''
+installation_project: 킨포크 팝업스토어
 cover_image: /assets/img/portfolio/5dzcchanfx.webp
 gallery:
   - /assets/img/portfolio/mvmc0v019u.webp
