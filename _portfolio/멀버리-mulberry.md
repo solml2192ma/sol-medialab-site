@@ -1,8 +1,5 @@
 ---
 title: 멀버리 (mulberry)
-post_author: hongbj123-create
-last_human_editor: uuh09006
-last_human_edit: 2026-11-13T18:27:23+09:00
 slug: 멀버리mulberry
 post_date: 2026-08-26T16:30:00+09:00
 overview_category:
@@ -23,7 +20,10 @@ gallery:
   - /assets/img/portfolio/05_장인영상.webp
   - /assets/img/portfolio/06_파우치영상.webp
   - /assets/img/portfolio/07_핸드백영상.webp
-  - /assets/img/portfolio/08_측면전경.webp
+  - /assets/img/portfolio/ndwz2gub1f.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T16:39:14+09:00'
 ---
 
 # 멀버리 팝업스토어 — 가까이에서 보는 브랜드 공간일수록, 화면의 밀도가 중요합니다
