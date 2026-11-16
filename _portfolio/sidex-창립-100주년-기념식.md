@@ -1,5 +1,8 @@
 ---
 title: SIDEX 창립 100주년 기념식
+post_author: hongbj123-create
+last_human_editor: uuh09006
+last_human_edit: 2026-11-16T17:14:33+09:00
 slug: sidex창립100주년기념식
 post_date: 2026-08-20T14:03:51+09:00
 overview_category:
@@ -14,17 +17,8 @@ installation_solution_custom: ''
 installation_project: 서울시치과의사회 창립 100주년 기념식 및 SIDEX 2025 SEOUL NIGHT
 cover_image: /assets/img/portfolio/wcfc9ujtwt.webp
 gallery:
-  - /assets/img/portfolio/7vm1f93ahc.webp
-  - /assets/img/portfolio/02_행사장전경-2.webp
-  - /assets/img/portfolio/03_무대측면-1.webp
-  - /assets/img/portfolio/2jdufgqp1d.webp
-  - /assets/img/portfolio/05_화면디테일.webp
-  - /assets/img/portfolio/06_운영현장.webp
   - /assets/img/portfolio/07_식전콘텐츠.webp
   - /assets/img/portfolio/08_송출화면.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'uuh09006'
-last_human_edit: '2026-11-16T17:14:33+09:00'
 ---
 
 **100년에 한 번뿐인 자리였습니다**
