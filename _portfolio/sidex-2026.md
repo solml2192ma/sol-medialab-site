@@ -1,5 +1,8 @@
 ---
 title: SIDEX 서울국제치과기자재전시회
+post_author: hongbj123-create
+last_human_editor: uuh09006
+last_human_edit: 2026-11-13T18:07:29+09:00
 slug: sidex2026
 post_date: 2026-08-20T13:15:56+09:00
 overview_category:
@@ -12,17 +15,14 @@ installation_month: 05월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: sidex 2026 seoul night 서울치과협회
-cover_image: /assets/img/portfolio/07_정면_전경.webp
+cover_image: /assets/img/portfolio/06_오프닝_영상.webp
 gallery:
-  - /assets/img/portfolio/05_메인스크린_측면.webp
-  - /assets/img/portfolio/03_콘텐츠_테스트.webp
+  - /assets/img/portfolio/07_정면_전경.webp
+  - /assets/img/portfolio/08_객석_전경.webp
+  - /assets/img/portfolio/01_스테이지_LED_세팅.webp
+  - /assets/img/portfolio/02_조명_점검.webp
   - /assets/img/portfolio/04_연회장_전경.webp
   - /assets/img/portfolio/05_메인스크린_측면.webp
-  - /assets/img/portfolio/08_객석_전경.webp
-  - /assets/img/portfolio/8hfoq4cv6s.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'uuh09006'
-last_human_edit: '2026-11-13T18:07:29+09:00'
 ---
 
 #### **SIDEX 2026 서울국제치과기자재전시회** 
