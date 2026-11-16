@@ -1,17 +1,28 @@
 ---
-slug: namhux
 title: 나무x (NAMHU X)
+post_author: hongbj123-create
+last_human_editor: solml2192ma
+last_human_edit: 2026-09-28T16:04:26+09:00
+slug: namhux
 post_date: 2026-08-20T17:34:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
-location: ''
-cover_image: /assets/img/portfolio/oezzfx75np.webp
+location: 삼일빌딩
+installation_region_selected: 서울특별시 종로구
+installation_year: 2025년
+installation_month: 10월
+installation_solution: P2mm LED전광판
+installation_solution_custom: ''
+installation_project: sk네트웍스 나무엑스 팝업스토어
+cover_image: /assets/img/portfolio/07_운영모습.webp
 gallery:
-  - /assets/img/portfolio/kbhsqylgvs.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'solml2192ma'
-last_human_edit: '2026-09-28T16:04:26+09:00'
+  - /assets/img/portfolio/08_운영측면.webp
+  - /assets/img/portfolio/01_설치현장.webp
+  - /assets/img/portfolio/02_송출테스트.webp
+  - /assets/img/portfolio/03_현장점검.webp
+  - /assets/img/portfolio/04_콘텐츠확인.webp
+  - /assets/img/portfolio/05_추가점검.webp
 ---
 
 # NAMUH X 브랜드 쇼케이스 —1년 동안 꺼지지 않는 화면
