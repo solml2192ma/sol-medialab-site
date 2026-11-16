@@ -1,8 +1,5 @@
 ---
 title: SIDEX 창립 100주년 기념식
-post_author: hongbj123-create
-last_human_editor: uuh09006
-last_human_edit: 2026-11-16T17:14:33+09:00
 slug: sidex창립100주년기념식
 post_date: 2026-08-20T14:03:51+09:00
 overview_category:
@@ -19,6 +16,9 @@ cover_image: /assets/img/portfolio/wcfc9ujtwt.webp
 gallery:
   - /assets/img/portfolio/07_식전콘텐츠.webp
   - /assets/img/portfolio/08_송출화면.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T17:39:55+09:00'
 ---
 
 **100년에 한 번뿐인 자리였습니다**
