@@ -1,17 +1,27 @@
 ---
-slug: 샤넬수블리마지chanelsublimage1
 title: 샤넬 수블리마지 (CHANEL SUBLIMAGE)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-26T12:03:02+09:00
+slug: 샤넬수블리마지chanelsublimage1
 post_date: 2026-10-26T12:02:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 종로구 북촌 휘겸재
+installation_region_selected: 서울특별시 종로구
+installation_year: 2025년
+installation_month: 03월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: 수플리마지 샤넬 팝업스토어
 cover_image: /assets/img/portfolio/xj7pz7vwrf.webp
 gallery:
   - /assets/img/portfolio/6id52szagp.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-26T12:03:02+09:00'
+  - /assets/img/portfolio/04_로고콘텐츠.webp
+  - /assets/img/portfolio/05_콘텐츠송출2.webp
+  - /assets/img/portfolio/07_제품콘텐츠.webp
+  - /assets/img/portfolio/08_측면전경-1.webp
 ---
 
 ## 현장 개요
