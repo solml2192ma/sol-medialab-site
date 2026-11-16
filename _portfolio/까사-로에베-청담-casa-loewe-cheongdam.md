@@ -1,8 +1,5 @@
 ---
 title: 까사 로에베 청담 (CASA LOEWE CHEONGDAM)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-21T15:39:56+09:00
 slug: 까사로에베청담casaloewecheongdam
 post_date: 2026-10-21T15:37:00+09:00
 overview_category:
@@ -15,13 +12,16 @@ installation_month: 05월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: '로에베 본매장 전시 퍼즐: 10년의 아이콘'
-cover_image: /assets/img/portfolio/05_영상재생1.webp
+cover_image: /assets/img/portfolio/ph34nh3lxh.webp
 gallery:
-  - /assets/img/portfolio/06_영상재생2.webp
-  - /assets/img/portfolio/07_영상재생3.webp
-  - /assets/img/portfolio/08_영상재생4.webp
-  - /assets/img/portfolio/02_설치후전원전.webp
-  - /assets/img/portfolio/03_점등테스트.webp
+  - /assets/img/portfolio/eldvfk6ncr.webp
+  - /assets/img/portfolio/6ytjfaalz3.webp
+  - /assets/img/portfolio/bi510oym9v.webp
+  - /assets/img/portfolio/jum041dc7m.webp
+  - /assets/img/portfolio/l28xmtbspc.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T16:20:32+09:00'
 ---
 
 ## 프로젝트 개요
