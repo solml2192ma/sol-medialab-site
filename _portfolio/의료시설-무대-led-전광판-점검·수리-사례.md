@@ -1,10 +1,13 @@
 ---
-slug: 의료시설무대led전광판점검수리사례
 title: 의료시설 무대 LED 전광판 점검·수리 사례
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-16T16:16:08+09:00
+slug: 의료시설무대led전광판점검수리사례
 post_date: 2026-11-16T16:14:00+09:00
 overview_category:
   - 유지·보수
-location: 분당
+location: 분당구
 installation_region_selected: 경기도 성남시
 installation_year: 2023년
 installation_month: 05월
@@ -17,9 +20,6 @@ gallery:
   - /assets/img/portfolio/pdk3w3yklh.webp
   - /assets/img/portfolio/5yk9mpd3z3.webp
   - /assets/img/portfolio/lfxpn8ftpn.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-16T16:16:08+09:00'
 ---
 
 ## 점검 요청 배경
