@@ -1,8 +1,5 @@
 ---
 title: FOOD SOLUTION FAIR
-post_author: hongbj123-create
-last_human_editor: solml2192ma
-last_human_edit: 2026-09-28T16:04:26+09:00
 slug: foodsolutionfair
 post_date: 2026-08-27T15:09:00+09:00
 overview_category:
@@ -17,10 +14,13 @@ installation_solution_custom: ''
 installation_project: FOOD SOLUTION FAIR
 cover_image: /assets/img/portfolio/um89q9tfhe.webp
 gallery:
-  - /assets/img/portfolio/01_무대정면_전경.webp
-  - /assets/img/portfolio/04_연단과_LED화면.webp
-  - /assets/img/portfolio/08_행사_현장.webp
-  - /assets/img/portfolio/02_객석에서본_전경.webp
+  - /assets/img/portfolio/xwn254riq0.webp
+  - /assets/img/portfolio/slgdghen5t.webp
+  - /assets/img/portfolio/v2mj2gdd8u.webp
+  - /assets/img/portfolio/9axwt6xyue.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T17:49:23+09:00'
 ---
 
 CJ프레시웨이가 서울 양재 aT센터 3층 전시홀에서 개최한 **2024 푸드솔루션 페어**에 실내 LED 전광판을 렌탈로 공급하고 현장 운영을 지원했습니다. 푸드 비즈니스 솔루션을 소개하는 발표와 영상 상영, 시상까지 이어지는 컨벤션 행사라서, 무대 정면 화면이 행사 메시지를 전달하는 중심 역할을 맡았습니다.
