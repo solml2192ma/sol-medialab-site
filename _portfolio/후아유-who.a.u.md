@@ -1,8 +1,5 @@
 ---
 title: 후아유(WHO.A.U)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-21T15:44:42+09:00
 slug: 후아유whoau
 post_date: 2026-10-21T15:43:00+09:00
 overview_category:
@@ -24,6 +21,9 @@ gallery:
   - /assets/img/portfolio/05_영상구현.webp
   - /assets/img/portfolio/06_항공영상.webp
   - /assets/img/portfolio/07_측면.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T16:18:45+09:00'
 ---
 
 ## 프로젝트 개요
