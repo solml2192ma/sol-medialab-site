@@ -1,8 +1,5 @@
 ---
 title: 샤넬 수블리마지 (CHANEL SUBLIMAGE)
-post_author: hongbj123-create
-last_human_editor: solml2192ma
-last_human_edit: 2026-09-28T16:04:26+09:00
 slug: 샤넬수블리마지chanelsublimage
 post_date: 2026-08-27T14:11:00+09:00
 overview_category:
@@ -24,6 +21,9 @@ gallery:
   - /assets/img/portfolio/02_현장전경.webp
   - /assets/img/portfolio/03_화면전경.webp
   - /assets/img/portfolio/01_점등확인.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T15:36:04+09:00'
 ---
 
 # CHANEL SUBLIMAGE  — LED에서 가장 어려운 색은 검정입니다
