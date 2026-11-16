@@ -1,5 +1,8 @@
 ---
 title: MEDIHEAL × PLAVE
+post_author: hongbj123-create
+last_human_editor: uuh09006
+last_human_edit: 2026-11-16T17:24:43+09:00
 slug: medihealplave
 post_date: 2026-08-21T12:36:37+09:00
 overview_category:
@@ -14,14 +17,11 @@ installation_solution_custom: ''
 installation_project: 메디힐x플레이브 팝업스토어
 cover_image: /assets/img/portfolio/06_완성.webp
 gallery:
-  - /assets/img/portfolio/01_현장전경-3.webp
+  - /assets/img/portfolio/05_송출화면.webp
+  - /assets/img/portfolio/01_현장전경-4.webp
   - /assets/img/portfolio/02_점등확인-1.webp
   - /assets/img/portfolio/03_세팅점검.webp
-  - /assets/img/portfolio/pwum2rlo87.webp
-  - /assets/img/portfolio/40brn2bpol.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'uuh09006'
-last_human_edit: '2026-11-16T17:24:43+09:00'
+  - /assets/img/portfolio/04_현장작업.webp
 ---
 
 ##### **MEDIHEAL × PLAVE 성수 올리브영N — 실내에 설치하고, 거리를 향해 틀었습니다.**
