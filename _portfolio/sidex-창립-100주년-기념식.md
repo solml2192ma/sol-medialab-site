@@ -1,18 +1,30 @@
 ---
-slug: sidex창립100주년기념식
 title: SIDEX 창립 100주년 기념식
+post_author: hongbj123-create
+last_human_editor: solml2192ma
+last_human_edit: 2026-09-28T16:04:26+09:00
+slug: sidex창립100주년기념식
 post_date: 2026-08-20T14:03:51+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 코엑스 그랜드볼룸
+installation_region_selected: 서울특별시 강남구
+installation_year: 2025년
+installation_month: 05월
+installation_solution: P3mm LED전광판
+installation_solution_custom: ''
+installation_project: 서울시치과의사회 창립 100주년 기념식 및 SIDEX 2025 SEOUL NIGHT
 cover_image: /assets/img/portfolio/wcfc9ujtwt.webp
 gallery:
-  - /assets/img/portfolio/z3bv37zh49.webp
-  - /assets/img/portfolio/2hhjlxiboq.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'solml2192ma'
-last_human_edit: '2026-09-28T16:04:26+09:00'
+  - /assets/img/portfolio/01_현장전경-3.webp
+  - /assets/img/portfolio/02_행사장전경-2.webp
+  - /assets/img/portfolio/03_무대측면-1.webp
+  - /assets/img/portfolio/04_화면근접.webp
+  - /assets/img/portfolio/05_화면디테일.webp
+  - /assets/img/portfolio/06_운영현장.webp
+  - /assets/img/portfolio/07_식전콘텐츠.webp
+  - /assets/img/portfolio/08_송출화면.webp
 ---
 
 **100년에 한 번뿐인 자리였습니다**
