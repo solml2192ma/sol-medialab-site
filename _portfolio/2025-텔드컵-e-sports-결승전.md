@@ -1,16 +1,26 @@
 ---
-slug: 2025텔드컵esports결승전
 title: 2025 텔드컵 E-SPORTS 결승전
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-21T16:18:06+09:00
+slug: 2025텔드컵esports결승전
 post_date: 2026-10-21T16:09:00+09:00
 overview_category: []
 client: ''
 location: 화성 오리진홀
+installation_region_selected: 경기도 화성시
+installation_year: 2025년
+installation_month: 06월
+installation_solution: P2mm LED전광판
+installation_solution_custom: ''
+installation_project: 2025 텔드컵
 cover_image: /assets/img/portfolio/ipea9n7s76.webp
 gallery:
-  - /assets/img/portfolio/6i28xcr9dy.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-21T16:18:06+09:00'
+  - /assets/img/portfolio/01_현장전경-3.webp
+  - /assets/img/portfolio/02_정면.webp
+  - /assets/img/portfolio/03_측면.webp
+  - /assets/img/portfolio/04_테스트패턴.webp
+  - /assets/img/portfolio/05_송출화면.webp
 ---
 
 ## 현장 소개
