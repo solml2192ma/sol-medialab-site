@@ -1,17 +1,29 @@
 ---
 title: 코치 (COACH)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-02T14:42:06+09:00
 slug: coachpopup
 post_date: 2026-08-20T16:36:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 더현대 서울
-cover_image: /assets/img/portfolio/blhzce867u.webp
+installation_region_selected: 서울특별시 영등포구
+installation_year: 2026년
+installation_month: 04월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: 코치 팝업스토어
+cover_image: /assets/img/portfolio/01_현장전경.webp
 gallery:
-  - /assets/img/portfolio/o7mfi1pi8x.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-02T14:42:06+09:00'
+  - /assets/img/portfolio/02_송출화면.webp
+  - /assets/img/portfolio/03_정면.webp
+  - /assets/img/portfolio/04_근접.webp
+  - /assets/img/portfolio/05_콘텐츠.webp
+  - /assets/img/portfolio/06_측면.webp
+  - /assets/img/portfolio/07_마감작업.webp
+  - /assets/img/portfolio/08_점검.webp
 ---
 
 # COACH 팝업스토어 — 가까이 다가가도 매끄러운 실내 LED를 설치했습니다
