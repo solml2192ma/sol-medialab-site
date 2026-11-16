@@ -1,17 +1,29 @@
 ---
-slug: 올리브영페스타닥터지drg
 title: 올리브영페스타 닥터지(Dr.G)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-21T16:07:30+09:00
+slug: 올리브영페스타닥터지drg
 post_date: 2026-10-21T16:06:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 서울 한강 노들섬
-cover_image: /assets/img/portfolio/vvck23mn7f.webp
+installation_region_selected: 서울특별시 용산구
+installation_year: 2025년
+installation_month: 05월
+installation_solution: P3mm LED전광판
+installation_solution_custom: ''
+installation_project: 2025올리브영페스타 닥터지 부스
+cover_image: /assets/img/portfolio/01_현장전경-1.webp
 gallery:
-  - /assets/img/portfolio/acnkaxzz87.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-21T16:07:30+09:00'
+  - /assets/img/portfolio/02_화면송출.webp
+  - /assets/img/portfolio/03_브랜드로고와화면.webp
+  - /assets/img/portfolio/04_화면정면.webp
+  - /assets/img/portfolio/05_화면사선.webp
+  - /assets/img/portfolio/06_콘텐츠표현.webp
+  - /assets/img/portfolio/07_화면디테일.webp
+  - /assets/img/portfolio/08_부스측면.webp
 ---
 
 한강 노들섬에서 열린 2025 올리브영페스타의 **닥터지 부스**에 야외형 LED 전광판을 설치한 사례입니다. 브랜드 존 안쪽 벽면에 가로로 길게 이어지는 화면을 시공해, 부스를 찾은 방문객이 캠페인 메시지와 제품 이미지를 한눈에 볼 수 있도록 구성했습니다.
