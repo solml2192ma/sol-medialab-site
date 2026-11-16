@@ -1,8 +1,5 @@
 ---
 title: 동아방송예술대학교 Miracle Dima Gift Festa
-post_author: hongbj123-create
-last_human_editor: uuh09006
-last_human_edit: 2026-11-16T14:45:19+09:00
 slug: 동아방송예술대학교miracledimagiftfesta
 post_date: 2026-10-14T16:53:00+09:00
 overview_category:
@@ -23,8 +20,11 @@ gallery:
   - /assets/img/portfolio/05_네온화면.webp
   - /assets/img/portfolio/06_안내화면.webp
   - /assets/img/portfolio/06_안내화면.webp
-  - /assets/img/portfolio/07_공연영상.webp
-  - /assets/img/portfolio/08_밴드공연.webp
+  - /assets/img/portfolio/qww4xkdytu.webp
+  - /assets/img/portfolio/9ngbymgkee.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T16:38:05+09:00'
 ---
 
 ## 현장 소개
