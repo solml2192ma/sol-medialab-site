@@ -17,7 +17,7 @@ gallery:
   - /assets/img/portfolio/7vm1f93ahc.webp
   - /assets/img/portfolio/02_행사장전경-2.webp
   - /assets/img/portfolio/03_무대측면-1.webp
-  - /assets/img/portfolio/04_화면근접.webp
+  - /assets/img/portfolio/2jdufgqp1d.webp
   - /assets/img/portfolio/05_화면디테일.webp
   - /assets/img/portfolio/06_운영현장.webp
   - /assets/img/portfolio/07_식전콘텐츠.webp

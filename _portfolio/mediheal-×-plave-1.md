@@ -1,8 +1,5 @@
 ---
 title: MEDIHEAL × PLAVE
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-26T12:18:14+09:00
 slug: medihealplave1
 post_date: 2026-10-26T12:17:00+09:00
 overview_category:
@@ -15,14 +12,17 @@ installation_month: 03월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 메디힐x플레이브 팝업스토어
-cover_image: /assets/img/portfolio/01_대표전경.webp
+cover_image: /assets/img/portfolio/8v4xgmwhgb.webp
 gallery:
-  - /assets/img/portfolio/02_점등화면-1.webp
-  - /assets/img/portfolio/03_점등측면.webp
-  - /assets/img/portfolio/04_화면근접.webp
-  - /assets/img/portfolio/05_현장전경.webp
-  - /assets/img/portfolio/06_소등상태.webp
-  - /assets/img/portfolio/07_소등정면.webp
+  - /assets/img/portfolio/wsagasrj88.webp
+  - /assets/img/portfolio/l5r8hbe23r.webp
+  - /assets/img/portfolio/2jdufgqp1d.webp
+  - /assets/img/portfolio/2hefwf372c.webp
+  - /assets/img/portfolio/siaf542h6r.webp
+  - /assets/img/portfolio/fjjh2zehzq.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T17:23:42+09:00'
 ---
 
 팝업스토어는 문을 여는 순간의 인상이 전부입니다. 성수 올리브영N에서 열린 메디힐 × 플레이브 팝업스토어는 콜라보 현장을 찾은 팬들이 화면 앞에서 직접 사진과 영상을 남기는 공간이었습니다. 솔미디어랩은 이 현장에 **실내용 P1 LED 전광판**을 설치했습니다.
