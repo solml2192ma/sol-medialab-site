@@ -1,8 +1,5 @@
 ---
 title: 2025 텔드컵 E-SPORTS 결승전
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-21T16:18:06+09:00
 slug: 2025텔드컵esports결승전
 post_date: 2026-10-21T16:09:00+09:00
 overview_category: []
@@ -16,11 +13,14 @@ installation_solution_custom: ''
 installation_project: 2025 텔드컵
 cover_image: /assets/img/portfolio/ipea9n7s76.webp
 gallery:
-  - /assets/img/portfolio/01_현장전경-3.webp
-  - /assets/img/portfolio/02_정면.webp
-  - /assets/img/portfolio/03_측면.webp
-  - /assets/img/portfolio/04_테스트패턴.webp
-  - /assets/img/portfolio/05_송출화면.webp
+  - /assets/img/portfolio/3q8m4mkab7.webp
+  - /assets/img/portfolio/huccu4cghy.webp
+  - /assets/img/portfolio/tu3jeakjpk.webp
+  - /assets/img/portfolio/3b38cgql9r.webp
+  - /assets/img/portfolio/wqabe8q96i.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T17:10:47+09:00'
 ---
 
 ## 현장 소개
