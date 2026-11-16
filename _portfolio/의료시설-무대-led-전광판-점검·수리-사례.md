@@ -1,4 +1,5 @@
 ---
+slug: 의료시설무대led전광판점검수리사례
 title: 의료시설 무대 LED 전광판 점검·수리 사례
 post_date: 2026-11-16T16:14:00+09:00
 overview_category:
@@ -10,12 +11,15 @@ installation_month: 05월
 installation_solution: 유지 보수
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/01_현장전경-1.webp
+cover_image: /assets/img/portfolio/gx7sz98c88.webp
 gallery:
-  - /assets/img/portfolio/03_화면우측.webp
-  - /assets/img/portfolio/07_화면좌측.webp
-  - /assets/img/portfolio/05_화면가동.webp
-  - /assets/img/portfolio/06_화면가동확인.webp
+  - /assets/img/portfolio/ijtxxrbnb0.webp
+  - /assets/img/portfolio/pdk3w3yklh.webp
+  - /assets/img/portfolio/5yk9mpd3z3.webp
+  - /assets/img/portfolio/lfxpn8ftpn.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T16:16:08+09:00'
 ---
 
 ## 점검 요청 배경
