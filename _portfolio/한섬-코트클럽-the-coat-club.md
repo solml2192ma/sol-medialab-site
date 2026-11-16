@@ -1,18 +1,28 @@
 ---
-slug: 한섬코트클럽thecoatclub
 title: 한섬 코트클럽(THE COAT CLUB)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-19T12:33:58+09:00
+slug: 한섬코트클럽thecoatclub
 post_date: 2026-10-19T12:30:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
-location: 성수
-cover_image: /assets/img/portfolio/999te3tptx.webp
+location: 에스팩토리
+installation_region_selected: 서울특별시 성동구
+installation_year: 2025년
+installation_month: 10월
+installation_solution: P3mm LED전광판
+installation_solution_custom: ''
+installation_project: 한섬 코트클럽 팝업스토어
+cover_image: /assets/img/portfolio/05_설치완성전경.webp
 gallery:
-  - /assets/img/portfolio/9k9io0s2jn.webp
-  - /assets/img/portfolio/0920d9ec61.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-19T12:33:58+09:00'
+  - /assets/img/portfolio/02_야간점등확인1.webp
+  - /assets/img/portfolio/06_정면콘텐츠.webp
+  - /assets/img/portfolio/07_측면콘텐츠.webp
+  - /assets/img/portfolio/08_콘텐츠송출.webp
+  - /assets/img/portfolio/04_야간점등확인3.webp
+  - /assets/img/portfolio/03_야간점등확인2.webp
 ---
 
 ## 프로젝트 개요
