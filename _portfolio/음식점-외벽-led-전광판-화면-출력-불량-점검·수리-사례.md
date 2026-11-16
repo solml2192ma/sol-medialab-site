@@ -1,4 +1,5 @@
 ---
+slug: 음식점외벽led전광판화면출력불량점검수리사례
 title: 음식점 외벽 LED 전광판 화면 출력 불량 점검·수리 사례
 post_date: 2026-11-16T15:17:00+09:00
 overview_category:
@@ -10,10 +11,13 @@ installation_month: 11월
 installation_solution: 유지 보수
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/01_외벽LED_전경.webp
+cover_image: /assets/img/portfolio/2h1z19e4ny.webp
 gallery:
-  - /assets/img/portfolio/02_외벽LED_화면꺼짐.webp
-  - /assets/img/portfolio/20201129_181641_처리.webp
+  - /assets/img/portfolio/xvh0bgvjzn.webp
+  - /assets/img/portfolio/18nly8zf2j.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T15:20:41+09:00'
 ---
 
 ## 현장 개요
