@@ -1,8 +1,5 @@
 ---
 title: 한섬 코트클럽(THE COAT CLUB)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-19T12:33:58+09:00
 slug: 한섬코트클럽thecoatclub
 post_date: 2026-10-19T12:30:00+09:00
 overview_category:
@@ -15,14 +12,17 @@ installation_month: 10월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 한섬 코트클럽 팝업스토어
-cover_image: /assets/img/portfolio/05_설치완성전경.webp
+cover_image: /assets/img/portfolio/rmuyylnrtg.webp
 gallery:
-  - /assets/img/portfolio/02_야간점등확인1.webp
-  - /assets/img/portfolio/06_정면콘텐츠.webp
-  - /assets/img/portfolio/07_측면콘텐츠.webp
-  - /assets/img/portfolio/08_콘텐츠송출.webp
-  - /assets/img/portfolio/04_야간점등확인3.webp
-  - /assets/img/portfolio/03_야간점등확인2.webp
+  - /assets/img/portfolio/kfklg7a4wi.webp
+  - /assets/img/portfolio/1scwgyaj5m.webp
+  - /assets/img/portfolio/6iypkrvg4y.webp
+  - /assets/img/portfolio/oej3fb5ada.webp
+  - /assets/img/portfolio/lilfz2hth5.webp
+  - /assets/img/portfolio/zqvi05me3z.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T15:45:03+09:00'
 ---
 
 ## 프로젝트 개요
