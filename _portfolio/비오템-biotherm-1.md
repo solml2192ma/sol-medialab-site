@@ -1,4 +1,5 @@
 ---
+slug: 비오템biotherm1
 title: 비오템 (Biotherm)
 post_date: 2026-11-16T17:16:00+09:00
 overview_category:
@@ -10,11 +11,14 @@ installation_month: 08월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 비오템 (Biotherm) 팝업 스토어
-cover_image: /assets/img/portfolio/06_완성화면.webp
+cover_image: /assets/img/portfolio/dndagksbma.webp
 gallery:
-  - /assets/img/portfolio/03_정면전경-2.webp
-  - /assets/img/portfolio/05_대형화면.webp
-  - /assets/img/portfolio/02_측면전경.webp
+  - /assets/img/portfolio/n8yhrn0jvu.webp
+  - /assets/img/portfolio/s96xgk4j5b.webp
+  - /assets/img/portfolio/hbdbmkxshc.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T17:18:06+09:00'
 ---
 
 ## 현장 개요
