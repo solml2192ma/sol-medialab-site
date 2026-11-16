@@ -1,5 +1,8 @@
 ---
 title: TWS - 다시 만난 오늘 M/V 촬영 세트장
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-13T17:13:21+09:00
 slug: tws다시만난오늘mv촬영세트장
 post_date: 2026-08-20T13:06:57+09:00
 overview_category:
@@ -12,11 +15,13 @@ installation_month: 02월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: TWS - 다시 만난 오늘 M/V 촬영
-cover_image: /assets/img/portfolio/60h2zptlbw.webp
-gallery: []
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-13T17:13:21+09:00'
+cover_image: /assets/img/portfolio/04_세트와스크린.webp
+gallery:
+  - /assets/img/portfolio/05_스튜디오전경.webp
+  - /assets/img/portfolio/06_조명세팅.webp
+  - /assets/img/portfolio/01_현장전경.webp
+  - /assets/img/portfolio/02_와이드스크린.webp
+  - /assets/img/portfolio/03_보조스크린.webp
 ---
 
 **카메라 앞에 세울 수 있는 화면인가?**
