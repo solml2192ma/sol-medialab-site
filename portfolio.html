@@ -128,8 +128,12 @@ layout: null
               {% if cover %}
               <img class="portfolio-card-image" src="{{ site.baseurl }}{{ cover }}" alt="{{ post.title }}">
               {% endif %}
-              {% if post.gallery and post.gallery.size > 0 %}
-              <img class="portfolio-card-image portfolio-card-image--hover" src="{{ site.baseurl }}{{ post.gallery.first }}" alt="{{ post.title }}">
+              {% assign hover_photo = post.gallery[1] %}
+              {% if post.cover_image and post.cover_image != empty %}
+                {% assign hover_photo = post.gallery | first %}
+              {% endif %}
+              {% if hover_photo and hover_photo != cover %}
+              <img class="portfolio-card-image portfolio-card-image--hover" src="{{ site.baseurl }}{{ hover_photo }}" alt="{{ post.title }}">
               {% endif %}
             </div>
             <div class="portfolio-card-body">

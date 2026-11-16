@@ -54,3 +54,58 @@ section[data-key-path="installation_solution_custom"]:not([data-custom-solution-
   white-space: normal;
   overflow-wrap: anywhere;
 }
+/* The labels follow the visible order when writers reorder photos. */
+section[data-key-path="gallery"] .item-list > :nth-child(-n+2) > .filled::before {
+  position: absolute;
+  inset-block-start: 6px;
+  inset-inline-start: 36px;
+  z-index: 1;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #184b9e;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+section[data-key-path="gallery"] .item-list > :nth-child(-n+2) > .filled {
+  position: relative;
+}
+
+section[data-key-path="gallery"] .item-list > :first-child > .filled::before {
+  content: "대표 썸네일";
+}
+
+section[data-key-path="gallery"] .item-list > :nth-child(2) > .filled::before {
+  content: "부 썸네일";
+  background: #475467;
+}
+
+/* Preview images are rendered in separate paragraphs in gallery order. */
+[role="document"] section[data-key-path="gallery"] p:nth-of-type(-n+2):has(img) {
+  position: relative;
+}
+
+[role="document"] section[data-key-path="gallery"] p:nth-of-type(-n+2):has(img)::after {
+  position: absolute;
+  inset-block-start: 8px;
+  inset-inline-end: 8px;
+  z-index: 1;
+  padding: 4px 9px;
+  border-radius: 4px;
+  background: #184b9e;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+[role="document"] section[data-key-path="gallery"] p:nth-of-type(1):has(img)::after {
+  content: "대표 썸네일";
+}
+
+[role="document"] section[data-key-path="gallery"] p:nth-of-type(2):has(img)::after {
+  content: "부 썸네일";
+  background: #475467;
+}
