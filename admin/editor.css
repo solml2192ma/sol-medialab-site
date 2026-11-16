@@ -79,7 +79,7 @@ section[data-key-path="gallery"] .item-list > :first-child > .filled::before {
 
 section[data-key-path="gallery"] .item-list > :nth-child(2) > .filled::before {
   content: "부 썸네일";
-  background: #475467;
+  background: #166534;
 }
 
 /* Preview images are rendered in separate paragraphs in gallery order. */
@@ -107,5 +107,5 @@ section[data-key-path="gallery"] .item-list > :nth-child(2) > .filled::before {
 
 [role="document"] section[data-key-path="gallery"] p:nth-of-type(2):has(img)::after {
   content: "부 썸네일";
-  background: #475467;
+  background: #166534;
 }
