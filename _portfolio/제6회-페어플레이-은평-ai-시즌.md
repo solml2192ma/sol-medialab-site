@@ -1,8 +1,5 @@
 ---
 title: 제6회 페어플레이 은평 AI 시즌
-post_author: hongbj123-create
-last_human_editor: solml2192ma
-last_human_edit: 2026-09-28T16:04:26+09:00
 slug: 제6회페어플레이은평ai시즌
 post_date: 2026-08-20T13:22:00+09:00
 overview_category:
@@ -21,6 +18,9 @@ gallery:
   - /assets/img/portfolio/03_메인스크린.webp
   - /assets/img/portfolio/04_무대전경.webp
   - /assets/img/portfolio/05_경기송출.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T16:04:53+09:00'
 ---
 
 **1. 경기 화면과 중계, 끊김 없이 넘길 수 있는 시스템인가?**
