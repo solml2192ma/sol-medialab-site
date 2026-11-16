@@ -12,15 +12,15 @@ installation_month: 09월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: gamex 2025 경기국제종합학술대회 및 치과기자재전시회
-cover_image: /assets/img/portfolio/01_세팅완료전경.webp
+cover_image: /assets/img/portfolio/3nkpf1xy13.webp
 gallery:
-  - /assets/img/portfolio/02_무대전경.webp
-  - /assets/img/portfolio/03_측면전경.webp
-  - /assets/img/portfolio/04_행사시작.webp
-  - /assets/img/portfolio/05_공연시작.webp
-  - /assets/img/portfolio/06_공연현장.webp
-  - /assets/img/portfolio/07_메인화면.webp
-  - /assets/img/portfolio/08_행사분위기.webp
+  - /assets/img/portfolio/fffgf5nt5z.webp
+  - /assets/img/portfolio/tvjorumjzu.webp
+  - /assets/img/portfolio/dusekxc0sc.webp
+  - /assets/img/portfolio/b8iayvgahl.webp
+  - /assets/img/portfolio/pflxijkben.webp
+  - /assets/img/portfolio/cc5d95jdiz.webp
+  - /assets/img/portfolio/obugzvsrqe.webp
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T15:40:08+09:00'

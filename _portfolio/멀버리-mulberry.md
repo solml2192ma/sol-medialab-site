@@ -12,14 +12,14 @@ installation_month: 04월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 멀버리 팝업스토어
-cover_image: /assets/img/portfolio/01_팝업전경.webp
+cover_image: /assets/img/portfolio/1lgtplyis1.webp
 gallery:
-  - /assets/img/portfolio/02_지퍼영상.webp
-  - /assets/img/portfolio/03_브랜드인물영상.webp
-  - /assets/img/portfolio/04_영상콘텐츠.webp
-  - /assets/img/portfolio/05_장인영상.webp
-  - /assets/img/portfolio/06_파우치영상.webp
-  - /assets/img/portfolio/07_핸드백영상.webp
+  - /assets/img/portfolio/fygjjdel7z.webp
+  - /assets/img/portfolio/q5rll7q91y.webp
+  - /assets/img/portfolio/by0zfcerug.webp
+  - /assets/img/portfolio/wvpdt2spqu.webp
+  - /assets/img/portfolio/mulg5k90lj.webp
+  - /assets/img/portfolio/xduxibgkv0.webp
   - /assets/img/portfolio/ndwz2gub1f.webp
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'

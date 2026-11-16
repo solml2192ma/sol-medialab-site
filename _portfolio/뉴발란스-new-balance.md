@@ -11,13 +11,13 @@ installation_month: 08월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 뉴발란스 (New Balance) 팝업 스토어
-cover_image: /assets/img/portfolio/01_점등_완성컷.webp
+cover_image: /assets/img/portfolio/qr9yczkxdp.webp
 gallery:
-  - /assets/img/portfolio/02_콘텐츠_송출컷.webp
-  - /assets/img/portfolio/04_벽체_일체형_완성컷.webp
-  - /assets/img/portfolio/08_콘텐츠_송출_측면컷.webp
-  - /assets/img/portfolio/07_블루프린트_콘텐츠.webp
-  - /assets/img/portfolio/03_화면_근접컷.webp
+  - /assets/img/portfolio/lohqw1m4xi.webp
+  - /assets/img/portfolio/w7vlwshusf.webp
+  - /assets/img/portfolio/pteeami1vm.webp
+  - /assets/img/portfolio/4jpmnrtpc7.webp
+  - /assets/img/portfolio/rwencspr9j.webp
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T15:30:53+09:00'

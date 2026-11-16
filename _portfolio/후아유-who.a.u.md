@@ -12,15 +12,15 @@ installation_month: 06월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 후아유 팝업스토어
-cover_image: /assets/img/portfolio/08_로고화면.webp
+cover_image: /assets/img/portfolio/tgkg645ph9.webp
 gallery:
-  - /assets/img/portfolio/07_측면.webp
+  - /assets/img/portfolio/rbhiaxtp1f.webp
   - /assets/img/portfolio/0481qullj0.webp
   - /assets/img/portfolio/hhvxz81ytb.webp
   - /assets/img/portfolio/3coqe1sjrt.webp
-  - /assets/img/portfolio/03_콘텐츠송출.webp
-  - /assets/img/portfolio/02_설치과정.webp
-  - /assets/img/portfolio/01_전경.webp
+  - /assets/img/portfolio/exq2nbub6w.webp
+  - /assets/img/portfolio/v60o8f6ctb.webp
+  - /assets/img/portfolio/lvnpvicmp1.webp
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T16:46:31+09:00'

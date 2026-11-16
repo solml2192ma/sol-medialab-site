@@ -11,8 +11,8 @@ occasionally never fires if the admin tab is holding a stale config.
 Watermarking is no longer applied here -- photos are watermarked
 before upload now, so this only resizes/re-encodes.
 
-Only processes files that changed in THIS push, so previously
-published photos are never touched retroactively.
+Also renames existing photos referenced by posts edited in this push.
+Photos already using the randomized naming format keep their names.
 
 Also backfills a `slug:` front-matter field (letters/digits only, no
 separators) on any _portfolio post that doesn't have one yet, so every
@@ -28,6 +28,8 @@ import re
 import string
 import subprocess
 import sys
+from pathlib import Path
+from urllib.parse import unquote
 
 from PIL import Image
 
@@ -39,6 +41,11 @@ MAX_DIM = 1920
 QUALITY = 82
 INPUT_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
 RANDOM_NAME_LENGTH = 10
+RANDOM_WEBP = re.compile(r"[a-z0-9]{10}\.webp")
+PHOTO_REFERENCE = re.compile(
+    r"""(/assets/img/portfolio/[^\r\n<>"']+?\.(?:webp|jpe?g|png))(?=$|[\s)"'<>?#])""",
+    re.IGNORECASE | re.MULTILINE,
+)
 
 
 def random_filename(taken):
@@ -51,8 +58,8 @@ def random_filename(taken):
             return name
 
 
-def changed_portfolio_files(before_sha, after_sha):
-    """Files added/modified under assets/img/portfolio/ in this push.
+def changed_paths(before_sha, after_sha, directory):
+    """Files added or modified under the given directory in this push.
 
     Uses -z (NUL-separated, unquoted) output -- plain --name-only wraps any
     path containing a space or non-ASCII byte in quotes with octal escapes,
@@ -60,11 +67,21 @@ def changed_portfolio_files(before_sha, after_sha):
     """
     result = subprocess.run(
         ["git", "diff", "--name-only", "-z", "--diff-filter=ACMR", before_sha, after_sha,
-         "--", "assets/img/portfolio/"],
+         "--", directory],
         cwd=REPO_ROOT, capture_output=True, check=True,
     )
-    files = [p.decode("utf-8") for p in result.stdout.split(b"\x00") if p]
-    return [f for f in files if os.path.splitext(f)[1].lower() in INPUT_EXTS]
+    return [p.decode("utf-8") for p in result.stdout.split(b"\x00") if p]
+
+
+def edited_post_photos(before_sha, after_sha):
+    for path in changed_paths(before_sha, after_sha, "_portfolio/"):
+        post = Path(REPO_ROOT, path)
+        if post.suffix != ".md" or not post.is_file():
+            continue
+        for match in PHOTO_REFERENCE.finditer(post.read_text(encoding="utf-8")):
+            photo = unquote(match.group(1)).lstrip("/")
+            if Path(photo).parent.as_posix() == "assets/img/portfolio":
+                yield photo
 
 
 def resize(im):
@@ -101,8 +118,8 @@ def process_file(rel_path, taken_names):
     if new_abs_path != abs_path:
         os.remove(abs_path)
 
-    old_rel = "/" + os.path.relpath(abs_path, REPO_ROOT)
-    new_rel = "/" + os.path.relpath(new_abs_path, REPO_ROOT)
+    old_rel = "/" + Path(abs_path).relative_to(REPO_ROOT).as_posix()
+    new_rel = "/" + Path(new_abs_path).relative_to(REPO_ROOT).as_posix()
     print(f"processed: {old_rel} -> {new_rel}")
     return (old_rel, new_rel)
 
@@ -199,13 +216,15 @@ def ensure_slugs():
 def update_markdown_references(renames):
     if not renames:
         return
+    by_path = dict(renames)
+
+    def replace_reference(match):
+        original = match.group(1)
+        return by_path.get(unquote(original), original)
+
     for md_path in glob.glob(PORTFOLIO_MD_GLOB):
         text = open(md_path, encoding="utf-8").read()
-        new_text = text
-        for old_rel, new_rel in renames:
-            if old_rel == new_rel:
-                continue
-            new_text = new_text.replace(old_rel, new_rel)
+        new_text = PHOTO_REFERENCE.sub(replace_reference, text)
         if new_text != text:
             open(md_path, "w", encoding="utf-8").write(new_text)
             print(f"updated references in: {os.path.relpath(md_path, REPO_ROOT)}")
@@ -220,9 +239,14 @@ def main():
 
     slugged = ensure_slugs()
 
-    files = changed_portfolio_files(before_sha, after_sha)
+    files = {
+        path for path in changed_paths(before_sha, after_sha, "assets/img/portfolio/")
+        if Path(path).suffix.lower() in INPUT_EXTS
+    }
+    files.update(edited_post_photos(before_sha, after_sha))
+    files = sorted(path for path in files if not RANDOM_WEBP.fullmatch(Path(path).name))
     if not files:
-        print("no new/modified portfolio images in this push")
+        print("no portfolio images need randomized filenames")
         print(f"done: 0 image(s) processed, {len(slugged)} slug(s) backfilled")
         return
 

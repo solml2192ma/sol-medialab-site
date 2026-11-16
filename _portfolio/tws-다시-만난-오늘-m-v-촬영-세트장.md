@@ -12,11 +12,11 @@ installation_month: 02월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: TWS - 다시 만난 오늘 M/V 촬영
-cover_image: /assets/img/portfolio/04_세트와스크린.webp
+cover_image: /assets/img/portfolio/ecewhvnuuj.webp
 gallery:
-  - /assets/img/portfolio/05_스튜디오전경.webp
-  - /assets/img/portfolio/06_조명세팅.webp
-  - /assets/img/portfolio/03_보조스크린.webp
+  - /assets/img/portfolio/htho48rrlw.webp
+  - /assets/img/portfolio/2bthq2irkd.webp
+  - /assets/img/portfolio/w6gcuipob5.webp
   - /assets/img/portfolio/z3e46jtwa4.webp
   - /assets/img/portfolio/cgl3oekaf9.webp
 post_author: 'hongbj123-create'

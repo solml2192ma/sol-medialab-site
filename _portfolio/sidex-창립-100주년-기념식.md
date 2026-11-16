@@ -14,8 +14,8 @@ installation_solution_custom: ''
 installation_project: 서울시치과의사회 창립 100주년 기념식 및 SIDEX 2025 SEOUL NIGHT
 cover_image: /assets/img/portfolio/wcfc9ujtwt.webp
 gallery:
-  - /assets/img/portfolio/07_식전콘텐츠.webp
-  - /assets/img/portfolio/08_송출화면.webp
+  - /assets/img/portfolio/q6xovvhkkh.webp
+  - /assets/img/portfolio/cqt2ryhiae.webp
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T17:39:55+09:00'

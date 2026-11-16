@@ -20,7 +20,7 @@ gallery:
   - /assets/img/portfolio/yn0j2qqem1.webp
   - /assets/img/portfolio/ghj6q4buc1.webp
   - /assets/img/portfolio/1vky5ydx40.webp
-  - /assets/img/portfolio/01_점등확인.webp
+  - /assets/img/portfolio/bnbhhsarfo.webp
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T16:11:14+09:00'
