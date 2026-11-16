@@ -1,23 +1,29 @@
 ---
 title: GAMEX 경기국제종합학술대회 및 치과기자재전시회
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-13T17:20:31+09:00
 slug: gamex2025경기국제종합학술대회및치과기자재전시회
 post_date: 2026-10-19T15:18:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 삼성 코엑스
-installation_region_selected: ''
-installation_year: ''
-installation_month: ''
-installation_solution: ''
+installation_region_selected: 서울특별시 강남구
+installation_year: 2025년
+installation_month: 09월
+installation_solution: P3mm LED전광판
 installation_solution_custom: ''
-installation_project: ''
-cover_image: /assets/img/portfolio/7k0dyuf7hj.webp
+installation_project: gamex 2025 경기국제종합학술대회 및 치과기자재전시회
+cover_image: /assets/img/portfolio/01_세팅완료전경.webp
 gallery:
-  - /assets/img/portfolio/eewnp2tirx.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-13T17:20:31+09:00'
+  - /assets/img/portfolio/02_무대전경.webp
+  - /assets/img/portfolio/03_측면전경.webp
+  - /assets/img/portfolio/04_행사시작.webp
+  - /assets/img/portfolio/05_공연시작.webp
+  - /assets/img/portfolio/06_공연현장.webp
+  - /assets/img/portfolio/07_메인화면.webp
+  - /assets/img/portfolio/08_행사분위기.webp
 ---
 
 ## 현장 개요
