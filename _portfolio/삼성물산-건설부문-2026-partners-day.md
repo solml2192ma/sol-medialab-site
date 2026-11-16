@@ -1,17 +1,29 @@
 ---
-slug: 삼성물산건설부문2026partnersday
 title: 삼성물산 건설부문 2026 Partners' Day
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-02T15:50:37+09:00
+slug: 삼성물산건설부문2026partnersday
 post_date: 2026-10-02T15:46:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 송파구 래미안갤러리 아트홀
-cover_image: /assets/img/portfolio/gzq1lvyx04.webp
+installation_region_selected: 서울특별시 송파구
+installation_year: 2026년
+installation_month: 03월
+installation_solution: 시스템 운영
+installation_solution_custom: ''
+installation_project: 삼성물산 건설부문 2026 partner's day
+cover_image: /assets/img/portfolio/01_무대전경-1.webp
 gallery:
-  - /assets/img/portfolio/0ytd7rhc1c.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-02T15:50:37+09:00'
+  - /assets/img/portfolio/02_객석에서본무대.webp
+  - /assets/img/portfolio/03_행사장전경.webp
+  - /assets/img/portfolio/04_타이틀화면.webp
+  - /assets/img/portfolio/05_메인화면.webp
+  - /assets/img/portfolio/06_운영데스크.webp
+  - /assets/img/portfolio/07_메인화면근접.webp
+  - /assets/img/portfolio/08_프로그램화면.webp
 ---
 
 ## 아트홀 무대 중앙에 세운 행사용 LED 스크린
