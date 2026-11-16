@@ -1,5 +1,8 @@
 ---
 title: 후아유(WHO.A.U)
+post_author: hongbj123-create
+last_human_editor: uuh09006
+last_human_edit: 2026-11-16T16:18:45+09:00
 slug: 후아유whoau
 post_date: 2026-10-21T15:43:00+09:00
 overview_category:
@@ -14,16 +17,13 @@ installation_solution_custom: ''
 installation_project: 후아유 팝업스토어
 cover_image: /assets/img/portfolio/08_로고화면.webp
 gallery:
-  - /assets/img/portfolio/01_전경.webp
-  - /assets/img/portfolio/02_설치과정.webp
-  - /assets/img/portfolio/03_콘텐츠송출.webp
-  - /assets/img/portfolio/04_화면전체.webp
-  - /assets/img/portfolio/05_영상구현.webp
-  - /assets/img/portfolio/06_항공영상.webp
   - /assets/img/portfolio/07_측면.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'uuh09006'
-last_human_edit: '2026-11-16T16:18:45+09:00'
+  - /assets/img/portfolio/06_항공영상.webp
+  - /assets/img/portfolio/05_영상구현.webp
+  - /assets/img/portfolio/04_화면전체.webp
+  - /assets/img/portfolio/03_콘텐츠송출.webp
+  - /assets/img/portfolio/02_설치과정.webp
+  - /assets/img/portfolio/01_전경.webp
 ---
 
 ## 프로젝트 개요
