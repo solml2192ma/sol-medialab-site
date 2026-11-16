@@ -1,4 +1,5 @@
 ---
+slug: 나스nars3
 title: 나스(NARS)
 post_date: 2026-11-16T12:27:00+09:00
 overview_category:
@@ -10,12 +11,15 @@ installation_month: 07월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/02_화면송출.webp
+cover_image: /assets/img/portfolio/2td5eboazx.webp
 gallery:
-  - /assets/img/portfolio/07_운영모습.webp
-  - /assets/img/portfolio/06_측면송출.webp
-  - /assets/img/portfolio/01_현장전경.webp
-  - /assets/img/portfolio/04_메인비주얼.webp
+  - /assets/img/portfolio/gsdtzdynbg.webp
+  - /assets/img/portfolio/umz202nyfh.webp
+  - /assets/img/portfolio/hf2c2vpnew.webp
+  - /assets/img/portfolio/r2qwq6hh1o.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T12:30:00+09:00'
 ---
 
 ## 프로젝트 개요
