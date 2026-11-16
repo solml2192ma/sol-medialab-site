@@ -1,4 +1,5 @@
 ---
+slug: 샤넬코스메틱chanel1
 title: 샤넬 코스메틱 (Chanel)
 post_date: 2026-11-16T17:40:00+09:00
 overview_category:
@@ -10,11 +11,14 @@ installation_month: 06월
 installation_solution: 70인치 미만 모니터 사이니지
 installation_solution_custom: ''
 installation_project: 샤넬 코스메틱 (Chanel) 팝업 스토어
-cover_image: /assets/img/portfolio/01_팝업전경-1.webp
+cover_image: /assets/img/portfolio/9w4cxhh3yv.webp
 gallery:
-  - /assets/img/portfolio/02_세로화면.webp
-  - /assets/img/portfolio/05_벽면전경.webp
-  - /assets/img/portfolio/03_콘텐츠벽면.webp
+  - /assets/img/portfolio/g9y99ywhup.webp
+  - /assets/img/portfolio/3j6hi4bgr8.webp
+  - /assets/img/portfolio/7s11t5xdeh.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T17:42:20+09:00'
 ---
 
 성수동 레이어41 스튜디오에서 진행된 샤넬 코스메틱 팝업스토어에 **모니터 사이니지**를 설치했습니다. 붉은 컬러로 꾸민 입구 공간부터 모델 비주얼이 벽을 가득 채우는 전시 공간까지, 방문객이 가장 먼저 만나는 브랜드의 얼굴을 화면으로 완성한 현장입니다.
