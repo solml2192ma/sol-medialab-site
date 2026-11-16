@@ -1,5 +1,8 @@
 ---
 title: 넷플릭스 드라마
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-13T17:11:22+09:00
 slug: 넷플릭스드라마ooooooo
 post_date: 2026-10-02T15:24:00+09:00
 overview_category:
@@ -15,9 +18,9 @@ installation_project: ''
 cover_image: /assets/img/portfolio/1xflegihza.webp
 gallery:
   - /assets/img/portfolio/2sofyf7ybc.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-13T17:11:22+09:00'
+  - /assets/img/portfolio/04_촬영준비.webp
+  - /assets/img/portfolio/05_촬영현장.webp
+  - /assets/img/portfolio/06_촬영진행.webp
 ---
 
 **드라마 세트의 배경 화면, 카메라 앞에서 버틸 수 있는가?**
