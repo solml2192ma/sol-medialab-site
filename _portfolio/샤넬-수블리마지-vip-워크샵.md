@@ -1,8 +1,5 @@
 ---
 title: 샤넬 수블리마지 VIP 워크샵 (Chanel Sublimage)
-post_author: hongbj123-create
-last_human_editor: uuh09006
-last_human_edit: 2026-11-16T14:38:07+09:00
 slug: 샤넬수블리마지vip워크샵
 post_date: 2026-10-19T15:54:00+09:00
 overview_category:
@@ -20,6 +17,9 @@ gallery:
   - /assets/img/portfolio/mgx5g081zm.webp
   - /assets/img/portfolio/ee47khjz63.webp
   - /assets/img/portfolio/0otnb51bzv.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T17:40:09+09:00'
 ---
 
 ## 프로젝트 개요
