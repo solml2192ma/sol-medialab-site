@@ -1,5 +1,8 @@
 ---
 title: 동아방송예술대학교 Miracle Dima Gift Festa
+post_author: hongbj123-create
+last_human_editor: uuh09006
+last_human_edit: 2026-11-16T14:45:19+09:00
 slug: 동아방송예술대학교miracledimagiftfesta
 post_date: 2026-10-14T16:53:00+09:00
 overview_category:
@@ -12,19 +15,16 @@ installation_month: 10월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 동아방송예술대학교 가을축제 miracle dima gift festa 2026
-cover_image: /assets/img/portfolio/re9jsl6aw5.webp
+cover_image: /assets/img/portfolio/02_오프닝화면.webp
 gallery:
-  - /assets/img/portfolio/01_전경.webp
-  - /assets/img/portfolio/02_오프닝화면.webp
   - /assets/img/portfolio/03_야간전경.webp
+  - /assets/img/portfolio/01_전경-1.webp
   - /assets/img/portfolio/04_행사당일.webp
   - /assets/img/portfolio/05_네온화면.webp
   - /assets/img/portfolio/06_안내화면.webp
-  - /assets/img/portfolio/cam0p42h0a.webp
-  - /assets/img/portfolio/cx39oww4lj.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'uuh09006'
-last_human_edit: '2026-11-16T14:45:19+09:00'
+  - /assets/img/portfolio/06_안내화면.webp
+  - /assets/img/portfolio/07_공연영상.webp
+  - /assets/img/portfolio/08_밴드공연.webp
 ---
 
 ## 현장 소개
