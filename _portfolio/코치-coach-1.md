@@ -1,17 +1,29 @@
 ---
-slug: 코치coach1
 title: 코치 (COACH)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-26T12:24:16+09:00
+slug: 코치coach1
 post_date: 2026-10-26T12:23:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 잠실 롯데월드몰 롯데에비뉴엘
-cover_image: /assets/img/portfolio/cgxd6ak768.webp
+installation_region_selected: 서울특별시 송파구
+installation_year: 2025년
+installation_month: 01월
+installation_solution: P2mm LED전광판
+installation_solution_custom: ''
+installation_project: 코치 팝업스토어
+cover_image: /assets/img/portfolio/05_콘텐츠송출.webp
 gallery:
-  - /assets/img/portfolio/250wr9ehm4.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-26T12:24:16+09:00'
+  - /assets/img/portfolio/06_화면근접.webp
+  - /assets/img/portfolio/07_로고화면.webp
+  - /assets/img/portfolio/08_세팅마무리.webp
+  - /assets/img/portfolio/01_현장전경-3.webp
+  - /assets/img/portfolio/02_설치마무리.webp
+  - /assets/img/portfolio/03_영상송출.webp
+  - /assets/img/portfolio/04_화면점검.webp
 ---
 
 ## 프로젝트 개요
