@@ -1,4 +1,5 @@
 ---
+slug: 나스nars4
 title: 나스 (NARS)
 post_date: 2026-11-16T16:32:00+09:00
 overview_category:
@@ -16,6 +17,9 @@ gallery:
   - /assets/img/portfolio/06_완성후현장.webp
   - /assets/img/portfolio/02_점등화면.webp
   - /assets/img/portfolio/03_정면전경-1.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T16:33:55+09:00'
 ---
 
 ## 현장 개요
