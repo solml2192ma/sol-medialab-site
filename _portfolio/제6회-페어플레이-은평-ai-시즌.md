@@ -1,17 +1,26 @@
 ---
-slug: 제6회페어플레이은평ai시즌
 title: 제6회 페어플레이 은평 AI 시즌
+post_author: hongbj123-create
+last_human_editor: solml2192ma
+last_human_edit: 2026-09-28T16:04:26+09:00
+slug: 제6회페어플레이은평ai시즌
 post_date: 2026-08-20T13:22:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 은평 롯데백화점
-cover_image: /assets/img/portfolio/bjn9f2dp0s.webp
+installation_region_selected: 서울특별시 은평구
+installation_year: 2025년
+installation_month: 08월
+installation_solution: P3mm LED전광판
+installation_solution_custom: ''
+installation_project: 2025 제6회 은평구 청소년 e스포츠 대회 페어플레이 은평
+cover_image: /assets/img/portfolio/01_현장세팅.webp
 gallery:
-  - /assets/img/portfolio/0384ysqyqf.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'solml2192ma'
-last_human_edit: '2026-09-28T16:04:26+09:00'
+  - /assets/img/portfolio/02_경기장전경.webp
+  - /assets/img/portfolio/03_메인스크린.webp
+  - /assets/img/portfolio/04_무대전경.webp
+  - /assets/img/portfolio/05_경기송출.webp
 ---
 
 **1. 경기 화면과 중계, 끊김 없이 넘길 수 있는 시스템인가?**
