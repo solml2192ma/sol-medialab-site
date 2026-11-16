@@ -1,5 +1,8 @@
 ---
 title: 넷플릭스 드라마
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-13T17:09:50+09:00
 slug: 넷플릭스드라마oo
 post_date: 2026-10-02T16:21:00+09:00
 overview_category:
@@ -14,10 +17,10 @@ installation_solution_custom: ''
 installation_project: ''
 cover_image: /assets/img/portfolio/aclxpm0k2p.webp
 gallery:
-  - /assets/img/portfolio/dsb3jufkav.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-13T17:09:50+09:00'
+  - /assets/img/portfolio/05_곡면LED링.webp
+  - /assets/img/portfolio/06_곡면LED.webp
+  - /assets/img/portfolio/04_링LED송출.webp
+  - /assets/img/portfolio/01_현장전경.webp
 ---
 
 **포커 대회장 세트 안의 화면, 카메라가 가까이 와도 괜찮아야 했습니다**
