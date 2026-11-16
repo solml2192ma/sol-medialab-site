@@ -1,8 +1,5 @@
 ---
 title: 삼성전자 SSAFY 11기 수료식
-post_author: hongbj123-create
-last_human_editor: solml2192ma
-last_human_edit: 2026-11-13T16:02:53+09:00
 slug: 삼성전자ssafy11기수료식
 post_date: 2026-11-12T17:08:00+09:00
 overview_category:
@@ -22,6 +19,9 @@ gallery:
   - /assets/img/portfolio/pjd7j8vfth.webp
   - /assets/img/portfolio/q5we8faczi.webp
   - /assets/img/portfolio/2d3gops7nd.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T17:32:24+09:00'
 ---
 
 **수료식 무대 중앙을 채운 대형 LED 전광판, 사전 세팅부터 본행사 운영까지 렌탈로 지원했습니다.**
