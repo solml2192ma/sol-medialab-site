@@ -1,4 +1,5 @@
 ---
+slug: 뉴발란스newbalance
 title: 뉴발란스 (New Balance)
 post_date: 2026-11-16T15:25:00+09:00
 overview_category:
@@ -17,6 +18,9 @@ gallery:
   - /assets/img/portfolio/08_콘텐츠_송출_측면컷.webp
   - /assets/img/portfolio/07_블루프린트_콘텐츠.webp
   - /assets/img/portfolio/03_화면_근접컷.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T15:30:53+09:00'
 ---
 
 ## 프로젝트 개요
