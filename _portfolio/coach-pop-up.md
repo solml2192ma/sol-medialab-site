@@ -1,8 +1,5 @@
 ---
 title: 코치 (COACH)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-02T14:42:06+09:00
 slug: coachpopup
 post_date: 2026-08-20T16:36:00+09:00
 overview_category:
@@ -15,15 +12,18 @@ installation_month: 04월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 코치 팝업스토어
-cover_image: /assets/img/portfolio/01_현장전경.webp
+cover_image: /assets/img/portfolio/v2vumxbtm9.webp
 gallery:
-  - /assets/img/portfolio/02_송출화면.webp
-  - /assets/img/portfolio/03_정면.webp
-  - /assets/img/portfolio/04_근접.webp
-  - /assets/img/portfolio/05_콘텐츠.webp
-  - /assets/img/portfolio/06_측면.webp
-  - /assets/img/portfolio/07_마감작업.webp
-  - /assets/img/portfolio/08_점검.webp
+  - /assets/img/portfolio/kdrghb2r2n.webp
+  - /assets/img/portfolio/4rj65io4ee.webp
+  - /assets/img/portfolio/88rq7yplch.webp
+  - /assets/img/portfolio/2w7k67yt89.webp
+  - /assets/img/portfolio/6ijhh52hc8.webp
+  - /assets/img/portfolio/fitoh1y51c.webp
+  - /assets/img/portfolio/x1i947onj1.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T14:25:43+09:00'
 ---
 
 # COACH 팝업스토어 — 가까이 다가가도 매끄러운 실내 LED를 설치했습니다
