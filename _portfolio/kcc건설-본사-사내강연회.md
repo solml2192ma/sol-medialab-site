@@ -1,18 +1,24 @@
 ---
-slug: kcc건설본사사내강연회
 title: KCC건설 본사 사내강연회
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-14T16:44:10+09:00
+slug: kcc건설본사사내강연회
 post_date: 2026-10-14T16:41:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 서초 KCC건설
+installation_region_selected: 서울특별시 서초구
+installation_year: 2026년
+installation_month: 10월
+installation_solution: 시스템 운영
+installation_solution_custom: ''
+installation_project: agi시대 리터러시와 리더십 사내강연회
 cover_image: /assets/img/portfolio/ye958xybdp.webp
 gallery:
   - /assets/img/portfolio/kpbfpxx1vn.webp
   - /assets/img/portfolio/zafadwnytu.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-14T16:44:10+09:00'
 ---
 
 ## 현장 소개
