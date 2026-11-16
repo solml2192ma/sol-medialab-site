@@ -16,7 +16,7 @@ cover_image: /assets/img/portfolio/05_완성전경.webp
 gallery:
   - /assets/img/portfolio/06_콘텐츠송출.webp
   - /assets/img/portfolio/04_영상송출.webp
-  - /assets/img/portfolio/07_측면전경.webp
+  - /assets/img/portfolio/x8hpxujc2t.webp
   - /assets/img/portfolio/08_공간전경.webp
   - /assets/img/portfolio/02_현장전경.webp
   - /assets/img/portfolio/03_화면전경.webp

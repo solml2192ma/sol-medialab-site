@@ -1,4 +1,5 @@
 ---
+slug: 어뮤즈amuse
 title: 어뮤즈 (AMUSE)
 post_date: 2026-11-16T16:01:00+09:00
 overview_category:
@@ -10,12 +11,15 @@ installation_month: 05월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 어뮤즈(AMUSE) 팝업 스토어
-cover_image: /assets/img/portfolio/01_현장전경-1.webp
+cover_image: /assets/img/portfolio/vpam5an9en.webp
 gallery:
-  - /assets/img/portfolio/07_측면전경.webp
-  - /assets/img/portfolio/08_송출화면.webp
-  - /assets/img/portfolio/06_영상송출2.webp
-  - /assets/img/portfolio/04_설치완료.webp
+  - /assets/img/portfolio/x8hpxujc2t.webp
+  - /assets/img/portfolio/rf57dugtrv.webp
+  - /assets/img/portfolio/70oyg665z8.webp
+  - /assets/img/portfolio/y0w552c2fw.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T16:04:34+09:00'
 ---
 
 ## 프로젝트 개요
