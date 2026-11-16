@@ -1,8 +1,5 @@
 ---
 title: 코치 (COACH)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-26T12:24:16+09:00
 slug: 코치coach1
 post_date: 2026-10-26T12:23:00+09:00
 overview_category:
@@ -22,8 +19,11 @@ gallery:
   - /assets/img/portfolio/08_세팅마무리.webp
   - /assets/img/portfolio/01_현장전경-3.webp
   - /assets/img/portfolio/02_설치마무리.webp
-  - /assets/img/portfolio/03_영상송출.webp
-  - /assets/img/portfolio/04_화면점검.webp
+  - /assets/img/portfolio/2bmvf72vzh.webp
+  - /assets/img/portfolio/ozk06euv0h.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T17:31:20+09:00'
 ---
 
 ## 프로젝트 개요
