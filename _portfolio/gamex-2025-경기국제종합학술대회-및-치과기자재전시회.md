@@ -1,8 +1,5 @@
 ---
 title: GAMEX 경기국제종합학술대회 및 치과기자재전시회
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-13T17:20:31+09:00
 slug: gamex2025경기국제종합학술대회및치과기자재전시회
 post_date: 2026-10-19T15:18:00+09:00
 overview_category:
@@ -24,6 +21,9 @@ gallery:
   - /assets/img/portfolio/06_공연현장.webp
   - /assets/img/portfolio/07_메인화면.webp
   - /assets/img/portfolio/08_행사분위기.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T15:40:08+09:00'
 ---
 
 ## 현장 개요
