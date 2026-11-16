@@ -1,8 +1,5 @@
 ---
 title: 여의도 래미안 Y'TTZ 분양홍보관
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-19T16:46:36+09:00
 slug: 여의도래미안yttz분양홍보관
 post_date: 2026-10-19T16:45:00+09:00
 overview_category:
@@ -15,14 +12,17 @@ installation_month: 11월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 삼성물산 래미안 yttz 홍보관
-cover_image: /assets/img/portfolio/01_현장전경.webp
+cover_image: /assets/img/portfolio/5xj1ivl26o.webp
 gallery:
-  - /assets/img/portfolio/02_홍보관내부.webp
-  - /assets/img/portfolio/03_LED화면.webp
-  - /assets/img/portfolio/04_측면전경-2.webp
-  - /assets/img/portfolio/05_운영모습.webp
-  - /assets/img/portfolio/06_송출화면.webp
-  - /assets/img/portfolio/07_홍보관전체.webp
+  - /assets/img/portfolio/md1zfxqs28.webp
+  - /assets/img/portfolio/kejndxbqg6.webp
+  - /assets/img/portfolio/wv2sbh08ng.webp
+  - /assets/img/portfolio/ir4s651dej.webp
+  - /assets/img/portfolio/0p4gaqej4n.webp
+  - /assets/img/portfolio/aotmtx2ozl.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T15:14:21+09:00'
 ---
 
 ## 현장 소개
