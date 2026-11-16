@@ -1,8 +1,5 @@
 ---
 title: KCC건설 본사 사내강연회
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-14T16:44:10+09:00
 slug: kcc건설본사사내강연회
 post_date: 2026-10-14T16:41:00+09:00
 overview_category:
@@ -19,6 +16,9 @@ cover_image: /assets/img/portfolio/ye958xybdp.webp
 gallery:
   - /assets/img/portfolio/kpbfpxx1vn.webp
   - /assets/img/portfolio/zafadwnytu.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T14:48:27+09:00'
 ---
 
 ## 현장 소개
