@@ -1,8 +1,5 @@
 ---
 title: 삼성물산 건설부문 2026 Partners' Day
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-02T15:50:37+09:00
 slug: 삼성물산건설부문2026partnersday
 post_date: 2026-10-02T15:46:00+09:00
 overview_category:
@@ -15,15 +12,18 @@ installation_month: 03월
 installation_solution: 시스템 운영
 installation_solution_custom: ''
 installation_project: 삼성물산 건설부문 2026 partner's day
-cover_image: /assets/img/portfolio/01_무대전경-1.webp
+cover_image: /assets/img/portfolio/imgfyhx750.webp
 gallery:
-  - /assets/img/portfolio/02_객석에서본무대.webp
-  - /assets/img/portfolio/03_행사장전경.webp
-  - /assets/img/portfolio/04_타이틀화면.webp
-  - /assets/img/portfolio/05_메인화면.webp
-  - /assets/img/portfolio/06_운영데스크.webp
-  - /assets/img/portfolio/07_메인화면근접.webp
-  - /assets/img/portfolio/08_프로그램화면.webp
+  - /assets/img/portfolio/wlm9d9ridy.webp
+  - /assets/img/portfolio/nrswcu4e9u.webp
+  - /assets/img/portfolio/uohwf88n6d.webp
+  - /assets/img/portfolio/lwwkqedjm0.webp
+  - /assets/img/portfolio/i2w0an3fbv.webp
+  - /assets/img/portfolio/bol4p57kj8.webp
+  - /assets/img/portfolio/s0cmqf3o81.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T14:33:18+09:00'
 ---
 
 ## 아트홀 무대 중앙에 세운 행사용 LED 스크린
