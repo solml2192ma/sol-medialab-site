@@ -1,17 +1,29 @@
 ---
-slug: 후아유whoau
 title: 후아유(WHO.A.U)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-21T15:44:42+09:00
+slug: 후아유whoau
 post_date: 2026-10-21T15:43:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 현대백화점 판교
-cover_image: /assets/img/portfolio/avmwi8gfwb.webp
+installation_region_selected: 경기도 성남시
+installation_year: 2025년
+installation_month: 06월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: 후아유 팝업스토어
+cover_image: /assets/img/portfolio/08_로고화면.webp
 gallery:
-  - /assets/img/portfolio/8xpcg7to45.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-21T15:44:42+09:00'
+  - /assets/img/portfolio/01_전경.webp
+  - /assets/img/portfolio/02_설치과정.webp
+  - /assets/img/portfolio/03_콘텐츠송출.webp
+  - /assets/img/portfolio/04_화면전체.webp
+  - /assets/img/portfolio/05_영상구현.webp
+  - /assets/img/portfolio/06_항공영상.webp
+  - /assets/img/portfolio/07_측면.webp
 ---
 
 ## 프로젝트 개요
