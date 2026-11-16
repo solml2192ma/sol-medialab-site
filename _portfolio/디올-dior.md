@@ -1,4 +1,5 @@
 ---
+slug: 디올dior
 title: 디올(Dior)
 post_date: 2026-11-16T14:56:00+09:00
 overview_category:
@@ -15,6 +16,9 @@ gallery:
   - /assets/img/portfolio/05_영상점등.webp
   - /assets/img/portfolio/03_정면화면.webp
   - /assets/img/portfolio/04_측면전경-1.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T15:07:08+09:00'
 ---
 
 ## 프로젝트 개요
