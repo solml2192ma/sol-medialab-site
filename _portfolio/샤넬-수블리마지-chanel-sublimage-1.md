@@ -1,8 +1,5 @@
 ---
 title: 샤넬 수블리마지 (CHANEL SUBLIMAGE)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-26T12:03:02+09:00
 slug: 샤넬수블리마지chanelsublimage1
 post_date: 2026-10-26T12:02:00+09:00
 overview_category:
@@ -18,10 +15,13 @@ installation_project: 수플리마지 샤넬 팝업스토어
 cover_image: /assets/img/portfolio/xj7pz7vwrf.webp
 gallery:
   - /assets/img/portfolio/6id52szagp.webp
-  - /assets/img/portfolio/04_로고콘텐츠.webp
-  - /assets/img/portfolio/05_콘텐츠송출2.webp
-  - /assets/img/portfolio/07_제품콘텐츠.webp
-  - /assets/img/portfolio/08_측면전경-1.webp
+  - /assets/img/portfolio/ntausnwaf2.webp
+  - /assets/img/portfolio/xlwr3s0w9u.webp
+  - /assets/img/portfolio/rg6r0xz927.webp
+  - /assets/img/portfolio/mkb22bivqk.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T17:27:08+09:00'
 ---
 
 ## 현장 개요
