@@ -12,10 +12,10 @@ installation_month: 07월
 installation_solution: 유지 보수
 installation_solution_custom: ''
 installation_project: 프로세서 교체
-cover_image: /assets/img/portfolio/fl1xw9hfyk.webp
 gallery:
-  - /assets/img/portfolio/mqu1571les.webp
-  - /assets/img/portfolio/k85izh9jdk.webp
+  - '/assets/img/portfolio/fl1xw9hfyk.webp'
+  - '/assets/img/portfolio/mqu1571les.webp'
+  - '/assets/img/portfolio/k85izh9jdk.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T17:44:53+09:00'

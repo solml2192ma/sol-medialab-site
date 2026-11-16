@@ -12,15 +12,15 @@ installation_month: 08월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 샤넬 수블리마지 VIP 워크샵
-cover_image: /assets/img/portfolio/w5i1kt113y.webp
 gallery:
-  - /assets/img/portfolio/fbnsncjwgc.webp
-  - /assets/img/portfolio/w8bszl5ten.webp
-  - /assets/img/portfolio/vwwrbn1vyq.webp
-  - /assets/img/portfolio/yn0j2qqem1.webp
-  - /assets/img/portfolio/ghj6q4buc1.webp
-  - /assets/img/portfolio/1vky5ydx40.webp
-  - /assets/img/portfolio/bnbhhsarfo.webp
+  - '/assets/img/portfolio/w5i1kt113y.webp'
+  - '/assets/img/portfolio/fbnsncjwgc.webp'
+  - '/assets/img/portfolio/w8bszl5ten.webp'
+  - '/assets/img/portfolio/vwwrbn1vyq.webp'
+  - '/assets/img/portfolio/yn0j2qqem1.webp'
+  - '/assets/img/portfolio/ghj6q4buc1.webp'
+  - '/assets/img/portfolio/1vky5ydx40.webp'
+  - '/assets/img/portfolio/bnbhhsarfo.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T16:11:14+09:00'

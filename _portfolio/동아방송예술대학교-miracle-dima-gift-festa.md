@@ -12,16 +12,16 @@ installation_month: 10월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 동아방송예술대학교 가을축제 miracle dima gift festa 2026
-cover_image: /assets/img/portfolio/srpgnjgopm.webp
 gallery:
-  - /assets/img/portfolio/ce86zjshrj.webp
-  - /assets/img/portfolio/xmxdklklzf.webp
-  - /assets/img/portfolio/up6xb1jkzh.webp
-  - /assets/img/portfolio/euerlsiuah.webp
-  - /assets/img/portfolio/hjuxfugaab.webp
-  - /assets/img/portfolio/hjuxfugaab.webp
-  - /assets/img/portfolio/qww4xkdytu.webp
-  - /assets/img/portfolio/9ngbymgkee.webp
+  - '/assets/img/portfolio/srpgnjgopm.webp'
+  - '/assets/img/portfolio/ce86zjshrj.webp'
+  - '/assets/img/portfolio/xmxdklklzf.webp'
+  - '/assets/img/portfolio/up6xb1jkzh.webp'
+  - '/assets/img/portfolio/euerlsiuah.webp'
+  - '/assets/img/portfolio/hjuxfugaab.webp'
+  - '/assets/img/portfolio/hjuxfugaab.webp'
+  - '/assets/img/portfolio/qww4xkdytu.webp'
+  - '/assets/img/portfolio/9ngbymgkee.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T16:38:05+09:00'

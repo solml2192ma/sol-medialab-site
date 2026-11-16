@@ -11,11 +11,11 @@ installation_month: 06월
 installation_solution: 70인치 미만 모니터 사이니지
 installation_solution_custom: ''
 installation_project: 샤넬 코스메틱 (Chanel) 팝업 스토어
-cover_image: /assets/img/portfolio/9w4cxhh3yv.webp
 gallery:
-  - /assets/img/portfolio/g9y99ywhup.webp
-  - /assets/img/portfolio/3j6hi4bgr8.webp
-  - /assets/img/portfolio/7s11t5xdeh.webp
+  - '/assets/img/portfolio/9w4cxhh3yv.webp'
+  - '/assets/img/portfolio/g9y99ywhup.webp'
+  - '/assets/img/portfolio/3j6hi4bgr8.webp'
+  - '/assets/img/portfolio/7s11t5xdeh.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T17:42:20+09:00'

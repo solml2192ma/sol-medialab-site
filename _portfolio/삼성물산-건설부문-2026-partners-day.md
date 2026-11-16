@@ -12,15 +12,15 @@ installation_month: 03월
 installation_solution: 시스템 운영
 installation_solution_custom: ''
 installation_project: 삼성물산 건설부문 2026 partner's day
-cover_image: /assets/img/portfolio/imgfyhx750.webp
 gallery:
-  - /assets/img/portfolio/wlm9d9ridy.webp
-  - /assets/img/portfolio/nrswcu4e9u.webp
-  - /assets/img/portfolio/uohwf88n6d.webp
-  - /assets/img/portfolio/lwwkqedjm0.webp
-  - /assets/img/portfolio/i2w0an3fbv.webp
-  - /assets/img/portfolio/bol4p57kj8.webp
-  - /assets/img/portfolio/s0cmqf3o81.webp
+  - '/assets/img/portfolio/imgfyhx750.webp'
+  - '/assets/img/portfolio/wlm9d9ridy.webp'
+  - '/assets/img/portfolio/nrswcu4e9u.webp'
+  - '/assets/img/portfolio/uohwf88n6d.webp'
+  - '/assets/img/portfolio/lwwkqedjm0.webp'
+  - '/assets/img/portfolio/i2w0an3fbv.webp'
+  - '/assets/img/portfolio/bol4p57kj8.webp'
+  - '/assets/img/portfolio/s0cmqf3o81.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T14:33:18+09:00'

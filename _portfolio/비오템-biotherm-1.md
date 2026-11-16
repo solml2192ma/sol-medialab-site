@@ -11,11 +11,11 @@ installation_month: 08월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 비오템 (Biotherm) 팝업 스토어
-cover_image: /assets/img/portfolio/dndagksbma.webp
 gallery:
-  - /assets/img/portfolio/n8yhrn0jvu.webp
-  - /assets/img/portfolio/s96xgk4j5b.webp
-  - /assets/img/portfolio/hbdbmkxshc.webp
+  - '/assets/img/portfolio/dndagksbma.webp'
+  - '/assets/img/portfolio/n8yhrn0jvu.webp'
+  - '/assets/img/portfolio/s96xgk4j5b.webp'
+  - '/assets/img/portfolio/hbdbmkxshc.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T17:18:06+09:00'

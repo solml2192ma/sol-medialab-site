@@ -12,9 +12,9 @@ installation_month: 05월
 installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: KRA CUP CSIJ-B Seoul
-cover_image: /assets/img/portfolio/obsd0usfga.webp
 gallery:
-  - /assets/img/portfolio/vjh8r887bj.webp
+  - '/assets/img/portfolio/obsd0usfga.webp'
+  - '/assets/img/portfolio/vjh8r887bj.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T17:58:38+09:00'

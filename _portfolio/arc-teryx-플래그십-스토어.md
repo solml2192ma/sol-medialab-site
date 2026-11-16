@@ -12,10 +12,10 @@ installation_month: 04월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 매장행사
-cover_image: /assets/img/portfolio/nj2uwsbwcw.webp
 gallery:
-  - /assets/img/portfolio/njl16z5jvr.webp
-  - /assets/img/portfolio/h7ceo8hsw1.webp
+  - '/assets/img/portfolio/nj2uwsbwcw.webp'
+  - '/assets/img/portfolio/njl16z5jvr.webp'
+  - '/assets/img/portfolio/h7ceo8hsw1.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T18:24:59+09:00'

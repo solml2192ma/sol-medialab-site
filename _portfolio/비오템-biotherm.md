@@ -11,11 +11,11 @@ installation_month: 08월
 installation_solution: 70인치 이상 대형 모니터 사이니지
 installation_solution_custom: ''
 installation_project: 비오템 (Biotherm) 팝업 스토어
-cover_image: /assets/img/portfolio/sq0u3x9u6y.webp
 gallery:
-  - /assets/img/portfolio/tkebyowdag.webp
-  - /assets/img/portfolio/kl6ibkf2o7.webp
-  - /assets/img/portfolio/81l5wfgbbp.webp
+  - '/assets/img/portfolio/sq0u3x9u6y.webp'
+  - '/assets/img/portfolio/tkebyowdag.webp'
+  - '/assets/img/portfolio/kl6ibkf2o7.webp'
+  - '/assets/img/portfolio/81l5wfgbbp.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T17:15:00+09:00'

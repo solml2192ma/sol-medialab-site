@@ -12,12 +12,12 @@ installation_month: 03월
 installation_solution: Flexible 곡면형 커브드 LED전광판
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/aclxpm0k2p.webp
 gallery:
-  - /assets/img/portfolio/e4ervh19m7.webp
-  - /assets/img/portfolio/anux5mj9rg.webp
-  - /assets/img/portfolio/rqdi2i1w6x.webp
-  - /assets/img/portfolio/45yecc46dz.webp
+  - '/assets/img/portfolio/aclxpm0k2p.webp'
+  - '/assets/img/portfolio/e4ervh19m7.webp'
+  - '/assets/img/portfolio/anux5mj9rg.webp'
+  - '/assets/img/portfolio/rqdi2i1w6x.webp'
+  - '/assets/img/portfolio/45yecc46dz.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T14:36:19+09:00'

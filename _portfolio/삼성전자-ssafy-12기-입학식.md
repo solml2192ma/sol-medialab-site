@@ -11,11 +11,11 @@ installation_month: 07월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 삼성전자 SSAFY 12기 입학식
-cover_image: /assets/img/portfolio/7zvn0acpc4.webp
 gallery:
-  - /assets/img/portfolio/onc51mjduz.webp
-  - /assets/img/portfolio/9hsje949kk.webp
-  - /assets/img/portfolio/hvrwpwx4xi.webp
+  - '/assets/img/portfolio/7zvn0acpc4.webp'
+  - '/assets/img/portfolio/onc51mjduz.webp'
+  - '/assets/img/portfolio/9hsje949kk.webp'
+  - '/assets/img/portfolio/hvrwpwx4xi.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-13T18:27:53+09:00'

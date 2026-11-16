@@ -12,14 +12,14 @@ installation_month: 05월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: sidex 2026 seoul night 서울치과협회
-cover_image: /assets/img/portfolio/rdbukqdlqp.webp
 gallery:
-  - /assets/img/portfolio/asnjtzit4n.webp
-  - /assets/img/portfolio/zut97mus12.webp
-  - /assets/img/portfolio/97ne6v2fvw.webp
-  - /assets/img/portfolio/vfhenyhna0.webp
-  - /assets/img/portfolio/06ys2959h4.webp
-  - /assets/img/portfolio/re4pw18ms9.webp
+  - '/assets/img/portfolio/rdbukqdlqp.webp'
+  - '/assets/img/portfolio/asnjtzit4n.webp'
+  - '/assets/img/portfolio/zut97mus12.webp'
+  - '/assets/img/portfolio/97ne6v2fvw.webp'
+  - '/assets/img/portfolio/vfhenyhna0.webp'
+  - '/assets/img/portfolio/06ys2959h4.webp'
+  - '/assets/img/portfolio/re4pw18ms9.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T16:32:37+09:00'

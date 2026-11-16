@@ -11,13 +11,12 @@ installation_year: 2024년
 installation_month: 11월
 installation_solution: P1 LED
 installation_project: 무신사 미샤 팝업스토어
-cover_image: /assets/img/portfolio/eo85e7on3d.webp
 gallery:
-  - /assets/img/portfolio/569xtk6h2o.webp
-  - /assets/img/portfolio/xhq0zc4rmp.webp
-  - /assets/img/portfolio/eo85e7on3d.webp
-  - /assets/img/portfolio/njfozxlzq6.webp
-  - /assets/img/portfolio/mvc82rb69y.webp
+  - '/assets/img/portfolio/eo85e7on3d.webp'
+  - '/assets/img/portfolio/569xtk6h2o.webp'
+  - '/assets/img/portfolio/xhq0zc4rmp.webp'
+  - '/assets/img/portfolio/njfozxlzq6.webp'
+  - '/assets/img/portfolio/mvc82rb69y.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'solml2192ma'
 last_human_edit: '2026-11-13T16:02:53+09:00'

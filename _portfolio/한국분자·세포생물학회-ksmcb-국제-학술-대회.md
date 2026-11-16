@@ -12,14 +12,14 @@ installation_month: 09월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 2025 한국분자세포생물학회 국제학술대회 ksmcb 2025 international conference 한국분자세포생물학회
-cover_image: /assets/img/portfolio/u28v96wvat.webp
 gallery:
-  - /assets/img/portfolio/tyyccc6dja.webp
-  - /assets/img/portfolio/wj9nvj5a7j.webp
-  - /assets/img/portfolio/qlovvv2lml.webp
-  - /assets/img/portfolio/qnmeenz5p1.webp
-  - /assets/img/portfolio/zsy8t348w6.webp
-  - /assets/img/portfolio/9rn0i9dpsq.webp
+  - '/assets/img/portfolio/u28v96wvat.webp'
+  - '/assets/img/portfolio/tyyccc6dja.webp'
+  - '/assets/img/portfolio/wj9nvj5a7j.webp'
+  - '/assets/img/portfolio/qlovvv2lml.webp'
+  - '/assets/img/portfolio/qnmeenz5p1.webp'
+  - '/assets/img/portfolio/zsy8t348w6.webp'
+  - '/assets/img/portfolio/9rn0i9dpsq.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T15:46:24+09:00'

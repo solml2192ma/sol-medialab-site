@@ -12,10 +12,10 @@ installation_month: 05월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 해상풍력 공동접속설비 추진 간담회및 MOU 협약식
-cover_image: /assets/img/portfolio/f8m51wztvt.webp
 gallery:
-  - /assets/img/portfolio/g5cg805jqw.webp
-  - /assets/img/portfolio/jvjo9dxfmi.webp
+  - '/assets/img/portfolio/f8m51wztvt.webp'
+  - '/assets/img/portfolio/g5cg805jqw.webp'
+  - '/assets/img/portfolio/jvjo9dxfmi.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T18:14:38+09:00'

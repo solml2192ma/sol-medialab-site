@@ -12,10 +12,10 @@ installation_month: 09월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: EENK 의류제품 프레젠테이션
-cover_image: /assets/img/portfolio/tz10ru1nqf.webp
 gallery:
-  - /assets/img/portfolio/o6gx5qsonu.webp
-  - /assets/img/portfolio/9aesf25leg.webp
+  - '/assets/img/portfolio/tz10ru1nqf.webp'
+  - '/assets/img/portfolio/o6gx5qsonu.webp'
+  - '/assets/img/portfolio/9aesf25leg.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-13T17:35:38+09:00'

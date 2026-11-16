@@ -12,9 +12,9 @@ installation_month: 05월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/q6hqf3iekx.webp
 gallery:
-  - /assets/img/portfolio/cez9yliu3j.webp
+  - '/assets/img/portfolio/q6hqf3iekx.webp'
+  - '/assets/img/portfolio/cez9yliu3j.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-13T17:16:54+09:00'

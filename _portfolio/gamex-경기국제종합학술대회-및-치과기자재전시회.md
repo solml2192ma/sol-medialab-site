@@ -11,11 +11,11 @@ installation_month: 09월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: GAMEX 경기국제종합학술대회 및 치과기자재전시회
-cover_image: /assets/img/portfolio/6hr40cfgao.webp
 gallery:
-  - /assets/img/portfolio/3l4mek1x94.webp
-  - /assets/img/portfolio/ufcypl36b5.webp
-  - /assets/img/portfolio/ksiwo60wg3.webp
+  - '/assets/img/portfolio/6hr40cfgao.webp'
+  - '/assets/img/portfolio/3l4mek1x94.webp'
+  - '/assets/img/portfolio/ufcypl36b5.webp'
+  - '/assets/img/portfolio/ksiwo60wg3.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-13T17:24:20+09:00'

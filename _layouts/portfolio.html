@@ -11,7 +11,9 @@
 <meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 140 }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-<meta property="og:image" content="{{ site.url }}{% if page.cover_image %}{{ page.cover_image }}{% else %}/assets/img/og-image.jpg{% endif %}">
+{% assign gallery_cover = page.gallery | first %}
+{% assign cover = page.cover_image | default: gallery_cover | default: '/assets/img/og-image.jpg' %}
+<meta property="og:image" content="{{ site.url }}{{ cover }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
@@ -118,7 +120,11 @@
         <img src="{{ site.baseurl }}{{ page.cover_image }}" alt="{{ page.title | escape }} 대표 사진">
         {% endif %}
         {% for img in gallery_images %}
+        {% if forloop.first and page.cover_image == nil %}
+        <img src="{{ site.baseurl }}{{ img }}" alt="{{ page.title | escape }} 대표 사진">
+        {% else %}
         <img src="{{ site.baseurl }}{{ img }}" alt="{{ page.title | escape }} 추가 사진 {{ forloop.index }}" loading="lazy" decoding="async">
+        {% endif %}
         {% endfor %}
       </div>
       <button class="case-gallery-arrow case-gallery-prev" type="button" aria-label="이전 사진" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>

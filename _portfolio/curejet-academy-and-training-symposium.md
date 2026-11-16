@@ -12,10 +12,10 @@ installation_month: 11월
 installation_solution: 시스템 운영
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/zi1dygkw8g.webp
 gallery:
-  - /assets/img/portfolio/1ps1zf9ght.webp
-  - /assets/img/portfolio/pml09dazpb.webp
+  - '/assets/img/portfolio/zi1dygkw8g.webp'
+  - '/assets/img/portfolio/1ps1zf9ght.webp'
+  - '/assets/img/portfolio/pml09dazpb.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T15:25:31+09:00'

@@ -12,14 +12,14 @@ installation_month: 10월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 한섬 코트클럽 팝업스토어
-cover_image: /assets/img/portfolio/rmuyylnrtg.webp
 gallery:
-  - /assets/img/portfolio/kfklg7a4wi.webp
-  - /assets/img/portfolio/1scwgyaj5m.webp
-  - /assets/img/portfolio/6iypkrvg4y.webp
-  - /assets/img/portfolio/oej3fb5ada.webp
-  - /assets/img/portfolio/lilfz2hth5.webp
-  - /assets/img/portfolio/zqvi05me3z.webp
+  - '/assets/img/portfolio/rmuyylnrtg.webp'
+  - '/assets/img/portfolio/kfklg7a4wi.webp'
+  - '/assets/img/portfolio/1scwgyaj5m.webp'
+  - '/assets/img/portfolio/6iypkrvg4y.webp'
+  - '/assets/img/portfolio/oej3fb5ada.webp'
+  - '/assets/img/portfolio/lilfz2hth5.webp'
+  - '/assets/img/portfolio/zqvi05me3z.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T15:45:03+09:00'

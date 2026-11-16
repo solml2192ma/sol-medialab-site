@@ -402,13 +402,12 @@ collections:
           - "유지 보수"
       - { label: "솔루션 직접 입력 (선택)", name: "installation_solution_custom", widget: "string", required: false, hint: "목록에 없는 솔루션을 입력해 주세요." }
       - { label: "프로젝트명 (선택)", name: "installation_project", widget: "string", required: false, hint: "행사명이나 프로젝트명을 입력해 주세요. 예시: 홍콩만찬리셉션" }
-      - { label: "대표 이미지", name: "cover_image", widget: "image" }
-      - label: "추가 사진 (선택)"
+      - label: "사진"
         name: "gallery"
         widget: "image"
         multiple: true
-        hint: "파일 선택 창에서 사진을 여러 장 선택해 한 번에 추가할 수 있습니다."
-        required: false
+        hint: "여러 장을 한 번에 추가할 수 있습니다. 목록의 첫 번째 사진이 대표 이미지입니다."
+        required: true
       - label: "상세 설명"
         name: "body"
         widget: "markdown"

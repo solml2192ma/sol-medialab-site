@@ -12,13 +12,13 @@ installation_month: 05월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: '로에베 본매장 전시 퍼즐: 10년의 아이콘'
-cover_image: /assets/img/portfolio/ph34nh3lxh.webp
 gallery:
-  - /assets/img/portfolio/eldvfk6ncr.webp
-  - /assets/img/portfolio/6ytjfaalz3.webp
-  - /assets/img/portfolio/bi510oym9v.webp
-  - /assets/img/portfolio/jum041dc7m.webp
-  - /assets/img/portfolio/l28xmtbspc.webp
+  - '/assets/img/portfolio/ph34nh3lxh.webp'
+  - '/assets/img/portfolio/eldvfk6ncr.webp'
+  - '/assets/img/portfolio/6ytjfaalz3.webp'
+  - '/assets/img/portfolio/bi510oym9v.webp'
+  - '/assets/img/portfolio/jum041dc7m.webp'
+  - '/assets/img/portfolio/l28xmtbspc.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T16:20:32+09:00'

@@ -12,12 +12,12 @@ installation_month: 06월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: FOOD SOLUTION FAIR
-cover_image: /assets/img/portfolio/um89q9tfhe.webp
 gallery:
-  - /assets/img/portfolio/xwn254riq0.webp
-  - /assets/img/portfolio/slgdghen5t.webp
-  - /assets/img/portfolio/v2mj2gdd8u.webp
-  - /assets/img/portfolio/9axwt6xyue.webp
+  - '/assets/img/portfolio/um89q9tfhe.webp'
+  - '/assets/img/portfolio/xwn254riq0.webp'
+  - '/assets/img/portfolio/slgdghen5t.webp'
+  - '/assets/img/portfolio/v2mj2gdd8u.webp'
+  - '/assets/img/portfolio/9axwt6xyue.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T17:49:23+09:00'

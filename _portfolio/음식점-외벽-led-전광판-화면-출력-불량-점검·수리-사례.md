@@ -11,10 +11,10 @@ installation_month: 11월
 installation_solution: 유지 보수
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/2h1z19e4ny.webp
 gallery:
-  - /assets/img/portfolio/xvh0bgvjzn.webp
-  - /assets/img/portfolio/18nly8zf2j.webp
+  - '/assets/img/portfolio/2h1z19e4ny.webp'
+  - '/assets/img/portfolio/xvh0bgvjzn.webp'
+  - '/assets/img/portfolio/18nly8zf2j.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T15:20:41+09:00'

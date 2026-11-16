@@ -6,10 +6,10 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/a57s1wfif7.webp
 gallery:
-  - /assets/img/portfolio/qmhe98s0g5.webp
-  - /assets/img/portfolio/y8hll6hwww.webp
+  - '/assets/img/portfolio/a57s1wfif7.webp'
+  - '/assets/img/portfolio/qmhe98s0g5.webp'
+  - '/assets/img/portfolio/y8hll6hwww.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'solml2192ma'
 last_human_edit: '2026-09-28T16:04:26+09:00'

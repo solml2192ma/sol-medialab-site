@@ -6,9 +6,9 @@ overview_category:
   - 공연·행사
 client: ''
 location: 송파 올림픽공원
-cover_image: /assets/img/portfolio/9zyddza21e.webp
 gallery:
-  - /assets/img/portfolio/135l2jl1ev.webp
+  - '/assets/img/portfolio/9zyddza21e.webp'
+  - '/assets/img/portfolio/135l2jl1ev.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-12T14:53:45+09:00'

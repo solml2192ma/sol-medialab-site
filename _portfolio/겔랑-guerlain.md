@@ -6,9 +6,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 잠실 롯데월드몰
-cover_image: /assets/img/portfolio/wd6b0mzvdk.webp
 gallery:
-  - /assets/img/portfolio/qfk6e4cx3j.webp
+  - '/assets/img/portfolio/wd6b0mzvdk.webp'
+  - '/assets/img/portfolio/qfk6e4cx3j.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-12T12:57:10+09:00'

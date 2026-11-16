@@ -12,11 +12,11 @@ installation_month: 05월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 2026 kia nz 20th anniversary dealer experience
-cover_image: /assets/img/portfolio/e7zr45608b.webp
 gallery:
-  - /assets/img/portfolio/lu17up59rs.webp
-  - /assets/img/portfolio/q6o03so6pr.webp
-  - /assets/img/portfolio/hk1o8b6fcn.webp
+  - '/assets/img/portfolio/e7zr45608b.webp'
+  - '/assets/img/portfolio/lu17up59rs.webp'
+  - '/assets/img/portfolio/q6o03so6pr.webp'
+  - '/assets/img/portfolio/hk1o8b6fcn.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T18:09:55+09:00'

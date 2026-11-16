@@ -12,11 +12,11 @@ installation_month: 10월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 컬리뷰티페스타 2024
-cover_image: /assets/img/portfolio/umdf70c5au.webp
 gallery:
-  - /assets/img/portfolio/txuyocb7em.webp
-  - /assets/img/portfolio/taqp2ozlf2.webp
-  - /assets/img/portfolio/5l4f20n153.webp
+  - '/assets/img/portfolio/umdf70c5au.webp'
+  - '/assets/img/portfolio/txuyocb7em.webp'
+  - '/assets/img/portfolio/taqp2ozlf2.webp'
+  - '/assets/img/portfolio/5l4f20n153.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T14:24:02+09:00'

@@ -12,11 +12,11 @@ installation_month: 07월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 블랑팡 (Blancpain) 팝업 스토어
-cover_image: /assets/img/portfolio/sglz5gue1m.webp
 gallery:
-  - /assets/img/portfolio/izd0jmlms9.webp
-  - /assets/img/portfolio/8ajjjgyu3q.webp
-  - /assets/img/portfolio/ov8qz5gf3l.webp
+  - '/assets/img/portfolio/sglz5gue1m.webp'
+  - '/assets/img/portfolio/izd0jmlms9.webp'
+  - '/assets/img/portfolio/8ajjjgyu3q.webp'
+  - '/assets/img/portfolio/ov8qz5gf3l.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-13T18:11:34+09:00'

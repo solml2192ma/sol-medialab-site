@@ -12,12 +12,12 @@ installation_month: 09월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/1xflegihza.webp
 gallery:
-  - /assets/img/portfolio/2sofyf7ybc.webp
-  - /assets/img/portfolio/uond77zzsh.webp
-  - /assets/img/portfolio/2yv9fxslr8.webp
-  - /assets/img/portfolio/haklw1c4bb.webp
+  - '/assets/img/portfolio/1xflegihza.webp'
+  - '/assets/img/portfolio/2sofyf7ybc.webp'
+  - '/assets/img/portfolio/uond77zzsh.webp'
+  - '/assets/img/portfolio/2yv9fxslr8.webp'
+  - '/assets/img/portfolio/haklw1c4bb.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T14:35:11+09:00'

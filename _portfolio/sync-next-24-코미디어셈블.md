@@ -11,11 +11,11 @@ installation_month: 08월
 installation_solution: 70인치 미만 모니터 사이니지
 installation_solution_custom: ''
 installation_project: sync next 24 코미디어셈블
-cover_image: /assets/img/portfolio/wib7j567b8.webp
 gallery:
-  - /assets/img/portfolio/g2h4625wkx.webp
-  - /assets/img/portfolio/eq93ys416j.webp
-  - /assets/img/portfolio/iqxqkw0333.webp
+  - '/assets/img/portfolio/wib7j567b8.webp'
+  - '/assets/img/portfolio/g2h4625wkx.webp'
+  - '/assets/img/portfolio/eq93ys416j.webp'
+  - '/assets/img/portfolio/iqxqkw0333.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-13T18:08:12+09:00'

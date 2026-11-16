@@ -12,14 +12,14 @@ installation_month: 10월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: sk네트웍스 나무엑스 팝업스토어
-cover_image: /assets/img/portfolio/9zm2j9v0u4.webp
 gallery:
-  - /assets/img/portfolio/jn6i4hgmdl.webp
-  - /assets/img/portfolio/osme2gx5uy.webp
-  - /assets/img/portfolio/rtrajfo7c7.webp
-  - /assets/img/portfolio/eq53sxw3wa.webp
-  - /assets/img/portfolio/o6kk4h3bbi.webp
-  - /assets/img/portfolio/w31ha3ayxb.webp
+  - '/assets/img/portfolio/9zm2j9v0u4.webp'
+  - '/assets/img/portfolio/jn6i4hgmdl.webp'
+  - '/assets/img/portfolio/osme2gx5uy.webp'
+  - '/assets/img/portfolio/rtrajfo7c7.webp'
+  - '/assets/img/portfolio/eq53sxw3wa.webp'
+  - '/assets/img/portfolio/o6kk4h3bbi.webp'
+  - '/assets/img/portfolio/w31ha3ayxb.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T15:33:02+09:00'

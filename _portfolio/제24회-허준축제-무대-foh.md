@@ -12,9 +12,9 @@ installation_month: 10월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 제24회 허준축제
-cover_image: /assets/img/portfolio/zholjqd6m0.webp
 gallery:
-  - /assets/img/portfolio/h6oy3zi5j4.webp
+  - '/assets/img/portfolio/zholjqd6m0.webp'
+  - '/assets/img/portfolio/h6oy3zi5j4.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T14:51:47+09:00'

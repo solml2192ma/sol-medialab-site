@@ -136,8 +136,10 @@
         {% assign match_count = match_count | plus: 1 %}
         <a class="portfolio-card" href="{{ site.baseurl }}{{ post.url }}">
           <div class="portfolio-card-media">
-            {% if post.cover_image %}
-            <img class="portfolio-card-image" src="{{ site.baseurl }}{{ post.cover_image }}" alt="{{ post.title }}">
+            {% assign gallery_cover = post.gallery | first %}
+            {% assign cover = post.cover_image | default: gallery_cover %}
+            {% if cover %}
+            <img class="portfolio-card-image" src="{{ site.baseurl }}{{ cover }}" alt="{{ post.title }}">
             {% endif %}
             {% if post.gallery and post.gallery.size > 0 %}
             <img class="portfolio-card-image portfolio-card-image--hover" src="{{ site.baseurl }}{{ post.gallery.first }}" alt="{{ post.title }}">

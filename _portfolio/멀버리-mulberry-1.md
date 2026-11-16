@@ -12,15 +12,15 @@ installation_month: 05월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 멀버리 팝업스토어
-cover_image: /assets/img/portfolio/aezbppyoi5.webp
 gallery:
-  - /assets/img/portfolio/g8rgsjcura.webp
-  - /assets/img/portfolio/6nm30ixb1w.webp
-  - /assets/img/portfolio/bn4cekxf2y.webp
-  - /assets/img/portfolio/t85x0jznv4.webp
-  - /assets/img/portfolio/8uq4g4z7yo.webp
-  - /assets/img/portfolio/7r18qszfwa.webp
-  - /assets/img/portfolio/nv1i17dgwq.webp
+  - '/assets/img/portfolio/aezbppyoi5.webp'
+  - '/assets/img/portfolio/g8rgsjcura.webp'
+  - '/assets/img/portfolio/6nm30ixb1w.webp'
+  - '/assets/img/portfolio/bn4cekxf2y.webp'
+  - '/assets/img/portfolio/t85x0jznv4.webp'
+  - '/assets/img/portfolio/8uq4g4z7yo.webp'
+  - '/assets/img/portfolio/7r18qszfwa.webp'
+  - '/assets/img/portfolio/nv1i17dgwq.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T18:21:36+09:00'

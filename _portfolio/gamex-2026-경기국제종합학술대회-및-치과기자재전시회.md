@@ -12,13 +12,13 @@ installation_month: 09월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: gamex 가멕스 2026 경기국제종합학술대회및 치과기자재전시회
-cover_image: /assets/img/portfolio/l6u095pel5.webp
 gallery:
-  - /assets/img/portfolio/afbuzqzs7v.webp
-  - /assets/img/portfolio/kw218m8kcq.webp
-  - /assets/img/portfolio/somlomwwcv.webp
-  - /assets/img/portfolio/lsrovnsczz.webp
-  - /assets/img/portfolio/drt4f8vjlw.webp
+  - '/assets/img/portfolio/l6u095pel5.webp'
+  - '/assets/img/portfolio/afbuzqzs7v.webp'
+  - '/assets/img/portfolio/kw218m8kcq.webp'
+  - '/assets/img/portfolio/somlomwwcv.webp'
+  - '/assets/img/portfolio/lsrovnsczz.webp'
+  - '/assets/img/portfolio/drt4f8vjlw.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T16:33:53+09:00'

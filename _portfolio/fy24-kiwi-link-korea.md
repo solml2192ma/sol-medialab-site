@@ -6,10 +6,10 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 중구 웨스틴조선 서울
-cover_image: /assets/img/portfolio/gkemu8ddcj.webp
 gallery:
-  - /assets/img/portfolio/08p8nj6nbs.webp
-  - /assets/img/portfolio/7m54jjvprg.webp
+  - '/assets/img/portfolio/gkemu8ddcj.webp'
+  - '/assets/img/portfolio/08p8nj6nbs.webp'
+  - '/assets/img/portfolio/7m54jjvprg.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-12T13:34:35+09:00'

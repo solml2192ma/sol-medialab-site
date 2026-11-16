@@ -6,11 +6,11 @@ overview_category:
   - 유지·보수
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/gmwyxus3h2.webp
 gallery:
-  - /assets/img/portfolio/itl43yokj4.webp
-  - /assets/img/portfolio/uwt156x0ff.webp
-  - /assets/img/portfolio/j154zc62uf.webp
+  - '/assets/img/portfolio/gmwyxus3h2.webp'
+  - '/assets/img/portfolio/itl43yokj4.webp'
+  - '/assets/img/portfolio/uwt156x0ff.webp'
+  - '/assets/img/portfolio/j154zc62uf.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'solml2192ma'
 last_human_edit: '2026-09-28T16:04:26+09:00'

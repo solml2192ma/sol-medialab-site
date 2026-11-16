@@ -12,13 +12,13 @@ installation_month: 02월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: TWS - 다시 만난 오늘 M/V 촬영
-cover_image: /assets/img/portfolio/ecewhvnuuj.webp
 gallery:
-  - /assets/img/portfolio/htho48rrlw.webp
-  - /assets/img/portfolio/2bthq2irkd.webp
-  - /assets/img/portfolio/w6gcuipob5.webp
-  - /assets/img/portfolio/z3e46jtwa4.webp
-  - /assets/img/portfolio/cgl3oekaf9.webp
+  - '/assets/img/portfolio/ecewhvnuuj.webp'
+  - '/assets/img/portfolio/htho48rrlw.webp'
+  - '/assets/img/portfolio/2bthq2irkd.webp'
+  - '/assets/img/portfolio/w6gcuipob5.webp'
+  - '/assets/img/portfolio/z3e46jtwa4.webp'
+  - '/assets/img/portfolio/cgl3oekaf9.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T16:33:41+09:00'

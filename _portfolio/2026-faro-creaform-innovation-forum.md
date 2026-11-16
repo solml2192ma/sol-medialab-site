@@ -12,10 +12,10 @@ installation_month: 09월
 installation_solution: 70인치 미만 모니터 사이니지
 installation_solution_custom: ''
 installation_project: 2026 faro creaform innovation forum
-cover_image: /assets/img/portfolio/hxnbnu10lf.webp
 gallery:
-  - /assets/img/portfolio/gdj3rkqnus.webp
-  - /assets/img/portfolio/jslvahm2e8.webp
+  - '/assets/img/portfolio/hxnbnu10lf.webp'
+  - '/assets/img/portfolio/gdj3rkqnus.webp'
+  - '/assets/img/portfolio/jslvahm2e8.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T17:11:46+09:00'

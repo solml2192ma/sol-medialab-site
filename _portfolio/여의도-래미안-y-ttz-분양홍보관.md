@@ -12,14 +12,14 @@ installation_month: 11월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 삼성물산 래미안 yttz 홍보관
-cover_image: /assets/img/portfolio/5xj1ivl26o.webp
 gallery:
-  - /assets/img/portfolio/md1zfxqs28.webp
-  - /assets/img/portfolio/kejndxbqg6.webp
-  - /assets/img/portfolio/wv2sbh08ng.webp
-  - /assets/img/portfolio/ir4s651dej.webp
-  - /assets/img/portfolio/0p4gaqej4n.webp
-  - /assets/img/portfolio/aotmtx2ozl.webp
+  - '/assets/img/portfolio/5xj1ivl26o.webp'
+  - '/assets/img/portfolio/md1zfxqs28.webp'
+  - '/assets/img/portfolio/kejndxbqg6.webp'
+  - '/assets/img/portfolio/wv2sbh08ng.webp'
+  - '/assets/img/portfolio/ir4s651dej.webp'
+  - '/assets/img/portfolio/0p4gaqej4n.webp'
+  - '/assets/img/portfolio/aotmtx2ozl.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T15:14:21+09:00'

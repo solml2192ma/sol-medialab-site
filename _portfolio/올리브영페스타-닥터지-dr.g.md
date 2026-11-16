@@ -12,15 +12,15 @@ installation_month: 05월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 2025올리브영페스타 닥터지 부스
-cover_image: /assets/img/portfolio/vc4w9294wh.webp
 gallery:
-  - /assets/img/portfolio/mg4psi7drl.webp
-  - /assets/img/portfolio/j1zpzgqjdv.webp
-  - /assets/img/portfolio/09gyjq8o4x.webp
-  - /assets/img/portfolio/umbkgb1b0c.webp
-  - /assets/img/portfolio/sav1r7qjxi.webp
-  - /assets/img/portfolio/wsk0befzy2.webp
-  - /assets/img/portfolio/c86p4mm9l1.webp
+  - '/assets/img/portfolio/vc4w9294wh.webp'
+  - '/assets/img/portfolio/mg4psi7drl.webp'
+  - '/assets/img/portfolio/j1zpzgqjdv.webp'
+  - '/assets/img/portfolio/09gyjq8o4x.webp'
+  - '/assets/img/portfolio/umbkgb1b0c.webp'
+  - '/assets/img/portfolio/sav1r7qjxi.webp'
+  - '/assets/img/portfolio/wsk0befzy2.webp'
+  - '/assets/img/portfolio/c86p4mm9l1.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T16:15:14+09:00'

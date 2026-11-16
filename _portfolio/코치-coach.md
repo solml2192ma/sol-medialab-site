@@ -6,10 +6,10 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수
-cover_image: /assets/img/portfolio/9neoca9p87.webp
 gallery:
-  - /assets/img/portfolio/94mb2kt5k7.webp
-  - /assets/img/portfolio/k524si0h2f.webp
+  - '/assets/img/portfolio/9neoca9p87.webp'
+  - '/assets/img/portfolio/94mb2kt5k7.webp'
+  - '/assets/img/portfolio/k524si0h2f.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-12T13:09:36+09:00'

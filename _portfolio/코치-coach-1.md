@@ -12,15 +12,15 @@ installation_month: 01월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 코치 팝업스토어
-cover_image: /assets/img/portfolio/aoxta5ywza.webp
 gallery:
-  - /assets/img/portfolio/rpgy8rmoz1.webp
-  - /assets/img/portfolio/nvasjwxun8.webp
-  - /assets/img/portfolio/yzpy7j5kic.webp
-  - /assets/img/portfolio/pjrdep0udz.webp
-  - /assets/img/portfolio/j9fpne1pe0.webp
-  - /assets/img/portfolio/2bmvf72vzh.webp
-  - /assets/img/portfolio/ozk06euv0h.webp
+  - '/assets/img/portfolio/aoxta5ywza.webp'
+  - '/assets/img/portfolio/rpgy8rmoz1.webp'
+  - '/assets/img/portfolio/nvasjwxun8.webp'
+  - '/assets/img/portfolio/yzpy7j5kic.webp'
+  - '/assets/img/portfolio/pjrdep0udz.webp'
+  - '/assets/img/portfolio/j9fpne1pe0.webp'
+  - '/assets/img/portfolio/2bmvf72vzh.webp'
+  - '/assets/img/portfolio/ozk06euv0h.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T17:31:20+09:00'

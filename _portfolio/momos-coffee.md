@@ -10,13 +10,13 @@ installation_region: 부산 해운대
 installation_month: 2024년10월
 installation_solution: P2mm LED전광판
 installation_project: 부산 디자인 페스티벌 모모스커피
-cover_image: /assets/img/portfolio/8n7kjtb2qu.webp
 gallery:
-  - /assets/img/portfolio/00mqdo45oc.webp
-  - /assets/img/portfolio/llxcv5abuw.webp
-  - /assets/img/portfolio/w8dgmwsdsi.webp
-  - /assets/img/portfolio/4t65ye58yd.webp
-  - /assets/img/portfolio/zvf0r6wbay.webp
+  - '/assets/img/portfolio/8n7kjtb2qu.webp'
+  - '/assets/img/portfolio/00mqdo45oc.webp'
+  - '/assets/img/portfolio/llxcv5abuw.webp'
+  - '/assets/img/portfolio/w8dgmwsdsi.webp'
+  - '/assets/img/portfolio/4t65ye58yd.webp'
+  - '/assets/img/portfolio/zvf0r6wbay.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T16:09:11+09:00'

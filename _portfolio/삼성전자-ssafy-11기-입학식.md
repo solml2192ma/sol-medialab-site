@@ -6,9 +6,9 @@ overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 역삼 멀티캠퍼스
-cover_image: /assets/img/portfolio/u7psmqi9yj.webp
 gallery:
-  - /assets/img/portfolio/7llchq8ib6.webp
+  - '/assets/img/portfolio/u7psmqi9yj.webp'
+  - '/assets/img/portfolio/7llchq8ib6.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-12T14:42:55+09:00'

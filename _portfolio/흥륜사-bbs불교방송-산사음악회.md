@@ -11,10 +11,10 @@ installation_month: 09월
 installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: 흥륜사 산사 음악회
-cover_image: /assets/img/portfolio/69u5h4ce8n.webp
 gallery:
-  - /assets/img/portfolio/a37rb7n8gw.webp
-  - /assets/img/portfolio/80ooagpv8i.webp
+  - '/assets/img/portfolio/69u5h4ce8n.webp'
+  - '/assets/img/portfolio/a37rb7n8gw.webp'
+  - '/assets/img/portfolio/80ooagpv8i.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-13T17:29:27+09:00'

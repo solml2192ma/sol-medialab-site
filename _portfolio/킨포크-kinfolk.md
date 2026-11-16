@@ -12,10 +12,10 @@ installation_month: 07월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 킨포크 팝업스토어
-cover_image: /assets/img/portfolio/5dzcchanfx.webp
 gallery:
-  - /assets/img/portfolio/mvmc0v019u.webp
-  - /assets/img/portfolio/7ccw8m64p4.webp
+  - '/assets/img/portfolio/5dzcchanfx.webp'
+  - '/assets/img/portfolio/mvmc0v019u.webp'
+  - '/assets/img/portfolio/7ccw8m64p4.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T17:43:25+09:00'

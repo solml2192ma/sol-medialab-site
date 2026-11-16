@@ -11,12 +11,12 @@ installation_month: 07월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/2td5eboazx.webp
 gallery:
-  - /assets/img/portfolio/gsdtzdynbg.webp
-  - /assets/img/portfolio/umz202nyfh.webp
-  - /assets/img/portfolio/hf2c2vpnew.webp
-  - /assets/img/portfolio/r2qwq6hh1o.webp
+  - '/assets/img/portfolio/2td5eboazx.webp'
+  - '/assets/img/portfolio/gsdtzdynbg.webp'
+  - '/assets/img/portfolio/umz202nyfh.webp'
+  - '/assets/img/portfolio/hf2c2vpnew.webp'
+  - '/assets/img/portfolio/r2qwq6hh1o.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T12:30:00+09:00'

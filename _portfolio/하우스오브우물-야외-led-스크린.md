@@ -12,9 +12,9 @@ installation_month: 09월
 installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: 하우스오브우물 행사
-cover_image: /assets/img/portfolio/cjnit3w1pq.webp
 gallery:
-  - /assets/img/portfolio/c8hw8497vq.webp
+  - '/assets/img/portfolio/cjnit3w1pq.webp'
+  - '/assets/img/portfolio/c8hw8497vq.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T17:09:42+09:00'

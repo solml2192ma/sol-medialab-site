@@ -6,9 +6,9 @@ overview_category:
   - 유지·보수
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/owdm5lc4eq.webp
 gallery:
-  - /assets/img/portfolio/gta7fqj9xg.webp
+  - '/assets/img/portfolio/owdm5lc4eq.webp'
+  - '/assets/img/portfolio/gta7fqj9xg.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-10-26T12:30:13+09:00'

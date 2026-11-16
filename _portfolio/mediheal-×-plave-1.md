@@ -12,14 +12,14 @@ installation_month: 03월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 메디힐x플레이브 팝업스토어
-cover_image: /assets/img/portfolio/8v4xgmwhgb.webp
 gallery:
-  - /assets/img/portfolio/wsagasrj88.webp
-  - /assets/img/portfolio/l5r8hbe23r.webp
-  - /assets/img/portfolio/2jdufgqp1d.webp
-  - /assets/img/portfolio/2hefwf372c.webp
-  - /assets/img/portfolio/siaf542h6r.webp
-  - /assets/img/portfolio/fjjh2zehzq.webp
+  - '/assets/img/portfolio/8v4xgmwhgb.webp'
+  - '/assets/img/portfolio/wsagasrj88.webp'
+  - '/assets/img/portfolio/l5r8hbe23r.webp'
+  - '/assets/img/portfolio/2jdufgqp1d.webp'
+  - '/assets/img/portfolio/2hefwf372c.webp'
+  - '/assets/img/portfolio/siaf542h6r.webp'
+  - '/assets/img/portfolio/fjjh2zehzq.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T17:23:42+09:00'

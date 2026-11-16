@@ -6,9 +6,9 @@ overview_category:
   - 공연·행사
 client: ''
 location: 종로구 세운광장
-cover_image: /assets/img/portfolio/82vp6wyw5f.webp
 gallery:
-  - /assets/img/portfolio/k7bjko9y5z.webp
+  - '/assets/img/portfolio/82vp6wyw5f.webp'
+  - '/assets/img/portfolio/k7bjko9y5z.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-11T13:02:32+09:00'

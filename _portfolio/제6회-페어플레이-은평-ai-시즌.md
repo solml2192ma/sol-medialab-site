@@ -12,12 +12,12 @@ installation_month: 08월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 2025 제6회 은평구 청소년 e스포츠 대회 페어플레이 은평
-cover_image: /assets/img/portfolio/kny1xh18cl.webp
 gallery:
-  - /assets/img/portfolio/rydglu3uz4.webp
-  - /assets/img/portfolio/suhpiuziyh.webp
-  - /assets/img/portfolio/3z0gpruupo.webp
-  - /assets/img/portfolio/dhvsvp85q3.webp
+  - '/assets/img/portfolio/kny1xh18cl.webp'
+  - '/assets/img/portfolio/rydglu3uz4.webp'
+  - '/assets/img/portfolio/suhpiuziyh.webp'
+  - '/assets/img/portfolio/3z0gpruupo.webp'
+  - '/assets/img/portfolio/dhvsvp85q3.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T16:04:53+09:00'

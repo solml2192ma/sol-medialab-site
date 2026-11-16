@@ -11,11 +11,11 @@ installation_month: 09월
 installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 디올(Dior) 팝업 스토어
-cover_image: /assets/img/portfolio/ibrncsd6qu.webp
 gallery:
-  - /assets/img/portfolio/31a1rglcs8.webp
-  - /assets/img/portfolio/bonwieomhr.webp
-  - /assets/img/portfolio/8k7wna5stv.webp
+  - '/assets/img/portfolio/ibrncsd6qu.webp'
+  - '/assets/img/portfolio/31a1rglcs8.webp'
+  - '/assets/img/portfolio/bonwieomhr.webp'
+  - '/assets/img/portfolio/8k7wna5stv.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T15:07:08+09:00'

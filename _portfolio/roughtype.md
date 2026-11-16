@@ -12,14 +12,14 @@ installation_month: 04월
 installation_solution: Flexible 곡면형 커브드 LED전광판
 installation_solution_custom: ''
 installation_project: 로타입 팝업스토어
-cover_image: /assets/img/portfolio/auqvdd8e4j.webp
 gallery:
-  - /assets/img/portfolio/kiha838xdt.webp
-  - /assets/img/portfolio/l4m5o4kgly.webp
-  - /assets/img/portfolio/3os59kfloz.webp
-  - /assets/img/portfolio/d658xowevz.webp
-  - /assets/img/portfolio/tx7g0ofvz5.webp
-  - /assets/img/portfolio/bs45f1q60d.webp
+  - '/assets/img/portfolio/auqvdd8e4j.webp'
+  - '/assets/img/portfolio/kiha838xdt.webp'
+  - '/assets/img/portfolio/l4m5o4kgly.webp'
+  - '/assets/img/portfolio/3os59kfloz.webp'
+  - '/assets/img/portfolio/d658xowevz.webp'
+  - '/assets/img/portfolio/tx7g0ofvz5.webp'
+  - '/assets/img/portfolio/bs45f1q60d.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T14:27:49+09:00'

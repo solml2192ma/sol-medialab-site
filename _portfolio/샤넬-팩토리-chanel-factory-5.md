@@ -6,10 +6,10 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수동 에스팩토리
-cover_image: /assets/img/portfolio/7jikh7r7xu.webp
 gallery:
-  - /assets/img/portfolio/gfrinf09uy.webp
-  - /assets/img/portfolio/kckko0z8l0.webp
+  - '/assets/img/portfolio/7jikh7r7xu.webp'
+  - '/assets/img/portfolio/gfrinf09uy.webp'
+  - '/assets/img/portfolio/kckko0z8l0.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'solml2192ma'
 last_human_edit: '2026-09-28T16:04:26+09:00'

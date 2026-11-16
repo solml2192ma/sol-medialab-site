@@ -11,11 +11,11 @@ installation_month: 09월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 나스(NARS) 팝업 스토어
-cover_image: /assets/img/portfolio/v98xq0mpdj.webp
 gallery:
-  - /assets/img/portfolio/594qhwtk61.webp
-  - /assets/img/portfolio/9wtxxurpyz.webp
-  - /assets/img/portfolio/3uxk18ywfo.webp
+  - '/assets/img/portfolio/v98xq0mpdj.webp'
+  - '/assets/img/portfolio/594qhwtk61.webp'
+  - '/assets/img/portfolio/9wtxxurpyz.webp'
+  - '/assets/img/portfolio/3uxk18ywfo.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-13T17:01:13+09:00'

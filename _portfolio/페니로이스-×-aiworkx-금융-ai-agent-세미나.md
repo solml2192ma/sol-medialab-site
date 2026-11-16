@@ -12,10 +12,10 @@ installation_month: 09월
 installation_solution: ''
 installation_solution_custom: ''
 installation_project: 금융 ai agent 세미나 페니로이스 ai웍크엑스
-cover_image: /assets/img/portfolio/gdutrul8lj.webp
 gallery:
-  - /assets/img/portfolio/872dkfnizj.webp
-  - /assets/img/portfolio/k38kzy01pk.webp
+  - '/assets/img/portfolio/gdutrul8lj.webp'
+  - '/assets/img/portfolio/872dkfnizj.webp'
+  - '/assets/img/portfolio/k38kzy01pk.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T17:20:07+09:00'

@@ -11,11 +11,11 @@ installation_month: 09월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 스스로 그대로 청년명상노래 콘테스트
-cover_image: /assets/img/portfolio/ljaic8rgtd.webp
 gallery:
-  - /assets/img/portfolio/qixt2gm6lm.webp
-  - /assets/img/portfolio/osigm065ur.webp
-  - /assets/img/portfolio/squere12gl.webp
+  - '/assets/img/portfolio/ljaic8rgtd.webp'
+  - '/assets/img/portfolio/qixt2gm6lm.webp'
+  - '/assets/img/portfolio/osigm065ur.webp'
+  - '/assets/img/portfolio/squere12gl.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-13T17:34:41+09:00'

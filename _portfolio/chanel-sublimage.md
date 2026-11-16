@@ -6,9 +6,9 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/ns9sz7ce01.webp
 gallery:
-  - /assets/img/portfolio/lsnohstyqv.webp
+  - '/assets/img/portfolio/ns9sz7ce01.webp'
+  - '/assets/img/portfolio/lsnohstyqv.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'solml2192ma'
 last_human_edit: '2026-09-28T16:04:26+09:00'

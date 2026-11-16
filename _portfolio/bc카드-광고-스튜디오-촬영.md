@@ -6,10 +6,10 @@ overview_category:
   - 방송·촬영
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/8i44qrea9p.webp
 gallery:
-  - /assets/img/portfolio/4e7swpwafv.webp
-  - /assets/img/portfolio/qwb55i1oyw.webp
+  - '/assets/img/portfolio/8i44qrea9p.webp'
+  - '/assets/img/portfolio/4e7swpwafv.webp'
+  - '/assets/img/portfolio/qwb55i1oyw.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'solml2192ma'
 last_human_edit: '2026-09-28T16:04:26+09:00'

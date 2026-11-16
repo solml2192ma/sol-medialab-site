@@ -12,13 +12,13 @@ installation_month: 03월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 수플리마지 샤넬 팝업스토어
-cover_image: /assets/img/portfolio/xj7pz7vwrf.webp
 gallery:
-  - /assets/img/portfolio/6id52szagp.webp
-  - /assets/img/portfolio/ntausnwaf2.webp
-  - /assets/img/portfolio/xlwr3s0w9u.webp
-  - /assets/img/portfolio/rg6r0xz927.webp
-  - /assets/img/portfolio/mkb22bivqk.webp
+  - '/assets/img/portfolio/xj7pz7vwrf.webp'
+  - '/assets/img/portfolio/6id52szagp.webp'
+  - '/assets/img/portfolio/ntausnwaf2.webp'
+  - '/assets/img/portfolio/xlwr3s0w9u.webp'
+  - '/assets/img/portfolio/rg6r0xz927.webp'
+  - '/assets/img/portfolio/mkb22bivqk.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T17:27:08+09:00'

@@ -6,8 +6,8 @@ overview_category:
   - 제품 유통
 client: ''
 location: ''
-cover_image: /assets/img/portfolio/ptovrncdfo.webp
-gallery: []
+gallery:
+  - '/assets/img/portfolio/ptovrncdfo.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'solml2192ma'
 last_human_edit: '2026-09-28T16:04:26+09:00'

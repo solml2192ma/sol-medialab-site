@@ -10,14 +10,14 @@ installation_region: 서울시 강남구
 installation_month: 2024년11월
 installation_solution: P2 LED
 installation_project: 서울 디자인 페스티벌 모모스커피
-cover_image: /assets/img/portfolio/3ceggvn4bt.webp
 gallery:
-  - /assets/img/portfolio/u2c8x39beb.webp
-  - /assets/img/portfolio/n6r9ayqnhy.webp
-  - /assets/img/portfolio/ii4a2m5fhh.webp
-  - /assets/img/portfolio/6hg7qxzfq5.webp
-  - /assets/img/portfolio/1hmha41ua4.webp
-  - /assets/img/portfolio/5i0p00c43w.webp
+  - '/assets/img/portfolio/3ceggvn4bt.webp'
+  - '/assets/img/portfolio/u2c8x39beb.webp'
+  - '/assets/img/portfolio/n6r9ayqnhy.webp'
+  - '/assets/img/portfolio/ii4a2m5fhh.webp'
+  - '/assets/img/portfolio/6hg7qxzfq5.webp'
+  - '/assets/img/portfolio/1hmha41ua4.webp'
+  - '/assets/img/portfolio/5i0p00c43w.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-13T15:58:32+09:00'

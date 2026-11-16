@@ -12,10 +12,10 @@ installation_month: 10월
 installation_solution: 시스템 운영
 installation_solution_custom: ''
 installation_project: agi시대 리터러시와 리더십 사내강연회
-cover_image: /assets/img/portfolio/ye958xybdp.webp
 gallery:
-  - /assets/img/portfolio/kpbfpxx1vn.webp
-  - /assets/img/portfolio/zafadwnytu.webp
+  - '/assets/img/portfolio/ye958xybdp.webp'
+  - '/assets/img/portfolio/kpbfpxx1vn.webp'
+  - '/assets/img/portfolio/zafadwnytu.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T14:48:27+09:00'

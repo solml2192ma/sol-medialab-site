@@ -11,12 +11,12 @@ installation_month: 05월
 installation_solution: 유지 보수
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/xi589bs0m3.webp
 gallery:
-  - /assets/img/portfolio/497g6e5et5.webp
-  - /assets/img/portfolio/hjiqsq71fx.webp
-  - /assets/img/portfolio/ch8rt9t5xf.webp
-  - /assets/img/portfolio/javzczviis.webp
+  - '/assets/img/portfolio/xi589bs0m3.webp'
+  - '/assets/img/portfolio/497g6e5et5.webp'
+  - '/assets/img/portfolio/hjiqsq71fx.webp'
+  - '/assets/img/portfolio/ch8rt9t5xf.webp'
+  - '/assets/img/portfolio/javzczviis.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'hongbj123-create'
 last_human_edit: '2026-11-16T16:27:02+09:00'

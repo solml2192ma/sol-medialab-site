@@ -13,12 +13,12 @@ installation_month: 12월
 installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 삼성 청년sw아카데미 11기 수료식
-cover_image: /assets/img/portfolio/7mwvq54a21.webp
 gallery:
-  - /assets/img/portfolio/7mivxrjw3r.webp
-  - /assets/img/portfolio/pjd7j8vfth.webp
-  - /assets/img/portfolio/q5we8faczi.webp
-  - /assets/img/portfolio/2d3gops7nd.webp
+  - '/assets/img/portfolio/7mwvq54a21.webp'
+  - '/assets/img/portfolio/7mivxrjw3r.webp'
+  - '/assets/img/portfolio/pjd7j8vfth.webp'
+  - '/assets/img/portfolio/q5we8faczi.webp'
+  - '/assets/img/portfolio/2d3gops7nd.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'uuh09006'
 last_human_edit: '2026-11-16T17:32:24+09:00'

@@ -6,10 +6,10 @@ overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 대구 신세계백화점
-cover_image: /assets/img/portfolio/4spfj30bxd.webp
 gallery:
-  - /assets/img/portfolio/y74y4ro69p.webp
-  - /assets/img/portfolio/xb9cz2o26q.webp
+  - '/assets/img/portfolio/4spfj30bxd.webp'
+  - '/assets/img/portfolio/y74y4ro69p.webp'
+  - '/assets/img/portfolio/xb9cz2o26q.webp'
 post_author: 'hongbj123-create'
 last_human_editor: 'solml2192ma'
 last_human_edit: '2026-09-28T16:04:26+09:00'
