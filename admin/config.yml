@@ -406,7 +406,7 @@ collections:
         name: "gallery"
         widget: "image"
         multiple: true
-        hint: "여러 장을 한 번에 추가할 수 있습니다. 목록의 첫 번째 사진이 대표 이미지입니다."
+        hint: "여러 장을 한 번에 추가할 수 있습니다. 1번 사진은 사례 목록에 기본으로 보이는 **대표 썸네일**, 2번 사진은 마우스를 올리면 보이는 **부 썸네일**입니다."
         required: true
       - label: "상세 설명"
         name: "body"
