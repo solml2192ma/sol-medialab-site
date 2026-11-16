@@ -1,17 +1,25 @@
 ---
-slug: 샤넬수블리마지vip워크샵
 title: 샤넬 수블리마지 VIP 워크샵
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-19T15:55:23+09:00
+slug: 샤넬수블리마지vip워크샵
 post_date: 2026-10-19T15:54:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 풀만 앰배서더 서울 이스트폴
-cover_image: /assets/img/portfolio/mm054acxc4.webp
+installation_region_selected: 서울특별시 강남구
+installation_year: 2026년
+installation_month: 02월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: 샤넬 수블리마지 VIP 워크샵
+cover_image: /assets/img/portfolio/05_완성화면.webp
 gallery:
-  - /assets/img/portfolio/2bfew8n621.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-19T15:55:23+09:00'
+  - /assets/img/portfolio/06_완성화면.webp
+  - /assets/img/portfolio/07_완성화면.webp
+  - /assets/img/portfolio/08_완성화면-1.webp
 ---
 
 ## 프로젝트 개요
