@@ -1,17 +1,23 @@
 ---
+title: KRA컵 아시아 주니어 승마대회(KRA CUP CSIJ-B Seoul)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-10T17:08:28+09:00
 slug: 2024kra컵아시아주니어승마대회kracupcsijbseoul2024
-title: 2024 KRA컵 아시아 주니어 승마대회(KRA CUP CSIJ-B Seoul 2024)
 post_date: 2026-11-10T17:07:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 렛츠런파크 서울 승마경기장
+installation_region_selected: 경기도 과천시
+installation_year: 2024년
+installation_month: 05월
+installation_solution: P4mm LED전광판
+installation_solution_custom: ''
+installation_project: KRA CUP CSIJ-B Seoul
 cover_image: /assets/img/portfolio/obsd0usfga.webp
 gallery:
   - /assets/img/portfolio/vjh8r887bj.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-10T17:08:28+09:00'
 ---
 
 ## 현장 개요
