@@ -1,4 +1,5 @@
 ---
+slug: 샤넬코스메틱chanel
 title: 샤넬 코스메틱 (Chanel)
 post_date: 2026-11-16T17:30:00+09:00
 overview_category:
@@ -10,11 +11,14 @@ installation_month: 06월
 installation_solution: Flexible 곡면형 커브드 LED전광판
 installation_solution_custom: ''
 installation_project: 샤넬 코스메틱 (Chanel) 팝업 스토어
-cover_image: /assets/img/portfolio/04_모서리맞물림.webp
+cover_image: /assets/img/portfolio/98tzom8ohy.webp
 gallery:
-  - /assets/img/portfolio/07_점등화면.webp
-  - /assets/img/portfolio/06_코너측면.webp
-  - /assets/img/portfolio/05_화보송출.webp
+  - /assets/img/portfolio/wf9a3dd27z.webp
+  - /assets/img/portfolio/oh241svw3o.webp
+  - /assets/img/portfolio/mbwbbuex6n.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T17:35:25+09:00'
 ---
 
 # 성수동 샤넬 코스메틱 팝업 — 모서리를 돌아가는 P2 LED 커브드 화면
