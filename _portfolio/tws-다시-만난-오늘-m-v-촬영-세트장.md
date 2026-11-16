@@ -1,8 +1,5 @@
 ---
 title: TWS - 다시 만난 오늘 M/V 촬영 세트장
-post_author: hongbj123-create
-last_human_editor: uuh09006
-last_human_edit: 2026-11-16T14:57:27+09:00
 slug: tws다시만난오늘mv촬영세트장
 post_date: 2026-08-20T13:06:57+09:00
 overview_category:
@@ -20,8 +17,11 @@ gallery:
   - /assets/img/portfolio/05_스튜디오전경.webp
   - /assets/img/portfolio/06_조명세팅.webp
   - /assets/img/portfolio/03_보조스크린.webp
-  - /assets/img/portfolio/02_와이드스크린.webp
-  - /assets/img/portfolio/01_현장전경-3.webp
+  - /assets/img/portfolio/z3e46jtwa4.webp
+  - /assets/img/portfolio/cgl3oekaf9.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-16T16:33:41+09:00'
 ---
 
 **카메라 앞에 세울 수 있는 화면인가?**
