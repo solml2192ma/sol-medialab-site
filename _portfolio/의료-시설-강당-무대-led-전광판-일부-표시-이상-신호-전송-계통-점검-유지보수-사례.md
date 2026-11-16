@@ -1,4 +1,5 @@
 ---
+slug: 의료시설강당무대led전광판일부표시이상신호전송계통점검유지보수사례
 title: 의료 시설 강당 무대 LED 전광판 일부 표시 이상, 신호 전송 계통 점검  유지보수 사례
 post_date: 2026-11-16T16:25:00+09:00
 overview_category:
@@ -10,12 +11,15 @@ installation_month: 05월
 installation_solution: 유지 보수
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/03_작업전_구역별표시이상.webp
+cover_image: /assets/img/portfolio/xi589bs0m3.webp
 gallery:
-  - /assets/img/portfolio/02_작업전_화면표시이상.webp
-  - /assets/img/portfolio/01_작업전_화면전경.webp
-  - /assets/img/portfolio/08_정상화_화면근접.webp
-  - /assets/img/portfolio/07_정상화_화면전경.webp
+  - /assets/img/portfolio/497g6e5et5.webp
+  - /assets/img/portfolio/hjiqsq71fx.webp
+  - /assets/img/portfolio/ch8rt9t5xf.webp
+  - /assets/img/portfolio/javzczviis.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T16:27:02+09:00'
 ---
 
 기존에 운영 중이던 강당 무대 LED 전광판에서 화면 일부가 정상적으로 나오지 않는 문제가 생겨 **유지보수**를 진행했습니다. 솔미디어랩이 설치하지 않은 기존 LED 전광판이었고, 증상 확인부터 원인 파악, 장비 교체, 출력 확인까지 현장에서 단계별로 진행했습니다.
