@@ -1,17 +1,28 @@
 ---
 title: 로타입 (roughtype)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-02T14:38:05+09:00
 slug: roughtype
 post_date: 2026-08-20T17:20:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 더현대 서울
-cover_image: /assets/img/portfolio/4ziewt2muh.webp
+installation_region_selected: 서울특별시 영등포구
+installation_year: 2026년
+installation_month: 04월
+installation_solution: Flexible 곡면형 커브드 LED전광판
+installation_solution_custom: ''
+installation_project: 로타입 팝업스토어
+cover_image: /assets/img/portfolio/01_점등전경.webp
 gallery:
-  - /assets/img/portfolio/h659ruljvx.webp
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-02T14:38:05+09:00'
+  - /assets/img/portfolio/02_정면점등.webp
+  - /assets/img/portfolio/03_점등완성.webp
+  - /assets/img/portfolio/04_곡면화면근접.webp
+  - /assets/img/portfolio/05_현장원경.webp
+  - /assets/img/portfolio/06_설치완료측면.webp
+  - /assets/img/portfolio/07_설치완료정면.webp
 ---
 
 여의도 더현대서울에서 열린 패션 브랜드 로타입(roughtype) 팝업스토어에 **P2 플렉시블 LED**를 설치했습니다. 팝업의 가장 눈에 띄는 곡면 위에 화면을 올려, 매장에 들어서는 방문객의 시선이 가장 먼저 닿는 지점을 만든 프로젝트입니다.
