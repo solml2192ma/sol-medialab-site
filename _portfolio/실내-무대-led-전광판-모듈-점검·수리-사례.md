@@ -1,4 +1,5 @@
 ---
+slug: 실내무대led전광판모듈점검수리사례
 title: 실내 무대 LED 전광판 모듈 점검·수리 사례
 post_date: 2026-11-16T15:38:00+09:00
 overview_category:
@@ -10,11 +11,14 @@ installation_month: 08월
 installation_solution: 유지 보수
 installation_solution_custom: ''
 installation_project: ''
-cover_image: /assets/img/portfolio/01_점등상태점검.webp
+cover_image: /assets/img/portfolio/9xnivtf3bt.webp
 gallery:
-  - /assets/img/portfolio/05_점등확인.webp
-  - /assets/img/portfolio/03_모듈분리상세.webp
-  - /assets/img/portfolio/04_추가수리점등확인.webp
+  - /assets/img/portfolio/t2460x4x27.webp
+  - /assets/img/portfolio/r5yduhxxvy.webp
+  - /assets/img/portfolio/xejc3w68b1.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-16T15:40:21+09:00'
 ---
 
 ## 무대 LED 전광판, 곳곳이 꺼져 있었습니다
