@@ -1,16 +1,27 @@
 ---
 title: 삼성 전자 SSAFY 13기 수료식
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-12T13:56:16+09:00
 slug: ssafy
 post_date: 2026-08-20T16:18:00+09:00
 overview_category:
   - 컨퍼런스·세미나
 client: ''
 location: 역삼동 멀티캠퍼스
-cover_image: /assets/img/portfolio/f8hvciqt91.webp
-gallery: []
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-12T13:56:16+09:00'
+installation_region_selected: 서울특별시 강남구
+installation_year: 2025년
+installation_month: 12월
+installation_solution: P3mm LED전광판
+installation_solution_custom: ''
+installation_project: 삼성 청년 sw ai 아카데미 13기 수료식
+cover_image: /assets/img/portfolio/06_완성전경.webp
+gallery:
+  - /assets/img/portfolio/01_현장전경.webp
+  - /assets/img/portfolio/02_화면점검.webp
+  - /assets/img/portfolio/03_무대전경-1.webp
+  - /assets/img/portfolio/04_영상송출.webp
+  - /assets/img/portfolio/05_객석에서본화면.webp
 ---
 
 # 삼성 청년 SW·AI 아카데미
