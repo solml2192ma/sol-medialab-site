@@ -1,17 +1,29 @@
 ---
-slug: chanelsublimage
 title: 샤넬 수블리마지 (CHANEL SUBLIMAGE)
+post_author: hongbj123-create
+last_human_editor: solml2192ma
+last_human_edit: 2026-09-28T16:04:26+09:00
+slug: chanelsublimage
 post_date: 2026-08-20T16:51:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
-location: ''
+location: 엔헤이븐
+installation_region_selected: 서울특별시 강남구
+installation_year: 2026년
+installation_month: 02월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: 샤넬 수블리마지 VIP 워크샵
 gallery:
-  - '/assets/img/portfolio/ns9sz7ce01.webp'
-  - '/assets/img/portfolio/lsnohstyqv.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'solml2192ma'
-last_human_edit: '2026-09-28T16:04:26+09:00'
+  - /assets/img/portfolio/ns9sz7ce01.webp
+  - /assets/img/portfolio/lsnohstyqv.webp
+  - /assets/img/portfolio/03_현장전경.webp
+  - /assets/img/portfolio/04_완성화면.webp
+  - /assets/img/portfolio/05_완성화면.webp
+  - /assets/img/portfolio/06_완성화면.webp
+  - /assets/img/portfolio/07_완성화면.webp
+  - /assets/img/portfolio/08_완성화면.webp
 ---
 
 #### CHANEL SUBLIMAGE 팝업 — LED에서 가장 어려운 색은 검정입니다.
