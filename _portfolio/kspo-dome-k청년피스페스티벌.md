@@ -1,17 +1,26 @@
 ---
-slug: kspodomek청년피스페스티벌
 title: KSPO DOME K청년피스페스티벌
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-12T14:53:45+09:00
+slug: kspodomek청년피스페스티벌
 post_date: 2026-11-12T14:50:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 송파 올림픽공원
+installation_region_selected: 서울특별시 송파구
+installation_year: 2024년
+installation_month: 01월
+installation_solution: P4mm LED전광판
+installation_solution_custom: ''
+installation_project: KSPO DOME K청년피스페스티벌
 gallery:
-  - '/assets/img/portfolio/9zyddza21e.webp'
-  - '/assets/img/portfolio/135l2jl1ev.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-12T14:53:45+09:00'
+  - /assets/img/portfolio/01_현장전경.webp
+  - /assets/img/portfolio/02_측면전경.webp
+  - /assets/img/portfolio/03_객석전경.webp
+  - /assets/img/portfolio/04_운영데스크.webp
+  - /assets/img/portfolio/05_화면송출.webp
 ---
 
 ## 대형 실내 행사장을 채운 LED 전광판 렌탈
