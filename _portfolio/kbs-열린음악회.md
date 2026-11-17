@@ -1,17 +1,27 @@
 ---
-slug: kbs열린음악회
 title: KBS 열린음악회
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-12T13:51:34+09:00
+slug: kbs열린음악회
 post_date: 2026-11-12T13:49:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 여의도 KBS홀
+installation_region_selected: 서울특별시 영등포구
+installation_year: 2024년
+installation_month: 03월
+installation_solution: P2mm LED전광판
+installation_solution_custom: ''
+installation_project: 58회 납세자의날 기념 모범납세자와 함께하는 kbs열린음악회
 gallery:
-  - '/assets/img/portfolio/v0kb9ismay.webp'
-  - '/assets/img/portfolio/ytpububbt6.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-12T13:51:34+09:00'
+  - /assets/img/portfolio/03_콘텐츠송출.webp
+  - /assets/img/portfolio/04_로비전경.webp
+  - /assets/img/portfolio/05_행사장전경.webp
+  - /assets/img/portfolio/06_관람객현장.webp
+  - /assets/img/portfolio/07_현장운영.webp
+  - /assets/img/portfolio/08_기념촬영.webp
 ---
 
 제58회 납세자의 날을 기념해 열린 '모범납세자와 함께하는 KBS 열린음악회' 현장에 **실내용 LED 전광판을 렌탈**로 공급하고 운영했습니다. 공연장으로 들어서는 KBS홀 로비에서 행사를 알리고, 관람객이 기념 촬영을 하는 포토존 화면으로 쓰였습니다.
