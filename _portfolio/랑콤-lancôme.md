@@ -1,17 +1,27 @@
 ---
-slug: 랑콤lancôme
 title: 랑콤(Lancôme)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-12T13:25:55+09:00
+slug: 랑콤lancôme
 post_date: 2026-11-12T13:22:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 서울 성수
+installation_region_selected: 서울특별시 성동구
+installation_year: 2024년
+installation_month: 04월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: 랑콤 팝업스토어
 gallery:
-  - '/assets/img/portfolio/40d1223shs.webp'
-  - '/assets/img/portfolio/diqg3dmfvu.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-12T13:25:55+09:00'
+  - /assets/img/portfolio/03_콘텐츠송출.webp
+  - /assets/img/portfolio/04_세로화면구성.webp
+  - /assets/img/portfolio/05_완성전경.webp
+  - /assets/img/portfolio/06_브랜드공간.webp
+  - /assets/img/portfolio/07_완성측면.webp
+  - /assets/img/portfolio/08_제품전시와LED.webp
 ---
 
 ## 현장 개요
