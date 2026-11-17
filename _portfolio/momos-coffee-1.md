@@ -1,8 +1,5 @@
 ---
 title: 모모스 커피 (MOMOS COFFEE)
-post_author: hongbj123-create
-last_human_editor: solml2192ma
-last_human_edit: 2026-09-28T16:04:26+09:00
 slug: momoscoffee1
 post_date: 2026-08-20T12:54:00+09:00
 overview_category:
@@ -18,10 +15,13 @@ installation_project: ''
 gallery:
   - /assets/img/portfolio/a57s1wfif7.webp
   - /assets/img/portfolio/qmhe98s0g5.webp
-  - /assets/img/portfolio/04_야외운영.webp
-  - /assets/img/portfolio/01_정면화면.webp
-  - /assets/img/portfolio/02_측면화면.webp
-  - /assets/img/portfolio/03_콘텐츠송출.webp
+  - /assets/img/portfolio/s35qy2whj7.webp
+  - /assets/img/portfolio/5hla5o2ry8.webp
+  - /assets/img/portfolio/qs21mhgnx7.webp
+  - /assets/img/portfolio/jt2k64lofh.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-17T12:48:26+09:00'
 ---
 
 **카운터 앞, 팔을 뻗으면 닿는 거리에 선 화면**
