@@ -1,17 +1,29 @@
 ---
-slug: bbs불교방송연등회
 title: BBS 불교방송 연등회
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-11T13:02:32+09:00
+slug: bbs불교방송연등회
 post_date: 2026-11-11T13:01:00+09:00
 overview_category:
   - 공연·행사
 client: ''
 location: 종로구 세운광장
+installation_region_selected: 서울특별시 종로구
+installation_year: 2024년
+installation_month: 05월
+installation_solution: P3mm LED전광판
+installation_solution_custom: ''
+installation_project: bbs불교방송 연등회
 gallery:
-  - '/assets/img/portfolio/82vp6wyw5f.webp'
-  - '/assets/img/portfolio/k7bjko9y5z.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-11T13:02:32+09:00'
+  - /assets/img/portfolio/01_주간_정면전경.webp
+  - /assets/img/portfolio/02_주간_무대전경.webp
+  - /assets/img/portfolio/03_주간_행사진행.webp
+  - /assets/img/portfolio/04_주간_사회자진행.webp
+  - /assets/img/portfolio/05_야간_무대전경.webp
+  - /assets/img/portfolio/06_야간_진행모습.webp
+  - /assets/img/portfolio/07_야간_LED전경.webp
+  - /assets/img/portfolio/08_야간_우천전경.webp
 ---
 
 ## 프로젝트 개요
