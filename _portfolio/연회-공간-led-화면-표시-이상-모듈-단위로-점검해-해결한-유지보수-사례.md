@@ -1,17 +1,29 @@
 ---
-slug: 연회공간led화면표시이상모듈단위로점검해해결한유지보수사례
 title: 연회 공간 LED 화면 표시 이상, 모듈 단위로 점검해 해결한 유지보수 사례
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-26T12:30:13+09:00
+slug: 연회공간led화면표시이상모듈단위로점검해해결한유지보수사례
 post_date: 2026-10-26T12:29:00+09:00
 overview_category:
   - 유지·보수
 client: ''
-location: ''
+location: 더채플앳논현
+installation_region_selected: 서울특별시 강남구
+installation_year: 2025년
+installation_month: 01월
+installation_solution: 유지 보수
+installation_solution_custom: ''
+installation_project: 더채플앳논현 유지보수
 gallery:
-  - '/assets/img/portfolio/owdm5lc4eq.webp'
-  - '/assets/img/portfolio/gta7fqj9xg.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-26T12:30:13+09:00'
+  - /assets/img/portfolio/01_화면전경.webp
+  - /assets/img/portfolio/02_재생화면.webp
+  - /assets/img/portfolio/03_정면확인.webp
+  - /assets/img/portfolio/04_근접점검1.webp
+  - /assets/img/portfolio/05_근접점검2.webp
+  - /assets/img/portfolio/06_근접점검3.webp
+  - /assets/img/portfolio/07_재생화면확인.webp
+  - /assets/img/portfolio/08_화면전경확인.webp
 ---
 
 ## 어떤 문제가 있었나
