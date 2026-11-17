@@ -1,8 +1,5 @@
 ---
 title: 겔랑(GUERLAIN)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-12T12:57:10+09:00
 slug: 겔랑guerlain
 post_date: 2026-11-12T12:53:00+09:00
 overview_category:
@@ -16,14 +13,17 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 겔랑 팝업스토어
 gallery:
-  - /assets/img/portfolio/03_점등확인.webp
-  - /assets/img/portfolio/02_내부점등.webp
-  - /assets/img/portfolio/01_설치직후_벽면.webp
-  - /assets/img/portfolio/04_현장전경.webp
-  - /assets/img/portfolio/05_전경_정면.webp
-  - /assets/img/portfolio/06_정면전경.webp
-  - /assets/img/portfolio/07_화면정면.webp
-  - /assets/img/portfolio/08_화면과쇼케이스.webp
+  - /assets/img/portfolio/wlzw2hm6kn.webp
+  - /assets/img/portfolio/fr759dvh03.webp
+  - /assets/img/portfolio/iowj0ri6h6.webp
+  - /assets/img/portfolio/mt3cp12hb0.webp
+  - /assets/img/portfolio/myptyz67rc.webp
+  - /assets/img/portfolio/viv6k6tf9b.webp
+  - /assets/img/portfolio/8v7m4x5uf1.webp
+  - /assets/img/portfolio/f4fs15pj4s.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-17T13:20:19+09:00'
 ---
 
 ## 프로젝트 개요
