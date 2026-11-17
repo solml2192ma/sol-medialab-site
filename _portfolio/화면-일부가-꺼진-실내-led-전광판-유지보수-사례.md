@@ -1,8 +1,5 @@
 ---
 title: 화면 일부가 꺼진 실내 LED 전광판 유지보수 사례
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-10-26T16:46:20+09:00
 slug: 화면일부가꺼진실내led전광판유지보수사례
 post_date: 2026-10-26T16:45:00+09:00
 overview_category:
@@ -16,13 +13,16 @@ installation_solution: 유지 보수
 installation_solution_custom: ''
 installation_project: 부르스타짐 유지보수
 gallery:
-  - /assets/img/portfolio/01_현장전경.webp
-  - /assets/img/portfolio/02_증상확인.webp
-  - /assets/img/portfolio/03_송출제어부.webp
-  - /assets/img/portfolio/04_프로세서점검.webp
-  - /assets/img/portfolio/05_재가동.webp
-  - /assets/img/portfolio/06_정상송출.webp
-  - /assets/img/portfolio/07_조치완료.webp
+  - /assets/img/portfolio/3y3hmb20xq.webp
+  - /assets/img/portfolio/gmfy8ceyn0.webp
+  - /assets/img/portfolio/zbmj84cmry.webp
+  - /assets/img/portfolio/w11n7f57dx.webp
+  - /assets/img/portfolio/u6t02ysy0b.webp
+  - /assets/img/portfolio/so3ch83oyk.webp
+  - /assets/img/portfolio/hifczotmao.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-17T13:53:01+09:00'
 ---
 
 피트니스 센터 운동 공간 정면 벽에 설치되어 운영 중이던 실내 LED 전광판에서 화면 일부가 나오지 않는 문제가 생겼습니다. 솔미디어랩이 현장에서 증상을 확인하고 원인을 찾아 정상 송출 상태로 되돌린 **유지보수 사례**입니다.
