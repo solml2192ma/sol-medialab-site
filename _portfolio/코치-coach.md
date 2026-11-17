@@ -1,8 +1,5 @@
 ---
 title: 코치 (COACH)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-12T13:09:36+09:00
 slug: 코치coach
 post_date: 2026-08-27T14:35:00+09:00
 overview_category:
@@ -19,6 +16,9 @@ gallery:
   - /assets/img/portfolio/9neoca9p87.webp
   - /assets/img/portfolio/94mb2kt5k7.webp
   - /assets/img/portfolio/k524si0h2f.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-17T13:21:58+09:00'
 ---
 
 # 코치(COACH) 성수 팝업스토어 — 노란 벽 옆에서도 색이 또렷한 1mm 피치 실내 LED를 설치했습니다
