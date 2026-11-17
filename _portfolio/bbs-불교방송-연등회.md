@@ -1,8 +1,5 @@
 ---
 title: BBS 불교방송 연등회
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-11T13:02:32+09:00
 slug: bbs불교방송연등회
 post_date: 2026-11-11T13:01:00+09:00
 overview_category:
@@ -24,6 +21,9 @@ gallery:
   - /assets/img/portfolio/06_야간_진행모습.webp
   - /assets/img/portfolio/07_야간_LED전경.webp
   - /assets/img/portfolio/08_야간_우천전경.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-17T13:10:55+09:00'
 ---
 
 ## 프로젝트 개요
