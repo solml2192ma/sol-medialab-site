@@ -1,17 +1,24 @@
 ---
-slug: 의료시설침수에의한led고장유지보수사례
 title: 의료시설 침수에 의한 LED 고장, 유지보수 사례
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-10-21T16:24:04+09:00
+slug: 의료시설침수에의한led고장유지보수사례
 post_date: 2026-10-21T16:22:00+09:00
 overview_category:
   - 유지·보수
 client: ''
-location: ''
+location: 아현메디컬
+installation_region_selected: 서울특별시 서대문구
+installation_year: 2025년
+installation_month: 07월
+installation_solution: 유지 보수
+installation_solution_custom: ''
+installation_project: 아현메디컬 수리
 gallery:
-  - '/assets/img/portfolio/saz0gbdscr.webp'
-  - '/assets/img/portfolio/6a92g3w1l1.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-10-21T16:24:04+09:00'
+  - /assets/img/portfolio/01_증상확인.webp
+  - /assets/img/portfolio/02_모듈탈거점검.webp
+  - /assets/img/portfolio/03_점검패턴확인.webp
 ---
 
 
