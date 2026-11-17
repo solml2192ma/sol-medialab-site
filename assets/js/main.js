@@ -152,15 +152,18 @@ if (portfolioSearchAllInput && portfolioGroupsRoot) {
     expanded: false,
   }));
   const groupsEmptyMsg = portfolioGroupsRoot.querySelector('[data-groups-empty]');
+  const searchMoreBtn = portfolioGroupsRoot.querySelector('[data-search-more]');
+  let searchExpanded = false;
 
-  const renderGroup = (group, matches) => {
+  const renderGroup = (group, matches, searchLimit = null) => {
     group.cards.forEach((card) => { card.style.display = 'none'; });
-    const visible = group.expanded ? matches : matches.slice(0, PORTFOLIO_GROUP_COLLAPSED_SIZE);
+    const limit = searchLimit ?? (group.expanded ? matches.length : PORTFOLIO_GROUP_COLLAPSED_SIZE);
+    const visible = matches.slice(0, limit);
     visible.forEach((card) => { card.style.display = ''; });
-    group.el.hidden = matches.length === 0;
+    group.el.hidden = visible.length === 0;
     if (group.countEl) group.countEl.textContent = `(${matches.length})`;
     if (group.moreBtn) {
-      const hidden = matches.length <= PORTFOLIO_GROUP_COLLAPSED_SIZE;
+      const hidden = searchLimit !== null || matches.length <= PORTFOLIO_GROUP_COLLAPSED_SIZE;
       group.moreBtn.hidden = hidden;
       if (!hidden) {
         group.moreBtn.textContent = group.expanded
@@ -177,12 +180,21 @@ if (portfolioSearchAllInput && portfolioGroupsRoot) {
 
   const runGroupedSearch = () => {
     const query = portfolioSearchAllInput.value.trim().toLowerCase();
-    let anyGroupVisible = false;
+    const searching = Boolean(query && searchMoreBtn);
+    let totalMatches = 0;
     groups.forEach((group) => {
-      group.expanded = false;
-      if (renderGroup(group, groupMatches(group, query))) anyGroupVisible = true;
+      const matches = groupMatches(group, query);
+      const limit = searchExpanded ? matches.length : Math.max(0, PORTFOLIO_GROUP_COLLAPSED_SIZE - totalMatches);
+      renderGroup(group, matches, searching ? limit : null);
+      totalMatches += matches.length;
     });
-    if (groupsEmptyMsg) groupsEmptyMsg.hidden = anyGroupVisible || groups.length === 0;
+    if (groupsEmptyMsg) groupsEmptyMsg.hidden = totalMatches > 0 || groups.length === 0;
+    if (searchMoreBtn) {
+      const remaining = totalMatches - PORTFOLIO_GROUP_COLLAPSED_SIZE;
+      searchMoreBtn.hidden = !searching || remaining <= 0;
+      searchMoreBtn.textContent = searchExpanded ? '접기' : `더보기 (${remaining})`;
+      searchMoreBtn.setAttribute('aria-expanded', String(searchExpanded));
+    }
   };
 
   groups.forEach((group) => {
@@ -194,7 +206,15 @@ if (portfolioSearchAllInput && portfolioGroupsRoot) {
     });
   });
 
-  portfolioSearchAllInput.addEventListener('input', runGroupedSearch);
+  searchMoreBtn?.addEventListener('click', () => {
+    searchExpanded = !searchExpanded;
+    runGroupedSearch();
+  });
+  portfolioSearchAllInput.addEventListener('input', () => {
+    searchExpanded = false;
+    groups.forEach((group) => { group.expanded = false; });
+    runGroupedSearch();
+  });
 
   const presetGroupQuery = new URLSearchParams(window.location.search).get('q');
   if (presetGroupQuery) portfolioSearchAllInput.value = presetGroupQuery;

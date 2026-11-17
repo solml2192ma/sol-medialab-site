@@ -1127,6 +1127,7 @@ section { position: relative; }
   color: #98A2B3;
 }
 .portfolio-search button:hover { color: #475467; }
+.portfolio-group-more[hidden] { display: none; }
 .portfolio-search-input,
 .portfolio-search input {
   border: 0;

@@ -1,0 +1,16 @@
+{%- assign ranks = site.data.portfolio_installation_rank -%}
+{%- capture ranked -%}
+  {%- for post in include.posts -%}
+    {%- assign filename = post.path | split: '/' | last -%}
+    {%- assign rank = ranks[filename] -%}
+    {%- if rank -%}{{ rank }}:{{ forloop.index0 }},{%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- for post in include.posts -%}
+  {%- assign filename = post.path | split: '/' | last -%}
+  {%- unless ranks[filename] -%}{{ forloop.index0 }},{%- endunless -%}
+{%- endfor -%}
+{%- assign ranked = ranked | split: ',' | sort -%}
+{%- for entry in ranked -%}
+  {{- entry | split: ':' | last -}},
+{%- endfor -%}
