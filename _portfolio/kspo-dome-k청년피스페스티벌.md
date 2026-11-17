@@ -1,8 +1,5 @@
 ---
 title: KSPO DOME K청년피스페스티벌
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-12T14:53:45+09:00
 slug: kspodomek청년피스페스티벌
 post_date: 2026-11-12T14:50:00+09:00
 overview_category:
@@ -16,11 +13,14 @@ installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: KSPO DOME K청년피스페스티벌
 gallery:
-  - /assets/img/portfolio/01_현장전경.webp
-  - /assets/img/portfolio/02_측면전경.webp
-  - /assets/img/portfolio/03_객석전경.webp
-  - /assets/img/portfolio/04_운영데스크.webp
-  - /assets/img/portfolio/05_화면송출.webp
+  - /assets/img/portfolio/gjz1ll0hu8.webp
+  - /assets/img/portfolio/aucrld221v.webp
+  - /assets/img/portfolio/bmz6bzh4bb.webp
+  - /assets/img/portfolio/rvfl6nbevd.webp
+  - /assets/img/portfolio/b5a7l3ag1i.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-17T13:37:05+09:00'
 ---
 
 ## 대형 실내 행사장을 채운 LED 전광판 렌탈
