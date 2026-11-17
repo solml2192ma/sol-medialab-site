@@ -1,8 +1,5 @@
 ---
 title: 2025 텔드컵 E-SPORTS 결승전
-post_author: hongbj123-create
-last_human_editor: uuh09006
-last_human_edit: 2026-11-16T17:10:47+09:00
 slug: 2025텔드컵esports결승전
 post_date: 2026-10-21T16:09:00+09:00
 overview_category:
@@ -22,6 +19,9 @@ gallery:
   - /assets/img/portfolio/tu3jeakjpk.webp
   - /assets/img/portfolio/3b38cgql9r.webp
   - /assets/img/portfolio/wqabe8q96i.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-11-17T13:59:39+09:00'
 ---
 
 ## 현장 소개
