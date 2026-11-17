@@ -1,8 +1,5 @@
 ---
 title: BBS 불교방송 연등회
-post_author: hongbj123-create
-last_human_editor: uuh09006
-last_human_edit: 2026-11-17T13:10:55+09:00
 slug: bbs불교방송연등회
 post_date: 2026-11-11T13:01:00+09:00
 overview_category:
@@ -16,14 +13,17 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: bbs불교방송 연등회
 gallery:
-  - /assets/img/portfolio/01_주간_정면전경.webp
-  - /assets/img/portfolio/02_주간_무대전경.webp
-  - /assets/img/portfolio/03_주간_행사진행.webp
-  - /assets/img/portfolio/04_주간_사회자진행.webp
-  - /assets/img/portfolio/05_야간_무대전경.webp
-  - /assets/img/portfolio/06_야간_진행모습.webp
-  - /assets/img/portfolio/08_야간_우천전경.webp
-  - /assets/img/portfolio/07_야간_LED전경.webp
+  - /assets/img/portfolio/xhlw9gdthx.webp
+  - /assets/img/portfolio/2vmdf2al5p.webp
+  - /assets/img/portfolio/zaqywi4xef.webp
+  - /assets/img/portfolio/4a7g5zzsuh.webp
+  - /assets/img/portfolio/kwe5fml9sw.webp
+  - /assets/img/portfolio/wdd0z53aag.webp
+  - /assets/img/portfolio/slo8sdcsa9.webp
+  - /assets/img/portfolio/zu9f5ok0eu.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-11-17T15:38:08+09:00'
 ---
 
 ## 프로젝트 개요
