@@ -1,4 +1,5 @@
 ---
+slug: 베루툼verutum
 title: 베루툼 (VERUTUM)
 post_date: 2026-11-17T13:31:00+09:00
 overview_category:
@@ -11,9 +12,12 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 베루툼 (VERUTUM)
 gallery:
-  - /assets/img/portfolio/02_입구정면.webp
-  - /assets/img/portfolio/03_LED화면.webp
-  - /assets/img/portfolio/01_매장전경.webp
+  - /assets/img/portfolio/lcxm9up409.webp
+  - /assets/img/portfolio/71b54p30bi.webp
+  - /assets/img/portfolio/cq6t1setfa.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-17T13:49:25+09:00'
 ---
 
 ## 현장 개요
