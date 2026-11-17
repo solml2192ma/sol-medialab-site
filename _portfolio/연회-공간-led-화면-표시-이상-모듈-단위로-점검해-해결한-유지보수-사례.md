@@ -1,8 +1,5 @@
 ---
 title: 강남 논현 예식장 led전광판 유지보수
-post_author: hongbj123-create
-last_human_editor: solml2192ma
-last_human_edit: 2026-11-17T15:34:26+09:00
 slug: 연회공간led화면표시이상모듈단위로점검해해결한유지보수사례
 post_date: 2026-10-26T12:29:00+09:00
 overview_category:
@@ -24,6 +21,9 @@ gallery:
   - /assets/img/portfolio/4hw1nqpfe9.webp
   - /assets/img/portfolio/pz1t13gv9r.webp
   - /assets/img/portfolio/blgopxuo3u.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'solml2192ma'
+last_human_edit: '2026-11-17T18:34:42+09:00'
 ---
 
 ## 어떤 문제가 있었나
