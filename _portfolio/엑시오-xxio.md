@@ -1,8 +1,5 @@
 ---
 title: 엑시오(XXIO)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-12T14:35:30+09:00
 slug: 엑시오xxio
 post_date: 2026-11-12T14:34:00+09:00
 overview_category:
@@ -16,12 +13,15 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/03_콘텐츠_하늘.webp
-  - /assets/img/portfolio/04_콘텐츠_골프장.webp
-  - /assets/img/portfolio/05_콘텐츠_드라이버.webp
-  - /assets/img/portfolio/06_콘텐츠_타구.webp
-  - /assets/img/portfolio/07_운영전경.webp
-  - /assets/img/portfolio/08_운영_콘텐츠.webp
+  - /assets/img/portfolio/elvwyp2omh.webp
+  - /assets/img/portfolio/1alu5rc3hn.webp
+  - /assets/img/portfolio/992j4a61nv.webp
+  - /assets/img/portfolio/o050ioh723.webp
+  - /assets/img/portfolio/k0ewt7g6qg.webp
+  - /assets/img/portfolio/e67ikrbed6.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-17T13:33:32+09:00'
 ---
 
 ## 팝업스토어 앞을 지나는 고객의 시선을 붙잡는 화면
