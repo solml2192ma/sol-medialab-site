@@ -1,18 +1,24 @@
 ---
 title: 코치 (COACH)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-12T13:09:36+09:00
 slug: 코치coach
 post_date: 2026-08-27T14:35:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 성수
+installation_region_selected: 서울특별시 광진구
+installation_year: 2024년
+installation_month: 04월
+installation_solution: P1mm LED전광판
+installation_solution_custom: ''
+installation_project: 코치 팝업스토어
 gallery:
-  - '/assets/img/portfolio/9neoca9p87.webp'
-  - '/assets/img/portfolio/94mb2kt5k7.webp'
-  - '/assets/img/portfolio/k524si0h2f.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-12T13:09:36+09:00'
+  - /assets/img/portfolio/9neoca9p87.webp
+  - /assets/img/portfolio/94mb2kt5k7.webp
+  - /assets/img/portfolio/k524si0h2f.webp
 ---
 
 # 코치(COACH) 성수 팝업스토어 — 노란 벽 옆에서도 색이 또렷한 1mm 피치 실내 LED를 설치했습니다
