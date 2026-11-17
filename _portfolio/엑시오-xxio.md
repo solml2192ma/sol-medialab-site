@@ -1,17 +1,27 @@
 ---
-slug: 엑시오xxio
 title: 엑시오(XXIO)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-12T14:35:30+09:00
+slug: 엑시오xxio
 post_date: 2026-11-12T14:34:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 신세계백화점 강남
+installation_region_selected: 서울특별시 서초구
+installation_year: 2024년
+installation_month: 02월
+installation_solution: P2mm LED전광판
+installation_solution_custom: ''
+installation_project: ''
 gallery:
-  - '/assets/img/portfolio/3cygrleocv.webp'
-  - '/assets/img/portfolio/pt26gph1ys.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-12T14:35:30+09:00'
+  - /assets/img/portfolio/03_콘텐츠_하늘.webp
+  - /assets/img/portfolio/04_콘텐츠_골프장.webp
+  - /assets/img/portfolio/05_콘텐츠_드라이버.webp
+  - /assets/img/portfolio/06_콘텐츠_타구.webp
+  - /assets/img/portfolio/07_운영전경.webp
+  - /assets/img/portfolio/08_운영_콘텐츠.webp
 ---
 
 ## 팝업스토어 앞을 지나는 고객의 시선을 붙잡는 화면
