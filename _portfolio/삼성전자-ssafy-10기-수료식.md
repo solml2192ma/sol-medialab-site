@@ -1,8 +1,5 @@
 ---
 title: 삼성전자 SSAFY 10기 수료식
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-12T13:58:33+09:00
 slug: 삼성전자ssafy10기수료식
 post_date: 2026-11-12T13:56:00+09:00
 overview_category:
@@ -16,13 +13,16 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: 삼성 청년sw아카데미 10기 수료식
 gallery:
-  - /assets/img/portfolio/01_무대정면.webp
-  - /assets/img/portfolio/02_콘텐츠송출.webp
-  - /assets/img/portfolio/03_진행현장.webp
-  - /assets/img/portfolio/04_무대근접.webp
-  - /assets/img/portfolio/05_무대측면.webp
-  - /assets/img/portfolio/06_화면구성.webp
-  - /assets/img/portfolio/07_객석후방.webp
+  - /assets/img/portfolio/5ts8mis2dq.webp
+  - /assets/img/portfolio/gjep889883.webp
+  - /assets/img/portfolio/n55oo535wo.webp
+  - /assets/img/portfolio/y0jje3gp7s.webp
+  - /assets/img/portfolio/n0famz1g61.webp
+  - /assets/img/portfolio/gzy5wxfwe8.webp
+  - /assets/img/portfolio/8r7dd74bcg.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-17T13:30:00+09:00'
 ---
 
 **수료식 무대 전면을 채운 대형 LED, 행사 기간 동안 렌탈로 함께했습니다.**
