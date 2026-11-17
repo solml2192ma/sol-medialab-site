@@ -1,8 +1,5 @@
 ---
 title: 랑콤(Lancôme)
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-12T13:25:55+09:00
 slug: 랑콤lancôme
 post_date: 2026-11-12T13:22:00+09:00
 overview_category:
@@ -16,12 +13,15 @@ installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 랑콤 팝업스토어
 gallery:
-  - /assets/img/portfolio/03_콘텐츠송출.webp
-  - /assets/img/portfolio/04_세로화면구성.webp
-  - /assets/img/portfolio/05_완성전경.webp
-  - /assets/img/portfolio/06_브랜드공간.webp
-  - /assets/img/portfolio/07_완성측면.webp
-  - /assets/img/portfolio/08_제품전시와LED.webp
+  - /assets/img/portfolio/9r7jsdgtbd.webp
+  - /assets/img/portfolio/0f5wq6j99j.webp
+  - /assets/img/portfolio/810u0mmpi0.webp
+  - /assets/img/portfolio/y87c3pm5a4.webp
+  - /assets/img/portfolio/ps6tdj5ev6.webp
+  - /assets/img/portfolio/wo5l2011p9.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-17T13:23:14+09:00'
 ---
 
 ## 현장 개요
