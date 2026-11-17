@@ -1,8 +1,5 @@
 ---
 title: 샤넬 (Chanel)
-post_author: hongbj123-create
-last_human_editor: solml2192ma
-last_human_edit: 2026-09-28T16:04:26+09:00
 slug: 샤넬chanel
 post_date: 2026-08-26T15:45:00+09:00
 overview_category:
@@ -19,9 +16,12 @@ gallery:
   - /assets/img/portfolio/mlun54qpgc.webp
   - /assets/img/portfolio/3jkocvt0so.webp
   - /assets/img/portfolio/qmywl2759k.webp
-  - /assets/img/portfolio/01_패널설치후.webp
-  - /assets/img/portfolio/03_송출확인.webp
-  - /assets/img/portfolio/05_화면근접.webp
+  - /assets/img/portfolio/g4htrzt34x.webp
+  - /assets/img/portfolio/kaeq037s3n.webp
+  - /assets/img/portfolio/awx10155tm.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-17T12:46:08+09:00'
 ---
 
 팝업스토어는 방문객이 문을 열고 들어서는 순간 인상이 정해집니다. 솔미디어랩은 서울 성수동에서 열린 샤넬 팝업스토어에 **실내용 LED 전광판**을 설치했습니다. 매장 안쪽 벽면을 따라 가로로 길게 이어지는 화면이 공간의 중심을 잡는 현장이었습니다.
