@@ -1,8 +1,5 @@
 ---
 title: FY24 KIWI LINK KOREA
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-12T13:34:35+09:00
 slug: fy24kiwilinkkorea
 post_date: 2026-08-27T14:55:00+09:00
 overview_category:
@@ -16,14 +13,17 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: kiwi link korea 2024 뉴질랜드 관광청
 gallery:
-  - /assets/img/portfolio/01_화면전경.webp
-  - /assets/img/portfolio/02_와이드화면.webp
-  - /assets/img/portfolio/03_브랜드화면.webp
-  - /assets/img/portfolio/04_연회장전경.webp
-  - /assets/img/portfolio/05_영상송출.webp
-  - /assets/img/portfolio/06_TV스탠드.webp
-  - /assets/img/portfolio/07_행사운영.webp
-  - /assets/img/portfolio/08_행사장세팅.webp
+  - /assets/img/portfolio/uja5tqxjh2.webp
+  - /assets/img/portfolio/6tlezsq0sk.webp
+  - /assets/img/portfolio/4ny4j2nw9j.webp
+  - /assets/img/portfolio/wdrq6r6wnn.webp
+  - /assets/img/portfolio/qxuhbcgazd.webp
+  - /assets/img/portfolio/aeyg229y9a.webp
+  - /assets/img/portfolio/sxpmkey77j.webp
+  - /assets/img/portfolio/u62azqct89.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'uuh09006'
+last_human_edit: '2026-11-17T13:27:28+09:00'
 ---
 
 ## 여행지가 곧 상품인 행사, 화면은 카탈로그입니다
