@@ -1,4 +1,5 @@
 ---
+slug: 그레일즈grailz
 title: 그레일즈(GRAILZ)
 post_date: 2026-11-23T14:22:00+09:00
 overview_category:
@@ -11,11 +12,14 @@ installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/05_화면송출.webp
-  - /assets/img/portfolio/02_현장세팅2.webp
-  - /assets/img/portfolio/03_세팅작업.webp
-  - /assets/img/portfolio/04_현장전경.webp
-  - /assets/img/portfolio/01_현장세팅1.webp
+  - /assets/img/portfolio/ne00xw3u35.webp
+  - /assets/img/portfolio/jgfjas7xnr.webp
+  - /assets/img/portfolio/rx0kz4e151.webp
+  - /assets/img/portfolio/chtj0onvu0.webp
+  - /assets/img/portfolio/5h2yqbbr4e.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T14:24:55+09:00'
 ---
 
 ## 현장 개요
