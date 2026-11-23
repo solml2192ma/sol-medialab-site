@@ -1,4 +1,5 @@
 ---
+slug: 삼성전자ssafy9기수료식
 title: 삼성전자 SSAFY 9기 수료식
 post_date: 2026-11-23T14:30:00+09:00
 overview_category:
@@ -11,14 +12,17 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/08_시상송출.webp
-  - /assets/img/portfolio/06_안내화면.webp
-  - /assets/img/portfolio/07_시상화면.webp
-  - /assets/img/portfolio/04_영상송출.webp
-  - /assets/img/portfolio/05_다분할영상.webp
-  - /assets/img/portfolio/02_LED화면근접.webp
-  - /assets/img/portfolio/03_송출테스트.webp
-  - /assets/img/portfolio/01_무대전경.webp
+  - /assets/img/portfolio/y7iwronzq1.webp
+  - /assets/img/portfolio/i5sfkypw7a.webp
+  - /assets/img/portfolio/cvk4tx9b4c.webp
+  - /assets/img/portfolio/uh30ghgtre.webp
+  - /assets/img/portfolio/4f7bka3gzd.webp
+  - /assets/img/portfolio/gwl5ydowtl.webp
+  - /assets/img/portfolio/tw67e1z83n.webp
+  - /assets/img/portfolio/f3vwi8d6xy.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T14:31:31+09:00'
 ---
 
 ## 현장 개요
