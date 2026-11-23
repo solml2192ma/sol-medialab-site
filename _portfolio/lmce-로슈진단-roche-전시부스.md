@@ -1,4 +1,5 @@
 ---
+slug: lmce로슈진단roche전시부스
 title: LMCE 로슈진단(Roche) 전시부스
 post_date: 2026-11-23T16:21:00+09:00
 overview_category:
@@ -11,10 +12,13 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/02_부스전경.webp
-  - /assets/img/portfolio/03_상단화면.webp
-  - /assets/img/portfolio/04_화면전체.webp
-  - /assets/img/portfolio/01_와이드화면.webp
+  - /assets/img/portfolio/m3depnkypj.webp
+  - /assets/img/portfolio/ymhhgyxoo0.webp
+  - /assets/img/portfolio/dmchqjzcsh.webp
+  - /assets/img/portfolio/zkmn8vms2f.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T16:23:11+09:00'
 ---
 
 ## 전시 부스 상단을 채운 실내 LED 전광판 렌탈
