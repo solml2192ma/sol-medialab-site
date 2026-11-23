@@ -1,4 +1,5 @@
 ---
+slug: 스마트라이프도시포럼국제심포지엄lx한국국토정보공사디지털트윈부스
 title: 스마트라이프도시포럼 국제 심포지엄 LX한국국토정보공사 디지털트윈 부스
 post_date: 2026-11-23T13:32:00+09:00
 overview_category:
@@ -11,11 +12,14 @@ installation_solution: 70인치 미만 모니터 사이니지
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/04_영상송출.webp
-  - /assets/img/portfolio/05_화면클로즈업.webp
-  - /assets/img/portfolio/02_로비전경.webp
-  - /assets/img/portfolio/03_스탠드거치.webp
-  - /assets/img/portfolio/01_부스전경.webp
+  - /assets/img/portfolio/0e2dl3528d.webp
+  - /assets/img/portfolio/vjemhgsowj.webp
+  - /assets/img/portfolio/a7bjakcmp4.webp
+  - /assets/img/portfolio/mhtci8trmo.webp
+  - /assets/img/portfolio/jl6nd214k3.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T13:36:00+09:00'
 ---
 
 국회의원회관 로비에서 열린 스마트라이프도시포럼 국제 심포지엄에서 LX한국국토정보공사 디지털트윈 부스에 65인치 TV 사이니지를 렌탈로 운영했습니다. 행사 기간 동안 부스를 찾는 관람객에게 디지털트윈 소개 영상을 보여주는 전시 디스플레이 역할을 맡았습니다.
