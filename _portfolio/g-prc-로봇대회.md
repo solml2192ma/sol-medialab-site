@@ -1,4 +1,5 @@
 ---
+slug: gprc로봇대회
 title: G-PRC 로봇대회
 post_date: 2026-11-23T17:54:00+09:00
 overview_category:
@@ -11,8 +12,11 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/01_전경.webp
-  - /assets/img/portfolio/02_근접전경.webp
+  - /assets/img/portfolio/h3dshsl011.webp
+  - /assets/img/portfolio/9ty2xudnau.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T17:55:00+09:00'
 ---
 
 ## 현장 소개
