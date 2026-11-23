@@ -1,4 +1,5 @@
 ---
+slug: 삼성전자ssafy9기입학식
 title: 삼성전자 SSAFY 9기 입학식
 post_date: 2026-11-23T13:17:00+09:00
 overview_category:
@@ -11,13 +12,16 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/02_오프닝타이틀.webp
-  - /assets/img/portfolio/08_마무리타이틀.webp
-  - /assets/img/portfolio/07_영상송출.webp
-  - /assets/img/portfolio/05_영상콘텐츠.webp
-  - /assets/img/portfolio/06_선배와의대화.webp
-  - /assets/img/portfolio/03_화상연결.webp
-  - /assets/img/portfolio/04_4분할연결.webp
+  - /assets/img/portfolio/b5wzbiigks.webp
+  - /assets/img/portfolio/8mdnjjin78.webp
+  - /assets/img/portfolio/pocqn2d0gy.webp
+  - /assets/img/portfolio/tx3iubahhp.webp
+  - /assets/img/portfolio/4727tzzzm0.webp
+  - /assets/img/portfolio/o1lg8mhqlu.webp
+  - /assets/img/portfolio/c65kbjx0ne.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T13:19:22+09:00'
 ---
 
 ## 현장 개요
