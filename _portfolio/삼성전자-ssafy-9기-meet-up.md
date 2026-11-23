@@ -1,4 +1,5 @@
 ---
+slug: 삼성전자ssafy9기meetup
 title: 삼성전자 SSAFY 9기 Meet Up
 post_date: 2026-11-23T14:13:00+09:00
 overview_category:
@@ -11,14 +12,17 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/03_행사진행.webp
-  - /assets/img/portfolio/01_현장전경.webp
-  - /assets/img/portfolio/07_발표.webp
-  - /assets/img/portfolio/08_발표무대.webp
-  - /assets/img/portfolio/05_질문토크.webp
-  - /assets/img/portfolio/06_현장사진슬라이드.webp
-  - /assets/img/portfolio/04_시상.webp
-  - /assets/img/portfolio/02_메인무대.webp
+  - /assets/img/portfolio/8jg1c8hpmi.webp
+  - /assets/img/portfolio/wnur1au71r.webp
+  - /assets/img/portfolio/dckdf6gkvf.webp
+  - /assets/img/portfolio/gs6caiw8n3.webp
+  - /assets/img/portfolio/6cwesbr6uw.webp
+  - /assets/img/portfolio/293is7z8db.webp
+  - /assets/img/portfolio/aej2iey0gj.webp
+  - /assets/img/portfolio/3dgr4ei1a7.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T14:17:04+09:00'
 ---
 
 ## 행사 개요
