@@ -1,4 +1,5 @@
 ---
+slug: 원음방송청년마음콘서트드림upgo
 title: 원음방송 청년마음콘서트 드림 UP! GO!
 post_date: 2026-11-23T15:18:00+09:00
 overview_category:
@@ -11,9 +12,12 @@ installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/01_무대전경.webp
-  - /assets/img/portfolio/02_공연장면.webp
-  - /assets/img/portfolio/03_현장세팅점검.webp
+  - /assets/img/portfolio/mbzygkhvh8.webp
+  - /assets/img/portfolio/zi5udlp9ju.webp
+  - /assets/img/portfolio/uoefsky075.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T15:19:42+09:00'
 ---
 
 ## 청년마음콘서트 '드림 UP! GO!' 현장
