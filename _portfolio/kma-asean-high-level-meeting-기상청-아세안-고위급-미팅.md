@@ -1,4 +1,5 @@
 ---
+slug: kmaaseanhighlevelmeeting기상청아세안고위급미팅
 title: KMA-ASEAN High-Level Meeting (기상청 아세안 고위급 미팅 )
 post_date: 2026-11-23T15:48:00+09:00
 overview_category:
@@ -11,9 +12,12 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/02_회의장전경.webp
-  - /assets/img/portfolio/03_회의진행.webp
-  - /assets/img/portfolio/01_LED화면세팅.webp
+  - /assets/img/portfolio/jo6cfutmf8.webp
+  - /assets/img/portfolio/2szyfq6hnt.webp
+  - /assets/img/portfolio/rliladnrvp.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T15:52:13+09:00'
 ---
 
 호텔 미팅룸 정면을 가득 채우는 실내 LED 화면과 연단 프롬프터 장비를 렌탈로 공급한 국제회의 현장입니다. 용산 그랜드하얏트호텔에서 열린 '기상청 아세안 고위급 미팅(KMA-ASEAN High-Level Meeting on International Development Cooperation)'에 솔미디어랩이 화면 장비 렌탈과 현장 운영을 맡았습니다.
