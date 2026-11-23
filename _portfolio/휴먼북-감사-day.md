@@ -1,4 +1,5 @@
 ---
+slug: 휴먼북감사day
 title: 휴먼북 감사 Day
 post_date: 2026-11-23T15:13:00+09:00
 overview_category:
@@ -11,9 +12,12 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/02_현장전경.webp
-  - /assets/img/portfolio/03_축하공연.webp
-  - /assets/img/portfolio/01_무대전경.webp
+  - /assets/img/portfolio/3wnfsi9wgw.webp
+  - /assets/img/portfolio/mcnivi4zwy.webp
+  - /assets/img/portfolio/3irzur55am.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T15:15:01+09:00'
 ---
 
 ## 현장 개요
