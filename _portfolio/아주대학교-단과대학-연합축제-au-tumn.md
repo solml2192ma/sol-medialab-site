@@ -1,4 +1,5 @@
 ---
+slug: 아주대학교단과대학연합축제autumn
 title: 아주대학교 단과대학 연합축제 AU:TUMN
 post_date: 2026-11-23T15:56:00+09:00
 overview_category:
@@ -11,8 +12,11 @@ installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/01_LED화면정면.webp
-  - /assets/img/portfolio/02_무대전경.webp
+  - /assets/img/portfolio/d0297hzykq.webp
+  - /assets/img/portfolio/v08ez5ab9k.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T15:58:48+09:00'
 ---
 
 ## 현장 소개
