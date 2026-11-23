@@ -1,4 +1,5 @@
 ---
+slug: 스마트라이프도시포럼국제심포지엄lx한국국토정보공사디지털트윈부스1
 title: 스마트라이프도시포럼 국제 심포지엄 LX한국국토정보공사 디지털트윈 부스
 post_date: 2026-11-23T13:40:00+09:00
 overview_category:
@@ -11,14 +12,17 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/05_측면구도.webp
-  - /assets/img/portfolio/06_연단_발표.webp
-  - /assets/img/portfolio/07_로비_전경.webp
-  - /assets/img/portfolio/08_화면_콘텐츠.webp
-  - /assets/img/portfolio/03_LED와TV구성.webp
-  - /assets/img/portfolio/04_상영콘텐츠.webp
-  - /assets/img/portfolio/02_LED화면_근접.webp
-  - /assets/img/portfolio/01_현장전경.webp
+  - /assets/img/portfolio/w2dy75ccac.webp
+  - /assets/img/portfolio/qj0ba6xnbl.webp
+  - /assets/img/portfolio/jhhjnn7rwc.webp
+  - /assets/img/portfolio/s454ow4vzj.webp
+  - /assets/img/portfolio/bl3bywlg6o.webp
+  - /assets/img/portfolio/hhed94zbo5.webp
+  - /assets/img/portfolio/nx0ytrpvku.webp
+  - /assets/img/portfolio/1tlyc7fhwb.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-23T13:41:02+09:00'
 ---
 
 실내 로비에 마련된 국제 심포지엄 전시 부스에 p2 LED 전광판과 TV 사이니지를 렌탈로 공급하고, 행사 기간 동안 현장 세팅부터 운영, 철수까지 지원한 사례입니다.
