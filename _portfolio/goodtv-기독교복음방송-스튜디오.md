@@ -1,4 +1,5 @@
 ---
+slug: goodtv기독교복음방송스튜디오
 title: GOODTV 기독교복음방송 스튜디오
 post_date: 2026-11-26T14:09:00+09:00
 overview_category:
@@ -11,14 +12,17 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/08_생방송현장.webp
-  - /assets/img/portfolio/06_생방송진행1.webp
-  - /assets/img/portfolio/07_생방송진행2.webp
-  - /assets/img/portfolio/03_스튜디오전경.webp
-  - /assets/img/portfolio/04_스튜디오세트.webp
-  - /assets/img/portfolio/05_방송준비.webp
-  - /assets/img/portfolio/01_세팅전경.webp
-  - /assets/img/portfolio/02_세팅완료.webp
+  - /assets/img/portfolio/78o7stfp1o.webp
+  - /assets/img/portfolio/das3k87ecw.webp
+  - /assets/img/portfolio/83g57s5x7n.webp
+  - /assets/img/portfolio/5c3lghvdmo.webp
+  - /assets/img/portfolio/kzvg9kbb4h.webp
+  - /assets/img/portfolio/329x2t1tgl.webp
+  - /assets/img/portfolio/lr5lsnsvx7.webp
+  - /assets/img/portfolio/riederjncg.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-26T14:11:57+09:00'
 ---
 
 굿티비 기독교복음방송의 특별후원방송 생방송 「낮은 곳으로 임하소서」 스튜디오에 실내 LED 전광판을 렌탈로 공급하고, 방송 기간 동안 운영까지 지원한 사례입니다.
