@@ -1,4 +1,5 @@
 ---
+slug: creaformsalesmeeting
 title: Creaform Sales Meeting
 post_date: 2026-11-26T14:01:00+09:00
 overview_category:
@@ -11,10 +12,13 @@ installation_solution: 70인치 미만 모니터 사이니지
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/01_TV스탠드.webp
-  - /assets/img/portfolio/02_행사장세팅.webp
-  - /assets/img/portfolio/03_행사장전경.webp
-  - /assets/img/portfolio/04_행사장정면.webp
+  - /assets/img/portfolio/te25sm0kco.webp
+  - /assets/img/portfolio/zj3qo5jzmm.webp
+  - /assets/img/portfolio/2y43akp98u.webp
+  - /assets/img/portfolio/9tk8p788in.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-26T14:01:57+09:00'
 ---
 
 ## 현장 개요
