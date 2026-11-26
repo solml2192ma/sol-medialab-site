@@ -1,4 +1,5 @@
 ---
+slug: creaformkoreausermeeting
 title: Creaform Korea User Meeting
 post_date: 2026-11-26T13:57:00+09:00
 overview_category:
@@ -11,8 +12,11 @@ installation_solution: 70인치 미만 모니터 사이니지
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/01_현장세팅전경.webp
-  - /assets/img/portfolio/02_세팅작업.webp
+  - /assets/img/portfolio/bs5qsnaqf4.webp
+  - /assets/img/portfolio/15e1mww8z2.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-26T13:58:31+09:00'
 ---
 
 양재 엘타워 행사장에서 열린 **Creaform Korea User Meeting**에 스탠드형 모니터 사이니지를 렌탈로 지원했습니다. 3D 스캐닝 솔루션 사용자들이 모이는 미팅이어서, 발표와 솔루션 소개 공간 사이에서 화면을 유연하게 배치할 수 있는 구성이 필요했습니다.
