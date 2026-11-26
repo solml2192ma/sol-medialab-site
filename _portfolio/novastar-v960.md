@@ -1,8 +1,5 @@
 ---
 title: NOVASTAR V960
-post_author: hongbj123-create
-last_human_editor: solml2192ma
-last_human_edit: 2026-09-28T16:04:26+09:00
 slug: novastarv960
 post_date: 2026-09-01T15:27:00+09:00
 overview_category:
@@ -17,6 +14,9 @@ installation_solution_custom: ''
 installation_project: ''
 gallery:
   - /assets/img/portfolio/taj3no620v.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-26T16:17:47+09:00'
 ---
 
 제품명 : Novastar V960
