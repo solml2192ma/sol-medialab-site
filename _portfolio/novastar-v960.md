@@ -1,19 +1,25 @@
 ---
-slug: novastarv960
 title: NOVASTAR V960
+post_author: hongbj123-create
+last_human_editor: solml2192ma
+last_human_edit: 2026-09-28T16:04:26+09:00
+slug: novastarv960
 post_date: 2026-09-01T15:27:00+09:00
 overview_category:
   - 제품 유통
 client: ''
 location: ''
+installation_region_selected: ''
+installation_year: ''
+installation_month: ''
+installation_solution: ''
+installation_solution_custom: ''
+installation_project: ''
 gallery:
-  - '/assets/img/portfolio/taj3no620v.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'solml2192ma'
-last_human_edit: '2026-09-28T16:04:26+09:00'
+  - /assets/img/portfolio/taj3no620v.webp
 ---
 
-제품명 : Novastar V9
+제품명 : Novastar V960
 
 입력 : DVI-D, HDMI(1.3, HDCP1.4), VGA, CVBS, USB 2.0 
 
