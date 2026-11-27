@@ -1,4 +1,5 @@
 ---
+slug: nextblock블록체인컨퍼런스
 title: Next Block 블록체인 컨퍼런스
 post_date: 2026-11-27T15:51:00+09:00
 overview_category:
@@ -11,7 +12,10 @@ installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/01_현장전경.webp
+  - /assets/img/portfolio/sh3dxadqfp.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T15:53:09+09:00'
 ---
 
 ## 현장 개요
