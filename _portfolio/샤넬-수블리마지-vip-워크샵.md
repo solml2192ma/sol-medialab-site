@@ -1,5 +1,8 @@
 ---
 title: 샤넬 수블리마지 VIP 워크샵 (Chanel Sublimage)
+post_author: hongbj123-create
+last_human_editor: hongbj123-create
+last_human_edit: 2026-11-16T17:40:09+09:00
 slug: 샤넬수블리마지vip워크샵
 post_date: 2026-10-19T15:54:00+09:00
 overview_category:
@@ -7,19 +10,16 @@ overview_category:
 client: ''
 location: 풀만 앰배서더 서울 이스트폴
 installation_region_selected: 서울특별시 강남구
-installation_year: 2026년
-installation_month: 02월
+installation_year: 2025년
+installation_month: 08월
 installation_solution: P1mm LED전광판
 installation_solution_custom: ''
 installation_project: 샤넬 수블리마지 VIP 워크샵
 gallery:
-  - '/assets/img/portfolio/3ne3zd7yp9.webp'
-  - '/assets/img/portfolio/mgx5g081zm.webp'
-  - '/assets/img/portfolio/ee47khjz63.webp'
-  - '/assets/img/portfolio/0otnb51bzv.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'hongbj123-create'
-last_human_edit: '2026-11-16T17:40:09+09:00'
+  - /assets/img/portfolio/3ne3zd7yp9.webp
+  - /assets/img/portfolio/mgx5g081zm.webp
+  - /assets/img/portfolio/ee47khjz63.webp
+  - /assets/img/portfolio/0otnb51bzv.webp
 ---
 
 ## 프로젝트 개요
