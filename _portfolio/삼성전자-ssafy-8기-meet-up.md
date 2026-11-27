@@ -1,4 +1,5 @@
 ---
+slug: 삼성전자ssafy8기meetup
 title: 삼성전자 SSAFY 8기 Meet Up
 post_date: 2026-11-27T18:07:00+09:00
 overview_category:
@@ -11,14 +12,17 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/01_오프닝화면전경.webp
-  - /assets/img/portfolio/08_토크세션.webp
-  - /assets/img/portfolio/07_화상연결화면.webp
-  - /assets/img/portfolio/04_안내콘텐츠화면.webp
-  - /assets/img/portfolio/05_측면에서본화면.webp
-  - /assets/img/portfolio/06_오프닝화면.webp
-  - /assets/img/portfolio/02_홀원경.webp
-  - /assets/img/portfolio/03_화면전경.webp
+  - /assets/img/portfolio/n5ffsa4s51.webp
+  - /assets/img/portfolio/ebuti3mhxv.webp
+  - /assets/img/portfolio/i1lse9ncia.webp
+  - /assets/img/portfolio/6hu930sfm3.webp
+  - /assets/img/portfolio/9kh0dbfmgl.webp
+  - /assets/img/portfolio/nuoq6we0jk.webp
+  - /assets/img/portfolio/iwa3bm1jgc.webp
+  - /assets/img/portfolio/vzefvnmqxs.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T18:10:26+09:00'
 ---
 
 ## 현장 개요
