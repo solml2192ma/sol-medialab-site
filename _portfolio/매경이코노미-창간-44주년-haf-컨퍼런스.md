@@ -1,4 +1,5 @@
 ---
+slug: 매경이코노미창간44주년haf컨퍼런스
 title: 매경이코노미 창간 44주년 HAF 컨퍼런스
 post_date: 2026-11-27T16:03:00+09:00
 overview_category:
@@ -11,13 +12,16 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/08_행사장_객석.webp
-  - /assets/img/portfolio/07_행사장_측면.webp
-  - /assets/img/portfolio/04_연단측면.webp
-  - /assets/img/portfolio/05_행사장_정면.webp
-  - /assets/img/portfolio/02_연단무대.webp
-  - /assets/img/portfolio/03_화면근접.webp
-  - /assets/img/portfolio/01_메인화면.webp
+  - /assets/img/portfolio/vasjqarqk7.webp
+  - /assets/img/portfolio/x6wnssqw3o.webp
+  - /assets/img/portfolio/2r407pgr0v.webp
+  - /assets/img/portfolio/0fsv7gx622.webp
+  - /assets/img/portfolio/5jfpfyf4sn.webp
+  - /assets/img/portfolio/1mgorgazgq.webp
+  - /assets/img/portfolio/2tejdh49f4.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T16:04:35+09:00'
 ---
 
 ## 현장 소개
