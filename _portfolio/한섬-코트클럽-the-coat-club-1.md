@@ -1,5 +1,8 @@
 ---
 title: 한섬 코트클럽(THE COAT CLUB)
+post_author: hongbj123-create
+last_human_editor: uuh09006
+last_human_edit: 2026-11-16T15:43:39+09:00
 slug: 한섬코트클럽thecoatclub1
 post_date: 2026-10-19T14:58:00+09:00
 overview_category:
@@ -9,20 +12,17 @@ location: 에스팩토리
 installation_region_selected: 서울특별시 성동구
 installation_year: 2025년
 installation_month: 10월
-installation_solution: P3mm LED전광판
+installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: 한섬 코트클럽 팝업스토어
 gallery:
-  - '/assets/img/portfolio/j3iqd0emhd.webp'
-  - '/assets/img/portfolio/xzdalgjmsg.webp'
-  - '/assets/img/portfolio/a8t990e9jq.webp'
-  - '/assets/img/portfolio/d2hbopdhp8.webp'
-  - '/assets/img/portfolio/yiozx6vxze.webp'
-  - '/assets/img/portfolio/7p0d6sjmvp.webp'
-  - '/assets/img/portfolio/e6hb0ti3ja.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'uuh09006'
-last_human_edit: '2026-11-16T15:43:39+09:00'
+  - /assets/img/portfolio/j3iqd0emhd.webp
+  - /assets/img/portfolio/xzdalgjmsg.webp
+  - /assets/img/portfolio/a8t990e9jq.webp
+  - /assets/img/portfolio/d2hbopdhp8.webp
+  - /assets/img/portfolio/yiozx6vxze.webp
+  - /assets/img/portfolio/7p0d6sjmvp.webp
+  - /assets/img/portfolio/e6hb0ti3ja.webp
 ---
 
 팝업스토어는 문을 여는 순간이 전부입니다. 방문객이 입구에서 처음 마주하는 화면이 브랜드의 첫인상이 되기 때문에, 화면 하나의 완성도가 공간 전체의 인상을 좌우합니다. 솔미디어랩은 서울 성동구 에스팩토리에서 열린 한섬 코트클럽 팝업스토어에 **실내 LED 전광판**을 설치했습니다.
