@@ -1,17 +1,28 @@
 ---
+title: 맥심 T.O.P 브랜드 콘텐츠 촬영
+post_author: hongbj123-create
+last_human_editor: solml2192ma
+last_human_edit: 2026-09-28T16:04:26+09:00
 slug: 맥심top브랜드콘텐츠촬영
 post_date: 2026-08-20T13:12:45+09:00
-title: 맥심 T.O.P 브랜드 콘텐츠 촬영
 overview_category:
   - 방송·촬영
 client: ''
-location: ''
+location: 파주 컬러세움 스튜디오
+installation_region_selected: 경기도 파주시
+installation_year: 2023년
+installation_month: 08월
+installation_solution: P2mm LED전광판
+installation_solution_custom: ''
+installation_project: ''
 gallery:
-  - '/assets/img/portfolio/15nsd6ck1n.webp'
-  - '/assets/img/portfolio/rcdqknjm4m.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'solml2192ma'
-last_human_edit: '2026-09-28T16:04:26+09:00'
+  - /assets/img/portfolio/06_촬영대기_장면.webp
+  - /assets/img/portfolio/07_현장_측면.webp
+  - /assets/img/portfolio/04_크레인_카메라_앞_LED.webp
+  - /assets/img/portfolio/05_세트와_LED배경.webp
+  - /assets/img/portfolio/02_크레인과_LED배경.webp
+  - /assets/img/portfolio/03_촬영스태프와_LED배경.webp
+  - /assets/img/portfolio/01_현장전경.webp
 ---
 
 **움직이는 카메라, 끊기지 않는 무대 배경**
