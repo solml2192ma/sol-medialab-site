@@ -1,4 +1,5 @@
 ---
+slug: 남산한국의맛축제mbn매경헬스
 title: 남산한국의맛축제 MBN매경헬스
 post_date: 2026-11-27T12:45:00+09:00
 overview_category:
@@ -11,8 +12,11 @@ installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/02_무대전경.webp
-  - /assets/img/portfolio/01_화면전경.webp
+  - /assets/img/portfolio/0odch047gi.webp
+  - /assets/img/portfolio/r8fwfpgaj5.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T12:46:13+09:00'
 ---
 
 **전통 건축 앞에 세운 대형 야외 LED 화면**
