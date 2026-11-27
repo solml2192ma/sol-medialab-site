@@ -1,4 +1,5 @@
 ---
+slug: 삼성전자ssafy10기입학식
 title: 삼성전자 SSAFY 10기 입학식
 post_date: 2026-11-27T17:53:00+09:00
 overview_category:
@@ -11,7 +12,10 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/03_화면구성.webp
+  - /assets/img/portfolio/p54g84nij0.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T17:58:08+09:00'
 ---
 
 **입학식 무대 화면을 행사 기간 동안 렌탈로 지원했습니다.**
