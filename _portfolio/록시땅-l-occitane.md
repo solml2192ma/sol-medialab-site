@@ -1,25 +1,28 @@
 ---
 title: 록시땅(L'OCCITANE)
+post_author: hongbj123-create
+last_human_editor: uuh09006
+last_human_edit: 2026-11-13T16:15:56+09:00
 slug: 록시땅loccitane
 post_date: 2026-11-13T12:48:00+09:00
 overview_category:
   - 백화점·쇼핑몰
 client: ''
 location: 잠실 롯데월드몰
+installation_region_selected: 서울특별시 송파구
 installation_region: 서울 송파
-installation_month: 2024년10월
+installation_year: 2024년
+installation_month: 10월
 installation_solution: P2mm LED전광판
+installation_solution_custom: ''
 installation_project: 록시땅 팝업스토어
 gallery:
-  - '/assets/img/portfolio/x9ekc5durp.webp'
-  - '/assets/img/portfolio/b36l7jir2g.webp'
-  - '/assets/img/portfolio/5bl0kgwvda.webp'
-  - '/assets/img/portfolio/st9pqckc3t.webp'
-  - '/assets/img/portfolio/5ktpa1t1k6.webp'
-  - '/assets/img/portfolio/meq9c33de1.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'uuh09006'
-last_human_edit: '2026-11-13T16:15:56+09:00'
+  - /assets/img/portfolio/x9ekc5durp.webp
+  - /assets/img/portfolio/b36l7jir2g.webp
+  - /assets/img/portfolio/5bl0kgwvda.webp
+  - /assets/img/portfolio/st9pqckc3t.webp
+  - /assets/img/portfolio/5ktpa1t1k6.webp
+  - /assets/img/portfolio/meq9c33de1.webp
 ---
 
 ## 현장 소개
