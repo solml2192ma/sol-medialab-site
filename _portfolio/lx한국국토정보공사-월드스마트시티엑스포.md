@@ -1,4 +1,5 @@
 ---
+slug: lx한국국토정보공사월드스마트시티엑스포
 title: LX한국국토정보공사 월드스마트시티엑스포
 post_date: 2026-11-27T15:34:00+09:00
 overview_category:
@@ -11,14 +12,17 @@ installation_solution: Flexible 곡면형 커브드 LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/07_곡면월_운영.webp
-  - /assets/img/portfolio/08_부스전경_운영.webp
-  - /assets/img/portfolio/06_곡면월_근접.webp
-  - /assets/img/portfolio/04_메인월_송출.webp
-  - /assets/img/portfolio/05_곡면월_측면.webp
-  - /assets/img/portfolio/03_측면LED_테스트.webp
-  - /assets/img/portfolio/01_전경_세팅완료.webp
-  - /assets/img/portfolio/02_측면LED_송출.webp
+  - /assets/img/portfolio/5logkotucn.webp
+  - /assets/img/portfolio/q9r1z5ty2c.webp
+  - /assets/img/portfolio/pdmrrl7hfs.webp
+  - /assets/img/portfolio/h9yhooxm4y.webp
+  - /assets/img/portfolio/s2djv49onq.webp
+  - /assets/img/portfolio/peuoh2ighy.webp
+  - /assets/img/portfolio/6avzvo1agt.webp
+  - /assets/img/portfolio/hhw6uzfomo.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T15:36:34+09:00'
 ---
 
 ## 현장 개요
