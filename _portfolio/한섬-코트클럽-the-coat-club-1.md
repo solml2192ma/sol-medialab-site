@@ -1,8 +1,5 @@
 ---
 title: 한섬 코트클럽(THE COAT CLUB)
-post_author: hongbj123-create
-last_human_editor: uuh09006
-last_human_edit: 2026-11-16T15:43:39+09:00
 slug: 한섬코트클럽thecoatclub1
 post_date: 2026-10-19T14:58:00+09:00
 overview_category:
@@ -23,6 +20,9 @@ gallery:
   - /assets/img/portfolio/yiozx6vxze.webp
   - /assets/img/portfolio/7p0d6sjmvp.webp
   - /assets/img/portfolio/e6hb0ti3ja.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T14:41:47+09:00'
 ---
 
 팝업스토어는 문을 여는 순간이 전부입니다. 방문객이 입구에서 처음 마주하는 화면이 브랜드의 첫인상이 되기 때문에, 화면 하나의 완성도가 공간 전체의 인상을 좌우합니다. 솔미디어랩은 서울 성동구 에스팩토리에서 열린 한섬 코트클럽 팝업스토어에 **실내 LED 전광판**을 설치했습니다.
