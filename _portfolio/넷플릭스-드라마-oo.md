@@ -1,5 +1,8 @@
 ---
 title: 넷플릭스 드라마
+post_author: hongbj123-create
+last_human_editor: uuh09006
+last_human_edit: 2026-11-16T14:36:19+09:00
 slug: 넷플릭스드라마oo
 post_date: 2026-10-02T16:21:00+09:00
 overview_category:
@@ -13,14 +16,10 @@ installation_solution: Flexible 곡면형 커브드 LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - '/assets/img/portfolio/aclxpm0k2p.webp'
-  - '/assets/img/portfolio/e4ervh19m7.webp'
-  - '/assets/img/portfolio/anux5mj9rg.webp'
-  - '/assets/img/portfolio/rqdi2i1w6x.webp'
-  - '/assets/img/portfolio/45yecc46dz.webp'
-post_author: 'hongbj123-create'
-last_human_editor: 'uuh09006'
-last_human_edit: '2026-11-16T14:36:19+09:00'
+  - /assets/img/portfolio/e4ervh19m7.webp
+  - /assets/img/portfolio/rqdi2i1w6x.webp
+  - /assets/img/portfolio/anux5mj9rg.webp
+  - /assets/img/portfolio/45yecc46dz.webp
 ---
 
 **포커 대회장 세트 안의 화면, 카메라가 가까이 와도 괜찮아야 했습니다**
