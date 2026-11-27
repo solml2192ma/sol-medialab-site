@@ -1215,6 +1215,9 @@ section { position: relative; }
 .portfolio-card-body { padding: 20px 22px 24px; }
 .portfolio-card-tags { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .portfolio-card-location {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
   font-size: 13px;
   font-weight: 600;
   color: #667085;

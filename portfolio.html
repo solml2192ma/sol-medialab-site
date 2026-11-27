@@ -145,7 +145,7 @@ layout: null
             </div>
             <div class="portfolio-card-body">
               <div class="portfolio-card-tags">
-                {% if post.location and post.location != empty %}<span class="portfolio-card-location">{{ post.location }}</span>{% endif %}
+                {% include portfolio-card-location.html post=post %}
                 {% if post.overview_category %}<span class="portfolio-card-category">{{ post.overview_category | join: " · " }}</span>{% endif %}
               </div>
               <h2 class="portfolio-card-title">{{ post.title }}</h2>

@@ -1,0 +1,8 @@
+{%- assign region = include.post.installation_region_selected | default: include.post.installation_region | strip -%}
+{%- assign venue = include.post.location | strip -%}
+{%- if region != empty or venue != empty %}
+<div class="portfolio-card-location">
+  {% if region != empty %}<span>{{ region | escape }}</span>{% endif %}
+  {% if venue != empty %}<span>{{ venue | escape }}</span>{% endif %}
+</div>
+{%- endif -%}
