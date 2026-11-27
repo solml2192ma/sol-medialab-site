@@ -1,8 +1,5 @@
 ---
 title: 삼성전자 SSAFY 11기 입학식
-post_author: hongbj123-create
-last_human_editor: uuh09006
-last_human_edit: 2026-11-17T13:34:42+09:00
 slug: 삼성전자ssafy11기입학식
 post_date: 2026-11-12T14:42:00+09:00
 overview_category:
@@ -20,6 +17,9 @@ gallery:
   - /assets/img/portfolio/5svdurf5k1.webp
   - /assets/img/portfolio/urwyu0oycq.webp
   - /assets/img/portfolio/7xin4sriw6.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T15:04:49+09:00'
 ---
 
 삼성 청년SW아카데미(SSAFY) 11기 입학식이 열린 멀티캠퍼스 역삼 행사장에 실내용 2mm 픽셀 피치 LED 전광판을 렌탈로 공급했습니다. 행사 기간 동안 현장 세팅과 영상 송출 지원, 행사 종료 후 철수까지 솔미디어랩이 함께 진행했습니다.
