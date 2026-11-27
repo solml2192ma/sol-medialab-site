@@ -1,8 +1,5 @@
 ---
 title: 맥심 T.O.P 브랜드 콘텐츠 촬영
-post_author: hongbj123-create
-last_human_editor: solml2192ma
-last_human_edit: 2026-09-28T16:04:26+09:00
 slug: 맥심top브랜드콘텐츠촬영
 post_date: 2026-08-20T13:12:45+09:00
 overview_category:
@@ -16,13 +13,16 @@ installation_solution: P2mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/06_촬영대기_장면.webp
-  - /assets/img/portfolio/07_현장_측면.webp
-  - /assets/img/portfolio/04_크레인_카메라_앞_LED.webp
-  - /assets/img/portfolio/05_세트와_LED배경.webp
-  - /assets/img/portfolio/02_크레인과_LED배경.webp
-  - /assets/img/portfolio/03_촬영스태프와_LED배경.webp
-  - /assets/img/portfolio/01_현장전경.webp
+  - /assets/img/portfolio/r2qpgeix1y.webp
+  - /assets/img/portfolio/51mdrym0n8.webp
+  - /assets/img/portfolio/pz9vb9mijh.webp
+  - /assets/img/portfolio/v5vkxla4xx.webp
+  - /assets/img/portfolio/w3b3xom99t.webp
+  - /assets/img/portfolio/aftf65wsj7.webp
+  - /assets/img/portfolio/bf0ddm59lh.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T16:01:54+09:00'
 ---
 
 **움직이는 카메라, 끊기지 않는 무대 배경**
