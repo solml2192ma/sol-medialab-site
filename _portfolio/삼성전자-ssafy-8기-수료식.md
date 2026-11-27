@@ -1,4 +1,5 @@
 ---
+slug: 삼성전자ssafy8기수료식
 title: 삼성전자 SSAFY 8기 수료식
 post_date: 2026-11-27T18:05:00+09:00
 overview_category:
@@ -11,14 +12,17 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/01_현장전경.webp
-  - /assets/img/portfolio/08_SSAFY화면.webp
-  - /assets/img/portfolio/07_기념촬영.webp
-  - /assets/img/portfolio/06_시상화면.webp
-  - /assets/img/portfolio/04_연사진행.webp
-  - /assets/img/portfolio/03_영상송출.webp
-  - /assets/img/portfolio/05_본행사.webp
-  - /assets/img/portfolio/02_화면점검.webp
+  - /assets/img/portfolio/r30x4mkoq3.webp
+  - /assets/img/portfolio/4dfvor6355.webp
+  - /assets/img/portfolio/czm7ay8gau.webp
+  - /assets/img/portfolio/rpo8a37khv.webp
+  - /assets/img/portfolio/msx2dm5gzj.webp
+  - /assets/img/portfolio/pnhiofkwnw.webp
+  - /assets/img/portfolio/kkhkabpc6e.webp
+  - /assets/img/portfolio/u89ifs3fcj.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T18:06:49+09:00'
 ---
 
 ## 현장 개요
