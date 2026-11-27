@@ -1,4 +1,5 @@
 ---
+slug: gamex경기국제종합학술대회및치과기자재전시회1
 title: GAMEX 경기국제종합학술대회 및 치과기자재전시회
 post_date: 2026-11-27T12:49:00+09:00
 overview_category:
@@ -11,14 +12,17 @@ installation_solution: P3mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/08_행사준비.webp
-  - /assets/img/portfolio/06_콘텐츠화면.webp
-  - /assets/img/portfolio/07_행사전경.webp
-  - /assets/img/portfolio/05_연사화면.webp
-  - /assets/img/portfolio/03_무대세팅.webp
-  - /assets/img/portfolio/04_화면송출.webp
-  - /assets/img/portfolio/01_현장전경.webp
-  - /assets/img/portfolio/02_현장세팅.webp
+  - /assets/img/portfolio/55908roey8.webp
+  - /assets/img/portfolio/oys5sq5wkd.webp
+  - /assets/img/portfolio/izfib6ud5m.webp
+  - /assets/img/portfolio/c1414sdgv5.webp
+  - /assets/img/portfolio/6aonfor69c.webp
+  - /assets/img/portfolio/k5v9zi2sh2.webp
+  - /assets/img/portfolio/ofsmp1x51y.webp
+  - /assets/img/portfolio/9l3vvo26t8.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T12:52:09+09:00'
 ---
 
 ## 현장 개요
