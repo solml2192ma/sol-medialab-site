@@ -1,8 +1,5 @@
 ---
 title: 삼성전자 SSAFY 9기 Meet Up
-post_author: hongbj123-create
-last_human_editor: hongbj123-create
-last_human_edit: 2026-11-23T14:17:04+09:00
 slug: 삼성전자ssafy9기meetup
 post_date: 2026-11-23T14:13:00+09:00
 overview_category:
@@ -23,6 +20,9 @@ gallery:
   - /assets/img/portfolio/293is7z8db.webp
   - /assets/img/portfolio/aej2iey0gj.webp
   - /assets/img/portfolio/3dgr4ei1a7.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T15:06:33+09:00'
 ---
 
 ## 행사 개요
