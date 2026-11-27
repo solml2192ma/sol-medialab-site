@@ -1,4 +1,5 @@
 ---
+slug: 청춘대로blooming
 title: 청춘대로 blooming
 post_date: 2026-11-27T14:33:00+09:00
 overview_category:
@@ -11,7 +12,10 @@ installation_solution: P4mm LED전광판
 installation_solution_custom: ''
 installation_project: ''
 gallery:
-  - /assets/img/portfolio/01_행사장전경.webp
+  - /assets/img/portfolio/f5tc7gvumh.webp
+post_author: 'hongbj123-create'
+last_human_editor: 'hongbj123-create'
+last_human_edit: '2026-11-27T14:36:15+09:00'
 ---
 
 ## 현장 소개
